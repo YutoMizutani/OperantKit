@@ -8,11 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		99334342212969BA00744042 /* OperantKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit_iOS.framework */; };
-		99334347212969BA00744042 /* OperantKit_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99334346212969BA00744042 /* OperantKit_iOSTests.swift */; };
-		99334349212969BA00744042 /* OperantKit_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 9933433B212969BA00744042 /* OperantKit_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9933435E212969E000744042 /* OperantKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit_macOS.framework */; };
-		99334363212969E000744042 /* OperantKit_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99334362212969E000744042 /* OperantKit_macOSTests.swift */; };
-		99334365212969E000744042 /* OperantKit_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 99334357212969E000744042 /* OperantKit_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9933436F21296A6C00744042 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436C21296A6B00744042 /* XCTestManifests.swift */; };
 		9933437021296A6C00744042 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436C21296A6B00744042 /* XCTestManifests.swift */; };
 		9933437121296A6C00744042 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436D21296A6C00744042 /* LinuxMain.swift */; };
@@ -47,22 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9933431F2129691500744042 /* OperantKit_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperantKit_iOS.h; sourceTree = "<group>"; };
-		993343202129691500744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9933432A2129691500744042 /* OperantKit_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperantKit_iOSTests.swift; sourceTree = "<group>"; };
-		9933432C2129691500744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9933433B212969BA00744042 /* OperantKit_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperantKit_iOS.h; sourceTree = "<group>"; };
-		9933433C212969BA00744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99334346212969BA00744042 /* OperantKit_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperantKit_iOSTests.swift; sourceTree = "<group>"; };
-		99334348212969BA00744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99334355212969E000744042 /* OperantKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99334357212969E000744042 /* OperantKit_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperantKit_macOS.h; sourceTree = "<group>"; };
-		99334358212969E000744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9933435D212969E000744042 /* OperantKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99334362212969E000744042 /* OperantKit_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperantKit_macOSTests.swift; sourceTree = "<group>"; };
-		99334364212969E000744042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9933436C21296A6B00744042 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		9933436D21296A6C00744042 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		9933436E21296A6C00744042 /* OperantKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKitTests.swift; sourceTree = "<group>"; };
@@ -107,60 +91,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9933431E2129691500744042 /* OperantKit iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9933431F2129691500744042 /* OperantKit_iOS.h */,
-				993343202129691500744042 /* Info.plist */,
-			);
-			path = "OperantKit iOS";
-			sourceTree = "<group>";
-		};
-		993343292129691500744042 /* OperantKit iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				9933432A2129691500744042 /* OperantKit_iOSTests.swift */,
-				9933432C2129691500744042 /* Info.plist */,
-			);
-			path = "OperantKit iOSTests";
-			sourceTree = "<group>";
-		};
-		9933433A212969B900744042 /* OperantKit iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9933433B212969BA00744042 /* OperantKit_iOS.h */,
-				9933433C212969BA00744042 /* Info.plist */,
-			);
-			path = "OperantKit iOS";
-			sourceTree = "<group>";
-		};
-		99334345212969BA00744042 /* OperantKit iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				99334346212969BA00744042 /* OperantKit_iOSTests.swift */,
-				99334348212969BA00744042 /* Info.plist */,
-			);
-			path = "OperantKit iOSTests";
-			sourceTree = "<group>";
-		};
-		99334356212969E000744042 /* OperantKit macOS */ = {
-			isa = PBXGroup;
-			children = (
-				99334357212969E000744042 /* OperantKit_macOS.h */,
-				99334358212969E000744042 /* Info.plist */,
-			);
-			path = "OperantKit macOS";
-			sourceTree = "<group>";
-		};
-		99334361212969E000744042 /* OperantKit macOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				99334362212969E000744042 /* OperantKit_macOSTests.swift */,
-				99334364212969E000744042 /* Info.plist */,
-			);
-			path = "OperantKit macOSTests";
-			sourceTree = "<group>";
-		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,12 +119,6 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
-				9933431E2129691500744042 /* OperantKit iOS */,
-				993343292129691500744042 /* OperantKit iOSTests */,
-				9933433A212969B900744042 /* OperantKit iOS */,
-				99334345212969BA00744042 /* OperantKit iOSTests */,
-				99334356212969E000744042 /* OperantKit macOS */,
-				99334361212969E000744042 /* OperantKit macOSTests */,
 				OBJ_14 /* Products */,
 			);
 			name = "";
@@ -217,7 +141,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99334349212969BA00744042 /* OperantKit_iOS.h in Headers */,
 				9933437921296A7800744042 /* OperantKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,7 +149,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99334365212969E000744042 /* OperantKit_macOS.h in Headers */,
 				9933437A21296A7800744042 /* OperantKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +331,6 @@
 			files = (
 				9933437321296A6C00744042 /* OperantKitTests.swift in Sources */,
 				9933437121296A6C00744042 /* LinuxMain.swift in Sources */,
-				99334347212969BA00744042 /* OperantKit_iOSTests.swift in Sources */,
 				9933436F21296A6C00744042 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +349,6 @@
 			files = (
 				9933437421296A6C00744042 /* OperantKitTests.swift in Sources */,
 				9933437221296A6C00744042 /* LinuxMain.swift in Sources */,
-				99334363212969E000744042 /* OperantKit_macOSTests.swift in Sources */,
 				9933437021296A6C00744042 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
