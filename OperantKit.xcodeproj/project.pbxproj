@@ -11,8 +11,10 @@
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9933437321296A6C00744042 /* OperantKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436E21296A6C00744042 /* OperantKitTests.swift */; };
 		9933437421296A6C00744042 /* OperantKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436E21296A6C00744042 /* OperantKitTests.swift */; };
-		9933437721296A7800744042 /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933437521296A7800744042 /* OperantKit.swift */; };
-		9933437821296A7800744042 /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933437521296A7800744042 /* OperantKit.swift */; };
+		99ECE8EE212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
+		99ECE8EF212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
+		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
+		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +40,10 @@
 		99334355212969E000744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933435D212969E000744042 /* OperantKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933436E21296A6C00744042 /* OperantKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKitTests.swift; sourceTree = "<group>"; };
-		9933437521296A7800744042 /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		9933437B21296A8200744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9933437E21296A9A00744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99ECE8EC212972EC001510BF /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
+		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99ECE8EB212972EC001510BF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				99ECE8EC212972EC001510BF /* Hello.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +109,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -106,14 +117,14 @@
 				OBJ_10 /* Tests */,
 				OBJ_14 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				99ECE8EB212972EC001510BF /* Common */,
+				99ECE8ED212972EC001510BF /* OperantKit.swift */,
 				9933437B21296A8200744042 /* Info.plist */,
-				9933437521296A7800744042 /* OperantKit.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -250,7 +261,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,7 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437721296A7800744042 /* OperantKit.swift in Sources */,
+				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
+				99ECE8EE212972EC001510BF /* Hello.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437821296A7800744042 /* OperantKit.swift in Sources */,
+				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
+				99ECE8EF212972EC001510BF /* Hello.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
