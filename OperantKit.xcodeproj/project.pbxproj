@@ -7,22 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99334342212969BA00744042 /* OperantKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit_iOS.framework */; };
-		9933435E212969E000744042 /* OperantKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit_macOS.framework */; };
-		9933436F21296A6C00744042 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436C21296A6B00744042 /* XCTestManifests.swift */; };
-		9933437021296A6C00744042 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436C21296A6B00744042 /* XCTestManifests.swift */; };
-		9933437121296A6C00744042 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436D21296A6C00744042 /* LinuxMain.swift */; };
-		9933437221296A6C00744042 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436D21296A6C00744042 /* LinuxMain.swift */; };
+		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
+		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9933437321296A6C00744042 /* OperantKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436E21296A6C00744042 /* OperantKitTests.swift */; };
 		9933437421296A6C00744042 /* OperantKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436E21296A6C00744042 /* OperantKitTests.swift */; };
 		9933437721296A7800744042 /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933437521296A7800744042 /* OperantKit.swift */; };
 		9933437821296A7800744042 /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933437521296A7800744042 /* OperantKit.swift */; };
-		9933437921296A7800744042 /* OperantKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9933437621296A7800744042 /* OperantKit.h */; };
-		9933437A21296A7800744042 /* OperantKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9933437621296A7800744042 /* OperantKit.h */; };
-		9933437C21296A8200744042 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9933437B21296A8200744042 /* Info.plist */; };
-		9933437D21296A8200744042 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9933437B21296A8200744042 /* Info.plist */; };
-		9933437F21296A9A00744042 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9933437E21296A9A00744042 /* Info.plist */; };
-		9933438021296A9A00744042 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9933437E21296A9A00744042 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		99334339212969B900744042 /* OperantKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99334355212969E000744042 /* OperantKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99334355212969E000744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933435D212969E000744042 /* OperantKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9933436C21296A6B00744042 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		9933436D21296A6C00744042 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		9933436E21296A6C00744042 /* OperantKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKitTests.swift; sourceTree = "<group>"; };
 		9933437521296A7800744042 /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
-		9933437621296A7800744042 /* OperantKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperantKit.h; sourceTree = "<group>"; };
 		9933437B21296A8200744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9933437E21296A9A00744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -69,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99334342212969BA00744042 /* OperantKit_iOS.framework in Frameworks */,
+				99334342212969BA00744042 /* OperantKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933435E212969E000744042 /* OperantKit_macOS.framework in Frameworks */,
+				9933435E212969E000744042 /* OperantKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				9933437E21296A9A00744042 /* Info.plist */,
-				9933436D21296A6C00744042 /* LinuxMain.swift */,
 				9933436E21296A6C00744042 /* OperantKitTests.swift */,
-				9933436C21296A6B00744042 /* XCTestManifests.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -105,9 +90,9 @@
 		OBJ_14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99334339212969B900744042 /* OperantKit_iOS.framework */,
+				99334339212969B900744042 /* OperantKit.framework */,
 				99334341212969BA00744042 /* OperantKit iOSTests.xctest */,
-				99334355212969E000744042 /* OperantKit_macOS.framework */,
+				99334355212969E000744042 /* OperantKit.framework */,
 				9933435D212969E000744042 /* OperantKit macOSTests.xctest */,
 			);
 			name = Products;
@@ -128,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				9933437B21296A8200744042 /* Info.plist */,
-				9933437621296A7800744042 /* OperantKit.h */,
 				9933437521296A7800744042 /* OperantKit.swift */,
 			);
 			path = Sources;
@@ -141,7 +125,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437921296A7800744042 /* OperantKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +132,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437A21296A7800744042 /* OperantKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +153,7 @@
 			);
 			name = "OperantKit iOS";
 			productName = "OperantKit iOS";
-			productReference = 99334339212969B900744042 /* OperantKit_iOS.framework */;
+			productReference = 99334339212969B900744042 /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		99334340212969BA00744042 /* OperantKit iOSTests */ = {
@@ -207,7 +189,7 @@
 			);
 			name = "OperantKit macOS";
 			productName = "OperantKit macOS";
-			productReference = 99334355212969E000744042 /* OperantKit_macOS.framework */;
+			productReference = 99334355212969E000744042 /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9933435C212969E000744042 /* OperantKit macOSTests */ = {
@@ -286,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437C21296A8200744042 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437F21296A9A00744042 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933437D21296A8200744042 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9933438021296A9A00744042 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9933437321296A6C00744042 /* OperantKitTests.swift in Sources */,
-				9933437121296A6C00744042 /* LinuxMain.swift in Sources */,
-				9933436F21296A6C00744042 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9933437421296A6C00744042 /* OperantKitTests.swift in Sources */,
-				9933437221296A6C00744042 /* LinuxMain.swift in Sources */,
-				9933437021296A6C00744042 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,13 +397,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OperantKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -491,13 +465,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OperantKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -558,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit iOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -617,7 +591,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit iOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -686,13 +660,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OperantKit;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -754,13 +728,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = OperantKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -819,7 +793,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit macOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -877,7 +851,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "OperantKit macOSTests/Info.plist";
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
