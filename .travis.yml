@@ -7,6 +7,9 @@ env:
         matrix:
                 - TARGET=iOS
                 - TARGET=macOS
+notifications:
+        slack: operantkit:7HkUr4Cd9oYcMJQXC4yZCd3r
+        email: false
 before_install:
         - brew update
         - brew outdated carthage || brew upgrade carthage
