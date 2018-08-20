@@ -1,24 +1,20 @@
 language: objective-c
-sudo: required
-dist: trusty
 osx_image: xcode9
 xcode_project: OperantKit.xcodeproj
-    
+xcode_sdk: iphonesimulator11.0
+
 env:
-  matrix:
-    - TARGET=iOS
-    - TARGET=macOS
-notifications:
-  slack: operantkit:7HkUr4Cd9oYcMJQXC4yZCd3r
-  email: false
+        matrix:
+                - TARGET=iOS
+                - TARGET=macOS
 before_install:
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
+        - brew update
+        - brew outdated carthage || brew upgrade carthage
 before_script:
-  - carthage checkout
-  - travis_retry carthage build --platform "${TARGET}"
+        - carthage checkout --no-use-binaries
+        - travis_retry carthage build --platform "${TARGET}"
 script:
-  - ./scripts/all-tests.sh "${TARGET}"
+        ./scripts/all-tests.sh "${TARGET}"
 
 after_success:
-  - sleep 5 # https://github.com/travis-ci/travis-ci/issues/4725
+        - sleep 5 # https://github.com/travis-ci/travis-ci/issues/4725
