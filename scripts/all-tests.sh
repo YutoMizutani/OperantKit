@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ "$0" == "iOS" ]; then
+if [ "$1" == "iOS" ]; then
 	set -o pipefail && xcodebuild test -verbose -scheme "OperantKit iOS" -destination "platform=iOS Simulator,OS=11.4,name=iPhone 8 Plus" ONLY_ACTIVE_ARCH=NO | xcpretty
-elif [ "$0" == "macOS" ]; then
+elif [ "$1" == "macOS" ]; then
 	set -o pipefail && xcodebuild test -verbose -scheme "OperantKit macOS" ONLY_ACTIVE_ARCH=NO | xcpretty
 else
 	echo "wrong parameters. (iOS|macOS)"
