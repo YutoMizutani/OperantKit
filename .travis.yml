@@ -11,7 +11,7 @@ before_install:
         - brew update
         - brew outdated carthage || brew upgrade carthage
 before_script:
-        - carthage checkout --no-use-binaries
+        - carthage checkout
         - travis_retry carthage build --platform "${TARGET}"
 script:
         ./scripts/all-tests.sh "${TARGET}"
