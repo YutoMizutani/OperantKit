@@ -215,11 +215,11 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				99981705212C34D100D9F6E5 /* Frameworks */,
-				994FFF5B212C27B3000F4702 /* Supporting Files */,
-				OBJ_6 /* Package.swift */,
+                OBJ_6 /* Package.swift */,
+                994FFF5B212C27B3000F4702 /* Supporting Files */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
+                99981705212C34D100D9F6E5 /* Frameworks */,
 				OBJ_14 /* Products */,
 			);
 			sourceTree = "<group>";
