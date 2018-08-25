@@ -38,11 +38,11 @@ public class IntervalTimer {
     }
     private var sleepStartMilliseconds: Int?
 
-    public private(set) var date:(start:Date, prev:Date) = (Date(), Date())
-    public private(set) var elapsed: (date:Date, milliseconds:(previous:Int, now:Variable<Int>)) = (Date(), (0, Variable(0)))
+    public private(set) var date: (start: Date, prev: Date) = (Date(), Date())
+    public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: Variable<Int>)) = (Date(), (0, Variable(0)))
     public private(set) var debugText: Variable<String> = Variable("")
-    public private(set) var debugLoopValue: (callCount:Int, waitCount:Int) = (1, 0)
-    public private(set) var isRenewal: (user:Int, debug:Int) = (0, 0)
+    public private(set) var debugLoopValue: (callCount: Int, waitCount: Int) = (1, 0)
+    public private(set) var isRenewal: (user: Int, debug: Int) = (0, 0)
 
     public func resetValue() {
         self.isCompleted = false
@@ -66,7 +66,7 @@ public class IntervalTimer {
 
     // intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     // isDelayCountMax: 0だと変更しない
-    init(_ intervalMilliseconds:Double = 0.1, isDelayCountMax:Int = 10) {
+    init(_ intervalMilliseconds: Double = 0.1, isDelayCountMax: Int = 10) {
         self.intervalMilliseconds = intervalMilliseconds
         self.isDelayFlag = (0, isDelayCountMax)
         self.resetValue()
@@ -83,7 +83,7 @@ public class IntervalTimer {
             // グローバルスレッドでループを回すと完了を待たない。1つのループを回すため，グローバルスレッド内で同期処理を行う。
             syncQueue.sync {
                 // 開始時間を格納
-                let date = Date()
+                let date: Date = Date()
                 self.date = (date, date)
 
                 // isRunning中は
@@ -97,7 +97,7 @@ public class IntervalTimer {
                             self.date.prev = Date(timeInterval: Double(self.elapsed.milliseconds.now.value) / 1000, since: self.date.start)
                             // 待機ループ中に中断があるかの判断に(self.isRunning)
                             // 経過Dateから現在までの経過時刻を算出し，インターバル値を上回るまで待機ループ。
-                            var tmpDate:Date = Date()
+                            var tmpDate: Date = Date()
                             while tmpDate.timeIntervalSince(self.date.prev) <= (self.intervalMilliseconds) / 1000 {
                                 // Discussion: self.isRunningを含めずとも終わるのでは？
                                 // while (self.isRunning) && (tmpDate.timeIntervalSince(self.date.prev) <= (self.intervalMilliseconds)/1000) {
@@ -180,7 +180,7 @@ extension IntervalTimer {
     }
 
     private func debugPrint() {
-        let seconds = Int(self.elapsed.milliseconds.now.value / 1000)
+        let seconds: Int = Int(self.elapsed.milliseconds.now.value / 1000)
         if seconds != isRenewal.debug {
             isRenewal.debug = seconds
             self.debugText.value = """
