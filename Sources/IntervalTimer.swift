@@ -8,59 +8,49 @@
 import RxCocoa
 import RxSwift
 
+/// Main Timer for experiments
 public class IntervalTimer {
-    // ---------------- Settable ------------------------
-    ///
-    public private(set) var intervalMilliseconds: Double
-    // [isDelayFlag] 処理の遅延が発生しているかを監視する。
-    //  isDelayFlag(bool: ループ一周後にインターバル時間を待っていたか(wait loop)に突入したか否か; default: false
-    /// - Parameters:
-    //    - count: wait loopに突入しなかった(前回のループ処理がインターバル期間内に終了しなかった)連続回数; default: 0
-    //    - max: (1,2回の処理遅れは通常起こりうると仮定して)遅延回数の許容範囲; maxToleranceOfDelayContinuousCount; default: 10
-    public private(set) var isDelayFlag: (count: Int, max: Int)
-    // ---------------- Variables -----------------------
-    /// Warning!: Variableを参照するとclass内で変更してもその変更が通知されない場合がある。BehaviorRelay<Bool>で一方通行にする。でも変数が増える。。。
-    /// - Parameters:
-    ///   - isCompleted: It is WORKING state of this timer(looper).
-    ///   - isRunning: It is the state of the session is in the loop.
-    ///   - isSleeping: It is the stop looping during the session.
-    public private(set) var isCompletedRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    private var isCompleted: Bool = false {
-        didSet { self.isCompletedRelay.accept(self.isCompleted) }
-    }
-    public private(set) var isRunningRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    private var isRunning: Bool = false {
-        didSet { self.isRunningRelay.accept(self.isRunning) }
-    }
-    public private(set) var isSleepingRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    private var isSleeping: Bool = false {
-        didSet { self.isSleepingRelay.accept(self.isSleeping) }
-    }
+    // MARK:- Privates
+
+    private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
+
+    /// Interval time milliseconds per cycle
+    private var intervalMilliseconds: Double
+    /// Start time when sleep
     private var sleepStartMilliseconds: Int?
+
+    // MARK:- States
+
+    /// It is WORKING state of this timer(looper).
+    public private(set) var isCompleted: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    /// It is the state of the session is in the loop.
+    public private(set) var isRunning: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    /// It is the stop looping during the session.
+    public private(set) var isSleeping: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+
+    // MARK:-
 
     public private(set) var date: (start: Date, prev: Date) = (Date(), Date())
     public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: Variable<Int>)) = (Date(), (0, Variable(0)))
+
+    // MARK:- Events
+
+    /// If the timer milliseconds, call 'isEventFlag' with id.
+    public private(set) var eventAlerm: [(id: Int, milliseconds: Int)] = []
+    /// It is change with eventAlerm-id.
+    public private(set) var eventFlag: Variable<(id: Int, milliseconds: Int)?> = Variable(nil)
+
+    // MARK:- DEBUG
+
+    /// 処理の遅延が発生しているかを監視する。
+    /// - Parameters:
+    ///    - count: wait loopに突入しなかった(前回のループ処理がインターバル期間内に終了しなかった)連続回数; default: 0
+    ///    - max: (1,2回の処理遅れは通常起こりうると仮定して)遅延回数の許容範囲; maxToleranceOfDelayContinuousCount; default: 10
+    public private(set) var isDelayFlag: (count: Int, max: Int)
     public private(set) var debugText: Variable<String> = Variable("")
     public private(set) var debugLoopValue: (callCount: Int, waitCount: Int) = (1, 0)
     public private(set) var isRenewal: (user: Int, debug: Int) = (0, 0)
-
-    public func resetValue() {
-        self.isCompleted = false
-        self.isRunning = true
-        self.isSleeping = true
-        let date = Date()
-        self.date = (date, date)
-        self.elapsed = (date, (0, Variable(0)))
-        self.debugText = Variable("")
-        self.debugLoopValue = (1, 0)
-        self.isRenewal = (0, 0)
-    }
-
-    /// - Parameters:
-    ///   - eventAlerm: if the timer milliseconds, call 'isEventFlag' with id.
-    ///   - isEventFlag: It is change with eventAlerm-id.
-    public private(set) var eventAlerm: [(id: Int, milliseconds: Int)] = []
-    public private(set) var eventFlag: Variable<(id: Int, milliseconds: Int)?> = Variable(nil)
 
     // ---------------- Initializing -----------------------
 
@@ -72,23 +62,34 @@ public class IntervalTimer {
         self.resetValue()
     }
 
+    public func resetValue() {
+        self.isCompleted.accept(false)
+        self.isRunning.accept(true)
+        self.isSleeping.accept(true)
+        let date = Date()
+        self.date = (date, date)
+        self.elapsed = (date, (0, Variable(0)))
+        self.debugText = Variable("")
+        self.debugLoopValue = (1, 0)
+        self.isRenewal = (0, 0)
+    }
+
     // ---------------- Functions -----------------------
+    /// Start timer
     public func fire() {
-        self.isSleeping = false
-        self.isCompleted = false
-        let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
-        let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
+        self.isSleeping.accept(false)
+        self.isCompleted.accept(false)
         // メインでループを回すと他の描画処理ができなくなるため，グローバルスレッドを利用
-        asyncQueue.async {
+        self.asyncQueue.async {
             // グローバルスレッドでループを回すと完了を待たない。1つのループを回すため，グローバルスレッド内で同期処理を行う。
-            syncQueue.sync {
+            self.syncQueue.sync {
                 // 開始時間を格納
                 let date: Date = Date()
                 self.date = (date, date)
 
                 // isRunning中は
-                while self.isRunning {
-                    while self.isRunning && !self.isSleeping {
+                while self.isRunning.value {
+                    while self.isRunning.value && !self.isSleeping.value {
                         // 1 ms経過まで内部ループで待機する。
                         waitLoop: do {
                             // 待機ループカウントリセット
@@ -114,7 +115,7 @@ public class IntervalTimer {
 
                         // ユーザーのflagを処理する。
                         decisionFlag: do {
-                            if !self.isSleeping {
+                            if !self.isSleeping.value {
                                 // スリープ時間が格納されていれば，その時間だけ通知を遅らせる。
                                 if self.sleepStartMilliseconds != nil {
                                     let sleepTime = self.elapsed.milliseconds.now.value - self.sleepStartMilliseconds! + 2
@@ -139,15 +140,15 @@ public class IntervalTimer {
                             self.debugLoopValue.callCount += 1
                         }
                         debugPrint: do {
-                            // Warning: Sleep復帰時に変更干渉が生じる。ここままでは使用不可。
-                            //                            self.debugPrint()
+                            // XXX: Sleep復帰時に変更干渉が生じる。このままでは使用不可。
+                            // self.debugPrint()
                         }
                     }
-                    while self.isRunning && self.isSleeping {
+                    while self.isRunning.value && self.isSleeping.value {
                         // Sleeping until wake up
                     }
                 }
-                self.isCompleted = true
+                self.isCompleted.accept(true)
             }
         }
     }
@@ -198,15 +199,18 @@ extension IntervalTimer {
 }
 
 public extension IntervalTimer {
+    /// Go sleep timer
     func sleep() {
-        self.isSleeping = true
+        self.isSleeping.accept(true)
         self.sleepStartMilliseconds = self.elapsed.milliseconds.now.value
     }
+    /// Wake up timer
     func wakeUp() {
-        self.isSleeping = false
+        self.isSleeping.accept(false)
     }
+    /// Finish timer
     func finish() {
-        self.isRunning = false
+        self.isRunning.accept(false)
     }
 }
 
