@@ -3,6 +3,7 @@ disabled_rules:
   - object_literal
   - file_length
   - file_header
+  - identifier_name
 opt_in_rules:
   - array_init
   - attributes
