@@ -32,14 +32,14 @@ public class IntervalTimer {
     // MARK:-
 
     public private(set) var date: (start: Date, prev: Date) = (Date(), Date())
-    public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: Variable<Int>)) = (Date(), (0, Variable(0)))
+    public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: BehaviorRelay<Int>)) = (Date(), (0, BehaviorRelay(value: 0)))
 
     // MARK:- Events
 
     /// If the timer milliseconds, call 'isEventFlag' with id.
     public private(set) var eventAlerm: [(id: Int, milliseconds: Int)] = []
     /// It is change with eventAlerm-id.
-    public private(set) var eventFlag: Variable<(id: Int, milliseconds: Int)?> = Variable(nil)
+    public private(set) var eventFlag: BehaviorRelay<(id: Int, milliseconds: Int)?> = BehaviorRelay(value: nil)
 
     // MARK:- DEBUG
 
@@ -48,7 +48,7 @@ public class IntervalTimer {
     ///    - count: wait loopに突入しなかった(前回のループ処理がインターバル期間内に終了しなかった)連続回数; default: 0
     ///    - max: (1,2回の処理遅れは通常起こりうると仮定して)遅延回数の許容範囲; maxToleranceOfDelayContinuousCount; default: 10
     public private(set) var isDelayFlag: (count: Int, max: Int)
-    public private(set) var debugText: Variable<String> = Variable("")
+    public private(set) var debugText: BehaviorRelay<String> = BehaviorRelay(value: "")
     public private(set) var debugLoopValue: (callCount: Int, waitCount: Int) = (1, 0)
     public private(set) var isRenewal: (user: Int, debug: Int) = (0, 0)
 
@@ -68,8 +68,8 @@ public class IntervalTimer {
         self.isSleeping.accept(true)
         let date = Date()
         self.date = (date, date)
-        self.elapsed = (date, (0, Variable(0)))
-        self.debugText = Variable("")
+        self.elapsed = (date, (0, BehaviorRelay(value: 0)))
+        self.debugText = BehaviorRelay(value: "")
         self.debugLoopValue = (1, 0)
         self.isRenewal = (0, 0)
     }
@@ -107,7 +107,7 @@ public class IntervalTimer {
                             }
                             // 待機ループ脱出後，経過ミリ秒を更新
                             self.elapsed.milliseconds.previous = self.elapsed.milliseconds.now.value
-                            self.elapsed.milliseconds.now.value = Int(tmpDate.timeIntervalSince(self.date.start) * 1000)
+                            self.elapsed.milliseconds.now.accept(Int(tmpDate.timeIntervalSince(self.date.start) * 1000))
                             self.elapsed.date = tmpDate
 
                             self.checkDelay()
@@ -129,7 +129,7 @@ public class IntervalTimer {
                                 // eventAlermの数だけ回し，evantAlermの時間が一致した場合，
                                 for event in self.eventAlerm where event.milliseconds <= self.elapsed.milliseconds.now.value {
                                     // event idを，通知可能なeventFlag変数に入れる。
-                                    self.eventFlag.value = event
+                                    self.eventFlag.accept(event)
                                     // イベントは破棄される。
                                     self.eventAlerm = self.eventAlerm.filter { $0 != event }
                                 }
@@ -184,14 +184,14 @@ extension IntervalTimer {
         let seconds: Int = Int(self.elapsed.milliseconds.now.value / 1000)
         if seconds != isRenewal.debug {
             isRenewal.debug = seconds
-            self.debugText.value = """
-            [\(#function)]
-            Milliseconds: \(self.elapsed.milliseconds.now.value)
-            Details     : \(Date().timeIntervalSince(date.start))
-            Num of loops: \(self.debugLoopValue)
-            Interval    : \(self.intervalMilliseconds)-ms
-            FPS         : \(Int(1000 / self.intervalMilliseconds))
-            """
+            self.debugText.accept("""
+                [\(#function)]
+                Milliseconds: \(self.elapsed.milliseconds.now.value)
+                Details     : \(Date().timeIntervalSince(date.start))
+                Num of loops: \(self.debugLoopValue)
+                Interval    : \(self.intervalMilliseconds)-ms
+                FPS         : \(Int(1000 / self.intervalMilliseconds))
+            """)
             self.debugLoopValue.callCount = 1
             self.isDelayFlag.count = 0
         }
