@@ -10,7 +10,7 @@ import RxSwift
 
 /// Main Timer for experiments
 public class IntervalTimer {
-    // MARK:- Privates
+    // MARK: - Privates
 
     private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
     private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
@@ -20,7 +20,7 @@ public class IntervalTimer {
     /// Start time when sleep
     private var sleepStartMilliseconds: Int?
 
-    // MARK:- States
+    // MARK: - States
 
     /// It is WORKING state of this timer(looper).
     public private(set) var isCompleted: BehaviorRelay<Bool> = BehaviorRelay(value: false)
@@ -28,20 +28,17 @@ public class IntervalTimer {
     public private(set) var isRunning: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     /// It is the stop looping during the session.
     public private(set) var isSleeping: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-
-    // MARK:-
-
-    public private(set) var date: (start: Date, prev: Date) = (Date(), Date())
+    /// Elapsed time
     public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: BehaviorRelay<Int>)) = (Date(), (0, BehaviorRelay(value: 0)))
 
-    // MARK:- Events
+    // MARK: - Events
 
     /// If the timer milliseconds, call 'isEventFlag' with id.
     public private(set) var eventAlerm: [(id: Int, milliseconds: Int)] = []
     /// It is change with eventAlerm-id.
     public private(set) var eventFlag: BehaviorRelay<(id: Int, milliseconds: Int)?> = BehaviorRelay(value: nil)
 
-    // MARK:- DEBUG
+    // MARK: - DEBUG
 
     /// 処理の遅延が発生しているかを監視する。
     /// - Parameters:
@@ -61,13 +58,14 @@ public class IntervalTimer {
         self.isDelayFlag = (0, isDelayCountMax)
         self.resetValue()
     }
+}
 
-    public func resetValue() {
+public extension IntervalTimer {
+    func resetValue() {
         self.isCompleted.accept(false)
         self.isRunning.accept(true)
         self.isSleeping.accept(true)
         let date = Date()
-        self.date = (date, date)
         self.elapsed = (date, (0, BehaviorRelay(value: 0)))
         self.debugText = BehaviorRelay(value: "")
         self.debugLoopValue = (1, 0)
@@ -76,16 +74,17 @@ public class IntervalTimer {
 
     // ---------------- Functions -----------------------
     /// Start timer
-    public func fire() {
+    func fire() {
         self.isSleeping.accept(false)
         self.isCompleted.accept(false)
+        var date: (start: Date, previous: Date)!
         // メインでループを回すと他の描画処理ができなくなるため，グローバルスレッドを利用
         self.asyncQueue.async {
             // グローバルスレッドでループを回すと完了を待たない。1つのループを回すため，グローバルスレッド内で同期処理を行う。
             self.syncQueue.sync {
                 // 開始時間を格納
-                let date: Date = Date()
-                self.date = (date, date)
+                let startDate: Date = Date()
+                date = (startDate, startDate)
 
                 // isRunning中は
                 while self.isRunning.value {
@@ -95,19 +94,19 @@ public class IntervalTimer {
                             // 待機ループカウントリセット
                             self.debugLoopValue.waitCount = 0
                             // 開始Dateから経過ミリ秒を加えた経過時間Dateを発行
-                            self.date.prev = Date(timeInterval: Double(self.elapsed.milliseconds.now.value) / 1000, since: self.date.start)
+                            date.previous = Date(timeInterval: Double(self.elapsed.milliseconds.now.value) / 1000, since: date.start)
                             // 待機ループ中に中断があるかの判断に(self.isRunning)
                             // 経過Dateから現在までの経過時刻を算出し，インターバル値を上回るまで待機ループ。
                             var tmpDate: Date = Date()
-                            while tmpDate.timeIntervalSince(self.date.prev) <= (self.intervalMilliseconds) / 1000 {
+                            while tmpDate.timeIntervalSince(date.previous) <= (self.intervalMilliseconds) / 1000 {
                                 // Discussion: self.isRunningを含めずとも終わるのでは？
-                                // while (self.isRunning) && (tmpDate.timeIntervalSince(self.date.prev) <= (self.intervalMilliseconds)/1000) {
+                                // while (self.isRunning) && (tmpDate.timeIntervalSince(date.previous) <= (self.intervalMilliseconds)/1000) {
                                 self.debugLoopValue.waitCount += 1
                                 tmpDate = Date()
                             }
                             // 待機ループ脱出後，経過ミリ秒を更新
                             self.elapsed.milliseconds.previous = self.elapsed.milliseconds.now.value
-                            self.elapsed.milliseconds.now.accept(Int(tmpDate.timeIntervalSince(self.date.start) * 1000))
+                            self.elapsed.milliseconds.now.accept(Int(tmpDate.timeIntervalSince(date.start) * 1000))
                             self.elapsed.date = tmpDate
 
                             self.checkDelay()
@@ -180,14 +179,14 @@ extension IntervalTimer {
         //        }
     }
 
-    private func debugPrint() {
+    private func debugPrint(_ startDate: Date) {
         let seconds: Int = Int(self.elapsed.milliseconds.now.value / 1000)
         if seconds != isRenewal.debug {
             isRenewal.debug = seconds
             self.debugText.accept("""
                 [\(#function)]
                 Milliseconds: \(self.elapsed.milliseconds.now.value)
-                Details     : \(Date().timeIntervalSince(date.start))
+                Details     : \(Date().timeIntervalSince(startDate))
                 Num of loops: \(self.debugLoopValue)
                 Interval    : \(self.intervalMilliseconds)-ms
                 FPS         : \(Int(1000 / self.intervalMilliseconds))
@@ -212,9 +211,6 @@ public extension IntervalTimer {
     func finish() {
         self.isRunning.accept(false)
     }
-}
-
-public extension IntervalTimer {
     /// Set timer event
     func addAlerm(_ event: (id: Int, milliseconds: Int)) {
         self.eventAlerm.append(event)
