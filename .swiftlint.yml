@@ -21,7 +21,6 @@ opt_in_rules:
   - let_var_whitespace
   - literal_expression_end_indentation
   - nimble_operator
-  - number_separator
   - object_literal
   - operator_usage_whitespace
   - overridden_super_call
@@ -49,7 +48,7 @@ excluded:
   - .build
   
 line_length: 
-  warning: 120
+  warning: 150
   ignores_comments: true
 type_body_length:
   - 300 # warning
