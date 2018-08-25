@@ -9,8 +9,17 @@ final class OperantKitTests: XCTestCase {
         XCTAssertEqual(OperantKit().text, "Hello, World!")
     }
 
+    func testTimer() {
+        let targetTime: Int = Int(arc4random() % 5) + 1
+        let timer = IntervalTimer()
+        timer.fire()
+        sleep(UInt32(targetTime))
+        XCTAssertGreaterThan(timer.elapsed.milliseconds.now.value, targetTime * 1000)
+        timer.finish()
+    }
 
     static var allTests = [
         ("testExample", testExample),
+        ("testTimer", testTimer),
     ]
 }
