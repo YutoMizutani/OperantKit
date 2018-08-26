@@ -46,13 +46,16 @@ excluded:
   - ExampleApp
   - Tests
   - .build
-  
+
 line_length: 
   warning: 150
   ignores_comments: true
 type_body_length:
   - 300 # warning
   - 400 # error
+function_body_length:
+  warning: 50
+  error: 100
 file_length:
   warning: 500
   error: 1200
