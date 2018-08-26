@@ -179,12 +179,12 @@ extension IntervalTimer {
         if seconds != self.debugPreviousSeconds {
             self.debugPreviousSeconds = seconds
             self.debugText.accept("""
-            [\(#function)]
-            Milliseconds : \(self.elapsed.milliseconds.now.value)
-            Details(ms)  : \(Date().timeIntervalSince(startDate) * 1000)
-            Num of loops : \(self.debugLoopValue)
-            Interval     : \(self.intervalMilliseconds)-ms
-            FPS          : \(Int(1000 / self.intervalMilliseconds)) loops per second
+                [\(#function)]
+                Milliseconds : \(self.elapsed.milliseconds.now.value)
+                Details(ms)  : \(Date().timeIntervalSince(startDate) * 1000)
+                Num of loops : \(self.debugLoopValue)
+                Interval     : \(self.intervalMilliseconds)-ms
+                FPS          : \(Int(1000 / self.intervalMilliseconds)) loops per second
             """)
             self.debugLoopValue.callCount = 1
         }
