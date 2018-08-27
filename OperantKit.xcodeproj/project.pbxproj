@@ -25,6 +25,8 @@
 		99981720212C35FE00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
 		99981721212C360F00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
+		999C51BC2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
+		999C51BD2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
 		99ECE8EE212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
 		99ECE8EF212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
@@ -65,6 +67,7 @@
 		99981718212C35E300D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		9998171B212C35F000D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
 		9998171C212C35F000D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
+		999C51BB2134261B00611308 /* SessionEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEvents.swift; sourceTree = "<group>"; };
 		99ECE8EC212972EC001510BF /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 				99ECE8EB212972EC001510BF /* Common */,
 				99ECE8ED212972EC001510BF /* OperantKit.swift */,
 				9905000B2131705E008A6423 /* IntervalTimer.swift */,
+				999C51BB2134261B00611308 /* SessionEvents.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -436,6 +440,7 @@
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
 				99ECE8EE212972EC001510BF /* Hello.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
+				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +459,7 @@
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
 				99ECE8EF212972EC001510BF /* Hello.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
+				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
