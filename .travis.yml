@@ -2,22 +2,22 @@ language: objective-c
 osx_image: xcode9
 xcode_project: OperantKit.xcodeproj
 xcode_sdk: iphonesimulator11.0
-
 env:
-        matrix:
-                - TARGET=iOS
-                - TARGET=macOS
+  matrix:
+  - TARGET=iOS
+  - TARGET=macOS
+  global:
+    secure: I/Wice4FrbvWqQNqzFlyoX2V2XDSc8CL2e8YkP2hTvLnL58mQj4+LYPVAm04Y4ODSChHHxW214KJ9qeuL5u607uE2eu7ddQyKVx/qaRuJ1A1utUSHKogb/QY7E6KAjpk2iTXLir689CsSAiv/EyKrByAFC8DXSE1EjSGul9ArkLkR785lBtUo3mUrwl2poPwbO6Bnzud2tnCAVpMjjZbH94887D1sl+QxCAJJlU+5xQ/RenGQLKoEqMyD8KRDm8U2v/MnE8ofROHfw1g8fsE8NH8dFvimJGbZ86j1rIBgkrHWMQPPaUmstCd+RGwij/6n9xOaV4IcTcZerxpIntwTCe8dGKJwWiL1zd00+U97GPY19ZtbnWJDQ2ZKurNOymowVewEE8Dlfa/WDfRVw+J33r+c+f2xLjg0OibrvU6Re7CgD28ciqpk1iF2lU716fjPNXvLCbfVVpY4k1l/EcoxMmMcAc02n0eBb/AhiAj2R3D3sGEkH+zvHtWFZZMwMcF7+m75MW1DzGlNOqUkcwWVycWUlLLcB2sRpKN2DIfuTrjEJT0IiOHGv95ZfbVFKstZdBYngHdFijAEGQ2TgXowIU7Ec4xCaUrpshnhiMX4QDMXODT8Iy3TbFgpMJBBcRNwZncMRuRNnRaylMAKCRlsKI3QHEAd1KOnCBZXRakYVM=
 notifications:
-        slack: operantkit:7HkUr4Cd9oYcMJQXC4yZCd3r
-        email: false
+  slack: operantkit:7HkUr4Cd9oYcMJQXC4yZCd3r
+  email: false
 before_install:
-        - brew update
-        - brew outdated carthage || brew upgrade carthage
+- brew update
+- brew outdated carthage || brew upgrade carthage
 before_script:
-        - carthage checkout
-        - travis_retry carthage build --platform "${TARGET}"
+- carthage checkout
+- travis_retry carthage build --platform "${TARGET}"
 script:
-        ./scripts/all-tests.sh "${TARGET}"
-
+    ./scripts/all-tests.sh "${TARGET}"
 after_success:
-        - sleep 5 # https://github.com/travis-ci/travis-ci/issues/4725
+- sleep 5 # https://github.com/travis-ci/travis-ci/issues/4725
