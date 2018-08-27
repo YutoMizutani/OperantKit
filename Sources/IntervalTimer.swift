@@ -172,9 +172,9 @@ private extension IntervalTimer {
 
 // MARK: - DEBUG
 #if DEBUG
-extension IntervalTimer {
+private extension IntervalTimer {
     // XXX: Sleep復帰時に変更干渉が生じる。このままでは使用不可。
-    private func debugPrint(_ startDate: Date) {
+    func debugPrint(_ startDate: Date) {
         let seconds: Int = Int(self.elapsed.milliseconds.now.value / 1000)
         if seconds != self.debugPreviousSeconds {
             self.debugPreviousSeconds = seconds
