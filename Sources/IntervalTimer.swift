@@ -10,6 +10,7 @@ import RxSwift
 
 /// Main Timer for experiments
 public class IntervalTimer {
+
     // MARK: - Privates
 
     private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
@@ -51,7 +52,7 @@ public class IntervalTimer {
     public private(set) var debugLoopValue: (callCount: Int, waitCount: Int) = (1, 0)
     #endif
 
-    // ---------------- Initializing -----------------------
+    // MARK: - init
 
     /// - Parameter intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     init(_ intervalMilliseconds: Double = 0.1) {
