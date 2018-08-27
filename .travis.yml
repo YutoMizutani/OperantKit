@@ -17,6 +17,7 @@ before_install:
 before_script:
 - carthage checkout
 - travis_retry carthage build --platform "${TARGET}"
-script: ./scripts/all-tests.sh "${TARGET}"
+script:
+    ./scripts/all-tests.sh "${TARGET}"
 after_success:
 - sleep 5 # https://github.com/travis-ci/travis-ci/issues/4725
