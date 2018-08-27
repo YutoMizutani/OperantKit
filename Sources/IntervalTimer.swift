@@ -70,6 +70,7 @@ public class IntervalTimer {
     #endif
 }
 
+// MARK: - Private functions
 private extension IntervalTimer {
     func resetValue() -> Date {
         self.isCompleted.accept(false)
