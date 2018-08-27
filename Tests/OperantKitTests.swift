@@ -3,6 +3,9 @@ import XCTest
 @testable import OperantKit
 
 final class OperantKitTests: XCTestCase {
+    /// Tolerance delay (ms); Added for low spec test from CI.
+    let toleranceDelay: Int = 100
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
@@ -11,19 +14,19 @@ final class OperantKitTests: XCTestCase {
     }
 
     func testTimer() {
-        let targetTime: Int = Int(arc4random() % 5) + 1
-        let timer = IntervalTimer()
+        let targetMilliseconds: Int = Int(arc4random() % 500) + 100
+        let timer = IntervalTimer(0.1)
         timer.start()
-        sleep(UInt32(targetTime))
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetTime * 1000)
+        usleep(UInt32(targetMilliseconds) * 1000)
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetMilliseconds - self.toleranceDelay)
         timer.finish()
     }
 
     func testEvent() {
         let disposeBag = DisposeBag()
-        let targetTime: Int = 5
+        let targetSeconds: Int = 1
         let timer = IntervalTimer(0.1, isDebug: true)
-        var randomNumber: Int { return Int(arc4random() % UInt32(targetTime * 1000)) }
+        var randomNumber: Int { return Int(arc4random() % UInt32(targetSeconds * 1000)) }
         let randomTimes: [Int] = [
             // 10 random events
             randomNumber,
@@ -48,8 +51,8 @@ final class OperantKitTests: XCTestCase {
             })
             .disposed(by: disposeBag)
         timer.start()
-        sleep(UInt32(targetTime))
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetTime * 1000)
+        sleep(UInt32(targetSeconds))
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetSeconds * 1000 - self.toleranceDelay)
         timer.finish()
     }
 
@@ -57,7 +60,7 @@ final class OperantKitTests: XCTestCase {
     func testPrint() {
         #if DEBUG
         let disposeBag = DisposeBag()
-        let targetTime: Int = 5
+        let targetSeconds: Int = 5
         let timer = IntervalTimer(0.1, isDebug: true)
         timer.debugText.asObservable()
             .filter { $0 != nil }.map { $0! }
@@ -66,8 +69,8 @@ final class OperantKitTests: XCTestCase {
             })
             .disposed(by: disposeBag)
         timer.start()
-        sleep(UInt32(targetTime))
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetTime * 1000)
+        sleep(UInt32(targetSeconds))
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetSeconds * 1000 - self.toleranceDelay)
         timer.finish()
         #endif
     }
