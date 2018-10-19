@@ -33,8 +33,8 @@
 		99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
 		99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
 		99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
-		99AF348B217A42D700B7A332 /* ExtensionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtensionSchedule.swift */; };
-		99AF348C217A42D700B7A332 /* ExtensionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtensionSchedule.swift */; };
+		99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
+		99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
 		99AF348E217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
 		99AF348F217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
 		99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */; };
@@ -89,7 +89,7 @@
 		99AF347E217A357000B7A332 /* FleshlerHoffman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
 		99AF3482217A35BA00B7A332 /* Xorshift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xorshift.swift; sourceTree = "<group>"; };
 		99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
-		99AF348A217A42D700B7A332 /* ExtensionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSchedule.swift; sourceTree = "<group>"; };
+		99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionSchedule.swift; sourceTree = "<group>"; };
 		99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioSchedule.swift; sourceTree = "<group>"; };
 		99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalSchedule.swift; sourceTree = "<group>"; };
 		99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeSchedule.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		99AF3489217A42B800B7A332 /* Simple */ = {
 			isa = PBXGroup;
 			children = (
-				99AF348A217A42D700B7A332 /* ExtensionSchedule.swift */,
+				99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */,
 				99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */,
 				99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */,
 				99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */,
@@ -524,7 +524,7 @@
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
-				99AF348B217A42D700B7A332 /* ExtensionSchedule.swift in Sources */,
+				99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
@@ -552,7 +552,7 @@
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
-				99AF348C217A42D700B7A332 /* ExtensionSchedule.swift in Sources */,
+				99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
