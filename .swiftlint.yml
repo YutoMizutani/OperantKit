@@ -15,7 +15,6 @@ opt_in_rules:
   - extension_access_modifier
   - fatal_error_message
   - file_header
-  - file_name
   - first_where
   - joined_default_parameter
   - let_var_whitespace

@@ -25,8 +25,36 @@
 		99981720212C35FE00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
 		99981721212C360F00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
-		99ECE8EE212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
-		99ECE8EF212972EC001510BF /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8EC212972EC001510BF /* Hello.swift */; };
+		999C51BC2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
+		999C51BD2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
+		99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
+		99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
+		99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
+		99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
+		99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
+		99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
+		99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
+		99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
+		99AF348E217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
+		99AF348F217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
+		99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */; };
+		99AF3492217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */; };
+		99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */; };
+		99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */; };
+		99AF3497217A443900B7A332 /* VariableRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */; };
+		99AF3498217A443900B7A332 /* VariableRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */; };
+		99AF349A217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */; };
+		99AF349B217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */; };
+		99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
+		99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
+		99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
+		99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
+		99AF34A6217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */; };
+		99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */; };
+		99AF34A9217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
+		99AF34AA217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
+		99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
+		99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +93,21 @@
 		99981718212C35E300D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		9998171B212C35F000D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
 		9998171C212C35F000D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
-		99ECE8EC212972EC001510BF /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
+		999C51BB2134261B00611308 /* SessionEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEvents.swift; sourceTree = "<group>"; };
+		99AF347E217A357000B7A332 /* FleshlerHoffman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
+		99AF3482217A35BA00B7A332 /* Xorshift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xorshift.swift; sourceTree = "<group>"; };
+		99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
+		99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionSchedule.swift; sourceTree = "<group>"; };
+		99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioSchedule.swift; sourceTree = "<group>"; };
+		99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalSchedule.swift; sourceTree = "<group>"; };
+		99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeSchedule.swift; sourceTree = "<group>"; };
+		99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioSchedule.swift; sourceTree = "<group>"; };
+		99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalSchedule.swift; sourceTree = "<group>"; };
+		99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeSchedule.swift; sourceTree = "<group>"; };
+		99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSchedule.swift; sourceTree = "<group>"; };
+		99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionScheduleTests.swift; sourceTree = "<group>"; };
+		99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedScheduleTests.swift; sourceTree = "<group>"; };
+		99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableScheduleTests.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,10 +228,41 @@
 			name = macOS;
 			sourceTree = "<group>";
 		};
+		99AF347D217A356100B7A332 /* EAB */ = {
+			isa = PBXGroup;
+			children = (
+				99AF347E217A357000B7A332 /* FleshlerHoffman.swift */,
+			);
+			path = EAB;
+			sourceTree = "<group>";
+		};
+		99AF3488217A429E00B7A332 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				99AF3489217A42B800B7A332 /* Simple */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		99AF3489217A42B800B7A332 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
+				99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */,
+				99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */,
+				99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */,
+				99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */,
+				99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */,
+				99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */,
+				99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
 		99ECE8EB212972EC001510BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				99ECE8EC212972EC001510BF /* Hello.swift */,
+				99AF3482217A35BA00B7A332 /* Xorshift.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -200,6 +273,10 @@
 				99981706212C34FD00D9F6E5 /* Frameworks */,
 				994FFF5C212C2856000F4702 /* Supporting Files */,
 				9933436E21296A6C00744042 /* OperantKitTests.swift */,
+				99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */,
+				99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */,
+				99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */,
+				99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -230,9 +307,12 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				99AF3488217A429E00B7A332 /* Schedules */,
+				99AF347D217A356100B7A332 /* EAB */,
 				99ECE8EB212972EC001510BF /* Common */,
 				99ECE8ED212972EC001510BF /* OperantKit.swift */,
 				9905000B2131705E008A6423 /* IntervalTimer.swift */,
+				999C51BB2134261B00611308 /* SessionEvents.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -265,7 +345,7 @@
 				99334335212969B900744042 /* Frameworks */,
 				99334336212969B900744042 /* Headers */,
 				99334337212969B900744042 /* Resources */,
-				9905FFD4212F98EE008A6423 /* Swiftlint script */,
+				9905FFD4212F98EE008A6423 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -302,6 +382,7 @@
 				99334351212969E000744042 /* Frameworks */,
 				99334352212969E000744042 /* Headers */,
 				99334353212969E000744042 /* Resources */,
+				99AF347C217A2FA300B7A332 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -337,7 +418,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 9999;
+				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					99334338212969B900744042 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -412,19 +493,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9905FFD4212F98EE008A6423 /* Swiftlint script */ = {
+		9905FFD4212F98EE008A6423 /* Run SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Swiftlint script";
+			name = "Run SwiftLint Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		99AF347C217A2FA300B7A332 /* Run SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -433,9 +532,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
+				99AF348E217A434700B7A332 /* FixedRatioSchedule.swift in Sources */,
+				99AF349A217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */,
+				99AF3497217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
+				99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
-				99ECE8EE212972EC001510BF /* Hello.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
+				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
+				99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
+				99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
+				99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
+				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
+				99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +552,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
+				99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
 				9933437321296A6C00744042 /* OperantKitTests.swift in Sources */,
+				99AF34A6217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
+				99AF34A9217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,9 +564,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF3492217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
+				99AF348F217A434700B7A332 /* FixedRatioSchedule.swift in Sources */,
+				99AF349B217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */,
+				99AF3498217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
+				99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
-				99ECE8EF212972EC001510BF /* Hello.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
+				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
+				99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
+				99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
+				99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
+				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
+				99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +584,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
+				99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
 				9933437421296A6C00744042 /* OperantKitTests.swift in Sources */,
+				99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
+				99AF34AA217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +680,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -603,6 +730,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -627,7 +755,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -699,7 +827,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -763,7 +891,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -841,7 +969,7 @@
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -914,7 +1042,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -984,7 +1112,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1047,7 +1175,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1055,12 +1183,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
@@ -1077,11 +1231,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
