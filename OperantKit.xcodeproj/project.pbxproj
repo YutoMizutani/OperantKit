@@ -53,6 +53,8 @@
 		99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */; };
 		99AF34A9217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
 		99AF34AA217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
+		99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
+		99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +107,7 @@
 		99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSchedule.swift; sourceTree = "<group>"; };
 		99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionScheduleTests.swift; sourceTree = "<group>"; };
 		99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedScheduleTests.swift; sourceTree = "<group>"; };
+		99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableScheduleTests.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +276,7 @@
 				99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */,
 				99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */,
 				99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */,
+				99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -548,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
 				99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
 				9933437321296A6C00744042 /* OperantKitTests.swift in Sources */,
 				99AF34A6217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
@@ -579,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
 				99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
 				9933437421296A6C00744042 /* OperantKitTests.swift in Sources */,
 				99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
