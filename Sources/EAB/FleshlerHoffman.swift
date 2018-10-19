@@ -18,7 +18,6 @@ public class FleshlerHoffman {
         var vi = [Double](repeating: 0, count: n + 1)
 
         for m in 1...n {
-            // Swiftには暗黙的なキャストは認められていない。
             let dv = Double(v)
             let dn = Double(n)
             let dm = Double(m)
