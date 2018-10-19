@@ -5,12 +5,9 @@
 //  Created by Yuto Mizutani on 2018/10/20.
 //
 
-/*
- Marsaglia, G. (2003). Xorshift rngs. Journal of Statistical Software, 8(14), 1-6.
- */
-
 import Foundation
 
+/// Marsaglia, G. (2003). Xorshift rngs. Journal of Statistical Software, 8(14), 1-6.
 open class Xorshift32 {
     private var y: UInt32
 
@@ -26,6 +23,7 @@ open class Xorshift32 {
     }
 }
 
+/// Marsaglia, G. (2003). Xorshift rngs. Journal of Statistical Software, 8(14), 1-6.
 open class Xorshift64 {
     private var x: UInt64
 
@@ -41,6 +39,7 @@ open class Xorshift64 {
     }
 }
 
+/// Marsaglia, G. (2003). Xorshift rngs. Journal of Statistical Software, 8(14), 1-6.
 open class Xorshift128 {
     private var x, y, z, w: UInt64
 
