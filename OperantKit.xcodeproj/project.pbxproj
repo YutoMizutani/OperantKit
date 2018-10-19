@@ -238,6 +238,7 @@
 		99AF3489217A42B800B7A332 /* Simple */ = {
 			isa = PBXGroup;
 			children = (
+				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
 				99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */,
 				99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */,
 				99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */,
@@ -245,7 +246,6 @@
 				99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */,
 				99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */,
 				99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */,
-				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
