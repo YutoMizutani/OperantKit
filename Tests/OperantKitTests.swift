@@ -6,13 +6,7 @@ final class OperantKitTests: XCTestCase {
     /// Tolerance delay (ms); Added for low spec test from CI.
     let toleranceDelay: Int = 100
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(OperantKit().text, "Hello, World!")
-    }
-
+    /// Correct time test
     func testTimer() {
         let targetMilliseconds: Int = Int(arc4random() % 500) + 100
         let timer = IntervalTimer(0.1)
@@ -22,6 +16,7 @@ final class OperantKitTests: XCTestCase {
         timer.finish()
     }
 
+    /// Random 10 times call test
     func testEvent() {
         let disposeBag = DisposeBag()
         let targetSeconds: Int = 1
@@ -74,10 +69,4 @@ final class OperantKitTests: XCTestCase {
         timer.finish()
         #endif
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-        ("testTimer", testTimer),
-        ("testPrint", testPrint),
-    ]
 }
