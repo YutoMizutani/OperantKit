@@ -1,4 +1,3 @@
-import RxSwift
 import XCTest
 @testable import OperantKit
 
