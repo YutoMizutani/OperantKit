@@ -47,6 +47,8 @@
 		99AF349B217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */; };
 		99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
 		99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
+		99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
+		99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,7 @@
 		99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioSchedule.swift; sourceTree = "<group>"; };
 		99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalSchedule.swift; sourceTree = "<group>"; };
 		99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeSchedule.swift; sourceTree = "<group>"; };
+		99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSchedule.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +245,7 @@
 				99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */,
 				99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */,
 				99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */,
+				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -524,6 +528,7 @@
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
+				99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
 				99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
@@ -552,6 +557,7 @@
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
+				99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
 				99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
