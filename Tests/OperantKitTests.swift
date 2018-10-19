@@ -18,6 +18,7 @@ final class OperantKitTests: XCTestCase {
 
     /// Random 10 times call test
     func testEvent() {
+        #if DEBUG
         let disposeBag = DisposeBag()
         let targetSeconds: Int = 1
         let timer = IntervalTimer(0.1, isDebug: true)
@@ -49,6 +50,7 @@ final class OperantKitTests: XCTestCase {
         sleep(UInt32(targetSeconds))
         XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetSeconds * 1000 - self.toleranceDelay)
         timer.finish()
+        #endif
     }
 
     /// Test DEBUG print for great developers
