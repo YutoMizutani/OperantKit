@@ -1,7 +1,7 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10
 xcode_project: OperantKit.xcodeproj
-xcode_sdk: iphonesimulator11.0
+xcode_sdk: iphonesimulator12.0
 env:
   matrix:
   - TARGET=iOS
