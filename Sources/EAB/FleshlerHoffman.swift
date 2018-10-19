@@ -98,6 +98,8 @@ public class FleshlerHoffman {
 public extension FleshlerHoffman {
     /// Hantula, D. A. (1991). A simple BASIC program to generate values for variable‐interval schedules of reinforcement. Journal of Applied Behavior Analysis, 24(4), 799-801.
     func hantula1991(value v: Int, number n: Int) -> [Int] {
+        guard n != 0 else { return [] }
+
         var rd = [Int](repeating: 0, count: n + 1)
         var vi = [Double](repeating: 0, count: n + 1)
 
