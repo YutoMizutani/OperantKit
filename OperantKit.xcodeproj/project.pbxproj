@@ -269,7 +269,7 @@
 				99334335212969B900744042 /* Frameworks */,
 				99334336212969B900744042 /* Headers */,
 				99334337212969B900744042 /* Resources */,
-				9905FFD4212F98EE008A6423 /* Swiftlint script */,
+				9905FFD4212F98EE008A6423 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -306,6 +306,7 @@
 				99334351212969E000744042 /* Frameworks */,
 				99334352212969E000744042 /* Headers */,
 				99334353212969E000744042 /* Resources */,
+				99AF347C217A2FA300B7A332 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -416,19 +417,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9905FFD4212F98EE008A6423 /* Swiftlint script */ = {
+		9905FFD4212F98EE008A6423 /* Run SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Swiftlint script";
+			name = "Run SwiftLint Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		99AF347C217A2FA300B7A332 /* Run SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
