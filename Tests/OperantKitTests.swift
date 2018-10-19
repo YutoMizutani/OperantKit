@@ -56,7 +56,7 @@ final class OperantKitTests: XCTestCase {
         timer.finish()
     }
 
-    /// Test DEBUG print for users
+    /// Test DEBUG print for great developers
     func testPrint() {
         #if DEBUG
         let disposeBag = DisposeBag()
