@@ -77,6 +77,8 @@
 		99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */; };
 		99AF34D5217AF38900B7A332 /* VariableParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D4217AF38900B7A332 /* VariableParameter.swift */; };
 		99AF34D6217AF38900B7A332 /* VariableParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D4217AF38900B7A332 /* VariableParameter.swift */; };
+		99AF34D8217AF62E00B7A332 /* TimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */; };
+		99AF34D9217AF62E00B7A332 /* TimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -141,6 +143,7 @@
 		99AF34CE217AF1A300B7A332 /* FixedParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedParameter.swift; sourceTree = "<group>"; };
 		99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeParameter.swift; sourceTree = "<group>"; };
 		99AF34D4217AF38900B7A332 /* VariableParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableParameter.swift; sourceTree = "<group>"; };
+		99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSchedule.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +318,7 @@
 				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
 				99AF34B5217AD85100B7A332 /* RatioSchedule.swift */,
 				99AF34B8217AD99400B7A332 /* IntervalSchedule.swift */,
+				99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -646,6 +650,7 @@
 				99AF34D2217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF34C5217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
+				99AF34D8217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
 				99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
 				99AF34B2217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
 			);
@@ -689,6 +694,7 @@
 				99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF34C6217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
+				99AF34D9217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
 				99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
 				99AF34B3217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
 			);

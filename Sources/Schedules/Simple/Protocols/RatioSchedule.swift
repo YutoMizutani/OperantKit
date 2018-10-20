@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+/// Ratio schedule
+public protocol RatioSchedule {
+    func decision(_ responses: Int, value: Int) -> Bool
+}
+
+// MARK: - Ratio schedules
+
+extension FixedRatioSchedule: RatioSchedule {}
+extension VariableRatioSchedule: RatioSchedule {}

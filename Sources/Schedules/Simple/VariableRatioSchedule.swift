@@ -10,7 +10,7 @@ import Foundation
 /// Variable ratio (VR) schedule
 public struct VariableRatioSchedule {
     /// Decision schedule
-    func decision(_ numOfResponses: Int, value: Int) -> Bool {
+    public func decision(_ numOfResponses: Int, value: Int) -> Bool {
         return numOfResponses >= value
     }
 }

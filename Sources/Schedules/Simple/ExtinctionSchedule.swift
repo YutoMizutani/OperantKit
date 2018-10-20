@@ -10,7 +10,7 @@ import Foundation
 /// Extinction (EXT) schedule
 public struct ExtinctionSchedule {
     /// Decision schedule
-    func decision() -> Bool {
+    public func decision() -> Bool {
         return false
     }
 }

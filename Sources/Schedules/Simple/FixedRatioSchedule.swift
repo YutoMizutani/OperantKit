@@ -10,7 +10,7 @@ import Foundation
 /// Fixed ratio (FR) schedule
 public struct FixedRatioSchedule {
     /// Decision schedule
-    func decision(_ numOfResponses: Int, value: Int) -> Bool {
+    public func decision(_ numOfResponses: Int, value: Int) -> Bool {
         return numOfResponses >= value
     }
 }

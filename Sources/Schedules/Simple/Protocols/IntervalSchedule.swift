@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+/// Interval schedule
+public protocol IntervalSchedule {
+    func decision(_ elapsedTime: Int, value: Int) -> Bool
+}
+
+// MARK: - Interval schedules
+
+extension FixedIntervalSchedule: IntervalSchedule {}
+extension VariableIntervalSchedule: IntervalSchedule {}
