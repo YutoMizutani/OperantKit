@@ -13,3 +13,4 @@ public protocol IntervalState {
 
 extension FixedIntervalState: IntervalState {}
 extension VariableIntervalState: IntervalState {}
+extension RandomIntervalState: IntervalState {}

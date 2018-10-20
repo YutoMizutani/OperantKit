@@ -103,6 +103,22 @@
 		99AF34FD217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */; };
 		99AF3500217B099100B7A332 /* RandomTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */; };
 		99AF3501217B099100B7A332 /* RandomTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */; };
+		99AF3503217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */; };
+		99AF3504217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */; };
+		99AF3506217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */; };
+		99AF3507217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */; };
+		99AF3509217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */; };
+		99AF350A217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */; };
+		99AF350C217B0BF000B7A332 /* RandomParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350B217B0BF000B7A332 /* RandomParameter.swift */; };
+		99AF350D217B0BF000B7A332 /* RandomParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350B217B0BF000B7A332 /* RandomParameter.swift */; };
+		99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
+		99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
+		99AF3512217B15AA00B7A332 /* RandomRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3511217B15AA00B7A332 /* RandomRatioState.swift */; };
+		99AF3513217B15AA00B7A332 /* RandomRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3511217B15AA00B7A332 /* RandomRatioState.swift */; };
+		99AF3515217B15C600B7A332 /* RandomIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3514217B15C600B7A332 /* RandomIntervalState.swift */; };
+		99AF3516217B15C600B7A332 /* RandomIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3514217B15C600B7A332 /* RandomIntervalState.swift */; };
+		99AF3518217B15E900B7A332 /* RandomTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3517217B15E900B7A332 /* RandomTimeState.swift */; };
+		99AF3519217B15E900B7A332 /* RandomTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3517217B15E900B7A332 /* RandomTimeState.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -180,6 +196,14 @@
 		99AF34F8217B095B00B7A332 /* RandomRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioSchedule.swift; sourceTree = "<group>"; };
 		99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalSchedule.swift; sourceTree = "<group>"; };
 		99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeSchedule.swift; sourceTree = "<group>"; };
+		99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioParameter.swift; sourceTree = "<group>"; };
+		99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalParameter.swift; sourceTree = "<group>"; };
+		99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeParameter.swift; sourceTree = "<group>"; };
+		99AF350B217B0BF000B7A332 /* RandomParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomParameter.swift; sourceTree = "<group>"; };
+		99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		99AF3511217B15AA00B7A332 /* RandomRatioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioState.swift; sourceTree = "<group>"; };
+		99AF3514217B15C600B7A332 /* RandomIntervalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalState.swift; sourceTree = "<group>"; };
+		99AF3517217B15E900B7A332 /* RandomTimeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeState.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				99AF347E217A357000B7A332 /* FleshlerHoffman.swift */,
+				99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */,
 			);
 			path = EAB;
 			sourceTree = "<group>";
@@ -380,6 +405,9 @@
 				99AF34C7217AE86A00B7A332 /* VariableRatioParameter.swift */,
 				99AF34CA217AE87700B7A332 /* VariableIntervalParameter.swift */,
 				99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */,
+				99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */,
+				99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */,
+				99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -389,6 +417,7 @@
 			children = (
 				99AF34CE217AF1A300B7A332 /* FixedParameter.swift */,
 				99AF34D4217AF38900B7A332 /* VariableParameter.swift */,
+				99AF350B217B0BF000B7A332 /* RandomParameter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -411,6 +440,9 @@
 				99AF34E5217B05B300B7A332 /* VariableRatioState.swift */,
 				99AF34E8217B05C000B7A332 /* VariableIntervalState.swift */,
 				99AF34EB217B05CB00B7A332 /* VariableTimeState.swift */,
+				99AF3511217B15AA00B7A332 /* RandomRatioState.swift */,
+				99AF3514217B15C600B7A332 /* RandomIntervalState.swift */,
+				99AF3517217B15E900B7A332 /* RandomTimeState.swift */,
 			);
 			path = Simple;
 			sourceTree = "<group>";
@@ -701,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99AF34DD217AFECF00B7A332 /* FixedRatioState.swift in Sources */,
+				99AF3503217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */,
 				99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
 				99AF34E0217B021700B7A332 /* FixedIntervalState.swift in Sources */,
 				99AF34D5217AF38900B7A332 /* VariableParameter.swift in Sources */,
@@ -711,12 +744,15 @@
 				99AF34C8217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */,
 				99AF3497217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
 				99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
+				99AF3518217B15E900B7A332 /* RandomTimeState.swift in Sources */,
 				99AF34F0217B068200B7A332 /* RatioState.swift in Sources */,
 				99AF34C2217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */,
+				99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
 				99AF34F3217B073C00B7A332 /* IntervalState.swift in Sources */,
 				99AF34CB217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */,
 				99AF34F6217B075600B7A332 /* TimeState.swift in Sources */,
+				99AF350C217B0BF000B7A332 /* RandomParameter.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF34FC217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */,
 				99AF34E3217B029A00B7A332 /* FixedTimeState.swift in Sources */,
@@ -724,17 +760,21 @@
 				99AF34BF217AE03000B7A332 /* FixedRatioParameter.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
+				99AF3515217B15C600B7A332 /* RandomIntervalState.swift in Sources */,
 				99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF34EC217B05CB00B7A332 /* VariableTimeState.swift in Sources */,
 				99AF3500217B099100B7A332 /* RandomTimeSchedule.swift in Sources */,
 				99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
+				99AF3512217B15AA00B7A332 /* RandomRatioState.swift in Sources */,
 				99AF34D2217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
+				99AF3506217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
 				99AF34E6217B05B300B7A332 /* VariableRatioState.swift in Sources */,
 				99AF34C5217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
 				99AF34E9217B05C000B7A332 /* VariableIntervalState.swift in Sources */,
 				99AF34D8217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
 				99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
+				99AF3509217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */,
 				99AF34F9217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */,
 				99AF34B2217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
 			);
@@ -757,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99AF34DE217AFECF00B7A332 /* FixedRatioState.swift in Sources */,
+				99AF3504217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */,
 				99AF3492217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
 				99AF34E1217B021700B7A332 /* FixedIntervalState.swift in Sources */,
 				99AF34D6217AF38900B7A332 /* VariableParameter.swift in Sources */,
@@ -767,12 +808,15 @@
 				99AF34C9217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */,
 				99AF3498217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
 				99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
+				99AF3519217B15E900B7A332 /* RandomTimeState.swift in Sources */,
 				99AF34F1217B068200B7A332 /* RatioState.swift in Sources */,
 				99AF34C3217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */,
+				99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
 				99AF34F4217B073C00B7A332 /* IntervalState.swift in Sources */,
 				99AF34CC217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */,
 				99AF34F7217B075600B7A332 /* TimeState.swift in Sources */,
+				99AF350D217B0BF000B7A332 /* RandomParameter.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
 				99AF34FD217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */,
 				99AF34E4217B029A00B7A332 /* FixedTimeState.swift in Sources */,
@@ -780,17 +824,21 @@
 				99AF34C0217AE03000B7A332 /* FixedRatioParameter.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
+				99AF3516217B15C600B7A332 /* RandomIntervalState.swift in Sources */,
 				99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
 				99AF34ED217B05CB00B7A332 /* VariableTimeState.swift in Sources */,
 				99AF3501217B099100B7A332 /* RandomTimeSchedule.swift in Sources */,
 				99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
+				99AF3513217B15AA00B7A332 /* RandomRatioState.swift in Sources */,
 				99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
+				99AF3507217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
 				99AF34E7217B05B300B7A332 /* VariableRatioState.swift in Sources */,
 				99AF34C6217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
 				99AF34EA217B05C000B7A332 /* VariableIntervalState.swift in Sources */,
 				99AF34D9217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
 				99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
+				99AF350A217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */,
 				99AF34FA217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */,
 				99AF34B3217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
 			);

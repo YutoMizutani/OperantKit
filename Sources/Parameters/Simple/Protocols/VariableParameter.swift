@@ -11,6 +11,8 @@ public protocol VariableParameter {
     var values: [Int] { get }
 }
 
+// MARK: - Variable parameters
+
 extension VariableRatioParameter: VariableParameter {
     init(value: Int, iterations: Int = 12) {
         self.value = value

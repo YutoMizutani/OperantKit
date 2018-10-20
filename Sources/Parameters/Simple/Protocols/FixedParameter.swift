@@ -11,6 +11,8 @@ public protocol FixedParameter {
     var value: Int { get }
 }
 
+// MARK: - Fixed parameters
+
 extension FixedRatioParameter: FixedParameter {}
 extension FixedIntervalParameter: FixedParameter {}
 extension FixedTimeParameter: FixedParameter {}

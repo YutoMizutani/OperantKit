@@ -13,3 +13,4 @@ public protocol TimeState {
 
 extension FixedTimeState: TimeState {}
 extension VariableTimeState: TimeState {}
+extension RandomTimeState: TimeState {}

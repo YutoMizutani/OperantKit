@@ -13,3 +13,4 @@ public protocol RatioState {
 
 extension FixedRatioState: RatioState {}
 extension VariableRatioState: RatioState {}
+extension RandomRatioState: RatioState {}
