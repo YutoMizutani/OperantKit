@@ -8,7 +8,7 @@
 import Foundation
 
 public struct VariableTimeExperiment {
-    public internal(set) var schedule: VariableTimeSchedule
-    public internal(set) var parameter: VariableTimeParameter
-    public internal(set) var state: VariableTimeState
+    public var schedule: VariableTimeSchedule
+    public var parameter: VariableTimeParameter
+    public var state: VariableTimeState
 }

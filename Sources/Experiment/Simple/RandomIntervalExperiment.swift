@@ -8,7 +8,7 @@
 import Foundation
 
 public struct RandomIntervalExperiment {
-    public internal(set) var schedule: RandomIntervalSchedule
-    public internal(set) var parameter: RandomIntervalParameter
-    public internal(set) var state: RandomIntervalState
+    public var schedule: RandomIntervalSchedule
+    public var parameter: RandomIntervalParameter
+    public var state: RandomIntervalState
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 public struct VariableRatioExperiment {
-    public internal(set) var schedule: VariableRatioSchedule
-    public internal(set) var parameter: VariableRatioParameter
-    public internal(set) var state: VariableRatioState
+    public var schedule: VariableRatioSchedule
+    public var parameter: VariableRatioParameter
+    public var state: VariableRatioState
 }
