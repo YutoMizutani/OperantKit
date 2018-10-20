@@ -8,7 +8,7 @@
 import Foundation
 
 /// Fleshler & Hoffman VI schedule generator
-public class FleshlerHoffman {
+public struct FleshlerHoffman {
     /// Fleshler, M., & Hoffman, H. S. (1962). A PROGRESSION FOR GENERATING VARIABLE‐INTERVAL SCHEDULES 1. Journal of the experimental analysis of behavior, 5(4), 529-530.
     public func generatedInterval(value v: Int, iterations n: Int) -> [Int] {
         guard n != 0 else { return [] }
