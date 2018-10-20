@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+public protocol FixedParameter {
+    var value: Int { get }
+}
+
+extension FixedRatioParameter: FixedParameter {}
+extension FixedIntervalParameter: FixedParameter {}
+extension FixedTimeParameter: FixedParameter {}

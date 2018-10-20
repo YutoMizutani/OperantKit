@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public struct FixedIntervalParameter {
+    public var value: Int
+}

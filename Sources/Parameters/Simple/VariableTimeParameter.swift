@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+public struct VariableTimeParameter {
+    public var value: Int
+    public var iterations: Int
+    public internal(set) var values: [Int]
+}
