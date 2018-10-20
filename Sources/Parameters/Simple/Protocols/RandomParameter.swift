@@ -33,4 +33,3 @@ extension RandomTimeParameter: RandomParameter {
         self.nextValue = RandomGenerator().generatedTime(value)
     }
 }
-
