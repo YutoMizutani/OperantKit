@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Fixed parameter
 public protocol FixedParameter {
     var value: Int { get }
 }

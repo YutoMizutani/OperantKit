@@ -7,9 +7,12 @@
 
 import RxCocoa
 
+/// Interval state
 public protocol IntervalState {
     var responseTime: BehaviorRelay<Int> { get set }
 }
+
+// MARK: - Interval states
 
 extension FixedIntervalState: IntervalState {}
 extension VariableIntervalState: IntervalState {}

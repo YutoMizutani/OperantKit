@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Random parameter
 public protocol RandomParameter {
     var nextValue: Int { get }
 }

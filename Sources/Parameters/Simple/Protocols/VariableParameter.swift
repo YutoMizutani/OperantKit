@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Variable parameter
 public protocol VariableParameter {
     var values: [Int] { get }
 }
