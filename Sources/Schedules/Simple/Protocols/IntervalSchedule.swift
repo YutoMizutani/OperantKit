@@ -16,3 +16,4 @@ public protocol IntervalSchedule {
 
 extension FixedIntervalSchedule: IntervalSchedule {}
 extension VariableIntervalSchedule: IntervalSchedule {}
+extension RandomIntervalSchedule: IntervalSchedule {}

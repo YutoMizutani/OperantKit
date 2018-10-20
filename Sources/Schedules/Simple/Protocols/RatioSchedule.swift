@@ -16,3 +16,4 @@ public protocol RatioSchedule {
 
 extension FixedRatioSchedule: RatioSchedule {}
 extension VariableRatioSchedule: RatioSchedule {}
+extension RandomRatioSchedule: RatioSchedule {}

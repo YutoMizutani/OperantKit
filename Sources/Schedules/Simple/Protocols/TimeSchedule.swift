@@ -16,3 +16,4 @@ public protocol TimeSchedule {
 
 extension FixedTimeSchedule: TimeSchedule {}
 extension VariableTimeSchedule: TimeSchedule {}
+extension RandomTimeSchedule: TimeSchedule {}

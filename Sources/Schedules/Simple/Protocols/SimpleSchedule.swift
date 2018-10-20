@@ -59,3 +59,23 @@ extension VariableTimeSchedule: SimpleSchedule {
         return self.decision(time, value: value)
     }
 }
+
+// MARK: - Random schedules
+
+extension RandomRatioSchedule: SimpleSchedule {
+    public func decision(_ responses: Int, _ time: Int, value: Int) -> Bool {
+        return self.decision(responses, value: value)
+    }
+}
+
+extension RandomIntervalSchedule: SimpleSchedule {
+    public func decision(_ responses: Int, _ time: Int, value: Int) -> Bool {
+        return self.decision(time, value: value)
+    }
+}
+
+extension RandomTimeSchedule: SimpleSchedule {
+    public func decision(_ responses: Int, _ time: Int, value: Int) -> Bool {
+        return self.decision(time, value: value)
+    }
+}
