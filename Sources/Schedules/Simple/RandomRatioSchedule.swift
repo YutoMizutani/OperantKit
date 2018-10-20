@@ -1,5 +1,5 @@
 //
-//  VariableRatioSchedule.swift
+//  RandomRatioSchedule.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/10/20.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// Variable ratio (VR) schedule
-public struct VariableRatioSchedule {
+/// Random ratio (RR) schedule
+public struct RandomRatioSchedule {
     /// Decision schedule
     public func decision(_ numOfResponses: Int, value: Int) -> Bool {
         return numOfResponses >= value

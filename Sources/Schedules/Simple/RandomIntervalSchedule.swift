@@ -1,5 +1,5 @@
 //
-//  VariableIntervalSchedule.swift
+//  RandomIntervalSchedule.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/10/20.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// Variable interval (VI) schedule
-public struct VariableIntervalSchedule {
+/// Random interval (RI) schedule
+public struct RandomIntervalSchedule {
     /// Decision schedule
     public func decision(_ elapsedTime: Int, value: Int) -> Bool {
         return elapsedTime >= value
