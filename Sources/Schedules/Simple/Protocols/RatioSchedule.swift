@@ -9,7 +9,7 @@ import Foundation
 
 /// Ratio schedule
 public protocol RatioSchedule {
-    func decision(_ responses: Int, value: Int) -> Bool
+    func decision(_ response: Int, value: Int) -> Bool
 }
 
 // MARK: - Ratio schedules
