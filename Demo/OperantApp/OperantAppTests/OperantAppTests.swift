@@ -6,8 +6,8 @@
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-import XCTest
 @testable import OperantApp
+import XCTest
 
 class OperantAppTests: XCTestCase {
 

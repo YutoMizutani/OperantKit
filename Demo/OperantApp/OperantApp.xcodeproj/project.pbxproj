@@ -302,7 +302,8 @@
 				991F049E217CCFCC00BB31B6 /* Sources */,
 				991F049F217CCFCC00BB31B6 /* Frameworks */,
 				991F04A0217CCFCC00BB31B6 /* Resources */,
-				991F04DB217CDEB700BB31B6 /* ShellScript */,
+				991F04DB217CDEB700BB31B6 /* Run Carthage Script */,
+				991F051A217CE25D00BB31B6 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -420,7 +421,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		991F04DB217CDEB700BB31B6 /* ShellScript */ = {
+		991F04DB217CDEB700BB31B6 /* Run Carthage Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -432,6 +433,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
+			name = "Run Carthage Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -439,6 +441,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		991F051A217CE25D00BB31B6 /* Run SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
