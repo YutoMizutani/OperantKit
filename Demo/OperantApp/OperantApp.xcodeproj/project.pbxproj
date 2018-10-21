@@ -24,6 +24,8 @@
 		991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0526217CF21900BB31B6 /* RatChamberLeverButton.swift */; };
 		991F0529217CF23400BB31B6 /* RatChamberLeverButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */; };
 		991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */; };
+		991F052F217CFC8000BB31B6 /* RatChamberView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */; };
+		991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0530217CFC9500BB31B6 /* RatChamberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		991F0526217CF21900BB31B6 /* RatChamberLeverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberLeverButton.swift; sourceTree = "<group>"; };
 		991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberLeverButton.xib; sourceTree = "<group>"; };
 		991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBaseView.swift; sourceTree = "<group>"; };
+		991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatChamberView.storyboard; sourceTree = "<group>"; };
+		991F0530217CFC9500BB31B6 /* RatChamberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +318,8 @@
 				991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */,
 				991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */,
 				991F051B217CE6B100BB31B6 /* RatChamberBaseView.xib */,
+				991F0530217CFC9500BB31B6 /* RatChamberView.swift */,
+				991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */,
 			);
 			path = RatChamber;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				991F0520217CE81400BB31B6 /* RatChamberLightView.xib in Resources */,
 				991F0507217CE0A200BB31B6 /* LaunchScreen.storyboard in Resources */,
 				991F04AD217CCFCF00BB31B6 /* Assets.xcassets in Resources */,
+				991F052F217CFC8000BB31B6 /* RatChamberView.storyboard in Resources */,
 				991F051C217CE6B100BB31B6 /* RatChamberBaseView.xib in Resources */,
 				991F0529217CF23400BB31B6 /* RatChamberLeverButton.xib in Resources */,
 			);
@@ -496,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
