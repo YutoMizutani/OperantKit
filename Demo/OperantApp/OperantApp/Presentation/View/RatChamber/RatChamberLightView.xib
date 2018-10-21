@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RatChamberLightView" customModule="OperantApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="142" height="142"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightBase" translatesAutoresizingMaskIntoConstraints="NO" id="ZDv-kO-Ccl">
+                    <rect key="frame" x="0.0" y="0.0" width="142" height="142"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZDv-kO-Ccl" secondAttribute="height" multiplier="1:1" id="ydT-Kq-AdB"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYu-sF-0Ot">
+                    <rect key="frame" x="3.5" y="6.5" width="128" height="127.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bYu-sF-0Ot" secondAttribute="height" multiplier="1:1" id="Qpj-Tk-cgD"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="128"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" white="0.19" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightMask" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-eO-Nko">
+                    <rect key="frame" x="3.5" y="6.5" width="128" height="127.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eyh-eO-Nko" secondAttribute="height" multiplier="1:1" id="fZ9-gH-CDS"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eyh-eO-Nko" firstAttribute="height" secondItem="bYu-sF-0Ot" secondAttribute="height" id="Ao7-SK-96k"/>
+                <constraint firstItem="ZDv-kO-Ccl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EX4-wt-Yo3"/>
+                <constraint firstItem="bYu-sF-0Ot" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="95:100" id="Gc5-D8-ZF8"/>
+                <constraint firstItem="eyh-eO-Nko" firstAttribute="width" secondItem="bYu-sF-0Ot" secondAttribute="width" id="KB6-qY-q7q"/>
+                <constraint firstItem="eyh-eO-Nko" firstAttribute="centerY" secondItem="bYu-sF-0Ot" secondAttribute="centerY" id="UwD-t0-CKF"/>
+                <constraint firstItem="bYu-sF-0Ot" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="99:100" id="eu9-au-Mvd"/>
+                <constraint firstItem="ZDv-kO-Ccl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="iAe-Gu-ehN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZDv-kO-Ccl" secondAttribute="bottom" id="iXG-CD-thc"/>
+                <constraint firstItem="eyh-eO-Nko" firstAttribute="centerX" secondItem="bYu-sF-0Ot" secondAttribute="centerX" id="rFh-b1-vKN"/>
+                <constraint firstItem="ZDv-kO-Ccl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rf6-nB-bLd"/>
+                <constraint firstItem="bYu-sF-0Ot" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="9:10" id="zUB-D4-N8z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bulbView" destination="bYu-sF-0Ot" id="BoQ-0I-9Ro"/>
+            </connections>
+            <point key="canvasLocation" x="97.599999999999994" y="-8.995502248875562"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="RatChamberLightBase" width="205.44000244140625" height="205.44000244140625"/>
+        <image name="RatChamberLightMask" width="184.80000305175781" height="184.80000305175781"/>
+    </resources>
+</document>
