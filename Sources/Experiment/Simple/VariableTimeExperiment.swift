@@ -7,8 +7,12 @@
 
 import Foundation
 
-public struct VariableTimeExperiment {
-    public var schedule: VariableTimeSchedule
-    public var parameter: VariableTimeParameter
-    public var state: VariableTimeState
+public struct VariableTimeExperiment: Experiment {
+    public typealias Schedulable = VariableTimeSchedule
+    public typealias Parameterable = VariableTimeParameter
+    public typealias Stateable = VariableTimeState
+
+    public var schedule: Schedulable
+    public var parameter: Parameterable
+    public var state: Stateable
 }

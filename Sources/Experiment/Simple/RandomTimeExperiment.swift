@@ -7,8 +7,12 @@
 
 import Foundation
 
-public struct RandomTimeExperiment {
-    public var schedule: RandomTimeSchedule
-    public var parameter: RandomTimeParameter
-    public var state: RandomTimeState
+public struct RandomTimeExperiment: Experiment {
+    public typealias Schedulable = RandomTimeSchedule
+    public typealias Parameterable = RandomTimeParameter
+    public typealias Stateable = RandomTimeState
+
+    public var schedule: Schedulable
+    public var parameter: Parameterable
+    public var state: Stateable
 }

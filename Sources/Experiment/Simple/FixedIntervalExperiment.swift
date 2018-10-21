@@ -7,8 +7,12 @@
 
 import Foundation
 
-public struct FixedIntervalExperiment {
-    public var schedule: FixedIntervalSchedule
-    public var parameter: FixedIntervalParameter
-    public var state: FixedIntervalState
+public struct FixedIntervalExperiment: Experiment {
+    public typealias Schedulable = FixedIntervalSchedule
+    public typealias Parameterable = FixedIntervalParameter
+    public typealias Stateable = FixedIntervalState
+
+    public var schedule: Schedulable
+    public var parameter: Parameterable
+    public var state: Stateable
 }
