@@ -27,6 +27,9 @@
 		991F052F217CFC8000BB31B6 /* RatChamberView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */; };
 		991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0530217CFC9500BB31B6 /* RatChamberView.swift */; };
 		991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0532217D13DE00BB31B6 /* Presenter.swift */; };
+		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
+		991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* RxSwift+.swift */; };
+		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatChamberView.storyboard; sourceTree = "<group>"; };
 		991F0530217CFC9500BB31B6 /* RatChamberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberView.swift; sourceTree = "<group>"; };
 		991F0532217D13DE00BB31B6 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
+		991F053F217D9E0F00BB31B6 /* RxSwift+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+.swift"; sourceTree = "<group>"; };
+		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				991F0532217D13DE00BB31B6 /* Presenter.swift */,
+				991F053D217D854100BB31B6 /* SessionPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				991F0515217CE0E000BB31B6 /* MainBuilder.swift */,
+				991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 		991F0516217CE0E000BB31B6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				991F053F217D9E0F00BB31B6 /* RxSwift+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -507,13 +516,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */,
+				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
+				991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
+				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
