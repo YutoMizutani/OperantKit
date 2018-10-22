@@ -9,6 +9,8 @@ import Foundation
 
 /// Variable time (VT) schedule
 public struct VariableTimeSchedule {
+    public init() {}
+
     /// Decision schedule
     public func decision(_ elapsedTime: Int, value: Int) -> Bool {
         return elapsedTime >= value

@@ -9,6 +9,8 @@ import Foundation
 
 /// Random time (RT) schedule
 public struct RandomTimeSchedule {
+    public init() {}
+
     /// Decision schedule
     public func decision(_ elapsedTime: Int, value: Int) -> Bool {
         return elapsedTime >= value

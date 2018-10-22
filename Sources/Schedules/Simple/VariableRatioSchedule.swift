@@ -9,6 +9,8 @@ import Foundation
 
 /// Variable ratio (VR) schedule
 public struct VariableRatioSchedule {
+    public init() {}
+
     /// Decision schedule
     public func decision(_ numOfResponses: Int, value: Int) -> Bool {
         return numOfResponses >= value
