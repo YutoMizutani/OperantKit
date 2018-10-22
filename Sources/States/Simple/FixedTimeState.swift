@@ -9,4 +9,8 @@ import RxCocoa
 
 public struct FixedTimeState {
     public var elapsedTime: BehaviorRelay<Int>
+
+    public init() {
+        self.elapsedTime = BehaviorRelay<Int>(value: 0)
+    }
 }
