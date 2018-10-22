@@ -15,6 +15,8 @@
 		991F0494217C211F00BB31B6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0492217C211F00BB31B6 /* Experiment.swift */; };
 		991F0497217C217B00BB31B6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0496217C217B00BB31B6 /* Schedule.swift */; };
 		991F0498217C217B00BB31B6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0496217C217B00BB31B6 /* Schedule.swift */; };
+		991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053A217D47EB00BB31B6 /* Observable+Rx.swift */; };
+		991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053A217D47EB00BB31B6 /* Observable+Rx.swift */; };
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9933437321296A6C00744042 /* OperantKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933436E21296A6C00744042 /* OperantKitTests.swift */; };
@@ -193,6 +195,7 @@
 		991F048E217C20E100BB31B6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		991F0492217C211F00BB31B6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
 		991F0496217C217B00BB31B6 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		991F053A217D47EB00BB31B6 /* Observable+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Rx.swift"; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334355212969E000744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +358,14 @@
 			children = (
 			);
 			path = Compound;
+			sourceTree = "<group>";
+		};
+		991F0539217D47D600BB31B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				991F053A217D47EB00BB31B6 /* Observable+Rx.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		994FFF5B212C27B3000F4702 /* Supporting Files */ = {
@@ -656,6 +667,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				991F0539217D47D600BB31B6 /* Extensions */,
 				99AF351A217B1B3700B7A332 /* Experiment */,
 				99AF34DA217AFBD100B7A332 /* States */,
 				99AF34BB217ADFF900B7A332 /* Parameters */,
@@ -941,6 +953,7 @@
 				99AF34D2217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF3506217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
+				991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */,
 				99AF3549217B214F00B7A332 /* RatioParameter.swift in Sources */,
 				99AF34E6217B05B300B7A332 /* VariableRatioState.swift in Sources */,
 				99AF34C5217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
@@ -1029,6 +1042,7 @@
 				99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
 				99AF3507217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
+				991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */,
 				99AF354A217B214F00B7A332 /* RatioParameter.swift in Sources */,
 				99AF34E7217B05B300B7A332 /* VariableRatioState.swift in Sources */,
 				99AF34C6217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
