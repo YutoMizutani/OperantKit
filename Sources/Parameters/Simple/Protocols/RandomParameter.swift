@@ -15,21 +15,21 @@ public protocol RandomParameter {
 // MARK: - Random parameters
 
 extension RandomRatioParameter: RandomParameter {
-    init(value: Int) {
+    public init(value: Int) {
         self.value = value
         self.nextValue = RandomGenerator().generatedRatio(value)
     }
 }
 
 extension RandomIntervalParameter: RandomParameter {
-    init(value: Int) {
+    public init(value: Int) {
         self.value = value
         self.nextValue = RandomGenerator().generatedInterval(value)
     }
 }
 
 extension RandomTimeParameter: RandomParameter {
-    init(value: Int) {
+    public init(value: Int) {
         self.value = value
         self.nextValue = RandomGenerator().generatedTime(value)
     }
