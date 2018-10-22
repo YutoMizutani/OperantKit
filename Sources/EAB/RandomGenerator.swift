@@ -8,6 +8,8 @@
 import Foundation
 
 public struct RandomGenerator {
+    public init() {}
+
     public func generatedRatio(_ value: Int) -> Int {
         guard value > 0 else { return 0 }
         return Int.random(in: 1...value)

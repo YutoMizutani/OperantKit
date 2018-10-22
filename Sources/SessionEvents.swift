@@ -14,7 +14,7 @@ public class SessionEvents {
     public private(set) var events: [EventMarker] = []
     public private(set) var willWrite: PublishRelay<Int> = PublishRelay()
 
-    init(eventIDs: [String]) {
+    public init(eventIDs: [String]) {
         self.eventIDs = eventIDs
     }
 
