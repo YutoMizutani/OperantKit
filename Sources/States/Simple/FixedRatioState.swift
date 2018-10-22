@@ -9,4 +9,8 @@ import RxCocoa
 
 public struct FixedRatioState {
     public var numOfResponse: BehaviorRelay<Int>
+
+    public init() {
+        self.numOfResponse = BehaviorRelay<Int>(value: 0)
+    }
 }

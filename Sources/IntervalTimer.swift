@@ -55,7 +55,7 @@ public class IntervalTimer {
     // MARK: - init
 
     /// - Parameter intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
-    init(_ intervalMilliseconds: Double = 0.1) {
+    public init(_ intervalMilliseconds: Double = 0.1) {
         self.intervalMilliseconds = intervalMilliseconds
         _ = self.resetValue()
     }
@@ -64,7 +64,7 @@ public class IntervalTimer {
     /// - Parameters:
     ///    - intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     ///    - isDebug: Use debug mode
-    convenience init(_ intervalMilliseconds: Double = 0.1, isDebug: Bool) {
+    public convenience init(_ intervalMilliseconds: Double = 0.1, isDebug: Bool) {
         self.init(intervalMilliseconds)
         self.isDebug = isDebug
     }
