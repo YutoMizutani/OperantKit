@@ -9,4 +9,8 @@ import Foundation
 
 public struct FixedRatioParameter {
     public var value: Int
+
+    public init(value: Int) {
+        self.value = value
+    }
 }

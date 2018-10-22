@@ -10,4 +10,9 @@ import Foundation
 public struct RandomRatioParameter {
     public var value: Int
     public internal(set) var nextValue: Int
+
+    public init(value: Int, nextValue: Int) {
+        self.value = value
+        self.nextValue = nextValue
+    }
 }
