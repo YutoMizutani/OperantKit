@@ -1,5 +1,5 @@
 //
-//  RatChamberTheme.swift
+//  RatChamberColor.swift
 //  OperantApp
 //
 //  Created by Yuto Mizutani on 2018/10/26.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct RatChamberTheme {
-    static let shared = RatChamberTheme()
+struct RatChamberColor {
+    static let shared = RatChamberColor()
 
     let light = Light.shared
 
@@ -26,5 +26,5 @@ struct RatChamberTheme {
 }
 
 extension UIColor {
-    static var ratChamber = RatChamberTheme.shared
+    static var ratChamber = RatChamberColor.shared
 }
