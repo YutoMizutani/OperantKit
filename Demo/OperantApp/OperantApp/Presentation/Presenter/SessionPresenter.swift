@@ -79,28 +79,3 @@ final class SessionPresenter: Presenter {
                                        reinforcement: reinforcement)
     }
 }
-
-public extension Observable {
-    func interval(_ timer: IntervalTimer) -> Observable<Int> {
-        return map { _ in timer.elapsed.milliseconds.now.value }
-    }
-}
-
-public extension Observable where E == Int {
-    func getResponse(_ timer: IntervalTimer) -> Observable<ResponseDetail> {
-        return map { ($0, timer.elapsed.milliseconds.now.value) }
-    }
-}
-
-extension ObservableType {
-    func mapToVoid() -> Observable<Void> {
-        return map { _ in }
-    }
-
-    func asDriverOnErrorJustComplete() -> Driver<E> {
-        return asDriver { error in
-            assertionFailure("Error \(error)")
-            return Driver.empty()
-        }
-    }
-}
