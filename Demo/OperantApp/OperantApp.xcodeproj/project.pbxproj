@@ -30,7 +30,10 @@
 		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
 		991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* RxSwift+.swift */; };
 		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
+		997494102183351D00A29745 /* RatChamberSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974940F2183351D00A29745 /* RatChamberSound.swift */; };
+		997494122183392F00A29745 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494112183392F00A29745 /* UIButton+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
+		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -82,7 +85,10 @@
 		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		991F053F217D9E0F00BB31B6 /* RxSwift+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+.swift"; sourceTree = "<group>"; };
 		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
+		9974940F2183351D00A29745 /* RatChamberSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberSound.swift; sourceTree = "<group>"; };
+		997494112183392F00A29745 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
+		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				991F053F217D9E0F00BB31B6 /* RxSwift+.swift */,
+				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
+				997494112183392F00A29745 /* UIButton+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				9989E22F2182CB5200932ED4 /* RatChamberColor.swift */,
+				9974940F2183351D00A29745 /* RatChamberSound.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -567,8 +576,11 @@
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
 				991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */,
+				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
+				997494122183392F00A29745 /* UIButton+Rx.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
+				997494102183351D00A29745 /* RatChamberSound.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
