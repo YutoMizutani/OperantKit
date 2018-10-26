@@ -24,12 +24,15 @@
 		991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0526217CF21900BB31B6 /* RatChamberLeverButton.swift */; };
 		991F0529217CF23400BB31B6 /* RatChamberLeverButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */; };
 		991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */; };
-		991F052F217CFC8000BB31B6 /* RatChamberView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */; };
+		991F052F217CFC8000BB31B6 /* RatChamberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991F052E217CFC8000BB31B6 /* RatChamberViewController.storyboard */; };
 		991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0530217CFC9500BB31B6 /* RatChamberView.swift */; };
 		991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0532217D13DE00BB31B6 /* Presenter.swift */; };
 		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
 		991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* RxSwift+.swift */; };
 		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
+		9989E22A2182C5EB00932ED4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E2292182C5EB00932ED4 /* UIColor+.swift */; };
+		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
+		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +76,15 @@
 		991F0526217CF21900BB31B6 /* RatChamberLeverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberLeverButton.swift; sourceTree = "<group>"; };
 		991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberLeverButton.xib; sourceTree = "<group>"; };
 		991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBaseView.swift; sourceTree = "<group>"; };
-		991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatChamberView.storyboard; sourceTree = "<group>"; };
+		991F052E217CFC8000BB31B6 /* RatChamberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatChamberViewController.storyboard; sourceTree = "<group>"; };
 		991F0530217CFC9500BB31B6 /* RatChamberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberView.swift; sourceTree = "<group>"; };
 		991F0532217D13DE00BB31B6 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		991F053F217D9E0F00BB31B6 /* RxSwift+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+.swift"; sourceTree = "<group>"; };
 		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
+		9989E2292182C5EB00932ED4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
+		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,8 +262,8 @@
 			children = (
 				991F0523217CF17000BB31B6 /* RatChamber */,
 				991F0500217CE0A200BB31B6 /* ViewController.swift */,
-				991F0501217CE0A200BB31B6 /* LaunchScreen.storyboard */,
 				991F0503217CE0A200BB31B6 /* ViewController.storyboard */,
+				991F0501217CE0A200BB31B6 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				991F053F217D9E0F00BB31B6 /* RxSwift+.swift */,
+				9989E2292182C5EB00932ED4 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -324,16 +331,42 @@
 		991F0523217CF17000BB31B6 /* RatChamber */ = {
 			isa = PBXGroup;
 			children = (
+				9989E22B2182C85D00932ED4 /* Atoms */,
+				9989E22C2182C88C00932ED4 /* Organisms */,
+				9989E22D2182C89E00932ED4 /* Pages */,
+			);
+			path = RatChamber;
+			sourceTree = "<group>";
+		};
+		9989E22B2182C85D00932ED4 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
 				991F0521217CEC9200BB31B6 /* RatChamberLightView.swift */,
 				991F051F217CE81400BB31B6 /* RatChamberLightView.xib */,
 				991F0526217CF21900BB31B6 /* RatChamberLeverButton.swift */,
 				991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */,
 				991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */,
 				991F051B217CE6B100BB31B6 /* RatChamberBaseView.xib */,
-				991F0530217CFC9500BB31B6 /* RatChamberView.swift */,
-				991F052E217CFC8000BB31B6 /* RatChamberView.storyboard */,
 			);
-			path = RatChamber;
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		9989E22C2182C88C00932ED4 /* Organisms */ = {
+			isa = PBXGroup;
+			children = (
+				991F0530217CFC9500BB31B6 /* RatChamberView.swift */,
+				99AF4FC82181F81200027605 /* RatChamberView.xib */,
+			);
+			path = Organisms;
+			sourceTree = "<group>";
+		};
+		9989E22D2182C89E00932ED4 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				99AF4FC62181F7D200027605 /* RatChamberViewController.swift */,
+				991F052E217CFC8000BB31B6 /* RatChamberViewController.storyboard */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,9 +479,10 @@
 				991F0520217CE81400BB31B6 /* RatChamberLightView.xib in Resources */,
 				991F0507217CE0A200BB31B6 /* LaunchScreen.storyboard in Resources */,
 				991F04AD217CCFCF00BB31B6 /* Assets.xcassets in Resources */,
-				991F052F217CFC8000BB31B6 /* RatChamberView.storyboard in Resources */,
+				991F052F217CFC8000BB31B6 /* RatChamberViewController.storyboard in Resources */,
 				991F051C217CE6B100BB31B6 /* RatChamberBaseView.xib in Resources */,
 				991F0529217CF23400BB31B6 /* RatChamberLeverButton.xib in Resources */,
+				99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,10 +554,12 @@
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
+				99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
 				991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
+				9989E22A2182C5EB00932ED4 /* UIColor+.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
 			);

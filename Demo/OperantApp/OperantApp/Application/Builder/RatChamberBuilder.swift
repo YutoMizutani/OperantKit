@@ -10,42 +10,15 @@ import OperantKit
 import RxCocoa
 import UIKit
 
-extension IntervalTimer {
-    convenience init() {
-    }
-}
-
-extension FixedRatioExperiment {
-    init(schedule: FixedRatioSchedule, parameter: FixedRatioParameter, state: FixedRatioState) {
-        self.schedule = schedule
-        self.parameter = parameter
-        self.state = state
-    }
-}
-
-extension FixedRatioSchedule {
-    init() {}
-}
-extension FixedRatioParameter {
-    init(value: Int) {
-        self.value = value
-    }
-}
-extension FixedRatioState {
-    init() {
-        self.numOfResponse = BehaviorRelay<Int>(value: 0)
-    }
-}
-
 struct RatChamberBuilder {
     func build() -> UIViewController? {
-        let storyboardID = "RatChamberView"
+        let storyboardID = "RatChamberViewController"
         let storyboard = UIStoryboard(name: storyboardID, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: storyboardID) as? RatChamberView
+        let viewController = storyboard.instantiateViewController(withIdentifier: storyboardID) as? RatChamberViewController
 
         viewController?.inject(
             presenter: SessionPresenter(
-                timer: IntervalTimer.new(),
+                timer: IntervalTimer(),
                 experiment: FixedRatioExperiment(
                     schedule: FixedRatioSchedule(),
                     parameter: FixedRatioParameter(value: 5),
@@ -53,9 +26,7 @@ struct RatChamberBuilder {
                 )
             )
         )
-        viewController?.title = "foo"
 
-        print(viewController?.title)
         return viewController
     }
 }
