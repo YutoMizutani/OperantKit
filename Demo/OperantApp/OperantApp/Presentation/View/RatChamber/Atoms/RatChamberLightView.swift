@@ -23,7 +23,7 @@ class RatChamberLightView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
 
-        bulbView.backgroundColor = bulbView.backgroundColor ?? UIColor.ratChamberLightOff
+        bulbView.backgroundColor = bulbView.backgroundColor ?? UIColor.ratChamber.light.off
     }
 
     override func layoutSubviews() {

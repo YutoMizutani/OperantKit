@@ -30,7 +30,7 @@
 		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
 		991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* RxSwift+.swift */; };
 		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
-		9989E22A2182C5EB00932ED4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E2292182C5EB00932ED4 /* UIColor+.swift */; };
+		9989E2302182CB5200932ED4 /* RatChamberTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberTheme.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -82,7 +82,7 @@
 		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		991F053F217D9E0F00BB31B6 /* RxSwift+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSwift+.swift"; sourceTree = "<group>"; };
 		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
-		9989E2292182C5EB00932ED4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		9989E22F2182CB5200932ED4 /* RatChamberTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberTheme.swift; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				991F053F217D9E0F00BB31B6 /* RxSwift+.swift */,
-				9989E2292182C5EB00932ED4 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -331,6 +330,7 @@
 		991F0523217CF17000BB31B6 /* RatChamber */ = {
 			isa = PBXGroup;
 			children = (
+				9989E22E2182CB2800932ED4 /* Utils */,
 				9989E22B2182C85D00932ED4 /* Atoms */,
 				9989E22C2182C88C00932ED4 /* Organisms */,
 				9989E22D2182C89E00932ED4 /* Pages */,
@@ -367,6 +367,14 @@
 				991F052E217CFC8000BB31B6 /* RatChamberViewController.storyboard */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9989E22E2182CB2800932ED4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9989E22F2182CB5200932ED4 /* RatChamberTheme.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,6 +559,7 @@
 			files = (
 				991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */,
 				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
+				9989E2302182CB5200932ED4 /* RatChamberTheme.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
@@ -559,7 +568,6 @@
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
 				991F0540217D9E0F00BB31B6 /* RxSwift+.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
-				9989E22A2182C5EB00932ED4 /* UIColor+.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
 			);
