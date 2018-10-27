@@ -15,4 +15,12 @@ public struct FixedIntervalExperiment: Experiment {
     public var schedule: Schedulable
     public var parameter: Parameterable
     public var state: Stateable
+
+    public init(schedule: Schedulable,
+                parameter: Parameterable,
+                state: Stateable) {
+        self.schedule = schedule
+        self.parameter = parameter
+        self.state = state
+    }
 }
