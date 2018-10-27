@@ -19,6 +19,14 @@ extension Reactive where Base: UIViewController {
         return self.sentMessage(#selector(self.base.viewWillAppear)).share(replay: 1)
     }
 
+    var viewDidAppear: Observable<[Any]> {
+        return self.sentMessage(#selector(self.base.viewDidAppear)).share(replay: 1)
+    }
+
+    var viewWillDisappear: Observable<[Any]> {
+        return self.sentMessage(#selector(self.base.viewWillDisappear)).share(replay: 1)
+    }
+
     var viewDidDisappear: Observable<[Any]> {
         return self.sentMessage(#selector(self.base.viewDidDisappear)).share(replay: 1)
     }
