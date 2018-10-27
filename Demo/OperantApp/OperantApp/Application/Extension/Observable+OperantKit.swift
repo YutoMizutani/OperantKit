@@ -11,12 +11,12 @@ import RxSwift
 
 public extension Observable {
     func interval(_ timer: IntervalTimer) -> Observable<Int> {
-        return map { _ in timer.elapsed.milliseconds.now.value }
+        return map { _ in timer.elapsed.milliseconds.value }
     }
 }
 
 public extension Observable where E == Int {
     func getResponse(_ timer: IntervalTimer) -> Observable<ResponseDetail> {
-        return map { ($0, timer.elapsed.milliseconds.now.value) }
+        return map { ($0, timer.elapsed.milliseconds.value) }
     }
 }

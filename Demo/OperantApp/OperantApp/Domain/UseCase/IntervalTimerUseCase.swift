@@ -37,7 +37,7 @@ struct IntervalTimerUseCase {
                 return Disposables.create()
             }
 
-            single(.success(timer.elapsed.milliseconds.now.value))
+            single(.success(timer.elapsed.milliseconds.value))
 
             return Disposables.create()
         }
