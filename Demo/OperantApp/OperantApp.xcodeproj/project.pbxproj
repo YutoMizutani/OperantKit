@@ -38,6 +38,7 @@
 		9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941B218414EB00A29745 /* EmptyWireframe.swift */; };
 		9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */; };
 		9974944B2184D23100A29745 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; };
+		9974944D2184E9AA00A29745 /* OperantKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
@@ -69,6 +70,17 @@
 			dstSubfolderSpec = 7;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9974944E2184E9AD00A29745 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9974944D2184E9AA00A29745 /* OperantKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -429,6 +441,7 @@
 				991F04DB217CDEB700BB31B6 /* Run Carthage Script */,
 				991F051A217CE25D00BB31B6 /* Run SwiftLint Script */,
 				997494492184C68000A29745 /* CopyFiles */,
+				9974944E2184E9AD00A29745 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
