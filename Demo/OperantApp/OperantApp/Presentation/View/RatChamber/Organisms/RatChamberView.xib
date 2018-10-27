@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="RatChamberView" customModule="OperantApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="275"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberWall" translatesAutoresizingMaskIntoConstraints="NO" id="W7A-o1-Ij6" customClass="RatChamberBaseView" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="307" height="275"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="W7A-o1-Ij6" secondAttribute="height" multiplier="307:275" id="WDA-Vo-koH"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ej0-FN-PU1" customClass="RatChamberLightView" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="34" y="82.5" width="45" height="45"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightBase" translatesAutoresizingMaskIntoConstraints="NO" id="Nrg-7D-C7k">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Nrg-7D-C7k" secondAttribute="height" multiplier="1:1" id="zrw-1e-i8g"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gR-ag-Xre">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="5gR-ag-Xre" secondAttribute="height" multiplier="1:1" id="6cW-su-RtX"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="128"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                    <color key="value" white="0.19" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightMask" translatesAutoresizingMaskIntoConstraints="NO" id="txD-74-AO2">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="txD-74-AO2" secondAttribute="height" multiplier="1:1" id="USh-k4-Oyy"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="5gR-ag-Xre" firstAttribute="centerX" secondItem="ej0-FN-PU1" secondAttribute="centerX" multiplier="95:100" id="2ZJ-PS-SY0"/>
+                        <constraint firstItem="txD-74-AO2" firstAttribute="height" secondItem="5gR-ag-Xre" secondAttribute="height" id="9hZ-3f-8wE"/>
+                        <constraint firstItem="Nrg-7D-C7k" firstAttribute="leading" secondItem="ej0-FN-PU1" secondAttribute="leading" id="AFJ-rU-b5Q"/>
+                        <constraint firstItem="Nrg-7D-C7k" firstAttribute="trailing" secondItem="ej0-FN-PU1" secondAttribute="trailing" id="JLt-AJ-dpq"/>
+                        <constraint firstItem="5gR-ag-Xre" firstAttribute="width" secondItem="ej0-FN-PU1" secondAttribute="width" multiplier="9:10" id="KQJ-JM-3UZ"/>
+                        <constraint firstItem="txD-74-AO2" firstAttribute="centerX" secondItem="5gR-ag-Xre" secondAttribute="centerX" id="U6s-aR-ymb"/>
+                        <constraint firstItem="txD-74-AO2" firstAttribute="width" secondItem="5gR-ag-Xre" secondAttribute="width" id="WIl-1X-v9U"/>
+                        <constraint firstItem="txD-74-AO2" firstAttribute="centerY" secondItem="5gR-ag-Xre" secondAttribute="centerY" id="b6M-Ds-hdh"/>
+                        <constraint firstAttribute="bottom" secondItem="Nrg-7D-C7k" secondAttribute="bottom" id="ik2-FW-tSd"/>
+                        <constraint firstItem="5gR-ag-Xre" firstAttribute="centerY" secondItem="ej0-FN-PU1" secondAttribute="centerY" multiplier="99:100" id="k6Q-61-6aV"/>
+                        <constraint firstItem="Nrg-7D-C7k" firstAttribute="top" secondItem="ej0-FN-PU1" secondAttribute="top" id="reQ-rl-3vq"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="bulbView" destination="5gR-ag-Xre" id="Ncu-6e-ewJ"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2d-xh-qbF" customClass="RatChamberLightView" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="131" y="82.5" width="45" height="45"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightBase" translatesAutoresizingMaskIntoConstraints="NO" id="3Cx-Kg-DKT">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3Cx-Kg-DKT" secondAttribute="height" multiplier="1:1" id="Y4e-lU-nHT"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InJ-jb-W6C">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="InJ-jb-W6C" secondAttribute="height" multiplier="1:1" id="oRt-qJ-jef"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="128"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                    <color key="value" white="0.19" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightMask" translatesAutoresizingMaskIntoConstraints="NO" id="hhV-ya-Fdc">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hhV-ya-Fdc" secondAttribute="height" multiplier="1:1" id="4Pc-gi-HTc"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hhV-ya-Fdc" firstAttribute="height" secondItem="InJ-jb-W6C" secondAttribute="height" id="1uC-ha-eOH"/>
+                        <constraint firstAttribute="bottom" secondItem="3Cx-Kg-DKT" secondAttribute="bottom" id="3fw-Pi-Wqm"/>
+                        <constraint firstItem="InJ-jb-W6C" firstAttribute="centerY" secondItem="P2d-xh-qbF" secondAttribute="centerY" multiplier="99:100" id="5Qe-ul-jUR"/>
+                        <constraint firstItem="InJ-jb-W6C" firstAttribute="centerX" secondItem="P2d-xh-qbF" secondAttribute="centerX" multiplier="95:100" id="D0W-2o-QWh"/>
+                        <constraint firstItem="3Cx-Kg-DKT" firstAttribute="top" secondItem="P2d-xh-qbF" secondAttribute="top" id="I5O-Gs-pw7"/>
+                        <constraint firstItem="InJ-jb-W6C" firstAttribute="width" secondItem="P2d-xh-qbF" secondAttribute="width" multiplier="9:10" id="ddL-Xr-daP"/>
+                        <constraint firstItem="3Cx-Kg-DKT" firstAttribute="trailing" secondItem="P2d-xh-qbF" secondAttribute="trailing" id="fFT-p2-dod"/>
+                        <constraint firstItem="hhV-ya-Fdc" firstAttribute="width" secondItem="InJ-jb-W6C" secondAttribute="width" id="g67-dt-aVf"/>
+                        <constraint firstItem="hhV-ya-Fdc" firstAttribute="centerY" secondItem="InJ-jb-W6C" secondAttribute="centerY" id="kIG-2y-i87"/>
+                        <constraint firstItem="3Cx-Kg-DKT" firstAttribute="leading" secondItem="P2d-xh-qbF" secondAttribute="leading" id="sqK-Dm-b1N"/>
+                        <constraint firstItem="hhV-ya-Fdc" firstAttribute="centerX" secondItem="InJ-jb-W6C" secondAttribute="centerX" id="xXC-i4-VMQ"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="bulbView" destination="InJ-jb-W6C" id="Qdw-Op-Xtr"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP8-Kf-Sdt" customClass="RatChamberLightView" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="235.5" y="82.5" width="45" height="45"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightBase" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-lI-ryP">
+                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="LHH-lI-ryP" secondAttribute="height" multiplier="1:1" id="O87-n6-MTP"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-iE-4Lc">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="X4c-iE-4Lc" secondAttribute="height" multiplier="1:1" id="wMt-rr-XIL"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="128"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                    <color key="value" white="0.19" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatChamberLightMask" translatesAutoresizingMaskIntoConstraints="NO" id="eLi-I1-P7a">
+                            <rect key="frame" x="1" y="2" width="40.5" height="40.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eLi-I1-P7a" secondAttribute="height" multiplier="1:1" id="fO2-BS-b6y"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="eLi-I1-P7a" firstAttribute="centerY" secondItem="X4c-iE-4Lc" secondAttribute="centerY" id="7DR-rA-J13"/>
+                        <constraint firstItem="LHH-lI-ryP" firstAttribute="top" secondItem="zP8-Kf-Sdt" secondAttribute="top" id="7wd-gN-fE0"/>
+                        <constraint firstItem="eLi-I1-P7a" firstAttribute="centerX" secondItem="X4c-iE-4Lc" secondAttribute="centerX" id="9xY-LQ-hHm"/>
+                        <constraint firstItem="LHH-lI-ryP" firstAttribute="trailing" secondItem="zP8-Kf-Sdt" secondAttribute="trailing" id="Ibh-Tu-d2s"/>
+                        <constraint firstItem="eLi-I1-P7a" firstAttribute="height" secondItem="X4c-iE-4Lc" secondAttribute="height" id="NxU-9i-3jc"/>
+                        <constraint firstItem="X4c-iE-4Lc" firstAttribute="width" secondItem="zP8-Kf-Sdt" secondAttribute="width" multiplier="9:10" id="Q4o-Uh-Idg"/>
+                        <constraint firstItem="LHH-lI-ryP" firstAttribute="leading" secondItem="zP8-Kf-Sdt" secondAttribute="leading" id="Xzw-c5-2TG"/>
+                        <constraint firstItem="X4c-iE-4Lc" firstAttribute="centerY" secondItem="zP8-Kf-Sdt" secondAttribute="centerY" multiplier="99:100" id="bJB-uc-3gH"/>
+                        <constraint firstItem="eLi-I1-P7a" firstAttribute="width" secondItem="X4c-iE-4Lc" secondAttribute="width" id="oCj-Xw-aYQ"/>
+                        <constraint firstAttribute="bottom" secondItem="LHH-lI-ryP" secondAttribute="bottom" id="uf4-vb-zJ5"/>
+                        <constraint firstItem="X4c-iE-4Lc" firstAttribute="centerX" secondItem="zP8-Kf-Sdt" secondAttribute="centerX" multiplier="95:100" id="w5c-9I-ThD"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="bulbView" destination="X4c-iE-4Lc" id="xfq-ds-bGB"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17B-uU-hQE" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="208" y="159.5" width="87.5" height="17.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="17B-uU-hQE" secondAttribute="height" multiplier="748:150" id="rOe-gn-TuR"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
+                    <state key="selected" image="RatChamberLeverEnabled"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-Me-Wja" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="5.5" y="159.5" width="87.5" height="17.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KSn-Me-Wja" secondAttribute="height" multiplier="748:150" id="klt-6Z-tAn"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
+                    <state key="selected" image="RatChamberLeverEnabled"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KSn-Me-Wja" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="16:100" id="4DD-wf-gdu"/>
+                <constraint firstItem="W7A-o1-Ij6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5sY-8V-Gfz"/>
+                <constraint firstItem="zP8-Kf-Sdt" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="450: 2750" id="DcY-c0-MP6"/>
+                <constraint firstItem="W7A-o1-Ij6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FCk-bW-9Ib"/>
+                <constraint firstItem="zP8-Kf-Sdt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="3:10" id="IOY-rf-Qse"/>
+                <constraint firstItem="KSn-Me-Wja" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="58:100" id="RWv-ag-BGi"/>
+                <constraint firstItem="KSn-Me-Wja" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2:7" id="WC7-Bs-aBC"/>
+                <constraint firstItem="ej0-FN-PU1" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="450: 2750" id="Xsh-jo-pnD"/>
+                <constraint firstItem="P2d-xh-qbF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a7S-iG-XnJ"/>
+                <constraint firstItem="P2d-xh-qbF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="450: 2750" id="aeV-GT-FfT"/>
+                <constraint firstItem="ej0-FN-PU1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="18:100" constant="1" id="etl-Iu-Ohg"/>
+                <constraint firstAttribute="bottom" secondItem="W7A-o1-Ij6" secondAttribute="bottom" id="fGO-kx-bOt"/>
+                <constraint firstAttribute="trailing" secondItem="W7A-o1-Ij6" secondAttribute="trailing" id="gl0-Cz-tK9"/>
+                <constraint firstItem="zP8-Kf-Sdt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="84:100" id="hg1-Z8-Xhz"/>
+                <constraint firstItem="ej0-FN-PU1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="3:10" id="rB1-00-Bjf"/>
+                <constraint firstItem="17B-uU-hQE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="58:100" id="v8i-o9-2M5"/>
+                <constraint firstItem="P2d-xh-qbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="3:10" id="weR-6s-FAl"/>
+                <constraint firstItem="17B-uU-hQE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="trailing" multiplier="82:100" id="xQ7-7A-IfJ"/>
+                <constraint firstItem="17B-uU-hQE" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2:7" id="y0I-ER-zxe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="baseView" destination="W7A-o1-Ij6" id="kZR-LX-ejv"/>
+                <outlet property="centerLight" destination="P2d-xh-qbF" id="aYE-A5-Yrw"/>
+                <outlet property="leftLever" destination="17B-uU-hQE" id="FZ6-t9-OQK"/>
+                <outlet property="leftLight" destination="ej0-FN-PU1" id="CaV-pG-JNq"/>
+                <outlet property="rightLever" destination="KSn-Me-Wja" id="pIv-6e-t22"/>
+                <outlet property="rightLight" destination="zP8-Kf-Sdt" id="aHg-s8-cub"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="59.820089955022496"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="RatChamberLeverDisabled" width="359" height="72"/>
+        <image name="RatChamberLeverEnabled" width="359" height="72"/>
+        <image name="RatChamberLightBase" width="205.44000244140625" height="205.44000244140625"/>
+        <image name="RatChamberLightMask" width="184.80000305175781" height="184.80000305175781"/>
+        <image name="RatChamberWall" width="1320" height="1474.56005859375"/>
+    </resources>
+</document>
