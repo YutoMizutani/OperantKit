@@ -57,6 +57,20 @@ struct IntervalTimerUseCase {
         }
     }
 
+    func resume() -> Single<Void> {
+        return Single.create { single in
+            guard let timer = self.timer else {
+                single(.error(RxError.noElements))
+                return Disposables.create()
+            }
+
+            timer.wakeUp()
+            single(.success(()))
+
+            return Disposables.create()
+        }
+    }
+
     func finish() -> Single<Void> {
         return Single.create { single in
             guard let timer = self.timer else {
