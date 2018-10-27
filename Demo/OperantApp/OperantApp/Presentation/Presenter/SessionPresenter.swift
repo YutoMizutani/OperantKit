@@ -82,7 +82,7 @@ final class SessionPresenter: Presenter {
         func decision(schedule: FixedRatioSchedule, parameter: FixedRatioParameter) -> (ResponseDetail) -> Bool {
             return { schedule.decision($0.count, value: parameter.value) }
         }
-        let decisionSchedule: (ResponseDetail) -> Bool = decision(schedule: self.experiment.schedule, parameter: self.experiment.parameter)
+//        let decisionSchedule: (ResponseDetail) -> Bool = decision(schedule: self.experiment.schedule, parameter: self.experiment.parameter)
 
 //        let reinforcement: [Observable<Void>] = input.responseTriggers.enumerated()
 //            .map { [unowned self] in
@@ -98,21 +98,5 @@ final class SessionPresenter: Presenter {
                                        pause: pause,
                                        end: end,
                                        reinforcement: [])
-    }
-}
-
-extension PrimitiveSequence where TraitType == SingleTrait {
-    public func asMaybe() -> PrimitiveSequence<MaybeTrait, Element> {
-        return self.asObservable().asMaybe()
-    }
-
-    public func asCompletable() -> PrimitiveSequence<CompletableTrait, Never> {
-        return self.asObservable().flatMap { _ in Observable<Never>.empty() }.asCompletable()
-    }
-}
-
-extension PrimitiveSequence where TraitType == CompletableTrait, ElementType == Swift.Never {
-    public func asMaybe() -> PrimitiveSequence<MaybeTrait, Element> {
-        return self.asObservable().asMaybe()
     }
 }
