@@ -26,8 +26,9 @@ class RatChamberViewController: UIViewController {
         super.viewDidLoad()
 
         let input = SessionPresenter.Input(
-            startTrigger: self.rx.viewDidLoad.mapToVoid()
-                .startWith(())
+            startTrigger: self.rx.viewDidAppear
+                .take(1)
+                .mapToVoid()
                 .asDriverOnErrorJustComplete(),
             pauseTrigger: self.rx.viewDidDisappear
                 .mapToVoid()
