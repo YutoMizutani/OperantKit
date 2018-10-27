@@ -28,7 +28,7 @@ deps-app:
 	cd $(FRAMEWORK_PATH); carthage build --no-skip-current --platform iOS
 	cd $(APP_PATH); $(CARTHAGE_UPDATE) --platform $(TARGET_IOS)
 build:
-	$(BUILDTOOL) $(SCHEME_APP_IOS)
+	make release-build-frameworks
 release-build-frameworks:
 	$(BUILDTOOL) -workspace $(WORKSPACE_FILENAME) -configuration Release -verbose -scheme "$(SCHEME_FRAMEWORK_IOS)"
 	$(BUILDTOOL) -workspace $(WORKSPACE_FILENAME) -configuration Release -verbose -scheme "$(SCHEME_FRAMEWORK_MACOS)"
