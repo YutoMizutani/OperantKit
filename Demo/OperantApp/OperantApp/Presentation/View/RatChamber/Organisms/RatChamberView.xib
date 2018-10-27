@@ -164,18 +164,18 @@
                         <outlet property="bulbView" destination="X4c-iE-4Lc" id="xfq-ds-bGB"/>
                     </connections>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17B-uU-hQE" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
-                    <rect key="frame" x="208" y="159.5" width="87.5" height="17.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="17B-uU-hQE" secondAttribute="height" multiplier="748:150" id="rOe-gn-TuR"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
-                    <state key="selected" image="RatChamberLeverEnabled"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-Me-Wja" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
                     <rect key="frame" x="5.5" y="159.5" width="87.5" height="17.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="KSn-Me-Wja" secondAttribute="height" multiplier="748:150" id="klt-6Z-tAn"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
+                    <state key="selected" image="RatChamberLeverEnabled"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17B-uU-hQE" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
+                    <rect key="frame" x="208" y="159.5" width="87.5" height="17.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="17B-uU-hQE" secondAttribute="height" multiplier="748:150" id="rOe-gn-TuR"/>
                     </constraints>
                     <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
                     <state key="selected" image="RatChamberLeverEnabled"/>
@@ -207,9 +207,9 @@
             <connections>
                 <outlet property="baseView" destination="W7A-o1-Ij6" id="kZR-LX-ejv"/>
                 <outlet property="centerLight" destination="P2d-xh-qbF" id="aYE-A5-Yrw"/>
-                <outlet property="leftLever" destination="17B-uU-hQE" id="FZ6-t9-OQK"/>
+                <outlet property="leftLever" destination="KSn-Me-Wja" id="pvo-JN-XyL"/>
                 <outlet property="leftLight" destination="ej0-FN-PU1" id="CaV-pG-JNq"/>
-                <outlet property="rightLever" destination="KSn-Me-Wja" id="pIv-6e-t22"/>
+                <outlet property="rightLever" destination="17B-uU-hQE" id="dnT-Fq-Jan"/>
                 <outlet property="rightLight" destination="zP8-Kf-Sdt" id="aHg-s8-cub"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="59.820089955022496"/>

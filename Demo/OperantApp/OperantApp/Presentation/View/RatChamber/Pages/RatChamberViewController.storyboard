@@ -170,18 +170,18 @@
                                             <outlet property="bulbView" destination="7Xt-KB-gY2" id="1ch-E4-LHf"/>
                                         </connections>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Df6-Tc-3Ue" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
-                                        <rect key="frame" x="313" y="240" width="132" height="26.666666666666686"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Df6-Tc-3Ue" secondAttribute="height" multiplier="748:150" id="Kjy-wb-Arg"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
-                                        <state key="selected" image="RatChamberLeverEnabled"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-be-jfc" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
                                         <rect key="frame" x="8" y="240" width="132" height="26.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SXY-be-jfc" secondAttribute="height" multiplier="748:150" id="h8H-Mh-Bxt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
+                                        <state key="selected" image="RatChamberLeverEnabled"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Df6-Tc-3Ue" customClass="RatChamberLeverButton" customModule="OperantApp" customModuleProvider="target">
+                                        <rect key="frame" x="313" y="240" width="132" height="26.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Df6-Tc-3Ue" secondAttribute="height" multiplier="748:150" id="Kjy-wb-Arg"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="RatChamberLeverDisabled"/>
                                         <state key="selected" image="RatChamberLeverEnabled"/>
@@ -212,9 +212,9 @@
                                 <connections>
                                     <outlet property="baseView" destination="F6b-om-waN" id="F1k-dR-MyH"/>
                                     <outlet property="centerLight" destination="MOy-AY-3k2" id="Y6P-HZ-kLv"/>
-                                    <outlet property="leftLever" destination="Df6-Tc-3Ue" id="YlR-7h-2G4"/>
+                                    <outlet property="leftLever" destination="SXY-be-jfc" id="viE-JP-JTP"/>
                                     <outlet property="leftLight" destination="pIE-zu-fuU" id="ny1-ve-z3U"/>
-                                    <outlet property="rightLever" destination="SXY-be-jfc" id="kfa-SD-e6a"/>
+                                    <outlet property="rightLever" destination="Df6-Tc-3Ue" id="MBQ-fs-and"/>
                                     <outlet property="rightLight" destination="ski-Ep-Aje" id="b0n-73-kR6"/>
                                 </connections>
                             </view>
