@@ -16,15 +16,15 @@ struct IntervalTimerUseCase {
         self.timer = timer ?? IntervalTimer()
     }
 
-    func start() -> Completable {
-        return Completable.create { completable in
+    func start() -> Single<Void> {
+        return Single.create { single in
             guard let timer = self.timer else {
-                completable(.error(RxError.noElements))
+                single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
             timer.start()
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
@@ -43,29 +43,29 @@ struct IntervalTimerUseCase {
         }
     }
 
-    func pause() -> Completable {
-        return Completable.create { completable in
+    func pause() -> Single<Void> {
+        return Single.create { single in
             guard let timer = self.timer else {
-                completable(.error(RxError.noElements))
+                single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
             timer.sleep()
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
     }
 
-    func finish() -> Completable {
-        return Completable.create { completable in
+    func finish() -> Single<Void> {
+        return Single.create { single in
             guard let timer = self.timer else {
-                completable(.error(RxError.noElements))
+                single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
             timer.finish()
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
