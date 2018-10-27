@@ -25,34 +25,46 @@ class RatChamberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let input = SessionPresenter.Input(
-//            startTrigger: self.rx.viewDidLoad.mapToVoid()
-//                .startWith(())
-//                .asDriverOnErrorJustComplete(),
-//            pauseTrigger: self.rx.viewDidDisappear
-//                .mapToVoid()
-//                .asDriverOnErrorJustComplete(),
-//            endTrigger: self.rx.viewDidDisappear
-//                .mapToVoid()
-//                .asDriverOnErrorJustComplete(),
-//            responseTriggers: [
-//                self.leftLever.rx.tap
-//                    .mapToVoid()
-//                    .asDriverOnErrorJustComplete(),
-//                self.rightLever.rx.tap
-//                    .mapToVoid()
-//                    .asDriverOnErrorJustComplete()
-//            ]
-//        )
+        let input = SessionPresenter.Input(
+            startTrigger: self.rx.viewDidLoad.mapToVoid()
+                .startWith(())
+                .asDriverOnErrorJustComplete(),
+            pauseTrigger: self.rx.viewDidDisappear
+                .mapToVoid()
+                .asDriverOnErrorJustComplete(),
+            endTrigger: self.rx.viewDidDisappear
+                .mapToVoid()
+                .asDriverOnErrorJustComplete(),
+            responseTriggers: [
+                chamberView.leftLever.rx.tap
+                    .mapToVoid()
+                    .asDriverOnErrorJustComplete(),
+                chamberView.rightLever.rx.tap
+                    .mapToVoid()
+                    .asDriverOnErrorJustComplete()
+            ]
+        )
 
-//        guard let presenter = presenter else { return }
-//
-//        let output = presenter.transform(input: input)
+        guard let presenter = presenter else { return }
 
-//        Observable.merge(output.reinforcement)
-//            .subscribe(onNext: { _ in
-//                print("Reinforcement!!")
-//            })
-//            .disposed(by: self.disposeBag)
+        let output = presenter.transform(input: input)
+
+        output.start
+            .map { _ in UIColor.ratChamber.light.on }
+            .asDriver()
+            .drive(chamberView.leftLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        Observable.merge(output.reinforcement + [output.pause.asObservable()])
+            .map { _ in UIColor.ratChamber.light.off }
+            .asDriverOnErrorJustComplete()
+            .drive(chamberView.leftLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        Observable.merge(output.reinforcement)
+            .subscribe(onNext: { _ in
+                print("Reinforcement!!")
+            })
+            .disposed(by: disposeBag)
     }
 }

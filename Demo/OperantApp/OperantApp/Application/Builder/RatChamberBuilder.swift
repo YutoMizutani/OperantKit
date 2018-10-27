@@ -18,7 +18,9 @@ struct RatChamberBuilder {
 
         viewController?.inject(
             presenter: SessionPresenter(
-                timer: IntervalTimer(),
+                useCase: EmptyUseCase(),
+                timerUseCase: IntervalTimerUseCase(),
+                wireframe: EmptyWireframe(),
                 experiment: FixedRatioExperiment(
                     schedule: FixedRatioSchedule(),
                     parameter: FixedRatioParameter(value: 5),
