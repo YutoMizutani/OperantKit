@@ -37,8 +37,6 @@
 		9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749419218414C700A29745 /* EmptyUseCase.swift */; };
 		9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941B218414EB00A29745 /* EmptyWireframe.swift */; };
 		9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */; };
-		997494412184956B00A29745 /* OperantKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9974943021848B2C00A29745 /* OperantKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		997494422184958400A29745 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9974943021848B2C00A29745 /* OperantKit.framework */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
@@ -69,7 +67,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				997494412184956B00A29745 /* OperantKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +109,6 @@
 		99749419218414C700A29745 /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
 		9974941B218414EB00A29745 /* EmptyWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWireframe.swift; sourceTree = "<group>"; };
 		9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
-		9974943021848B2C00A29745 /* OperantKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OperantKit.framework; path = "../../build/Release-iphoneos/OperantKit.framework"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +122,6 @@
 			files = (
 				991F04D9217CDE8800BB31B6 /* RxCocoa.framework in Frameworks */,
 				991F04DA217CDE8800BB31B6 /* RxSwift.framework in Frameworks */,
-				997494422184958400A29745 /* OperantKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +197,6 @@
 		991F04D4217CDE8700BB31B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9974943021848B2C00A29745 /* OperantKit.framework */,
 				991F04D6217CDE8700BB31B6 /* RxCocoa.framework */,
 				991F04D7217CDE8700BB31B6 /* RxSwift.framework */,
 			);
