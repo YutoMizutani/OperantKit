@@ -19,6 +19,8 @@ SCHEME_FRAMEWORK_MACOS=$(FRAMEWORK_PROJECT_NAME) macOS
 SCHEME_APP_IOS=$(APP_PROJECT_NAME)
 
 
+open:
+	open $(WORKSPACE_FILENAME)
 deps-all:
 	make deps-framework
 	make deps-app
