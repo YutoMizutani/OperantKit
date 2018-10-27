@@ -69,12 +69,20 @@ final class SessionPresenter: Presenter {
 
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
-            e.map { _ in i }
-                .scan(0) { n, _ in n + 1 }
-                .debug()
-                .map { _ in self.timerUseCase.getInterval() }
-                .debug()
+
+            let num = e.map { i }
                 .asObservable()
+
+            let numOfResponse = e
+                .scan(0) { n, _ in n + 1 }
+                .asObservable()
+
+            let milliseconds = e
+                .asObservable()
+                .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
+
+            Observable.zip(num, numOfResponse, milliseconds)
+                .debug()
                 .subscribe()
                 .disposed(by: disposeBag)
         }
