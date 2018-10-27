@@ -12,7 +12,7 @@ final class OperantKitTests: XCTestCase {
         let timer = IntervalTimer(0.1)
         timer.start()
         usleep(UInt32(targetMilliseconds) * 1000)
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetMilliseconds - self.toleranceDelay)
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.value, targetMilliseconds - self.toleranceDelay)
         timer.finish()
     }
 
@@ -43,12 +43,12 @@ final class OperantKitTests: XCTestCase {
                 // Decision equal event time and ids
                 XCTAssertEqual(event.milliseconds, randomTimes[event.id])
                 // Decision equal event time and current elapsed time
-                XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, event.milliseconds)
+                XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.value, event.milliseconds)
             })
             .disposed(by: disposeBag)
         timer.start()
         sleep(UInt32(targetSeconds))
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetSeconds * 1000 - self.toleranceDelay)
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.value, targetSeconds * 1000 - self.toleranceDelay)
         timer.finish()
         #endif
     }
@@ -67,7 +67,7 @@ final class OperantKitTests: XCTestCase {
             .disposed(by: disposeBag)
         timer.start()
         sleep(UInt32(targetSeconds))
-        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.now.value, targetSeconds * 1000 - self.toleranceDelay)
+        XCTAssertGreaterThanOrEqual(timer.elapsed.milliseconds.value, targetSeconds * 1000 - self.toleranceDelay)
         timer.finish()
         #endif
     }
