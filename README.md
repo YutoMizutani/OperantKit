@@ -4,5 +4,17 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/YutoMizutani/OperantKit)
 
-OperantKit is a tool for operant conditioning experiments for Swift.
+OperantKit is a tool kit for operant conditioning experiments written in Swift.
 
+## Installation
+
+Using `make` command,
+
+```
+$ make deps-all
+$ make open
+```
+
+## License
+
+OperantKit is available under the [MIT license](https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE).
