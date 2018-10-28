@@ -32,7 +32,6 @@
 		997494102183351D00A29745 /* RatChamberSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974940F2183351D00A29745 /* RatChamberSound.swift */; };
 		997494122183392F00A29745 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494112183392F00A29745 /* UIButton+Rx.swift */; };
 		99749414218374AF00A29745 /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749413218374AF00A29745 /* ObservableType+.swift */; };
-		99749416218374D400A29745 /* Observable+OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749415218374D400A29745 /* Observable+OperantKit.swift */; };
 		9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941721840F3C00A29745 /* UIView+Rx.swift */; };
 		9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749419218414C700A29745 /* EmptyUseCase.swift */; };
 		9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941B218414EB00A29745 /* EmptyWireframe.swift */; };
@@ -118,7 +117,6 @@
 		9974940F2183351D00A29745 /* RatChamberSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberSound.swift; sourceTree = "<group>"; };
 		997494112183392F00A29745 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		99749413218374AF00A29745 /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
-		99749415218374D400A29745 /* Observable+OperantKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+OperantKit.swift"; sourceTree = "<group>"; };
 		9974941721840F3C00A29745 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		99749419218414C700A29745 /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
 		9974941B218414EB00A29745 /* EmptyWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWireframe.swift; sourceTree = "<group>"; };
@@ -367,7 +365,6 @@
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
-				99749415218374D400A29745 /* Observable+OperantKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -623,7 +620,6 @@
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
 				99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */,
-				99749416218374D400A29745 /* Observable+OperantKit.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
 				991F0540217D9E0F00BB31B6 /* UIViewController+Rx.swift in Sources */,
