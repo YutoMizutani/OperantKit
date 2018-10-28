@@ -13,7 +13,7 @@ import RxSwift
 public typealias ResponseDetail = (count: Int, time: Int)
 
 final class SessionPresenter: Presenter {
-    typealias UseCaseType = EmptyUseCase
+    typealias ScheduleUseCaseType = ScheduleUseCase
     typealias TimerUseCaseType = IntervalTimerUseCase
     typealias WireframeType = EmptyWireframe
     typealias ExperimentType = FixedRatioExperiment
@@ -34,17 +34,17 @@ final class SessionPresenter: Presenter {
         let reinforcement: [Observable<Void>]
     }
 
-    private let useCase: UseCaseType
+    private let scheduleUseCase: ScheduleUseCaseType
     private let timerUseCase: TimerUseCaseType
     private let wireframe: WireframeType
     private let experiment: ExperimentType
     private let disposeBag = DisposeBag()
 
-    init(useCase: UseCaseType,
+    init(scheduleUseCase: ScheduleUseCaseType,
          timerUseCase: TimerUseCaseType,
          wireframe: WireframeType,
          experiment: ExperimentType) {
-        self.useCase = useCase
+        self.scheduleUseCase = scheduleUseCase
         self.timerUseCase = timerUseCase
         self.wireframe = wireframe
         self.experiment = experiment
@@ -75,6 +75,8 @@ final class SessionPresenter: Presenter {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
+        var reinforcement: [Observable<Void>] = []
+
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
 
@@ -89,31 +91,26 @@ final class SessionPresenter: Presenter {
                 .asObservable()
                 .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
 
-            Observable.zip(num, numOfResponse, milliseconds)
-                .debug()
-                .subscribe()
-                .disposed(by: disposeBag)
+            reinforcement.append(
+                Observable.zip(num, numOfResponse, milliseconds)
+                    .debug()
+                    .filter { $0.0 == 0 }
+                    .map { ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2) }
+                    .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0) }
+                    .filter { $0 }
+                    .mapToVoid()
+                    .share(replay: 1)
+            )
         }
 
         func decision(schedule: FixedRatioSchedule, parameter: FixedRatioParameter) -> (ResponseDetail) -> Bool {
             return { schedule.decision($0.count, value: parameter.value) }
         }
-//        let decisionSchedule: (ResponseDetail) -> Bool = decision(schedule: self.experiment.schedule, parameter: self.experiment.parameter)
-
-//        let reinforcement: [Observable<Void>] = input.responseTriggers.enumerated()
-//            .map { [unowned self] in
-//                $0.element.asObservable()
-//                    .scan(0) { n, _ in n + 1 }
-//                    .getResponse(1)
-//                    .filter({ decisionSchedule($0) })
-//                    .mapToVoid()
-//                    .share(replay: 1)
-//            }
 
         return SessionPresenter.Output(start: start,
                                        pause: pause,
                                        resume: resume,
                                        end: end,
-                                       reinforcement: [])
+                                       reinforcement: reinforcement)
     }
 }

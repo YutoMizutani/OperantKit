@@ -40,6 +40,9 @@
 		9974944D2184E9AA00A29745 /* OperantKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		997494502185003700A29745 /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974944F2185003700A29745 /* UIApplication+Rx.swift */; };
 		997494532185560D00A29745 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494522185560D00A29745 /* UIViewController+.swift */; };
+		997494552185FD2100A29745 /* FR5UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494542185FD2100A29745 /* FR5UseCase.swift */; };
+		9974945C2186047300A29745 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945B2186047200A29745 /* ResponseEntity.swift */; };
+		9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945D2186144700A29745 /* UIControl+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
@@ -125,6 +128,9 @@
 		9974944A2184D23100A29745 /* OperantKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OperantKit.framework; path = ../../Carthage/Build/iOS/OperantKit.framework; sourceTree = "<group>"; };
 		9974944F2185003700A29745 /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		997494522185560D00A29745 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		997494542185FD2100A29745 /* FR5UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FR5UseCase.swift; sourceTree = "<group>"; };
+		9974945B2186047200A29745 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		9974945D2186144700A29745 /* UIControl+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +191,7 @@
 			children = (
 				991F0519217CE17400BB31B6 /* Supporting Files */,
 				991F0509217CE0B400BB31B6 /* Application */,
-				991F04F8217CE0A200BB31B6 /* Data */,
+				997494592186047200A29745 /* Data */,
 				991F04F5217CE0A200BB31B6 /* Domain */,
 				991F04FD217CE0A200BB31B6 /* Presentation */,
 				991F04AC217CCFCF00BB31B6 /* Assets.xcassets */,
@@ -242,47 +248,9 @@
 			children = (
 				99749419218414C700A29745 /* EmptyUseCase.swift */,
 				9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */,
+				997494542185FD2100A29745 /* FR5UseCase.swift */,
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		991F04F8217CE0A200BB31B6 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				991F04F9217CE0A200BB31B6 /* Repository */,
-				991F04FA217CE0A200BB31B6 /* Response */,
-				991F04FB217CE0A200BB31B6 /* Entity */,
-				991F04FC217CE0A200BB31B6 /* DataStore */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		991F04F9217CE0A200BB31B6 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		991F04FA217CE0A200BB31B6 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		991F04FB217CE0A200BB31B6 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		991F04FC217CE0A200BB31B6 /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataStore;
 			sourceTree = "<group>";
 		};
 		991F04FD217CE0A200BB31B6 /* Presentation */ = {
@@ -365,6 +333,7 @@
 				9974944F2185003700A29745 /* UIApplication+Rx.swift */,
 				991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */,
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
+				9974945D2186144700A29745 /* UIControl+Rx.swift */,
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
 				997494522185560D00A29745 /* UIViewController+.swift */,
@@ -389,6 +358,22 @@
 				9989E22D2182C89E00932ED4 /* Pages */,
 			);
 			path = RatChamber;
+			sourceTree = "<group>";
+		};
+		997494592186047200A29745 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9974945A2186047200A29745 /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9974945A2186047200A29745 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9974945B2186047200A29745 /* ResponseEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		9989E22B2182C85D00932ED4 /* Atoms */ = {
@@ -629,12 +614,15 @@
 				997494532185560D00A29745 /* UIViewController+.swift in Sources */,
 				9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */,
 				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
+				997494552185FD2100A29745 /* FR5UseCase.swift in Sources */,
 				997494122183392F00A29745 /* UIButton+Rx.swift in Sources */,
 				9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
+				9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
 				997494102183351D00A29745 /* RatChamberSound.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
+				9974945C2186047300A29745 /* ResponseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

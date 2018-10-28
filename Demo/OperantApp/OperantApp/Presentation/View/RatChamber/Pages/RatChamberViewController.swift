@@ -62,8 +62,39 @@ class RatChamberViewController: UIViewController {
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        Observable.merge(output.reinforcement)
+        let reinforcementOnEvent = Observable.merge(output.reinforcement)
+            .share(replay: 1)
+
+        let iri: RxTimeInterval = 5
+        let reinforcementOffEvent = reinforcementOnEvent
+            .delay(iri, scheduler: SerialDispatchQueueScheduler(qos: .default))
+            .share(replay: 1)
+
+        reinforcementOffEvent
+            .map { true }
+            .asDriverOnErrorJustComplete()
+            .drive(chamberView.leftLever.rx.isSelected)
+            .disposed(by: disposeBag)
+
+        reinforcementOffEvent
+            .map { _ in UIColor.ratChamber.light.on }
+            .asDriverOnErrorJustComplete()
+            .drive(chamberView.leftLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        reinforcementOnEvent
+            .map { false }
+            .asDriverOnErrorJustComplete()
+            .drive(chamberView.leftLever.rx.isSelected)
+            .disposed(by: disposeBag)
+
+        let feederSoundPlayer = RatChamberSound.shared.feeder.operatingSound
+        feederSoundPlayer?.prepareToPlay()
+        reinforcementOnEvent
             .subscribe(onNext: { _ in
+                feederSoundPlayer?.currentTime = 0
+                feederSoundPlayer?.play()
+
                 print("Reinforcement!!")
             })
             .disposed(by: disposeBag)
