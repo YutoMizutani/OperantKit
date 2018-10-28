@@ -161,7 +161,7 @@ private extension IntervalTimer {
         }
 
         // メインでループを回すと他の描画処理ができなくなるため，グローバルスレッドを利用
-        self.asyncQueue.async {
+        self.asyncQueue.async { [unowned self] in
             // グローバルスレッドでループを回すと完了を待たない。1つのループを回すため，グローバルスレッド内で同期処理を行う。
             self.syncQueue.sync {
                 runLoop()
