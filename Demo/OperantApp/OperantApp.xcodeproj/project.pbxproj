@@ -39,6 +39,7 @@
 		9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */; };
 		9974944B2184D23100A29745 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; };
 		9974944D2184E9AA00A29745 /* OperantKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		997494502185003700A29745 /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974944F2185003700A29745 /* UIApplication+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
@@ -123,6 +124,7 @@
 		9974941B218414EB00A29745 /* EmptyWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWireframe.swift; sourceTree = "<group>"; };
 		9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
 		9974944A2184D23100A29745 /* OperantKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OperantKit.framework; path = ../../Carthage/Build/iOS/OperantKit.framework; sourceTree = "<group>"; };
+		9974944F2185003700A29745 /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
@@ -359,12 +361,13 @@
 		991F0516217CE0E000BB31B6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */,
-				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
-				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				99749413218374AF00A29745 /* ObservableType+.swift */,
-				99749415218374D400A29745 /* Observable+OperantKit.swift */,
+				9974944F2185003700A29745 /* UIApplication+Rx.swift */,
+				991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */,
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
+				997494112183392F00A29745 /* UIButton+Rx.swift */,
+				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
+				99749415218374D400A29745 /* Observable+OperantKit.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				991F0531217CFC9500BB31B6 /* RatChamberView.swift in Sources */,
 				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
 				9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */,
+				997494502185003700A29745 /* UIApplication+Rx.swift in Sources */,
 				9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */,
 				99749414218374AF00A29745 /* ObservableType+.swift in Sources */,
 				9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */,
