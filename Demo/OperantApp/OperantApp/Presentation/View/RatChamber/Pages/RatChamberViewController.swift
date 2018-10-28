@@ -26,16 +26,19 @@ class RatChamberViewController: UIViewController {
         super.viewDidLoad()
 
         let input = SessionPresenter.Input(
-            startTrigger: self.rx.viewDidAppear
+            startTrigger: rx.viewDidAppear
                 .take(1)
                 .mapToVoid()
                 .asDriverOnErrorJustComplete(),
-            pauseTrigger: self.rx.viewDidDisappear
+            pauseTrigger: UIApplication.shared.rx.applicationDidEnterBackground
                 .mapToVoid()
-                .asDriverOnErrorJustComplete(),
-            endTrigger: self.rx.viewDidDisappear
+                .asDriver(onErrorJustReturn: ()),
+            resumeTrigger: UIApplication.shared.rx.applicationDidBecomeActive
                 .mapToVoid()
-                .asDriverOnErrorJustComplete(),
+                .asDriver(onErrorJustReturn: ()),
+            endTrigger: UIApplication.shared.rx.applicationWillTerminate
+                .mapToVoid()
+                .asDriver(onErrorJustReturn: ()),
             responseTriggers: [
                 chamberView.leftLever.rx.tap
                     .mapToVoid()
@@ -50,8 +53,14 @@ class RatChamberViewController: UIViewController {
 
         let output = presenter.transform(input: input)
 
-        output.start
+        Driver.merge(output.start, output.resume)
             .map { _ in UIColor.ratChamber.light.on }
+            .asDriver()
+            .drive(chamberView.leftLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        Driver.merge(output.pause, output.end)
+            .map { _ in UIColor.ratChamber.light.off }
             .asDriver()
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)

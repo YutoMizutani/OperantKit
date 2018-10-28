@@ -21,6 +21,7 @@ final class SessionPresenter: Presenter {
     struct Input {
         let startTrigger: Driver<Void>
         let pauseTrigger: Driver<Void>
+        let resumeTrigger: Driver<Void>
         let endTrigger: Driver<Void>
         let responseTriggers: [Driver<Void>]
     }
@@ -28,6 +29,7 @@ final class SessionPresenter: Presenter {
     struct Output {
         let start: Driver<Void>
         let pause: Driver<Void>
+        let resume: Driver<Void>
         let end: Driver<Void>
         let reinforcement: [Observable<Void>]
     }
@@ -58,6 +60,12 @@ final class SessionPresenter: Presenter {
         let pause: Driver<Void> = input.pauseTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.pause() }
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+
+        let resume: Driver<Void> = input.resumeTrigger
+            .asObservable()
+            .flatMap { [unowned self] in self.timerUseCase.resume() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
@@ -104,6 +112,7 @@ final class SessionPresenter: Presenter {
 
         return SessionPresenter.Output(start: start,
                                        pause: pause,
+                                       resume: resume,
                                        end: end,
                                        reinforcement: [])
     }
