@@ -32,13 +32,13 @@ class RatChamberViewController: UIViewController {
                 .asDriverOnErrorJustComplete(),
             pauseTrigger: UIApplication.shared.rx.applicationDidEnterBackground
                 .mapToVoid()
-                .asDriver(onErrorJustReturn: ()),
+                .asDriverOnErrorJustComplete(),
             resumeTrigger: UIApplication.shared.rx.applicationDidBecomeActive
                 .mapToVoid()
-                .asDriver(onErrorJustReturn: ()),
+                .asDriverOnErrorJustComplete(),
             endTrigger: UIApplication.shared.rx.applicationWillTerminate
                 .mapToVoid()
-                .asDriver(onErrorJustReturn: ()),
+                .asDriverOnErrorJustComplete(),
             responseTriggers: [
                 chamberView.leftLever.rx.tap
                     .mapToVoid()
