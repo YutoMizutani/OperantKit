@@ -31,7 +31,7 @@ final class SessionPresenter: Presenter {
         let pause: Driver<Void>
         let resume: Driver<Void>
         let end: Driver<Void>
-        let reinforcement: [Observable<Void>]
+        let reinforcements: [Observable<Void>]
     }
 
     private let scheduleUseCase: ScheduleUseCaseType
@@ -75,32 +75,47 @@ final class SessionPresenter: Presenter {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
-        var reinforcement: [Observable<Void>] = []
+        var reinforcements: [Observable<Void>] = []
 
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
+            var reinforcementEntity = ResponseEntity(numOfResponse: 0, milliseconds: 0)
 
             let num = e.map { i }
                 .asObservable()
 
             let numOfResponse = e
                 .scan(0) { n, _ in n + 1 }
+                .map { $0 - reinforcementEntity.numOfResponse }
                 .asObservable()
 
             let milliseconds = e
                 .asObservable()
                 .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
 
-            reinforcement.append(
-                Observable.zip(num, numOfResponse, milliseconds)
-                    .debug()
+            let response = Observable.zip(num, numOfResponse, milliseconds)
+                .debug()
+                .map { ($0.0, ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2)) }
+                .share(replay: 1)
+
+            let reinforcement = response
                     .filter { $0.0 == 0 }
-                    .map { ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2) }
-                    .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0) }
+                    .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0.1) }
                     .filter { $0 }
                     .mapToVoid()
                     .share(replay: 1)
-            )
+
+            reinforcement.withLatestFrom(response)
+                .map { $0.1 }
+                .subscribe(onNext: { response in
+                    reinforcementEntity = ResponseEntity(
+                        numOfResponse: reinforcementEntity.numOfResponse + response.numOfResponse,
+                        milliseconds: response.milliseconds
+                    )
+                })
+                .disposed(by: disposeBag)
+
+            reinforcements.append(reinforcement)
         }
 
         func decision(schedule: FixedRatioSchedule, parameter: FixedRatioParameter) -> (ResponseDetail) -> Bool {
@@ -111,6 +126,6 @@ final class SessionPresenter: Presenter {
                                        pause: pause,
                                        resume: resume,
                                        end: end,
-                                       reinforcement: reinforcement)
+                                       reinforcements: reinforcements)
     }
 }

@@ -32,9 +32,11 @@ class RatChamberViewController: UIViewController {
             endTrigger: endTrigger,
             responseTriggers: [
                 chamberView.leftLever.rx.tap
+                    .filter { [unowned self] in self.chamberView.leftLever.isSelected }
                     .mapToVoid()
                     .asDriverOnErrorJustComplete(),
                 chamberView.rightLever.rx.tap
+                    .filter { [unowned self] in self.chamberView.rightLever.isSelected }
                     .mapToVoid()
                     .asDriverOnErrorJustComplete()
             ]
@@ -56,18 +58,18 @@ class RatChamberViewController: UIViewController {
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        Observable.merge(output.reinforcement + [output.pause.asObservable()])
+        Observable.merge(output.reinforcements + [output.pause.asObservable()])
             .map { _ in UIColor.ratChamber.light.off }
             .asDriverOnErrorJustComplete()
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        let reinforcementOnEvent = Observable.merge(output.reinforcement)
+        let reinforcementOnEvent = Observable.merge(output.reinforcements)
             .share(replay: 1)
 
-        let iri: RxTimeInterval = 5
+        let interReinforcementInterval: RxTimeInterval = 5
         let reinforcementOffEvent = reinforcementOnEvent
-            .delay(iri, scheduler: SerialDispatchQueueScheduler(qos: .default))
+            .delay(interReinforcementInterval, scheduler: SerialDispatchQueueScheduler(qos: .default))
             .share(replay: 1)
 
         reinforcementOffEvent
