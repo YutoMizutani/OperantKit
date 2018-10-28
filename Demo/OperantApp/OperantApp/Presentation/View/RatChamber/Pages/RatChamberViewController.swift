@@ -26,19 +26,10 @@ class RatChamberViewController: UIViewController {
         super.viewDidLoad()
 
         let input = SessionPresenter.Input(
-            startTrigger: rx.viewDidAppear
-                .take(1)
-                .mapToVoid()
-                .asDriverOnErrorJustComplete(),
-            pauseTrigger: UIApplication.shared.rx.applicationDidEnterBackground
-                .mapToVoid()
-                .asDriverOnErrorJustComplete(),
-            resumeTrigger: UIApplication.shared.rx.applicationDidBecomeActive
-                .mapToVoid()
-                .asDriverOnErrorJustComplete(),
-            endTrigger: UIApplication.shared.rx.applicationWillTerminate
-                .mapToVoid()
-                .asDriverOnErrorJustComplete(),
+            startTrigger: startTrigger,
+            pauseTrigger: pauseTrigger,
+            resumeTrigger: resumeTrigger,
+            endTrigger: endTrigger,
             responseTriggers: [
                 chamberView.leftLever.rx.tap
                     .mapToVoid()
