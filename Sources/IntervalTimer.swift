@@ -30,7 +30,7 @@ public class IntervalTimer {
     /// The stop looping during the session.
     public private(set) var isSleeping: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     /// Elapsed time
-    public private(set) var elapsed: (date: Date, milliseconds: (previous: Int, now: BehaviorRelay<Int>)) = (Date(), (0, BehaviorRelay(value: 0)))
+    public private(set) var elapsed: (date: Date, milliseconds: BehaviorRelay<Int>) = (Date(), BehaviorRelay(value: 0))
 
     // MARK: - Events
 
@@ -79,8 +79,7 @@ private extension IntervalTimer {
         self.isSleeping.accept(true)
         let date = Date()
         self.elapsed.date = date
-        self.elapsed.milliseconds.previous = 0
-        self.elapsed.milliseconds.now.accept(0)
+        self.elapsed.milliseconds.accept(0)
         #if DEBUG
         self.debugText.accept(nil)
         self.debugLoopValue = (1, 0)
@@ -106,7 +105,7 @@ private extension IntervalTimer {
                         self.debugLoopValue.waitCount = 0
                         #endif
                         // 開始Dateから経過ミリ秒を加えた経過時間Dateを発行
-                        date.previous = Date(timeInterval: Double(self.elapsed.milliseconds.now.value) / 1000, since: date.start)
+                        date.previous = Date(timeInterval: Double(self.elapsed.milliseconds.value) / 1000, since: date.start)
                         // 経過Dateから現在までの経過時刻を算出し，インターバル値を上回るまで待機ループ。
                         var tmpDate: Date = Date()
                         while tmpDate.timeIntervalSince(date.previous) <= (self.intervalMilliseconds) / 1000 {
@@ -116,8 +115,7 @@ private extension IntervalTimer {
                             tmpDate = Date()
                         }
                         // 待機ループ脱出後，経過ミリ秒を更新
-                        self.elapsed.milliseconds.previous = self.elapsed.milliseconds.now.value
-                        self.elapsed.milliseconds.now.accept(Int(tmpDate.timeIntervalSince(date.start) * 1000))
+                        self.elapsed.milliseconds.accept(Int(tmpDate.timeIntervalSince(date.start) * 1000))
                         self.elapsed.date = tmpDate
                     }
 
@@ -126,7 +124,7 @@ private extension IntervalTimer {
                         if !self.isSleeping.value {
                             // スリープ時間が格納されていれば，その時間だけ通知を遅らせる。
                             if self.sleepStartMilliseconds != nil {
-                                let sleepTime = self.elapsed.milliseconds.now.value - self.sleepStartMilliseconds! + 2
+                                let sleepTime = self.elapsed.milliseconds.value - self.sleepStartMilliseconds! + 2
                                 self.eventAlerm = self.eventAlerm.map {
                                     (id: $0.id, milliseconds: $0.milliseconds + sleepTime)
                                 }
@@ -135,7 +133,7 @@ private extension IntervalTimer {
                             }
 
                             // eventAlermの数だけ回し，evantAlermの時間が一致した場合，
-                            for event in self.eventAlerm where event.milliseconds <= self.elapsed.milliseconds.now.value {
+                            for event in self.eventAlerm where event.milliseconds <= self.elapsed.milliseconds.value {
                                 // event idを，通知可能なeventFlag変数に入れる。
                                 self.eventFlag.accept(event)
                                 // イベントは破棄される。
@@ -163,7 +161,7 @@ private extension IntervalTimer {
         }
 
         // メインでループを回すと他の描画処理ができなくなるため，グローバルスレッドを利用
-        self.asyncQueue.async {
+        self.asyncQueue.async { [unowned self] in
             // グローバルスレッドでループを回すと完了を待たない。1つのループを回すため，グローバルスレッド内で同期処理を行う。
             self.syncQueue.sync {
                 runLoop()
@@ -177,12 +175,12 @@ private extension IntervalTimer {
 private extension IntervalTimer {
     // XXX: Sleep復帰時に変更干渉が生じる。このままでは使用不可。
     func debugPrint(_ startDate: Date) {
-        let seconds: Int = Int(self.elapsed.milliseconds.now.value / 1000)
+        let seconds: Int = Int(self.elapsed.milliseconds.value / 1000)
         if seconds != self.debugPreviousSeconds {
             self.debugPreviousSeconds = seconds
             self.debugText.accept("""
                 [\(#function)]
-                Milliseconds : \(self.elapsed.milliseconds.now.value)
+                Milliseconds : \(self.elapsed.milliseconds.value)
                 Details(ms)  : \(Date().timeIntervalSince(startDate) * 1000)
                 Num of loops : \(self.debugLoopValue)
                 Interval     : \(self.intervalMilliseconds)-ms
@@ -205,7 +203,7 @@ public extension IntervalTimer {
     /// Go sleep timer
     func sleep() {
         self.isSleeping.accept(true)
-        self.sleepStartMilliseconds = self.elapsed.milliseconds.now.value
+        self.sleepStartMilliseconds = self.elapsed.milliseconds.value
     }
 
     /// Wake up timer
