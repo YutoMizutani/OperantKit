@@ -102,12 +102,12 @@ final class SessionPresenter: Presenter {
                 .share(replay: 1)
 
             let reinforcement: Observable<Int> = response
-                    .filter { $0.0 == 0 }
-                    .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0.1) }
-                    .filter { $0 }
-                    .flatMapLatest { _ in self.timerUseCase.getInterval() }
-                    .asObservable()
-                    .share(replay: 1)
+                .filter { $0.0 == 0 }
+                .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0.1) }
+                .filter { $0 }
+                .flatMapLatest { _ in self.timerUseCase.getInterval() }
+                .asObservable()
+                .share(replay: 1)
 
             // Update to set previous SR data
             reinforcement.asObservable().withLatestFrom(response.asObservable())
