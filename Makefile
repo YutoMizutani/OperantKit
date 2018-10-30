@@ -35,7 +35,6 @@ release-build-frameworks:
 	$(BUILDTOOL) -workspace $(WORKSPACE_FILENAME) -configuration Release -verbose -scheme "$(SCHEME_FRAMEWORK_IOS)"
 	$(BUILDTOOL) -workspace $(WORKSPACE_FILENAME) -configuration Release -verbose -scheme "$(SCHEME_FRAMEWORK_MACOS)"
 test-all:
-	make clean
 	make deps-all
 	make test-framework-all
 	make test-app-all
