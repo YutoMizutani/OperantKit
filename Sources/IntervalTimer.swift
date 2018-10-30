@@ -11,6 +11,10 @@ import RxSwift
 /// Main Timer for experiments
 public class IntervalTimer {
 
+    // MARK: - Typealias
+
+    public typealias TimerEvent = (closure: (() -> Void), milliseconds: Int)
+
     // MARK: - Privates
 
     private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
@@ -34,10 +38,8 @@ public class IntervalTimer {
 
     // MARK: - Events
 
-    /// If the timer milliseconds, call 'isEventFlag' with id.
-    public private(set) var eventAlerm: [(id: Int, milliseconds: Int)] = []
-    /// It is change with eventAlerm-id.
-    public private(set) var eventFlag: BehaviorRelay<(id: Int, milliseconds: Int)?> = BehaviorRelay(value: nil)
+    /// If the timer milliseconds, called closure
+    public private(set) var eventClosure: [TimerEvent] = []
 
     // MARK: - DEBUG
 
@@ -125,20 +127,20 @@ private extension IntervalTimer {
                             // スリープ時間が格納されていれば，その時間だけ通知を遅らせる。
                             if self.sleepStartMilliseconds != nil {
                                 let sleepTime = self.elapsed.milliseconds.value - self.sleepStartMilliseconds! + 2
-                                self.eventAlerm = self.eventAlerm.map {
-                                    (id: $0.id, milliseconds: $0.milliseconds + sleepTime)
+                                self.eventClosure = self.eventClosure.map {
+                                    ($0.closure, milliseconds: $0.milliseconds + sleepTime)
                                 }
 
                                 self.sleepStartMilliseconds = nil
                             }
 
-                            // eventAlermの数だけ回し，evantAlermの時間が一致した場合，
-                            for event in self.eventAlerm where event.milliseconds <= self.elapsed.milliseconds.value {
-                                // event idを，通知可能なeventFlag変数に入れる。
-                                self.eventFlag.accept(event)
-                                // イベントは破棄される。
-                                self.eventAlerm = self.eventAlerm.filter { $0 != event }
+                            // eventClosureの数だけ回し，eventClosureの時間が一致した場合，
+                            for event in self.eventClosure where event.milliseconds <= self.elapsed.milliseconds.value {
+                                // eventを発火させる
+                                event.closure()
                             }
+                            // イベントは破棄される。
+                            self.eventClosure = self.eventClosure.filter { $0.milliseconds > self.elapsed.milliseconds.value }
 
                         }
                     }
@@ -217,17 +219,7 @@ public extension IntervalTimer {
     }
 
     /// Set timer event
-    func addAlerm(_ event: (id: Int, milliseconds: Int)) {
-        self.eventAlerm.append(event)
-    }
-
-    /// Remove timer event
-    func removeAlerm(_ event: (id: Int, milliseconds: Int)) {
-        self.eventAlerm = self.eventAlerm.filter { $0 != event }
-    }
-
-    /// Remove timer event
-    func removeAlerm(_ id: Int) {
-        self.eventAlerm = self.eventAlerm.filter { $0.id != id }
+    func addEvent(_ event: TimerEvent) {
+        self.eventClosure.append(event)
     }
 }
