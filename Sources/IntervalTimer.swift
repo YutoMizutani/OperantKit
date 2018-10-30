@@ -23,8 +23,6 @@ public class IntervalTimer {
     private var intervalMilliseconds: Double
     /// Start time when sleep
     private var sleepStartMilliseconds: Int?
-    /// Elapsed date
-    private var date = Date()
 
     // MARK: - States
 
@@ -60,7 +58,7 @@ public class IntervalTimer {
     /// - Parameter intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     public init(_ intervalMilliseconds: Double = 0.1) {
         self.intervalMilliseconds = intervalMilliseconds
-        _ = self.resetValue()
+        self.resetValue()
     }
 
     #if DEBUG
@@ -76,19 +74,16 @@ public class IntervalTimer {
 
 // MARK: - Private functions
 private extension IntervalTimer {
-    func resetValue() -> Date {
+    func resetValue() {
         self.isCompleted = false
         self.isRunning = true
         self.isSleeping = true
-        let date = Date()
-        self.date = date
         self.milliseconds = 0
         #if DEBUG
         self.debugText = nil
         self.debugLoopValue = (1, 0)
         self.debugPreviousSeconds = 0
         #endif
-        return date
     }
 
     /// Start timer
@@ -119,7 +114,6 @@ private extension IntervalTimer {
                         }
                         // 待機ループ脱出後，経過ミリ秒を更新
                         self.milliseconds = Int(tmpDate.timeIntervalSince(date.start) * 1000)
-                        self.date = tmpDate
                     }
 
                     // Do eventFlag from eventAlerm
@@ -199,7 +193,8 @@ private extension IntervalTimer {
 public extension IntervalTimer {
     /// Start timer
     func start() {
-        let startDate = self.resetValue()
+        self.resetValue()
+        let startDate = Date()
         self.fire(startDate)
     }
 
