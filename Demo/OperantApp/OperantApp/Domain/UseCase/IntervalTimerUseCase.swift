@@ -37,10 +37,45 @@ struct IntervalTimerUseCase {
                 return Disposables.create()
             }
 
-            single(.success(timer.elapsed.milliseconds.value))
+            single(.success(timer.milliseconds))
 
             return Disposables.create()
         }
+    }
+
+    func delay(_ value: Int, currentTime: Int) -> Single<Int> {
+        return Single.create { single in
+            guard let timer = self.timer else {
+                single(.error(RxError.noElements))
+                return Disposables.create()
+            }
+
+            let time = currentTime + value
+            timer.addEvent(({
+                single(.success(timer.milliseconds))
+            }, time))
+
+            return Disposables.create()
+        }
+    }
+
+    func delay(_ value: Int) -> Single<Int> {
+        return getInterval()
+            .flatMap { currentTime in
+                Single.create { single in
+                    guard let timer = self.timer else {
+                        single(.error(RxError.noElements))
+                        return Disposables.create()
+                    }
+
+                    let time = currentTime + value
+                    timer.addEvent(({
+                        single(.success(timer.milliseconds))
+                    }, time))
+
+                    return Disposables.create()
+                }
+            }
     }
 
     func pause() -> Single<Void> {

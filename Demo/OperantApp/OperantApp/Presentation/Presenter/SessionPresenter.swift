@@ -18,6 +18,9 @@ final class SessionPresenter: Presenter {
     typealias WireframeType = EmptyWireframe
     typealias ExperimentType = FixedRatioExperiment
 
+    // TODO: REMOVE
+    private let experimentEnitty = ExperimentEntity(interReinforcementInterval: 5000)
+
     struct Input {
         let startTrigger: Driver<Void>
         let pauseTrigger: Driver<Void>
@@ -31,7 +34,7 @@ final class SessionPresenter: Presenter {
         let pause: Driver<Void>
         let resume: Driver<Void>
         let end: Driver<Void>
-        let reinforcements: [Observable<Void>]
+        let reinforcements: [(on: Driver<Void>, off: Driver<Void>)]
     }
 
     private let scheduleUseCase: ScheduleUseCaseType
@@ -75,7 +78,7 @@ final class SessionPresenter: Presenter {
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
-        var reinforcements: [Observable<Void>] = []
+        var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
@@ -98,14 +101,16 @@ final class SessionPresenter: Presenter {
                 .map { ($0.0, ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2)) }
                 .share(replay: 1)
 
-            let reinforcement = response
+            let reinforcement: Observable<Int> = response
                     .filter { $0.0 == 0 }
                     .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0.1) }
                     .filter { $0 }
-                    .mapToVoid()
+                    .flatMapLatest { _ in self.timerUseCase.getInterval() }
+                    .asObservable()
                     .share(replay: 1)
 
-            reinforcement.withLatestFrom(response)
+            // Update to set previous SR data
+            reinforcement.asObservable().withLatestFrom(response.asObservable())
                 .map { $0.1 }
                 .subscribe(onNext: { response in
                     reinforcementEntity = ResponseEntity(
@@ -115,7 +120,18 @@ final class SessionPresenter: Presenter {
                 })
                 .disposed(by: disposeBag)
 
-            reinforcements.append(reinforcement)
+            let reinforcementOn: Driver<Void>  = reinforcement
+                .debug()
+                .mapToVoid()
+                .asDriverOnErrorJustComplete()
+
+            let reinforcementOff: Driver<Void>  = reinforcement
+                .flatMapLatest { self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
+                .debug()
+                .mapToVoid()
+                .asDriverOnErrorJustComplete()
+
+            reinforcements.append((reinforcementOn, reinforcementOff))
         }
 
         func decision(schedule: FixedRatioSchedule, parameter: FixedRatioParameter) -> (ResponseDetail) -> Bool {

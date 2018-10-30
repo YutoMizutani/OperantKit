@@ -9,6 +9,6 @@ import RxSwift
 
 public extension Observable {
     func interval(_ timer: IntervalTimer) -> Observable<Int> {
-        return map { _ in timer.elapsed.milliseconds.value }
+        return map { _ in timer.milliseconds }
     }
 }

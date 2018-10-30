@@ -58,41 +58,35 @@ class RatChamberViewController: UIViewController {
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        Observable.merge(output.reinforcements + [output.pause.asObservable()])
+        Driver.merge(output.reinforcements.map { $0.on } + [output.pause])
+            .asObservable()
             .map { _ in UIColor.ratChamber.light.off }
             .asDriverOnErrorJustComplete()
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        let reinforcementOnEvent = Observable.merge(output.reinforcements)
-            .share(replay: 1)
-
-        let interReinforcementInterval: RxTimeInterval = 5
-        let reinforcementOffEvent = reinforcementOnEvent
-            .delay(interReinforcementInterval, scheduler: SerialDispatchQueueScheduler(qos: .default))
-            .share(replay: 1)
+        let reinforcementOnEvent = Driver.merge(output.reinforcements.map { $0.on })
+        let reinforcementOffEvent = Driver.merge(output.reinforcements.map { $0.off })
 
         reinforcementOffEvent
             .map { true }
-            .asDriverOnErrorJustComplete()
             .drive(chamberView.leftLever.rx.isSelected)
             .disposed(by: disposeBag)
 
         reinforcementOffEvent
             .map { _ in UIColor.ratChamber.light.on }
-            .asDriverOnErrorJustComplete()
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
         reinforcementOnEvent
             .map { false }
-            .asDriverOnErrorJustComplete()
             .drive(chamberView.leftLever.rx.isSelected)
             .disposed(by: disposeBag)
 
         let feederSoundPlayer = RatChamberSound.shared.feeder.operatingSound
         feederSoundPlayer?.prepareToPlay()
         reinforcementOnEvent
+            .asObservable()
             .subscribe(onNext: { _ in
                 feederSoundPlayer?.currentTime = 0
                 feederSoundPlayer?.play()

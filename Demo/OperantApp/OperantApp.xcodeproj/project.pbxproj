@@ -29,6 +29,7 @@
 		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
 		991F0540217D9E0F00BB31B6 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */; };
 		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
+		9925E149218822C400DEC577 /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9925E148218822C400DEC577 /* ExperimentEntity.swift */; };
 		997494102183351D00A29745 /* RatChamberSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974940F2183351D00A29745 /* RatChamberSound.swift */; };
 		997494122183392F00A29745 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494112183392F00A29745 /* UIButton+Rx.swift */; };
 		99749414218374AF00A29745 /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749413218374AF00A29745 /* ObservableType+.swift */; };
@@ -118,6 +119,7 @@
 		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
+		9925E148218822C400DEC577 /* ExperimentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentEntity.swift; sourceTree = "<group>"; };
 		9974940F2183351D00A29745 /* RatChamberSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberSound.swift; sourceTree = "<group>"; };
 		997494112183392F00A29745 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		99749413218374AF00A29745 /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				9974945B2186047200A29745 /* ResponseEntity.swift */,
+				9925E148218822C400DEC577 /* ExperimentEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
 				9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */,
 				997494502185003700A29745 /* UIApplication+Rx.swift in Sources */,
+				9925E149218822C400DEC577 /* ExperimentEntity.swift in Sources */,
 				9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */,
 				99749414218374AF00A29745 /* ObservableType+.swift in Sources */,
 				9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */,
