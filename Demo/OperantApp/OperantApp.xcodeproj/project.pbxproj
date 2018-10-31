@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991E0BFA21894F1C0096F239 /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BF921894F1C0096F239 /* FR.swift */; };
+		991E0BFD21894FF20096F239 /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BFC21894FF20096F239 /* ReinforcementResult.swift */; };
+		991E0BFF2189505B0096F239 /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */; };
+		991E0C01218950690096F239 /* ResponseEntity+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0C00218950690096F239 /* ResponseEntity+Rx.swift */; };
+		991E0C04218952620096F239 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0C03218952620096F239 /* TimeUnit.swift */; };
 		991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F04A5217CCFCC00BB31B6 /* AppDelegate.swift */; };
 		991F04AD217CCFCF00BB31B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991F04AC217CCFCF00BB31B6 /* Assets.xcassets */; };
 		991F04BB217CCFCF00BB31B6 /* OperantAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F04BA217CCFCF00BB31B6 /* OperantAppTests.swift */; };
@@ -91,6 +96,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		991E0BF921894F1C0096F239 /* FR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FR.swift; sourceTree = "<group>"; };
+		991E0BFC21894FF20096F239 /* ReinforcementResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
+		991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReinforcementResult+Rx.swift"; sourceTree = "<group>"; };
+		991E0C00218950690096F239 /* ResponseEntity+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResponseEntity+Rx.swift"; sourceTree = "<group>"; };
+		991E0C03218952620096F239 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
 		991F04A2217CCFCC00BB31B6 /* OperantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OperantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991F04A5217CCFCC00BB31B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		991F04AC217CCFCF00BB31B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +177,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		991E0BFB21894FE20096F239 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				991E0BFC21894FF20096F239 /* ReinforcementResult.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		991E0C02218952570096F239 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				991E0C03218952620096F239 /* TimeUnit.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		991F0499217CCFCC00BB31B6 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +277,7 @@
 				99749419218414C700A29745 /* EmptyUseCase.swift */,
 				9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */,
 				997494542185FD2100A29745 /* FR5UseCase.swift */,
+				991E0BF921894F1C0096F239 /* FR.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -287,6 +314,8 @@
 		991F0509217CE0B400BB31B6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				991E0C02218952570096F239 /* Enum */,
+				991E0BFB21894FE20096F239 /* Helper */,
 				991F0511217CE0E000BB31B6 /* AppDelegate */,
 				991F0514217CE0E000BB31B6 /* Builder */,
 				991F0516217CE0E000BB31B6 /* Extension */,
@@ -339,6 +368,8 @@
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
 				997494522185560D00A29745 /* UIViewController+.swift */,
+				991E0C00218950690096F239 /* ResponseEntity+Rx.swift */,
+				991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -609,8 +640,12 @@
 				99749414218374AF00A29745 /* ObservableType+.swift in Sources */,
 				9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
+				991E0C01218950690096F239 /* ResponseEntity+Rx.swift in Sources */,
+				991E0BFA21894F1C0096F239 /* FR.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
+				991E0BFF2189505B0096F239 /* ReinforcementResult+Rx.swift in Sources */,
+				991E0BFD21894FF20096F239 /* ReinforcementResult.swift in Sources */,
 				99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
@@ -620,6 +655,7 @@
 				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
 				997494552185FD2100A29745 /* FR5UseCase.swift in Sources */,
 				997494122183392F00A29745 /* UIButton+Rx.swift in Sources */,
+				991E0C04218952620096F239 /* TimeUnit.swift in Sources */,
 				9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
 				9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */,
@@ -799,6 +835,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = OperantApp/Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -808,6 +845,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.OperantApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -823,6 +861,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = OperantApp/Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -832,6 +871,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.OperantApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

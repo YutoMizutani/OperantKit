@@ -82,14 +82,12 @@ final class SessionPresenter: Presenter {
 
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
-            var reinforcementEntity = ResponseEntity(numOfResponse: 0, milliseconds: 0)
 
             let num = e.map { i }
                 .asObservable()
 
             let numOfResponse = e
                 .scan(0) { n, _ in n + 1 }
-                .map { $0 - reinforcementEntity.numOfResponse }
                 .asObservable()
 
             let milliseconds = e
@@ -103,31 +101,21 @@ final class SessionPresenter: Presenter {
 
             let reinforcement: Observable<Int> = response
                 .filter { $0.0 == 0 }
-                .flatMapLatest { [unowned self] in self.scheduleUseCase.decision($0.1) }
-                .filter { $0 }
-                .flatMapLatest { _ in self.timerUseCase.getInterval() }
+                .map { $0.1 }
+                .FR(5)
+                .filter { $0.isReinforcement }
+                .flatMapLatest { [unowned self] _ in self.timerUseCase.getInterval() }
                 .asObservable()
                 .share(replay: 1)
 
-            // Update to set previous SR data
-            reinforcement.asObservable().withLatestFrom(response.asObservable())
-                .map { $0.1 }
-                .subscribe(onNext: { response in
-                    reinforcementEntity = ResponseEntity(
-                        numOfResponse: reinforcementEntity.numOfResponse + response.numOfResponse,
-                        milliseconds: response.milliseconds
-                    )
-                })
-                .disposed(by: disposeBag)
-
             let reinforcementOn: Driver<Void>  = reinforcement
-                .debug()
+                .do(onNext: { print("SR on: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
-            let reinforcementOff: Driver<Void>  = reinforcement
-                .flatMapLatest { self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
-                .debug()
+            let reinforcementOff: Driver<Void> = reinforcement
+                .flatMapLatest { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
+                .do(onNext: { print("SR off: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 

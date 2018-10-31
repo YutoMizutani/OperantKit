@@ -45,41 +45,28 @@ class RatChamberViewController: UIViewController {
         guard let presenter = presenter else { return }
 
         let output = presenter.transform(input: input)
-
-        Driver.merge(output.start, output.resume)
-            .map { _ in UIColor.ratChamber.light.on }
-            .asDriver()
-            .drive(chamberView.leftLight.rx.backgroundColor)
-            .disposed(by: disposeBag)
-
-        Driver.merge(output.pause, output.end)
-            .map { _ in UIColor.ratChamber.light.off }
-            .asDriver()
-            .drive(chamberView.leftLight.rx.backgroundColor)
-            .disposed(by: disposeBag)
-
-        Driver.merge(output.reinforcements.map { $0.on } + [output.pause])
-            .asObservable()
-            .map { _ in UIColor.ratChamber.light.off }
-            .asDriverOnErrorJustComplete()
-            .drive(chamberView.leftLight.rx.backgroundColor)
-            .disposed(by: disposeBag)
-
         let reinforcementOnEvent = Driver.merge(output.reinforcements.map { $0.on })
         let reinforcementOffEvent = Driver.merge(output.reinforcements.map { $0.off })
 
-        reinforcementOffEvent
-            .map { true }
-            .drive(chamberView.leftLever.rx.isSelected)
-            .disposed(by: disposeBag)
-
-        reinforcementOffEvent
+        Driver.merge(
+            output.start,
+            output.resume,
+            reinforcementOffEvent)
             .map { _ in UIColor.ratChamber.light.on }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        reinforcementOnEvent
-            .map { false }
+        Driver.merge(
+            output.pause,
+            output.end,
+            reinforcementOnEvent)
+            .map { _ in UIColor.ratChamber.light.off }
+            .drive(chamberView.leftLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        Driver.merge(
+            reinforcementOnEvent.map { false },
+            reinforcementOffEvent.map { true })
             .drive(chamberView.leftLever.rx.isSelected)
             .disposed(by: disposeBag)
 
@@ -90,8 +77,6 @@ class RatChamberViewController: UIViewController {
             .subscribe(onNext: { _ in
                 feederSoundPlayer?.currentTime = 0
                 feederSoundPlayer?.play()
-
-                print("Reinforcement!!")
             })
             .disposed(by: disposeBag)
     }

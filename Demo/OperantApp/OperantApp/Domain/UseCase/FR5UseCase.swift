@@ -25,3 +25,9 @@ struct FR5UseCase: ScheduleUseCase {
         }
     }
 }
+
+extension Observable where E == ResponseEntity {
+    func FI(_ value: Int, unit: TimeUnit) -> Observable<Bool> {
+        return self.map { $0.milliseconds >= unit.milliseconds(value) }
+    }
+}
