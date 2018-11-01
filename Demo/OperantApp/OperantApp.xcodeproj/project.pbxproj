@@ -51,6 +51,7 @@
 		9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945D2186144700A29745 /* UIControl+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
+		999C783E218A870F0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C783D218A870F0044C47E /* VR.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -145,6 +146,7 @@
 		9974945D2186144700A29745 /* UIControl+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
+		999C783D218A870F0044C47E /* VR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VR.swift; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +280,7 @@
 				9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */,
 				997494542185FD2100A29745 /* FR5UseCase.swift */,
 				991E0BF921894F1C0096F239 /* FR.swift */,
+				999C783D218A870F0044C47E /* VR.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */,
 				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
 				997494552185FD2100A29745 /* FR5UseCase.swift in Sources */,
+				999C783E218A870F0044C47E /* VR.swift in Sources */,
 				997494122183392F00A29745 /* UIButton+Rx.swift in Sources */,
 				991E0C04218952620096F239 /* TimeUnit.swift in Sources */,
 				9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */,

@@ -12,7 +12,7 @@ public struct FleshlerHoffman {
     public init() {}
 
     /// Fleshler, M., & Hoffman, H. S. (1962). A PROGRESSION FOR GENERATING VARIABLE‐INTERVAL SCHEDULES 1. Journal of the experimental analysis of behavior, 5(4), 529-530.
-    public func generatedInterval(value v: Int, iterations n: Int) -> [Int] {
+    public func generatedInterval(value v: Int, iterations n: Int = 12) -> [Int] {
         guard n != 0 else { return [] }
 
         let xorshift = Xorshift128(UInt64(Date().timeIntervalSince1970))
@@ -53,7 +53,7 @@ public struct FleshlerHoffman {
     }
 
     /// Fleshler & Hoffman (1962) for VR schedule
-    public func generatedRatio(value v: Int, iterations n: Int) -> [Int] {
+    public func generatedRatio(value v: Int, iterations n: Int = 12) -> [Int] {
         guard n != 0 else { return [] }
 
         let vi: [Double] = generatedInterval(value: v * 1000, iterations: n).map({ Double($0) / 1000 })
@@ -98,7 +98,7 @@ public struct FleshlerHoffman {
 
 public extension FleshlerHoffman {
     /// Hantula, D. A. (1991). A simple BASIC program to generate values for variable‐interval schedules of reinforcement. Journal of Applied Behavior Analysis, 24(4), 799-801.
-    func hantula1991(value v: Int, number n: Int) -> [Int] {
+    func hantula1991(value v: Int, number n: Int = 12) -> [Int] {
         guard n != 0 else { return [] }
 
         var rd = [Int](repeating: 0, count: n + 1)

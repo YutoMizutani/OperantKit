@@ -21,7 +21,6 @@ public extension Observable where E == ResponseEntity {
         let lastReinforcementEntity = entity
         return self
             .fromLastResponse(lastReinforcementEntity)
-            .do(onNext: { print($0.numOfResponse) })
             .fixedRatio(value)
             .storeRespinse(lastReinforcementEntity)
     }
