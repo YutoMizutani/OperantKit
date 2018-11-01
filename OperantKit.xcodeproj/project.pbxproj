@@ -63,6 +63,16 @@
 		999C7878218B35440044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7876218B35440044C47E /* FI.swift */; };
 		999C787B218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
 		999C787C218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
+		999C7880218B3E810044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787F218B3E810044C47E /* EmptyUseCase.swift */; };
+		999C7881218B3E810044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787F218B3E810044C47E /* EmptyUseCase.swift */; };
+		999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
+		999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
+		999C788B218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
+		999C788C218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
+		999C788E218B44730044C47E /* Reactive+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788D218B44730044C47E /* Reactive+.swift */; };
+		999C788F218B44730044C47E /* Reactive+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788D218B44730044C47E /* Reactive+.swift */; };
 		99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
@@ -134,6 +144,11 @@
 		999C7871218B11710044C47E /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
 		999C7876218B35440044C47E /* FI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FI.swift; sourceTree = "<group>"; };
 		999C787A218B357F0044C47E /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		999C787F218B3E810044C47E /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
+		999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
+		999C7887218B43B10044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
+		999C788A218B441E0044C47E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		999C788D218B44730044C47E /* Reactive+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+.swift"; sourceTree = "<group>"; };
 		99AF347E217A357000B7A332 /* FleshlerHoffman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
 		99AF3482217A35BA00B7A332 /* Xorshift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xorshift.swift; sourceTree = "<group>"; };
 		99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
@@ -316,6 +331,41 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		999C787D218B3E5A0044C47E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				999C787E218B3E730044C47E /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		999C787E218B3E730044C47E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				999C787F218B3E810044C47E /* EmptyUseCase.swift */,
+				999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		999C7885218B43470044C47E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				999C7886218B435F0044C47E /* Extensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		999C7886218B435F0044C47E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				999C7887218B43B10044C47E /* UIApplication+Rx.swift */,
+				999C788A218B441E0044C47E /* UIViewController+Rx.swift */,
+				999C788D218B44730044C47E /* Reactive+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		99AF347D217A356100B7A332 /* EAB */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +436,8 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				999C7885218B43470044C47E /* Application */,
+				999C787D218B3E5A0044C47E /* Domain */,
 				999C7879218B35740044C47E /* Enum */,
 				999C7856218A9F080044C47E /* Helper */,
 				991F0539217D47D600BB31B6 /* Extensions */,
@@ -620,12 +672,16 @@
 				99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
+				999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
 				999C785A218A9F7A0044C47E /* ReinforcementResult.swift in Sources */,
+				999C788B218B441E0044C47E /* UIViewController+Rx.swift in Sources */,
 				999C7877218B35440044C47E /* FI.swift in Sources */,
 				999C786F218B02850044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7841218A907D0044C47E /* VR.swift in Sources */,
+				999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
 				999C785D218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */,
+				999C7880218B3E810044C47E /* EmptyUseCase.swift in Sources */,
 				999C784F218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */,
 				999C7843218A907D0044C47E /* FR.swift in Sources */,
 				999C786C218B01810044C47E /* PrepositionSchedule.swift in Sources */,
@@ -635,6 +691,7 @@
 				999C7854218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
+				999C788E218B44730044C47E /* Reactive+.swift in Sources */,
 				991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */,
 				999C787B218B357F0044C47E /* TimeUnit.swift in Sources */,
 				999C7848218A91250044C47E /* ResponseEntity.swift in Sources */,
@@ -663,12 +720,16 @@
 				99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
+				999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
 				999C785B218A9F7A0044C47E /* ReinforcementResult.swift in Sources */,
+				999C788C218B441E0044C47E /* UIViewController+Rx.swift in Sources */,
 				999C7878218B35440044C47E /* FI.swift in Sources */,
 				999C7870218B02850044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7842218A907D0044C47E /* VR.swift in Sources */,
+				999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
 				999C785E218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */,
+				999C7881218B3E810044C47E /* EmptyUseCase.swift in Sources */,
 				999C784E218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */,
 				999C7844218A907D0044C47E /* FR.swift in Sources */,
 				999C786D218B01810044C47E /* PrepositionSchedule.swift in Sources */,
@@ -678,6 +739,7 @@
 				999C7853218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
+				999C788F218B44730044C47E /* Reactive+.swift in Sources */,
 				991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */,
 				999C787C218B357F0044C47E /* TimeUnit.swift in Sources */,
 				999C7849218A91250044C47E /* ResponseEntity.swift in Sources */,

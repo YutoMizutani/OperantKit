@@ -6,16 +6,17 @@
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-import OperantKit
 import RxSwift
 
-struct IntervalTimerUseCase {
+public struct IntervalTimerUseCase {
     private var timer: IntervalTimer?
 
-    init(timer: IntervalTimer? = nil) {
+    public init(timer: IntervalTimer? = nil) {
         self.timer = timer ?? IntervalTimer()
     }
+}
 
+public extension IntervalTimerUseCase {
     func start() -> Single<Void> {
         return Single.create { single in
             guard let timer = self.timer else {

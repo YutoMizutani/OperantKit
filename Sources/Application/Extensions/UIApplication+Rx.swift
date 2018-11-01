@@ -6,6 +6,7 @@
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
+#if os(iOS)
 import RxCocoa
 import RxSwift
 import UIKit
@@ -31,8 +32,8 @@ public class RxUIApplicationDelegateProxy: DelegateProxy<UIApplication, UIApplic
     }
 }
 
-extension RxSwift.Reactive where Base: UIApplication {
-    public var delegate: RxUIApplicationDelegateProxy {
+public extension RxSwift.Reactive where Base: UIApplication {
+    var delegate: RxUIApplicationDelegateProxy {
         return RxUIApplicationDelegateProxy.proxy(for: base)
     }
 
@@ -56,3 +57,4 @@ extension RxSwift.Reactive where Base: UIApplication {
         return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillTerminate(_:))).share(replay: 1)
     }
 }
+#endif

@@ -1,16 +1,16 @@
 //
-//  RxSwift+.swift
-//  OperantApp
+//  Reactive+.swift
+//  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/10/22.
-//  Copyright © 2018 Yuto Mizutani. All rights reserved.
+//  Created by Yuto Mizutani on 2018/11/01.
 //
 
+#if os(iOS)
 import RxCocoa
 import RxSwift
 import UIKit
 
-extension Reactive where Base: UIViewController {
+public extension Reactive where Base: UIViewController {
     var viewDidLoad: Observable<[Any]> {
         return self.methodInvoked(#selector(self.base.viewDidLoad)).share(replay: 1)
     }
@@ -31,3 +31,4 @@ extension Reactive where Base: UIViewController {
         return self.methodInvoked(#selector(self.base.viewDidDisappear)).share(replay: 1)
     }
 }
+#endif

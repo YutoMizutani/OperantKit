@@ -1,16 +1,16 @@
 //
-//  UIViewController+.swift
-//  OperantApp
+//  UIViewController+Rx.swift
+//  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/10/28.
-//  Copyright © 2018 Yuto Mizutani. All rights reserved.
+//  Created by Yuto Mizutani on 2018/11/01.
 //
 
+#if os(iOS)
 import RxCocoa
 import RxSwift
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     var startTrigger: Driver<Void> {
         return rx.viewDidAppear
             .take(1)
@@ -36,3 +36,4 @@ extension UIViewController {
             .asDriverOnErrorJustComplete()
     }
 }
+#endif
