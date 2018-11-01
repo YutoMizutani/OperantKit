@@ -13,10 +13,9 @@ import RxSwift
 public typealias ResponseDetail = (count: Int, time: Int)
 
 final class SessionPresenter: Presenter {
-    typealias ScheduleUseCaseType = ScheduleUseCase
     typealias TimerUseCaseType = IntervalTimerUseCase
     typealias WireframeType = EmptyWireframe
-    typealias ExperimentType = FixedRatioExperiment
+    typealias ScheduleType = DecisionSchedule
 
     // TODO: REMOVE
     private let experimentEnitty = ExperimentEntity(interReinforcementInterval: 5000)
@@ -37,20 +36,17 @@ final class SessionPresenter: Presenter {
         let reinforcements: [(on: Driver<Void>, off: Driver<Void>)]
     }
 
-    private let scheduleUseCase: ScheduleUseCaseType
     private let timerUseCase: TimerUseCaseType
     private let wireframe: WireframeType
-    private let experiment: ExperimentType
+    private let schedule: ScheduleType
     private let disposeBag = DisposeBag()
 
-    init(scheduleUseCase: ScheduleUseCaseType,
-         timerUseCase: TimerUseCaseType,
+    init(timerUseCase: TimerUseCaseType,
          wireframe: WireframeType,
-         experiment: ExperimentType) {
-        self.scheduleUseCase = scheduleUseCase
+         schedule: @escaping ScheduleType) {
         self.timerUseCase = timerUseCase
         self.wireframe = wireframe
-        self.experiment = experiment
+        self.schedule = schedule
     }
 
     func transform(input: SessionPresenter.Input) -> SessionPresenter.Output {
@@ -99,16 +95,17 @@ final class SessionPresenter: Presenter {
                 .map { ($0.0, ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2)) }
                 .share(replay: 1)
 
-            let reinforcement: Observable<Int> = response
-                .filter { $0.0 == 0 }
-                .map { $0.1 }
-                .FR(5)
+            let reinforcement: Observable<Int> = self.schedule(
+                response
+                    .filter { $0.0 == 0 }
+                    .map { $0.1 }
+            )
                 .filter { $0.isReinforcement }
                 .flatMapLatest { [unowned self] _ in self.timerUseCase.getInterval() }
                 .asObservable()
                 .share(replay: 1)
 
-            let reinforcementOn: Driver<Void>  = reinforcement
+            let reinforcementOn: Driver<Void> = reinforcement
                 .do(onNext: { print("SR on: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
@@ -120,10 +117,6 @@ final class SessionPresenter: Presenter {
                 .asDriverOnErrorJustComplete()
 
             reinforcements.append((reinforcementOn, reinforcementOff))
-        }
-
-        func decision(schedule: FixedRatioSchedule, parameter: FixedRatioParameter) -> (ResponseDetail) -> Bool {
-            return { schedule.decision($0.count, value: parameter.value) }
         }
 
         return SessionPresenter.Output(start: start,

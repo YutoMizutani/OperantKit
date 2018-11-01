@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		991E0BFA21894F1C0096F239 /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BF921894F1C0096F239 /* FR.swift */; };
-		991E0BFD21894FF20096F239 /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BFC21894FF20096F239 /* ReinforcementResult.swift */; };
-		991E0BFF2189505B0096F239 /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */; };
-		991E0C01218950690096F239 /* ResponseEntity+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0C00218950690096F239 /* ResponseEntity+Rx.swift */; };
-		991E0C04218952620096F239 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991E0C03218952620096F239 /* TimeUnit.swift */; };
 		991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F04A5217CCFCC00BB31B6 /* AppDelegate.swift */; };
 		991F04AD217CCFCF00BB31B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991F04AC217CCFCF00BB31B6 /* Assets.xcassets */; };
 		991F04BB217CCFCF00BB31B6 /* OperantAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F04BA217CCFCF00BB31B6 /* OperantAppTests.swift */; };
@@ -34,10 +29,8 @@
 		991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053D217D854100BB31B6 /* SessionPresenter.swift */; };
 		991F0540217D9E0F00BB31B6 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */; };
 		991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */; };
-		9925E149218822C400DEC577 /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9925E148218822C400DEC577 /* ExperimentEntity.swift */; };
 		997494102183351D00A29745 /* RatChamberSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974940F2183351D00A29745 /* RatChamberSound.swift */; };
 		997494122183392F00A29745 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494112183392F00A29745 /* UIButton+Rx.swift */; };
-		99749414218374AF00A29745 /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749413218374AF00A29745 /* ObservableType+.swift */; };
 		9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941721840F3C00A29745 /* UIView+Rx.swift */; };
 		9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99749419218414C700A29745 /* EmptyUseCase.swift */; };
 		9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974941B218414EB00A29745 /* EmptyWireframe.swift */; };
@@ -46,12 +39,9 @@
 		9974944D2184E9AA00A29745 /* OperantKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9974944A2184D23100A29745 /* OperantKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		997494502185003700A29745 /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974944F2185003700A29745 /* UIApplication+Rx.swift */; };
 		997494532185560D00A29745 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494522185560D00A29745 /* UIViewController+.swift */; };
-		997494552185FD2100A29745 /* FR5UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997494542185FD2100A29745 /* FR5UseCase.swift */; };
-		9974945C2186047300A29745 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945B2186047200A29745 /* ResponseEntity.swift */; };
 		9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945D2186144700A29745 /* UIControl+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
-		999C783E218A870F0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C783D218A870F0044C47E /* VR.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -97,11 +87,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		991E0BF921894F1C0096F239 /* FR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FR.swift; sourceTree = "<group>"; };
-		991E0BFC21894FF20096F239 /* ReinforcementResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
-		991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReinforcementResult+Rx.swift"; sourceTree = "<group>"; };
-		991E0C00218950690096F239 /* ResponseEntity+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResponseEntity+Rx.swift"; sourceTree = "<group>"; };
-		991E0C03218952620096F239 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
 		991F04A2217CCFCC00BB31B6 /* OperantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OperantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991F04A5217CCFCC00BB31B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		991F04AC217CCFCF00BB31B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,10 +115,8 @@
 		991F053D217D854100BB31B6 /* SessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPresenter.swift; sourceTree = "<group>"; };
 		991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberBuilder.swift; sourceTree = "<group>"; };
-		9925E148218822C400DEC577 /* ExperimentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentEntity.swift; sourceTree = "<group>"; };
 		9974940F2183351D00A29745 /* RatChamberSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberSound.swift; sourceTree = "<group>"; };
 		997494112183392F00A29745 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
-		99749413218374AF00A29745 /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
 		9974941721840F3C00A29745 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		99749419218414C700A29745 /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
 		9974941B218414EB00A29745 /* EmptyWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWireframe.swift; sourceTree = "<group>"; };
@@ -141,12 +124,9 @@
 		9974944A2184D23100A29745 /* OperantKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OperantKit.framework; path = ../../Carthage/Build/iOS/OperantKit.framework; sourceTree = "<group>"; };
 		9974944F2185003700A29745 /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		997494522185560D00A29745 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		997494542185FD2100A29745 /* FR5UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FR5UseCase.swift; sourceTree = "<group>"; };
-		9974945B2186047200A29745 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
 		9974945D2186144700A29745 /* UIControl+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
-		999C783D218A870F0044C47E /* VR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VR.swift; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,22 +159,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		991E0BFB21894FE20096F239 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				991E0BFC21894FF20096F239 /* ReinforcementResult.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		991E0C02218952570096F239 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				991E0C03218952620096F239 /* TimeUnit.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
 		991F0499217CCFCC00BB31B6 = {
 			isa = PBXGroup;
 			children = (
@@ -278,9 +242,6 @@
 			children = (
 				99749419218414C700A29745 /* EmptyUseCase.swift */,
 				9974941D2184153C00A29745 /* IntervalTimerUseCase.swift */,
-				997494542185FD2100A29745 /* FR5UseCase.swift */,
-				991E0BF921894F1C0096F239 /* FR.swift */,
-				999C783D218A870F0044C47E /* VR.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -317,8 +278,6 @@
 		991F0509217CE0B400BB31B6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				991E0C02218952570096F239 /* Enum */,
-				991E0BFB21894FE20096F239 /* Helper */,
 				991F0511217CE0E000BB31B6 /* AppDelegate */,
 				991F0514217CE0E000BB31B6 /* Builder */,
 				991F0516217CE0E000BB31B6 /* Extension */,
@@ -363,7 +322,6 @@
 		991F0516217CE0E000BB31B6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				99749413218374AF00A29745 /* ObservableType+.swift */,
 				9974944F2185003700A29745 /* UIApplication+Rx.swift */,
 				991F053F217D9E0F00BB31B6 /* UIViewController+Rx.swift */,
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
@@ -371,8 +329,6 @@
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
 				997494522185560D00A29745 /* UIViewController+.swift */,
-				991E0C00218950690096F239 /* ResponseEntity+Rx.swift */,
-				991E0BFE2189505B0096F239 /* ReinforcementResult+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -407,8 +363,6 @@
 		9974945A2186047200A29745 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				9974945B2186047200A29745 /* ResponseEntity.swift */,
-				9925E148218822C400DEC577 /* ExperimentEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -638,17 +592,11 @@
 				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
 				9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */,
 				997494502185003700A29745 /* UIApplication+Rx.swift in Sources */,
-				9925E149218822C400DEC577 /* ExperimentEntity.swift in Sources */,
 				9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */,
-				99749414218374AF00A29745 /* ObservableType+.swift in Sources */,
 				9974941A218414C700A29745 /* EmptyUseCase.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
-				991E0C01218950690096F239 /* ResponseEntity+Rx.swift in Sources */,
-				991E0BFA21894F1C0096F239 /* FR.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
-				991E0BFF2189505B0096F239 /* ReinforcementResult+Rx.swift in Sources */,
-				991E0BFD21894FF20096F239 /* ReinforcementResult.swift in Sources */,
 				99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
@@ -656,17 +604,13 @@
 				997494532185560D00A29745 /* UIViewController+.swift in Sources */,
 				9974941E2184153C00A29745 /* IntervalTimerUseCase.swift in Sources */,
 				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
-				997494552185FD2100A29745 /* FR5UseCase.swift in Sources */,
-				999C783E218A870F0044C47E /* VR.swift in Sources */,
 				997494122183392F00A29745 /* UIButton+Rx.swift in Sources */,
-				991E0C04218952620096F239 /* TimeUnit.swift in Sources */,
 				9974941C218414EB00A29745 /* EmptyWireframe.swift in Sources */,
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
 				9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
 				997494102183351D00A29745 /* RatChamberSound.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
-				9974945C2186047300A29745 /* ResponseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
