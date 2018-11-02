@@ -53,25 +53,21 @@ final class SessionPresenter: Presenter {
         let start: Driver<Void> = input.startTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.start() }
-            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let pause: Driver<Void> = input.pauseTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.pause() }
-            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let resume: Driver<Void> = input.resumeTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.resume() }
-            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let end: Driver<Void> = input.endTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.finish() }
-            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
