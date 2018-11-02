@@ -1,67 +1,91 @@
+import RxSwift
+import RxTest
 import XCTest
 @testable import OperantKit
 
 final class VariableScheduleTests: XCTestCase {
-    func testVR() {
-        let schedule = VariableRatioSchedule()
+    func testVRWithCertainty() {
+        let scheduler = TestScheduler(initialClock: 0)
+        let observer = scheduler.createObserver(Bool.self)
+        let startTime: TestTime = 0
+        let completedTime: TestTime = 10000
+        let disposeBag = DisposeBag()
 
-        let values = FleshlerHoffman().generatedRatio(value: Int.random(in: 1...100), iterations: 12)
+        let schedule: ScheduleUseCase = VR(5)
 
-        // Decision from previous SR parameters
-        for _ in 0..<10 {
-            let responses = Int.random(in: 0...10000)
-            let prevSR = Int.random(in: 0...responses)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(responses - prevSR >= values[order], schedule.decision(responses - prevSR, value: values[order]))
+        let testObservable = scheduler.createHotObservable([
+            next(100, ResponseEntity(numOfResponse: 100, milliseconds: 0)),
+            next(200, ResponseEntity(numOfResponse: 200, milliseconds: 0)),
+            next(300, ResponseEntity(numOfResponse: 300, milliseconds: 0)),
+            next(400, ResponseEntity(numOfResponse: 400, milliseconds: 0)),
+            completed(completedTime)
+            ])
+
+        scheduler.scheduleAt(startTime) {
+            schedule.decision(
+                testObservable.asObservable()
+                )
+                .map { $0.isReinforcement }
+                .subscribe(observer)
+                .disposed(by: disposeBag)
         }
+        scheduler.start()
 
-        // Decision from all array values
-        for _ in 0..<10 {
-            let responses = Int.random(in: 0...10000)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(responses >= values[0...order].reduce(0, { $0 + $1 }), schedule.decision(responses, value: values[0...order].reduce(0, { $0 + $1 })))
-        }
+        let expectedEvents = [
+            next(100, true),
+            next(200, true),
+            next(300, true),
+            next(400, true),
+            completed(completedTime)
+        ]
+        XCTAssertEqual(observer.events, expectedEvents)
+
+        let expectedSubscriptions = [
+            Subscription(startTime, completedTime)
+        ]
+        XCTAssertEqual(testObservable.subscriptions, expectedSubscriptions)
     }
 
-    func testVI() {
-        let schedule = VariableIntervalSchedule()
+    func testVRWithManualArray() {
+        let scheduler = TestScheduler(initialClock: 0)
+        let observer = scheduler.createObserver(Bool.self)
+        let startTime: TestTime = 0
+        let completedTime: TestTime = 10000
+        let disposeBag = DisposeBag()
 
-        let values = FleshlerHoffman().generatedInterval(value: Int.random(in: 1...100) * 1000, iterations: 12)
+        let values: [Int] = [5, 5, 5]
+        let schedule: ScheduleUseCase = VariableRatioScheduleUseCase(value: 5, values: values)
 
-        // Decision from previous SR parameters
-        for _ in 0..<10 {
-            let time = Int.random(in: 0...10000)
-            let prevSR = Int.random(in: 0...time)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(time - prevSR >= values[order], schedule.decision(time - prevSR, value: values[order]))
+        let testObservable = scheduler.createHotObservable([
+            next(100, ResponseEntity(numOfResponse: 5, milliseconds: 0)),
+            next(200, ResponseEntity(numOfResponse: 7, milliseconds: 0)),
+            next(300, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
+            next(400, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
+            completed(completedTime)
+            ])
+
+        scheduler.scheduleAt(startTime) {
+            schedule.decision(
+                testObservable.asObservable()
+                )
+                .map { $0.isReinforcement }
+                .subscribe(observer)
+                .disposed(by: disposeBag)
         }
+        scheduler.start()
 
-        // Decision from all array values
-        for _ in 0..<10 {
-            let time = Int.random(in: 0...10000)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(time >= values[0...order].reduce(0, { $0 + $1 }), schedule.decision(time, value: values[0...order].reduce(0, { $0 + $1 })))
-        }
-    }
+        let expectedEvents = [
+            next(100, true),
+            next(200, false),
+            next(300, true),
+            next(400, false),
+            completed(completedTime)
+        ]
+        XCTAssertEqual(observer.events, expectedEvents)
 
-    func testVT() {
-        let schedule = VariableIntervalSchedule()
-
-        let values = FleshlerHoffman().generatedInterval(value: Int.random(in: 1...100) * 1000, iterations: 12)
-
-        // Decision from previous SR parameters
-        for _ in 0..<10 {
-            let time = Int.random(in: 0...10000)
-            let prevSR = Int.random(in: 0...time)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(time - prevSR >= values[order], schedule.decision(time - prevSR, value: values[order]))
-        }
-
-        // Decision from all array values
-        for _ in 0..<10 {
-            let time = Int.random(in: 0...10000)
-            let order = Int.random(in: 0..<values.count)
-            XCTAssertEqual(time >= values[0...order].reduce(0, { $0 + $1 }), schedule.decision(time, value: values[0...order].reduce(0, { $0 + $1 })))
-        }
+        let expectedSubscriptions = [
+            Subscription(startTime, completedTime)
+        ]
+        XCTAssertEqual(testObservable.subscriptions, expectedSubscriptions)
     }
 }
