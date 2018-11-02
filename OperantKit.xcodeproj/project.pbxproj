@@ -61,8 +61,6 @@
 		999C7878218B35440044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7876218B35440044C47E /* FI.swift */; };
 		999C787B218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
 		999C787C218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
-		999C7880218B3E810044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787F218B3E810044C47E /* EmptyUseCase.swift */; };
-		999C7881218B3E810044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787F218B3E810044C47E /* EmptyUseCase.swift */; };
 		999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
 		999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
 		999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
@@ -139,7 +137,6 @@
 		999C7871218B11710044C47E /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
 		999C7876218B35440044C47E /* FI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FI.swift; sourceTree = "<group>"; };
 		999C787A218B357F0044C47E /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
-		999C787F218B3E810044C47E /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
 		999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
 		999C7887218B43B10044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		999C788A218B441E0044C47E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -279,15 +276,6 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		999C7856218A9F080044C47E /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				999C7864218AAE5D0044C47E /* DecisionSchedule.swift */,
-				999C7859218A9F7A0044C47E /* ReinforcementResult.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		999C7860218AA5F70044C47E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,12 +294,12 @@
 			path = Parameters;
 			sourceTree = "<group>";
 		};
-		999C7879218B35740044C47E /* Enum */ = {
+		999C7879218B35740044C47E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				999C787A218B357F0044C47E /* TimeUnit.swift */,
 			);
-			path = Enum;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		999C787D218B3E5A0044C47E /* Domain */ = {
@@ -325,7 +313,6 @@
 		999C787E218B3E730044C47E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				999C787F218B3E810044C47E /* EmptyUseCase.swift */,
 				999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */,
 			);
 			path = UseCases;
@@ -334,8 +321,11 @@
 		999C7885218B43470044C47E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				999C7856218A9F080044C47E /* Helper */,
+				999C7890218C20030044C47E /* Timer */,
 				999C7886218B435F0044C47E /* Extensions */,
+				999C7891218C20A00044C47E /* Typealias */,
+				999C7879218B35740044C47E /* Enums */,
+				999C7845218A91070044C47E /* Entities */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -352,13 +342,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		99AF347D217A356100B7A332 /* EAB */ = {
+		999C7890218C20030044C47E /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				9905000B2131705E008A6423 /* IntervalTimer.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		999C7891218C20A00044C47E /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				999C7864218AAE5D0044C47E /* DecisionSchedule.swift */,
+				999C7859218A9F7A0044C47E /* ReinforcementResult.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
+		999C7892218C20FB0044C47E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				999C51BB2134261B00611308 /* SessionEvents.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		999C7893218C21100044C47E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				99AF3482217A35BA00B7A332 /* Xorshift.swift */,
 				99AF347E217A357000B7A332 /* FleshlerHoffman.swift */,
 				99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */,
 			);
-			path = EAB;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		99AF3488217A429E00B7A332 /* Schedules */ = {
@@ -375,7 +391,10 @@
 		99ECE8EB212972EC001510BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				99AF3482217A35BA00B7A332 /* Xorshift.swift */,
+				999C7893218C21100044C47E /* Helpers */,
+				999C7867218AEE7D0044C47E /* Parameters */,
+				99AF3488217A429E00B7A332 /* Schedules */,
+				999C7892218C20FB0044C47E /* Events */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -422,17 +441,10 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				99ECE8ED212972EC001510BF /* OperantKit.swift */,
 				999C7885218B43470044C47E /* Application */,
 				999C787D218B3E5A0044C47E /* Domain */,
-				999C7879218B35740044C47E /* Enum */,
-				999C7867218AEE7D0044C47E /* Parameters */,
-				99AF3488217A429E00B7A332 /* Schedules */,
-				999C7845218A91070044C47E /* Entities */,
-				99AF347D217A356100B7A332 /* EAB */,
 				99ECE8EB212972EC001510BF /* Common */,
-				99ECE8ED212972EC001510BF /* OperantKit.swift */,
-				9905000B2131705E008A6423 /* IntervalTimer.swift */,
-				999C51BB2134261B00611308 /* SessionEvents.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -665,7 +677,6 @@
 				999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
 				999C785D218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */,
-				999C7880218B3E810044C47E /* EmptyUseCase.swift in Sources */,
 				999C7843218A907D0044C47E /* FR.swift in Sources */,
 				999C786C218B01810044C47E /* PrepositionSchedule.swift in Sources */,
 				999C7851218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,
@@ -711,7 +722,6 @@
 				999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
 				999C785E218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */,
-				999C7881218B3E810044C47E /* EmptyUseCase.swift in Sources */,
 				999C7844218A907D0044C47E /* FR.swift in Sources */,
 				999C786D218B01810044C47E /* PrepositionSchedule.swift in Sources */,
 				999C7850218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,

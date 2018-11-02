@@ -37,6 +37,7 @@
 		9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974945D2186144700A29745 /* UIControl+Rx.swift */; };
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
+		999C7897218C21890044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7896218C21890044C47E /* EmptyUseCase.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		9974945D2186144700A29745 /* UIControl+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Rx.swift"; sourceTree = "<group>"; };
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
+		999C7896218C21890044C47E /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			children = (
 				991F0519217CE17400BB31B6 /* Supporting Files */,
 				991F0509217CE0B400BB31B6 /* Application */,
+				999C7894218C21540044C47E /* Domain */,
 				991F04FD217CE0A200BB31B6 /* Presentation */,
 				991F04AC217CCFCF00BB31B6 /* Assets.xcassets */,
 			);
@@ -342,6 +345,22 @@
 				9974940F2183351D00A29745 /* RatChamberSound.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		999C7894218C21540044C47E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				999C7895218C21640044C47E /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		999C7895218C21640044C47E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				999C7896218C21890044C47E /* EmptyUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +560,7 @@
 				991F04A6217CCFCC00BB31B6 /* AppDelegate.swift in Sources */,
 				9974945E2186144700A29745 /* UIControl+Rx.swift in Sources */,
 				991F0518217CE0E000BB31B6 /* MainBuilder.swift in Sources */,
+				999C7897218C21890044C47E /* EmptyUseCase.swift in Sources */,
 				997494102183351D00A29745 /* RatChamberSound.swift in Sources */,
 				991F0542217DA17B00BB31B6 /* RatChamberBuilder.swift in Sources */,
 			);
