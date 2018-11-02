@@ -212,22 +212,22 @@
 		991F04FD217CE0A200BB31B6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				991F04FE217CE0A200BB31B6 /* Presenter */,
-				991F04FF217CE0A200BB31B6 /* View */,
+				991F04FE217CE0A200BB31B6 /* Presenters */,
+				991F04FF217CE0A200BB31B6 /* Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		991F04FE217CE0A200BB31B6 /* Presenter */ = {
+		991F04FE217CE0A200BB31B6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
 				991F0532217D13DE00BB31B6 /* Presenter.swift */,
 				991F053D217D854100BB31B6 /* SessionPresenter.swift */,
 			);
-			path = Presenter;
+			path = Presenters;
 			sourceTree = "<group>";
 		};
-		991F04FF217CE0A200BB31B6 /* View */ = {
+		991F04FF217CE0A200BB31B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				991F0523217CF17000BB31B6 /* RatChamber */,
@@ -235,26 +235,18 @@
 				991F0503217CE0A200BB31B6 /* ViewController.storyboard */,
 				991F0501217CE0A200BB31B6 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		991F0509217CE0B400BB31B6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				991F0511217CE0E000BB31B6 /* AppDelegate */,
-				991F0514217CE0E000BB31B6 /* Builder */,
-				991F0516217CE0E000BB31B6 /* Extension */,
-				991F0510217CE0E000BB31B6 /* Utility */,
-				991F0513217CE0E000BB31B6 /* Wireframe */,
+				991F0514217CE0E000BB31B6 /* Builders */,
+				991F0516217CE0E000BB31B6 /* Extensions */,
+				991F0513217CE0E000BB31B6 /* Wireframes */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		991F0510217CE0E000BB31B6 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		991F0511217CE0E000BB31B6 /* AppDelegate */ = {
@@ -265,24 +257,24 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		991F0513217CE0E000BB31B6 /* Wireframe */ = {
+		991F0513217CE0E000BB31B6 /* Wireframes */ = {
 			isa = PBXGroup;
 			children = (
 				9974941B218414EB00A29745 /* EmptyWireframe.swift */,
 			);
-			path = Wireframe;
+			path = Wireframes;
 			sourceTree = "<group>";
 		};
-		991F0514217CE0E000BB31B6 /* Builder */ = {
+		991F0514217CE0E000BB31B6 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
 				991F0515217CE0E000BB31B6 /* MainBuilder.swift */,
 				991F0541217DA17B00BB31B6 /* RatChamberBuilder.swift */,
 			);
-			path = Builder;
+			path = Builders;
 			sourceTree = "<group>";
 		};
-		991F0516217CE0E000BB31B6 /* Extension */ = {
+		991F0516217CE0E000BB31B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
@@ -290,7 +282,7 @@
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
 				9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		991F0519217CE17400BB31B6 /* Supporting Files */ = {
