@@ -16,6 +16,7 @@ public class IntervalTimer {
 
     // MARK: - Privates
 
+    private let lock = NSLock()
     private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
     private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
 
@@ -128,14 +129,8 @@ private extension IntervalTimer {
 
                                 self.sleepStartMilliseconds = nil
                             }
-
-                            // eventClosureの数だけ回し，eventClosureの時間が一致した場合，
-                            for event in self.eventClosure where event.milliseconds <= self.milliseconds {
-                                // eventを発火させる
-                                event.closure()
-                            }
-                            // イベントは破棄される。
-                            self.eventClosure = self.eventClosure.filter { $0.milliseconds > self.milliseconds }
+                            executeEvent()
+                            removeEvent()
 
                         }
                     }
@@ -215,7 +210,27 @@ public extension IntervalTimer {
     }
 
     /// Set timer event
-    func addEvent(_ event: TimerEvent) {
-        self.eventClosure.append(event)
+    func addEvent(_ closure: @escaping (() -> Void), _ milliseconds: Int) {
+        lock.lock()
+        defer { lock.unlock() }
+        self.eventClosure.append((closure, milliseconds))
+    }
+}
+
+extension IntervalTimer {
+    private func executeEvent() {
+        lock.lock()
+        defer { lock.unlock() }
+        // eventClosureの数だけ回し，eventClosureの時間が一致した場合，
+        for event in self.eventClosure where event.milliseconds <= self.milliseconds {
+            // eventを発火させる
+            event.closure()
+        }
+    }
+
+    private func removeEvent() {
+        lock.lock()
+        defer { lock.unlock() }
+        self.eventClosure = self.eventClosure.filter { [unowned self] in $0.milliseconds > self.milliseconds }
     }
 }

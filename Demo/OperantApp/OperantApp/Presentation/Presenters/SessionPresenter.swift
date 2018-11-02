@@ -82,7 +82,7 @@ final class SessionPresenter: Presenter {
 
                 let milliseconds = $0.element
                     .asObservable()
-                    .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
+                    .flatMap { [unowned self] in self.timerUseCase.getInterval() }
 
                 let response = Observable.zip(numOfResponse, milliseconds)
                     .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
@@ -101,7 +101,7 @@ final class SessionPresenter: Presenter {
                     .asDriverOnErrorJustComplete()
 
                 let reinforcementOff: Driver<Void> = reinforcement
-                    .flatMapLatest { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
+                    .flatMap { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
                     .do(onNext: { print("SR off: \($0)") })
                     .mapToVoid()
                     .asDriverOnErrorJustComplete()

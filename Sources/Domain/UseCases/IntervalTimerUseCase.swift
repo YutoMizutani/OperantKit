@@ -52,9 +52,9 @@ public extension IntervalTimerUseCase {
             }
 
             let time = currentTime + value
-            timer.addEvent(({
+            timer.addEvent({
                 single(.success(timer.milliseconds))
-            }, time))
+            }, time)
 
             return Disposables.create()
         }
@@ -70,9 +70,9 @@ public extension IntervalTimerUseCase {
                     }
 
                     let time = currentTime + value
-                    timer.addEvent(({
+                    timer.addEvent({
                         single(.success(timer.milliseconds))
-                    }, time))
+                    }, time)
 
                     return Disposables.create()
                 }
