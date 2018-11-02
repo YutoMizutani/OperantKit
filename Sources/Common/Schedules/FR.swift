@@ -8,10 +8,6 @@
 
 import RxSwift
 
-public func fixedRatio(value: Int) -> ((Observable<ResponseEntity>) -> Observable<ReinforcementResult>) {
-    return { $0.FR(value) }
-}
-
 extension Observable where E == ResponseEntity {
 
     /// function外で管理する
@@ -20,14 +16,14 @@ extension Observable where E == ResponseEntity {
             .fixedRatio(value, entity)
     }
 
-    /// function内で管理する
-    public func FR(_ value: Int, startWith numOfResponse: Int = 0) -> Observable<ReinforcementResult> {
-        let lastReinforcementEntity: E = ResponseEntity(numOfResponse: numOfResponse)
-
-        return self
-            .fixedRatio(value, lastReinforcementEntity)
-            .storeResponse(lastReinforcementEntity, condition: { $0.isReinforcement })
-    }
+//    /// function内で管理する
+//    public func FR(_ value: Int, startWith numOfResponse: Int = 0) -> Observable<ReinforcementResult> {
+//        let lastReinforcementEntity: E = ResponseEntity(numOfResponse: numOfResponse)
+//
+//        return self
+//            .fixedRatio(value, lastReinforcementEntity)
+//            .storeResponse(lastReinforcementEntity, condition: { $0.isReinforcement })
+//    }
 
     /// FR logic
     func fixedRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {

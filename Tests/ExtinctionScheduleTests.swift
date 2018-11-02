@@ -11,6 +11,8 @@ final class ExtinctionScheduleTests: XCTestCase {
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
+        let schedule: ScheduleUseCase = EXT()
+
         let testObservable = scheduler.createHotObservable([
             next(100, ResponseEntity.stub()),
             next(200, ResponseEntity.stub()),
@@ -19,9 +21,9 @@ final class ExtinctionScheduleTests: XCTestCase {
             ])
 
         scheduler.scheduleAt(startTime) {
-            testObservable
-                .asObservable()
-                .EXT()
+            schedule.decision(
+                testObservable.asObservable()
+                )
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)
