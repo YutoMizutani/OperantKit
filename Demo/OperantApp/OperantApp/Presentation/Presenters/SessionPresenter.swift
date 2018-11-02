@@ -13,9 +13,9 @@ import RxSwift
 public typealias ResponseDetail = (count: Int, time: Int)
 
 final class SessionPresenter: Presenter {
+    typealias ScheduleUseCaseType = ScheduleUseCase
     typealias TimerUseCaseType = IntervalTimerUseCase
     typealias WireframeType = EmptyWireframe
-    typealias ScheduleType = DecisionSchedule
 
     // TODO: REMOVE
     private let experimentEnitty = ExperimentEntity(interReinforcementInterval: 5000)
@@ -36,17 +36,17 @@ final class SessionPresenter: Presenter {
         let reinforcements: [(on: Driver<Void>, off: Driver<Void>)]
     }
 
+    private let scheduleUseCase: ScheduleUseCaseType
     private let timerUseCase: TimerUseCaseType
     private let wireframe: WireframeType
-    private let schedule: ScheduleType
     private let disposeBag = DisposeBag()
 
-    init(timerUseCase: TimerUseCaseType,
-         wireframe: WireframeType,
-         schedule: @escaping ScheduleType) {
+    init(scheduleUseCase: ScheduleUseCaseType,
+         timerUseCase: TimerUseCaseType,
+         wireframe: WireframeType) {
+        self.scheduleUseCase = scheduleUseCase
         self.timerUseCase = timerUseCase
         self.wireframe = wireframe
-        self.schedule = schedule
     }
 
     func transform(input: SessionPresenter.Input) -> SessionPresenter.Output {
@@ -89,7 +89,7 @@ final class SessionPresenter: Presenter {
                     .do(onNext: { print("Response: \($0.milliseconds)") })
                     .share(replay: 1)
 
-                let reinforcement: Observable<Int> = self.schedule(response)
+                let reinforcement: Observable<Int> = self.scheduleUseCase.decision(response)
                     .filter { $0.isReinforcement }
                     .map { $0.entity.milliseconds }
                     .asObservable()

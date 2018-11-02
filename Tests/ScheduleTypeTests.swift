@@ -3,45 +3,45 @@ import XCTest
 
 final class ScheduleTypeTests: XCTestCase {
     func testHasFixedSchedule() {
-        XCTAssertTrue(ReinforcementSchedule.FixedRatio.hasFixedSchedule())
-        XCTAssertTrue(ReinforcementSchedule.FixedInterval.hasFixedSchedule())
-        XCTAssertTrue(ReinforcementSchedule.FixedTime.hasFixedSchedule())
+        XCTAssertTrue(ScheduleType.FixedRatio.hasFixedSchedule())
+        XCTAssertTrue(ScheduleType.FixedInterval.hasFixedSchedule())
+        XCTAssertTrue(ScheduleType.FixedTime.hasFixedSchedule())
 
-        XCTAssertFalse(ReinforcementSchedule.VariableRatio.hasFixedSchedule())
-        XCTAssertFalse(ReinforcementSchedule.VariableInterval.hasFixedSchedule())
-        XCTAssertFalse(ReinforcementSchedule.VariableTime.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.VariableRatio.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.VariableInterval.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.VariableTime.hasFixedSchedule())
 
-        XCTAssertFalse(ReinforcementSchedule.RandomRatio.hasFixedSchedule())
-        XCTAssertFalse(ReinforcementSchedule.RandomInterval.hasFixedSchedule())
-        XCTAssertFalse(ReinforcementSchedule.RandomTime.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.RandomRatio.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.RandomInterval.hasFixedSchedule())
+        XCTAssertFalse(ScheduleType.RandomTime.hasFixedSchedule())
     }
 
     func testHasVariableSchedule() {
-        XCTAssertFalse(ReinforcementSchedule.FixedRatio.hasVariableSchedule())
-        XCTAssertFalse(ReinforcementSchedule.FixedInterval.hasVariableSchedule())
-        XCTAssertFalse(ReinforcementSchedule.FixedTime.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.FixedRatio.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.FixedInterval.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.FixedTime.hasVariableSchedule())
 
-        XCTAssertTrue(ReinforcementSchedule.VariableRatio.hasVariableSchedule())
-        XCTAssertTrue(ReinforcementSchedule.VariableInterval.hasVariableSchedule())
-        XCTAssertTrue(ReinforcementSchedule.VariableTime.hasVariableSchedule())
+        XCTAssertTrue(ScheduleType.VariableRatio.hasVariableSchedule())
+        XCTAssertTrue(ScheduleType.VariableInterval.hasVariableSchedule())
+        XCTAssertTrue(ScheduleType.VariableTime.hasVariableSchedule())
 
-        XCTAssertFalse(ReinforcementSchedule.RandomRatio.hasVariableSchedule())
-        XCTAssertFalse(ReinforcementSchedule.RandomInterval.hasVariableSchedule())
-        XCTAssertFalse(ReinforcementSchedule.RandomTime.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.RandomRatio.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.RandomInterval.hasVariableSchedule())
+        XCTAssertFalse(ScheduleType.RandomTime.hasVariableSchedule())
     }
 
     func testHasRandomSchedule() {
-        XCTAssertFalse(ReinforcementSchedule.FixedRatio.hasRandomSchedule())
-        XCTAssertFalse(ReinforcementSchedule.FixedInterval.hasRandomSchedule())
-        XCTAssertFalse(ReinforcementSchedule.FixedTime.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.FixedRatio.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.FixedInterval.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.FixedTime.hasRandomSchedule())
 
-        XCTAssertFalse(ReinforcementSchedule.VariableRatio.hasRandomSchedule())
-        XCTAssertFalse(ReinforcementSchedule.VariableInterval.hasRandomSchedule())
-        XCTAssertFalse(ReinforcementSchedule.VariableTime.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.VariableRatio.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.VariableInterval.hasRandomSchedule())
+        XCTAssertFalse(ScheduleType.VariableTime.hasRandomSchedule())
 
-        XCTAssertTrue(ReinforcementSchedule.RandomRatio.hasRandomSchedule())
-        XCTAssertTrue(ReinforcementSchedule.RandomInterval.hasRandomSchedule())
-        XCTAssertTrue(ReinforcementSchedule.RandomTime.hasRandomSchedule())
+        XCTAssertTrue(ScheduleType.RandomRatio.hasRandomSchedule())
+        XCTAssertTrue(ScheduleType.RandomInterval.hasRandomSchedule())
+        XCTAssertTrue(ScheduleType.RandomTime.hasRandomSchedule())
     }
 
     func testHasRatioSchedule() {

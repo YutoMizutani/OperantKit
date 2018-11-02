@@ -1,5 +1,5 @@
 //
-//  ReinforcementSchedule.swift
+//  ScheduleType.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/01.
@@ -10,11 +10,11 @@ import Foundation
 /**
 
  e.g.
-    public extension ReinforcementSchedule {
-        static let YourOwnSchedule = ReinforcementSchedule(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
+    public extension ScheduleTypes {
+        static let YourOwnSchedule = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
     }
  */
-public struct ReinforcementSchedule: OptionSet {
+public struct ScheduleType: OptionSet {
     public let rawValue: UInt64
 
     public init(rawValue: UInt64) {
@@ -22,54 +22,54 @@ public struct ReinforcementSchedule: OptionSet {
     }
 
     // MARK: - Extinction schedule
-    public static let Extinction = ReinforcementSchedule(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
+    public static let Extinction = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
 
     // MARK: - Ratio schedule
-    public static let FixedRatio: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let FixedRatio: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
-    public static let VariableRatio: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let VariableRatio: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
-    public static let RandomRatio: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let RandomRatio: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
 
     // MARK: - Interval schedule
-    public static let FixedInterval: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let FixedInterval: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
-    public static let VariableInterval: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let VariableInterval: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
-    public static let RandomInterval: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let RandomInterval: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
 
     // MARK: - Time schedule
-    public static let FixedTime: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let FixedTime: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
-    public static let VariableTime: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let VariableTime: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
-    public static let RandomTime: ReinforcementSchedule =
-        ReinforcementSchedule(
+    public static let RandomTime: ScheduleType =
+        ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
 }
 
-public extension ReinforcementSchedule {
+public extension ScheduleType {
     func hasExtensionSchedule() -> Bool {
-        return self == ReinforcementSchedule.Extinction
+        return self == ScheduleType.Extinction
     }
 
     func hasFixedSchedule() -> Bool {

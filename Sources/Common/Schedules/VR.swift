@@ -10,25 +10,13 @@ import RxSwift
 
 extension Observable where E == ResponseEntity {
 
-    /// function外で管理する
-    public func VR(_ value: Int, with entity: ResponseEntity) -> Observable<ReinforcementResult> {
+    public func VR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
         return self
-            .variableRatio(value)
-    }
-
-    /// function内で管理する
-    public func VR(_ value: Int, startWith entity: ResponseEntity = ResponseEntity()) -> Observable<ReinforcementResult> {
-        let values = FleshlerHoffman().generatedRatio(value: value)
-        var order: Int = 0
-        let lastReinforcementEntity = entity
-        return self
-            .variableRatio(values[order] + lastReinforcementEntity.numOfResponse)
-            .do(onNext: { order += $0.isReinforcement ? 1 : 0 })
-            .storeResponse(lastReinforcementEntity, condition: { $0.isReinforcement })
+            .variableRatio(value, entity)
     }
 
     /// VR logic
-    func variableRatio(_ value: Int) -> Observable<ReinforcementResult> {
-        return self.map { ($0.numOfResponse >= value, $0) }
+    func variableRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
+        return fixedRatio(value, entity)
     }
 }

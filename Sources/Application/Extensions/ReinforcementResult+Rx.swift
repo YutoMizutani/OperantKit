@@ -16,4 +16,12 @@ public extension Observable where E == ReinforcementResult {
             entity.milliseconds = $0.entity.milliseconds
         })
     }
+
+    func nextOrder(_ entity: VariableEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+        return self.do(onNext: {
+            guard condition($0) else { return }
+            let nextOrder = entity.order + 1
+            entity.order = nextOrder < entity.values.count ? nextOrder : 0
+        })
+    }
 }

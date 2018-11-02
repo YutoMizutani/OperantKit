@@ -18,9 +18,9 @@ struct RatChamberBuilder {
 
         viewController?.inject(
             presenter: SessionPresenter(
+                scheduleUseCase: FR(5),
                 timerUseCase: IntervalTimerUseCase(),
-                wireframe: EmptyWireframe(),
-                schedule: { $0.FR(5) }
+                wireframe: EmptyWireframe()
             )
         )
 

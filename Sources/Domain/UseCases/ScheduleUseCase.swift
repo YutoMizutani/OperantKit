@@ -16,5 +16,9 @@ public func EXT() -> ExtinctionScheduleUseCase {
 }
 
 public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
-    return FixedRatioScheduleUseCase(value: value, dataStore: ResponseDataStore())
+    return FixedRatioScheduleUseCase(value: value)
+}
+
+public func VR(_ value: Int) -> VariableRatioScheduleUseCase {
+    return VariableRatioScheduleUseCase(value: value)
 }
