@@ -14,10 +14,10 @@ final class VariableScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VR(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 5, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponse: 15, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponse: 20, milliseconds: 0)),
+            next(100, ResponseEntity(numOfResponse: 100, milliseconds: 0)),
+            next(200, ResponseEntity(numOfResponse: 200, milliseconds: 0)),
+            next(300, ResponseEntity(numOfResponse: 300, milliseconds: 0)),
+            next(400, ResponseEntity(numOfResponse: 400, milliseconds: 0)),
             completed(completedTime)
             ])
 
