@@ -72,50 +72,45 @@ final class SessionPresenter: Presenter {
 
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
-        input.responseTriggers.enumerated().forEach { arg in
-            let (i, e) = arg
-            guard i == 0 else { return }
+        input.responseTriggers.enumerated().forEach { [unowned self] in
+            switch $0.offset {
+            case 0:
 
-            let num = e.map { i }
-                .asObservable()
+                let numOfResponse = $0.element
+                    .scan(0) { n, _ in n + 1 }
+                    .asObservable()
 
-            let numOfResponse = e
-                .scan(0) { n, _ in n + 1 }
-                .asObservable()
+                let milliseconds = $0.element
+                    .asObservable()
+                    .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
 
-            let milliseconds = e
-                .asObservable()
-                .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
+                let response = Observable.zip(numOfResponse, milliseconds)
+                    .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
+                    .do(onNext: { print("Response: \($0.milliseconds)") })
+                    .share(replay: 1)
 
-            let response = Observable.zip(num, numOfResponse, milliseconds)
-                .map { ($0.0, ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2)) }
-                .do(onNext: { print("Response: \($0.1.milliseconds)") })
-                .share(replay: 1)
+                let reinforcement: Observable<Int> = self.schedule(response)
+                    .filter { $0.isReinforcement }
+                    .map { $0.entity.milliseconds }
+                    .asObservable()
+                    .share(replay: 1)
 
-            let reinforcementResult = self.schedule(
-                response
-                    .filter { $0.0 == 0 }
-                    .map { $0.1 }
-            )
+                let reinforcementOn: Driver<Void> = reinforcement
+                    .do(onNext: { print("SR on: \($0)") })
+                    .mapToVoid()
+                    .asDriverOnErrorJustComplete()
 
-            let reinforcement: Observable<Int> = reinforcementResult
-                .filter { $0.isReinforcement }
-                .map { $0.entity.milliseconds }
-                .asObservable()
-                .share(replay: 1)
+                let reinforcementOff: Driver<Void> = reinforcement
+                    .flatMapLatest { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
+                    .do(onNext: { print("SR off: \($0)") })
+                    .mapToVoid()
+                    .asDriverOnErrorJustComplete()
 
-            let reinforcementOn: Driver<Void> = reinforcement
-                .do(onNext: { print("SR on: \($0)") })
-                .mapToVoid()
-                .asDriverOnErrorJustComplete()
+                reinforcements.append((reinforcementOn, reinforcementOff))
 
-            let reinforcementOff: Driver<Void> = reinforcement
-                .flatMapLatest { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
-                .do(onNext: { print("SR off: \($0)") })
-                .mapToVoid()
-                .asDriverOnErrorJustComplete()
-
-            reinforcements.append((reinforcementOn, reinforcementOff))
+            default:
+                break
+            }
         }
 
         return SessionPresenter.Output(start: start,
