@@ -9,10 +9,10 @@
 import RxSwift
 
 public extension Observable where E == ReinforcementResult {
-    func storeRespinse(_ entity: ResponseEntity) -> Observable<E> {
+    func storeResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
         return self.do(onNext: {
-            guard $0.isReinforcement else { return }
-            entity.numOfResponse += $0.entity.numOfResponse
+            guard condition($0) else { return }
+            entity.numOfResponse = $0.entity.numOfResponse
             entity.milliseconds = $0.entity.milliseconds
         })
     }

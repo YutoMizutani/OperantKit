@@ -37,8 +37,6 @@
 		999C7849218A91250044C47E /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7846218A91250044C47E /* ResponseEntity.swift */; };
 		999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7847218A91250044C47E /* ExperimentEntity.swift */; };
 		999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7847218A91250044C47E /* ExperimentEntity.swift */; };
-		999C784E218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784C218A917D0044C47E /* ResponseEntity+Rx.swift */; };
-		999C784F218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784C218A917D0044C47E /* ResponseEntity+Rx.swift */; };
 		999C7850218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */; };
 		999C7851218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */; };
 		999C7853218A91FC0044C47E /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7852218A91FB0044C47E /* ObservableType+.swift */; };
@@ -71,8 +69,6 @@
 		999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
 		999C788B218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
 		999C788C218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
-		999C788E218B44730044C47E /* Reactive+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788D218B44730044C47E /* Reactive+.swift */; };
-		999C788F218B44730044C47E /* Reactive+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788D218B44730044C47E /* Reactive+.swift */; };
 		99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
@@ -131,7 +127,6 @@
 		999C7840218A907D0044C47E /* FR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FR.swift; sourceTree = "<group>"; };
 		999C7846218A91250044C47E /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
 		999C7847218A91250044C47E /* ExperimentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentEntity.swift; sourceTree = "<group>"; };
-		999C784C218A917D0044C47E /* ResponseEntity+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResponseEntity+Rx.swift"; sourceTree = "<group>"; };
 		999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReinforcementResult+Rx.swift"; sourceTree = "<group>"; };
 		999C7852218A91FB0044C47E /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
 		999C7859218A9F7A0044C47E /* ReinforcementResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
@@ -148,7 +143,6 @@
 		999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
 		999C7887218B43B10044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		999C788A218B441E0044C47E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		999C788D218B44730044C47E /* Reactive+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+.swift"; sourceTree = "<group>"; };
 		99AF347E217A357000B7A332 /* FleshlerHoffman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
 		99AF3482217A35BA00B7A332 /* Xorshift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xorshift.swift; sourceTree = "<group>"; };
 		99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
@@ -206,17 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		991F0539217D47D600BB31B6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				991F053A217D47EB00BB31B6 /* Observable+Rx.swift */,
-				999C784C218A917D0044C47E /* ResponseEntity+Rx.swift */,
-				999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */,
-				999C7852218A91FB0044C47E /* ObservableType+.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		994FFF5B212C27B3000F4702 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +334,7 @@
 		999C7885218B43470044C47E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				999C7856218A9F080044C47E /* Helper */,
 				999C7886218B435F0044C47E /* Extensions */,
 			);
 			path = Application;
@@ -361,7 +345,9 @@
 			children = (
 				999C7887218B43B10044C47E /* UIApplication+Rx.swift */,
 				999C788A218B441E0044C47E /* UIViewController+Rx.swift */,
-				999C788D218B44730044C47E /* Reactive+.swift */,
+				991F053A217D47EB00BB31B6 /* Observable+Rx.swift */,
+				999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */,
+				999C7852218A91FB0044C47E /* ObservableType+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,8 +425,6 @@
 				999C7885218B43470044C47E /* Application */,
 				999C787D218B3E5A0044C47E /* Domain */,
 				999C7879218B35740044C47E /* Enum */,
-				999C7856218A9F080044C47E /* Helper */,
-				991F0539217D47D600BB31B6 /* Extensions */,
 				999C7867218AEE7D0044C47E /* Parameters */,
 				99AF3488217A429E00B7A332 /* Schedules */,
 				999C7845218A91070044C47E /* Entities */,
@@ -682,7 +666,6 @@
 				999C785D218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */,
 				999C7880218B3E810044C47E /* EmptyUseCase.swift in Sources */,
-				999C784F218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */,
 				999C7843218A907D0044C47E /* FR.swift in Sources */,
 				999C786C218B01810044C47E /* PrepositionSchedule.swift in Sources */,
 				999C7851218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,
@@ -691,7 +674,6 @@
 				999C7854218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
-				999C788E218B44730044C47E /* Reactive+.swift in Sources */,
 				991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */,
 				999C787B218B357F0044C47E /* TimeUnit.swift in Sources */,
 				999C7848218A91250044C47E /* ResponseEntity.swift in Sources */,
@@ -730,7 +712,6 @@
 				999C785E218AA46D0044C47E /* EXT.swift in Sources */,
 				999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */,
 				999C7881218B3E810044C47E /* EmptyUseCase.swift in Sources */,
-				999C784E218A917D0044C47E /* ResponseEntity+Rx.swift in Sources */,
 				999C7844218A907D0044C47E /* FR.swift in Sources */,
 				999C786D218B01810044C47E /* PrepositionSchedule.swift in Sources */,
 				999C7850218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,
@@ -739,7 +720,6 @@
 				999C7853218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
-				999C788F218B44730044C47E /* Reactive+.swift in Sources */,
 				991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */,
 				999C787C218B357F0044C47E /* TimeUnit.swift in Sources */,
 				999C7849218A91250044C47E /* ResponseEntity.swift in Sources */,

@@ -22,10 +22,9 @@ extension Observable where E == ResponseEntity {
         var order: Int = 0
         let lastReinforcementEntity = entity
         return self
-            .fromLastResponse(lastReinforcementEntity)
-            .variableRatio(values[order])
+            .variableRatio(values[order] + lastReinforcementEntity.numOfResponse)
             .do(onNext: { order += $0.isReinforcement ? 1 : 0 })
-            .storeRespinse(lastReinforcementEntity)
+            .storeResponse(lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 
     /// VR logic

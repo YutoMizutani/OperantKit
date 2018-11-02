@@ -15,22 +15,22 @@ public func fixedRatio(value: Int) -> ((Observable<ResponseEntity>) -> Observabl
 extension Observable where E == ResponseEntity {
 
     /// function外で管理する
-    public func FR(_ value: Int, with entity: ResponseEntity) -> Observable<ReinforcementResult> {
+    public func FR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
         return self
-            .fixedRatio(value)
+            .fixedRatio(value, entity)
     }
 
     /// function内で管理する
-    public func FR(_ value: Int, startWith entity: ResponseEntity = ResponseEntity()) -> Observable<ReinforcementResult> {
-        let lastReinforcementEntity = entity
+    public func FR(_ value: Int, startWith numOfResponse: Int = 0) -> Observable<ReinforcementResult> {
+        let lastReinforcementEntity: E = ResponseEntity(numOfResponse: numOfResponse)
+
         return self
-            .fromLastResponse(lastReinforcementEntity)
-            .fixedRatio(value)
-            .storeRespinse(lastReinforcementEntity)
+            .fixedRatio(value, lastReinforcementEntity)
+            .storeResponse(lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 
     /// FR logic
-    func fixedRatio(_ value: Int) -> Observable<ReinforcementResult> {
-        return self.map { ($0.numOfResponse >= value, $0) }
+    func fixedRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
+        return self.map { (($0.numOfResponse >= value + entity.numOfResponse), $0) }
     }
 }

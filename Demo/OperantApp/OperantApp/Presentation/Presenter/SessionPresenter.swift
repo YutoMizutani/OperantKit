@@ -74,6 +74,7 @@ final class SessionPresenter: Presenter {
 
         input.responseTriggers.enumerated().forEach { arg in
             let (i, e) = arg
+            guard i == 0 else { return }
 
             let num = e.map { i }
                 .asObservable()
@@ -87,17 +88,19 @@ final class SessionPresenter: Presenter {
                 .flatMapLatest { [unowned self] in self.timerUseCase.getInterval() }
 
             let response = Observable.zip(num, numOfResponse, milliseconds)
-                .debug()
                 .map { ($0.0, ResponseEntity(numOfResponse: $0.1, milliseconds: $0.2)) }
+                .do(onNext: { print("Response: \($0.1.milliseconds)") })
                 .share(replay: 1)
 
-            let reinforcement: Observable<Int> = self.schedule(
+            let reinforcementResult = self.schedule(
                 response
                     .filter { $0.0 == 0 }
                     .map { $0.1 }
             )
+
+            let reinforcement: Observable<Int> = reinforcementResult
                 .filter { $0.isReinforcement }
-                .flatMapLatest { [unowned self] _ in self.timerUseCase.getInterval() }
+                .map { $0.entity.milliseconds }
                 .asObservable()
                 .share(replay: 1)
 
