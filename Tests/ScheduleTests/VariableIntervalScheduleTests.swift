@@ -3,21 +3,21 @@ import RxTest
 import XCTest
 @testable import OperantKit
 
-final class VariableRatioScheduleTests: XCTestCase {
-    func testVRWithCertainty() {
+final class VariablIntervaleScheduleTests: XCTestCase {
+    func testVIWithCertainty() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = VR(5)
+        let schedule: ScheduleUseCase = VI(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 5 * 100, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponse: 10 * 100, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponse: 15 * 100, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponse: 20 * 100, milliseconds: 0)),
+            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5000 * 100)),
+            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 10000 * 100)),
+            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 15000 * 100)),
+            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 20000 * 100)),
             completed(completedTime)
             ])
 
@@ -46,7 +46,7 @@ final class VariableRatioScheduleTests: XCTestCase {
         XCTAssertEqual(testObservable.subscriptions, expectedSubscriptions)
     }
 
-    func testVRWithManualArray() {
+    func testVIWithManualArray() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
@@ -54,13 +54,13 @@ final class VariableRatioScheduleTests: XCTestCase {
         let disposeBag = DisposeBag()
 
         let values: [Int] = [5, 5, 5]
-        let schedule: ScheduleUseCase = VariableRatioScheduleUseCase(value: 5, values: values)
+        let schedule: ScheduleUseCase = VariableIntervalScheduleUseCase(value: 5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 5, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponse: 7, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
+            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5)),
+            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 7)),
+            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 10)),
+            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 10)),
             completed(completedTime)
             ])
 

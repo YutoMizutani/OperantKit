@@ -1,17 +1,17 @@
 //
-//  VariableRatioScheduleUseCase.swift
+//  VariableIntervalScheduleUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/02.
+//  Created by Yuto Mizutani on 2018/11/03.
 //
 
 import RxSwift
 
-public struct VariableRatioScheduleUseCase {
+public struct VariableIntervalScheduleUseCase {
     public var dataStore: VariableResponseDataStore
 
-    public init(value: Int, iterations: Int) {
-        self.dataStore = VariableResponseDataStore(value: value, iterations: iterations)
+    public init(value: Int, unit: TimeUnit, iterations: Int = 12) {
+        self.dataStore = VariableResponseDataStore(value: value, unit: unit, iterations: iterations)
     }
 
     public init(value: Int, values: [Int]) {
@@ -23,10 +23,9 @@ public struct VariableRatioScheduleUseCase {
     }
 }
 
-extension VariableRatioScheduleUseCase: ScheduleUseCase {
+extension VariableIntervalScheduleUseCase: ScheduleUseCase {
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VR(dataStore.variableEntity.values[dataStore.variableEntity.order], with: dataStore.lastReinforcementEntity)
-            .nextOrder(dataStore.variableEntity, condition: { $0.isReinforcement })
+        return observer.VI(dataStore.variableEntity.value, with: dataStore.lastReinforcementEntity)
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 }

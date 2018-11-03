@@ -13,7 +13,7 @@ public struct VariableResponseDataStore {
     /// Stored ResponseEntity when previous reinforcement
     public var lastReinforcementEntity: ResponseEntity
 
-    public init(value: Int, iterations: Int = 12) {
+    public init(value: Int, iterations: Int) {
         let values = FleshlerHoffman().generatedRatio(value: value, iterations: iterations)
         self.variableEntity = VariableEntity(value: value, values: values)
         self.lastReinforcementEntity = ResponseEntity()
@@ -24,8 +24,8 @@ public struct VariableResponseDataStore {
         self.lastReinforcementEntity = ResponseEntity()
     }
 
-    public init(value: Int, iterations: Int = 12, timeUnit: TimeUnit) {
-        let values = FleshlerHoffman().generatedInterval(value: timeUnit.milliseconds(value), iterations: iterations)
+    public init(value: Int, unit: TimeUnit, iterations: Int) {
+        let values = FleshlerHoffman().generatedInterval(value: unit.milliseconds(value), iterations: iterations)
         self.variableEntity = VariableEntity(value: value, values: values)
         self.lastReinforcementEntity = ResponseEntity()
     }
