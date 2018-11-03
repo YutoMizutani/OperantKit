@@ -1,5 +1,5 @@
 //
-//  ResponseDataStore.swift
+//  FixedResponseDataStore.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/02.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ResponseDataStore {
+public struct FixedResponseDataStore {
     /// Stored FixedEntity
     public var fixedEntity: FixedEntity
     /// Stored ResponseEntity when previous reinforcement
@@ -15,6 +15,11 @@ public struct ResponseDataStore {
 
     public init(value: Int) {
         self.fixedEntity = FixedEntity(value: value)
+        self.lastReinforcementEntity = ResponseEntity()
+    }
+
+    public init(value: Int, unit: TimeUnit) {
+        self.fixedEntity = FixedEntity(value: unit.milliseconds(value))
         self.lastReinforcementEntity = ResponseEntity()
     }
 

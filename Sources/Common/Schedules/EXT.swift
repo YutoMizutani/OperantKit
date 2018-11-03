@@ -12,11 +12,11 @@ extension Observable where E == ResponseEntity {
     /// Extinction schedule
     public func EXT() -> Observable<ReinforcementResult> {
         return self
-            .extension()
+            .extinction()
     }
 
     /// EXT logic
-    func `extension`() -> Observable<ReinforcementResult> {
+    func extinction() -> Observable<ReinforcementResult> {
         return self.map { (false, $0) }
     }
 }
