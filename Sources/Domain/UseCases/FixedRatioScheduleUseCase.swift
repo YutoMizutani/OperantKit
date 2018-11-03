@@ -8,13 +8,13 @@
 import RxSwift
 
 public struct FixedRatioScheduleUseCase {
-    public var dataStore: ResponseDataStore
+    public var dataStore: FixedResponseDataStore
 
     public init(value: Int) {
-        self.dataStore = ResponseDataStore(value: value)
+        self.dataStore = FixedResponseDataStore(value: value)
     }
 
-    public init(dataStore: ResponseDataStore) {
+    public init(dataStore: FixedResponseDataStore) {
         self.dataStore = dataStore
     }
 }
