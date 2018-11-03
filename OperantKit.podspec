@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
   s.source_files = 'Sources/**/**/*.swift'
 end
