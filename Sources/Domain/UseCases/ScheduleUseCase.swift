@@ -15,6 +15,10 @@ public func EXT() -> ExtinctionScheduleUseCase {
     return ExtinctionScheduleUseCase()
 }
 
+public func CRF() -> FixedRatioScheduleUseCase {
+    return FixedRatioScheduleUseCase(value: 1)
+}
+
 public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(value: value)
 }
