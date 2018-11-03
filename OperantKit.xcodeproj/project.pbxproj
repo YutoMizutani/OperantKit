@@ -109,8 +109,6 @@
 		99AF34AD217A4D4B00B7A332 /* VariableRatioScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */; };
 		99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
 		99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
-		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
-		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,7 +187,6 @@
 		99AF34A8217A49CD00B7A332 /* FixedRatioScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioScheduleTests.swift; sourceTree = "<group>"; };
 		99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioScheduleTests.swift; sourceTree = "<group>"; };
 		99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
-		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -529,7 +526,6 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				99ECE8ED212972EC001510BF /* OperantKit.swift */,
 				999C7885218B43470044C47E /* Application */,
 				999C789E218C30A00044C47E /* Data */,
 				999C787D218B3E5A0044C47E /* Domain */,
@@ -756,7 +752,6 @@
 				999C7865218AAE5D0044C47E /* DecisionSchedule.swift in Sources */,
 				99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
-				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
 				999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
 				999C78AD218C5C520044C47E /* VariableEntity.swift in Sources */,
 				999C78A7218C50480044C47E /* VariableResponseDataStore.swift in Sources */,
@@ -815,7 +810,6 @@
 				999C7866218AAE5D0044C47E /* DecisionSchedule.swift in Sources */,
 				99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
 				99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
-				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
 				999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
 				999C78AE218C5C520044C47E /* VariableEntity.swift in Sources */,
 				999C78A8218C50480044C47E /* VariableResponseDataStore.swift in Sources */,
