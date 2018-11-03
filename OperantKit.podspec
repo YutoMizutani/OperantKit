@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OperantKit"
-  s.version          = "0.0.4"
+  s.version          = "0.0.5"
   s.summary          = "A tool for operant conditioning"
 
   s.description      = <<-DESC
@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'RxSwift'
+  s.source_files = 'Sources/**/**/*.swift'
 end
