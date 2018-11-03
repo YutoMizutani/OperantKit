@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-import OperantKit
+import OperantApp
 import RxCocoa
 import RxSwift
 
