@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905000B2131705E008A6423 /* IntervalTimer.swift */; };
 		9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905000B2131705E008A6423 /* IntervalTimer.swift */; };
-		991F048F217C20E100BB31B6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F048E217C20E100BB31B6 /* State.swift */; };
-		991F0490217C20E300BB31B6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F048E217C20E100BB31B6 /* State.swift */; };
-		991F0493217C211F00BB31B6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0492217C211F00BB31B6 /* Experiment.swift */; };
-		991F0494217C211F00BB31B6 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0492217C211F00BB31B6 /* Experiment.swift */; };
-		991F0497217C217B00BB31B6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0496217C217B00BB31B6 /* Schedule.swift */; };
-		991F0498217C217B00BB31B6 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F0496217C217B00BB31B6 /* Schedule.swift */; };
 		991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053A217D47EB00BB31B6 /* Observable+Rx.swift */; };
 		991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F053A217D47EB00BB31B6 /* Observable+Rx.swift */; };
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
@@ -35,140 +29,86 @@
 		99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
 		999C51BC2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
 		999C51BD2134261B00611308 /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51BB2134261B00611308 /* SessionEvents.swift */; };
+		999C7841218A907D0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C783F218A907D0044C47E /* VR.swift */; };
+		999C7842218A907D0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C783F218A907D0044C47E /* VR.swift */; };
+		999C7843218A907D0044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7840218A907D0044C47E /* FR.swift */; };
+		999C7844218A907D0044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7840218A907D0044C47E /* FR.swift */; };
+		999C7848218A91250044C47E /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7846218A91250044C47E /* ResponseEntity.swift */; };
+		999C7849218A91250044C47E /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7846218A91250044C47E /* ResponseEntity.swift */; };
+		999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7847218A91250044C47E /* ExperimentEntity.swift */; };
+		999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7847218A91250044C47E /* ExperimentEntity.swift */; };
+		999C7850218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */; };
+		999C7851218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */; };
+		999C7853218A91FC0044C47E /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7852218A91FB0044C47E /* ObservableType+.swift */; };
+		999C7854218A91FC0044C47E /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7852218A91FB0044C47E /* ObservableType+.swift */; };
+		999C785A218A9F7A0044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7859218A9F7A0044C47E /* ReinforcementResult.swift */; };
+		999C785B218A9F7A0044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7859218A9F7A0044C47E /* ReinforcementResult.swift */; };
+		999C785D218AA46D0044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C785C218AA46D0044C47E /* EXT.swift */; };
+		999C785E218AA46D0044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C785C218AA46D0044C47E /* EXT.swift */; };
+		999C7862218AA6130044C47E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7861218AA6130044C47E /* Helper.swift */; };
+		999C7863218AA6130044C47E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7861218AA6130044C47E /* Helper.swift */; };
+		999C7865218AAE5D0044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7864218AAE5D0044C47E /* DecisionSchedule.swift */; };
+		999C7866218AAE5D0044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7864218AAE5D0044C47E /* DecisionSchedule.swift */; };
+		999C7869218AEE920044C47E /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7868218AEE920044C47E /* ScheduleType.swift */; };
+		999C786A218AEE920044C47E /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7868218AEE920044C47E /* ScheduleType.swift */; };
+		999C786C218B01810044C47E /* PrepositionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C786B218B01810044C47E /* PrepositionSchedule.swift */; };
+		999C786D218B01810044C47E /* PrepositionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C786B218B01810044C47E /* PrepositionSchedule.swift */; };
+		999C786F218B02850044C47E /* PostpositionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C786E218B02850044C47E /* PostpositionSchedule.swift */; };
+		999C7870218B02850044C47E /* PostpositionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C786E218B02850044C47E /* PostpositionSchedule.swift */; };
+		999C7874218B11730044C47E /* ScheduleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7871218B11710044C47E /* ScheduleTypeTests.swift */; };
+		999C7875218B11740044C47E /* ScheduleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7871218B11710044C47E /* ScheduleTypeTests.swift */; };
+		999C7877218B35440044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7876218B35440044C47E /* FI.swift */; };
+		999C7878218B35440044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7876218B35440044C47E /* FI.swift */; };
+		999C787B218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
+		999C787C218B357F0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C787A218B357F0044C47E /* TimeUnit.swift */; };
+		999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
+		999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7887218B43B10044C47E /* UIApplication+Rx.swift */; };
+		999C788B218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
+		999C788C218B441E0044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C788A218B441E0044C47E /* UIViewController+Rx.swift */; };
+		999C7899218C2F0C0044C47E /* ScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7898218C2F0C0044C47E /* ScheduleUseCase.swift */; };
+		999C789A218C2F0C0044C47E /* ScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7898218C2F0C0044C47E /* ScheduleUseCase.swift */; };
+		999C789C218C2FE80044C47E /* FixedRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C789B218C2FE80044C47E /* FixedRatioScheduleUseCase.swift */; };
+		999C789D218C2FE80044C47E /* FixedRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C789B218C2FE80044C47E /* FixedRatioScheduleUseCase.swift */; };
+		999C78A1218C31020044C47E /* FixedResponseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A0218C31020044C47E /* FixedResponseDataStore.swift */; };
+		999C78A2218C31020044C47E /* FixedResponseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A0218C31020044C47E /* FixedResponseDataStore.swift */; };
+		999C78A4218C44350044C47E /* ExtinctionScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A3218C44350044C47E /* ExtinctionScheduleUseCase.swift */; };
+		999C78A5218C44350044C47E /* ExtinctionScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A3218C44350044C47E /* ExtinctionScheduleUseCase.swift */; };
+		999C78A7218C50480044C47E /* VariableResponseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A6218C50480044C47E /* VariableResponseDataStore.swift */; };
+		999C78A8218C50480044C47E /* VariableResponseDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A6218C50480044C47E /* VariableResponseDataStore.swift */; };
+		999C78AA218C53980044C47E /* VariableRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A9218C53980044C47E /* VariableRatioScheduleUseCase.swift */; };
+		999C78AB218C53980044C47E /* VariableRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78A9218C53980044C47E /* VariableRatioScheduleUseCase.swift */; };
+		999C78AD218C5C520044C47E /* VariableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78AC218C5C520044C47E /* VariableEntity.swift */; };
+		999C78AE218C5C520044C47E /* VariableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78AC218C5C520044C47E /* VariableEntity.swift */; };
+		999C78B0218C5DCC0044C47E /* FixedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78AF218C5DCC0044C47E /* FixedEntity.swift */; };
+		999C78B1218C5DCC0044C47E /* FixedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78AF218C5DCC0044C47E /* FixedEntity.swift */; };
+		999C78B4218C5E630044C47E /* ScheduleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78B3218C5E630044C47E /* ScheduleParameter.swift */; };
+		999C78B5218C5E630044C47E /* ScheduleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78B3218C5E630044C47E /* ScheduleParameter.swift */; };
+		999C78BB218D62D80044C47E /* FixedIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78BA218D62D80044C47E /* FixedIntervalScheduleUseCase.swift */; };
+		999C78BC218D62D80044C47E /* FixedIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78BA218D62D80044C47E /* FixedIntervalScheduleUseCase.swift */; };
+		999C78C2218D63660044C47E /* FixedIntervalScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78BF218D63610044C47E /* FixedIntervalScheduleTests.swift */; };
+		999C78C3218D63680044C47E /* FixedIntervalScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78BF218D63610044C47E /* FixedIntervalScheduleTests.swift */; };
+		999C78C5218D67060044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78C4218D67060044C47E /* VI.swift */; };
+		999C78C6218D67060044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78C4218D67060044C47E /* VI.swift */; };
+		999C78C8218D67A80044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78C7218D67A80044C47E /* VariableIntervalScheduleUseCase.swift */; };
+		999C78C9218D67A80044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78C7218D67A80044C47E /* VariableIntervalScheduleUseCase.swift */; };
+		999C78CB218D692D0044C47E /* VariableIntervalScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78CA218D692D0044C47E /* VariableIntervalScheduleTests.swift */; };
+		999C78CC218D692D0044C47E /* VariableIntervalScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C78CA218D692D0044C47E /* VariableIntervalScheduleTests.swift */; };
 		99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF347E217A357000B7A332 /* FleshlerHoffman.swift */; };
 		99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
 		99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3482217A35BA00B7A332 /* Xorshift.swift */; };
 		99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
 		99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */; };
-		99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
-		99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */; };
-		99AF348E217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
-		99AF348F217A434700B7A332 /* FixedRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */; };
-		99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */; };
-		99AF3492217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */; };
-		99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */; };
-		99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */; };
-		99AF3497217A443900B7A332 /* VariableRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */; };
-		99AF3498217A443900B7A332 /* VariableRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */; };
-		99AF349A217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */; };
-		99AF349B217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */; };
-		99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
-		99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */; };
-		99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
-		99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */; };
 		99AF34A6217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */; };
 		99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */; };
-		99AF34A9217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
-		99AF34AA217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */; };
-		99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
-		99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */; };
-		99AF34B2217AD82400B7A332 /* InterlockingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B1217AD82400B7A332 /* InterlockingSchedule.swift */; };
-		99AF34B3217AD82400B7A332 /* InterlockingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B1217AD82400B7A332 /* InterlockingSchedule.swift */; };
-		99AF34B6217AD85100B7A332 /* RatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B5217AD85100B7A332 /* RatioSchedule.swift */; };
-		99AF34B7217AD85100B7A332 /* RatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B5217AD85100B7A332 /* RatioSchedule.swift */; };
-		99AF34B9217AD99400B7A332 /* IntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B8217AD99400B7A332 /* IntervalSchedule.swift */; };
-		99AF34BA217AD99400B7A332 /* IntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34B8217AD99400B7A332 /* IntervalSchedule.swift */; };
-		99AF34BF217AE03000B7A332 /* FixedRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34BE217AE03000B7A332 /* FixedRatioParameter.swift */; };
-		99AF34C0217AE03000B7A332 /* FixedRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34BE217AE03000B7A332 /* FixedRatioParameter.swift */; };
-		99AF34C2217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C1217AE81C00B7A332 /* FixedIntervalParameter.swift */; };
-		99AF34C3217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C1217AE81C00B7A332 /* FixedIntervalParameter.swift */; };
-		99AF34C5217AE84600B7A332 /* FixedTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C4217AE84600B7A332 /* FixedTimeParameter.swift */; };
-		99AF34C6217AE84600B7A332 /* FixedTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C4217AE84600B7A332 /* FixedTimeParameter.swift */; };
-		99AF34C8217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C7217AE86A00B7A332 /* VariableRatioParameter.swift */; };
-		99AF34C9217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34C7217AE86A00B7A332 /* VariableRatioParameter.swift */; };
-		99AF34CB217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34CA217AE87700B7A332 /* VariableIntervalParameter.swift */; };
-		99AF34CC217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34CA217AE87700B7A332 /* VariableIntervalParameter.swift */; };
-		99AF34CF217AF1A300B7A332 /* FixedParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34CE217AF1A300B7A332 /* FixedParameter.swift */; };
-		99AF34D0217AF1A300B7A332 /* FixedParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34CE217AF1A300B7A332 /* FixedParameter.swift */; };
-		99AF34D2217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */; };
-		99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */; };
-		99AF34D5217AF38900B7A332 /* VariableParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D4217AF38900B7A332 /* VariableParameter.swift */; };
-		99AF34D6217AF38900B7A332 /* VariableParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D4217AF38900B7A332 /* VariableParameter.swift */; };
-		99AF34D8217AF62E00B7A332 /* TimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */; };
-		99AF34D9217AF62E00B7A332 /* TimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */; };
-		99AF34DD217AFECF00B7A332 /* FixedRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34DC217AFECF00B7A332 /* FixedRatioState.swift */; };
-		99AF34DE217AFECF00B7A332 /* FixedRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34DC217AFECF00B7A332 /* FixedRatioState.swift */; };
-		99AF34E0217B021700B7A332 /* FixedIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34DF217B021700B7A332 /* FixedIntervalState.swift */; };
-		99AF34E1217B021700B7A332 /* FixedIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34DF217B021700B7A332 /* FixedIntervalState.swift */; };
-		99AF34E3217B029A00B7A332 /* FixedTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E2217B029A00B7A332 /* FixedTimeState.swift */; };
-		99AF34E4217B029A00B7A332 /* FixedTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E2217B029A00B7A332 /* FixedTimeState.swift */; };
-		99AF34E6217B05B300B7A332 /* VariableRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E5217B05B300B7A332 /* VariableRatioState.swift */; };
-		99AF34E7217B05B300B7A332 /* VariableRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E5217B05B300B7A332 /* VariableRatioState.swift */; };
-		99AF34E9217B05C000B7A332 /* VariableIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E8217B05C000B7A332 /* VariableIntervalState.swift */; };
-		99AF34EA217B05C000B7A332 /* VariableIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34E8217B05C000B7A332 /* VariableIntervalState.swift */; };
-		99AF34EC217B05CB00B7A332 /* VariableTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34EB217B05CB00B7A332 /* VariableTimeState.swift */; };
-		99AF34ED217B05CB00B7A332 /* VariableTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34EB217B05CB00B7A332 /* VariableTimeState.swift */; };
-		99AF34F0217B068200B7A332 /* RatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34EF217B068200B7A332 /* RatioState.swift */; };
-		99AF34F1217B068200B7A332 /* RatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34EF217B068200B7A332 /* RatioState.swift */; };
-		99AF34F3217B073C00B7A332 /* IntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F2217B073C00B7A332 /* IntervalState.swift */; };
-		99AF34F4217B073C00B7A332 /* IntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F2217B073C00B7A332 /* IntervalState.swift */; };
-		99AF34F6217B075600B7A332 /* TimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F5217B075600B7A332 /* TimeState.swift */; };
-		99AF34F7217B075600B7A332 /* TimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F5217B075600B7A332 /* TimeState.swift */; };
-		99AF34F9217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F8217B095B00B7A332 /* RandomRatioSchedule.swift */; };
-		99AF34FA217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34F8217B095B00B7A332 /* RandomRatioSchedule.swift */; };
-		99AF34FC217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */; };
-		99AF34FD217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */; };
-		99AF3500217B099100B7A332 /* RandomTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */; };
-		99AF3501217B099100B7A332 /* RandomTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */; };
-		99AF3503217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */; };
-		99AF3504217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */; };
-		99AF3506217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */; };
-		99AF3507217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */; };
-		99AF3509217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */; };
-		99AF350A217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */; };
-		99AF350C217B0BF000B7A332 /* RandomParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350B217B0BF000B7A332 /* RandomParameter.swift */; };
-		99AF350D217B0BF000B7A332 /* RandomParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350B217B0BF000B7A332 /* RandomParameter.swift */; };
+		99AF34A9217A49CD00B7A332 /* FixedRatioScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedRatioScheduleTests.swift */; };
+		99AF34AA217A49CD00B7A332 /* FixedRatioScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34A8217A49CD00B7A332 /* FixedRatioScheduleTests.swift */; };
+		99AF34AC217A4D4B00B7A332 /* VariableRatioScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */; };
+		99AF34AD217A4D4B00B7A332 /* VariableRatioScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */; };
 		99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
 		99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */; };
-		99AF3512217B15AA00B7A332 /* RandomRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3511217B15AA00B7A332 /* RandomRatioState.swift */; };
-		99AF3513217B15AA00B7A332 /* RandomRatioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3511217B15AA00B7A332 /* RandomRatioState.swift */; };
-		99AF3515217B15C600B7A332 /* RandomIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3514217B15C600B7A332 /* RandomIntervalState.swift */; };
-		99AF3516217B15C600B7A332 /* RandomIntervalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3514217B15C600B7A332 /* RandomIntervalState.swift */; };
-		99AF3518217B15E900B7A332 /* RandomTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3517217B15E900B7A332 /* RandomTimeState.swift */; };
-		99AF3519217B15E900B7A332 /* RandomTimeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3517217B15E900B7A332 /* RandomTimeState.swift */; };
-		99AF351D217B1B5A00B7A332 /* FixedRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF351C217B1B5A00B7A332 /* FixedRatioExperiment.swift */; };
-		99AF351E217B1B5A00B7A332 /* FixedRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF351C217B1B5A00B7A332 /* FixedRatioExperiment.swift */; };
-		99AF3520217B1C0800B7A332 /* FixedIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF351F217B1C0800B7A332 /* FixedIntervalExperiment.swift */; };
-		99AF3521217B1C0800B7A332 /* FixedIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF351F217B1C0800B7A332 /* FixedIntervalExperiment.swift */; };
-		99AF3523217B1C5000B7A332 /* FixedTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3522217B1C5000B7A332 /* FixedTimeExperiment.swift */; };
-		99AF3524217B1C5000B7A332 /* FixedTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3522217B1C5000B7A332 /* FixedTimeExperiment.swift */; };
-		99AF3526217B1C5D00B7A332 /* VariableRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3525217B1C5D00B7A332 /* VariableRatioExperiment.swift */; };
-		99AF3527217B1C5D00B7A332 /* VariableRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3525217B1C5D00B7A332 /* VariableRatioExperiment.swift */; };
-		99AF3529217B1C6F00B7A332 /* VariableIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3528217B1C6F00B7A332 /* VariableIntervalExperiment.swift */; };
-		99AF352A217B1C6F00B7A332 /* VariableIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3528217B1C6F00B7A332 /* VariableIntervalExperiment.swift */; };
-		99AF352C217B1C8600B7A332 /* VariableTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF352B217B1C8600B7A332 /* VariableTimeExperiment.swift */; };
-		99AF352D217B1C8600B7A332 /* VariableTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF352B217B1C8600B7A332 /* VariableTimeExperiment.swift */; };
-		99AF352F217B1C9200B7A332 /* RandomRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF352E217B1C9200B7A332 /* RandomRatioExperiment.swift */; };
-		99AF3530217B1C9200B7A332 /* RandomRatioExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF352E217B1C9200B7A332 /* RandomRatioExperiment.swift */; };
-		99AF3532217B1CA900B7A332 /* RandomIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3531217B1CA900B7A332 /* RandomIntervalExperiment.swift */; };
-		99AF3533217B1CA900B7A332 /* RandomIntervalExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3531217B1CA900B7A332 /* RandomIntervalExperiment.swift */; };
-		99AF3535217B1CB600B7A332 /* RandomTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3534217B1CB600B7A332 /* RandomTimeExperiment.swift */; };
-		99AF3536217B1CB600B7A332 /* RandomTimeExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3534217B1CB600B7A332 /* RandomTimeExperiment.swift */; };
-		99AF3542217B1FD000B7A332 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3541217B1FD000B7A332 /* Parameter.swift */; };
-		99AF3543217B1FD000B7A332 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3541217B1FD000B7A332 /* Parameter.swift */; };
-		99AF3546217B200D00B7A332 /* SimpleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3545217B200D00B7A332 /* SimpleParameter.swift */; };
-		99AF3547217B200D00B7A332 /* SimpleParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3545217B200D00B7A332 /* SimpleParameter.swift */; };
-		99AF3549217B214F00B7A332 /* RatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3548217B214F00B7A332 /* RatioParameter.swift */; };
-		99AF354A217B214F00B7A332 /* RatioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3548217B214F00B7A332 /* RatioParameter.swift */; };
-		99AF354C217B215B00B7A332 /* IntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF354B217B215B00B7A332 /* IntervalParameter.swift */; };
-		99AF354D217B215B00B7A332 /* IntervalParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF354B217B215B00B7A332 /* IntervalParameter.swift */; };
-		99AF354F217B217100B7A332 /* TimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF354E217B217100B7A332 /* TimeParameter.swift */; };
-		99AF3550217B217100B7A332 /* TimeParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF354E217B217100B7A332 /* TimeParameter.swift */; };
-		99AF3552217B225600B7A332 /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3551217B225600B7A332 /* FixedState.swift */; };
-		99AF3553217B225600B7A332 /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3551217B225600B7A332 /* FixedState.swift */; };
-		99AF3555217B226200B7A332 /* VariableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3554217B226200B7A332 /* VariableState.swift */; };
-		99AF3556217B226200B7A332 /* VariableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3554217B226200B7A332 /* VariableState.swift */; };
-		99AF3558217B226C00B7A332 /* RandomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3557217B226C00B7A332 /* RandomState.swift */; };
-		99AF3559217B226C00B7A332 /* RandomState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3557217B226C00B7A332 /* RandomState.swift */; };
-		99AF355B217B22C500B7A332 /* SimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF355A217B22C500B7A332 /* SimpleState.swift */; };
-		99AF355C217B22C500B7A332 /* SimpleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF355A217B22C500B7A332 /* SimpleState.swift */; };
-		99AF356A217B241D00B7A332 /* FixedSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3569217B241D00B7A332 /* FixedSchedule.swift */; };
-		99AF356B217B241D00B7A332 /* FixedSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF3569217B241D00B7A332 /* FixedSchedule.swift */; };
-		99AF356D217B242700B7A332 /* VariableSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF356C217B242700B7A332 /* VariableSchedule.swift */; };
-		99AF356E217B242700B7A332 /* VariableSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF356C217B242700B7A332 /* VariableSchedule.swift */; };
-		99AF3570217B242F00B7A332 /* RandomSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF356F217B242F00B7A332 /* RandomSchedule.swift */; };
-		99AF3571217B242F00B7A332 /* RandomSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF356F217B242F00B7A332 /* RandomSchedule.swift */; };
 		99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 		99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ECE8ED212972EC001510BF /* OperantKit.swift */; };
 /* End PBXBuildFile section */
@@ -192,9 +132,6 @@
 
 /* Begin PBXFileReference section */
 		9905000B2131705E008A6423 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
-		991F048E217C20E100BB31B6 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		991F0492217C211F00BB31B6 /* Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
-		991F0496217C217B00BB31B6 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		991F053A217D47EB00BB31B6 /* Observable+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Rx.swift"; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,73 +149,46 @@
 		9998171B212C35F000D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
 		9998171C212C35F000D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		999C51BB2134261B00611308 /* SessionEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEvents.swift; sourceTree = "<group>"; };
+		999C783F218A907D0044C47E /* VR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VR.swift; sourceTree = "<group>"; };
+		999C7840218A907D0044C47E /* FR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FR.swift; sourceTree = "<group>"; };
+		999C7846218A91250044C47E /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		999C7847218A91250044C47E /* ExperimentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentEntity.swift; sourceTree = "<group>"; };
+		999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReinforcementResult+Rx.swift"; sourceTree = "<group>"; };
+		999C7852218A91FB0044C47E /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
+		999C7859218A9F7A0044C47E /* ReinforcementResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
+		999C785C218AA46D0044C47E /* EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT.swift; sourceTree = "<group>"; };
+		999C7861218AA6130044C47E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		999C7864218AAE5D0044C47E /* DecisionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionSchedule.swift; sourceTree = "<group>"; };
+		999C7868218AEE920044C47E /* ScheduleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleType.swift; sourceTree = "<group>"; };
+		999C786B218B01810044C47E /* PrepositionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepositionSchedule.swift; sourceTree = "<group>"; };
+		999C786E218B02850044C47E /* PostpositionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostpositionSchedule.swift; sourceTree = "<group>"; };
+		999C7871218B11710044C47E /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
+		999C7876218B35440044C47E /* FI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FI.swift; sourceTree = "<group>"; };
+		999C787A218B357F0044C47E /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
+		999C7887218B43B10044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
+		999C788A218B441E0044C47E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		999C7898218C2F0C0044C47E /* ScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C789B218C2FE80044C47E /* FixedRatioScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C78A0218C31020044C47E /* FixedResponseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedResponseDataStore.swift; sourceTree = "<group>"; };
+		999C78A3218C44350044C47E /* ExtinctionScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C78A6218C50480044C47E /* VariableResponseDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableResponseDataStore.swift; sourceTree = "<group>"; };
+		999C78A9218C53980044C47E /* VariableRatioScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C78AC218C5C520044C47E /* VariableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableEntity.swift; sourceTree = "<group>"; };
+		999C78AF218C5DCC0044C47E /* FixedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedEntity.swift; sourceTree = "<group>"; };
+		999C78B3218C5E630044C47E /* ScheduleParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParameter.swift; sourceTree = "<group>"; };
+		999C78BA218D62D80044C47E /* FixedIntervalScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C78BF218D63610044C47E /* FixedIntervalScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalScheduleTests.swift; sourceTree = "<group>"; };
+		999C78C4218D67060044C47E /* VI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VI.swift; sourceTree = "<group>"; };
+		999C78C7218D67A80044C47E /* VariableIntervalScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalScheduleUseCase.swift; sourceTree = "<group>"; };
+		999C78CA218D692D0044C47E /* VariableIntervalScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalScheduleTests.swift; sourceTree = "<group>"; };
 		99AF347E217A357000B7A332 /* FleshlerHoffman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
 		99AF3482217A35BA00B7A332 /* Xorshift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xorshift.swift; sourceTree = "<group>"; };
 		99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
-		99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionSchedule.swift; sourceTree = "<group>"; };
-		99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioSchedule.swift; sourceTree = "<group>"; };
-		99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalSchedule.swift; sourceTree = "<group>"; };
-		99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeSchedule.swift; sourceTree = "<group>"; };
-		99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioSchedule.swift; sourceTree = "<group>"; };
-		99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalSchedule.swift; sourceTree = "<group>"; };
-		99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeSchedule.swift; sourceTree = "<group>"; };
-		99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSchedule.swift; sourceTree = "<group>"; };
 		99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtinctionScheduleTests.swift; sourceTree = "<group>"; };
-		99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedScheduleTests.swift; sourceTree = "<group>"; };
-		99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableScheduleTests.swift; sourceTree = "<group>"; };
-		99AF34B1217AD82400B7A332 /* InterlockingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterlockingSchedule.swift; sourceTree = "<group>"; };
-		99AF34B5217AD85100B7A332 /* RatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioSchedule.swift; sourceTree = "<group>"; };
-		99AF34B8217AD99400B7A332 /* IntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedule.swift; sourceTree = "<group>"; };
-		99AF34BE217AE03000B7A332 /* FixedRatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioParameter.swift; sourceTree = "<group>"; };
-		99AF34C1217AE81C00B7A332 /* FixedIntervalParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalParameter.swift; sourceTree = "<group>"; };
-		99AF34C4217AE84600B7A332 /* FixedTimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeParameter.swift; sourceTree = "<group>"; };
-		99AF34C7217AE86A00B7A332 /* VariableRatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioParameter.swift; sourceTree = "<group>"; };
-		99AF34CA217AE87700B7A332 /* VariableIntervalParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalParameter.swift; sourceTree = "<group>"; };
-		99AF34CE217AF1A300B7A332 /* FixedParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedParameter.swift; sourceTree = "<group>"; };
-		99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeParameter.swift; sourceTree = "<group>"; };
-		99AF34D4217AF38900B7A332 /* VariableParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableParameter.swift; sourceTree = "<group>"; };
-		99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSchedule.swift; sourceTree = "<group>"; };
-		99AF34DC217AFECF00B7A332 /* FixedRatioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioState.swift; sourceTree = "<group>"; };
-		99AF34DF217B021700B7A332 /* FixedIntervalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalState.swift; sourceTree = "<group>"; };
-		99AF34E2217B029A00B7A332 /* FixedTimeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeState.swift; sourceTree = "<group>"; };
-		99AF34E5217B05B300B7A332 /* VariableRatioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioState.swift; sourceTree = "<group>"; };
-		99AF34E8217B05C000B7A332 /* VariableIntervalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalState.swift; sourceTree = "<group>"; };
-		99AF34EB217B05CB00B7A332 /* VariableTimeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeState.swift; sourceTree = "<group>"; };
-		99AF34EF217B068200B7A332 /* RatioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioState.swift; sourceTree = "<group>"; };
-		99AF34F2217B073C00B7A332 /* IntervalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalState.swift; sourceTree = "<group>"; };
-		99AF34F5217B075600B7A332 /* TimeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeState.swift; sourceTree = "<group>"; };
-		99AF34F8217B095B00B7A332 /* RandomRatioSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioSchedule.swift; sourceTree = "<group>"; };
-		99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalSchedule.swift; sourceTree = "<group>"; };
-		99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeSchedule.swift; sourceTree = "<group>"; };
-		99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioParameter.swift; sourceTree = "<group>"; };
-		99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalParameter.swift; sourceTree = "<group>"; };
-		99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeParameter.swift; sourceTree = "<group>"; };
-		99AF350B217B0BF000B7A332 /* RandomParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomParameter.swift; sourceTree = "<group>"; };
+		99AF34A8217A49CD00B7A332 /* FixedRatioScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioScheduleTests.swift; sourceTree = "<group>"; };
+		99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioScheduleTests.swift; sourceTree = "<group>"; };
 		99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
-		99AF3511217B15AA00B7A332 /* RandomRatioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioState.swift; sourceTree = "<group>"; };
-		99AF3514217B15C600B7A332 /* RandomIntervalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalState.swift; sourceTree = "<group>"; };
-		99AF3517217B15E900B7A332 /* RandomTimeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeState.swift; sourceTree = "<group>"; };
-		99AF351C217B1B5A00B7A332 /* FixedRatioExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioExperiment.swift; sourceTree = "<group>"; };
-		99AF351F217B1C0800B7A332 /* FixedIntervalExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedIntervalExperiment.swift; sourceTree = "<group>"; };
-		99AF3522217B1C5000B7A332 /* FixedTimeExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeExperiment.swift; sourceTree = "<group>"; };
-		99AF3525217B1C5D00B7A332 /* VariableRatioExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRatioExperiment.swift; sourceTree = "<group>"; };
-		99AF3528217B1C6F00B7A332 /* VariableIntervalExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableIntervalExperiment.swift; sourceTree = "<group>"; };
-		99AF352B217B1C8600B7A332 /* VariableTimeExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeExperiment.swift; sourceTree = "<group>"; };
-		99AF352E217B1C9200B7A332 /* RandomRatioExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRatioExperiment.swift; sourceTree = "<group>"; };
-		99AF3531217B1CA900B7A332 /* RandomIntervalExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomIntervalExperiment.swift; sourceTree = "<group>"; };
-		99AF3534217B1CB600B7A332 /* RandomTimeExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeExperiment.swift; sourceTree = "<group>"; };
-		99AF3541217B1FD000B7A332 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
-		99AF3545217B200D00B7A332 /* SimpleParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleParameter.swift; sourceTree = "<group>"; };
-		99AF3548217B214F00B7A332 /* RatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioParameter.swift; sourceTree = "<group>"; };
-		99AF354B217B215B00B7A332 /* IntervalParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalParameter.swift; sourceTree = "<group>"; };
-		99AF354E217B217100B7A332 /* TimeParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeParameter.swift; sourceTree = "<group>"; };
-		99AF3551217B225600B7A332 /* FixedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedState.swift; sourceTree = "<group>"; };
-		99AF3554217B226200B7A332 /* VariableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableState.swift; sourceTree = "<group>"; };
-		99AF3557217B226C00B7A332 /* RandomState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomState.swift; sourceTree = "<group>"; };
-		99AF355A217B22C500B7A332 /* SimpleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleState.swift; sourceTree = "<group>"; };
-		99AF3569217B241D00B7A332 /* FixedSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedSchedule.swift; sourceTree = "<group>"; };
-		99AF356C217B242700B7A332 /* VariableSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableSchedule.swift; sourceTree = "<group>"; };
-		99AF356F217B242F00B7A332 /* RandomSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSchedule.swift; sourceTree = "<group>"; };
 		99ECE8ED212972EC001510BF /* OperantKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKit.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,45 +239,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		991F048D217C20C600BB31B6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				991F048E217C20E100BB31B6 /* State.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		991F0491217C210B00BB31B6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				991F0492217C211F00BB31B6 /* Experiment.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		991F0495217C216F00BB31B6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				991F0496217C217B00BB31B6 /* Schedule.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		991F04D3217CDB2E00BB31B6 /* Compound */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Compound;
-			sourceTree = "<group>";
-		};
-		991F0539217D47D600BB31B6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				991F053A217D47EB00BB31B6 /* Observable+Rx.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		994FFF5B212C27B3000F4702 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,191 +309,182 @@
 			name = macOS;
 			sourceTree = "<group>";
 		};
-		99AF347D217A356100B7A332 /* EAB */ = {
+		999C7845218A91070044C47E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				999C7846218A91250044C47E /* ResponseEntity.swift */,
+				999C78AF218C5DCC0044C47E /* FixedEntity.swift */,
+				999C78AC218C5C520044C47E /* VariableEntity.swift */,
+				999C7847218A91250044C47E /* ExperimentEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		999C7860218AA5F70044C47E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				999C7861218AA6130044C47E /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		999C7867218AEE7D0044C47E /* ScheduleTypes */ = {
+			isa = PBXGroup;
+			children = (
+				999C7868218AEE920044C47E /* ScheduleType.swift */,
+				999C786B218B01810044C47E /* PrepositionSchedule.swift */,
+				999C786E218B02850044C47E /* PostpositionSchedule.swift */,
+			);
+			name = ScheduleTypes;
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		999C7879218B35740044C47E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				999C787A218B357F0044C47E /* TimeUnit.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		999C787D218B3E5A0044C47E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				999C787E218B3E730044C47E /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		999C787E218B3E730044C47E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				999C7882218B3E8C0044C47E /* IntervalTimerUseCase.swift */,
+				999C7898218C2F0C0044C47E /* ScheduleUseCase.swift */,
+				999C78A3218C44350044C47E /* ExtinctionScheduleUseCase.swift */,
+				999C789B218C2FE80044C47E /* FixedRatioScheduleUseCase.swift */,
+				999C78A9218C53980044C47E /* VariableRatioScheduleUseCase.swift */,
+				999C78BA218D62D80044C47E /* FixedIntervalScheduleUseCase.swift */,
+				999C78C7218D67A80044C47E /* VariableIntervalScheduleUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		999C7885218B43470044C47E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				999C7890218C20030044C47E /* Timer */,
+				999C7886218B435F0044C47E /* Extensions */,
+				999C7891218C20A00044C47E /* Typealias */,
+				999C7879218B35740044C47E /* Enums */,
+				999C78B6218C60B80044C47E /* Protocols */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		999C7886218B435F0044C47E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				999C7887218B43B10044C47E /* UIApplication+Rx.swift */,
+				999C788A218B441E0044C47E /* UIViewController+Rx.swift */,
+				991F053A217D47EB00BB31B6 /* Observable+Rx.swift */,
+				999C784D218A917D0044C47E /* ReinforcementResult+Rx.swift */,
+				999C7852218A91FB0044C47E /* ObservableType+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		999C7890218C20030044C47E /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				9905000B2131705E008A6423 /* IntervalTimer.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		999C7891218C20A00044C47E /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				999C7864218AAE5D0044C47E /* DecisionSchedule.swift */,
+				999C7859218A9F7A0044C47E /* ReinforcementResult.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
+		999C7892218C20FB0044C47E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				999C51BB2134261B00611308 /* SessionEvents.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		999C7893218C21100044C47E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				99AF3482217A35BA00B7A332 /* Xorshift.swift */,
 				99AF347E217A357000B7A332 /* FleshlerHoffman.swift */,
 				99AF350E217B0C6C00B7A332 /* RandomGenerator.swift */,
 			);
-			path = EAB;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		999C789E218C30A00044C47E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				999C789F218C30CC0044C47E /* DataStores */,
+				999C7845218A91070044C47E /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		999C789F218C30CC0044C47E /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				999C78A0218C31020044C47E /* FixedResponseDataStore.swift */,
+				999C78A6218C50480044C47E /* VariableResponseDataStore.swift */,
+			);
+			path = DataStores;
+			sourceTree = "<group>";
+		};
+		999C78B6218C60B80044C47E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				999C78B3218C5E630044C47E /* ScheduleParameter.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		999C78BE218D63190044C47E /* ScheduleTests */ = {
+			isa = PBXGroup;
+			children = (
+				99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */,
+				99AF34A8217A49CD00B7A332 /* FixedRatioScheduleTests.swift */,
+				99AF34AB217A4D4B00B7A332 /* VariableRatioScheduleTests.swift */,
+				999C78BF218D63610044C47E /* FixedIntervalScheduleTests.swift */,
+				999C78CA218D692D0044C47E /* VariableIntervalScheduleTests.swift */,
+			);
+			path = ScheduleTests;
 			sourceTree = "<group>";
 		};
 		99AF3488217A429E00B7A332 /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
-				991F0495217C216F00BB31B6 /* Protocols */,
-				99AF34B0217AD3B300B7A332 /* Concurrent */,
-				99AF34AF217AD39100B7A332 /* Compound */,
-				99AF3489217A42B800B7A332 /* Simple */,
+				999C785C218AA46D0044C47E /* EXT.swift */,
+				999C7840218A907D0044C47E /* FR.swift */,
+				999C783F218A907D0044C47E /* VR.swift */,
+				999C7876218B35440044C47E /* FI.swift */,
+				999C78C4218D67060044C47E /* VI.swift */,
 			);
 			path = Schedules;
-			sourceTree = "<group>";
-		};
-		99AF3489217A42B800B7A332 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				99AF34B4217AD83B00B7A332 /* Protocols */,
-				99AF348A217A42D700B7A332 /* ExtinctionSchedule.swift */,
-				99AF348D217A434700B7A332 /* FixedRatioSchedule.swift */,
-				99AF3490217A441C00B7A332 /* FixedIntervalSchedule.swift */,
-				99AF3493217A442C00B7A332 /* FixedTimeSchedule.swift */,
-				99AF3496217A443900B7A332 /* VariableRatioSchedule.swift */,
-				99AF3499217A444500B7A332 /* VariableIntervalSchedule.swift */,
-				99AF349C217A445900B7A332 /* VariableTimeSchedule.swift */,
-				99AF34F8217B095B00B7A332 /* RandomRatioSchedule.swift */,
-				99AF34FB217B098000B7A332 /* RandomIntervalSchedule.swift */,
-				99AF34FF217B099100B7A332 /* RandomTimeSchedule.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		99AF34AF217AD39100B7A332 /* Compound */ = {
-			isa = PBXGroup;
-			children = (
-				99AF34B1217AD82400B7A332 /* InterlockingSchedule.swift */,
-			);
-			path = Compound;
-			sourceTree = "<group>";
-		};
-		99AF34B0217AD3B300B7A332 /* Concurrent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Concurrent;
-			sourceTree = "<group>";
-		};
-		99AF34B4217AD83B00B7A332 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				99AF34A2217A46F200B7A332 /* SimpleSchedule.swift */,
-				99AF3569217B241D00B7A332 /* FixedSchedule.swift */,
-				99AF356C217B242700B7A332 /* VariableSchedule.swift */,
-				99AF356F217B242F00B7A332 /* RandomSchedule.swift */,
-				99AF34B5217AD85100B7A332 /* RatioSchedule.swift */,
-				99AF34B8217AD99400B7A332 /* IntervalSchedule.swift */,
-				99AF34D7217AF62E00B7A332 /* TimeSchedule.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		99AF34BB217ADFF900B7A332 /* Parameters */ = {
-			isa = PBXGroup;
-			children = (
-				99AF3544217B1FEB00B7A332 /* Protocols */,
-				991F04D3217CDB2E00BB31B6 /* Compound */,
-				99AF34BD217AE01B00B7A332 /* Simple */,
-			);
-			path = Parameters;
-			sourceTree = "<group>";
-		};
-		99AF34BD217AE01B00B7A332 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				99AF34CD217AF19300B7A332 /* Protocols */,
-				99AF34BE217AE03000B7A332 /* FixedRatioParameter.swift */,
-				99AF34C1217AE81C00B7A332 /* FixedIntervalParameter.swift */,
-				99AF34C4217AE84600B7A332 /* FixedTimeParameter.swift */,
-				99AF34C7217AE86A00B7A332 /* VariableRatioParameter.swift */,
-				99AF34CA217AE87700B7A332 /* VariableIntervalParameter.swift */,
-				99AF34D1217AF34E00B7A332 /* VariableTimeParameter.swift */,
-				99AF3502217B0B2700B7A332 /* RandomRatioParameter.swift */,
-				99AF3505217B0B4600B7A332 /* RandomIntervalParameter.swift */,
-				99AF3508217B0B5300B7A332 /* RandomTimeParameter.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		99AF34CD217AF19300B7A332 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				99AF3545217B200D00B7A332 /* SimpleParameter.swift */,
-				99AF34CE217AF1A300B7A332 /* FixedParameter.swift */,
-				99AF34D4217AF38900B7A332 /* VariableParameter.swift */,
-				99AF350B217B0BF000B7A332 /* RandomParameter.swift */,
-				99AF3548217B214F00B7A332 /* RatioParameter.swift */,
-				99AF354B217B215B00B7A332 /* IntervalParameter.swift */,
-				99AF354E217B217100B7A332 /* TimeParameter.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		99AF34DA217AFBD100B7A332 /* States */ = {
-			isa = PBXGroup;
-			children = (
-				991F048D217C20C600BB31B6 /* Protocols */,
-				99AF34DB217AFEBB00B7A332 /* Simple */,
-			);
-			path = States;
-			sourceTree = "<group>";
-		};
-		99AF34DB217AFEBB00B7A332 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				99AF34EE217B066D00B7A332 /* Protocols */,
-				99AF34DC217AFECF00B7A332 /* FixedRatioState.swift */,
-				99AF34DF217B021700B7A332 /* FixedIntervalState.swift */,
-				99AF34E2217B029A00B7A332 /* FixedTimeState.swift */,
-				99AF34E5217B05B300B7A332 /* VariableRatioState.swift */,
-				99AF34E8217B05C000B7A332 /* VariableIntervalState.swift */,
-				99AF34EB217B05CB00B7A332 /* VariableTimeState.swift */,
-				99AF3511217B15AA00B7A332 /* RandomRatioState.swift */,
-				99AF3514217B15C600B7A332 /* RandomIntervalState.swift */,
-				99AF3517217B15E900B7A332 /* RandomTimeState.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		99AF34EE217B066D00B7A332 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				99AF355A217B22C500B7A332 /* SimpleState.swift */,
-				99AF3551217B225600B7A332 /* FixedState.swift */,
-				99AF3554217B226200B7A332 /* VariableState.swift */,
-				99AF3557217B226C00B7A332 /* RandomState.swift */,
-				99AF34EF217B068200B7A332 /* RatioState.swift */,
-				99AF34F2217B073C00B7A332 /* IntervalState.swift */,
-				99AF34F5217B075600B7A332 /* TimeState.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		99AF351A217B1B3700B7A332 /* Experiment */ = {
-			isa = PBXGroup;
-			children = (
-				991F0491217C210B00BB31B6 /* Protocols */,
-				99AF351B217B1B4500B7A332 /* Simple */,
-			);
-			path = Experiment;
-			sourceTree = "<group>";
-		};
-		99AF351B217B1B4500B7A332 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				99AF351C217B1B5A00B7A332 /* FixedRatioExperiment.swift */,
-				99AF351F217B1C0800B7A332 /* FixedIntervalExperiment.swift */,
-				99AF3522217B1C5000B7A332 /* FixedTimeExperiment.swift */,
-				99AF3525217B1C5D00B7A332 /* VariableRatioExperiment.swift */,
-				99AF3528217B1C6F00B7A332 /* VariableIntervalExperiment.swift */,
-				99AF352B217B1C8600B7A332 /* VariableTimeExperiment.swift */,
-				99AF352E217B1C9200B7A332 /* RandomRatioExperiment.swift */,
-				99AF3531217B1CA900B7A332 /* RandomIntervalExperiment.swift */,
-				99AF3534217B1CB600B7A332 /* RandomTimeExperiment.swift */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		99AF3544217B1FEB00B7A332 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				99AF3541217B1FD000B7A332 /* Parameter.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		99ECE8EB212972EC001510BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				99AF3482217A35BA00B7A332 /* Xorshift.swift */,
+				999C7893218C21100044C47E /* Helpers */,
+				999C7867218AEE7D0044C47E /* ScheduleTypes */,
+				99AF3488217A429E00B7A332 /* Schedules */,
+				999C7892218C20FB0044C47E /* Events */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -632,11 +494,11 @@
 			children = (
 				99981706212C34FD00D9F6E5 /* Frameworks */,
 				994FFF5C212C2856000F4702 /* Supporting Files */,
+				999C7860218AA5F70044C47E /* Helpers */,
+				999C78BE218D63190044C47E /* ScheduleTests */,
 				9933436E21296A6C00744042 /* OperantKitTests.swift */,
 				99AF3485217A391C00B7A332 /* FleshlerHoffmanTests.swift */,
-				99AF34A5217A493B00B7A332 /* ExtinctionScheduleTests.swift */,
-				99AF34A8217A49CD00B7A332 /* FixedScheduleTests.swift */,
-				99AF34AB217A4D4B00B7A332 /* VariableScheduleTests.swift */,
+				999C7871218B11710044C47E /* ScheduleTypeTests.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -667,16 +529,11 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				991F0539217D47D600BB31B6 /* Extensions */,
-				99AF351A217B1B3700B7A332 /* Experiment */,
-				99AF34DA217AFBD100B7A332 /* States */,
-				99AF34BB217ADFF900B7A332 /* Parameters */,
-				99AF3488217A429E00B7A332 /* Schedules */,
-				99AF347D217A356100B7A332 /* EAB */,
-				99ECE8EB212972EC001510BF /* Common */,
 				99ECE8ED212972EC001510BF /* OperantKit.swift */,
-				9905000B2131705E008A6423 /* IntervalTimer.swift */,
-				999C51BB2134261B00611308 /* SessionEvents.swift */,
+				999C7885218B43470044C47E /* Application */,
+				999C789E218C30A00044C47E /* Data */,
+				999C787D218B3E5A0044C47E /* Domain */,
+				99ECE8EB212972EC001510BF /* Common */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -896,76 +753,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AF34DD217AFECF00B7A332 /* FixedRatioState.swift in Sources */,
-				99AF3503217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */,
-				99AF3535217B1CB600B7A332 /* RandomTimeExperiment.swift in Sources */,
-				99AF355B217B22C500B7A332 /* SimpleState.swift in Sources */,
-				99AF3491217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
-				99AF34E0217B021700B7A332 /* FixedIntervalState.swift in Sources */,
-				99AF3523217B1C5000B7A332 /* FixedTimeExperiment.swift in Sources */,
-				991F0493217C211F00BB31B6 /* Experiment.swift in Sources */,
-				99AF34D5217AF38900B7A332 /* VariableParameter.swift in Sources */,
-				99AF34B6217AD85100B7A332 /* RatioSchedule.swift in Sources */,
-				99AF348E217A434700B7A332 /* FixedRatioSchedule.swift in Sources */,
-				99AF34B9217AD99400B7A332 /* IntervalSchedule.swift in Sources */,
-				99AF349A217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */,
-				99AF34C8217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */,
-				99AF3497217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
-				99AF354F217B217100B7A332 /* TimeParameter.swift in Sources */,
+				999C7865218AAE5D0044C47E /* DecisionSchedule.swift in Sources */,
 				99AF347F217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
-				99AF3518217B15E900B7A332 /* RandomTimeState.swift in Sources */,
-				99AF3526217B1C5D00B7A332 /* VariableRatioExperiment.swift in Sources */,
-				99AF34F0217B068200B7A332 /* RatioState.swift in Sources */,
-				99AF34C2217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */,
-				99AF351D217B1B5A00B7A332 /* FixedRatioExperiment.swift in Sources */,
-				99AF3555217B226200B7A332 /* VariableState.swift in Sources */,
 				99AF350F217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F0212972EC001510BF /* OperantKit.swift in Sources */,
-				99AF34F3217B073C00B7A332 /* IntervalState.swift in Sources */,
-				991F048F217C20E100BB31B6 /* State.swift in Sources */,
-				99AF3520217B1C0800B7A332 /* FixedIntervalExperiment.swift in Sources */,
-				99AF34CB217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */,
-				99AF3532217B1CA900B7A332 /* RandomIntervalExperiment.swift in Sources */,
-				99AF34F6217B075600B7A332 /* TimeState.swift in Sources */,
-				99AF350C217B0BF000B7A332 /* RandomParameter.swift in Sources */,
+				999C7883218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C78AD218C5C520044C47E /* VariableEntity.swift in Sources */,
+				999C78A7218C50480044C47E /* VariableResponseDataStore.swift in Sources */,
+				999C785A218A9F7A0044C47E /* ReinforcementResult.swift in Sources */,
+				999C788B218B441E0044C47E /* UIViewController+Rx.swift in Sources */,
+				999C7877218B35440044C47E /* FI.swift in Sources */,
+				999C786F218B02850044C47E /* PostpositionSchedule.swift in Sources */,
+				999C78AA218C53980044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
+				999C78BB218D62D80044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
+				999C7841218A907D0044C47E /* VR.swift in Sources */,
+				999C7888218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
+				999C785D218AA46D0044C47E /* EXT.swift in Sources */,
+				999C784A218A91250044C47E /* ExperimentEntity.swift in Sources */,
+				999C78C8218D67A80044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
+				999C7843218A907D0044C47E /* FR.swift in Sources */,
+				999C78C5218D67060044C47E /* VI.swift in Sources */,
+				999C78A1218C31020044C47E /* FixedResponseDataStore.swift in Sources */,
+				999C786C218B01810044C47E /* PrepositionSchedule.swift in Sources */,
+				999C7851218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,
+				999C78A4218C44350044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
+				999C78B4218C5E630044C47E /* ScheduleParameter.swift in Sources */,
 				9905000C2131705E008A6423 /* IntervalTimer.swift in Sources */,
-				99AF356A217B241D00B7A332 /* FixedSchedule.swift in Sources */,
-				99AF34FC217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */,
-				99AF34E3217B029A00B7A332 /* FixedTimeState.swift in Sources */,
-				99AF34CF217AF1A300B7A332 /* FixedParameter.swift in Sources */,
-				99AF3570217B242F00B7A332 /* RandomSchedule.swift in Sources */,
-				99AF34BF217AE03000B7A332 /* FixedRatioParameter.swift in Sources */,
-				99AF3558217B226C00B7A332 /* RandomState.swift in Sources */,
-				99AF3552217B225600B7A332 /* FixedState.swift in Sources */,
-				99AF352C217B1C8600B7A332 /* VariableTimeExperiment.swift in Sources */,
+				999C7869218AEE920044C47E /* ScheduleType.swift in Sources */,
+				999C7854218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3483217A35BA00B7A332 /* Xorshift.swift in Sources */,
-				99AF34A3217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
-				99AF3515217B15C600B7A332 /* RandomIntervalState.swift in Sources */,
-				99AF348B217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
-				99AF34EC217B05CB00B7A332 /* VariableTimeState.swift in Sources */,
-				99AF3500217B099100B7A332 /* RandomTimeSchedule.swift in Sources */,
-				991F0497217C217B00BB31B6 /* Schedule.swift in Sources */,
-				99AF354C217B215B00B7A332 /* IntervalParameter.swift in Sources */,
-				99AF356D217B242700B7A332 /* VariableSchedule.swift in Sources */,
-				99AF3529217B1C6F00B7A332 /* VariableIntervalExperiment.swift in Sources */,
-				99AF3494217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
-				99AF3512217B15AA00B7A332 /* RandomRatioState.swift in Sources */,
-				99AF34D2217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
+				999C78B0218C5DCC0044C47E /* FixedEntity.swift in Sources */,
+				999C7899218C2F0C0044C47E /* ScheduleUseCase.swift in Sources */,
+				999C789C218C2FE80044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
 				999C51BC2134261B00611308 /* SessionEvents.swift in Sources */,
-				99AF3506217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
 				991F053B217D47EB00BB31B6 /* Observable+Rx.swift in Sources */,
-				99AF3549217B214F00B7A332 /* RatioParameter.swift in Sources */,
-				99AF34E6217B05B300B7A332 /* VariableRatioState.swift in Sources */,
-				99AF34C5217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
-				99AF34E9217B05C000B7A332 /* VariableIntervalState.swift in Sources */,
-				99AF3542217B1FD000B7A332 /* Parameter.swift in Sources */,
-				99AF34D8217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
-				99AF349D217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
-				99AF3509217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */,
-				99AF3546217B200D00B7A332 /* SimpleParameter.swift in Sources */,
-				99AF34F9217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */,
-				99AF34B2217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
-				99AF352F217B1C9200B7A332 /* RandomRatioExperiment.swift in Sources */,
+				999C787B218B357F0044C47E /* TimeUnit.swift in Sources */,
+				999C7848218A91250044C47E /* ResponseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,11 +796,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AF34AC217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
+				999C78C2218D63660044C47E /* FixedIntervalScheduleTests.swift in Sources */,
+				99AF34AC217A4D4B00B7A332 /* VariableRatioScheduleTests.swift in Sources */,
 				99AF3486217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
+				999C7874218B11730044C47E /* ScheduleTypeTests.swift in Sources */,
 				9933437321296A6C00744042 /* OperantKitTests.swift in Sources */,
+				999C78CB218D692D0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
 				99AF34A6217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
-				99AF34A9217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */,
+				99AF34A9217A49CD00B7A332 /* FixedRatioScheduleTests.swift in Sources */,
+				999C7862218AA6130044C47E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,76 +812,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AF34DE217AFECF00B7A332 /* FixedRatioState.swift in Sources */,
-				99AF3504217B0B2700B7A332 /* RandomRatioParameter.swift in Sources */,
-				99AF3536217B1CB600B7A332 /* RandomTimeExperiment.swift in Sources */,
-				99AF355C217B22C500B7A332 /* SimpleState.swift in Sources */,
-				99AF3492217A441C00B7A332 /* FixedIntervalSchedule.swift in Sources */,
-				99AF34E1217B021700B7A332 /* FixedIntervalState.swift in Sources */,
-				99AF3524217B1C5000B7A332 /* FixedTimeExperiment.swift in Sources */,
-				991F0494217C211F00BB31B6 /* Experiment.swift in Sources */,
-				99AF34D6217AF38900B7A332 /* VariableParameter.swift in Sources */,
-				99AF34B7217AD85100B7A332 /* RatioSchedule.swift in Sources */,
-				99AF348F217A434700B7A332 /* FixedRatioSchedule.swift in Sources */,
-				99AF34BA217AD99400B7A332 /* IntervalSchedule.swift in Sources */,
-				99AF349B217A444500B7A332 /* VariableIntervalSchedule.swift in Sources */,
-				99AF34C9217AE86A00B7A332 /* VariableRatioParameter.swift in Sources */,
-				99AF3498217A443900B7A332 /* VariableRatioSchedule.swift in Sources */,
-				99AF3550217B217100B7A332 /* TimeParameter.swift in Sources */,
+				999C7866218AAE5D0044C47E /* DecisionSchedule.swift in Sources */,
 				99AF3480217A357000B7A332 /* FleshlerHoffman.swift in Sources */,
-				99AF3519217B15E900B7A332 /* RandomTimeState.swift in Sources */,
-				99AF3527217B1C5D00B7A332 /* VariableRatioExperiment.swift in Sources */,
-				99AF34F1217B068200B7A332 /* RatioState.swift in Sources */,
-				99AF34C3217AE81C00B7A332 /* FixedIntervalParameter.swift in Sources */,
-				99AF351E217B1B5A00B7A332 /* FixedRatioExperiment.swift in Sources */,
-				99AF3556217B226200B7A332 /* VariableState.swift in Sources */,
 				99AF3510217B0C6D00B7A332 /* RandomGenerator.swift in Sources */,
 				99ECE8F1212972EC001510BF /* OperantKit.swift in Sources */,
-				99AF34F4217B073C00B7A332 /* IntervalState.swift in Sources */,
-				991F0490217C20E300BB31B6 /* State.swift in Sources */,
-				99AF3521217B1C0800B7A332 /* FixedIntervalExperiment.swift in Sources */,
-				99AF34CC217AE87700B7A332 /* VariableIntervalParameter.swift in Sources */,
-				99AF3533217B1CA900B7A332 /* RandomIntervalExperiment.swift in Sources */,
-				99AF34F7217B075600B7A332 /* TimeState.swift in Sources */,
-				99AF350D217B0BF000B7A332 /* RandomParameter.swift in Sources */,
+				999C7884218B3E8C0044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C78AE218C5C520044C47E /* VariableEntity.swift in Sources */,
+				999C78A8218C50480044C47E /* VariableResponseDataStore.swift in Sources */,
+				999C785B218A9F7A0044C47E /* ReinforcementResult.swift in Sources */,
+				999C788C218B441E0044C47E /* UIViewController+Rx.swift in Sources */,
+				999C7878218B35440044C47E /* FI.swift in Sources */,
+				999C7870218B02850044C47E /* PostpositionSchedule.swift in Sources */,
+				999C78AB218C53980044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
+				999C78BC218D62D80044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
+				999C7842218A907D0044C47E /* VR.swift in Sources */,
+				999C7889218B43B10044C47E /* UIApplication+Rx.swift in Sources */,
+				999C785E218AA46D0044C47E /* EXT.swift in Sources */,
+				999C784B218A91250044C47E /* ExperimentEntity.swift in Sources */,
+				999C78C9218D67A80044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
+				999C7844218A907D0044C47E /* FR.swift in Sources */,
+				999C78C6218D67060044C47E /* VI.swift in Sources */,
+				999C78A2218C31020044C47E /* FixedResponseDataStore.swift in Sources */,
+				999C786D218B01810044C47E /* PrepositionSchedule.swift in Sources */,
+				999C7850218A917D0044C47E /* ReinforcementResult+Rx.swift in Sources */,
+				999C78A5218C44350044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
+				999C78B5218C5E630044C47E /* ScheduleParameter.swift in Sources */,
 				9905000D2131705E008A6423 /* IntervalTimer.swift in Sources */,
-				99AF356B217B241D00B7A332 /* FixedSchedule.swift in Sources */,
-				99AF34FD217B098000B7A332 /* RandomIntervalSchedule.swift in Sources */,
-				99AF34E4217B029A00B7A332 /* FixedTimeState.swift in Sources */,
-				99AF34D0217AF1A300B7A332 /* FixedParameter.swift in Sources */,
-				99AF3571217B242F00B7A332 /* RandomSchedule.swift in Sources */,
-				99AF34C0217AE03000B7A332 /* FixedRatioParameter.swift in Sources */,
-				99AF3559217B226C00B7A332 /* RandomState.swift in Sources */,
-				99AF3553217B225600B7A332 /* FixedState.swift in Sources */,
-				99AF352D217B1C8600B7A332 /* VariableTimeExperiment.swift in Sources */,
+				999C786A218AEE920044C47E /* ScheduleType.swift in Sources */,
+				999C7853218A91FC0044C47E /* ObservableType+.swift in Sources */,
 				99AF3484217A35BA00B7A332 /* Xorshift.swift in Sources */,
-				99AF34A4217A46F200B7A332 /* SimpleSchedule.swift in Sources */,
-				99AF3516217B15C600B7A332 /* RandomIntervalState.swift in Sources */,
-				99AF348C217A42D700B7A332 /* ExtinctionSchedule.swift in Sources */,
-				99AF34ED217B05CB00B7A332 /* VariableTimeState.swift in Sources */,
-				99AF3501217B099100B7A332 /* RandomTimeSchedule.swift in Sources */,
-				991F0498217C217B00BB31B6 /* Schedule.swift in Sources */,
-				99AF354D217B215B00B7A332 /* IntervalParameter.swift in Sources */,
-				99AF356E217B242700B7A332 /* VariableSchedule.swift in Sources */,
-				99AF352A217B1C6F00B7A332 /* VariableIntervalExperiment.swift in Sources */,
-				99AF3495217A442C00B7A332 /* FixedTimeSchedule.swift in Sources */,
-				99AF3513217B15AA00B7A332 /* RandomRatioState.swift in Sources */,
-				99AF34D3217AF34E00B7A332 /* VariableTimeParameter.swift in Sources */,
+				999C78B1218C5DCC0044C47E /* FixedEntity.swift in Sources */,
+				999C789A218C2F0C0044C47E /* ScheduleUseCase.swift in Sources */,
+				999C789D218C2FE80044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
 				999C51BD2134261B00611308 /* SessionEvents.swift in Sources */,
-				99AF3507217B0B4600B7A332 /* RandomIntervalParameter.swift in Sources */,
 				991F053C217D47ED00BB31B6 /* Observable+Rx.swift in Sources */,
-				99AF354A217B214F00B7A332 /* RatioParameter.swift in Sources */,
-				99AF34E7217B05B300B7A332 /* VariableRatioState.swift in Sources */,
-				99AF34C6217AE84600B7A332 /* FixedTimeParameter.swift in Sources */,
-				99AF34EA217B05C000B7A332 /* VariableIntervalState.swift in Sources */,
-				99AF3543217B1FD000B7A332 /* Parameter.swift in Sources */,
-				99AF34D9217AF62E00B7A332 /* TimeSchedule.swift in Sources */,
-				99AF349E217A445900B7A332 /* VariableTimeSchedule.swift in Sources */,
-				99AF350A217B0B5300B7A332 /* RandomTimeParameter.swift in Sources */,
-				99AF3547217B200D00B7A332 /* SimpleParameter.swift in Sources */,
-				99AF34FA217B095B00B7A332 /* RandomRatioSchedule.swift in Sources */,
-				99AF34B3217AD82400B7A332 /* InterlockingSchedule.swift in Sources */,
-				99AF3530217B1C9200B7A332 /* RandomRatioExperiment.swift in Sources */,
+				999C787C218B357F0044C47E /* TimeUnit.swift in Sources */,
+				999C7849218A91250044C47E /* ResponseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,11 +855,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AF34AD217A4D4B00B7A332 /* VariableScheduleTests.swift in Sources */,
+				999C78C3218D63680044C47E /* FixedIntervalScheduleTests.swift in Sources */,
+				99AF34AD217A4D4B00B7A332 /* VariableRatioScheduleTests.swift in Sources */,
 				99AF3487217A391C00B7A332 /* FleshlerHoffmanTests.swift in Sources */,
+				999C7875218B11740044C47E /* ScheduleTypeTests.swift in Sources */,
 				9933437421296A6C00744042 /* OperantKitTests.swift in Sources */,
+				999C78CC218D692D0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
 				99AF34A7217A493C00B7A332 /* ExtinctionScheduleTests.swift in Sources */,
-				99AF34AA217A49CD00B7A332 /* FixedScheduleTests.swift in Sources */,
+				99AF34AA217A49CD00B7A332 /* FixedRatioScheduleTests.swift in Sources */,
+				999C7863218AA6130044C47E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
