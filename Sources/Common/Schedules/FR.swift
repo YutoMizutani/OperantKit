@@ -10,7 +10,7 @@ import RxSwift
 
 extension Observable where E == ResponseEntity {
 
-    /// function外で管理する
+    /// Fixed ratio schedule
     public func FR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
         return self
             .fixedRatio(value, entity)
