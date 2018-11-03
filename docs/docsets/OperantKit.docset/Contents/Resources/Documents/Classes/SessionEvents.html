@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SessionEvents Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SessionEvents" class="dashAnchor"></a>
+    <a title="SessionEvents Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">OperantKit Docs</a> (31% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">OperantKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SessionEvents Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/FixedEntity.html">FixedEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IntervalTimer.html">IntervalTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ResponseEntity.html">ResponseEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxUIApplicationDelegateProxy.html">RxUIApplicationDelegateProxy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SessionEvents.html">SessionEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VariableEntity.html">VariableEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Xorshift128.html">Xorshift128</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Xorshift32.html">Xorshift32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Xorshift64.html">Xorshift64</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TimeUnit.html">TimeUnit</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Observable.html">Observable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/ObservableType.html">ObservableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Reactive.html">Reactive</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/RxSwift.html">RxSwift</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/RxSwift/Reactive.html">– Reactive</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit3CRFAA25FixedRatioScheduleUseCaseVyF">CRF()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit3EXTAA25ExtinctionScheduleUseCaseVyF">EXT()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2FI_4unitAA28FixedIntervalScheduleUseCaseVSi_AA8TimeUnitOtF">FI(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2FRyAA25FixedRatioScheduleUseCaseVSiF">FR(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2VI_4unit10iterationsAA31VariableIntervalScheduleUseCaseVSi_AA8TimeUnitOSitF">VI(_:unit:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2VR_10iterationsAA28VariableRatioScheduleUseCaseVSi_SitF">VR(_:iterations:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ScheduleParameter.html">ScheduleParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ScheduleUseCase.html">ScheduleUseCase</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ExperimentEntity.html">ExperimentEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ExtinctionScheduleUseCase.html">ExtinctionScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FixedIntervalScheduleUseCase.html">FixedIntervalScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FixedRatioScheduleUseCase.html">FixedRatioScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FixedResponseDataStore.html">FixedResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FleshlerHoffman.html">FleshlerHoffman</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/IntervalTimerUseCase.html">IntervalTimerUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PostpositionSchedule.html">PostpositionSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PrepositionSchedule.html">PrepositionSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RandomGenerator.html">RandomGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ScheduleType.html">ScheduleType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VariableIntervalScheduleUseCase.html">VariableIntervalScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VariableRatioScheduleUseCase.html">VariableRatioScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VariableResponseDataStore.html">VariableResponseDataStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10OperantKit16DecisionSchedulea">DecisionSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10OperantKit19ReinforcementResulta">ReinforcementResult</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SessionEvents</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SessionEvents</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC8eventIDsSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/eventIDs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC8eventIDsSaySSGvp">eventIDs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC11EventMarkera"></a>
+                    <a name="//apple_ref/swift/Alias/EventMarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC11EventMarkera">EventMarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">EventMarker</span> <span class="o">=</span> <span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">milliseconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC6eventsSaySi2id_Si12millisecondstGvp"></a>
+                    <a name="//apple_ref/swift/Property/events" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC6eventsSaySi2id_Si12millisecondstGvp">events</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">SessionEvents</span><span class="o">.</span><span class="kt"><a href="../Classes/SessionEvents.html#/s:10OperantKit13SessionEventsC11EventMarkera">EventMarker</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC9willWrite7RxCocoa12PublishRelayCySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/willWrite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC9willWrite7RxCocoa12PublishRelayCySiGvp">willWrite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">willWrite</span><span class="p">:</span> <span class="kt">PublishRelay</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC8eventIDsACSaySSG_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(eventIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC8eventIDsACSaySSG_tcfc">init(eventIDs:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">eventIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC6EVENTSSSvp"></a>
+                    <a name="//apple_ref/swift/Property/EVENTS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC6EVENTSSSvp">EVENTS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>00: Event name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">EVENTS</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC06listOfD0SSvp"></a>
+                    <a name="//apple_ref/swift/Property/listOfEvents" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC06listOfD0SSvp">listOfEvents</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>00: 1000(milliseconds)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">listOfEvents</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC11logWithTextSSvp"></a>
+                    <a name="//apple_ref/swift/Property/logWithText" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC11logWithTextSSvp">logWithText</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>人間確認用</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logWithText</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC9logWithIDSSvp"></a>
+                    <a name="//apple_ref/swift/Property/logWithID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC9logWithIDSSvp">logWithID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>BLE確認用</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">logWithID</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC18observableEventLog7RxSwift8VariableCySS6withID_SS0K4TexttSgGvp"></a>
+                    <a name="//apple_ref/swift/Property/observableEventLog" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC18observableEventLog7RxSwift8VariableCySS6withID_SS0K4TexttSgGvp">observableEventLog</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">observableEventLog</span><span class="p">:</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="p">(</span><span class="nv">withID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">withText</span><span class="p">:</span> <span class="kt">String</span><span class="p">)?</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC5write2id12millisecondsySi_SitF"></a>
+                    <a name="//apple_ref/swift/Method/write(id:milliseconds:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC5write2id12millisecondsySi_SitF">write(id:milliseconds:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">milliseconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC6events2bySaySiGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/events(by:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC6events2bySaySiGSi_tF">events(by:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>idを元に抽出したtimeデータのみ取り出す。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">events</span><span class="p">(</span><span class="n">by</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC5getId4fromSiSgSS_tF"></a>
+                    <a name="//apple_ref/swift/Method/getId(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC5getId4fromSiSgSS_tF">getId(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getId</span><span class="p">(</span><span class="n">from</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC6events2by5afterSaySiGSi_SiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/events(by:after:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC6events2by5afterSaySiGSi_SiSgtF">events(by:after:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>最後のafter idから数えていくつtarget idがあるか取得する。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">events</span><span class="p">(</span><span class="n">by</span> <span class="nv">targetID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">after</span> <span class="nv">afterID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC6events2by6beforeSaySiGSi_SiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/events(by:before:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC6events2by6beforeSaySiGSi_SiSgtF">events(by:before:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>最後のbefore idまでに数えていくつtarget idがあったか。（強化後の反応数を取得するために使用。）</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">events</span><span class="p">(</span><span class="n">by</span> <span class="nv">targetID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">before</span> <span class="nv">beforeID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC06listOfD04fromSSSaySi2id_Si12millisecondstG_tF"></a>
+                    <a name="//apple_ref/swift/Method/listOfEvents(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC06listOfD04fromSSSaySi2id_Si12millisecondstG_tF">listOfEvents(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">listOfEvents</span><span class="p">(</span><span class="n">from</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SessionEvents.html#/s:10OperantKit13SessionEventsC11EventMarkera">EventMarker</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC07elapsedD06events6skipIDSi10extendTime_SaySi2id_Si12millisecondstGAEtAJ_Si6before_Si5afterttF"></a>
+                    <a name="//apple_ref/swift/Method/elapsedEvents(events:skipID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC07elapsedD06events6skipIDSi10extendTime_SaySi2id_Si12millisecondstGAEtAJ_Si6before_Si5afterttF">elapsedEvents(events:skipID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">elapsedEvents</span><span class="p">(</span><span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SessionEvents.html#/s:10OperantKit13SessionEventsC11EventMarkera">EventMarker</a></span><span class="p">],</span> <span class="nv">skipID</span><span class="p">:</span> <span class="p">(</span><span class="nv">before</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">after</span><span class="p">:</span> <span class="kt">Int</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">extendTime</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SessionEvents.html#/s:10OperantKit13SessionEventsC11EventMarkera">EventMarker</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC11elapsedTime05startF003endF07skipIDsS2i_SiSgSaySi6before_Si5aftertGtF"></a>
+                    <a name="//apple_ref/swift/Method/elapsedTime(startTime:endTime:skipIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC11elapsedTime05startF003endF07skipIDsS2i_SiSgSaySi6before_Si5aftertGtF">elapsedTime(startTime:endTime:skipIDs:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>経過時間を測定する。id間のイベントをフィルタリングし，有効時間を算出する。(realTime-&gt;SessionTimeやFIのICIを算出)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">elapsedTime</span><span class="p">(</span><span class="nv">startTime</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">endTime</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">skipIDs</span><span class="p">:</span> <span class="p">[(</span><span class="nv">before</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">after</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)])</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit13SessionEventsC10extendTime05startF003endF07skipIDsS2i_SiSgSaySi6before_Si5aftertGtF"></a>
+                    <a name="//apple_ref/swift/Method/extendTime(startTime:endTime:skipIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit13SessionEventsC10extendTime05startF003endF07skipIDsS2i_SiSgSaySi6before_Si5aftertGtF">extendTime(startTime:endTime:skipIDs:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>フィルタリングしない経過時間を返す。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">extendTime</span><span class="p">(</span><span class="nv">startTime</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">endTime</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span><span class="o">=</span><span class="kc">nil</span><span class="p">,</span> <span class="nv">skipIDs</span><span class="p">:</span> <span class="p">[(</span><span class="nv">before</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">after</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)])</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
