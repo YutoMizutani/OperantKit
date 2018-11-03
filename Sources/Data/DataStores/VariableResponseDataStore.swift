@@ -24,6 +24,12 @@ public struct VariableResponseDataStore {
         self.lastReinforcementEntity = ResponseEntity()
     }
 
+    public init(value: Int, iterations: Int = 12, timeUnit: TimeUnit) {
+        let values = FleshlerHoffman().generatedInterval(value: timeUnit.milliseconds(value), iterations: iterations)
+        self.variableEntity = VariableEntity(value: value, values: values)
+        self.lastReinforcementEntity = ResponseEntity()
+    }
+
     public init(variableEntity: VariableEntity, lastReinforcementEntity: ResponseEntity = ResponseEntity()) {
         self.variableEntity = variableEntity
         self.lastReinforcementEntity = lastReinforcementEntity

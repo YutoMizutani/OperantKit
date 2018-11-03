@@ -17,11 +17,11 @@ public extension TimeUnit {
         case .milliseconds:
             return value
         case .seconds:
-            return value * 60
+            return value * 1000
         case .minutes:
-            return value * 60 * 60
+            return value * 1000 * 60
         case .hours:
-            return value * 60 * 60 * 60
+            return value * 1000 * 60 * 60
         }
     }
 }

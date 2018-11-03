@@ -18,6 +18,11 @@ public struct FixedResponseDataStore {
         self.lastReinforcementEntity = ResponseEntity()
     }
 
+    public init(value: Int, unit: TimeUnit) {
+        self.fixedEntity = FixedEntity(value: unit.milliseconds(value))
+        self.lastReinforcementEntity = ResponseEntity()
+    }
+
     public init(fixedEntity: FixedEntity, lastReinforcementEntity: ResponseEntity = ResponseEntity()) {
         self.fixedEntity = fixedEntity
         self.lastReinforcementEntity = lastReinforcementEntity

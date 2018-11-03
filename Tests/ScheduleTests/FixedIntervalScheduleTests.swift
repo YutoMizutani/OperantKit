@@ -3,23 +3,23 @@ import RxTest
 import XCTest
 @testable import OperantKit
 
-final class FixedScheduleTests: XCTestCase {
-    func testFR() {
+final class FixedIntervalScheduleTests: XCTestCase {
+    func testFI() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = FR(5)
+        let schedule: ScheduleUseCase = FI(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 5, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponse: 7, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(500, ResponseEntity(numOfResponse: 1000, milliseconds: 0)),
-            next(600, ResponseEntity(numOfResponse: 1001, milliseconds: 0)),
+            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5000)),
+            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 6000)),
+            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 10000)),
+            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 10000)),
+            next(500, ResponseEntity(numOfResponse: 0, milliseconds: 1000000)),
+            next(600, ResponseEntity(numOfResponse: 0, milliseconds: 1000001)),
             completed(completedTime)
             ])
 

@@ -19,6 +19,10 @@ public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(value: value)
 }
 
+public func FI(_ value: Int, unit: TimeUnit = .seconds) -> FixedIntervalScheduleUseCase {
+    return FixedIntervalScheduleUseCase(value: value, unit: unit)
+}
+
 public func VR(_ value: Int) -> VariableRatioScheduleUseCase {
     return VariableRatioScheduleUseCase(value: value)
 }
