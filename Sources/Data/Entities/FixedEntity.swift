@@ -8,10 +8,12 @@
 import Foundation
 
 public class FixedEntity: ScheduleParameter {
-    ///
-    public var value: Int
+    public var displayValue: Int
+    public var nextValue: Int {
+        return displayValue
+    }
 
     public init(value: Int) {
-        self.value = value
+        self.displayValue = value
     }
 }

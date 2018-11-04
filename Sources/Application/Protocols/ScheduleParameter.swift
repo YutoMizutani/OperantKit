@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol ScheduleParameter {
-    var value: Int { get }
+    var displayValue: Int { get }
+    var nextValue: Int { get }
 }
