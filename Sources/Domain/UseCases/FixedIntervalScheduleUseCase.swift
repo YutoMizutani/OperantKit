@@ -21,7 +21,7 @@ public struct FixedIntervalScheduleUseCase {
 
 extension FixedIntervalScheduleUseCase: ScheduleUseCase {
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.FI(dataStore.fixedEntity.value, with: dataStore.lastReinforcementEntity)
+        return observer.FI(dataStore.fixedEntity.nextValue, with: dataStore.lastReinforcementEntity)
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 }

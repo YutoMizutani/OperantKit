@@ -24,4 +24,11 @@ public extension Observable where E == ReinforcementResult {
             entity.order = nextOrder < entity.values.count ? nextOrder : 0
         })
     }
+
+    func nextRandom(_ entity: RandomEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+        return self.do(onNext: {
+            guard condition($0) else { return }
+            entity.nextValue = RandomGenerator().generate(entity.displayValue)
+        })
+    }
 }
