@@ -66,6 +66,7 @@ extension RatChamberLeverButton {
         players?.push?.prepareToPlay()
 
         self.rx.touchDown
+            .filter({ [unowned self] in self.isSelected })
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.players?.push?.currentTime = 0
@@ -74,6 +75,7 @@ extension RatChamberLeverButton {
             .disposed(by: disposeBag)
 
         self.rx.touchUpInside
+            .filter({ [unowned self] in self.isSelected })
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.players?.pull?.currentTime = 0
