@@ -74,9 +74,14 @@ class RatChamberViewController: UIViewController {
         feederSoundPlayer?.prepareToPlay()
         reinforcementOnEvent
             .asObservable()
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
                 feederSoundPlayer?.currentTime = 0
                 feederSoundPlayer?.play()
+                RatChamberPelletButton.create(self, base: self.chamberView.baseView) { [weak self] in
+                    guard let self = self else { return }
+                    $0.animation(base: self.chamberView)
+                }
             })
             .disposed(by: disposeBag)
     }
