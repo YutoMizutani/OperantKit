@@ -38,6 +38,9 @@
 		9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E22F2182CB5200932ED4 /* RatChamberColor.swift */; };
 		9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */; };
 		999C7897218C21890044C47E /* EmptyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7896218C21890044C47E /* EmptyUseCase.swift */; };
+		999C797A218FB8300044C47E /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7979218FB8300044C47E /* UIView+.swift */; };
+		999C797C218FEDAC0044C47E /* RatChamberPelletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C797B218FEDAC0044C47E /* RatChamberPelletButton.swift */; };
+		999C797E218FEDB80044C47E /* RatChamberPelletButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C797D218FEDB80044C47E /* RatChamberPelletButton.xib */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -119,6 +122,9 @@
 		9989E22F2182CB5200932ED4 /* RatChamberColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberColor.swift; sourceTree = "<group>"; };
 		9989E23121831CD500932ED4 /* Data+AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AVAudioPlayer.swift"; sourceTree = "<group>"; };
 		999C7896218C21890044C47E /* EmptyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUseCase.swift; sourceTree = "<group>"; };
+		999C7979218FB8300044C47E /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		999C797B218FEDAC0044C47E /* RatChamberPelletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberPelletButton.swift; sourceTree = "<group>"; };
+		999C797D218FEDB80044C47E /* RatChamberPelletButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberPelletButton.xib; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +286,7 @@
 		991F0516217CE0E000BB31B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				999C7979218FB8300044C47E /* UIView+.swift */,
 				9974941721840F3C00A29745 /* UIView+Rx.swift */,
 				9974945D2186144700A29745 /* UIControl+Rx.swift */,
 				997494112183392F00A29745 /* UIButton+Rx.swift */,
@@ -316,6 +323,8 @@
 				991F0528217CF23400BB31B6 /* RatChamberLeverButton.xib */,
 				991F052C217CFB4600BB31B6 /* RatChamberBaseView.swift */,
 				991F051B217CE6B100BB31B6 /* RatChamberBaseView.xib */,
+				999C797B218FEDAC0044C47E /* RatChamberPelletButton.swift */,
+				999C797D218FEDB80044C47E /* RatChamberPelletButton.xib */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -473,6 +482,7 @@
 			files = (
 				991F0508217CE0A200BB31B6 /* ViewController.storyboard in Resources */,
 				991F0520217CE81400BB31B6 /* RatChamberLightView.xib in Resources */,
+				999C797E218FEDB80044C47E /* RatChamberPelletButton.xib in Resources */,
 				991F0507217CE0A200BB31B6 /* LaunchScreen.storyboard in Resources */,
 				991F04AD217CCFCF00BB31B6 /* Assets.xcassets in Resources */,
 				991F052F217CFC8000BB31B6 /* RatChamberViewController.storyboard in Resources */,
@@ -548,10 +558,12 @@
 				991F053E217D854100BB31B6 /* SessionPresenter.swift in Sources */,
 				9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */,
 				9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */,
+				999C797C218FEDAC0044C47E /* RatChamberPelletButton.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,
 				99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */,
+				999C797A218FB8300044C47E /* UIView+.swift in Sources */,
 				991F0506217CE0A200BB31B6 /* ViewController.swift in Sources */,
 				991F052D217CFB4600BB31B6 /* RatChamberBaseView.swift in Sources */,
 				9989E23221831CD500932ED4 /* Data+AVAudioPlayer.swift in Sources */,
