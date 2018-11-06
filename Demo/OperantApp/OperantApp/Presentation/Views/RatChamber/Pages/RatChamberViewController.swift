@@ -16,14 +16,19 @@ class RatChamberViewController: UIViewController {
     typealias PresenterType = SessionPresenter
 
     private var presenter: PresenterType?
+    private var config: RatChamberConfig = RatChamberConfig()
     private let disposeBag = DisposeBag()
 
-    func inject(presenter: PresenterType) {
+    func inject(presenter: PresenterType, config: RatChamberConfig = RatChamberConfig()) {
         self.presenter = presenter
+        self.config = config
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.chamberView.leftLever.isEnabled = self.config.leverEnabled.left
+        self.chamberView.rightLever.isEnabled = self.config.leverEnabled.right
 
         let input = SessionPresenter.Input(
             startTrigger: startTrigger,
@@ -48,26 +53,46 @@ class RatChamberViewController: UIViewController {
         let reinforcementOnEvent = Driver.merge(output.reinforcements.map { $0.on })
         let reinforcementOffEvent = Driver.merge(output.reinforcements.map { $0.off })
 
-        Driver.merge(
+        let workingDriver = Driver.merge(
             output.start,
             output.resume,
             reinforcementOffEvent)
-            .map { _ in UIColor.ratChamber.light.on }
+
+        workingDriver
+            .map { [unowned self] _ in self.config.lightColor.left.on }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        Driver.merge(
+        workingDriver
+            .map { [unowned self] _ in self.config.lightColor.right.on }
+            .drive(chamberView.rightLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        let pauseDriver = Driver.merge(
             output.pause,
             output.end,
             reinforcementOnEvent)
-            .map { _ in UIColor.ratChamber.light.off }
+
+        pauseDriver
+            .map { [unowned self] _ in self.config.lightColor.left.off }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
-        Driver.merge(
+        pauseDriver
+            .map { [unowned self] _ in self.config.lightColor.right.off }
+            .drive(chamberView.rightLight.rx.backgroundColor)
+            .disposed(by: disposeBag)
+
+        let reinforcementDriver = Driver.merge(
             reinforcementOnEvent.map { false },
             reinforcementOffEvent.map { true })
+
+        reinforcementDriver
             .drive(chamberView.leftLever.rx.isSelected)
+            .disposed(by: disposeBag)
+
+        reinforcementDriver
+            .drive(chamberView.rightLever.rx.isSelected)
             .disposed(by: disposeBag)
 
         let feederSoundPlayer = RatChamberSound.shared.feeder.operatingSound

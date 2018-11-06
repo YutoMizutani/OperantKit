@@ -4,6 +4,7 @@ disabled_rules:
   - file_length
   - file_header
   - identifier_name
+  - large_tuple
 opt_in_rules:
   - array_init
   - attributes
