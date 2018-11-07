@@ -12,19 +12,26 @@ public struct RandomResponseDataStore {
     public var randomEntity: RandomEntity
     /// Stored ResponseEntity when previous reinforcement
     public var lastReinforcementEntity: ResponseEntity
+    /// Extend entity
+    public var extendEntity: ResponseEntity
 
     public init(value: Int) {
         self.randomEntity = RandomEntity(value: value)
         self.lastReinforcementEntity = ResponseEntity()
+        self.extendEntity = ResponseEntity()
     }
 
     public init(value: Int, unit: TimeUnit) {
         self.randomEntity = RandomEntity(value: unit.milliseconds(value))
         self.lastReinforcementEntity = ResponseEntity()
+        self.extendEntity = ResponseEntity()
     }
 
-    public init(randomEntity: RandomEntity, lastReinforcementEntity: ResponseEntity = ResponseEntity()) {
+    public init(randomEntity: RandomEntity,
+                lastReinforcementEntity: ResponseEntity = ResponseEntity(),
+                extendEntity: ResponseEntity = ResponseEntity()) {
         self.randomEntity = randomEntity
         self.lastReinforcementEntity = lastReinforcementEntity
+        self.extendEntity = extendEntity
     }
 }

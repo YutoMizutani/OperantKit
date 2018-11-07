@@ -11,13 +11,15 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Fixed ratio schedule
-    public func FR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
+    public func FR(_ value: Int, with entities: E...) -> Observable<ReinforcementResult> {
         return self
-            .fixedRatio(value, entity)
+            .fixedRatio(value, entities)
     }
 
     /// FR logic
-    func fixedRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
-        return self.map { (($0.numOfResponse >= value + entity.numOfResponse), $0) }
+    func fixedRatio(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
+        return self.map {
+            (($0.numOfResponse >= value + entities.map { $0.numOfResponse }.reduce(0) { $0 + $1 }), $0)
+        }
     }
 }

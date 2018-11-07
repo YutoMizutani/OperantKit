@@ -9,6 +9,14 @@
 import RxSwift
 
 public extension Observable where E == ReinforcementResult {
+    func clearResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+        return self.do(onNext: {
+            guard condition($0) else { return }
+            entity.numOfResponse = 0
+            entity.milliseconds = 0
+        })
+    }
+
     func storeResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
         return self.do(onNext: {
             guard condition($0) else { return }

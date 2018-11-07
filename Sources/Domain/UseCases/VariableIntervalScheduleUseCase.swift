@@ -24,8 +24,14 @@ public struct VariableIntervalScheduleUseCase {
 }
 
 extension VariableIntervalScheduleUseCase: ScheduleUseCase {
+    public var extendEntity: ResponseEntity {
+        return dataStore.extendEntity
+    }
+
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VI(dataStore.variableEntity.nextValue, with: dataStore.lastReinforcementEntity)
+        return observer.VI(dataStore.variableEntity.nextValue,
+                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
+            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 }
