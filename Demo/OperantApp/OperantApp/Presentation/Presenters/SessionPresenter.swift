@@ -72,14 +72,14 @@ final class SessionPresenter: Presenter {
 
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
-        input.responseTriggers.enumerated().forEach { [unowned self] in
-            guard $0.offset < self.scheduleUseCases.count else { return }
+        input.responseTriggers.enumerated().forEach { [unowned self] i, e in
+            guard i < scheduleUseCases.count else { return }
 
-            let numOfResponse = $0.element
+            let numOfResponse = e
                 .scan(0) { n, _ in n + 1 }
                 .asObservable()
 
-            let milliseconds = $0.element
+            let milliseconds = e
                 .asObservable()
                 .flatMap { [unowned self] in self.timerUseCase.getInterval() }
 
@@ -88,7 +88,9 @@ final class SessionPresenter: Presenter {
                 .do(onNext: { print("Response: \($0.milliseconds)") })
                 .share(replay: 1)
 
-            let reinforcement: Observable<Int> = self.scheduleUseCases[$0.offset].decision(response)
+            let reinforcement: Observable<Int> =
+                self.scheduleUseCases[i]
+                .decision(response)
                 .filter { $0.isReinforcement }
                 .map { $0.entity.milliseconds }
                 .asObservable()
@@ -99,8 +101,11 @@ final class SessionPresenter: Presenter {
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
+            let interReinforcementInterval = experimentEnitty.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
-                .flatMap { [unowned self] in self.timerUseCase.delay(self.experimentEnitty.interReinforcementInterval, currentTime: $0) }
+                .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0) }
+                .extend(time: interReinforcementInterval,
+                        entities: scheduleUseCases.map { $0.extendEntity })
                 .do(onNext: { print("SR off: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
