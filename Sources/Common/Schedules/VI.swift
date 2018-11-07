@@ -10,13 +10,13 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Variable interval schedule
-    public func VI(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
+    public func VI(_ value: Int, with entities: E...) -> Observable<ReinforcementResult> {
         return self
-            .variableInterval(value, entity)
+            .variableInterval(value, entities)
     }
 
     /// VI logic
-    func variableInterval(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
-        return self.fixedInterval(value, entity)
+    func variableInterval(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
+        return self.fixedInterval(value, entities)
     }
 }

@@ -11,13 +11,13 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Variable ratio schedule
-    public func VR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
+    public func VR(_ value: Int, with entities: E...) -> Observable<ReinforcementResult> {
         return self
-            .variableRatio(value, entity)
+            .variableRatio(value, entities)
     }
 
     /// VR logic
-    func variableRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
-        return fixedRatio(value, entity)
+    func variableRatio(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
+        return fixedRatio(value, entities)
     }
 }

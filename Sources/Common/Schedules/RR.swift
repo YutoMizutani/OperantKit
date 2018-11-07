@@ -10,13 +10,13 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Random ratio schedule
-    public func RR(_ value: Int, with entity: E) -> Observable<ReinforcementResult> {
+    public func RR(_ value: Int, with entities: E...) -> Observable<ReinforcementResult> {
         return self
-            .randomRatio(value, entity)
+            .randomRatio(value, entities)
     }
 
     /// RR logic
-    func randomRatio(_ value: Int, _ entity: E) -> Observable<ReinforcementResult> {
-        return fixedRatio(value, entity)
+    func randomRatio(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
+        return fixedRatio(value, entities)
     }
 }

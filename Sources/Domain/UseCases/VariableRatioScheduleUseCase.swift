@@ -24,9 +24,15 @@ public struct VariableRatioScheduleUseCase {
 }
 
 extension VariableRatioScheduleUseCase: ScheduleUseCase {
+    public var extendEntity: ResponseEntity {
+        return dataStore.extendEntity
+    }
+
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VR(dataStore.variableEntity.values[dataStore.variableEntity.order], with: dataStore.lastReinforcementEntity)
+        return observer.VR(dataStore.variableEntity.values[dataStore.variableEntity.order],
+                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
             .nextOrder(dataStore.variableEntity, condition: { $0.isReinforcement })
+            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 }

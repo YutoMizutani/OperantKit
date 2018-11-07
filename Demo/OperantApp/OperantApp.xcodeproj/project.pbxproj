@@ -41,6 +41,7 @@
 		999C797A218FB8300044C47E /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7979218FB8300044C47E /* UIView+.swift */; };
 		999C797C218FEDAC0044C47E /* RatChamberPelletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C797B218FEDAC0044C47E /* RatChamberPelletButton.swift */; };
 		999C797E218FEDB80044C47E /* RatChamberPelletButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C797D218FEDB80044C47E /* RatChamberPelletButton.xib */; };
+		999C799421915C6C0044C47E /* RatChamberConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C799321915C6C0044C47E /* RatChamberConfig.swift */; };
 		99AF4FC72181F7D200027605 /* RatChamberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF4FC62181F7D200027605 /* RatChamberViewController.swift */; };
 		99AF4FC92181F81200027605 /* RatChamberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AF4FC82181F81200027605 /* RatChamberView.xib */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		999C7979218FB8300044C47E /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		999C797B218FEDAC0044C47E /* RatChamberPelletButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberPelletButton.swift; sourceTree = "<group>"; };
 		999C797D218FEDB80044C47E /* RatChamberPelletButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberPelletButton.xib; sourceTree = "<group>"; };
+		999C799321915C6C0044C47E /* RatChamberConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberConfig.swift; sourceTree = "<group>"; };
 		99AF4FC62181F7D200027605 /* RatChamberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberViewController.swift; sourceTree = "<group>"; };
 		99AF4FC82181F81200027605 /* RatChamberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatChamberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -352,6 +354,7 @@
 			children = (
 				9989E22F2182CB5200932ED4 /* RatChamberColor.swift */,
 				9974940F2183351D00A29745 /* RatChamberSound.swift */,
+				999C799321915C6C0044C47E /* RatChamberConfig.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				9989E2302182CB5200932ED4 /* RatChamberColor.swift in Sources */,
 				9974941821840F3C00A29745 /* UIView+Rx.swift in Sources */,
 				999C797C218FEDAC0044C47E /* RatChamberPelletButton.swift in Sources */,
+				999C799421915C6C0044C47E /* RatChamberConfig.swift in Sources */,
 				991F0522217CEC9200BB31B6 /* RatChamberLightView.swift in Sources */,
 				991F0533217D13DE00BB31B6 /* Presenter.swift in Sources */,
 				991F0527217CF21900BB31B6 /* RatChamberLeverButton.swift in Sources */,

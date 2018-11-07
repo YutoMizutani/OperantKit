@@ -12,6 +12,10 @@ public struct ExtinctionScheduleUseCase {
 }
 
 extension ExtinctionScheduleUseCase: ScheduleUseCase {
+    public var extendEntity: ResponseEntity {
+        return ResponseEntity()
+    }
+
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
         return observer.EXT()
     }

@@ -20,9 +20,15 @@ public struct RandomRatioScheduleUseCase {
 }
 
 extension RandomRatioScheduleUseCase: ScheduleUseCase {
+    public var extendEntity: ResponseEntity {
+        return dataStore.extendEntity
+    }
+
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.RR(dataStore.randomEntity.nextValue, with: dataStore.lastReinforcementEntity)
+        return observer.RR(dataStore.randomEntity.nextValue,
+                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
             .nextRandom(dataStore.randomEntity, condition: { $0.isReinforcement })
+            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }
 }
