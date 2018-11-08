@@ -13,7 +13,7 @@ import RxSwift
 public typealias ResponseDetail = (count: Int, time: Int)
 
 final class SessionPresenter: Presenter {
-    typealias ScheduleUseCaseType = ScheduleUseCase
+    typealias ScheduleUseCaseType = ConcurrentScheduleUseCase
     typealias TimerUseCaseType = IntervalTimerUseCase
     typealias WireframeType = EmptyWireframe
 
@@ -36,15 +36,15 @@ final class SessionPresenter: Presenter {
         let reinforcements: [(on: Driver<Void>, off: Driver<Void>)]
     }
 
-    private let scheduleUseCases: [ScheduleUseCaseType]
+    private let scheduleUseCase: ScheduleUseCaseType
     private let timerUseCase: TimerUseCaseType
     private let wireframe: WireframeType
     private let disposeBag = DisposeBag()
 
-    init(scheduleUseCases: [ScheduleUseCaseType],
+    init(scheduleUseCase: ScheduleUseCaseType,
          timerUseCase: TimerUseCaseType,
          wireframe: WireframeType) {
-        self.scheduleUseCases = scheduleUseCases
+        self.scheduleUseCase = scheduleUseCase
         self.timerUseCase = timerUseCase
         self.wireframe = wireframe
     }
@@ -73,8 +73,6 @@ final class SessionPresenter: Presenter {
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
         input.responseTriggers.enumerated().forEach { [unowned self] i, e in
-            guard i < scheduleUseCases.count else { return }
-
             let numOfResponse = e
                 .scan(0) { n, _ in n + 1 }
                 .asObservable()
@@ -88,9 +86,8 @@ final class SessionPresenter: Presenter {
                 .do(onNext: { print("Response: \($0.milliseconds)") })
                 .share(replay: 1)
 
-            let reinforcement: Observable<Int> =
-                self.scheduleUseCases[i]
-                .decision(response)
+            let reinforcement: Observable<Int> = self.scheduleUseCase
+                .decision(response, number: i)
                 .filter { $0.isReinforcement }
                 .map { $0.entity.milliseconds }
                 .asObservable()
@@ -105,7 +102,7 @@ final class SessionPresenter: Presenter {
             let reinforcementOff: Driver<Void> = reinforcement
                 .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0) }
                 .extend(time: interReinforcementInterval,
-                        entities: scheduleUseCases.map { $0.extendEntity })
+                        entities: scheduleUseCase.dataStore.concurrentEntity.subSchedules.map { $0.extendEntity })
                 .do(onNext: { print("SR off: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()

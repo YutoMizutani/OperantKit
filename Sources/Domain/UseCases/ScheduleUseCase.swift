@@ -44,3 +44,11 @@ public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) ->
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
     return RandomIntervalScheduleUseCase(value: value, unit: unit)
 }
+
+public func Conc(_ subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {
+    return ConcurrentScheduleUseCase(subSchedules: subSchedules, isShared: false)
+}
+
+public func Conc(_ sharedSchedule: Shared<ScheduleUseCase>) -> ConcurrentScheduleUseCase {
+    return ConcurrentScheduleUseCase(sharedSchedule)
+}
