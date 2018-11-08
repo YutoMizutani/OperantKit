@@ -11,15 +11,11 @@ import UIKit
 struct RatChamberColor {
     static let shared = RatChamberColor()
 
-    let light = Light.shared
+    let light = Light.self
 
-    struct Light {
-        static let shared = Light()
-
-        var off = UIColor(white: 0.94, alpha: 1.0)
-        var on = UIColor(red: 1.0, green: 1.0 * 191.0 / 255.0, blue: 0.0, alpha: 1.0)
-
-        private init() {}
+    enum Light {
+        static let off = UIColor(white: 0.94, alpha: 1.0)
+        static let on = UIColor(red: 1.0, green: 1.0 * 191.0 / 255.0, blue: 0.0, alpha: 1.0)
     }
 
     private init() {}
