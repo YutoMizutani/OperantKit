@@ -50,9 +50,30 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/ConcurrentScheduleUseCase+Shared.swift",
+      "line": 11,
+      "symbol": "ConcurrentScheduleUseCase.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/Observable+Rx.swift",
       "line": 11,
-      "symbol": "Observable.interval(_:)",
+      "symbol": "Observable.extend(response:entities:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/Observable+Rx.swift",
+      "line": 19,
+      "symbol": "Observable.extend(time:entities:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/Observable+Rx.swift",
+      "line": 27,
+      "symbol": "Observable.extend(entity:entities:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -73,141 +94,99 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/ReinforcementResult+Rx.swift",
       "line": 12,
-      "symbol": "Observable.storeResponse(_:condition:)",
+      "symbol": "Observable.clearResponse(_:condition:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/ReinforcementResult+Rx.swift",
       "line": 20,
+      "symbol": "Observable.storeResponse(_:condition:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/ReinforcementResult+Rx.swift",
+      "line": 28,
       "symbol": "Observable.nextOrder(_:condition:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 18,
-      "symbol": "RxUIApplicationDelegateProxy",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 19,
-      "symbol": "RxUIApplicationDelegateProxy.application",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 21,
-      "symbol": "RxUIApplicationDelegateProxy.init(application:)",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/ReinforcementResult+Rx.swift",
+      "line": 36,
+      "symbol": "Observable.nextRandom(_:condition:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 36,
-      "symbol": "RxSwift.Reactive.delegate",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 10,
+      "symbol": "Matrix",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 11,
+      "symbol": "Matrix.elements",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 40,
-      "symbol": "RxSwift.Reactive.applicationWillEnterForeground",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 12,
+      "symbol": "Matrix.rows",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 44,
-      "symbol": "RxSwift.Reactive.applicationDidBecomeActive",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 13,
+      "symbol": "Matrix.columns",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 48,
-      "symbol": "RxSwift.Reactive.applicationDidEnterBackground",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 15,
+      "symbol": "Matrix.init(elements:rows:columns:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 21,
+      "symbol": "Matrix.init(elements:rows:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Matrix.swift",
+      "line": 28,
+      "symbol": "Matrix.init(elements:columns:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Shared.swift",
+      "line": 10,
+      "symbol": "Shared",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Shared.swift",
+      "line": 11,
+      "symbol": "Shared.element",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 52,
-      "symbol": "RxSwift.Reactive.applicationWillResignActive",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIApplication+Rx.swift",
-      "line": 56,
-      "symbol": "RxSwift.Reactive.applicationWillTerminate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 14,
-      "symbol": "Reactive.viewDidLoad",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 18,
-      "symbol": "Reactive.viewWillAppear",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 22,
-      "symbol": "Reactive.viewDidAppear",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 26,
-      "symbol": "Reactive.viewWillDisappear",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 30,
-      "symbol": "Reactive.viewDidDisappear",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 36,
-      "symbol": "UIViewController.startTrigger",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 43,
-      "symbol": "UIViewController.pauseTrigger",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 49,
-      "symbol": "UIViewController.resumeTrigger",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Extensions/UIViewController+Rx.swift",
-      "line": 55,
-      "symbol": "UIViewController.endTrigger",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Helpers/Shared.swift",
+      "line": 13,
+      "symbol": "Shared.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -220,7 +199,14 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleParameter.swift",
       "line": 11,
-      "symbol": "ScheduleParameter.value",
+      "symbol": "ScheduleParameter.displayValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleParameter.swift",
+      "line": 12,
+      "symbol": "ScheduleParameter.nextValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -353,21 +339,7 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
       "line": 13,
-      "symbol": "RandomGenerator.generatedRatio(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
-      "line": 18,
-      "symbol": "RandomGenerator.generatedInterval(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
-      "line": 23,
-      "symbol": "RandomGenerator.generatedTime(_:)",
+      "symbol": "RandomGenerator.generate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -554,6 +526,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/ConcurrentResponseDataStore.swift",
+      "line": 10,
+      "symbol": "ConcurrentResponseDataStore",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/ConcurrentResponseDataStore.swift",
+      "line": 11,
+      "symbol": "ConcurrentResponseDataStore.concurrentEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/ConcurrentResponseDataStore.swift",
+      "line": 13,
+      "symbol": "ConcurrentResponseDataStore.init(subSchedules:isShared:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/ConcurrentResponseDataStore.swift",
+      "line": 17,
+      "symbol": "ConcurrentResponseDataStore.init(concurrentEntity:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/FixedResponseDataStore.swift",
       "line": 10,
       "symbol": "FixedResponseDataStore",
@@ -562,22 +562,50 @@
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/FixedResponseDataStore.swift",
-      "line": 16,
+      "line": 18,
       "symbol": "FixedResponseDataStore.init(value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/FixedResponseDataStore.swift",
-      "line": 21,
+      "line": 24,
       "symbol": "FixedResponseDataStore.init(value:unit:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/FixedResponseDataStore.swift",
-      "line": 26,
-      "symbol": "FixedResponseDataStore.init(fixedEntity:lastReinforcementEntity:)",
+      "line": 30,
+      "symbol": "FixedResponseDataStore.init(fixedEntity:lastReinforcementEntity:extendEntity:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/RandomResponseDataStore.swift",
+      "line": 10,
+      "symbol": "RandomResponseDataStore",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/RandomResponseDataStore.swift",
+      "line": 18,
+      "symbol": "RandomResponseDataStore.init(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/RandomResponseDataStore.swift",
+      "line": 24,
+      "symbol": "RandomResponseDataStore.init(value:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/RandomResponseDataStore.swift",
+      "line": 30,
+      "symbol": "RandomResponseDataStore.init(randomEntity:lastReinforcementEntity:extendEntity:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -590,29 +618,57 @@
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
-      "line": 16,
+      "line": 18,
       "symbol": "VariableResponseDataStore.init(value:iterations:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
-      "line": 22,
+      "line": 25,
       "symbol": "VariableResponseDataStore.init(value:values:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
-      "line": 27,
+      "line": 31,
       "symbol": "VariableResponseDataStore.init(value:unit:iterations:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
-      "line": 33,
-      "symbol": "VariableResponseDataStore.init(variableEntity:lastReinforcementEntity:)",
+      "line": 38,
+      "symbol": "VariableResponseDataStore.init(variableEntity:lastReinforcementEntity:extendEntity:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/ConcurrentEntity.swift",
+      "line": 10,
+      "symbol": "ConcurrentEntity",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/ConcurrentEntity.swift",
+      "line": 11,
+      "symbol": "ConcurrentEntity.subSchedules",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/ConcurrentEntity.swift",
+      "line": 12,
+      "symbol": "ConcurrentEntity.isShared",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/ConcurrentEntity.swift",
+      "line": 14,
+      "symbol": "ConcurrentEntity.init(subSchedules:isShared:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -646,8 +702,43 @@
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/FixedEntity.swift",
-      "line": 14,
+      "line": 11,
+      "symbol": "FixedEntity.displayValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/FixedEntity.swift",
+      "line": 12,
+      "symbol": "FixedEntity.nextValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/FixedEntity.swift",
+      "line": 16,
       "symbol": "FixedEntity.init(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/RandomEntity.swift",
+      "line": 10,
+      "symbol": "RandomEntity",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/RandomEntity.swift",
+      "line": 13,
+      "symbol": "RandomEntity.nextValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/RandomEntity.swift",
+      "line": 15,
+      "symbol": "RandomEntity.init(value:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -688,8 +779,71 @@
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/VariableEntity.swift",
-      "line": 18,
+      "line": 13,
+      "symbol": "VariableEntity.nextValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/Entities/VariableEntity.swift",
+      "line": 22,
       "symbol": "VariableEntity.init(value:values:order:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": null,
+      "symbol": "ConcurrentScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": null,
+      "symbol": "ConcurrentScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "ConcurrentScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "ConcurrentScheduleUseCase.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 13,
+      "symbol": "ConcurrentScheduleUseCase.init(subSchedules:isShared:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "ConcurrentScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 23,
+      "symbol": "ConcurrentScheduleUseCase.extendEntity(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ConcurrentScheduleUseCase.swift",
+      "line": 28,
+      "symbol": "ConcurrentScheduleUseCase.decision(_:number:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -717,6 +871,13 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ExtinctionScheduleUseCase.swift",
       "line": 15,
+      "symbol": "ExtinctionScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ExtinctionScheduleUseCase.swift",
+      "line": 19,
       "symbol": "ExtinctionScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -759,6 +920,13 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedIntervalScheduleUseCase.swift",
       "line": 23,
+      "symbol": "FixedIntervalScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedIntervalScheduleUseCase.swift",
+      "line": 27,
       "symbol": "FixedIntervalScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -801,6 +969,13 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedRatioScheduleUseCase.swift",
       "line": 23,
+      "symbol": "FixedRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedRatioScheduleUseCase.swift",
+      "line": 27,
       "symbol": "FixedRatioScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -876,6 +1051,104 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": null,
+      "symbol": "RandomIntervalScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "RandomIntervalScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "RandomIntervalScheduleUseCase.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 13,
+      "symbol": "RandomIntervalScheduleUseCase.init(value:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "RandomIntervalScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 23,
+      "symbol": "RandomIntervalScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 27,
+      "symbol": "RandomIntervalScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": null,
+      "symbol": "RandomRatioScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "RandomRatioScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "RandomRatioScheduleUseCase.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 13,
+      "symbol": "RandomRatioScheduleUseCase.init(value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "RandomRatioScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 23,
+      "symbol": "RandomRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 27,
+      "symbol": "RandomRatioScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
       "line": 10,
       "symbol": "ScheduleUseCase",
@@ -885,49 +1158,84 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
       "line": 11,
+      "symbol": "ScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "line": 13,
       "symbol": "ScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 14,
+      "line": 16,
       "symbol": "EXT()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 18,
+      "line": 20,
       "symbol": "CRF()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 22,
+      "line": 24,
       "symbol": "FR(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 26,
+      "line": 28,
       "symbol": "VR(_:iterations:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 30,
+      "line": 32,
+      "symbol": "RR(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "line": 36,
       "symbol": "FI(_:unit:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 34,
+      "line": 40,
       "symbol": "VI(_:unit:iterations:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "line": 44,
+      "symbol": "RI(_:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "line": 48,
+      "symbol": "Conc(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "line": 52,
+      "symbol": "Conc(_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
@@ -976,6 +1284,13 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
       "line": 27,
+      "symbol": "VariableIntervalScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
+      "line": 31,
       "symbol": "VariableIntervalScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1025,6 +1340,13 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableRatioScheduleUseCase.swift",
       "line": 27,
+      "symbol": "VariableRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableRatioScheduleUseCase.swift",
+      "line": 31,
       "symbol": "VariableRatioScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
