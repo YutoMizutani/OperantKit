@@ -1,33 +1,32 @@
 //
-//  FixedIntervalScheduleUseCase.swift
+//  RandomIntervalScheduleUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/03.
+//  Created by Yuto Mizutani on 2018/11/04.
 //
 
 import RxSwift
 
-public struct FixedIntervalScheduleUseCase {
-    public var dataStore: FixedResponseDataStore
+public struct RandomIntervalScheduleUseCase {
+    public var dataStore: RandomResponseDataStore
 
     public init(value: Int, unit: TimeUnit) {
-        self.dataStore = FixedResponseDataStore(value: value, unit: unit)
+        self.dataStore = RandomResponseDataStore(value: value, unit: unit)
     }
 
-    public init(dataStore: FixedResponseDataStore) {
+    public init(dataStore: RandomResponseDataStore) {
         self.dataStore = dataStore
     }
 }
 
-extension FixedIntervalScheduleUseCase: ScheduleUseCase {
+extension RandomIntervalScheduleUseCase: ScheduleUseCase {
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }
 
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.FI(dataStore.fixedEntity.nextValue,
+        return observer.RI(dataStore.randomEntity.nextValue,
                            with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
-            .debug()
             .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
     }

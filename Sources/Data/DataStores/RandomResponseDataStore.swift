@@ -1,36 +1,36 @@
 //
-//  FixedResponseDataStore.swift
+//  RandomResponseDataStore.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/02.
+//  Created by Yuto Mizutani on 2018/11/04.
 //
 
 import Foundation
 
-public struct FixedResponseDataStore {
-    /// Stored FixedEntity
-    public var fixedEntity: FixedEntity
+public struct RandomResponseDataStore {
+    /// Stored RandomEntity
+    public var randomEntity: RandomEntity
     /// Stored ResponseEntity when previous reinforcement
     public var lastReinforcementEntity: ResponseEntity
-    /// Extend ResponseEntity
+    /// Extend entity
     public var extendEntity: ResponseEntity
 
     public init(value: Int) {
-        self.fixedEntity = FixedEntity(value: value)
+        self.randomEntity = RandomEntity(value: value)
         self.lastReinforcementEntity = ResponseEntity()
         self.extendEntity = ResponseEntity()
     }
 
     public init(value: Int, unit: TimeUnit) {
-        self.fixedEntity = FixedEntity(value: unit.milliseconds(value))
+        self.randomEntity = RandomEntity(value: unit.milliseconds(value))
         self.lastReinforcementEntity = ResponseEntity()
         self.extendEntity = ResponseEntity()
     }
 
-    public init(fixedEntity: FixedEntity,
+    public init(randomEntity: RandomEntity,
                 lastReinforcementEntity: ResponseEntity = ResponseEntity(),
                 extendEntity: ResponseEntity = ResponseEntity()) {
-        self.fixedEntity = fixedEntity
+        self.randomEntity = randomEntity
         self.lastReinforcementEntity = lastReinforcementEntity
         self.extendEntity = extendEntity
     }
