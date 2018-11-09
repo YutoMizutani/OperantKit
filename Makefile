@@ -11,13 +11,15 @@ FRAMEWORK_PROJECT_NAME=OperantKit
 WORKSPACE_FILENAME=$(FRAMEWORK_PROJECT_NAME).xcworkspace
 APP_PROJECT_NAME=OperantApp
 
-TARGET_IOS=iOS
 TARGET_MACOS=macOS
+TARGET_IOS=iOS
 TARGET_TVOS=tvOS
+TARGET_WATCHOS=watchOS
 
-SCHEME_FRAMEWORK_IOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_IOS)
 SCHEME_FRAMEWORK_MACOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_MACOS)
+SCHEME_FRAMEWORK_IOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_IOS)
 SCHEME_FRAMEWORK_TVOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_TVOS)
+SCHEME_FRAMEWORK_WATCHOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_WATCHOS)
 SCHEME_APP_IOS=$(APP_PROJECT_NAME)
 
 
@@ -40,28 +42,40 @@ release-build-frameworks:
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
-		-scheme "$(SCHEME_FRAMEWORK_IOS)"
-	$(BUILDTOOL) \
-		-workspace $(WORKSPACE_FILENAME) \
-		-configuration Release \
-		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_MACOS)"
 	$(BUILDTOOL) \
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
+		-scheme "$(SCHEME_FRAMEWORK_IOS)"
+	$(BUILDTOOL) \
+		-workspace $(WORKSPACE_FILENAME) \
+		-configuration Release \
+		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_TVOS)"
+	$(BUILDTOOL) \
+		-workspace $(WORKSPACE_FILENAME) \
+		-configuration Release \
+		-verbose \
+		-scheme "$(SCHEME_FRAMEWORK_WATCHOS)"
 
 test-all:
 	make deps-all
 	make test-framework-all
 	make test-app-all
 test-framework-all:
-	make test-framework-ios
 	make test-framework-macos
+	make test-framework-ios
 	make test-framework-tvos
 test-app-all:
 	make test-app-ios
+test-framework-macos:
+	set -o pipefail
+	$(BUILDTOOL) test \
+		-verbose \
+		-scheme "$(SCHEME_FRAMEWORK_MACOS)" \
+		ONLY_ACTIVE_ARCH=NO \
+		| xcpretty
 test-framework-ios:
 	set -o pipefail
 	$(BUILDTOOL) test \
@@ -70,13 +84,6 @@ test-framework-ios:
 		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_IOS)" \
 		-destination "platform=iOS Simulator,OS=12.1,name=iPhone XS Max" \
-		ONLY_ACTIVE_ARCH=NO \
-		| xcpretty
-test-framework-macos:
-	set -o pipefail
-	$(BUILDTOOL) test \
-		-verbose \
-		-scheme "$(SCHEME_FRAMEWORK_MACOS)" \
 		ONLY_ACTIVE_ARCH=NO \
 		| xcpretty
 test-framework-tvos:
