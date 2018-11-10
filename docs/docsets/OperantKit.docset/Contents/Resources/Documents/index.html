@@ -13,7 +13,7 @@
     <a title="OperantKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">OperantKit Docs</a> (31% documented)</p>
+        <p><a href="index.html">OperantKit Docs</a> (27% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -30,10 +30,16 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/ConcurrentEntity.html">ConcurrentEntity</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/FixedEntity.html">FixedEntity</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/IntervalTimer.html">IntervalTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RandomEntity.html">RandomEntity</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ResponseEntity.html">ResponseEntity</a>
@@ -99,6 +105,12 @@
                 <a href="Functions.html#/s:10OperantKit3CRFAA25FixedRatioScheduleUseCaseVyF">CRF()</a>
               </li>
               <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit4ConcyAA25ConcurrentScheduleUseCaseVAA0efG0_pd_tF">Conc(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit4ConcyAA25ConcurrentScheduleUseCaseVAA6SharedVyAA0efG0_pGF">Conc(_:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit3EXTAA25ExtinctionScheduleUseCaseVyF">EXT()</a>
               </li>
               <li class="nav-group-task">
@@ -106,6 +118,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2FRyAA25FixedRatioScheduleUseCaseVSiF">FR(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2RI_4unitAA29RandomIntervalScheduleUseCaseVSi_AA8TimeUnitOtF">RI(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2RRyAA26RandomRatioScheduleUseCaseVSiF">RR(_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2VI_4unit10iterationsAA31VariableIntervalScheduleUseCaseVSi_AA8TimeUnitOSitF">VI(_:unit:iterations:)</a>
@@ -130,6 +148,12 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Structs/ConcurrentResponseDataStore.html">ConcurrentResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ConcurrentScheduleUseCase.html">ConcurrentScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/ExperimentEntity.html">ExperimentEntity</a>
               </li>
               <li class="nav-group-task">
@@ -151,6 +175,9 @@
                 <a href="Structs/IntervalTimerUseCase.html">IntervalTimerUseCase</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/Matrix.html">Matrix</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/PostpositionSchedule.html">PostpositionSchedule</a>
               </li>
               <li class="nav-group-task">
@@ -160,7 +187,19 @@
                 <a href="Structs/RandomGenerator.html">RandomGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/RandomIntervalScheduleUseCase.html">RandomIntervalScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RandomRatioScheduleUseCase.html">RandomRatioScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RandomResponseDataStore.html">RandomResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/ScheduleType.html">ScheduleType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Shared.html">Shared</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/VariableIntervalScheduleUseCase.html">VariableIntervalScheduleUseCase</a>
@@ -193,8 +232,11 @@
             <h1 id='operantkit' class='heading'>OperantKit</h1>
 
 <p><a href="https://travis-ci.com/YutoMizutani/OperantKit"><img src="https://travis-ci.com/YutoMizutani/OperantKit.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/cocoapods/p/OperantKit.svg" alt="CocoaPods"></a>
 <a href="https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT License"></a>
-<a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
+<a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/cocoapods/v/OperantKit.svg" alt="CocoaPods"></a>
+<a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager compatible"></a></p>
 
 <p><strong>OperantKit</strong> is a tool kit for <em>operant conditioning</em> (<em>instrumental conditioning</em>) experiments written in Swift.</p>
 <h2 id='installation' class='heading'>Installation</h2>
@@ -203,6 +245,171 @@
 <pre class="highlight plaintext"><code>$ make deps-all
 $ make open
 </code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">OperantKit</span>
+<span class="kd">import</span> <span class="kt">RxSwift</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">schedule</span> <span class="o">=</span> <span class="kt">FR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// Fixed ratio 5 schedule</span>
+    <span class="k">let</span> <span class="nv">events</span><span class="p">:</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">// Observable events</span>
+    <span class="n">schedule</span><span class="o">.</span><span class="nf">decision</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">filter</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isReinforcement</span> <span class="p">})</span> <span class="c1">// Filtering responses of reinforcement</span>
+        <span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Reinforcement"</span><span class="p">)</span>
+        <span class="p">})</span>
+        <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="kt">DisposeBag</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='supporting-schedules' class='heading'>Supporting schedules</h2>
+<h3 id='simple-schedules' class='heading'>Simple schedules</h3>
+<h4 id='fixed-schedules' class='heading'>Fixed schedules</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Name of schedule</th>
+<th style="text-align: center">Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">Fixed ratio schedule</td>
+<td style="text-align: center"><code>FR(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Variable ratio schedule</td>
+<td style="text-align: center"><code>VR(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Random ratio schedule</td>
+<td style="text-align: center"><code>RR(5)</code></td>
+</tr>
+</tbody></table>
+<h4 id='interval-schedules' class='heading'>Interval schedules</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Name of schedule</th>
+<th style="text-align: center">Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">Fixed interval schedule</td>
+<td style="text-align: center"><code>FI(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Variable interval schedule</td>
+<td style="text-align: center"><code>VI(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Random interval schedule</td>
+<td style="text-align: center"><code>RI(5)</code></td>
+</tr>
+</tbody></table>
+
+<p>時間間隔はデフォルトで「秒」単位で，</p>
+<pre class="highlight swift"><code><span class="kt">FI</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">unit</span><span class="p">:</span> <span class="o">.</span><span class="n">minutes</span><span class="p">)</span>
+</code></pre>
+
+<p>というように単位を変更することも可能です。</p>
+<h4 id='' class='heading'>時間スケジュール</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Name of schedule</th>
+<th style="text-align: center">Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">Fixed time schedule</td>
+<td style="text-align: center"><code>FT(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Variable time schedule</td>
+<td style="text-align: center"><code>VT(5)</code></td>
+</tr>
+<tr>
+<td style="text-align: center">Random time schedule</td>
+<td style="text-align: center"><code>RT(5)</code></td>
+</tr>
+</tbody></table>
+
+<p>時間間隔はデフォルトで「秒」単位で，</p>
+<pre class="highlight swift"><code><span class="kt">FI</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">unit</span><span class="p">:</span> <span class="o">.</span><span class="n">minutes</span><span class="p">)</span>
+</code></pre>
+
+<p>というように単位を変更することも可能です。</p>
+<h4 id='other-schedules' class='heading'>Other schedules</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Name of schedule</th>
+<th style="text-align: center">Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">Continuous reinforcement</td>
+<td style="text-align: center"><code><a href="Functions.html#/s:10OperantKit3CRFAA25FixedRatioScheduleUseCaseVyF">CRF()</a></code></td>
+</tr>
+<tr>
+<td style="text-align: center">Extinction schedule</td>
+<td style="text-align: center"><code><a href="Functions.html#/s:10OperantKit3EXTAA25ExtinctionScheduleUseCaseVyF">EXT()</a></code></td>
+</tr>
+</tbody></table>
+<h3 id='compound-schedule' class='heading'>Compound schedule</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Name of schedule</th>
+<th style="text-align: center">Code</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">Concurrent schedule</td>
+<td style="text-align: center"><code>Conc(FR(5), VI(10))</code> ※</td>
+</tr>
+</tbody></table>
+
+<p>※ 並立連鎖スケジュールにおける初環のように，2種類以上のオペランダムに対して共通のスケジュールが適用される場合は， <code>Shared()</code> を利用することで対応可能です。 e.g. <code>Conc(Shared(VI(10)))</code></p>
+<h2 id='dependencies' class='heading'>Dependencies</h2>
+
+<ul>
+<li><a href="https://www.github.com/ReactiveX/RxSwift">RxSwift</a></li>
+<li><a href="https://www.github.com/ReactiveX/RxSwift">RxCocoa</a></li>
+</ul>
+<h2 id='documents' class='heading'>Documents</h2>
+
+<p><a href="https://github.com/YutoMizutani/OperantKit/blob/master/docs/index.html">docs/index.html</a> を参照して下さい。</p>
+<h2 id='' class='heading'>オペラント条件づけ (道具的条件づけ) について</h2>
+<h2 id='' class='heading'>ソフトウェア設計について</h2>
+
+<p><img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" alt=""></p>
+
+<p>本リポジトリは <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"><em>クリーンアーキテクチャ</em></a> (<a href="https://blog.tai2.net/the_clean_architecture.html">邦訳</a>) を採用しています。これは基盤に共通のビジネスロジックを採用し，UIとそれを紐付けるコードを記述するだけで簡単に様々なUIに適用させることが可能になります。さらに，拡張性にも優れ，必要な強化スケジュールを独自に作り出すこともできます。</p>
+
+<p>クリーンアーキテクチャに従った場合，本ライブラリはData層及びDomain層を担当している形となります。</p>
+<h2 id='' class='heading'>リアクティブプログラミングについて</h2>
+<h2 id='' class='heading'>何故書いているのか</h2>
+
+<p>行動分析学は確かに素晴しい学問であると言えます。一方で，この学問にも欠点があります。新しい技術に目を向けないことと，高い機械にお金を投資できないことです。</p>
+
+<p>B. F. スキナーはかつて素晴しい研究者でありながら，技術者と深い関わりがありました。</p>
+
+<p>あなたは現代で，どんな言語で実験しているでしょうか?</p>
+
+<p>機械語? アセンブリ? これらで書いている人は僕の助けを必要としていないでしょう。どうぞ安心して研究を続けて下さい。</p>
+
+<p>そうでない方の中には，難しいと感じていたり，もっと複雑な条件を簡単に作りたいと思っている人もいるでしょう。</p>
+
+<p>私は，そんな彼らの助けになりたい。プログラミングで実験心理学を嫌いになって欲しくはない。</p>
+
+<p>私は最大限の時間を費し，簡単でかつ高速な <q>行動科学者のための</q> フレームワークを作成しました。このライブラリにはプログラミングの最新技術が利用されています。</p>
+
+<p>一般に人は全てを完璧にこなすことはできない。一方で，僕のこのプロジェクトを元に，科学と技術の橋渡しによって行動分析学を復興させられればと思っております。</p>
+<h2 id='' class='heading'>連絡先</h2>
+
+<p>yuto.mizutani.dev [at] gmail.com</p>
+<h2 id='donate' class='heading'>Donate</h2>
+
+<p>私の「モチベーション」は連続強化 (FR1) スケジュールで完全に制御されます。</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>OperantKit is available under the <a href="https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE">MIT license</a>.</p>
@@ -210,7 +417,7 @@ $ make open
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-03)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-09)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
