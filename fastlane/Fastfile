@@ -13,6 +13,15 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+desc "Test all"
+lane :test_all do
+  test_framework_macos
+  test_framework_ios
+  test_framework_tvos
+  test_app_ios
+end
+
+
 desc "Test framework macOS"
 lane :test_framework_macos do
   run_tests(workspace: "OperantKit.xcworkspace",
