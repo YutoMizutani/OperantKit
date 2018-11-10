@@ -15,6 +15,11 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
+### test_all
+```
+fastlane test_all
+```
+Test all
 ### test_framework_macos
 ```
 fastlane test_framework_macos
