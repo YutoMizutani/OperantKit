@@ -1,0 +1,54 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+desc "Test framework macOS"
+lane :test_framework_macos do
+  run_tests(workspace: "OperantKit.xcworkspace",
+            scheme: "OperantKit macOS",
+            clean: true,
+            skip_build: true,
+            output_types: "html")
+end
+
+desc "Test framework iOS"
+lane :test_framework_ios do
+  run_tests(workspace: "OperantKit.xcworkspace",
+            configuration: "Release",
+            scheme: "OperantKit iOS",
+            device: "iPhone XS Max",
+            clean: true,
+            skip_build: true,
+            output_types: "html")
+end
+
+desc "Test framework tvOS"
+lane :test_framework_tvos do
+  run_tests(workspace: "OperantKit.xcworkspace",
+            scheme: "OperantKit tvOS",
+            device: "Apple TV 4K",
+            clean: true,
+            skip_build: true,
+            output_types: "html")
+end
+
+desc "Test app iOS"
+lane :test_app_ios do
+  run_tests(workspace: "OperantKit.xcworkspace",
+            scheme: "OperantApp",
+            device: "iPhone XS Max",
+            clean: true,
+            output_types: "html")
+end
+
