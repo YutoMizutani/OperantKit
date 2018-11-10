@@ -38,8 +38,16 @@ func main() {
 |Name of schedule|Code|
 |:-:|:-:|
 |Fixed ratio schedule|`FR(5)`|
-|Variable ratio schedule|`VR(5)`|
+|Variable ratio schedule|`VR(5)` ※|
 |Random ratio schedule|`RR(5)`|
+
+※ The number of iterations of the variable schedule is "12" by default,
+
+```swift
+VR(10, iterations: 12)
+```
+
+It is also possible to change the number of iterations and so on.
 
 #### Interval schedules
 
@@ -92,7 +100,7 @@ It is also possible to change the unit in such a way.
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
-Add this to your Podfile:
+Add this to your `Podfile`:
 
 ```ruby
 pod 'OperantKit'
@@ -106,7 +114,7 @@ $ pod install
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add this to your Cartfile:
+Add this to your `Cartfile`:
 
 ```
 github "YutoMizutani/OperantKit"
