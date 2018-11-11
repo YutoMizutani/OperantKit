@@ -70,40 +70,13 @@ test-framework-all:
 test-app-all:
 	make test-app-ios
 test-framework-macos:
-	set -o pipefail
-	$(BUILDTOOL) test \
-		-verbose \
-		-scheme "$(SCHEME_FRAMEWORK_MACOS)" \
-		ONLY_ACTIVE_ARCH=NO \
-		| xcpretty
+	bundle exec fastlane test_framework_macos
 test-framework-ios:
-	set -o pipefail
-	$(BUILDTOOL) test \
-		-workspace $(WORKSPACE_FILENAME) \
-		-configuration Release \
-		-verbose \
-		-scheme "$(SCHEME_FRAMEWORK_IOS)" \
-		-destination "platform=iOS Simulator,OS=12.1,name=iPhone XS Max" \
-		ONLY_ACTIVE_ARCH=NO \
-		| xcpretty
+	bundle exec fastlane test_framework_ios
 test-framework-tvos:
-	set -o pipefail
-	$(BUILDTOOL) test \
-		-workspace $(WORKSPACE_FILENAME) \
-		-verbose \
-		-scheme "$(SCHEME_FRAMEWORK_TVOS)" \
-		-destination "platform=tvOS Simulator,OS=12.1,name=Apple TV 4K" \
-		ONLY_ACTIVE_ARCH=NO \
-		| xcpretty
+	bundle exec fastlane test_framework_tvos
 test-app-ios:
-	set -o pipefail
-	$(BUILDTOOL) test \
-		-workspace $(WORKSPACE_FILENAME) \
-		-configuration Release \
-		-verbose -scheme "$(SCHEME_APP_IOS)" \
-		-destination "platform=iOS Simulator,OS=12.1,name=iPhone XS Max" \
-		ONLY_ACTIVE_ARCH=NO \
-		| xcpretty
+	bundle exec fastlane test_app_ios
 
 clean:
 	$(BUILDTOOL) clean
