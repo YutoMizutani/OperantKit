@@ -62,9 +62,9 @@ public extension SessionEvents {
 
     private func translateFormatID(_ id: Int) -> String {
         // 最大桁数を取得。1桁の場合は2桁にする。
-        let maxDigit: Int = strlen("\(self.eventIDs.count)") == 1 ? 2 : strlen("\(self.eventIDs.count)")
+        let maxDigit: Int = "\(self.eventIDs.count)".count == 1 ? 2 : "\(self.eventIDs.count)".count
         // 現在idの桁数を取得
-        let digit: Int = strlen("\(id)")
+        let digit: Int = "\(id)".count
 
         let zero: String = String(repeating: "0", count: (maxDigit - digit))
 

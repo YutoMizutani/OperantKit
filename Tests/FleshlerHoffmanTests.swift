@@ -34,5 +34,6 @@ final class FleshlerHoffmanTests: XCTestCase {
 
     func testGeneratedHantula() {
         XCTAssertEqual([], self.fleshlerHoffman.hantula1991(value: Int.random(in: 0...10000), number: 0))
+        XCTAssertNotEqual([], self.fleshlerHoffman.hantula1991(value: Int.random(in: 0...10000), number: 12))
     }
 }
