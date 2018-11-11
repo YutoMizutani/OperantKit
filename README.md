@@ -1,7 +1,7 @@
 # OperantKit
 
 [![Build Status](https://app.bitrise.io/app/e1b066c3a796bb39/status.svg?token=3DteqY4In4ByLDs_2-iucg&branch=master)](https://app.bitrise.io/app/e1b066c3a796bb39)
-[![CocoaPods](https://img.shields.io/cocoapods/p/OperantKit.svg)](https://github.com/YutoMizutani/OperantKit)
+![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/v/OperantKit.svg)](https://github.com/YutoMizutani/OperantKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/YutoMizutani/OperantKit)
