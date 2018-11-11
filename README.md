@@ -9,6 +9,8 @@
 
 **OperantKit** is a tool kit for *operant conditioning* (*instrumental conditioning*) experiments written in Swift.
 
+日本語:jp:: [README_JP.md](https://github.com/YutoMizutani/OperantKit/blob/master/README_JP.md)
+
 ## Usage
 
 ```swift
