@@ -110,7 +110,7 @@ public extension FleshlerHoffman {
             let dm = Double(m)
 
             func GOTO_130() {
-                var RND: Double { return Double(arc4random_uniform(1000000000)) / 1000000000 }
+                var RND: Double { return Double.random(in: 0..<1) }
                 let order = Int((dn * RND + 1))
                 rd[order] == 0 ? rd[order] = Int(round(vi[m])) : GOTO_130()
             }
