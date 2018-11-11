@@ -1,6 +1,6 @@
 # OperantKit
 
-[![Build Status](https://travis-ci.com/YutoMizutani/OperantKit.svg?branch=master)](https://travis-ci.com/YutoMizutani/OperantKit)
+[![Build Status](https://app.bitrise.io/app/e1b066c3a796bb39/status.svg?token=3DteqY4In4ByLDs_2-iucg&branch=master)](https://app.bitrise.io/app/e1b066c3a796bb39)
 [![CocoaPods](https://img.shields.io/cocoapods/p/OperantKit.svg)](https://github.com/YutoMizutani/OperantKit)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/v/OperantKit.svg)](https://github.com/YutoMizutani/OperantKit)
