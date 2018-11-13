@@ -1,13 +1,13 @@
 //
-//  FixedIntervalScheduleUseCase.swift
+//  FixedTimeScheduleUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/03.
+//  Created by Yuto Mizutani on 2018/11/13.
 //
 
 import RxSwift
 
-public struct FixedIntervalScheduleUseCase {
+public struct FixedTimeScheduleUseCase {
     public var dataStore: FixedResponseDataStore
 
     public init(value: Int, unit: TimeUnit) {
@@ -19,13 +19,13 @@ public struct FixedIntervalScheduleUseCase {
     }
 }
 
-extension FixedIntervalScheduleUseCase: ScheduleUseCase {
+extension FixedTimeScheduleUseCase: ScheduleUseCase {
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }
 
     public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.FI(dataStore.fixedEntity.nextValue,
+        return observer.FT(dataStore.fixedEntity.nextValue,
                            with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
             .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
             .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })

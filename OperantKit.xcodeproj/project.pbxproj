@@ -257,6 +257,33 @@
 		99C74EF4219A702D00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
 		99C74EF6219A70F100DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
 		99C74EF8219A713D00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
+		99C74EFA219A761000DABE14 /* FixedTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */; };
+		99C74EFB219A761400DABE14 /* FixedTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */; };
+		99C74EFC219A761500DABE14 /* FixedTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */; };
+		99C74EFD219A761600DABE14 /* FixedTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */; };
+		99C74F01219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */; };
+		99C74F02219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */; };
+		99C74F03219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */; };
+		99C74F04219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */; };
+		99C74F06219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */; };
+		99C74F07219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */; };
+		99C74F08219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */; };
+		99C74F09219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */; };
+		99C74F0A219A77AE00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
+		99C74F0B219A77AF00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
+		99C74F0C219A77B000DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
+		99C74F0D219A77B300DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
+		99C74F0E219A77B400DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
+		99C74F0F219A77B500DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
+		99C74F11219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
+		99C74F12219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
+		99C74F13219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
+		99C74F15219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */; };
+		99C74F16219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */; };
+		99C74F17219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */; };
+		99C74F19219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
+		99C74F1A219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
+		99C74F1B219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -368,6 +395,12 @@
 		99C74EF0219A702400DABE14 /* FT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT.swift; sourceTree = "<group>"; };
 		99C74EF5219A70F100DABE14 /* VT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VT.swift; sourceTree = "<group>"; };
 		99C74EF7219A713D00DABE14 /* RT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RT.swift; sourceTree = "<group>"; };
+		99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeScheduleUseCase.swift; sourceTree = "<group>"; };
+		99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleUseCase.swift; sourceTree = "<group>"; };
+		99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleUseCase.swift; sourceTree = "<group>"; };
+		99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeScheduleTests.swift; sourceTree = "<group>"; };
+		99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleTests.swift; sourceTree = "<group>"; };
+		99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -596,16 +629,9 @@
 		999C7C7D21951CDA0044C47E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				99C74EFE219A763F00DABE14 /* Timer */,
 				999C7C7E21951CDA0044C47E /* ConcurrentScheduleUseCase.swift */,
-				999C7C7F21951CDA0044C47E /* ScheduleUseCase.swift */,
-				999C7C8021951CDA0044C47E /* FixedIntervalScheduleUseCase.swift */,
-				999C7C8121951CDA0044C47E /* FixedRatioScheduleUseCase.swift */,
-				999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */,
-				999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */,
-				999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */,
-				999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */,
-				999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */,
-				999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */,
+				99C74EFF219A764E00DABE14 /* SimpleSchedules */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -698,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				999C7CA521951CDB0044C47E /* ScheduleParameter.swift */,
+				999C7C7F21951CDA0044C47E /* ScheduleUseCase.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -738,6 +765,9 @@
 				999C7D4821951F2A0044C47E /* VariableRatioScheduleTests.swift */,
 				999C7D4921951F2A0044C47E /* FixedRatioScheduleTests.swift */,
 				999C7D4A21951F2A0044C47E /* ExtinctionScheduleTests.swift */,
+				99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */,
+				99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */,
+				99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */,
 			);
 			path = ScheduleTests;
 			sourceTree = "<group>";
@@ -749,6 +779,31 @@
 				999C7E17219542960044C47E /* RxSwift.framework */,
 			);
 			name = watchOS;
+			sourceTree = "<group>";
+		};
+		99C74EFE219A763F00DABE14 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		99C74EFF219A764E00DABE14 /* SimpleSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */,
+				999C7C8121951CDA0044C47E /* FixedRatioScheduleUseCase.swift */,
+				999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */,
+				999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */,
+				999C7C8021951CDA0044C47E /* FixedIntervalScheduleUseCase.swift */,
+				999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */,
+				999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */,
+				99C74EF9219A761000DABE14 /* FixedTimeScheduleUseCase.swift */,
+				99C74F00219A771700DABE14 /* VariableTimeScheduleUseCase.swift */,
+				99C74F05219A778A00DABE14 /* RandomTimeScheduleUseCase.swift */,
+			);
+			name = SimpleSchedules;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Tests */ = {
@@ -1150,16 +1205,20 @@
 				999C7CCA21951CDB0044C47E /* RandomGenerator.swift in Sources */,
 				999C7D3021951CDC0044C47E /* Shared.swift in Sources */,
 				999C7D0021951CDC0044C47E /* ResponseEntity.swift in Sources */,
+				99C74F0C219A77B000DABE14 /* RT.swift in Sources */,
 				999C7D1221951CDC0044C47E /* ReinforcementResult.swift in Sources */,
 				999C7CEB21951CDC0044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7D1E21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				999C7CDF21951CDC0044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74EF3219A702C00DABE14 /* FT.swift in Sources */,
 				999C7CE821951CDC0044C47E /* IntervalTimerUseCase.swift in Sources */,
+				99C74F02219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */,
 				999C7CD321951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				999C7CEE21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
+				99C74F07219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7D2721951CDC0044C47E /* ReinforcementResult+Rx.swift in Sources */,
 				999C7D0321951CDC0044C47E /* ConcurrentEntity.swift in Sources */,
+				99C74EFB219A761400DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7CBB21951CDB0044C47E /* VI.swift in Sources */,
 				999C7CD921951CDB0044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7CF721951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
@@ -1168,6 +1227,7 @@
 				999C7D2121951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7CB221951CDB0044C47E /* FR.swift in Sources */,
 				999C7D2D21951CDC0044C47E /* ScheduleParameter.swift in Sources */,
+				99C74F0D219A77B300DABE14 /* VT.swift in Sources */,
 				999C7CF121951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7CCD21951CDB0044C47E /* Xorshift.swift in Sources */,
 				999C7CB821951CDB0044C47E /* VR.swift in Sources */,
@@ -1180,13 +1240,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C74F1A219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				999C7D4E21951F2A0044C47E /* OperantKitTests.swift in Sources */,
 				999C7D6621951F2A0044C47E /* FixedRatioScheduleTests.swift in Sources */,
+				99C74F12219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7D6021951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				999C7D5121951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				999C7D6921951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */,
 				999C7D4B21951F2A0044C47E /* ScheduleTypeTests.swift in Sources */,
 				999C7D5421951F2A0044C47E /* Helper.swift in Sources */,
+				99C74F16219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 				999C7D6321951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				999C7D5A21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				999C7D5721951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
@@ -1199,6 +1262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				999C7D2521951CDC0044C47E /* ObservableType+.swift in Sources */,
+				99C74F01219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */,
 				999C7D1921951CDC0044C47E /* TimeUnit.swift in Sources */,
 				999C7CFE21951CDC0044C47E /* ExperimentEntity.swift in Sources */,
 				999C7CAD21951CDB0044C47E /* RI.swift in Sources */,
@@ -1224,6 +1288,7 @@
 				999C7CCB21951CDB0044C47E /* RandomGenerator.swift in Sources */,
 				999C7D3121951CDC0044C47E /* Shared.swift in Sources */,
 				999C7D0121951CDC0044C47E /* ResponseEntity.swift in Sources */,
+				99C74EFA219A761000DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7D1321951CDC0044C47E /* ReinforcementResult.swift in Sources */,
 				999C7CEC21951CDC0044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
@@ -1234,6 +1299,7 @@
 				999C7CEF21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				999C7D2821951CDC0044C47E /* ReinforcementResult+Rx.swift in Sources */,
 				999C7D0421951CDC0044C47E /* ConcurrentEntity.swift in Sources */,
+				99C74F06219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7CBC21951CDB0044C47E /* VI.swift in Sources */,
 				999C7CDA21951CDB0044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7CF821951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
@@ -1255,13 +1321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C74F19219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				999C7D4F21951F2A0044C47E /* OperantKitTests.swift in Sources */,
 				999C7D6721951F2A0044C47E /* FixedRatioScheduleTests.swift in Sources */,
+				99C74F11219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7D6121951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				999C7D5221951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				999C7D6A21951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */,
 				999C7D4C21951F2A0044C47E /* ScheduleTypeTests.swift in Sources */,
 				999C7D5521951F2A0044C47E /* Helper.swift in Sources */,
+				99C74F15219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 				999C7D6421951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				999C7D5B21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				999C7D5821951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
@@ -1298,16 +1367,20 @@
 				999C7DA9219533150044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7DAA219533150044C47E /* SessionEvents.swift in Sources */,
 				999C7DAB219533150044C47E /* RandomGenerator.swift in Sources */,
+				99C74F0B219A77AF00DABE14 /* RT.swift in Sources */,
 				999C7DAC219533150044C47E /* Xorshift.swift in Sources */,
 				999C7DAD219533150044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7DAE219533150044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7DAF219533150044C47E /* FixedResponseDataStore.swift in Sources */,
 				99C74EF2219A702B00DABE14 /* FT.swift in Sources */,
 				999C7DB0219533150044C47E /* RandomResponseDataStore.swift in Sources */,
+				99C74F03219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */,
 				999C7DB1219533150044C47E /* ConcurrentResponseDataStore.swift in Sources */,
 				999C7DB2219533150044C47E /* ExperimentEntity.swift in Sources */,
+				99C74F08219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7DB3219533150044C47E /* ResponseEntity.swift in Sources */,
 				999C7DB4219533150044C47E /* ConcurrentEntity.swift in Sources */,
+				99C74EFC219A761500DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7DB5219533150044C47E /* RandomEntity.swift in Sources */,
 				999C7DB6219533160044C47E /* VariableEntity.swift in Sources */,
 				999C7DB7219533160044C47E /* FixedEntity.swift in Sources */,
@@ -1316,6 +1389,7 @@
 				999C7DBA219533160044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7DBB219533160044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
 				999C7DBC219533160044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
+				99C74F0E219A77B400DABE14 /* VT.swift in Sources */,
 				999C7DBD219533160044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7DBE219533160044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				999C7DBF219533160044C47E /* IntervalTimerUseCase.swift in Sources */,
@@ -1328,13 +1402,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C74F1B219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				999C7DC2219533300044C47E /* Helper.swift in Sources */,
 				999C7DC3219533300044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				99C74F13219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7DC4219533300044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				999C7DC5219533300044C47E /* RandomIntervalSchedule.swift in Sources */,
 				999C7DC6219533300044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				999C7DC7219533300044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				999C7DC8219533300044C47E /* FixedRatioScheduleTests.swift in Sources */,
+				99C74F17219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 				999C7DC9219533300044C47E /* ExtinctionScheduleTests.swift in Sources */,
 				999C7DCA219533300044C47E /* OperantKitTests.swift in Sources */,
 				999C7DCB219533300044C47E /* FleshlerHoffmanTests.swift in Sources */,
@@ -1371,16 +1448,20 @@
 				999C7DFD219542610044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7DFE219542610044C47E /* SessionEvents.swift in Sources */,
 				999C7DFF219542610044C47E /* RandomGenerator.swift in Sources */,
+				99C74F0A219A77AE00DABE14 /* RT.swift in Sources */,
 				999C7E00219542610044C47E /* Xorshift.swift in Sources */,
 				999C7E01219542610044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7E02219542610044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7E03219542610044C47E /* FixedResponseDataStore.swift in Sources */,
 				99C74EF4219A702D00DABE14 /* FT.swift in Sources */,
 				999C7E04219542610044C47E /* RandomResponseDataStore.swift in Sources */,
+				99C74F04219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */,
 				999C7E05219542610044C47E /* ConcurrentResponseDataStore.swift in Sources */,
 				999C7E06219542610044C47E /* ExperimentEntity.swift in Sources */,
+				99C74F09219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7E07219542610044C47E /* ResponseEntity.swift in Sources */,
 				999C7E08219542610044C47E /* ConcurrentEntity.swift in Sources */,
+				99C74EFD219A761600DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7E09219542610044C47E /* RandomEntity.swift in Sources */,
 				999C7E0A219542610044C47E /* VariableEntity.swift in Sources */,
 				999C7E0B219542610044C47E /* FixedEntity.swift in Sources */,
@@ -1389,6 +1470,7 @@
 				999C7E0E219542610044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7E0F219542620044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
 				999C7E10219542620044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
+				99C74F0F219A77B500DABE14 /* VT.swift in Sources */,
 				999C7E11219542620044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				999C7E13219542620044C47E /* IntervalTimerUseCase.swift in Sources */,

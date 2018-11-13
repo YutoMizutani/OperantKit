@@ -1,6 +1,6 @@
 //
 //  FT.swift
-//  OperantKit macOS
+//  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/13.
 //
