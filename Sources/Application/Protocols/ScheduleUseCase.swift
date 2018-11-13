@@ -8,6 +8,7 @@
 import RxSwift
 
 public protocol ScheduleUseCase {
+    var scheduleType: ScheduleType { get }
     var extendEntity: ResponseEntity { get }
 
     func decision(_: Observable<ResponseEntity>) -> Observable<ReinforcementResult>
@@ -29,6 +30,10 @@ public func VR(_ value: Int, iterations: Int = 12) -> VariableRatioScheduleUseCa
     return VariableRatioScheduleUseCase(value: value, iterations: iterations)
 }
 
+public func VR(_ value: Int, values: [Int]) -> VariableRatioScheduleUseCase {
+    return VariableRatioScheduleUseCase(value: value, values: values)
+}
+
 public func RR(_ value: Int) -> RandomRatioScheduleUseCase {
     return RandomRatioScheduleUseCase(value: value)
 }
@@ -43,6 +48,18 @@ public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) ->
 
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
     return RandomIntervalScheduleUseCase(value: value, unit: unit)
+}
+
+public func FT(_ value: Int, unit: TimeUnit = .seconds) -> FixedTimeScheduleUseCase {
+    return FixedTimeScheduleUseCase(value: value, unit: unit)
+}
+
+public func VT(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableTimeScheduleUseCase {
+    return VariableTimeScheduleUseCase(value: value, unit: unit, iterations: iterations)
+}
+
+public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUseCase {
+    return RandomTimeScheduleUseCase(value: value, unit: unit)
 }
 
 public func Conc(_ subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {

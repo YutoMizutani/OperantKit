@@ -24,6 +24,10 @@ public struct VariableRatioScheduleUseCase {
 }
 
 extension VariableRatioScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .variableRatio
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }

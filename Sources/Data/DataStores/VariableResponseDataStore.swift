@@ -22,6 +22,12 @@ public struct VariableResponseDataStore {
         self.extendEntity = ResponseEntity()
     }
 
+    public init(value: Int, values: [Int], unit: TimeUnit) {
+        self.variableEntity = VariableEntity(value: value, values: values.map { unit.milliseconds($0) })
+        self.lastReinforcementEntity = ResponseEntity()
+        self.extendEntity = ResponseEntity()
+    }
+
     public init(value: Int, values: [Int]) {
         self.variableEntity = VariableEntity(value: value, values: values)
         self.lastReinforcementEntity = ResponseEntity()

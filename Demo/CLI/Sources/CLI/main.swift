@@ -1,57 +1,39 @@
+import Foundation
 import OperantKit
-import RxSwift
-import RxCocoa
 
-let timer = IntervalTimerUseCase()
-let schedule: ScheduleUseCase = FR(5)
-let responseAction = PublishSubject<Void>()
-var disposeBag = DisposeBag()
+func printAvailableExperiments() {
+    print("""
+    +--------+-------------------+
+    |   Available experiments    |
+    +--------+-------------------+
+    | Number | Experiment Title  |
+    +--------+-------------------+
+    """)
 
-let numOfResponse = responseAction
-    .scan(0) { n, _ in n + 1 }
-    .asObservable()
-
-let milliseconds = responseAction
-    .asObservable()
-    .flatMap { _ in timer.getInterval() }
-
-let response = Observable.zip(numOfResponse, milliseconds)
-    .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
-    .do(onNext: { print("Response: \($0.numOfResponse), \($0.milliseconds)ms") })
-    .share(replay: 1)
-
-schedule.decision(response)
-    .filter({ $0.isReinforcement })
-    .subscribe(onNext: { _ in
-        print("Reinforcement!!")
-    })
-    .disposed(by: disposeBag)
-
-Observable.just(())
-    .flatMap { timer.start() }
-    .subscribe()
-    .disposed(by: disposeBag)
-
-var bool = true
-while bool {
-    print("Input: ", terminator: "")
-    guard let input = readLine() else { continue }
-    print("> \(input)")
-
-    switch input {
-    case "r", "":
-        responseAction.onNext(())
-    case "q":
-        bool = false
-    default:
-        break
+    Experiment.allCases.forEach {
+        print("""
+            | \($0.rawValue)\(String(repeating: " ", count: 6 - "\($0.rawValue)".count)) | \($0.shortName)\(String(repeating: " ", count: 16 - "\($0.shortName)".count))  |
+            """)
     }
+
+    print("""
+    |        |                   |
+    | 0      | cancel            |
+    +--------+-------------------+
+    """)
 }
 
-Observable.just(())
-    .flatMap { timer.finish() }
-    .flatMap { timer.getInterval() }
-    .subscribe(onNext: {
-        print("Session finished: \($0)ms")
-    })
-    .disposed(by: disposeBag)
+printAvailableExperiments()
+while true {
+    print()
+    print("Which number would you like run?")
+    print("> ", terminator: "")
+
+    let input = readLine() ?? ""
+    let num = Int(input) ?? -1
+    guard input != "q", num != 0 else { exit(0) }
+    guard let experiment = Experiment(rawValue: num) else { continue }
+
+    print("\(experiment.rawValue). \(experiment.longName) schedule")
+    experiment.run()
+}
