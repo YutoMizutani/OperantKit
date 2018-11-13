@@ -45,10 +45,6 @@ public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) ->
     return VariableIntervalScheduleUseCase(value: value, unit: unit, iterations: iterations)
 }
 
-public func VI(_ value: Int, values: [Int], unit: TimeUnit) -> VariableIntervalScheduleUseCase {
-    return VariableIntervalScheduleUseCase(value: value, values: values, unit: unit)
-}
-
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
     return RandomIntervalScheduleUseCase(value: value, unit: unit)
 }
@@ -59,10 +55,6 @@ public func FT(_ value: Int, unit: TimeUnit = .seconds) -> FixedTimeScheduleUseC
 
 public func VT(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableTimeScheduleUseCase {
     return VariableTimeScheduleUseCase(value: value, unit: unit, iterations: iterations)
-}
-
-public func VT(_ value: Int, values: [Int], unit: TimeUnit) -> VariableTimeScheduleUseCase {
-    return VariableTimeScheduleUseCase(value: value, values: values, unit: unit)
 }
 
 public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUseCase {
