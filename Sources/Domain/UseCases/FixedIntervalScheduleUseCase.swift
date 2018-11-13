@@ -20,6 +20,10 @@ public struct FixedIntervalScheduleUseCase {
 }
 
 extension FixedIntervalScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .fixedInterval
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }

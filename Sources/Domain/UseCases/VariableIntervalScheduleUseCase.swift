@@ -28,6 +28,10 @@ public struct VariableIntervalScheduleUseCase {
 }
 
 extension VariableIntervalScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .variableInterval
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }
