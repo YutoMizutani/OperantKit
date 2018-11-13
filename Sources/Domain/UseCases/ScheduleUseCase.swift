@@ -29,6 +29,10 @@ public func VR(_ value: Int, iterations: Int = 12) -> VariableRatioScheduleUseCa
     return VariableRatioScheduleUseCase(value: value, iterations: iterations)
 }
 
+public func VR(_ value: Int, values: [Int]) -> VariableRatioScheduleUseCase {
+    return VariableRatioScheduleUseCase(value: value, values: values)
+}
+
 public func RR(_ value: Int) -> RandomRatioScheduleUseCase {
     return RandomRatioScheduleUseCase(value: value)
 }
@@ -39,6 +43,10 @@ public func FI(_ value: Int, unit: TimeUnit = .seconds) -> FixedIntervalSchedule
 
 public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableIntervalScheduleUseCase {
     return VariableIntervalScheduleUseCase(value: value, unit: unit, iterations: iterations)
+}
+
+public func VI(_ value: Int, values: [Int], unit: TimeUnit) -> VariableIntervalScheduleUseCase {
+    return VariableIntervalScheduleUseCase(value: value, values: values, unit: unit)
 }
 
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
