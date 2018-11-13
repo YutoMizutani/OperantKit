@@ -90,7 +90,7 @@ It is also possible to change the unit in such a way.
 |Continuous reinforcement|`CRF()`|
 |Extinction schedule|`EXT()`|
 
-### Compound schedule
+### Compound schedules
 
 |Name of schedule|Code|
 |:-:|:-:|
