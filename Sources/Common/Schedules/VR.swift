@@ -3,7 +3,6 @@
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/01.
-//  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
 import RxSwift

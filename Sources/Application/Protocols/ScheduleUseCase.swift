@@ -45,12 +45,20 @@ public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) ->
     return VariableIntervalScheduleUseCase(value: value, unit: unit, iterations: iterations)
 }
 
-public func VI(_ value: Int, values: [Int], unit: TimeUnit) -> VariableIntervalScheduleUseCase {
-    return VariableIntervalScheduleUseCase(value: value, values: values, unit: unit)
-}
-
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
     return RandomIntervalScheduleUseCase(value: value, unit: unit)
+}
+
+public func FT(_ value: Int, unit: TimeUnit = .seconds) -> FixedTimeScheduleUseCase {
+    return FixedTimeScheduleUseCase(value: value, unit: unit)
+}
+
+public func VT(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableTimeScheduleUseCase {
+    return VariableTimeScheduleUseCase(value: value, unit: unit, iterations: iterations)
+}
+
+public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUseCase {
+    return RandomTimeScheduleUseCase(value: value, unit: unit)
 }
 
 public func Conc(_ subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {
