@@ -22,46 +22,46 @@ public struct ScheduleType: OptionSet {
     }
 
     // MARK: - Extinction schedule
-    public static let Extinction = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
+    public static let extinction = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
 
     // MARK: - Ratio schedule
-    public static let FixedRatio: ScheduleType =
+    public static let fixedRatio: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
-    public static let VariableRatio: ScheduleType =
+    public static let variableRatio: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
-    public static let RandomRatio: ScheduleType =
+    public static let randomRatio: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue)
     )
 
     // MARK: - Interval schedule
-    public static let FixedInterval: ScheduleType =
+    public static let fixedInterval: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
-    public static let VariableInterval: ScheduleType =
+    public static let variableInterval: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
-    public static let RandomInterval: ScheduleType =
+    public static let randomInterval: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
     )
 
     // MARK: - Time schedule
-    public static let FixedTime: ScheduleType =
+    public static let fixedTime: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
-    public static let VariableTime: ScheduleType =
+    public static let variableTime: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
-    public static let RandomTime: ScheduleType =
+    public static let randomTime: ScheduleType =
         ScheduleType(
             rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue)
     )
@@ -69,7 +69,7 @@ public struct ScheduleType: OptionSet {
 
 public extension ScheduleType {
     func hasExtensionSchedule() -> Bool {
-        return self == ScheduleType.Extinction
+        return self == ScheduleType.extinction
     }
 
     func hasFixedSchedule() -> Bool {

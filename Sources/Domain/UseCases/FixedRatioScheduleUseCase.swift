@@ -20,6 +20,10 @@ public struct FixedRatioScheduleUseCase {
 }
 
 extension FixedRatioScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .fixedRatio
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }

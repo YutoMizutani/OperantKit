@@ -12,6 +12,10 @@ public struct ExtinctionScheduleUseCase {
 }
 
 extension ExtinctionScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .extinction
+    }
+
     public var extendEntity: ResponseEntity {
         return ResponseEntity()
     }

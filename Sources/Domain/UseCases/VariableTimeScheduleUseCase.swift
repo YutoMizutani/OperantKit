@@ -28,6 +28,10 @@ public struct VariableTimeScheduleUseCase {
 }
 
 extension VariableTimeScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .variableTime
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }

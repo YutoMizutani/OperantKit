@@ -8,6 +8,7 @@
 import RxSwift
 
 public protocol ScheduleUseCase {
+    var scheduleType: ScheduleType { get }
     var extendEntity: ResponseEntity { get }
 
     func decision(_: Observable<ResponseEntity>) -> Observable<ReinforcementResult>

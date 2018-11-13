@@ -20,6 +20,10 @@ public struct RandomTimeScheduleUseCase {
 }
 
 extension RandomTimeScheduleUseCase: ScheduleUseCase {
+    public var scheduleType: ScheduleType {
+        return .randomTime
+    }
+
     public var extendEntity: ResponseEntity {
         return dataStore.extendEntity
     }
