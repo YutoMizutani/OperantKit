@@ -42,7 +42,7 @@ opt_in_rules:
 excluded:
   - Package.swift
   - Carthage
-  - Demo
+  - Examples
   - Tests
   - .build
 

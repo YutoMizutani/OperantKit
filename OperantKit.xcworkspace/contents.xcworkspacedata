@@ -4,4 +4,7 @@
    <FileRef
       location = "group:OperantKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Examples/iOS/RatChamber/RatChamber.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -1,15 +1,15 @@
 //
-//  OperantAppTests.swift
-//  OperantAppTests
+//  RatChamberTests.swift
+//  RatChamberTests
 //
-//  Created by Yuto Mizutani on 2018/10/22.
+//  Created by Yuto Mizutani on 2018/11/14.
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-@testable import OperantApp
 import XCTest
+@testable import RatChamber
 
-class OperantAppTests: XCTestCase {
+class RatChamberTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
