@@ -1,6 +1,6 @@
 //
 //  RatChamberColor.swift
-//  OperantApp
+//  RatChamber
 //
 //  Created by Yuto Mizutani on 2018/10/26.
 //  Copyright © 2018 Yuto Mizutani. All rights reserved.
