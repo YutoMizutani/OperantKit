@@ -36,4 +36,5 @@ while true {
 
     print("\(experiment.rawValue). \(experiment.longName) schedule")
     experiment.run()
+    break
 }

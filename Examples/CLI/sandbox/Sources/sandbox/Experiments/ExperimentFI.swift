@@ -1,18 +1,18 @@
 //
-//  ExperimentFR.swift
-//  CLI
+//  ExperimentFI.swift
+//  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/13.
+//  Created by Yuto Mizutani on 2018/11/14.
 //
 
 import OperantKit
 import RxSwift
 import RxCocoa
 
-struct ExperimentFR {
-    init(_ value: Int) {
+struct ExperimentFI {
+    init(_ value: Int, _ unit: TimeUnit) {
         let timer = IntervalTimerUseCase()
-        let schedule: ScheduleUseCase = FR(value)
+        let schedule: ScheduleUseCase = FI(value, unit: unit)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
@@ -67,15 +67,16 @@ struct ExperimentFR {
     }
 }
 
-extension ExperimentFR: Runnable {
+extension ExperimentFI: Runnable {
     static func run() {
         while true {
             guard
-                let value = InputHelper.value()
+                let value = InputHelper.value(),
+                let unit = InputHelper.unit()
             else {
                 continue
             }
-            _ = ExperimentFR(value)
+            _ = ExperimentFI(value, unit)
             break
         }
     }

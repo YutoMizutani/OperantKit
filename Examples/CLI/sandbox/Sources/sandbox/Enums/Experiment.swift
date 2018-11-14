@@ -5,31 +5,37 @@
 //  Created by Yuto Mizutani on 2018/11/13.
 //
 
-import Foundation
+import OperantKit
 
 enum Experiment: Int, CaseIterable {
     case fixedRatio = 1
+    case fixedInterval
 }
 
 extension Experiment {
-    var shortName: String {
-        switch self {
-        case .fixedRatio:
-            return "FR"
-        }
-    }
-
-    var longName: String {
-        switch self {
-        case .fixedRatio:
-            return "Fixed Ratio"
-        }
-    }
-
     func run() {
         switch self {
         case .fixedRatio:
             ExperimentFR.run()
+        case .fixedInterval:
+            ExperimentFI.run()
         }
+    }
+
+    private var scheduleType: ScheduleType {
+        switch self {
+        case .fixedRatio:
+            return .fixedRatio
+        case .fixedInterval:
+            return .fixedInterval
+        }
+    }
+
+    var shortName: String {
+        return self.scheduleType.shortName
+    }
+
+    var longName: String {
+        return self.scheduleType.longName
     }
 }
