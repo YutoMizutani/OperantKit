@@ -11,7 +11,11 @@ import Foundation
 
  e.g.
     public extension ScheduleTypes {
-        static let YourOwnSchedule = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
+        static let YourOwnSchedule = ScheduleType(
+            rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000,
+            shortName: "",
+            longName: ""
+        )
     }
  */
 public struct ScheduleType: OptionSet {
