@@ -1,7 +1,7 @@
 import XCTest
 import class Foundation.Bundle
 
-final class CLITests: XCTestCase {
+final class SimpleFRTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
@@ -12,7 +12,7 @@ final class CLITests: XCTestCase {
             return
         }
 
-        let fooBinary = productsDirectory.appendingPathComponent("CLI")
+        let fooBinary = productsDirectory.appendingPathComponent("SimpleFR")
 
         let process = Process()
         process.executableURL = fooBinary
