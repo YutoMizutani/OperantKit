@@ -4,7 +4,4 @@
    <FileRef
       location = "group:OperantKit.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Demo/OperantApp/OperantApp.xcodeproj">
-   </FileRef>
 </Workspace>
