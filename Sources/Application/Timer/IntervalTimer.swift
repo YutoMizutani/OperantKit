@@ -8,11 +8,16 @@
 import Foundation
 
 /// Main Timer for experiments
-public class IntervalTimer {
+@objc
+public class IntervalTimer: NSObject {
 
     // MARK: - Typealias
 
     public typealias TimerEvent = (closure: (() -> Void), milliseconds: Int)
+
+    // MARK: - Delegates
+
+    public weak var delegate: IntervalTimerDelegate?
 
     // MARK: - Privates
 
@@ -34,7 +39,11 @@ public class IntervalTimer {
     /// The stop looping during the session.
     public private(set) var isSleeping: Bool = false
     /// Elapsed time
-    public private(set) var milliseconds: Int = 0
+    public private(set) var milliseconds: Int = 0 {
+        didSet {
+            delegate?.intervalTimerDidChangeMilliseconds(self, millisecods: milliseconds)
+        }
+    }
 
     // MARK: - Events
 
@@ -59,6 +68,7 @@ public class IntervalTimer {
     /// - Parameter intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     public init(_ intervalMilliseconds: Double = 0.1) {
         self.intervalMilliseconds = intervalMilliseconds
+        super.init()
         self.resetValue()
     }
 
