@@ -17,34 +17,34 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
       "line": 11,
-      "symbol": "TimeUnit.hours",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
-      "line": 11,
       "symbol": "TimeUnit.milliseconds",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
-      "line": 11,
-      "symbol": "TimeUnit.minutes",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
-      "line": 11,
+      "line": 12,
       "symbol": "TimeUnit.seconds",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
-      "line": 15,
+      "line": 13,
+      "symbol": "TimeUnit.minutes",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
+      "line": 14,
+      "symbol": "TimeUnit.hours",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Enums/TimeUnit.swift",
+      "line": 18,
       "symbol": "TimeUnit.milliseconds(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -211,10 +211,143 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "ScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "ScheduleUseCase.scheduleType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 12,
+      "symbol": "ScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 14,
+      "symbol": "ScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "EXT()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 21,
+      "symbol": "CRF()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 25,
+      "symbol": "FR(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 29,
+      "symbol": "VR(_:iterations:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 33,
+      "symbol": "VR(_:values:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 37,
+      "symbol": "RR(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 41,
+      "symbol": "FI(_:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 45,
+      "symbol": "VI(_:unit:iterations:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 49,
+      "symbol": "RI(_:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 53,
+      "symbol": "FT(_:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 57,
+      "symbol": "VT(_:unit:iterations:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 61,
+      "symbol": "RT(_:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 65,
+      "symbol": "Conc(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Protocols/ScheduleUseCase.swift",
+      "line": 69,
+      "symbol": "Conc(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Timer/IntervalTimer.swift",
-      "line": 15,
+      "line": 17,
       "symbol": "IntervalTimer.TimerEvent",
       "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Application/Timer/IntervalTimer.swift",
+      "line": 40,
+      "symbol": "IntervalTimer.milliseconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -323,76 +456,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
-      "line": 10,
-      "symbol": "RandomGenerator",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
-      "line": 11,
-      "symbol": "RandomGenerator.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/RandomGenerator.swift",
-      "line": 13,
-      "symbol": "RandomGenerator.generate(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 14,
-      "symbol": "Xorshift32.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 18,
-      "symbol": "Xorshift32.xor32()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 30,
-      "symbol": "Xorshift64.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 34,
-      "symbol": "Xorshift64.xor64()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 46,
-      "symbol": "Xorshift128.init(x:y:z:w:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 53,
-      "symbol": "Xorshift128.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Helpers/Xorshift.swift",
-      "line": 60,
-      "symbol": "Xorshift128.xor128()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/PostpositionSchedule.swift",
       "line": 10,
       "symbol": "PostpositionSchedule",
@@ -408,119 +471,140 @@
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 25,
-      "symbol": "ScheduleType.Extinction",
-      "symbol_kind": "source.lang.swift.decl.var.static",
+      "line": 23,
+      "symbol": "ScheduleType.shortName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 28,
-      "symbol": "ScheduleType.FixedRatio",
-      "symbol_kind": "source.lang.swift.decl.var.static",
+      "line": 24,
+      "symbol": "ScheduleType.longName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
       "line": 32,
-      "symbol": "ScheduleType.VariableRatio",
-      "symbol_kind": "source.lang.swift.decl.var.static",
+      "symbol": "ScheduleType.init(rawValue:shortName:longName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 36,
-      "symbol": "ScheduleType.RandomRatio",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 42,
-      "symbol": "ScheduleType.FixedInterval",
+      "line": 39,
+      "symbol": "ScheduleType.extinction",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
       "line": 46,
-      "symbol": "ScheduleType.VariableInterval",
+      "symbol": "ScheduleType.fixedRatio",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 50,
-      "symbol": "ScheduleType.RandomInterval",
+      "line": 52,
+      "symbol": "ScheduleType.variableRatio",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 56,
-      "symbol": "ScheduleType.FixedTime",
+      "line": 58,
+      "symbol": "ScheduleType.randomRatio",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 60,
-      "symbol": "ScheduleType.VariableTime",
+      "line": 66,
+      "symbol": "ScheduleType.fixedInterval",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 64,
-      "symbol": "ScheduleType.RandomTime",
+      "line": 72,
+      "symbol": "ScheduleType.variableInterval",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 71,
+      "line": 78,
+      "symbol": "ScheduleType.randomInterval",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
+      "line": 86,
+      "symbol": "ScheduleType.fixedTime",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
+      "line": 92,
+      "symbol": "ScheduleType.variableTime",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
+      "line": 98,
+      "symbol": "ScheduleType.randomTime",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
+      "line": 107,
       "symbol": "ScheduleType.hasExtensionSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 75,
+      "line": 111,
       "symbol": "ScheduleType.hasFixedSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 79,
+      "line": 115,
       "symbol": "ScheduleType.hasVariableSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 83,
+      "line": 119,
       "symbol": "ScheduleType.hasRandomSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 87,
+      "line": 123,
       "symbol": "ScheduleType.hasRatioSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 91,
+      "line": 127,
       "symbol": "ScheduleType.hasIntervalSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Common/Parameters/ScheduleType.swift",
-      "line": 95,
+      "line": 131,
       "symbol": "ScheduleType.hasTimeSchedule()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -626,20 +710,27 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
       "line": 25,
-      "symbol": "VariableResponseDataStore.init(value:values:)",
+      "symbol": "VariableResponseDataStore.init(value:values:unit:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
       "line": 31,
+      "symbol": "VariableResponseDataStore.init(value:values:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
+      "line": 37,
       "symbol": "VariableResponseDataStore.init(value:unit:iterations:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Data/DataStores/VariableResponseDataStore.swift",
-      "line": 38,
+      "line": 44,
       "symbol": "VariableResponseDataStore.init(variableEntity:lastReinforcementEntity:extendEntity:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -871,13 +962,20 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ExtinctionScheduleUseCase.swift",
       "line": 15,
-      "symbol": "ExtinctionScheduleUseCase.extendEntity",
+      "symbol": "ExtinctionScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ExtinctionScheduleUseCase.swift",
       "line": 19,
+      "symbol": "ExtinctionScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ExtinctionScheduleUseCase.swift",
+      "line": 23,
       "symbol": "ExtinctionScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -920,13 +1018,20 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedIntervalScheduleUseCase.swift",
       "line": 23,
-      "symbol": "FixedIntervalScheduleUseCase.extendEntity",
+      "symbol": "FixedIntervalScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedIntervalScheduleUseCase.swift",
       "line": 27,
+      "symbol": "FixedIntervalScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedIntervalScheduleUseCase.swift",
+      "line": 31,
       "symbol": "FixedIntervalScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -969,14 +1074,77 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedRatioScheduleUseCase.swift",
       "line": 23,
-      "symbol": "FixedRatioScheduleUseCase.extendEntity",
+      "symbol": "FixedRatioScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedRatioScheduleUseCase.swift",
       "line": 27,
+      "symbol": "FixedRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedRatioScheduleUseCase.swift",
+      "line": 31,
       "symbol": "FixedRatioScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": null,
+      "symbol": "FixedTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "FixedTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "FixedTimeScheduleUseCase.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 13,
+      "symbol": "FixedTimeScheduleUseCase.init(value:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "FixedTimeScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 23,
+      "symbol": "FixedTimeScheduleUseCase.scheduleType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 27,
+      "symbol": "FixedTimeScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/FixedTimeScheduleUseCase.swift",
+      "line": 31,
+      "symbol": "FixedTimeScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -1004,48 +1172,55 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
       "line": 20,
+      "symbol": "IntervalTimerUseCase.milliseconds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
+      "line": 27,
       "symbol": "IntervalTimerUseCase.start()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 34,
+      "line": 41,
       "symbol": "IntervalTimerUseCase.getInterval()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 47,
+      "line": 54,
       "symbol": "IntervalTimerUseCase.delay(_:currentTime:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 63,
+      "line": 70,
       "symbol": "IntervalTimerUseCase.delay(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 82,
+      "line": 89,
       "symbol": "IntervalTimerUseCase.pause()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 96,
+      "line": 103,
       "symbol": "IntervalTimerUseCase.resume()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/IntervalTimerUseCase.swift",
-      "line": 110,
+      "line": 117,
       "symbol": "IntervalTimerUseCase.finish()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1088,13 +1263,20 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
       "line": 23,
-      "symbol": "RandomIntervalScheduleUseCase.extendEntity",
+      "symbol": "RandomIntervalScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
       "line": 27,
+      "symbol": "RandomIntervalScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomIntervalScheduleUseCase.swift",
+      "line": 31,
       "symbol": "RandomIntervalScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1137,106 +1319,78 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
       "line": 23,
-      "symbol": "RandomRatioScheduleUseCase.extendEntity",
+      "symbol": "RandomRatioScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
       "line": 27,
+      "symbol": "RandomRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomRatioScheduleUseCase.swift",
+      "line": 31,
       "symbol": "RandomRatioScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 10,
-      "symbol": "ScheduleUseCase",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": null,
+      "symbol": "RandomTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "RandomTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
       "line": 11,
-      "symbol": "ScheduleUseCase.extendEntity",
+      "symbol": "RandomTimeScheduleUseCase.dataStore",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
       "line": 13,
-      "symbol": "ScheduleUseCase.decision(_:)",
+      "symbol": "RandomTimeScheduleUseCase.init(value:unit:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 16,
-      "symbol": "EXT()",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "RandomTimeScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 20,
-      "symbol": "CRF()",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": 23,
+      "symbol": "RandomTimeScheduleUseCase.scheduleType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 24,
-      "symbol": "FR(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": 27,
+      "symbol": "RandomTimeScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 28,
-      "symbol": "VR(_:iterations:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 32,
-      "symbol": "RR(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 36,
-      "symbol": "FI(_:unit:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 40,
-      "symbol": "VI(_:unit:iterations:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 44,
-      "symbol": "RI(_:unit:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 48,
-      "symbol": "Conc(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/ScheduleUseCase.swift",
-      "line": 52,
-      "symbol": "Conc(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/RandomTimeScheduleUseCase.swift",
+      "line": 31,
+      "symbol": "RandomTimeScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -1270,27 +1424,41 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
       "line": 17,
-      "symbol": "VariableIntervalScheduleUseCase.init(value:values:)",
+      "symbol": "VariableIntervalScheduleUseCase.init(value:values:unit:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
       "line": 21,
+      "symbol": "VariableIntervalScheduleUseCase.init(value:values:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
+      "line": 25,
       "symbol": "VariableIntervalScheduleUseCase.init(dataStore:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
-      "line": 27,
+      "line": 31,
+      "symbol": "VariableIntervalScheduleUseCase.scheduleType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
+      "line": 35,
       "symbol": "VariableIntervalScheduleUseCase.extendEntity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableIntervalScheduleUseCase.swift",
-      "line": 31,
+      "line": 39,
       "symbol": "VariableIntervalScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1340,14 +1508,91 @@
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableRatioScheduleUseCase.swift",
       "line": 27,
-      "symbol": "VariableRatioScheduleUseCase.extendEntity",
+      "symbol": "VariableRatioScheduleUseCase.scheduleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableRatioScheduleUseCase.swift",
       "line": 31,
+      "symbol": "VariableRatioScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableRatioScheduleUseCase.swift",
+      "line": 35,
       "symbol": "VariableRatioScheduleUseCase.decision(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": null,
+      "symbol": "VariableTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 10,
+      "symbol": "VariableTimeScheduleUseCase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 11,
+      "symbol": "VariableTimeScheduleUseCase.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 13,
+      "symbol": "VariableTimeScheduleUseCase.init(value:unit:iterations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 17,
+      "symbol": "VariableTimeScheduleUseCase.init(value:values:unit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 21,
+      "symbol": "VariableTimeScheduleUseCase.init(value:values:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 25,
+      "symbol": "VariableTimeScheduleUseCase.init(dataStore:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 31,
+      "symbol": "VariableTimeScheduleUseCase.scheduleType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 35,
+      "symbol": "VariableTimeScheduleUseCase.extendEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ym/Developer/programs/swift/swift4/iOS/OperantKit/Sources/Domain/UseCases/VariableTimeScheduleUseCase.swift",
+      "line": 39,
+      "symbol": "VariableTimeScheduleUseCase.decision(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
