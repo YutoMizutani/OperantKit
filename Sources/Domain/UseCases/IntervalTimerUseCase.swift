@@ -17,6 +17,13 @@ public struct IntervalTimerUseCase {
 }
 
 public extension IntervalTimerUseCase {
+    var milliseconds: Observable<Int>? {
+        return timer?.rx.milliseconds
+            .distinctUntilChanged()
+            .asObservable()
+            .share(replay: 1)
+    }
+
     func start() -> Single<Void> {
         return Single.create { single in
             guard let timer = self.timer else {

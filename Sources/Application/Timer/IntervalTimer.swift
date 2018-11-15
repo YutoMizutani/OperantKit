@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 /// Main Timer for experiments
 public class IntervalTimer {
@@ -34,7 +36,10 @@ public class IntervalTimer {
     /// The stop looping during the session.
     public private(set) var isSleeping: Bool = false
     /// Elapsed time
-    public private(set) var milliseconds: Int = 0
+    private(set) var rx_milliseconds: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    public var milliseconds: Int {
+        return rx_milliseconds.value
+    }
 
     // MARK: - Events
 
@@ -79,7 +84,7 @@ private extension IntervalTimer {
         self.isCompleted = false
         self.isRunning = true
         self.isSleeping = true
-        self.milliseconds = 0
+        self.rx_milliseconds.accept(0)
         #if DEBUG
         self.debugText = nil
         self.debugLoopValue = (1, 0)
@@ -114,7 +119,7 @@ private extension IntervalTimer {
                             tmpDate = Date()
                         }
                         // 待機ループ脱出後，経過ミリ秒を更新
-                        self.milliseconds = Int(tmpDate.timeIntervalSince(date.start) * 1000)
+                        self.rx_milliseconds.accept(Int(tmpDate.timeIntervalSince(date.start) * 1000))
                     }
 
                     // Do eventFlag from eventAlerm
