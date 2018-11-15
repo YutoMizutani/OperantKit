@@ -33,8 +33,8 @@ struct ExperimentFR {
 
         schedule.decision(response)
             .filter({ $0.isReinforcement })
-            .subscribe(onNext: { _ in
-                print("Reinforcement!!")
+            .subscribe(onNext: {
+                print("Reinforcement: \($0.entity.milliseconds)ms")
             })
             .disposed(by: disposeBag)
 
