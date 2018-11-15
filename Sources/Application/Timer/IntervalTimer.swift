@@ -6,18 +6,15 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 /// Main Timer for experiments
-@objc
-public class IntervalTimer: NSObject {
+public class IntervalTimer {
 
     // MARK: - Typealias
 
     public typealias TimerEvent = (closure: (() -> Void), milliseconds: Int)
-
-    // MARK: - Delegates
-
-    public weak var delegate: IntervalTimerDelegate?
 
     // MARK: - Privates
 
@@ -39,10 +36,9 @@ public class IntervalTimer: NSObject {
     /// The stop looping during the session.
     public private(set) var isSleeping: Bool = false
     /// Elapsed time
-    public private(set) var milliseconds: Int = 0 {
-        didSet {
-            delegate?.intervalTimerDidChangeMilliseconds(self, millisecods: milliseconds)
-        }
+    private(set) var rx_milliseconds: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    public var milliseconds: Int {
+        return rx_milliseconds.value
     }
 
     // MARK: - Events
@@ -68,7 +64,6 @@ public class IntervalTimer: NSObject {
     /// - Parameter intervalMilliseconds: ループ頻度。intervalMillisecondsミリ秒経過するまでは待機ループで待機。
     public init(_ intervalMilliseconds: Double = 0.1) {
         self.intervalMilliseconds = intervalMilliseconds
-        super.init()
         self.resetValue()
     }
 
@@ -89,7 +84,7 @@ private extension IntervalTimer {
         self.isCompleted = false
         self.isRunning = true
         self.isSleeping = true
-        self.milliseconds = 0
+        self.rx_milliseconds.accept(0)
         #if DEBUG
         self.debugText = nil
         self.debugLoopValue = (1, 0)
@@ -124,7 +119,7 @@ private extension IntervalTimer {
                             tmpDate = Date()
                         }
                         // 待機ループ脱出後，経過ミリ秒を更新
-                        self.milliseconds = Int(tmpDate.timeIntervalSince(date.start) * 1000)
+                        self.rx_milliseconds.accept(Int(tmpDate.timeIntervalSince(date.start) * 1000))
                     }
 
                     // Do eventFlag from eventAlerm

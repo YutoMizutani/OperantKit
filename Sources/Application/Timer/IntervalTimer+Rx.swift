@@ -8,21 +8,11 @@
 import RxCocoa
 import RxSwift
 
+extension IntervalTimer: ReactiveCompatible {}
+
 public extension Reactive where Base: IntervalTimer {
-
-    /// Reactive wrapper for `delegate`.
-    ///
-    /// For more information take a look at `DelegateProxyType` protocol documentation.
-    var delegate: DelegateProxy<IntervalTimer, IntervalTimerDelegate> {
-        return RxIntervalTimerDelegateProxy.proxy(for: base)
-    }
-
     /// Reactive wrapper for `milliseconds` message.
-    var milliseconds: Observable<Int> {
-        return delegate
-            .methodInvoked(#selector(IntervalTimerDelegate.intervalTimerDidChangeMilliseconds(_:millisecods:)))
-            .map { _ in
-                return self.base.milliseconds
-            }
+    var milliseconds: BehaviorRelay<Int> {
+        return base.rx_milliseconds
     }
 }
