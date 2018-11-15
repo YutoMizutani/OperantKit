@@ -29,6 +29,8 @@ func main() {
 
 ## デモ
 
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/demo_ratchamber.gif?raw=true)
+
 ## サポートされているスケジュール
 
 ### 単一スケジュール
