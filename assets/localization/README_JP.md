@@ -29,7 +29,7 @@ func main() {
 
 ## デモ
 
-![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/demo_ratchamber.gif?raw=true)
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
 
 ## サポートされているスケジュール
 
@@ -156,15 +156,22 @@ $ swift build
 
 ## オペラント条件づけ (道具的条件づけ) について
 
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/abc_analysis.png?raw=true)
+
 ## クリーンアーキテクチャについて
 
 ![](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
 本リポジトリは [*クリーンアーキテクチャ*](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) ([邦訳](https://blog.tai2.net/the_clean_architecture.html)) を採用しています。これは基盤に共通のビジネスロジックを採用し，UIとそれを紐付けるコードを記述するだけで簡単に様々なUIに適用させることが可能になります。さらに，拡張性にも優れ，必要な強化スケジュールを独自に作り出すこともできます。
 
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/operantkit_architecture.png?raw=true)
+
 クリーンアーキテクチャに従った場合，本ライブラリはData層及びDomain層を担当している形となります。
+強化スケジュールの演算に必要な実装は既に本ライブラリに組み込まれているため，プレゼンター層を追加するだけであらゆる実験を作成することができます。
 
 ## リアクティブプログラミングについて
+
+本リポジトリは主に疎結合なレイヤー間での値渡し，計測時間の継続的な提供，反応イベントの効率的な変換，メインスレッド内競合解決のために非同期ライブラリを利用しています。
 
 ## 開発用インストール
 

@@ -9,7 +9,7 @@
 
 **OperantKit** is a tool kit for *operant conditioning* (*instrumental conditioning*) experiments written in Swift.
 
-日本語:jp:: [README_JP.md](https://github.com/YutoMizutani/OperantKit/blob/master/README_JP.md)
+日本語:jp:: [README_JP.md](https://github.com/YutoMizutani/OperantKit/blob/master/assets/localization/README_JP.md)
 
 ## Usage
 
@@ -31,7 +31,7 @@ func main() {
 
 ## Demo
 
-![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/demo_ratchamber.gif?raw=true)
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
 
 ## Supporting schedules
 
@@ -157,9 +157,13 @@ See [docs/index.html](https://github.com/YutoMizutani/OperantKit/blob/master/doc
 
 ## Operant conditioning (Instrumental conditioning)
 
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/abc_analysis.png?raw=true)
+
 ## Clean architecture
 
 ![](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/operantkit_architecture.png?raw=true)
 
 ## Reactive programming
 
