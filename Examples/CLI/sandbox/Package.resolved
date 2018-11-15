@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OperantKit",
+        "repositoryURL": "https://github.com/YutoMizutani/OperantKit.git",
+        "state": {
+          "branch": null,
+          "revision": "834abb5d67d3bba801680c7eb3ca2bd0574dfce9",
+          "version": "0.0.8"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "e8aa1d892a0d8a153a28b74cbad25be534926f49",
+          "version": "4.4.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

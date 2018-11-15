@@ -7,8 +7,11 @@
 
 import Foundation
 
-public enum TimeUnit {
-    case milliseconds, seconds, minutes, hours
+public enum TimeUnit: String, CaseIterable {
+    case milliseconds = "Milliseconds"
+    case seconds = "Seconds"
+    case minutes = "Minutes"
+    case hours = "Hours"
 }
 
 public extension TimeUnit {
