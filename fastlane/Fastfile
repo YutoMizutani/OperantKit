@@ -55,7 +55,7 @@ end
 desc "Test app iOS"
 lane :test_app_ios do
   run_tests(workspace: "OperantKit.xcworkspace",
-            scheme: "OperantApp",
+            scheme: "RatChamber",
             device: "iPhone XS Max",
             clean: true,
             output_types: "html")

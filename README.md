@@ -31,6 +31,8 @@ func main() {
 
 ## Demo
 
+![](https://raw.githubusercontent.com/YutoMizutani/OperantKit/assets/demo_ratchamber.gif)
+
 ## Supporting schedules
 
 ### Simple schedules
