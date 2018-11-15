@@ -13,7 +13,7 @@
     <a title="OperantKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">OperantKit Docs</a> (27% documented)</p>
+        <p><a href="index.html">OperantKit Docs</a> (25% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -53,15 +53,6 @@
               <li class="nav-group-task">
                 <a href="Classes/VariableEntity.html">VariableEntity</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/Xorshift128.html">Xorshift128</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Xorshift32.html">Xorshift32</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/Xorshift64.html">Xorshift64</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -80,6 +71,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/ObservableType.html">ObservableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Reactive.html">Reactive</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/Reactive.html">Reactive</a>
@@ -120,16 +114,28 @@
                 <a href="Functions.html#/s:10OperantKit2FRyAA25FixedRatioScheduleUseCaseVSiF">FR(_:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2FT_4unitAA24FixedTimeScheduleUseCaseVSi_AA0F4UnitOtF">FT(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2RI_4unitAA29RandomIntervalScheduleUseCaseVSi_AA8TimeUnitOtF">RI(_:unit:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2RRyAA26RandomRatioScheduleUseCaseVSiF">RR(_:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2RT_4unitAA25RandomTimeScheduleUseCaseVSi_AA0F4UnitOtF">RT(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2VI_4unit10iterationsAA31VariableIntervalScheduleUseCaseVSi_AA8TimeUnitOSitF">VI(_:unit:iterations:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:10OperantKit2VR_10iterationsAA28VariableRatioScheduleUseCaseVSi_SitF">VR(_:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2VR_6valuesAA28VariableRatioScheduleUseCaseVSi_SaySiGtF">VR(_:values:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:10OperantKit2VT_4unit10iterationsAA27VariableTimeScheduleUseCaseVSi_AA0G4UnitOSitF">VT(_:unit:iterations:)</a>
               </li>
             </ul>
           </li>
@@ -169,6 +175,9 @@
                 <a href="Structs/FixedResponseDataStore.html">FixedResponseDataStore</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/FixedTimeScheduleUseCase.html">FixedTimeScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/FleshlerHoffman.html">FleshlerHoffman</a>
               </li>
               <li class="nav-group-task">
@@ -184,9 +193,6 @@
                 <a href="Structs/PrepositionSchedule.html">PrepositionSchedule</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/RandomGenerator.html">RandomGenerator</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/RandomIntervalScheduleUseCase.html">RandomIntervalScheduleUseCase</a>
               </li>
               <li class="nav-group-task">
@@ -194,6 +200,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/RandomResponseDataStore.html">RandomResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RandomTimeScheduleUseCase.html">RandomTimeScheduleUseCase</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ScheduleType.html">ScheduleType</a>
@@ -209,6 +218,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/VariableResponseDataStore.html">VariableResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/VariableTimeScheduleUseCase.html">VariableTimeScheduleUseCase</a>
               </li>
             </ul>
           </li>
@@ -231,20 +243,16 @@
             
             <h1 id='operantkit' class='heading'>OperantKit</h1>
 
-<p><a href="https://travis-ci.com/YutoMizutani/OperantKit"><img src="https://travis-ci.com/YutoMizutani/OperantKit.svg?branch=master" alt="Build Status"></a>
-<a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/cocoapods/p/OperantKit.svg" alt="CocoaPods"></a>
+<p><a href="https://app.bitrise.io/app/e1b066c3a796bb39"><img src="https://app.bitrise.io/app/e1b066c3a796bb39/status.svg?token=3DteqY4In4ByLDs_2-iucg&branch=master" alt="Build Status"></a>
+<img src="https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg" alt="platform">
 <a href="https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="MIT License"></a>
 <a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/cocoapods/v/OperantKit.svg" alt="CocoaPods"></a>
 <a href="https://github.com/YutoMizutani/OperantKit"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager compatible"></a></p>
 
 <p><strong>OperantKit</strong> is a tool kit for <em>operant conditioning</em> (<em>instrumental conditioning</em>) experiments written in Swift.</p>
-<h2 id='installation' class='heading'>Installation</h2>
 
-<p>Using <code>make</code> command,</p>
-<pre class="highlight plaintext"><code>$ make deps-all
-$ make open
-</code></pre>
+<p>日本語:jp:: <a href="https://github.com/YutoMizutani/OperantKit/blob/master/README_JP.md">README_JP.md</a></p>
 <h2 id='usage' class='heading'>Usage</h2>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">OperantKit</span>
 <span class="kd">import</span> <span class="kt">RxSwift</span>
@@ -260,6 +268,7 @@ $ make open
         <span class="o">.</span><span class="nf">disposed</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="kt">DisposeBag</span><span class="p">())</span>
 <span class="p">}</span>
 </code></pre>
+<h2 id='demo' class='heading'>Demo</h2>
 <h2 id='supporting-schedules' class='heading'>Supporting schedules</h2>
 <h3 id='simple-schedules' class='heading'>Simple schedules</h3>
 <h4 id='fixed-schedules' class='heading'>Fixed schedules</h4>
@@ -276,13 +285,19 @@ $ make open
 </tr>
 <tr>
 <td style="text-align: center">Variable ratio schedule</td>
-<td style="text-align: center"><code>VR(5)</code></td>
+<td style="text-align: center"><code>VR(5)</code> ※</td>
 </tr>
 <tr>
 <td style="text-align: center">Random ratio schedule</td>
 <td style="text-align: center"><code>RR(5)</code></td>
 </tr>
 </tbody></table>
+
+<p>※ The number of iterations of the variable schedule is <q>12</q> by default,</p>
+<pre class="highlight swift"><code><span class="kt">VR</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nv">iterations</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span>
+</code></pre>
+
+<p>It is also possible to change the number of iterations and so on.</p>
 <h4 id='interval-schedules' class='heading'>Interval schedules</h4>
 
 <table><thead>
@@ -305,12 +320,12 @@ $ make open
 </tr>
 </tbody></table>
 
-<p>時間間隔はデフォルトで「秒」単位で，</p>
+<p>The time interval defaults in <code>.seconds</code>,</p>
 <pre class="highlight swift"><code><span class="kt">FI</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">unit</span><span class="p">:</span> <span class="o">.</span><span class="n">minutes</span><span class="p">)</span>
 </code></pre>
 
-<p>というように単位を変更することも可能です。</p>
-<h4 id='' class='heading'>時間スケジュール</h4>
+<p>It is also possible to change the unit in such a way.</p>
+<h4 id='time-schedules' class='heading'>Time schedules</h4>
 
 <table><thead>
 <tr>
@@ -332,11 +347,11 @@ $ make open
 </tr>
 </tbody></table>
 
-<p>時間間隔はデフォルトで「秒」単位で，</p>
+<p>The time interval defaults in <code>.seconds</code>,</p>
 <pre class="highlight swift"><code><span class="kt">FI</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">unit</span><span class="p">:</span> <span class="o">.</span><span class="n">minutes</span><span class="p">)</span>
 </code></pre>
 
-<p>というように単位を変更することも可能です。</p>
+<p>It is also possible to change the unit in such a way.</p>
 <h4 id='other-schedules' class='heading'>Other schedules</h4>
 
 <table><thead>
@@ -354,7 +369,7 @@ $ make open
 <td style="text-align: center"><code><a href="Functions.html#/s:10OperantKit3EXTAA25ExtinctionScheduleUseCaseVyF">EXT()</a></code></td>
 </tr>
 </tbody></table>
-<h3 id='compound-schedule' class='heading'>Compound schedule</h3>
+<h3 id='compound-schedules' class='heading'>Compound schedules</h3>
 
 <table><thead>
 <tr>
@@ -368,7 +383,37 @@ $ make open
 </tr>
 </tbody></table>
 
-<p>※ 並立連鎖スケジュールにおける初環のように，2種類以上のオペランダムに対して共通のスケジュールが適用される場合は， <code>Shared()</code> を利用することで対応可能です。 e.g. <code>Conc(Shared(VI(10)))</code></p>
+<p>※ When a common schedule applies to two or more types of operandam like the internal link in concurrent chained schedule, it can be handled by using <code>Shared()</code> keyword. e.g. <code>Conc(Shared(VI(10)))</code></p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='a-href-https-guides-cocoapods-org-using-using-cocoapods-html-cocoapods-a' class='heading'><a href="https://guides.cocoapods.org/using/using-cocoapods.html">CocoaPods</a></h3>
+
+<p>Add this to your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'OperantKit'</span>
+</code></pre>
+
+<p>and</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>pod install
+</code></pre>
+<h3 id='a-href-https-github-com-carthage-carthage-carthage-a' class='heading'><a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
+
+<p>Add this to your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "YutoMizutani/OperantKit"
+</code></pre>
+
+<p>and</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>carthage update
+</code></pre>
+<h3 id='a-href-https-github-com-apple-swift-package-manager-swift-package-manager-a' class='heading'><a href="https://github.com/apple/swift-package-manager">Swift Package Manager</a></h3>
+
+<p>Add this to your <code>Package.swift</code>:</p>
+<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/YutoMizutani/OperantKit.git"</span><span class="p">,</span> <span class="s">"0.0.1"</span> <span class="o">..&lt;</span> <span class="s">"1.0.0"</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre>
+
+<p>and</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>swift build
+</code></pre>
 <h2 id='dependencies' class='heading'>Dependencies</h2>
 
 <ul>
@@ -377,39 +422,29 @@ $ make open
 </ul>
 <h2 id='documents' class='heading'>Documents</h2>
 
-<p><a href="https://github.com/YutoMizutani/OperantKit/blob/master/docs/index.html">docs/index.html</a> を参照して下さい。</p>
-<h2 id='' class='heading'>オペラント条件づけ (道具的条件づけ) について</h2>
-<h2 id='' class='heading'>ソフトウェア設計について</h2>
+<p>See <a href="https://github.com/YutoMizutani/OperantKit/blob/master/docs/index.html">docs/index.html</a></p>
+<h2 id='operant-conditioning-instrumental-conditioning' class='heading'>Operant conditioning (Instrumental conditioning)</h2>
+<h2 id='clean-architecture' class='heading'>Clean architecture</h2>
 
 <p><img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" alt=""></p>
+<h2 id='reactive-programming' class='heading'>Reactive programming</h2>
+<h2 id='development-installation' class='heading'>Development installation</h2>
 
-<p>本リポジトリは <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"><em>クリーンアーキテクチャ</em></a> (<a href="https://blog.tai2.net/the_clean_architecture.html">邦訳</a>) を採用しています。これは基盤に共通のビジネスロジックを採用し，UIとそれを紐付けるコードを記述するだけで簡単に様々なUIに適用させることが可能になります。さらに，拡張性にも優れ，必要な強化スケジュールを独自に作り出すこともできます。</p>
+<p>Clone this repository,</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>git clone https://github.com/YutoMizutani/OperantKit.git
+</code></pre>
 
-<p>クリーンアーキテクチャに従った場合，本ライブラリはData層及びDomain層を担当している形となります。</p>
-<h2 id='' class='heading'>リアクティブプログラミングについて</h2>
-<h2 id='' class='heading'>何故書いているのか</h2>
+<p>And use <code>make</code> command,</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>make deps-all
+<span class="gp">$ </span>make open
+</code></pre>
+<h2 id='references' class='heading'>References</h2>
+<h2 id='author' class='heading'>Author</h2>
 
-<p>行動分析学は確かに素晴しい学問であると言えます。一方で，この学問にも欠点があります。新しい技術に目を向けないことと，高い機械にお金を投資できないことです。</p>
-
-<p>B. F. スキナーはかつて素晴しい研究者でありながら，技術者と深い関わりがありました。</p>
-
-<p>あなたは現代で，どんな言語で実験しているでしょうか?</p>
-
-<p>機械語? アセンブリ? これらで書いている人は僕の助けを必要としていないでしょう。どうぞ安心して研究を続けて下さい。</p>
-
-<p>そうでない方の中には，難しいと感じていたり，もっと複雑な条件を簡単に作りたいと思っている人もいるでしょう。</p>
-
-<p>私は，そんな彼らの助けになりたい。プログラミングで実験心理学を嫌いになって欲しくはない。</p>
-
-<p>私は最大限の時間を費し，簡単でかつ高速な <q>行動科学者のための</q> フレームワークを作成しました。このライブラリにはプログラミングの最新技術が利用されています。</p>
-
-<p>一般に人は全てを完璧にこなすことはできない。一方で，僕のこのプロジェクトを元に，科学と技術の橋渡しによって行動分析学を復興させられればと思っております。</p>
-<h2 id='' class='heading'>連絡先</h2>
-
-<p>yuto.mizutani.dev [at] gmail.com</p>
+<p>Yuto Mizutani, <a href="mailto:yuto.mizutani.dev@gmail.com">yuto.mizutani.dev@gmail.com</a></p>
 <h2 id='donate' class='heading'>Donate</h2>
 
-<p>私の「モチベーション」は連続強化 (FR1) スケジュールで完全に制御されます。</p>
+<p>My <q>motivation</q> is fully controlled by continuous reinforcement (FR1) schedule :)</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>OperantKit is available under the <a href="https://github.com/YutoMizutani/OperantKit/blob/master/LICENSE">MIT license</a>.</p>
@@ -417,7 +452,7 @@ $ make open
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-09)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

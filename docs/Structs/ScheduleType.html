@@ -14,7 +14,7 @@
     <a title="ScheduleType Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">OperantKit Docs</a> (27% documented)</p>
+        <p><a href="../index.html">OperantKit Docs</a> (25% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -54,15 +54,6 @@
               <li class="nav-group-task">
                 <a href="../Classes/VariableEntity.html">VariableEntity</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Xorshift128.html">Xorshift128</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Xorshift32.html">Xorshift32</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/Xorshift64.html">Xorshift64</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -81,6 +72,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/ObservableType.html">ObservableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Reactive.html">Reactive</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/Reactive.html">Reactive</a>
@@ -121,16 +115,28 @@
                 <a href="../Functions.html#/s:10OperantKit2FRyAA25FixedRatioScheduleUseCaseVSiF">FR(_:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2FT_4unitAA24FixedTimeScheduleUseCaseVSi_AA0F4UnitOtF">FT(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Functions.html#/s:10OperantKit2RI_4unitAA29RandomIntervalScheduleUseCaseVSi_AA8TimeUnitOtF">RI(_:unit:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:10OperantKit2RRyAA26RandomRatioScheduleUseCaseVSiF">RR(_:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2RT_4unitAA25RandomTimeScheduleUseCaseVSi_AA0F4UnitOtF">RT(_:unit:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Functions.html#/s:10OperantKit2VI_4unit10iterationsAA31VariableIntervalScheduleUseCaseVSi_AA8TimeUnitOSitF">VI(_:unit:iterations:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:10OperantKit2VR_10iterationsAA28VariableRatioScheduleUseCaseVSi_SitF">VR(_:iterations:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2VR_6valuesAA28VariableRatioScheduleUseCaseVSi_SaySiGtF">VR(_:values:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10OperantKit2VT_4unit10iterationsAA27VariableTimeScheduleUseCaseVSi_AA0G4UnitOSitF">VT(_:unit:iterations:)</a>
               </li>
             </ul>
           </li>
@@ -170,6 +176,9 @@
                 <a href="../Structs/FixedResponseDataStore.html">FixedResponseDataStore</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/FixedTimeScheduleUseCase.html">FixedTimeScheduleUseCase</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/FleshlerHoffman.html">FleshlerHoffman</a>
               </li>
               <li class="nav-group-task">
@@ -185,9 +194,6 @@
                 <a href="../Structs/PrepositionSchedule.html">PrepositionSchedule</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Structs/RandomGenerator.html">RandomGenerator</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/RandomIntervalScheduleUseCase.html">RandomIntervalScheduleUseCase</a>
               </li>
               <li class="nav-group-task">
@@ -195,6 +201,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/RandomResponseDataStore.html">RandomResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RandomTimeScheduleUseCase.html">RandomTimeScheduleUseCase</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ScheduleType.html">ScheduleType</a>
@@ -210,6 +219,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/VariableResponseDataStore.html">VariableResponseDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VariableTimeScheduleUseCase.html">VariableTimeScheduleUseCase</a>
               </li>
             </ul>
           </li>
@@ -238,7 +250,11 @@
               </div>
             <p>e.g.
    public extension ScheduleTypes {
-       static let YourOwnSchedule = ScheduleType(rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000)
+       static let YourOwnSchedule = ScheduleType(
+           rawValue: 0b00000000_00000000_00000000_00000000_0000000000000000_0000000000000000,
+           shortName: <q>,
+           longName:</q>
+       )
    }</p>
 
           </section>
@@ -274,6 +290,60 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:10OperantKit12ScheduleTypeV9shortNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/shortName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV9shortNameSSvp">shortName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">shortName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit12ScheduleTypeV8longNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/longName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV8longNameSSvp">longName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">longName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:s9OptionSetP8rawValuex03RawD0Qz_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:s9OptionSetP8rawValuex03RawD0Qz_tcfc">init(rawValue:)</a>
@@ -297,23 +367,12 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Extinction%20schedule"></a>
-                <a name="//apple_ref/swift/Section/Extinction schedule" class="dashAnchor"></a>
-                <a href="#/Extinction%20schedule">
-                  <h3 class="section-name">Extinction schedule</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV10ExtinctionACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/Extinction" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10ExtinctionACvpZ">Extinction</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV8rawValue9shortName04longH0ACs6UInt64V_S2Stcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:shortName:longName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV8rawValue9shortName04longH0ACs6UInt64V_S2Stcfc">init(rawValue:shortName:longName:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,7 +387,45 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">Extinction</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt64</span><span class="p">,</span> <span class="nv">shortName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">longName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Extinction%20schedule"></a>
+                <a name="//apple_ref/swift/Section/Extinction schedule" class="dashAnchor"></a>
+                <a href="#/Extinction%20schedule">
+                  <h3 class="section-name">Extinction schedule</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10OperantKit12ScheduleTypeV10extinctionACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/extinction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10extinctionACvpZ">extinction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">extinction</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -349,9 +446,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV10FixedRatioACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/FixedRatio" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10FixedRatioACvpZ">FixedRatio</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV10fixedRatioACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/fixedRatio" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10fixedRatioACvpZ">fixedRatio</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -366,7 +463,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FixedRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">fixedRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -376,9 +473,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV13VariableRatioACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/VariableRatio" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV13VariableRatioACvpZ">VariableRatio</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV13variableRatioACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/variableRatio" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV13variableRatioACvpZ">variableRatio</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,7 +490,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">VariableRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">variableRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -403,9 +500,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV11RandomRatioACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/RandomRatio" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV11RandomRatioACvpZ">RandomRatio</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV11randomRatioACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/randomRatio" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV11randomRatioACvpZ">randomRatio</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -420,7 +517,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">RandomRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">randomRatio</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -441,9 +538,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV13FixedIntervalACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/FixedInterval" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV13FixedIntervalACvpZ">FixedInterval</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV13fixedIntervalACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/fixedInterval" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV13fixedIntervalACvpZ">fixedInterval</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -458,7 +555,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FixedInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">fixedInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -468,9 +565,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV16VariableIntervalACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/VariableInterval" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV16VariableIntervalACvpZ">VariableInterval</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV16variableIntervalACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/variableInterval" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV16variableIntervalACvpZ">variableInterval</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -485,7 +582,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">VariableInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">variableInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -495,9 +592,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV14RandomIntervalACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/RandomInterval" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV14RandomIntervalACvpZ">RandomInterval</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV14randomIntervalACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/randomInterval" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV14randomIntervalACvpZ">randomInterval</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -512,7 +609,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">RandomInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">randomInterval</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -533,9 +630,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV9FixedTimeACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/FixedTime" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV9FixedTimeACvpZ">FixedTime</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV9fixedTimeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/fixedTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV9fixedTimeACvpZ">fixedTime</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -550,7 +647,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FixedTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">fixedTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -560,9 +657,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV12VariableTimeACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/VariableTime" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV12VariableTimeACvpZ">VariableTime</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV12variableTimeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/variableTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV12variableTimeACvpZ">variableTime</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -577,7 +674,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">VariableTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">variableTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -587,9 +684,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10OperantKit12ScheduleTypeV10RandomTimeACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/RandomTime" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10RandomTimeACvpZ">RandomTime</a>
+                    <a name="/s:10OperantKit12ScheduleTypeV10randomTimeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/randomTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10OperantKit12ScheduleTypeV10randomTimeACvpZ">randomTime</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -604,7 +701,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">RandomTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">randomTime</span><span class="p">:</span> <span class="kt">ScheduleType</span></code></pre>
 
                         </div>
                       </div>
@@ -809,7 +906,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-09)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/YutoMizutani/OperantKit" target="_blank" rel="external">Yuto Mizutani</a>. All rights reserved. (Last updated: 2018-11-15)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

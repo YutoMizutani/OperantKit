@@ -15,7 +15,6 @@ public struct FleshlerHoffman {
     public func generatedInterval(value v: Int, iterations n: Int = 12) -> [Int] {
         guard n != 0 else { return [] }
 
-        let xorshift = Xorshift128(UInt64(Date().timeIntervalSince1970))
         var rd = [Int](repeating: 0, count: n)
         var vi = [Double](repeating: 0, count: n + 1)
 
@@ -38,7 +37,7 @@ public struct FleshlerHoffman {
 
             var order: Int
             repeat {
-                order = Int(xorshift.xor128() % UInt64(n))
+                order = Int.random(in: 0..<n)
             } while rd[order] != 0
 
             rd[order] = Int(round(vi[m]))

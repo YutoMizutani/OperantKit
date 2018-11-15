@@ -14,6 +14,6 @@ public class RandomEntity: ScheduleParameter {
 
     public init(value: Int) {
         self.displayValue = value
-        self.nextValue = RandomGenerator().generate(value)
+        self.nextValue = value <= 0 ? 0 : Int.random(in: 1...value)
     }
 }
