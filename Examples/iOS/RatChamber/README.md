@@ -2,4 +2,4 @@
 
 A description of this project.
 
-![](https://raw.githubusercontent.com/YutoMizutani/OperantKit/assets/demo_ratchamber.gif)
+![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/demo_ratchamber.gif?raw=true)
