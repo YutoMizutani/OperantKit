@@ -27,9 +27,12 @@ func main() {
 }
 ```
 
-## デモ
+## サンプル
 
-![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
+* [CLI サンプル (Linux, macOS)](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/CLI)
+* [iOS サンプル (iOS)](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/iOS)
+	* [RatChamber](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/iOS/RatChamber)
+	![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
 
 ## サポートされているスケジュール
 
@@ -166,7 +169,7 @@ $ swift build
 
 ![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/operantkit_architecture.png?raw=true)
 
-クリーンアーキテクチャに従った場合，本ライブラリはData層及びDomain層を担当している形となります。
+クリーンアーキテクチャに従った場合，本ライブラリはデータ層及びドメイン層を担当している形となります。
 強化スケジュールの演算に必要な実装は既に本ライブラリに組み込まれているため，プレゼンター層を追加するだけであらゆる実験を作成することができます。
 
 ## リアクティブプログラミングについて
