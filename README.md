@@ -29,9 +29,12 @@ func main() {
 }
 ```
 
-## Demo
+## Examples
 
-![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
+* [CLI examples (Linux, macOS)](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/CLI)
+* [iOS examples (iOS)](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/iOS)
+	* [RatChamber](https://github.com/YutoMizutani/OperantKit/tree/master/Examples/iOS/RatChamber)
+	![](https://github.com/YutoMizutani/OperantKit/blob/master/assets/img/demo_ratchamber.gif?raw=true)
 
 ## Supporting schedules
 
