@@ -224,8 +224,8 @@ public extension IntervalTimer {
 
 extension IntervalTimer {
     private func executeEvent() {
-        lock.lock()
-        defer { lock.unlock() }
+        // lock.lock()
+        // defer { lock.unlock() }
         // eventClosureの数だけ回し，eventClosureの時間が一致した場合，
         for event in self.eventClosure where event.milliseconds <= self.milliseconds {
             // eventを発火させる
