@@ -1,33 +1,9 @@
 import Foundation
 import OperantKit
 
-func printAvailableExperiments() {
-    print("""
-    +--------+-------------------+
-    |   Available experiments    |
-    +--------+-------------------+
-    | Number | Experiment Title  |
-    +--------+-------------------+
-    """)
-
-    Experiment.allCases.forEach {
-        print("""
-            | \($0.rawValue)\(String(repeating: " ", count: 6 - "\($0.rawValue)".count)) | \($0.shortName)\(String(repeating: " ", count: 16 - "\($0.shortName)".count))  |
-            """)
-    }
-
-    print("""
-    |        |                   |
-    | 0      | cancel            |
-    +--------+-------------------+
-    """)
-}
-
-printAvailableExperiments()
+print(Experiment.availables())
 while true {
-    print()
-    print("Which number would you like run?")
-    print("> ", terminator: "")
+    print("\nWhich number would you like run?\n> ", terminator: "")
 
     let input = readLine() ?? ""
     let num = Int(input) ?? -1
