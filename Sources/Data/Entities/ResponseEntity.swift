@@ -8,10 +8,8 @@
 
 import Foundation
 
-public class ResponseEntity {
-    /// Number of responses
+public class ResponseEntity: Responsible {
     public var numOfResponse: Int
-    /// Response time milliseconds
     public var milliseconds: Int
 
     public init(numOfResponse: Int = 0, milliseconds: Int = 0) {

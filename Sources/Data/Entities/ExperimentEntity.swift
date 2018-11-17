@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ExperimentEntity {
+public struct ExperimentEntity: Reinforceable {
     public let interReinforcementInterval: Int
 
     public init(interReinforcementInterval: Int) {

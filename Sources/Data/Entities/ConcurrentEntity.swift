@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ConcurrentEntity {
+public class ConcurrentEntity: Concurrentable {
     public var subSchedules: [ScheduleUseCase]
     public var isShared: Bool
 
