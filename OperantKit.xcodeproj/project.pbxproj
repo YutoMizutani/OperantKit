@@ -280,6 +280,10 @@
 		99C7514B219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
 		99C7514C219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
 		99C7514D219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
+		99C7518021A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
+		99C7518121A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
+		99C7518221A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
+		99C7518321A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +400,7 @@
 		99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntervalTimer+Rx.swift"; sourceTree = "<group>"; };
+		99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleUseCase+.swift"; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -710,6 +715,7 @@
 				999C7CA121951CDB0044C47E /* ObservableType+.swift */,
 				999C7CA221951CDB0044C47E /* ReinforcementResult+Rx.swift */,
 				999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */,
+				99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1188,6 +1194,7 @@
 				999C7CAF21951CDB0044C47E /* FI.swift in Sources */,
 				999C7CD621951CDB0044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7D0621951CDC0044C47E /* RandomEntity.swift in Sources */,
+				99C7518121A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
 				999C7D0F21951CDC0044C47E /* DecisionSchedule.swift in Sources */,
 				999C7CBE21951CDB0044C47E /* ScheduleType.swift in Sources */,
 				999C7D0C21951CDC0044C47E /* FixedEntity.swift in Sources */,
@@ -1268,6 +1275,7 @@
 				999C7CC521951CDB0044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7CB021951CDB0044C47E /* FI.swift in Sources */,
 				99C74EF6219A70F100DABE14 /* VT.swift in Sources */,
+				99C7518021A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
 				999C7CD721951CDB0044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7D0721951CDC0044C47E /* RandomEntity.swift in Sources */,
 				999C7D1021951CDC0044C47E /* DecisionSchedule.swift in Sources */,
@@ -1348,6 +1356,7 @@
 				999C7D9E219533150044C47E /* Shared.swift in Sources */,
 				999C7D9F219533150044C47E /* Matrix.swift in Sources */,
 				999C7DA0219533150044C47E /* RR.swift in Sources */,
+				99C7518221A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
 				999C7DA1219533150044C47E /* RI.swift in Sources */,
 				999C7DA2219533150044C47E /* FI.swift in Sources */,
 				999C7DA3219533150044C47E /* FR.swift in Sources */,
@@ -1428,6 +1437,7 @@
 				999C7DF2219542610044C47E /* Shared.swift in Sources */,
 				999C7DF3219542610044C47E /* Matrix.swift in Sources */,
 				999C7DF4219542610044C47E /* RR.swift in Sources */,
+				99C7518321A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
 				999C7DF5219542610044C47E /* RI.swift in Sources */,
 				999C7DF6219542610044C47E /* FI.swift in Sources */,
 				999C7DF7219542610044C47E /* FR.swift in Sources */,
