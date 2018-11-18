@@ -5,7 +5,7 @@
 //  Created by Yuto Mizutani on 2018/11/18.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
+#if os(iOS) || os(tvOS)
 
 import QuartzCore
 import RxSwift
