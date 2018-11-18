@@ -10,11 +10,19 @@ final class OperantKitTests: XCTestCase {
     /// Correct time test
     func testTimer() {
         let targetMilliseconds: Int = Int(arc4random() % 500) + 100
-        let timer = IntervalTimer(0.1)
-        timer.start()
+        let timer = WhileLoopTimerUseCase()
+        let disposeBag = DisposeBag()
+        Observable<Void>.just(())
+            .flatMap { timer.start() }
+            .subscribe()
+            .disposed(by: disposeBag)
         usleep(UInt32(targetMilliseconds) * 1000)
-        XCTAssertGreaterThanOrEqual(timer.milliseconds, targetMilliseconds - self.toleranceDelay)
-        timer.finish()
+        Observable<Void>.just(())
+            .flatMap { timer.finish() }
+            .subscribe(onNext: { [unowned self] in
+                XCTAssertGreaterThanOrEqual($0, targetMilliseconds - self.toleranceDelay)
+            })
+            .disposed(by: disposeBag)
     }
     #endif
 }

@@ -14,7 +14,7 @@ public typealias ResponseDetail = (count: Int, time: Int)
 
 final class SessionPresenter: Presenter {
     typealias ScheduleUseCaseType = ConcurrentScheduleUseCase
-    typealias TimerUseCaseType = IntervalTimerUseCase
+    typealias TimerUseCaseType = TimerUseCase
     typealias WireframeType = EmptyWireframe
 
     // TODO: REMOVE
@@ -58,16 +58,19 @@ final class SessionPresenter: Presenter {
         let pause: Driver<Void> = input.pauseTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.pause() }
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let resume: Driver<Void> = input.resumeTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.resume() }
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let end: Driver<Void> = input.endTrigger
             .asObservable()
             .flatMap { [unowned self] in self.timerUseCase.finish() }
+            .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
@@ -79,7 +82,7 @@ final class SessionPresenter: Presenter {
 
             let milliseconds = e
                 .asObservable()
-                .flatMap { [unowned self] in self.timerUseCase.getInterval() }
+                .flatMap { [unowned self] in self.timerUseCase.elapsed() }
 
             let response = Observable.zip(numOfResponse, milliseconds)
                 .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
