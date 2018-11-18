@@ -302,8 +302,8 @@
 			children = (
 				99C75079219BC62B00DABE14 /* Atoms */,
 				99C75082219BC62B00DABE14 /* Utils */,
-				99C75086219BC62B00DABE14 /* Pages */,
 				99C75089219BC62B00DABE14 /* Organisms */,
+				99C75086219BC62B00DABE14 /* Pages */,
 			);
 			path = RatChamber;
 			sourceTree = "<group>";
