@@ -1,38 +1,40 @@
 //
-//  MainTimerUseCase.swift
+//  WhileLoopTimerUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/18.
+//  Created by Yuto Mizutani on 2018/10/27.
+//  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(watchOS)
-
-import QuartzCore
+import Foundation
 import RxSwift
 
-public class MainTimerUseCase: TimerUseCase {
+public class WhileLoopTimerUseCase: TimerUseCase {
     // TODO: Update to `Milliseconds` type
     private typealias StackItem = (milliseconds: Int, closure: (() -> Void))
+    private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
-    private var displayLink: CADisplayLink?
     public var startTime: UInt64 = 0
+    public var isRunning = true
+    public var isPaused = false
     public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
 
     public init() {}
 }
 
-private extension MainTimerUseCase {
+private extension WhileLoopTimerUseCase {
     /// Set timer event
     func addEvent(_ milliseconds: Int, _ closure: @escaping (() -> Void)) {
         lock.lock()
         defer { lock.unlock() }
-        self.stack.append((milliseconds, closure))
+        stack.append((milliseconds, closure))
     }
 
-    /// Execute evetns
+    /// Execute events
     func executeEvents(_ elapsed: Int) {
         for event in self.stack where event.milliseconds <= elapsed {
             event.closure()
@@ -56,16 +58,19 @@ private extension MainTimerUseCase {
         return Int((time - modifiedStartTime) / 1_000_000)
     }
 
-    /// Update time with main loop
-    @objc
-    func updateTime(_ displaylink: CADisplayLink) {
-        let elapsed: Int = getElapsedMilliseconds()
-        milliseconds.onNext(elapsed)
-        executeEvents(elapsed)
+    /// Run loop
+    func runLoop() {
+        while isRunning {
+            guard !isPaused else { continue }
+            let elapsed = getElapsedMilliseconds()
+            milliseconds.onNext(elapsed)
+            executeEvents(elapsed)
+            usleep(100_000)
+        }
     }
 }
 
-public extension MainTimerUseCase {
+public extension WhileLoopTimerUseCase {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -73,10 +78,12 @@ public extension MainTimerUseCase {
                 return Disposables.create()
             }
 
-            self.startTime = mach_absolute_time()
-            self.modifiedStartTime = self.startTime
-            self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateTime(_:)))
-            self.displayLink?.add(to: .current, forMode: .default)
+            self.isRunning = true
+            self.asyncQueue.async { [unowned self] in
+                self.syncQueue.sync { [unowned self] in
+                    self.runLoop()
+                }
+            }
             single(.success(()))
 
             return Disposables.create()
@@ -119,7 +126,7 @@ public extension MainTimerUseCase {
                 return Disposables.create()
             }
 
-            self.displayLink?.isPaused = true
+            self.isPaused = true
             let paused = mach_absolute_time()
             self.startSleepTime = paused
             single(.success(self.getElapsed(with: paused)))
@@ -137,7 +144,7 @@ public extension MainTimerUseCase {
 
             let resumed = mach_absolute_time()
             self.modifiedStartTime -= resumed - self.startSleepTime
-            self.displayLink?.isPaused = false
+            self.isPaused = false
             single(.success(self.getElapsed(with: resumed)))
 
             return Disposables.create()
@@ -152,12 +159,10 @@ public extension MainTimerUseCase {
             }
 
             let finishedTime = self.getElapsedMilliseconds()
-            self.displayLink = nil
+            self.isRunning = false
             single(.success(finishedTime))
 
             return Disposables.create()
         }
     }
 }
-
-#endif

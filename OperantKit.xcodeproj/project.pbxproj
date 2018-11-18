@@ -59,8 +59,8 @@
 		999C7CE321951CDC0044C47E /* ExtinctionScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */; };
 		999C7CE521951CDC0044C47E /* RandomRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */; };
 		999C7CE621951CDC0044C47E /* RandomRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */; };
-		999C7CE821951CDC0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */; };
-		999C7CE921951CDC0044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7CE821951CDC0044C47E /* WhileLoopTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */; };
+		999C7CE921951CDC0044C47E /* WhileLoopTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */; };
 		999C7CEB21951CDC0044C47E /* RandomIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */; };
 		999C7CEC21951CDC0044C47E /* RandomIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */; };
 		999C7CEE21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */; };
@@ -89,8 +89,6 @@
 		999C7D1021951CDC0044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7D1221951CDC0044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
 		999C7D1321951CDC0044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
-		999C7D1521951CDC0044C47E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9A21951CDB0044C47E /* IntervalTimer.swift */; };
-		999C7D1621951CDC0044C47E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9A21951CDB0044C47E /* IntervalTimer.swift */; };
 		999C7D1821951CDC0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7D1921951CDC0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7D1B21951CDC0044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
@@ -142,7 +140,6 @@
 		999C7D92219531B80044C47E /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3A21951D530044C47E /* RxTest.framework */; };
 		999C7D93219533150044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7D94219533150044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
-		999C7D95219533150044C47E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9A21951CDB0044C47E /* IntervalTimer.swift */; };
 		999C7D96219533150044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7D97219533150044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
 		999C7D98219533150044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
@@ -182,7 +179,7 @@
 		999C7DBC219533160044C47E /* VariableRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */; };
 		999C7DBD219533160044C47E /* ExtinctionScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */; };
 		999C7DBE219533160044C47E /* RandomRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */; };
-		999C7DBF219533160044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7DBF219533160044C47E /* WhileLoopTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */; };
 		999C7DC0219533160044C47E /* RandomIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */; };
 		999C7DC1219533160044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */; };
 		999C7DC2219533300044C47E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7D4221951F2A0044C47E /* Helper.swift */; };
@@ -198,7 +195,6 @@
 		999C7DCC219533300044C47E /* ScheduleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7D3E21951F290044C47E /* ScheduleTypeTests.swift */; };
 		999C7DE7219542610044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7DE8219542610044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
-		999C7DE9219542610044C47E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9A21951CDB0044C47E /* IntervalTimer.swift */; };
 		999C7DEA219542610044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7DEB219542610044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
 		999C7DEC219542610044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
@@ -238,7 +234,7 @@
 		999C7E10219542620044C47E /* VariableRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */; };
 		999C7E11219542620044C47E /* ExtinctionScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */; };
 		999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */; };
-		999C7E13219542620044C47E /* IntervalTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */; };
+		999C7E13219542620044C47E /* WhileLoopTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */; };
 		999C7E14219542620044C47E /* RandomIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */; };
 		999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */; };
 		999C7E192195429C0044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E18219542970044C47E /* RxCocoa.framework */; };
@@ -276,10 +272,6 @@
 		99C74F19219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
 		99C74F1A219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
 		99C74F1B219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
-		99C7514A219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
-		99C7514B219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
-		99C7514C219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
-		99C7514D219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */; };
 		99C751CB21A11A4400DABE14 /* TimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751CA21A11A4400DABE14 /* TimerUseCase.swift */; };
 		99C751CC21A11A4400DABE14 /* TimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751CA21A11A4400DABE14 /* TimerUseCase.swift */; };
 		99C751CD21A11A4400DABE14 /* TimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751CA21A11A4400DABE14 /* TimerUseCase.swift */; };
@@ -348,7 +340,7 @@
 		999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRatioScheduleUseCase.swift; sourceTree = "<group>"; };
 		999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtinctionScheduleUseCase.swift; sourceTree = "<group>"; };
 		999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomRatioScheduleUseCase.swift; sourceTree = "<group>"; };
-		999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimerUseCase.swift; sourceTree = "<group>"; };
+		999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhileLoopTimerUseCase.swift; sourceTree = "<group>"; };
 		999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomIntervalScheduleUseCase.swift; sourceTree = "<group>"; };
 		999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableIntervalScheduleUseCase.swift; sourceTree = "<group>"; };
 		999C7C8A21951CDA0044C47E /* VariableResponseDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableResponseDataStore.swift; sourceTree = "<group>"; };
@@ -363,7 +355,6 @@
 		999C7C9421951CDA0044C47E /* FixedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedEntity.swift; sourceTree = "<group>"; };
 		999C7C9721951CDA0044C47E /* DecisionSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionSchedule.swift; sourceTree = "<group>"; };
 		999C7C9821951CDA0044C47E /* ReinforcementResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
-		999C7C9A21951CDB0044C47E /* IntervalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		999C7C9C21951CDB0044C47E /* TimeUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
 		999C7C9E21951CDB0044C47E /* Observable+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Rx.swift"; sourceTree = "<group>"; };
 		999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
@@ -403,7 +394,6 @@
 		99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleTests.swift; sourceTree = "<group>"; };
-		99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntervalTimer+Rx.swift"; sourceTree = "<group>"; };
 		99C751CA21A11A4400DABE14 /* TimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUseCase.swift; sourceTree = "<group>"; };
 		99C751CF21A11B7600DABE14 /* MainTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimerUseCase.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -676,7 +666,6 @@
 			isa = PBXGroup;
 			children = (
 				999C7C9621951CDA0044C47E /* Typealias */,
-				999C7C9921951CDA0044C47E /* Timer */,
 				999C7C9B21951CDB0044C47E /* Enums */,
 				999C7C9D21951CDB0044C47E /* Extensions */,
 				999C7CA421951CDB0044C47E /* Protocols */,
@@ -694,14 +683,6 @@
 			path = Typealias;
 			sourceTree = "<group>";
 		};
-		999C7C9921951CDA0044C47E /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				999C7C9A21951CDB0044C47E /* IntervalTimer.swift */,
-			);
-			path = Timer;
-			sourceTree = "<group>";
-		};
 		999C7C9B21951CDB0044C47E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,7 +694,6 @@
 		999C7C9D21951CDB0044C47E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				99C75149219D63D400DABE14 /* IntervalTimer+Rx.swift */,
 				999C7C9E21951CDB0044C47E /* Observable+Rx.swift */,
 				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
 				999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */,
@@ -789,7 +769,7 @@
 		99C74EFE219A763F00DABE14 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				999C7C8521951CDA0044C47E /* IntervalTimerUseCase.swift */,
+				999C7C8521951CDA0044C47E /* WhileLoopTimerUseCase.swift */,
 				99C751CF21A11B7600DABE14 /* MainTimerUseCase.swift */,
 			);
 			name = Timer;
@@ -1204,7 +1184,6 @@
 				999C7D0F21951CDC0044C47E /* DecisionSchedule.swift in Sources */,
 				999C7CBE21951CDB0044C47E /* ScheduleType.swift in Sources */,
 				999C7D0C21951CDC0044C47E /* FixedEntity.swift in Sources */,
-				999C7D1521951CDC0044C47E /* IntervalTimer.swift in Sources */,
 				999C7D0921951CDC0044C47E /* VariableEntity.swift in Sources */,
 				999C7CF421951CDC0044C47E /* FixedResponseDataStore.swift in Sources */,
 				999C7D3321951CDC0044C47E /* Matrix.swift in Sources */,
@@ -1217,7 +1196,7 @@
 				999C7D1E21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				999C7CDF21951CDC0044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74EF3219A702C00DABE14 /* FT.swift in Sources */,
-				999C7CE821951CDC0044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C7CE821951CDC0044C47E /* WhileLoopTimerUseCase.swift in Sources */,
 				99C74F02219A771700DABE14 /* VariableTimeScheduleUseCase.swift in Sources */,
 				999C7CD321951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				999C7CEE21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
@@ -1232,7 +1211,6 @@
 				999C7CD021951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7D2121951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7CB221951CDB0044C47E /* FR.swift in Sources */,
-				99C7514B219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */,
 				999C7D2D21951CDC0044C47E /* ScheduleParameter.swift in Sources */,
 				99C74F0D219A77B300DABE14 /* VT.swift in Sources */,
 				999C7CF121951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
@@ -1288,7 +1266,6 @@
 				999C7D1021951CDC0044C47E /* DecisionSchedule.swift in Sources */,
 				999C7CBF21951CDB0044C47E /* ScheduleType.swift in Sources */,
 				999C7D0D21951CDC0044C47E /* FixedEntity.swift in Sources */,
-				999C7D1621951CDC0044C47E /* IntervalTimer.swift in Sources */,
 				999C7D0A21951CDC0044C47E /* VariableEntity.swift in Sources */,
 				999C7CF521951CDC0044C47E /* FixedResponseDataStore.swift in Sources */,
 				999C7D3421951CDC0044C47E /* Matrix.swift in Sources */,
@@ -1301,7 +1278,7 @@
 				999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				999C7CE021951CDC0044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74EF1219A702400DABE14 /* FT.swift in Sources */,
-				999C7CE921951CDC0044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C7CE921951CDC0044C47E /* WhileLoopTimerUseCase.swift in Sources */,
 				999C7CD421951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				999C7CEF21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				999C7D2821951CDC0044C47E /* ReinforcementResult+Rx.swift in Sources */,
@@ -1314,7 +1291,6 @@
 				999C7CD121951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7D2221951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7CB321951CDB0044C47E /* FR.swift in Sources */,
-				99C7514A219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */,
 				99C74EF8219A713D00DABE14 /* RT.swift in Sources */,
 				999C7D2E21951CDC0044C47E /* ScheduleParameter.swift in Sources */,
 				999C7CF221951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
@@ -1352,7 +1328,6 @@
 			files = (
 				999C7D93219533150044C47E /* DecisionSchedule.swift in Sources */,
 				999C7D94219533150044C47E /* ReinforcementResult.swift in Sources */,
-				999C7D95219533150044C47E /* IntervalTimer.swift in Sources */,
 				999C7D96219533150044C47E /* TimeUnit.swift in Sources */,
 				999C7D97219533150044C47E /* Observable+Rx.swift in Sources */,
 				999C7D98219533150044C47E /* UIApplication+Rx.swift in Sources */,
@@ -1395,13 +1370,12 @@
 				999C7DB9219533160044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7DBA219533160044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7DBB219533160044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
-				99C7514C219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */,
 				999C7DBC219533160044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74F0E219A77B400DABE14 /* VT.swift in Sources */,
 				999C7DBD219533160044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7DBE219533160044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				99C751D221A11B7600DABE14 /* MainTimerUseCase.swift in Sources */,
-				999C7DBF219533160044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C7DBF219533160044C47E /* WhileLoopTimerUseCase.swift in Sources */,
 				999C7DC0219533160044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7DC1219533160044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
@@ -1434,7 +1408,6 @@
 			files = (
 				999C7DE7219542610044C47E /* DecisionSchedule.swift in Sources */,
 				999C7DE8219542610044C47E /* ReinforcementResult.swift in Sources */,
-				999C7DE9219542610044C47E /* IntervalTimer.swift in Sources */,
 				999C7DEA219542610044C47E /* TimeUnit.swift in Sources */,
 				999C7DEB219542610044C47E /* Observable+Rx.swift in Sources */,
 				999C7DEC219542610044C47E /* UIApplication+Rx.swift in Sources */,
@@ -1477,13 +1450,12 @@
 				999C7E0D219542610044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7E0E219542610044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
 				999C7E0F219542620044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
-				99C7514D219D63D500DABE14 /* IntervalTimer+Rx.swift in Sources */,
 				999C7E10219542620044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74F0F219A77B500DABE14 /* VT.swift in Sources */,
 				999C7E11219542620044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				99C751D321A11B7600DABE14 /* MainTimerUseCase.swift in Sources */,
-				999C7E13219542620044C47E /* IntervalTimerUseCase.swift in Sources */,
+				999C7E13219542620044C47E /* WhileLoopTimerUseCase.swift in Sources */,
 				999C7E14219542620044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
