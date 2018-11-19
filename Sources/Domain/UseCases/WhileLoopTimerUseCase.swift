@@ -22,8 +22,11 @@ public class WhileLoopTimerUseCase: TimerUseCase {
     public var isRunning = true
     public var isPaused = false
     public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
+    public var priority: Priority
 
-    public init() {}
+    public init(priority: Priority = .default) {
+        self.priority = priority
+    }
 }
 
 private extension WhileLoopTimerUseCase {
@@ -65,7 +68,16 @@ private extension WhileLoopTimerUseCase {
             let elapsed = getElapsedMilliseconds()
             milliseconds.onNext(elapsed)
             executeEvents(elapsed)
-            usleep(100_000)
+            switch priority {
+            case .immediate:
+                continue
+            case .high:
+                usleep(1_000)
+            case .default:
+                usleep(100_000)
+            case .low:
+                usleep(2_000_000)
+            }
         }
     }
 }

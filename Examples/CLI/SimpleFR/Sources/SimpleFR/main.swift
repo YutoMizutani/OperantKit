@@ -50,7 +50,6 @@ while bool {
 
 Observable.just(())
     .flatMap { _ in timer.finish() }
-    .flatMap { _ in timer.elapsed() }
     .subscribe(onNext: {
         print("Session finished: \($0)ms")
     })

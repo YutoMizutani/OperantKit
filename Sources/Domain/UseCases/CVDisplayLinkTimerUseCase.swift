@@ -20,6 +20,8 @@ public class CVDisplayLinkTimerUseCase: TimerUseCase {
     private var displayLink: CVDisplayLink!
     public var startTime: UInt64 = 0
     public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
+    /// Not supported yet
+    public var priority: Priority = .default
 
     public init() {}
 }
@@ -72,15 +74,14 @@ public extension CVDisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
-            self.startTime = mach_absolute_time()
-            self.modifiedStartTime = self.startTime
             let displayID = CGMainDisplayID()
-
             CVDisplayLinkCreateWithCGDisplay(displayID, &self.displayLink)
             CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] displayLink, _, _, _, _ -> CVReturn in
                 self?.updateTime(displayLink)
                 return kCVReturnSuccess
             })
+            self.startTime = mach_absolute_time()
+            self.modifiedStartTime = self.startTime
             CVDisplayLinkStart(self.displayLink)
             single(.success(()))
 
