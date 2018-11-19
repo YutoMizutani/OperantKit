@@ -781,13 +781,9 @@
 		999C7C9D21951CDB0044C47E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				99C752F721A2C66900DABE14 /* UInt64+.swift */,
-				999C7C9E21951CDB0044C47E /* Observable+Rx.swift */,
-				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
+				99AE65BD21A2D3450090B308 /* Primitive */,
+				99AE65BE21A2D3520090B308 /* Rx */,
 				999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */,
-				999C7CA121951CDB0044C47E /* ObservableType+.swift */,
-				999C7CA221951CDB0044C47E /* ReinforcementResult+Rx.swift */,
-				999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */,
 				99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */,
 			);
 			path = Extensions;
@@ -855,6 +851,26 @@
 				999C7E17219542960044C47E /* RxSwift.framework */,
 			);
 			name = watchOS;
+			sourceTree = "<group>";
+		};
+		99AE65BD21A2D3450090B308 /* Primitive */ = {
+			isa = PBXGroup;
+			children = (
+				99C752F721A2C66900DABE14 /* UInt64+.swift */,
+			);
+			name = Primitive;
+			sourceTree = "<group>";
+		};
+		99AE65BE21A2D3520090B308 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				999C7CA221951CDB0044C47E /* ReinforcementResult+Rx.swift */,
+				999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */,
+				999C7CA121951CDB0044C47E /* ObservableType+.swift */,
+				999C7C9E21951CDB0044C47E /* Observable+Rx.swift */,
+				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
+			);
+			name = Rx;
 			sourceTree = "<group>";
 		};
 		99C74EFE219A763F00DABE14 /* Timer */ = {
