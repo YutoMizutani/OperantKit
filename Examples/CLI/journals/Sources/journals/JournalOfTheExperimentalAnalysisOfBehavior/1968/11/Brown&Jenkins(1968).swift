@@ -55,9 +55,14 @@ class BrownAndJenkins1968 {
             .share()
 
         let timeObservable = milliseconds
-            .filter({ $0 % 1000 == 0 })
             .do(onNext: { print("Time elapsed: \($0)ms") })
             .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
+            .share()
+
+        timeObservable
+            .asObservable()
+            .subscribe()
+            .disposed(by: disposeBag)
 
         let reinforcementOn = schedule.decision(timeObservable)
             .filter({ $0.isReinforcement })
@@ -102,9 +107,7 @@ class BrownAndJenkins1968 {
             .do(onNext: { print("Trial \($0)/\(numberOfPairings) finished") })
             .filter({ $0 >= numberOfPairings })
             .mapToVoid()
-            .subscribe(onNext: {
-                finishTimerAction.onNext(())
-            })
+            .bind(to: finishTimerAction)
             .disposed(by: disposeBag)
 
         firstStart
