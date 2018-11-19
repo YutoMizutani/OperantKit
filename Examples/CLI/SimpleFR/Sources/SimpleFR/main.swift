@@ -2,7 +2,7 @@ import OperantKit
 import RxSwift
 import RxCocoa
 
-let timer = IntervalTimerUseCase()
+let timer = WhileLoopTimerUseCase(priority: .low)
 let schedule: ScheduleUseCase = FR(5)
 let responseAction = PublishSubject<Void>()
 var disposeBag = DisposeBag()
@@ -13,7 +13,7 @@ let numOfResponse = responseAction
 
 let milliseconds = responseAction
     .asObservable()
-    .flatMap { _ in timer.getInterval() }
+    .flatMap { _ in timer.elapsed() }
 
 let response = Observable.zip(numOfResponse, milliseconds)
     .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
@@ -49,8 +49,7 @@ while bool {
 }
 
 Observable.just(())
-    .flatMap { timer.finish() }
-    .flatMap { timer.getInterval() }
+    .flatMap { _ in timer.finish() }
     .subscribe(onNext: {
         print("Session finished: \($0)ms")
     })

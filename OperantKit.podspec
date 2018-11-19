@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OperantKit"
-  s.version          = "0.0.10"
+  s.version          = "0.0.15"
   s.summary          = "A tool for operant conditioning"
 
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/YutoMizutani/OperantKit.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/EXPENSIVE_MAN'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '4.0'
   s.tvos.deployment_target = '11.0'

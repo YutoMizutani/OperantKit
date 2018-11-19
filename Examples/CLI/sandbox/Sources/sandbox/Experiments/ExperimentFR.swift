@@ -11,7 +11,7 @@ import RxCocoa
 
 struct ExperimentFR {
     init(_ value: Int) {
-        let timer = IntervalTimerUseCase()
+        let timer = WhileLoopTimerUseCase(priority: .low)
         let schedule: ScheduleUseCase = FR(value)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -24,7 +24,7 @@ struct ExperimentFR {
 
         let milliseconds = responseAction
             .asObservable()
-            .flatMap { _ in timer.getInterval() }
+            .flatMap { _ in timer.elapsed() }
 
         let response = Observable.zip(numOfResponse, milliseconds)
             .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
@@ -47,7 +47,6 @@ struct ExperimentFR {
 
         finishTimerAction
             .flatMap { timer.finish() }
-            .flatMap { timer.getInterval() }
             .subscribe(onNext: {
                 print("Session finished: \($0)ms")
             })

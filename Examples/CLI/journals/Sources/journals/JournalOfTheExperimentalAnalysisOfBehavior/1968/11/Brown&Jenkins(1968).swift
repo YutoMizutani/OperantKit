@@ -28,7 +28,7 @@ class BrownAndJenkins1968 {
             )
         }
 
-        let timer = IntervalTimerUseCase()
+        let timer = WhileLoopTimerUseCase(priority: .immediate)
         let schedule: ScheduleUseCase = FT(whiteKeyLightDuration)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -40,20 +40,25 @@ class BrownAndJenkins1968 {
             .scan(0) { n, _ in n + 1 }
             .asObservable()
 
-        let milliseconds = responseAction
+        let responseTimeMilliseconds = responseAction
             .asObservable()
-            .flatMap { _ in timer.getInterval() }
+            .flatMap { _ in timer.elapsed() }
 
-        Observable.zip(numOfResponse, milliseconds)
+        Observable.zip(numOfResponse, responseTimeMilliseconds)
             .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
             .do(onNext: { print("Response: \($0.numOfResponse), \($0.milliseconds)ms") })
             .subscribe()
             .disposed(by: disposeBag)
 
-        let timeObservable = timer.milliseconds!
+        let milliseconds = timer.milliseconds
             .filter({ $0 % 1000 == 0 })
+            .distinctUntilChanged()
+            .share()
+
+        let timeObservable = milliseconds
             .do(onNext: { print("Time elapsed: \($0)ms") })
             .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
+            .share()
 
         let reinforcementOn = schedule.decision(timeObservable)
             .filter({ $0.isReinforcement })
@@ -78,7 +83,7 @@ class BrownAndJenkins1968 {
             .asObservable()
             .share(replay: 1)
 
-        let firstStart = timer.milliseconds!.take(1)
+        let firstStart = milliseconds.take(1)
 
         Observable<Int>.merge(
             firstStart,
@@ -98,9 +103,7 @@ class BrownAndJenkins1968 {
             .do(onNext: { print("Trial \($0)/\(numberOfPairings) finished") })
             .filter({ $0 >= numberOfPairings })
             .mapToVoid()
-            .subscribe(onNext: {
-                finishTimerAction.onNext(())
-            })
+            .bind(to: finishTimerAction)
             .disposed(by: disposeBag)
 
         firstStart
@@ -115,7 +118,6 @@ class BrownAndJenkins1968 {
 
         finishTimerAction
             .flatMap { timer.finish() }
-            .flatMap { timer.getInterval() }
             .do(onNext: { print("Session finished: \($0)ms") })
             .do(onNext: { _ in print("Program ended if enter any keys") })
             .mapToVoid()
