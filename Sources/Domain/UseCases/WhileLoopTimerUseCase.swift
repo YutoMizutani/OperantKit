@@ -11,8 +11,8 @@ import RxSwift
 
 public class WhileLoopTimerUseCase: TimerUseCase {
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
-    private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
-    private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
+    private let asyncQueue = DispatchQueue(label: "WhileLoopTimerAsyncQueue", qos: .default, attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "WhileLoopTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
