@@ -11,7 +11,6 @@ import QuartzCore
 import RxSwift
 
 public class CADisplayLinkTimerUseCase: TimerUseCase {
-    // TODO: Update to `Milliseconds` type
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
     private var lock = NSLock()
     private var stack: [StackItem] = []

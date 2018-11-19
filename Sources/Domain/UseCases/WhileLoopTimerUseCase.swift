@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 public class WhileLoopTimerUseCase: TimerUseCase {
-    // TODO: Update to `Milliseconds` type
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
     private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
     private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
