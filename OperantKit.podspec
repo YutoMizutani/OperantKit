@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
   s.source_files = 'Sources/**/**/*.swift'
+  s.watchos.exclude_files = 'Sources/Domain/UseCases/MainTimerUseCase.swift'
 end
