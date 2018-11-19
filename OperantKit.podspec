@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OperantKit"
-  s.version          = "0.0.10"
+  s.version          = "0.0.11"
   s.summary          = "A tool for operant conditioning"
 
   s.description      = <<-DESC
@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
   s.source_files = 'Sources/**/**/*.swift'
+  s.watchos.exclude_files = 'Sources/Domain/UseCases/MainTimerUseCase.swift'
 end
