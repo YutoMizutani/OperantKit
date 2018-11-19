@@ -11,7 +11,7 @@ import RxSwift
 public protocol TimerUseCase {
     // TODO: Update to `Milliseconds` type
     /// Observable elapsed milliseconds time
-    var milliseconds: PublishSubject<Int> { get }
+    var milliseconds: PublishSubject<Milliseconds> { get }
     /// Timer priority
     var priority: Priority { get set }
     /// Start timer

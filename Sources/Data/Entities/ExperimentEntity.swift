@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct ExperimentEntity {
-    public let interReinforcementInterval: Int
+public struct ExperimentEntity: Reinforceable {
+    public let interReinforcementInterval: Milliseconds
 
-    public init(interReinforcementInterval: Int) {
+    public init(interReinforcementInterval: Milliseconds) {
         self.interReinforcementInterval = interReinforcementInterval
     }
 }

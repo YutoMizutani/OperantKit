@@ -43,4 +43,29 @@ extension Experiment {
     var longName: String {
         return self.scheduleType.longName
     }
+
+    static func availables() -> String {
+        let prefix = """
+        +--------+-------------------+
+        |   Available experiments    |
+        +--------+-------------------+
+        | Number | Experiment Title  |
+        +--------+-------------------+\n
+        """
+
+        var content = ""
+        Experiment.allCases.forEach {
+            content += """
+            | \($0.rawValue)\(String(repeating: " ", count: 6 - "\($0.rawValue)".count)) | \($0.shortName)\(String(repeating: " ", count: 16 - "\($0.shortName)".count))  |\n
+            """
+        }
+
+        let suffix = """
+        |        |                   |
+        | 0      | cancel            |
+        +--------+-------------------+
+        """
+
+        return prefix + content + suffix
+    }
 }

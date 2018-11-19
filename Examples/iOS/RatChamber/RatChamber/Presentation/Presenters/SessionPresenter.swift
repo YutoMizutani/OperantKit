@@ -10,7 +10,7 @@ import OperantKit
 import RxCocoa
 import RxSwift
 
-public typealias ResponseDetail = (count: Int, time: Int)
+public typealias ResponseDetail = (count: Int, time: Milliseconds)
 
 final class SessionPresenter: Presenter {
     typealias ScheduleUseCaseType = ConcurrentScheduleUseCase
@@ -89,7 +89,7 @@ final class SessionPresenter: Presenter {
                 .do(onNext: { print("Response: \($0.milliseconds)") })
                 .share(replay: 1)
 
-            let reinforcement: Observable<Int> = self.scheduleUseCase
+            let reinforcement: Observable<Milliseconds> = self.scheduleUseCase
                 .decision(response, number: i)
                 .filter { $0.isReinforcement }
                 .map { $0.entity.milliseconds }
