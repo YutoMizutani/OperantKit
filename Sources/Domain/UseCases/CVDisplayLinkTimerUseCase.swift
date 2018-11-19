@@ -1,40 +1,38 @@
 //
-//  WhileLoopTimerUseCase.swift
+//  CVDisplayLinkTimerUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/10/27.
-//  Copyright © 2018 Yuto Mizutani. All rights reserved.
+//  Created by Yuto Mizutani on 2018/11/19.
 //
 
-import Foundation
+#if os(macOS) && canImport(QuartzCore)
+
+import QuartzCore
 import RxSwift
 
-public class WhileLoopTimerUseCase: TimerUseCase {
+public class CVDisplayLinkTimerUseCase: TimerUseCase {
     // TODO: Update to `Milliseconds` type
     private typealias StackItem = (milliseconds: Int, closure: (() -> Void))
-    private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
-    private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
+    private var displayLink: CVDisplayLink!
     public var startTime: UInt64 = 0
-    public var isRunning = true
-    public var isPaused = false
     public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
 
     public init() {}
 }
 
-private extension WhileLoopTimerUseCase {
+private extension CVDisplayLinkTimerUseCase {
     /// Set timer event
     func addEvent(_ milliseconds: Int, _ closure: @escaping (() -> Void)) {
         lock.lock()
         defer { lock.unlock() }
-        stack.append((milliseconds, closure))
+        self.stack.append((milliseconds, closure))
     }
 
-    /// Execute events
+    /// Execute evetns
     func executeEvents(_ elapsed: Int) {
         for event in self.stack where event.milliseconds <= elapsed {
             event.closure()
@@ -58,19 +56,15 @@ private extension WhileLoopTimerUseCase {
         return Int((time - modifiedStartTime) / 1_000_000)
     }
 
-    /// Run loop
-    func runLoop() {
-        while isRunning {
-            guard !isPaused else { continue }
-            let elapsed = getElapsedMilliseconds()
-            milliseconds.onNext(elapsed)
-            executeEvents(elapsed)
-            usleep(100_000)
-        }
+    /// Update time with main loop
+    func updateTime(_ displaylink: CVDisplayLink) {
+        let elapsed: Int = getElapsedMilliseconds()
+        milliseconds.onNext(elapsed)
+        executeEvents(elapsed)
     }
 }
 
-public extension WhileLoopTimerUseCase {
+public extension CVDisplayLinkTimerUseCase {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -78,12 +72,16 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
-            self.isRunning = true
-            self.asyncQueue.async { [unowned self] in
-                self.syncQueue.sync { [unowned self] in
-                    self.runLoop()
-                }
-            }
+            self.startTime = mach_absolute_time()
+            self.modifiedStartTime = self.startTime
+            let displayID = CGMainDisplayID()
+
+            CVDisplayLinkCreateWithCGDisplay(displayID, &self.displayLink)
+            CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] displayLink, _, _, _, _ -> CVReturn in
+                self?.updateTime(displayLink)
+                return kCVReturnSuccess
+            })
+            CVDisplayLinkStart(self.displayLink)
             single(.success(()))
 
             return Disposables.create()
@@ -126,9 +124,7 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
-            self.startTime = mach_absolute_time()
-            self.modifiedStartTime = self.startTime
-            self.isPaused = true
+            CVDisplayLinkStop(self.displayLink)
             let paused = mach_absolute_time()
             self.startSleepTime = paused
             single(.success(self.getElapsed(with: paused)))
@@ -146,7 +142,7 @@ public extension WhileLoopTimerUseCase {
 
             let resumed = mach_absolute_time()
             self.modifiedStartTime -= resumed - self.startSleepTime
-            self.isPaused = false
+            CVDisplayLinkStart(self.displayLink)
             single(.success(self.getElapsed(with: resumed)))
 
             return Disposables.create()
@@ -161,10 +157,13 @@ public extension WhileLoopTimerUseCase {
             }
 
             let finishedTime = self.getElapsedMilliseconds()
-            self.isRunning = false
+            CVDisplayLinkStop(self.displayLink)
+            self.displayLink = nil
             single(.success(finishedTime))
 
             return Disposables.create()
         }
     }
 }
+
+#endif

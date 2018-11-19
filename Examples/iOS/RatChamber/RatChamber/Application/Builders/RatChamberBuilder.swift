@@ -19,7 +19,7 @@ struct RatChamberBuilder {
         viewController?.inject(
             presenter: SessionPresenter(
                 scheduleUseCase: Conc(FR(5), FI(5)),
-                timerUseCase: MainTimerUseCase(),
+                timerUseCase: CADisplayLinkTimerUseCase(),
                 wireframe: EmptyWireframe()
             )
         )
