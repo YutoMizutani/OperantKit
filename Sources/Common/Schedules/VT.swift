@@ -10,13 +10,13 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Variable time schedule
-    public func VT(_ value: Int, with entities: E...) -> Observable<ReinforcementResult> {
+    public func VT(_ value: Milliseconds, with entities: E...) -> Observable<ReinforcementResult> {
         return self
             .variableTime(value, entities)
     }
 
     /// VT logic
-    func variableTime(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
+    func variableTime(_ value: Milliseconds, _ entities: [E]) -> Observable<ReinforcementResult> {
         return self.fixedTime(value, entities)
     }
 }

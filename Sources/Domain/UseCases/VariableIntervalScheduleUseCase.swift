@@ -18,7 +18,7 @@ public struct VariableIntervalScheduleUseCase {
         self.dataStore = VariableResponseDataStore(value: value, values: values, unit: unit)
     }
 
-    public init(value: Int, values: [Int]) {
+    public init(value: Milliseconds, values: [Milliseconds]) {
         self.dataStore = VariableResponseDataStore(value: value, values: values)
     }
 

@@ -9,7 +9,7 @@ final class OperantKitTests: XCTestCase {
     #if os(macOS)
     /// Correct time test
     func testWhileLoopTimer() {
-        let targetMilliseconds: Int = Int(arc4random() % 500) + 100
+        let targetMilliseconds: Milliseconds = Milliseconds.random(in: 100..<500)
         let timer = WhileLoopTimerUseCase()
         let disposeBag = DisposeBag()
         Observable<Void>.just(())
@@ -29,7 +29,7 @@ final class OperantKitTests: XCTestCase {
     #if os(macOS) && canImport(QuartzCore)
     /// Correct time test
     func testCVDisplayLinkTimer() {
-        let targetMilliseconds: Int = Int(arc4random() % 500) + 100
+        let targetMilliseconds: Milliseconds = Milliseconds.random(in: 100..<500)
         let timer = CVDisplayLinkTimerUseCase()
         let disposeBag = DisposeBag()
         Observable<Void>.just(())

@@ -12,7 +12,7 @@ public extension UInt64 {
         return self * TimeHelper.shared.numer / TimeHelper.shared.denom
     }
 
-    var milliseconds: Int {
-        return Int(self.nanoseconds / 1_000_000)
+    var milliseconds: Milliseconds {
+        return Milliseconds(self.nanoseconds / 1_000_000)
     }
 }
