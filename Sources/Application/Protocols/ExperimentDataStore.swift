@@ -8,4 +8,5 @@
 import Foundation
 
 public protocol ExperimentDataStore {
+    var experimentType: ExperimentType { get }
 }

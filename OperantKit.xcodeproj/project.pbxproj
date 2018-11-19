@@ -239,6 +239,10 @@
 		99AE65C121A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
 		99AE65C221A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
 		99AE65C321A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
+		99AE65C521A2DC670090B308 /* ExperimentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65C421A2DC670090B308 /* ExperimentType.swift */; };
+		99AE65C621A2DC670090B308 /* ExperimentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65C421A2DC670090B308 /* ExperimentType.swift */; };
+		99AE65C721A2DC670090B308 /* ExperimentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65C421A2DC670090B308 /* ExperimentType.swift */; };
+		99AE65C821A2DC670090B308 /* ExperimentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65C421A2DC670090B308 /* ExperimentType.swift */; };
 		99C74EF1219A702400DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
 		99C74EF2219A702B00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
 		99C74EF3219A702C00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
@@ -457,6 +461,7 @@
 		999C7E17219542960044C47E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
 		999C7E18219542970044C47E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
 		99AE65BF21A2D6130090B308 /* Continuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continuable.swift; sourceTree = "<group>"; };
+		99AE65C421A2DC670090B308 /* ExperimentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentType.swift; sourceTree = "<group>"; };
 		99C74EF0219A702400DABE14 /* FT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT.swift; sourceTree = "<group>"; };
 		99C74EF5219A70F100DABE14 /* VT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VT.swift; sourceTree = "<group>"; };
 		99C74EF7219A713D00DABE14 /* RT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RT.swift; sourceTree = "<group>"; };
@@ -651,7 +656,6 @@
 			isa = PBXGroup;
 			children = (
 				999C7C6A21951CD90044C47E /* Schedules */,
-				999C7C7221951CD90044C47E /* Parameters */,
 				999C7C7621951CDA0044C47E /* Events */,
 				999C7C7821951CDA0044C47E /* Helpers */,
 			);
@@ -673,16 +677,6 @@
 				99C74EF7219A713D00DABE14 /* RT.swift */,
 			);
 			path = Schedules;
-			sourceTree = "<group>";
-		};
-		999C7C7221951CD90044C47E /* Parameters */ = {
-			isa = PBXGroup;
-			children = (
-				999C7C7321951CD90044C47E /* ScheduleType.swift */,
-				999C7C7421951CDA0044C47E /* PrepositionSchedule.swift */,
-				999C7C7521951CDA0044C47E /* PostpositionSchedule.swift */,
-			);
-			path = Parameters;
 			sourceTree = "<group>";
 		};
 		999C7C7621951CDA0044C47E /* Events */ = {
@@ -777,8 +771,10 @@
 		999C7C9B21951CDB0044C47E /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				99AE65C921A30E480090B308 /* ScheduleType */,
 				99C752F221A2C64C00DABE14 /* Priority.swift */,
 				999C7C9C21951CDB0044C47E /* TimeUnit.swift */,
+				99AE65C421A2DC670090B308 /* ExperimentType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -876,6 +872,16 @@
 				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
 			);
 			name = Rx;
+			sourceTree = "<group>";
+		};
+		99AE65C921A30E480090B308 /* ScheduleType */ = {
+			isa = PBXGroup;
+			children = (
+				999C7C7321951CD90044C47E /* ScheduleType.swift */,
+				999C7C7421951CDA0044C47E /* PrepositionSchedule.swift */,
+				999C7C7521951CDA0044C47E /* PostpositionSchedule.swift */,
+			);
+			name = ScheduleType;
 			sourceTree = "<group>";
 		};
 		99C74EFE219A763F00DABE14 /* Timer */ = {
@@ -1372,6 +1378,7 @@
 				99C74EFB219A761400DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7CBB21951CDB0044C47E /* VI.swift in Sources */,
 				999C7CD921951CDB0044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
+				99AE65C621A2DC670090B308 /* ExperimentType.swift in Sources */,
 				99C751C221A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7CF721951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
 				999C7D1B21951CDC0044C47E /* Observable+Rx.swift in Sources */,
@@ -1470,6 +1477,7 @@
 				99C74F06219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7CBC21951CDB0044C47E /* VI.swift in Sources */,
 				999C7CDA21951CDB0044C47E /* FixedIntervalScheduleUseCase.swift in Sources */,
+				99AE65C521A2DC670090B308 /* ExperimentType.swift in Sources */,
 				99C751C121A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7CF821951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
 				999C7D1C21951CDC0044C47E /* Observable+Rx.swift in Sources */,
@@ -1568,6 +1576,7 @@
 				99C751AC21A0949000DABE14 /* LogDataStore.swift in Sources */,
 				999C7DB5219533150044C47E /* RandomEntity.swift in Sources */,
 				999C7DB6219533160044C47E /* VariableEntity.swift in Sources */,
+				99AE65C721A2DC670090B308 /* ExperimentType.swift in Sources */,
 				999C7DB7219533160044C47E /* FixedEntity.swift in Sources */,
 				99C751C321A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7DB8219533160044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
@@ -1666,6 +1675,7 @@
 				99C751AD21A0949000DABE14 /* LogDataStore.swift in Sources */,
 				999C7E09219542610044C47E /* RandomEntity.swift in Sources */,
 				999C7E0A219542610044C47E /* VariableEntity.swift in Sources */,
+				99AE65C821A2DC670090B308 /* ExperimentType.swift in Sources */,
 				999C7E0B219542610044C47E /* FixedEntity.swift in Sources */,
 				99C751C421A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7E0C219542610044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
