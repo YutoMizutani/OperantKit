@@ -28,7 +28,7 @@ class BrownAndJenkins1968 {
             )
         }
 
-        let timer = WhileLoopTimerUseCase()
+        let timer = WhileLoopTimerUseCase(priority: .immediate)
         let schedule: ScheduleUseCase = FT(whiteKeyLightDuration)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -51,6 +51,7 @@ class BrownAndJenkins1968 {
             .disposed(by: disposeBag)
 
         let milliseconds = timer.milliseconds
+            .filter({ $0 % 1000 == 0 })
             .distinctUntilChanged()
             .share()
 
@@ -58,11 +59,6 @@ class BrownAndJenkins1968 {
             .do(onNext: { print("Time elapsed: \($0)ms") })
             .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
             .share()
-
-        timeObservable
-            .asObservable()
-            .subscribe()
-            .disposed(by: disposeBag)
 
         let reinforcementOn = schedule.decision(timeObservable)
             .filter({ $0.isReinforcement })
