@@ -8,6 +8,7 @@
 import Foundation
 
 /// Discrete trial parameter requirements protocol
+/// Discrete trial procedure <-> Continuous free-operant procedure
 public protocol Discreteable {
     /// Inter trial interval
     var interTrialInterval: Milliseconds { get }
