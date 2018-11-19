@@ -7,7 +7,9 @@
 
 #if os(iOS) || os(tvOS)
 
+#if canImport(QuartzCore)
 import QuartzCore
+#endif
 import RxSwift
 
 public class MainTimerUseCase: TimerUseCase {
