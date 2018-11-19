@@ -1,5 +1,5 @@
 //
-//  MainTimerUseCase.swift
+//  CADisplayLinkTimerUseCase.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/18.
@@ -10,7 +10,7 @@
 import QuartzCore
 import RxSwift
 
-public class MainTimerUseCase: TimerUseCase {
+public class CADisplayLinkTimerUseCase: TimerUseCase {
     // TODO: Update to `Milliseconds` type
     private typealias StackItem = (milliseconds: Int, closure: (() -> Void))
     private var lock = NSLock()
@@ -24,7 +24,7 @@ public class MainTimerUseCase: TimerUseCase {
     public init() {}
 }
 
-private extension MainTimerUseCase {
+private extension CADisplayLinkTimerUseCase {
     /// Set timer event
     func addEvent(_ milliseconds: Int, _ closure: @escaping (() -> Void)) {
         lock.lock()
@@ -65,7 +65,7 @@ private extension MainTimerUseCase {
     }
 }
 
-public extension MainTimerUseCase {
+public extension CADisplayLinkTimerUseCase {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {

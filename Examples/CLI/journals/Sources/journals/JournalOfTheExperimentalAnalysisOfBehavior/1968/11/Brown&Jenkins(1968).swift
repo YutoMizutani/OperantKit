@@ -28,7 +28,7 @@ class BrownAndJenkins1968 {
             )
         }
 
-        let timer = IntervalTimerUseCase()
+        let timer = WhileLoopTimerUseCase()
         let schedule: ScheduleUseCase = FT(whiteKeyLightDuration)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -42,7 +42,7 @@ class BrownAndJenkins1968 {
 
         let milliseconds = responseAction
             .asObservable()
-            .flatMap { _ in timer.getInterval() }
+            .flatMap { _ in timer.elapsed() }
 
         Observable.zip(numOfResponse, milliseconds)
             .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
@@ -115,7 +115,7 @@ class BrownAndJenkins1968 {
 
         finishTimerAction
             .flatMap { timer.finish() }
-            .flatMap { timer.getInterval() }
+            .flatMap { timer.elapsed() }
             .do(onNext: { print("Session finished: \($0)ms") })
             .do(onNext: { _ in print("Program ended if enter any keys") })
             .mapToVoid()
