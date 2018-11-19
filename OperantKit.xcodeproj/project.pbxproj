@@ -284,6 +284,10 @@
 		99C7521821A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7521621A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift */; };
 		99C7521921A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7521621A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift */; };
 		99C7521A21A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7521621A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift */; };
+		99C7528721A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
+		99C7528821A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
+		99C7528921A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
+		99C7528A21A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -401,6 +405,7 @@
 		99C751CA21A11A4400DABE14 /* TimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUseCase.swift; sourceTree = "<group>"; };
 		99C751CF21A11B7600DABE14 /* CADisplayLinkTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CADisplayLinkTimerUseCase.swift; sourceTree = "<group>"; };
 		99C7521621A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDisplayLinkTimerUseCase.swift; sourceTree = "<group>"; };
+		99C7528621A2848500DABE14 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -692,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				999C7C9C21951CDB0044C47E /* TimeUnit.swift */,
+				99C7528621A2848500DABE14 /* Priority.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1207,6 +1213,7 @@
 				999C7CD321951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				999C7CEE21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				99C74F07219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
+				99C7528821A2848500DABE14 /* Priority.swift in Sources */,
 				999C7D2721951CDC0044C47E /* ReinforcementResult+Rx.swift in Sources */,
 				999C7D0321951CDC0044C47E /* ConcurrentEntity.swift in Sources */,
 				99C74EFB219A761400DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
@@ -1288,6 +1295,7 @@
 				999C7CE921951CDC0044C47E /* WhileLoopTimerUseCase.swift in Sources */,
 				999C7CD421951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				999C7CEF21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
+				99C7528721A2848500DABE14 /* Priority.swift in Sources */,
 				999C7D2821951CDC0044C47E /* ReinforcementResult+Rx.swift in Sources */,
 				999C7D0421951CDC0044C47E /* ConcurrentEntity.swift in Sources */,
 				99C74F06219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
@@ -1369,6 +1377,7 @@
 				999C7DB2219533150044C47E /* ExperimentEntity.swift in Sources */,
 				99C74F08219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7DB3219533150044C47E /* ResponseEntity.swift in Sources */,
+				99C7528921A2848500DABE14 /* Priority.swift in Sources */,
 				999C7DB4219533150044C47E /* ConcurrentEntity.swift in Sources */,
 				99C74EFC219A761500DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7DB5219533150044C47E /* RandomEntity.swift in Sources */,
@@ -1450,6 +1459,7 @@
 				999C7E06219542610044C47E /* ExperimentEntity.swift in Sources */,
 				99C74F09219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				999C7E07219542610044C47E /* ResponseEntity.swift in Sources */,
+				99C7528A21A2848500DABE14 /* Priority.swift in Sources */,
 				999C7E08219542610044C47E /* ConcurrentEntity.swift in Sources */,
 				99C74EFD219A761600DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7E09219542610044C47E /* RandomEntity.swift in Sources */,

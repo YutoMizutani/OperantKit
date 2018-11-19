@@ -12,6 +12,8 @@ public protocol TimerUseCase {
     // TODO: Update to `Milliseconds` type
     /// Observable elapsed milliseconds time
     var milliseconds: PublishSubject<Int> { get }
+    /// Timer priority
+    var priority: Priority { get set }
     /// Start timer
     func start() -> Single<Void>
     /// Get elapsed time

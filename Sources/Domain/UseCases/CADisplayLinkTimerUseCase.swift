@@ -17,11 +17,14 @@ public class CADisplayLinkTimerUseCase: TimerUseCase {
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
-    private var displayLink: CADisplayLink?
+    private var displayLink: CADisplayLink!
     public var startTime: UInt64 = 0
     public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
+    public var priority: Priority
 
-    public init() {}
+    public init(priority: Priority = .default) {
+        self.priority = priority
+    }
 }
 
 private extension CADisplayLinkTimerUseCase {
@@ -73,9 +76,19 @@ public extension CADisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
+            self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateTime(_:)))
+            switch self.priority {
+            case .immediate:
+                self.displayLink.preferredFramesPerSecond = 0
+            case .high:
+                self.displayLink.preferredFramesPerSecond = 120
+            case .default:
+                self.displayLink.preferredFramesPerSecond = 60
+            case .low:
+                self.displayLink.preferredFramesPerSecond = 30
+            }
             self.startTime = mach_absolute_time()
             self.modifiedStartTime = self.startTime
-            self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateTime(_:)))
             self.displayLink?.add(to: .current, forMode: .default)
             single(.success(()))
 
