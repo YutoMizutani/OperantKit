@@ -16,7 +16,7 @@ public extension Observable {
         })
     }
 
-    func extend(time milliseconds: Int, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(time milliseconds: Milliseconds, entities: [ResponseEntity]) -> Observable<E> {
         return self.do(onNext: { _ in
             for entity in entities {
                 entity.milliseconds += milliseconds

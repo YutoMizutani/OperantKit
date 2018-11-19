@@ -10,10 +10,9 @@ import Foundation
 import RxSwift
 
 public class WhileLoopTimerUseCase: TimerUseCase {
-    // TODO: Update to `Milliseconds` type
-    private typealias StackItem = (milliseconds: Int, closure: (() -> Void))
-    private let asyncQueue = DispatchQueue(label: "IntervalTimerAsyncQueue", qos: .default, attributes: .concurrent)
-    private let syncQueue = DispatchQueue(label: "IntervalTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
+    private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
+    private let asyncQueue = DispatchQueue(label: "WhileLoopTimerAsyncQueue", qos: .default, attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "WhileLoopTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
@@ -21,44 +20,45 @@ public class WhileLoopTimerUseCase: TimerUseCase {
     public var startTime: UInt64 = 0
     public var isRunning = true
     public var isPaused = false
-    public var milliseconds: PublishSubject<Int> = PublishSubject<Int>()
+    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
     public var priority: Priority
 
     public init(priority: Priority = .default) {
         self.priority = priority
+        _ = TimeHelper.shared
     }
 }
 
 private extension WhileLoopTimerUseCase {
     /// Set timer event
-    func addEvent(_ milliseconds: Int, _ closure: @escaping (() -> Void)) {
+    func addEvent(_ milliseconds: Milliseconds, _ closure: @escaping (() -> Void)) {
         lock.lock()
         defer { lock.unlock() }
         stack.append((milliseconds, closure))
     }
 
     /// Execute events
-    func executeEvents(_ elapsed: Int) {
+    func executeEvents(_ elapsed: Milliseconds) {
         for event in self.stack where event.milliseconds <= elapsed {
             event.closure()
         }
     }
 
     /// Remove timer events
-    func removeEvent(_ milliseconds: Int) {
+    func removeEvent(_ milliseconds: Milliseconds) {
         lock.lock()
         defer { lock.unlock() }
         self.stack = self.stack.filter { $0.milliseconds > milliseconds }
     }
 
     /// Get elapsed time milliseconds
-    func getElapsedMilliseconds() -> Int {
-        return Int((mach_absolute_time() - modifiedStartTime) / 1_000_000)
+    func getElapsedMilliseconds() -> Milliseconds {
+        return (mach_absolute_time() - modifiedStartTime).milliseconds
     }
 
     /// Get elapsed time milliseconds
-    func getElapsed(with time: UInt64) -> Int {
-        return Int((time - modifiedStartTime) / 1_000_000)
+    func getElapsed(with time: UInt64) -> Milliseconds {
+        return (time - modifiedStartTime).milliseconds
     }
 
     /// Run loop
@@ -104,7 +104,7 @@ public extension WhileLoopTimerUseCase {
         }
     }
 
-    func elapsed() -> Single<Int> {
+    func elapsed() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -117,7 +117,7 @@ public extension WhileLoopTimerUseCase {
         }
     }
 
-    func delay(_ value: Int, currentTime: Int) -> Single<Int> {
+    func delay(_ value: Milliseconds, currentTime: Milliseconds) -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -133,7 +133,7 @@ public extension WhileLoopTimerUseCase {
         }
     }
 
-    func pause() -> Single<Int> {
+    func pause() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -149,7 +149,7 @@ public extension WhileLoopTimerUseCase {
         }
     }
 
-    func resume() -> Single<Int> {
+    func resume() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -165,7 +165,7 @@ public extension WhileLoopTimerUseCase {
         }
     }
 
-    func finish() -> Single<Int> {
+    func finish() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))

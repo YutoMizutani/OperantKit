@@ -2,7 +2,7 @@ import OperantKit
 import RxSwift
 import RxCocoa
 
-let timer = WhileLoopTimerUseCase()
+let timer = WhileLoopTimerUseCase(priority: .low)
 let schedule: ScheduleUseCase = FR(5)
 let responseAction = PublishSubject<Void>()
 var disposeBag = DisposeBag()

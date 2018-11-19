@@ -11,7 +11,7 @@ import RxCocoa
 
 struct ExperimentFT {
     init(_ value: Int, _ unit: TimeUnit) {
-        let timer = WhileLoopTimerUseCase()
+        let timer = WhileLoopTimerUseCase(priority: .immediate)
         let schedule: ScheduleUseCase = FT(value, unit: unit)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -33,8 +33,10 @@ struct ExperimentFT {
             .subscribe()
             .disposed(by: disposeBag)
 
-        let timeObservable = timer.milliseconds!
+        let timeObservable = timer.milliseconds
+            .distinctUntilChanged()
             .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
+            .share()
 
         schedule.decision(timeObservable)
             .filter({ $0.isReinforcement })
@@ -52,7 +54,6 @@ struct ExperimentFT {
 
         finishTimerAction
             .flatMap { timer.finish() }
-            .flatMap { timer.elapsed() }
             .subscribe(onNext: {
                 print("Session finished: \($0)ms")
             })
