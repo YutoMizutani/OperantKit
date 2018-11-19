@@ -78,6 +78,8 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
+            self.startTime = mach_absolute_time()
+            self.modifiedStartTime = self.startTime
             self.isRunning = true
             self.asyncQueue.async { [unowned self] in
                 self.syncQueue.sync { [unowned self] in
@@ -126,8 +128,6 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
-            self.startTime = mach_absolute_time()
-            self.modifiedStartTime = self.startTime
             self.isPaused = true
             let paused = mach_absolute_time()
             self.startSleepTime = paused
