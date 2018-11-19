@@ -288,6 +288,14 @@
 		99C7528821A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
 		99C7528921A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
 		99C7528A21A2848500DABE14 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7528621A2848500DABE14 /* Priority.swift */; };
+		99C752E821A2B50300DABE14 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752E721A2B50300DABE14 /* TimeHelper.swift */; };
+		99C752E921A2B50900DABE14 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752E721A2B50300DABE14 /* TimeHelper.swift */; };
+		99C752EA21A2B50A00DABE14 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752E721A2B50300DABE14 /* TimeHelper.swift */; };
+		99C752EB21A2B50B00DABE14 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752E721A2B50300DABE14 /* TimeHelper.swift */; };
+		99C752ED21A2B66300DABE14 /* UInt64+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752EC21A2B66300DABE14 /* UInt64+.swift */; };
+		99C752EE21A2B66300DABE14 /* UInt64+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752EC21A2B66300DABE14 /* UInt64+.swift */; };
+		99C752EF21A2B66300DABE14 /* UInt64+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752EC21A2B66300DABE14 /* UInt64+.swift */; };
+		99C752F021A2B66300DABE14 /* UInt64+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C752EC21A2B66300DABE14 /* UInt64+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -406,6 +414,8 @@
 		99C751CF21A11B7600DABE14 /* CADisplayLinkTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CADisplayLinkTimerUseCase.swift; sourceTree = "<group>"; };
 		99C7521621A258D400DABE14 /* CVDisplayLinkTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDisplayLinkTimerUseCase.swift; sourceTree = "<group>"; };
 		99C7528621A2848500DABE14 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		99C752E721A2B50300DABE14 /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		99C752EC21A2B66300DABE14 /* UInt64+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt64+.swift"; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -711,6 +721,7 @@
 				999C7CA121951CDB0044C47E /* ObservableType+.swift */,
 				999C7CA221951CDB0044C47E /* ReinforcementResult+Rx.swift */,
 				999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */,
+				99C752EC21A2B66300DABE14 /* UInt64+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -728,6 +739,7 @@
 		999C7CA621951CDB0044C47E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				99C752E721A2B50300DABE14 /* TimeHelper.swift */,
 				999C7CA721951CDB0044C47E /* Shared.swift */,
 				999C7CA821951CDB0044C47E /* Matrix.swift */,
 			);
@@ -1191,9 +1203,11 @@
 				999C7CC421951CDB0044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7CAF21951CDB0044C47E /* FI.swift in Sources */,
 				99C751CC21A11A4400DABE14 /* TimerUseCase.swift in Sources */,
+				99C752EE21A2B66300DABE14 /* UInt64+.swift in Sources */,
 				999C7CD621951CDB0044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7D0621951CDC0044C47E /* RandomEntity.swift in Sources */,
 				999C7D0F21951CDC0044C47E /* DecisionSchedule.swift in Sources */,
+				99C752E921A2B50900DABE14 /* TimeHelper.swift in Sources */,
 				999C7CBE21951CDB0044C47E /* ScheduleType.swift in Sources */,
 				999C7D0C21951CDC0044C47E /* FixedEntity.swift in Sources */,
 				999C7D0921951CDC0044C47E /* VariableEntity.swift in Sources */,
@@ -1273,9 +1287,11 @@
 				999C7CAA21951CDB0044C47E /* RR.swift in Sources */,
 				999C7CC521951CDB0044C47E /* PostpositionSchedule.swift in Sources */,
 				99C751CB21A11A4400DABE14 /* TimerUseCase.swift in Sources */,
+				99C752ED21A2B66300DABE14 /* UInt64+.swift in Sources */,
 				999C7CB021951CDB0044C47E /* FI.swift in Sources */,
 				99C74EF6219A70F100DABE14 /* VT.swift in Sources */,
 				999C7CD721951CDB0044C47E /* ScheduleUseCase.swift in Sources */,
+				99C752E821A2B50300DABE14 /* TimeHelper.swift in Sources */,
 				999C7D0721951CDC0044C47E /* RandomEntity.swift in Sources */,
 				999C7D1021951CDC0044C47E /* DecisionSchedule.swift in Sources */,
 				999C7CBF21951CDB0044C47E /* ScheduleType.swift in Sources */,
@@ -1355,9 +1371,11 @@
 				999C7D9E219533150044C47E /* Shared.swift in Sources */,
 				99C751CD21A11A4400DABE14 /* TimerUseCase.swift in Sources */,
 				999C7D9F219533150044C47E /* Matrix.swift in Sources */,
+				99C752EF21A2B66300DABE14 /* UInt64+.swift in Sources */,
 				999C7DA0219533150044C47E /* RR.swift in Sources */,
 				999C7DA1219533150044C47E /* RI.swift in Sources */,
 				999C7DA2219533150044C47E /* FI.swift in Sources */,
+				99C752EA21A2B50A00DABE14 /* TimeHelper.swift in Sources */,
 				999C7DA3219533150044C47E /* FR.swift in Sources */,
 				999C7DA4219533150044C47E /* EXT.swift in Sources */,
 				999C7DA5219533150044C47E /* VR.swift in Sources */,
@@ -1437,9 +1455,11 @@
 				999C7DF2219542610044C47E /* Shared.swift in Sources */,
 				99C751CE21A11A4400DABE14 /* TimerUseCase.swift in Sources */,
 				999C7DF3219542610044C47E /* Matrix.swift in Sources */,
+				99C752F021A2B66300DABE14 /* UInt64+.swift in Sources */,
 				999C7DF4219542610044C47E /* RR.swift in Sources */,
 				999C7DF5219542610044C47E /* RI.swift in Sources */,
 				999C7DF6219542610044C47E /* FI.swift in Sources */,
+				99C752EB21A2B50B00DABE14 /* TimeHelper.swift in Sources */,
 				999C7DF7219542610044C47E /* FR.swift in Sources */,
 				999C7DF8219542610044C47E /* EXT.swift in Sources */,
 				999C7DF9219542610044C47E /* VR.swift in Sources */,

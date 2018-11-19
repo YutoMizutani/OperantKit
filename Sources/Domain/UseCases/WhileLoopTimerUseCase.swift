@@ -26,6 +26,7 @@ public class WhileLoopTimerUseCase: TimerUseCase {
 
     public init(priority: Priority = .default) {
         self.priority = priority
+        _ = TimeHelper.shared
     }
 }
 
@@ -53,12 +54,12 @@ private extension WhileLoopTimerUseCase {
 
     /// Get elapsed time milliseconds
     func getElapsedMilliseconds() -> Int {
-        return Int((mach_absolute_time() - modifiedStartTime) / 1_000_000)
+        return (mach_absolute_time() - modifiedStartTime).milliseconds
     }
 
     /// Get elapsed time milliseconds
     func getElapsed(with time: UInt64) -> Int {
-        return Int((time - modifiedStartTime) / 1_000_000)
+        return (time - modifiedStartTime).milliseconds
     }
 
     /// Run loop
