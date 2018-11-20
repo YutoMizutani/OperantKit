@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Examples/iOS/RatChamber/RatChamber.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Examples/CLI/sandbox/sandbox.xcodeproj">
+   </FileRef>
 </Workspace>
