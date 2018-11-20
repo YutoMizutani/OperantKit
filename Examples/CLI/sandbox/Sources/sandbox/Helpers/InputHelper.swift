@@ -16,8 +16,8 @@ struct InputHelper {
     static func unit() -> TimeUnit? {
         print("Unit [", terminator: "")
         TimeUnit.allCases.enumerated().forEach {
-            print("\($0.offset + 1). \($0.element.rawValue)",
-                terminator: $0.element.rawValue != TimeUnit.allCases.last?.rawValue ? ", " : "")
+            print("\($0.offset + 1). \($0.element.longName)",
+                  terminator: $0.element.shortName != TimeUnit.allCases.last?.shortName ? ", " : "")
         }
         print("]: ", terminator: "")
         guard let unitNum = Int(readLine() ?? "") else { return nil }
