@@ -72,11 +72,11 @@ private extension WhileLoopTimerUseCase {
             case .immediate:
                 continue
             case .high:
-                usleep(1_000)
+                usleep(100)
             case .default:
-                usleep(100_000)
+                usleep(1_000)
             case .low:
-                usleep(2_000_000)
+                usleep(100_000)
             }
         }
     }
