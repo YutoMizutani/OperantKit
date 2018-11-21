@@ -9,11 +9,11 @@
 import Foundation
 
 public class ResponseEntity: Responsible {
-    public var numOfResponse: Int
+    public var numOfResponses: Int
     public var milliseconds: Milliseconds
 
-    public init(numOfResponse: Int = 0, milliseconds: Milliseconds = 0) {
-        self.numOfResponse = numOfResponse
+    public init(numOfResponses: Int = 0, milliseconds: Milliseconds = 0) {
+        self.numOfResponses = numOfResponses
         self.milliseconds = milliseconds
     }
 }
@@ -21,7 +21,7 @@ public class ResponseEntity: Responsible {
 public extension ResponseEntity {
     static func - (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(
-            numOfResponse: lhs.numOfResponse - rhs.numOfResponse,
+            numOfResponses: lhs.numOfResponses - rhs.numOfResponses,
             milliseconds: lhs.milliseconds - rhs.milliseconds
         )
     }

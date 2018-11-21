@@ -7,7 +7,7 @@ let schedule: ScheduleUseCase = FR(5)
 let responseAction = PublishSubject<Void>()
 var disposeBag = DisposeBag()
 
-let numOfResponse = responseAction
+let numOfResponses = responseAction
     .scan(0) { n, _ in n + 1 }
     .asObservable()
 
@@ -15,9 +15,9 @@ let milliseconds = responseAction
     .asObservable()
     .flatMap { _ in timer.elapsed() }
 
-let response = Observable.zip(numOfResponse, milliseconds)
-    .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
-    .do(onNext: { print("Response: \($0.numOfResponse), \($0.milliseconds)ms") })
+let response = Observable.zip(numOfResponses, milliseconds)
+    .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+    .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
     .share(replay: 1)
 
 schedule.decision(response)

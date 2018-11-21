@@ -14,10 +14,10 @@ final class VariableTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VT(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5000 * 100)),
-            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 10000 * 100)),
-            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 15000 * 100)),
-            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 20000 * 100)),
+            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000 * 100)),
+            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000 * 100)),
+            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 15000 * 100)),
+            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 20000 * 100)),
             completed(completedTime)
             ])
 
@@ -57,10 +57,10 @@ final class VariableTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VariableTimeScheduleUseCase(value: 5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5)),
-            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 7)),
-            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 10)),
-            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 10)),
+            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5)),
+            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 7)),
+            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
+            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
             completed(completedTime)
             ])
 

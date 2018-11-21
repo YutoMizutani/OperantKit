@@ -17,22 +17,22 @@ public extension Observable {
     func extend(entity e: ResponseEntity, entities: [ResponseEntity]) -> Observable<E> {
         return self.do(onNext: { _ in
             for entity in entities {
-                entity.numOfResponse += e.numOfResponse
+                entity.numOfResponses += e.numOfResponses
                 entity.milliseconds += e.milliseconds
             }
         })
     }
 
     /// Add extended number of responses for entities
-    func extend(response numOfResponse: Int, entities: ResponseEntity...) -> Observable<E> {
-        return extend(response: numOfResponse, entities: entities)
+    func extend(response numOfResponses: Int, entities: ResponseEntity...) -> Observable<E> {
+        return extend(response: numOfResponses, entities: entities)
     }
 
     /// Add extended number of responses for entities
-    func extend(response numOfResponse: Int, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(response numOfResponses: Int, entities: [ResponseEntity]) -> Observable<E> {
         return self.do(onNext: { _ in
             for entity in entities {
-                entity.numOfResponse += numOfResponse
+                entity.numOfResponses += numOfResponses
             }
         })
     }

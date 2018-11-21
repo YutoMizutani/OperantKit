@@ -76,7 +76,7 @@ final class SessionPresenter: Presenter {
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
         input.responseTriggers.enumerated().forEach { [unowned self] i, e in
-            let numOfResponse = e
+            let numOfResponses = e
                 .scan(0) { n, _ in n + 1 }
                 .asObservable()
 
@@ -84,8 +84,8 @@ final class SessionPresenter: Presenter {
                 .asObservable()
                 .flatMap { [unowned self] in self.timerUseCase.elapsed() }
 
-            let response = Observable.zip(numOfResponse, milliseconds)
-                .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
+            let response = Observable.zip(numOfResponses, milliseconds)
+                .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
                 .do(onNext: { print("Response: \($0.milliseconds)") })
                 .share(replay: 1)
 

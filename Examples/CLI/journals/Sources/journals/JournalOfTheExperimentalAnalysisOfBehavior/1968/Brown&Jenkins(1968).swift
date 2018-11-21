@@ -34,7 +34,7 @@ class BrownAndJenkins1968 {
         var isSessionFlag = true
         var disposeBag = DisposeBag()
 
-        let numOfResponse = responseAction
+        let numOfResponses = responseAction
             .scan(0) { n, _ in n + 1 }
             .asObservable()
 
@@ -42,9 +42,9 @@ class BrownAndJenkins1968 {
             .asObservable()
             .flatMap { _ in timer.elapsed() }
 
-        Observable.zip(numOfResponse, responseTimeMilliseconds)
-            .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
-            .do(onNext: { print("Response: \($0.numOfResponse), \($0.milliseconds)ms") })
+        Observable.zip(numOfResponses, responseTimeMilliseconds)
+            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+            .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .subscribe()
             .disposed(by: disposeBag)
 
@@ -62,7 +62,7 @@ class BrownAndJenkins1968 {
 
         let timeObservable = milliseconds
             .do(onNext: { print("Time elapsed: \($0)ms") })
-            .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
+            .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
             .share(replay: 1)
 
         let reinforcementOn = schedule.decision(timeObservable)

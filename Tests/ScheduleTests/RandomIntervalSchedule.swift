@@ -14,11 +14,11 @@ final class RandomIntervalScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = RI(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 0, milliseconds: 5000)),
-            next(200, ResponseEntity(numOfResponse: 0, milliseconds: 10000)),
-            next(300, ResponseEntity(numOfResponse: 0, milliseconds: 10000)),
-            next(400, ResponseEntity(numOfResponse: 0, milliseconds: 15000)),
-            next(500, ResponseEntity(numOfResponse: 0, milliseconds: 100000)),
+            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
+            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
+            next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
             completed(completedTime)
             ])
 

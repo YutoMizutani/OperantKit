@@ -14,12 +14,12 @@ final class FixedRatioScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = FR(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponse: 5, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponse: 7, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponse: 10, milliseconds: 0)),
-            next(500, ResponseEntity(numOfResponse: 1000, milliseconds: 0)),
-            next(600, ResponseEntity(numOfResponse: 1001, milliseconds: 0)),
+            next(100, ResponseEntity(numOfResponses: 5, milliseconds: 0)),
+            next(200, ResponseEntity(numOfResponses: 7, milliseconds: 0)),
+            next(300, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
+            next(400, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
+            next(500, ResponseEntity(numOfResponses: 1000, milliseconds: 0)),
+            next(600, ResponseEntity(numOfResponses: 1001, milliseconds: 0)),
             completed(completedTime)
             ])
 
