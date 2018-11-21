@@ -50,7 +50,6 @@ public extension Observable {
         return extend(time: milliseconds, entities: entities)
     }
 
-
     /**
          Add `Immutable` extended milliseconds for entities. The time parameter will set when declarations.
 
