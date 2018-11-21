@@ -17,13 +17,15 @@ class BrownAndJenkins1968 {
         let numberOfPairings: Int = 80
         let whiteKeyLightDuration: Seconds = 8
         let trayOperatingDuration: Milliseconds = 4000
-        let interTrialInterval: [Seconds] = [Seconds](30...90).filter({ $0 % 5 == 0 })
+        let interTrialInterval: [Seconds] = [Seconds](30...90)
+            .filter({ $0 % 5 == 0 })
+            .map { TimeUnit.seconds.milliseconds($0) }
+            .shuffled()
 
         var nextInterval: Milliseconds = 0
+        var currentOrder: Int = 0
         func updateInterval() {
-            nextInterval = TimeUnit.seconds.milliseconds(
-                interTrialInterval[Seconds.random(in: 0..<interTrialInterval.count)]
-            )
+            nextInterval = interTrialInterval[currentOrder % interTrialInterval.count]
         }
 
         let timer = WhileLoopTimerUseCase(priority: .high)
@@ -82,7 +84,7 @@ class BrownAndJenkins1968 {
             reinforcementOff
         )
             .do(onNext: { _ in updateInterval() })
-            .do(onNext: { print("ITI on: \($0)ms (ITI: \(nextInterval)ms)") })
+            .do(onNext: { print("ITI on: \($0)ms (Next ITI: \(nextInterval)ms)") })
             .extend(time: { nextInterval }, entities: schedule.extendEntity)
             .flatMap { timer.delay(nextInterval, currentTime: $0) }
             .do(onNext: { print("ITI off: \($0)ms") })
