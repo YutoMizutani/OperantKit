@@ -18,7 +18,7 @@ extension Observable where E == ResponseEntity {
     /// FR logic
     func fixedRatio(_ value: Int, _ entities: [E]) -> Observable<ReinforcementResult> {
         return self.map {
-            (($0.numOfResponse >= value + entities.map { $0.numOfResponse }.reduce(0) { $0 + $1 }), $0)
+            (($0.numOfResponses >= value + entities.map { $0.numOfResponses }.reduce(0) { $0 + $1 }), $0)
         }
     }
 }

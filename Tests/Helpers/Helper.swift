@@ -11,7 +11,7 @@ import RxSwift
 extension ResponseEntity {
     static func stub() -> ResponseEntity {
         return ResponseEntity(
-            numOfResponse: Int.random(in: 0...1000),
+            numOfResponses: Int.random(in: 0...1000),
             milliseconds: Milliseconds.random(in: 0...1000)
         )
     }
