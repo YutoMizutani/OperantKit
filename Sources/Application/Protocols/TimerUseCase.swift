@@ -5,11 +5,9 @@
 //  Created by Yuto Mizutani on 2018/11/18.
 //
 
-import RxCocoa
 import RxSwift
 
 public protocol TimerUseCase {
-    // TODO: Update to `Milliseconds` type
     /// Observable elapsed milliseconds time
     var milliseconds: PublishSubject<Milliseconds> { get }
     /// Timer priority

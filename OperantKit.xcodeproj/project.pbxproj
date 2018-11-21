@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
+		9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */; };
 		9998170D212C355900D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		9998170E212C355900D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
 		99981711212C356E00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
@@ -89,8 +90,8 @@
 		999C7D1321951CDC0044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
 		999C7D1821951CDC0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7D1921951CDC0044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
-		999C7D1B21951CDC0044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
-		999C7D1C21951CDC0044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
+		999C7D1B21951CDC0044C47E /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+.swift */; };
+		999C7D1C21951CDC0044C47E /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+.swift */; };
 		999C7D1E21951CDC0044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
 		999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
 		999C7D2121951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */; };
@@ -139,7 +140,7 @@
 		999C7D93219533150044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7D94219533150044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
 		999C7D96219533150044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
-		999C7D97219533150044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
+		999C7D97219533150044C47E /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+.swift */; };
 		999C7D98219533150044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
 		999C7D99219533150044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */; };
 		999C7D9A219533150044C47E /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA121951CDB0044C47E /* ObservableType+.swift */; };
@@ -193,7 +194,7 @@
 		999C7DE7219542610044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7DE8219542610044C47E /* ReinforcementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9821951CDA0044C47E /* ReinforcementResult.swift */; };
 		999C7DEA219542610044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
-		999C7DEB219542610044C47E /* Observable+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+Rx.swift */; };
+		999C7DEB219542610044C47E /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+.swift */; };
 		999C7DEC219542610044C47E /* UIApplication+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */; };
 		999C7DED219542610044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */; };
 		999C7DEE219542610044C47E /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA121951CDB0044C47E /* ObservableType+.swift */; };
@@ -389,6 +390,7 @@
 		9933435D212969E000744042 /* OperantKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933437E21296A9A00744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		994FFF5D212C2918000F4702 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
+		9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableMilliseconds+.swift"; sourceTree = "<group>"; };
 		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		9998170F212C356E00D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -431,7 +433,7 @@
 		999C7C9721951CDA0044C47E /* DecisionSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionSchedule.swift; sourceTree = "<group>"; };
 		999C7C9821951CDA0044C47E /* ReinforcementResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReinforcementResult.swift; sourceTree = "<group>"; };
 		999C7C9C21951CDB0044C47E /* TimeUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
-		999C7C9E21951CDB0044C47E /* Observable+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Rx.swift"; sourceTree = "<group>"; };
+		999C7C9E21951CDB0044C47E /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 		999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
 		999C7CA021951CDB0044C47E /* ConcurrentScheduleUseCase+Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConcurrentScheduleUseCase+Shared.swift"; sourceTree = "<group>"; };
 		999C7CA121951CDB0044C47E /* ObservableType+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
@@ -868,7 +870,8 @@
 				999C7CA221951CDB0044C47E /* ReinforcementResult+Rx.swift */,
 				999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */,
 				999C7CA121951CDB0044C47E /* ObservableType+.swift */,
-				999C7C9E21951CDB0044C47E /* Observable+Rx.swift */,
+				999C7C9E21951CDB0044C47E /* Observable+.swift */,
+				9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */,
 				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
 			);
 			name = Rx;
@@ -1381,7 +1384,7 @@
 				99AE65C621A2DC670090B308 /* ExperimentType.swift in Sources */,
 				99C751C221A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7CF721951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
-				999C7D1B21951CDC0044C47E /* Observable+Rx.swift in Sources */,
+				999C7D1B21951CDC0044C47E /* Observable+.swift in Sources */,
 				999C7CD021951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7D2121951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7CB221951CDB0044C47E /* FR.swift in Sources */,
@@ -1449,6 +1452,7 @@
 				99C752FD21A2C68A00DABE14 /* TimerUseCase.swift in Sources */,
 				99AE65C021A2D6130090B308 /* Continuable.swift in Sources */,
 				999C7D0D21951CDC0044C47E /* FixedEntity.swift in Sources */,
+				9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */,
 				999C7D0A21951CDC0044C47E /* VariableEntity.swift in Sources */,
 				999C7CF521951CDC0044C47E /* FixedResponseDataStore.swift in Sources */,
 				99C751B421A094A600DABE14 /* LogUseCase.swift in Sources */,
@@ -1480,7 +1484,7 @@
 				99AE65C521A2DC670090B308 /* ExperimentType.swift in Sources */,
 				99C751C121A09D7300DABE14 /* Chainable.swift in Sources */,
 				999C7CF821951CDC0044C47E /* RandomResponseDataStore.swift in Sources */,
-				999C7D1C21951CDC0044C47E /* Observable+Rx.swift in Sources */,
+				999C7D1C21951CDC0044C47E /* Observable+.swift in Sources */,
 				999C7CD121951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
 				999C7D2221951CDC0044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7CB321951CDB0044C47E /* FR.swift in Sources */,
@@ -1524,7 +1528,7 @@
 				99C7519D21A07E0300DABE14 /* TimeUnitable.swift in Sources */,
 				99C7530B21A2C79800DABE14 /* CVDisplayLinkTimerUseCase.swift in Sources */,
 				999C7D96219533150044C47E /* TimeUnit.swift in Sources */,
-				999C7D97219533150044C47E /* Observable+Rx.swift in Sources */,
+				999C7D97219533150044C47E /* Observable+.swift in Sources */,
 				999C7D98219533150044C47E /* UIApplication+Rx.swift in Sources */,
 				999C7D99219533150044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7D9A219533150044C47E /* ObservableType+.swift in Sources */,
@@ -1623,7 +1627,7 @@
 				99C7519E21A07E0300DABE14 /* TimeUnitable.swift in Sources */,
 				99C7530C21A2C79800DABE14 /* CVDisplayLinkTimerUseCase.swift in Sources */,
 				999C7DEA219542610044C47E /* TimeUnit.swift in Sources */,
-				999C7DEB219542610044C47E /* Observable+Rx.swift in Sources */,
+				999C7DEB219542610044C47E /* Observable+.swift in Sources */,
 				999C7DEC219542610044C47E /* UIApplication+Rx.swift in Sources */,
 				999C7DED219542610044C47E /* ConcurrentScheduleUseCase+Shared.swift in Sources */,
 				999C7DEE219542610044C47E /* ObservableType+.swift in Sources */,

@@ -14,8 +14,6 @@ import OperantKit
 /// - Available link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1338436/
 class BrownAndJenkins1968 {
     func experiment1() {
-        typealias Seconds = Int
-        typealias Milliseconds = Int
         let numberOfPairings: Int = 80
         let whiteKeyLightDuration: Seconds = 8
         let trayOperatingDuration: Milliseconds = 4000
@@ -28,7 +26,7 @@ class BrownAndJenkins1968 {
             )
         }
 
-        let timer = WhileLoopTimerUseCase(priority: .immediate)
+        let timer = WhileLoopTimerUseCase(priority: .high)
         let schedule: ScheduleUseCase = FT(whiteKeyLightDuration)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
@@ -36,7 +34,7 @@ class BrownAndJenkins1968 {
         var isSessionFlag = true
         var disposeBag = DisposeBag()
 
-        let numOfResponse = responseAction
+        let numOfResponses = responseAction
             .scan(0) { n, _ in n + 1 }
             .asObservable()
 
@@ -44,21 +42,28 @@ class BrownAndJenkins1968 {
             .asObservable()
             .flatMap { _ in timer.elapsed() }
 
-        Observable.zip(numOfResponse, responseTimeMilliseconds)
-            .map { ResponseEntity(numOfResponse: $0.0, milliseconds: $0.1) }
-            .do(onNext: { print("Response: \($0.numOfResponse), \($0.milliseconds)ms") })
+        Observable.zip(numOfResponses, responseTimeMilliseconds)
+            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+            .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .subscribe()
             .disposed(by: disposeBag)
 
         let milliseconds = timer.milliseconds
             .filter({ $0 % 1000 == 0 })
             .distinctUntilChanged()
-            .share()
+            .share(replay: 1)
+
+        let firstStart = milliseconds.take(1)
+
+        firstStart
+            .do(onNext: { _ in print("Session started") })
+            .subscribe()
+            .disposed(by: disposeBag)
 
         let timeObservable = milliseconds
             .do(onNext: { print("Time elapsed: \($0)ms") })
-            .map { ResponseEntity(numOfResponse: 0, milliseconds: $0) }
-            .share()
+            .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
+            .share(replay: 1)
 
         let reinforcementOn = schedule.decision(timeObservable)
             .filter({ $0.isReinforcement })
@@ -66,29 +71,25 @@ class BrownAndJenkins1968 {
 
         let reinforcementOff = reinforcementOn
             .do(onNext: { print("SR on: \($0.entity.milliseconds)ms (IRI: \(trayOperatingDuration)ms)") })
-            .extend(time: trayOperatingDuration,
-                    entities: [schedule.extendEntity])
+            .extend(time: trayOperatingDuration, entities: schedule.extendEntity)
             .flatMap { timer.delay(trayOperatingDuration, currentTime: $0.entity.milliseconds) }
             .do(onNext: { print("SR off: \($0)ms") })
             .asObservable()
             .share(replay: 1)
 
-        let nextTrial = reinforcementOff
+        let nextTrial = Observable<Milliseconds>.merge(
+            firstStart,
+            reinforcementOff
+        )
             .do(onNext: { _ in updateInterval() })
             .do(onNext: { print("ITI on: \($0)ms (ITI: \(nextInterval)ms)") })
-            .extend(time: nextInterval,
-                    entities: [schedule.extendEntity])
+            .extend(time: { nextInterval }, entities: schedule.extendEntity)
             .flatMap { timer.delay(nextInterval, currentTime: $0) }
             .do(onNext: { print("ITI off: \($0)ms") })
             .asObservable()
             .share(replay: 1)
 
-        let firstStart = milliseconds.take(1)
-
-        Observable<Int>.merge(
-            firstStart,
-            nextTrial
-            )
+        nextTrial
             .do(onNext: { _ in print("SD on") })
             .subscribe()
             .disposed(by: disposeBag)
@@ -104,11 +105,6 @@ class BrownAndJenkins1968 {
             .filter({ $0 >= numberOfPairings })
             .mapToVoid()
             .bind(to: finishTimerAction)
-            .disposed(by: disposeBag)
-
-        firstStart
-            .do(onNext: { _ in print("Session started") })
-            .subscribe()
             .disposed(by: disposeBag)
 
         startTimerAction
