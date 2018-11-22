@@ -10,6 +10,10 @@
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */; };
+		996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
+		996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
+		996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
+		996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		9998170D212C355900D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		9998170E212C355900D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
 		99981711212C356E00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
@@ -391,6 +395,7 @@
 		9933437E21296A9A00744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		994FFF5D212C2918000F4702 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableMilliseconds+.swift"; sourceTree = "<group>"; };
+		996564D121A63E39004C76F0 /* PublishSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishSubject+.swift"; sourceTree = "<group>"; };
 		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		9998170F212C356E00D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -873,6 +878,7 @@
 				999C7C9E21951CDB0044C47E /* Observable+.swift */,
 				9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */,
 				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
+				996564D121A63E39004C76F0 /* PublishSubject+.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -1357,6 +1363,7 @@
 				999C7CC121951CDB0044C47E /* PrepositionSchedule.swift in Sources */,
 				99C751B521A094A600DABE14 /* LogUseCase.swift in Sources */,
 				99C7530321A2C69C00DABE14 /* TimeHelper.swift in Sources */,
+				996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
 				999C7D3021951CDC0044C47E /* Shared.swift in Sources */,
 				99C751B021A0949A00DABE14 /* Loggable.swift in Sources */,
 				999C7D0021951CDC0044C47E /* ResponseEntity.swift in Sources */,
@@ -1441,6 +1448,7 @@
 				999C7CC521951CDB0044C47E /* PostpositionSchedule.swift in Sources */,
 				999C7CB021951CDB0044C47E /* FI.swift in Sources */,
 				99C752F821A2C66A00DABE14 /* UInt64+.swift in Sources */,
+				996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */,
 				99C74EF6219A70F100DABE14 /* VT.swift in Sources */,
 				99C751A021A08C3300DABE14 /* Concurrentable.swift in Sources */,
 				99C7518021A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
@@ -1556,6 +1564,7 @@
 				999C7DA8219533150044C47E /* PrepositionSchedule.swift in Sources */,
 				99C751B621A094A600DABE14 /* LogUseCase.swift in Sources */,
 				99C7530421A2C69C00DABE14 /* TimeHelper.swift in Sources */,
+				996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
 				999C7DA9219533150044C47E /* PostpositionSchedule.swift in Sources */,
 				99C751B121A0949A00DABE14 /* Loggable.swift in Sources */,
 				999C7DAA219533150044C47E /* SessionEvents.swift in Sources */,
@@ -1655,6 +1664,7 @@
 				999C7DFC219542610044C47E /* PrepositionSchedule.swift in Sources */,
 				99C751B721A094A600DABE14 /* LogUseCase.swift in Sources */,
 				99C7530521A2C69C00DABE14 /* TimeHelper.swift in Sources */,
+				996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */,
 				999C7DFD219542610044C47E /* PostpositionSchedule.swift in Sources */,
 				99C751B221A0949A00DABE14 /* Loggable.swift in Sources */,
 				999C7DFE219542610044C47E /* SessionEvents.swift in Sources */,
