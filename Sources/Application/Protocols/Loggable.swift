@@ -9,6 +9,8 @@ import Foundation
 
 /// Log parameter requrements protocol
 public protocol Loggable {
-    /// Stored responses
-    var responses: [Responsible] { get set }
+    associatedtype Element
+    typealias Log = (time: Milliseconds, element: Element)
+    /// Stored logs
+    var log: [Log] { get set }
 }

@@ -10,13 +10,22 @@ import RxSwift
 extension Observable where E == ResponseEntity {
 
     /// Extinction schedule
-    public func EXT() -> Observable<ReinforcementResult> {
-        return self
-            .extinction()
+    public func EXT(_ value: Single<Int>) -> Observable<Bool> {
+        return extinction(value)
     }
 
     /// EXT logic
-    func extinction() -> Observable<ReinforcementResult> {
-        return self.map { (false, $0) }
+    func extinction(_ value: Single<Int>) -> Observable<Bool> {
+        return map { _ in false }
+    }
+
+    /// Extinction schedule
+    public func EXT() -> Observable<ResultEntity> {
+        return extinction()
+    }
+
+    /// EXT logic
+    func extinction() -> Observable<ResultEntity> {
+        return map { ResultEntity(false, $0) }
     }
 }

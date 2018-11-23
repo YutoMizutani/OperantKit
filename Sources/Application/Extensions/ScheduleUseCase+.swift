@@ -7,58 +7,189 @@
 
 import Foundation
 
-public func EXT() -> ExtinctionScheduleUseCase {
-    return ExtinctionScheduleUseCase()
+public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 0, values: [])) -> ExtinctionScheduleUseCase {
+    return ExtinctionScheduleUseCase(repository: repository)
 }
 
-public func CRF() -> FixedRatioScheduleUseCase {
-    return FixedRatioScheduleUseCase(value: 1)
+public func CRF(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 1, values: [])) -> FixedRatioScheduleUseCase {
+    return FixedRatioScheduleUseCase(repository: repository)
+}
+
+public func FR(repository: ScheduleRespository) -> FixedRatioScheduleUseCase {
+    return FixedRatioScheduleUseCase(repository: repository)
 }
 
 public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
-    return FixedRatioScheduleUseCase(value: value)
+    return FixedRatioScheduleUseCase(
+        repository: ScheduleRespositoryImpl(value: value, values: [])
+    )
+}
+
+public func VR(repository: ScheduleRespository) -> VariableRatioScheduleUseCase {
+    return VariableRatioScheduleUseCase(repository: repository)
 }
 
 public func VR(_ value: Int, iterations: Int = 12) -> VariableRatioScheduleUseCase {
-    return VariableRatioScheduleUseCase(value: value, iterations: iterations)
+    return VariableRatioScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: FleshlerHoffman().generatedRatio(
+                value: value,
+                iterations: iterations
+            )
+        )
+    )
 }
 
 public func VR(_ value: Int, values: [Int]) -> VariableRatioScheduleUseCase {
-    return VariableRatioScheduleUseCase(value: value, values: values)
+    return VariableRatioScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: values
+        )
+    )
+}
+
+public func RR(repository: ScheduleRespository) -> RandomRatioScheduleUseCase {
+    return RandomRatioScheduleUseCase(repository: repository)
 }
 
 public func RR(_ value: Int) -> RandomRatioScheduleUseCase {
-    return RandomRatioScheduleUseCase(value: value)
+    return RandomRatioScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: [],
+            initValue: value > 0 ? Int.random(in: 1...value) : 1
+        )
+    )
+}
+
+public func FI(repository: ScheduleRespository) -> FixedIntervalScheduleUseCase {
+    return FixedIntervalScheduleUseCase(repository: repository)
 }
 
 public func FI(_ value: Int, unit: TimeUnit = .seconds) -> FixedIntervalScheduleUseCase {
-    return FixedIntervalScheduleUseCase(value: value, unit: unit)
+    return FixedIntervalScheduleUseCase(
+        repository: ScheduleRespositoryImpl(value: unit.milliseconds(value), values: [])
+    )
+}
+
+public func VI(repository: ScheduleRespository) -> VariableIntervalScheduleUseCase {
+    return VariableIntervalScheduleUseCase(repository: repository)
 }
 
 public func VI(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableIntervalScheduleUseCase {
-    return VariableIntervalScheduleUseCase(value: value, unit: unit, iterations: iterations)
+    let value = unit.milliseconds(value)
+    return VariableIntervalScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: FleshlerHoffman().generatedInterval(
+                value: value,
+                iterations: iterations
+            )
+        )
+    )
+}
+
+public func VI(_ value: Int, values: [Int]) -> VariableIntervalScheduleUseCase {
+    return VariableIntervalScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: values
+        )
+    )
+}
+
+public func RI(repository: ScheduleRespository) -> RandomIntervalScheduleUseCase {
+    return RandomIntervalScheduleUseCase(repository: repository)
 }
 
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
-    return RandomIntervalScheduleUseCase(value: value, unit: unit)
+    let value = unit.milliseconds(value)
+    return RandomIntervalScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: [],
+            initValue: value > 0 ? Int.random(in: 1...value) : 1
+        )
+    )
+}
+
+public func FT(repository: ScheduleRespository) -> FixedTimeScheduleUseCase {
+    return FixedTimeScheduleUseCase(repository: repository)
 }
 
 public func FT(_ value: Int, unit: TimeUnit = .seconds) -> FixedTimeScheduleUseCase {
-    return FixedTimeScheduleUseCase(value: value, unit: unit)
+    return FixedTimeScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: unit.milliseconds(value),
+            values: []
+        )
+    )
+}
+
+public func VT(repository: ScheduleRespository) -> VariableTimeScheduleUseCase {
+    return VariableTimeScheduleUseCase(repository: repository)
 }
 
 public func VT(_ value: Int, unit: TimeUnit = .seconds, iterations: Int = 12) -> VariableTimeScheduleUseCase {
-    return VariableTimeScheduleUseCase(value: value, unit: unit, iterations: iterations)
+    let value = unit.milliseconds(value)
+    return VariableTimeScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: FleshlerHoffman().generatedInterval(
+                value: value,
+                iterations: iterations
+            )
+        )
+    )
+}
+
+public func VT(_ value: Int, values: [Int]) -> VariableTimeScheduleUseCase {
+    return VariableTimeScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: values
+        )
+    )
+}
+
+public func RT(repository: ScheduleRespository) -> RandomTimeScheduleUseCase {
+    return RandomTimeScheduleUseCase(repository: repository)
 }
 
 public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUseCase {
-    return RandomTimeScheduleUseCase(value: value, unit: unit)
+    let value = unit.milliseconds(value)
+    return RandomTimeScheduleUseCase(
+        repository: ScheduleRespositoryImpl(
+            value: value,
+            values: [],
+            initValue: value > 0 ? Int.random(in: 1...value) : 1
+        )
+    )
 }
 
-public func Conc(_ subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {
-    return ConcurrentScheduleUseCase(subSchedules: subSchedules, isShared: false)
+public func Alt(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: ScheduleUseCase...) -> AlternativeScheduleUseCase {
+    return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
 }
 
-public func Conc(_ sharedSchedule: Shared<ScheduleUseCase>) -> ConcurrentScheduleUseCase {
-    return ConcurrentScheduleUseCase(sharedSchedule)
+public func Alt(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: [ScheduleUseCase]) -> AlternativeScheduleUseCase {
+    return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
+}
+
+public func Conc(repository: ScheduleRespository) -> ConcurrentScheduleUseCase {
+    return ConcurrentScheduleUseCase(repository: repository)
+}
+
+public func Conc(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {
+    return ConcurrentScheduleUseCase(
+        repository: repository,
+        subSchedules: subSchedules
+    )
+}
+
+public func Conc(repository: ScheduleRespository = ScheduleRespositoryImpl(), sharedSchedule: Shared<ScheduleUseCase>) -> ConcurrentScheduleUseCase {
+    return ConcurrentScheduleUseCase(
+        repository: repository, sharedSchedule: sharedSchedule
+    )
 }

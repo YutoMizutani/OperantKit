@@ -15,8 +15,7 @@ public extension Observable where E == Milliseconds {
 
     /// Delay timer with entities
     func delay(_ timer: TimerUseCase, time: @escaping () -> Int, entities: [ResponseEntity] = []) -> Observable<E> {
-        return self
-            .extend(time: time, entities: entities)
+        return extend(time: time, entities: entities)
             .flatMap { timer.delay(time(), currentTime: $0) }
     }
 }

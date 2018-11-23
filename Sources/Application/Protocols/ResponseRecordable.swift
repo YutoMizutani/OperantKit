@@ -1,5 +1,5 @@
 //
-//  LogDataStore.swift
+//  ResponseRecordable.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/18.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public protocol LogDataStore {
-    /// Stored log entity
-    var log: Loggable { get set }
+public protocol ResponseRecordable {
+    /// Stored responses
+    var responses: [Responsible] { get set }
 }
 
-public extension LogDataStore {
+public extension ResponseRecordable {
     /// Append log elements
     mutating func append(_ newElements: Responsible...) {
         append(newElements)
@@ -20,7 +20,7 @@ public extension LogDataStore {
 
     /// Append log elements
     mutating func append(_ newElements: [Responsible]) {
-        log.responses += newElements
+        responses += newElements
     }
 
     /// Insert log elements at the index
@@ -32,9 +32,9 @@ public extension LogDataStore {
     mutating func insert(_ newElements: [Responsible], at index: Int) {
         switch index {
         case ...0:
-            log.responses = newElements + log.responses
-        case let i where i < log.responses.count:
-            log.responses = log.responses.prefix(i) + newElements + log.responses.suffix(log.responses.count - i)
+            responses = newElements + responses
+        case let i where i < responses.count:
+            responses = responses.prefix(i) + newElements + responses.suffix(responses.count - i)
         default:
             append(newElements)
         }

@@ -1,5 +1,5 @@
 //
-//  ReinforcementResult+Rx.swift
+//  ResultEntity+Rx.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/10/31.
@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public extension Observable where E == ReinforcementResult {
+public extension Observable where E == ResultEntity {
     func clearResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
         return self.do(onNext: {
             guard condition($0) else { return }

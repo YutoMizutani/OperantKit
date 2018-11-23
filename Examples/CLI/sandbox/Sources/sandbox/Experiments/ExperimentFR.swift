@@ -18,16 +18,7 @@ struct ExperimentFR {
         let finishTimerAction = PublishSubject<Void>()
         let disposeBag = DisposeBag()
 
-        let numOfResponses = responseAction
-            .scan(0) { n, _ in n + 1 }
-            .asObservable()
-
-        let milliseconds = responseAction
-            .asObservable()
-            .flatMap { _ in timer.elapsed() }
-
-        let response = Observable.zip(numOfResponses, milliseconds)
-            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+        let response = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .share(replay: 1)
 

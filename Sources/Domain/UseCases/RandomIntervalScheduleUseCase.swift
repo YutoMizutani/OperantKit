@@ -7,31 +7,35 @@
 
 import RxSwift
 
-public struct RandomIntervalScheduleUseCase {
-    public var dataStore: RandomResponseDataStore
+public struct RandomIntervalScheduleUseCase: ScheduleUseCase {
+    public var repository: ScheduleRespository
 
-    public init(value: Int, unit: TimeUnit) {
-        self.dataStore = RandomResponseDataStore(value: value, unit: unit)
-    }
-
-    public init(dataStore: RandomResponseDataStore) {
-        self.dataStore = dataStore
-    }
-}
-
-extension RandomIntervalScheduleUseCase: ScheduleUseCase {
     public var scheduleType: ScheduleType {
         return .randomInterval
     }
 
-    public var extendEntity: ResponseEntity {
-        return dataStore.extendEntity
+    public init(repository: ScheduleRespository) {
+        self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.RI(dataStore.randomEntity.nextValue,
-                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
-            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
-            .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
+        let sharedObserver = observer.share(replay: 1)
+        let bool = sharedObserver.flatMap { observer -> Observable<(ResponseEntity)> in
+            return Observable.zip(
+                self.repository.getExtendProperty().asObservable(),
+                self.repository.getLastReinforcementProperty().asObservable()
+            )
+            .map { (observer - $0.0 - $0.1) }
+        }
+        .RI(repository.getValue())
+
+        let result = Observable.zip(bool, sharedObserver).map { ResultEntity($0.0, $0.1) }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap {
+                $0.isReinforcement
+                    ? self.updateValue(Observable.just($0))
+                    : Observable.just($0)
+            }
     }
 }

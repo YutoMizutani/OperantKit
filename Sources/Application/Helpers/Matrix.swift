@@ -12,20 +12,20 @@ public struct Matrix<Element> {
     public let rows: Int
     public let columns: Int
 
-    public init(elements: [Element], rows: Int, columns: Int) {
+    public init(_ elements: [Element], rows: Int, columns: Int) {
         self.elements = elements
         self.rows = rows
         self.columns = columns
     }
 
-    public init?(elements: [Element], rows: Int) {
+    public init?(_ elements: [Element], rows: Int) {
         guard elements.count % rows == 0 else { return nil }
         self.elements = elements
         self.rows = rows
         self.columns = elements.count / rows
     }
 
-    public init?(elements: [Element], columns: Int) {
+    public init?(_ elements: [Element], columns: Int = 1) {
         guard elements.count % columns == 0 else { return nil }
         self.elements = elements
         self.columns = columns

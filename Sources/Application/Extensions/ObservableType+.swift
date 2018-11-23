@@ -23,3 +23,21 @@ public extension ObservableType {
         }
     }
 }
+
+public extension ObservableType {
+    /// Count up
+    func count() -> Observable<Int> {
+        return scan(0) { n, _ in n + 1 }
+    }
+
+    /// Get time
+    func getTime(_ timer: TimerUseCase) -> Observable<Milliseconds> {
+        return flatMap { _ in timer.elapsed() }
+    }
+
+    /// Response entity
+    func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
+        return Observable.zip(count(), getTime(timer))
+            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+    }
+}
