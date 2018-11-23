@@ -7,36 +7,35 @@
 
 import RxSwift
 
-public struct VariableRatioScheduleUseCase {
-    public var dataStore: VariableResponseDataStore
+public struct VariableRatioScheduleUseCase: ScheduleUseCase {
+    public weak var repository: ScheduleRespository?
 
-    public init(value: Int, iterations: Int) {
-        self.dataStore = VariableResponseDataStore(value: value, iterations: iterations)
-    }
-
-    public init(value: Int, values: [Int]) {
-        self.dataStore = VariableResponseDataStore(value: value, values: values)
-    }
-
-    public init(dataStore: VariableResponseDataStore) {
-        self.dataStore = dataStore
-    }
-}
-
-extension VariableRatioScheduleUseCase: ScheduleUseCase {
     public var scheduleType: ScheduleType {
-        return .variableRatio
+        return .fixedRatio
     }
 
-    public var extendEntity: ResponseEntity {
-        return dataStore.extendEntity
+    public init(repository: ScheduleRespository) {
+        self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VR(dataStore.variableEntity.values[dataStore.variableEntity.order],
-                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
-            .nextOrder(dataStore.variableEntity, condition: { $0.isReinforcement })
-            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
-            .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool = true) -> Observable<ResultEntity> {
+        guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
+        let bool = observer.flatMap { observer -> Observable<(ResponseEntity)> in
+            guard let repository = self.repository else { return Observable<ResponseEntity>.error(RxError.noElements) }
+            return Observable.combineLatest(
+                repository.getExtendProperty().asObservable(),
+                repository.getLastReinforcementProperty().asObservable()
+            )
+            .map { (observer - $0.0 - $0.1) }
+        }
+        .VR(repository.getValue())
+
+        let result = Observable.zip(bool, observer).map { ResultEntity($0.0, $0.1) }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap { observer -> Observable<ResultEntity> in
+                guard observer.isReinforcement else { return Observable.just(observer) }
+                return self.updateValue(result)
+            }
     }
 }

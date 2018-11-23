@@ -7,40 +7,55 @@
 
 import RxSwift
 
-public struct AlternativeScheduleUseCase {
-    private var _dataStore = FixedResponseDataStore(value: 0)
-    public var subSchedules: Matrix<ScheduleUseCase>
+public struct AlternativeScheduleUseCase: ScheduleUseCase {
+    public weak var repository: ScheduleRespository?
+    public var subSchedules: [ScheduleUseCase]
 
-    public init(subSchedules: ScheduleUseCase...) {
-        self.subSchedules = Matrix(subSchedules)!
-    }
-
-    public init(subSchedules: Matrix<ScheduleUseCase>) {
-        self.subSchedules = subSchedules
-    }
-}
-
-extension AlternativeScheduleUseCase {
     public var scheduleType: ScheduleType {
         return ScheduleType(
             rawValue: UInt64.max,
-            shortName: "Alt(\(subSchedules.elements.map { $0.scheduleType.shortName }.joined(separator: ", ")))",
-            longName: "Alternative(\(subSchedules.elements.map { $0.scheduleType.longName }.joined(separator: ", ")))"
+            shortName: "Alt(\(subSchedules.map { $0.scheduleType.shortName }.joined(separator: ", ")))",
+            longName: "Alternative(\(subSchedules.map { $0.scheduleType.longName }.joined(separator: ", ")))"
         )
     }
 
-//    public var dataStore: ExperimentDataStore {
-//        set {
-//            _dataStore.extendEntity = dataStore.extendEntity
-//            _dataStore.lastReinforcementEntity = dataStore.lastReinforcementEntity
-//        }
-//        get {
-//            return _dataStore
-//        }
-//    }
+    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase...) {
+        self.repository = repository
+        self.subSchedules = subSchedules
+    }
 
-//    public func decision(_ observer: Observable<ResponseEntity>, isAfterEffects: Bool = true) -> Observable<ReinforcementResult> {
-////        let deicion = subSchedules.elements.map { $0.decision(observer, isAfterEffects: false) }
-////        return !isAfterEffects ? decision : decision
-//    }
+    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase]) {
+        self.repository = repository
+        self.subSchedules = subSchedules
+    }
+
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(observer, isUpdateIfReinforcement: false) }
+
+        let result = observer.flatMap { observer in
+            return Observable.combineLatest(observables)
+                .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
+        }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap { observer -> Observable<ResultEntity> in
+                guard observer.isReinforcement else { return Observable.just(observer) }
+                return self.updateValue(result)
+            }
+    }
+
+    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(observer) }
+
+        return observer
+            .flatMap { observer -> Observable<ResultEntity> in
+                guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
+                return Observable.combineLatest(
+                    repository.clearExtendProperty().asObservable(),
+                    repository.updateLastReinforcementProperty(observer.entity).asObservable(),
+                    Observable.combineLatest(observables)
+                )
+                .map { _ in observer }
+            }
+    }
 }

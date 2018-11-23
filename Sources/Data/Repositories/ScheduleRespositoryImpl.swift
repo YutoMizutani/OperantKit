@@ -12,9 +12,14 @@ public class ScheduleRespositoryImpl: ScheduleRespository {
     private weak var recorder: (ScheduleRecordable & ExperimentRecordable)?
 
     public init(parameter: ScheduleParameterable,
-                recorder: (ScheduleRecordable & ExperimentRecordable)) {
+                recorder: ScheduleRecordable & ExperimentRecordable) {
         self.parameter = parameter
         self.recorder = recorder
+    }
+
+    public init(dataStore: ScheduleParameterable & ScheduleRecordable & ExperimentRecordable) {
+        self.parameter = dataStore
+        self.recorder = dataStore
     }
 
     public func getValue() -> Single<Int> {
@@ -30,20 +35,20 @@ public class ScheduleRespositoryImpl: ScheduleRespository {
         }
     }
 
-    public func nextValue(_ schedule: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Completable {
-        return Completable.create { [weak self] completable in
+    public func nextValue(_ schedule: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<()> {
+        return Single.create { [weak self] single in
             guard
                 let parameter = self?.parameter,
                 let recorder = self?.recorder
             else {
-                completable(.error(RxError.noElements))
+                single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
             let scheduleRecorder = schedule(parameter, recorder)
             recorder.currentOrder = scheduleRecorder.currentOrder
             recorder.currentValue = scheduleRecorder.currentValue
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
@@ -75,32 +80,31 @@ public class ScheduleRespositoryImpl: ScheduleRespository {
         }
     }
 
-    public func clearExtendProperty() -> Completable {
-        return Completable.create { [weak self] completable in
+    public func clearExtendProperty() -> Single<()> {
+        return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
-                    completable(.error(RxError.noElements))
-                    return Disposables.create()
+                single(.error(RxError.noElements))
+                return Disposables.create()
             }
 
             recorder.extendEntity = ResponseEntity()
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
     }
 
-    public func updateLastReinforcementProperty(_ entity: ResponseEntity) -> Completable {
-        return Completable.create { [weak self] completable in
+    public func updateLastReinforcementProperty(_ entity: ResponseEntity) -> Single<()> {
+        return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
-                completable(.error(RxError.noElements))
+                single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
             recorder.lastReinforcementEntity = entity
-            completable(.completed)
+            single(.success(()))
 
             return Disposables.create()
         }
     }
-
 }

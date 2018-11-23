@@ -7,11 +7,11 @@
 
 import RxSwift
 
-public protocol ScheduleRespository {
+public protocol ScheduleRespository: class {
     func getValue() -> Single<Int>
-    func nextValue(_: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Completable
+    func nextValue(_: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<()>
     func getExtendProperty() -> Single<ResponseEntity>
     func getLastReinforcementProperty() -> Single<ResponseEntity>
-    func clearExtendProperty() -> Completable
-    func updateLastReinforcementProperty(_:ResponseEntity) -> Completable
+    func clearExtendProperty() -> Single<()>
+    func updateLastReinforcementProperty(_:ResponseEntity) -> Single<()>
 }

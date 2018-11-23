@@ -7,39 +7,35 @@
 
 import RxSwift
 
-public struct VariableIntervalScheduleUseCase {
-    public var dataStore: VariableResponseDataStore
+public struct VariableIntervalScheduleUseCase: ScheduleUseCase {
+    public weak var repository: ScheduleRespository?
 
-    public init(value: Int, unit: TimeUnit, iterations: Int = 12) {
-        self.dataStore = VariableResponseDataStore(value: value, unit: unit, iterations: iterations)
-    }
-
-    public init(value: Int, values: [Int], unit: TimeUnit) {
-        self.dataStore = VariableResponseDataStore(value: value, values: values, unit: unit)
-    }
-
-    public init(value: Milliseconds, values: [Milliseconds]) {
-        self.dataStore = VariableResponseDataStore(value: value, values: values)
-    }
-
-    public init(dataStore: VariableResponseDataStore) {
-        self.dataStore = dataStore
-    }
-}
-
-extension VariableIntervalScheduleUseCase: ScheduleUseCase {
     public var scheduleType: ScheduleType {
         return .variableInterval
     }
 
-    public var extendEntity: ResponseEntity {
-        return dataStore.extendEntity
+    public init(repository: ScheduleRespository) {
+        self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VI(dataStore.variableEntity.nextValue,
-                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
-            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
-            .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool = true) -> Observable<ResultEntity> {
+        guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
+        let bool = observer.flatMap { observer -> Observable<(ResponseEntity)> in
+            guard let repository = self.repository else { return Observable<ResponseEntity>.error(RxError.noElements) }
+            return Observable.combineLatest(
+                repository.getExtendProperty().asObservable(),
+                repository.getLastReinforcementProperty().asObservable()
+            )
+            .map { (observer - $0.0 - $0.1) }
+        }
+        .VI(repository.getValue())
+
+        let result = Observable.zip(bool, observer).map { ResultEntity($0.0, $0.1) }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap { observer -> Observable<ResultEntity> in
+                guard observer.isReinforcement else { return Observable.just(observer) }
+                return self.updateValue(result)
+            }
     }
 }

@@ -19,14 +19,14 @@ public struct ConcurrentScheduleUseCase {
     }
 }
 
-public extension ConcurrentScheduleUseCase {
-    func extendEntity(_ number: Int) -> ResponseEntity {
-        let number = dataStore.concurrentEntity.isShared ? 0 : number
-        return dataStore.concurrentEntity.subSchedules[number].extendEntity
-    }
-
-    func decision(_ observer: Observable<ResponseEntity>, number: Int) -> Observable<ReinforcementResult> {
-        let number = dataStore.concurrentEntity.isShared ? 0 : number
-        return dataStore.concurrentEntity.subSchedules[number].decision(observer)
-    }
-}
+//public extension ConcurrentScheduleUseCase {
+//    func extendEntity(_ number: Int) -> ResponseEntity {
+//        let number = dataStore.concurrentEntity.isShared ? 0 : number
+//        return dataStore.concurrentEntity.subSchedules[number].extendEntity
+//    }
+//
+//    func decision(_ observer: Observable<ResponseEntity>, number: Int) -> Observable<ResultEntity> {
+//        let number = dataStore.concurrentEntity.isShared ? 0 : number
+//        return dataStore.concurrentEntity.subSchedules[number].decision(observer)
+//    }
+//}
