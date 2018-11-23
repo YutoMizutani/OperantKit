@@ -8,7 +8,7 @@
 import RxSwift
 
 public struct VariableRatioScheduleUseCase: ScheduleUseCase {
-    public weak var repository: ScheduleRespository?
+    public var repository: ScheduleRespository
 
     public var scheduleType: ScheduleType {
         return .fixedRatio
@@ -19,12 +19,10 @@ public struct VariableRatioScheduleUseCase: ScheduleUseCase {
     }
 
     public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool = true) -> Observable<ResultEntity> {
-        guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
         let bool = observer.flatMap { observer -> Observable<(ResponseEntity)> in
-            guard let repository = self.repository else { return Observable<ResponseEntity>.error(RxError.noElements) }
             return Observable.combineLatest(
-                repository.getExtendProperty().asObservable(),
-                repository.getLastReinforcementProperty().asObservable()
+                self.repository.getExtendProperty().asObservable(),
+                self.repository.getLastReinforcementProperty().asObservable()
             )
             .map { (observer - $0.0 - $0.1) }
         }

@@ -8,7 +8,7 @@
 import RxSwift
 
 public struct ExtinctionScheduleUseCase: ScheduleUseCase {
-    public weak var repository: ScheduleRespository?
+    public var repository: ScheduleRespository
 
     public var scheduleType: ScheduleType {
         return .extinction

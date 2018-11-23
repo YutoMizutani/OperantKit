@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol ScheduleUseCase {
-    var repository: ScheduleRespository? { get }
+    var repository: ScheduleRespository { get }
     var scheduleType: ScheduleType { get }
 
     /// Decision the reinforcement schedule
@@ -22,11 +22,10 @@ public extension ScheduleUseCase {
         case let s where s.hasVariableSchedule():
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
                     return Observable.combineLatest(
-                        repository.clearExtendProperty().asObservable(),
-                        repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                        repository.nextValue({
+                        self.repository.clearExtendProperty().asObservable(),
+                        self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
+                        self.repository.nextValue({
                             $1.currentOrder += 1
                             $1.currentValue = $0.values[$1.currentOrder % $0.values.count]
                             return $1
@@ -37,11 +36,10 @@ public extension ScheduleUseCase {
         case let s where s.hasRandomSchedule():
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
                     return Observable.combineLatest(
-                        repository.clearExtendProperty().asObservable(),
-                        repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                        repository.nextValue({
+                        self.repository.clearExtendProperty().asObservable(),
+                        self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
+                        self.repository.nextValue({
                             $1.currentValue = $0.value > 0 ? Int.random(in: 1...$0.value) : 1
                             return $1
                         }).asObservable()
@@ -51,10 +49,9 @@ public extension ScheduleUseCase {
         default:
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
                     return Observable.combineLatest(
-                        repository.clearExtendProperty().asObservable(),
-                        repository.updateLastReinforcementProperty(observer.entity).asObservable()
+                        self.repository.clearExtendProperty().asObservable(),
+                        self.repository.updateLastReinforcementProperty(observer.entity).asObservable()
                     )
                     .map { _ in observer }
                 }

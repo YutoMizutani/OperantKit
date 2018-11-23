@@ -8,7 +8,7 @@
 import RxSwift
 
 public struct AlternativeScheduleUseCase: ScheduleUseCase {
-    public weak var repository: ScheduleRespository?
+    public var repository: ScheduleRespository
     public var subSchedules: [ScheduleUseCase]
 
     public var scheduleType: ScheduleType {
@@ -49,10 +49,9 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
 
         return observer
             .flatMap { observer -> Observable<ResultEntity> in
-                guard let repository = self.repository else { return Observable<ResultEntity>.error(RxError.noElements) }
                 return Observable.combineLatest(
-                    repository.clearExtendProperty().asObservable(),
-                    repository.updateLastReinforcementProperty(observer.entity).asObservable(),
+                    self.repository.clearExtendProperty().asObservable(),
+                    self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
                     Observable.combineLatest(observables)
                 )
                 .map { _ in observer }
