@@ -1,0 +1,22 @@
+//
+//  ScheduleDataStoreImpl.swift
+//  OperantKit
+//
+//  Created by Yuto Mizutani on 2018/11/22.
+//
+
+import Foundation
+
+public class ScheduleDataStoreImpl: ScheduleParameterable, ScheduleRecordable, ExperimentRecordable {
+    public var value: Int
+    public var values: [Int]
+    public var currentOrder: Int = 0
+    public var currentValue: Int = 0
+    public var lastReinforcementEntity: ResponseEntity = ResponseEntity()
+    public var extendEntity: ResponseEntity = ResponseEntity()
+
+    public init(value: Int, values: [Int] = []) {
+        self.value = value
+        self.values = values
+    }
+}
