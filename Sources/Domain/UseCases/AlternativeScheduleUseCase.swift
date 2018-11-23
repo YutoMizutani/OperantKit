@@ -33,7 +33,7 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
         let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(observer, isUpdateIfReinforcement: false) }
 
         let result = observer.flatMap { observer in
-            return Observable.combineLatest(observables)
+            return Observable.zip(observables)
                 .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
         }
 
@@ -49,10 +49,10 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
 
         return observer
             .flatMap { observer -> Observable<ResultEntity> in
-                return Observable.combineLatest(
+                return Observable.zip(
                     self.repository.clearExtendProperty().asObservable(),
                     self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                    Observable.combineLatest(observables)
+                    Observable.zip(observables)
                 )
                 .map { _ in observer }
             }

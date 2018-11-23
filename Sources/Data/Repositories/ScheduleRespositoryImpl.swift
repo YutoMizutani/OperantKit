@@ -8,8 +8,8 @@
 import RxSwift
 
 public class ScheduleRespositoryImpl: ScheduleRespository {
-    private weak var parameter: ScheduleParameterable?
-    private weak var recorder: (ScheduleRecordable & ExperimentRecordable)?
+    private var parameter: ScheduleParameterable
+    private var recorder: (ScheduleRecordable & ExperimentRecordable)
 
     public init(parameter: ScheduleParameterable,
                 recorder: ScheduleRecordable & ExperimentRecordable) {
@@ -106,5 +106,22 @@ public class ScheduleRespositoryImpl: ScheduleRespository {
 
             return Disposables.create()
         }
+    }
+}
+
+public extension ScheduleRespositoryImpl {
+    convenience init() {
+        let dataStore = ScheduleDataStoreImpl(value: 0, values: [])
+        self.init(dataStore: dataStore)
+    }
+
+    convenience init(value: Int, values: [Int]) {
+        let dataStore = ScheduleDataStoreImpl(value: value, values: values)
+        self.init(dataStore: dataStore)
+    }
+
+    convenience init(value: Int, values: [Int], initValue: Int) {
+        let dataStore = ScheduleDataStoreImpl(value: value, values: values, initValue: initValue)
+        self.init(dataStore: dataStore)
     }
 }

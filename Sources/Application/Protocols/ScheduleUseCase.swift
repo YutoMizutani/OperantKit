@@ -12,17 +12,22 @@ public protocol ScheduleUseCase {
     var scheduleType: ScheduleType { get }
 
     /// Decision the reinforcement schedule
+    func decision(_ observer: Observable<ResponseEntity>) -> Observable<ResultEntity>
     func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity>
     func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity>
 }
 
 public extension ScheduleUseCase {
+    func decision(_ observer: Observable<ResponseEntity>) -> Observable<ResultEntity> {
+        return decision(observer, isUpdateIfReinforcement: true)
+    }
+
     func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
         switch scheduleType {
         case let s where s.hasVariableSchedule():
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    return Observable.combineLatest(
+                    return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),
                         self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
                         self.repository.nextValue({
@@ -36,7 +41,7 @@ public extension ScheduleUseCase {
         case let s where s.hasRandomSchedule():
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    return Observable.combineLatest(
+                    return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),
                         self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
                         self.repository.nextValue({
@@ -49,7 +54,7 @@ public extension ScheduleUseCase {
         default:
             return observer
                 .flatMap { observer -> Observable<ResultEntity> in
-                    return Observable.combineLatest(
+                    return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),
                         self.repository.updateLastReinforcementProperty(observer.entity).asObservable()
                     )

@@ -18,5 +18,12 @@ public class ScheduleDataStoreImpl: ScheduleParameterable, ScheduleRecordable, E
     public init(value: Int, values: [Int] = []) {
         self.value = value
         self.values = values
+        self.currentValue = !values.isEmpty ? values[currentOrder] : value
+    }
+
+    public init(value: Int, values: [Int] = [], initValue: Int) {
+        self.value = value
+        self.values = values
+        self.currentValue = initValue
     }
 }
