@@ -488,7 +488,6 @@
 		9965652621A6597C004C76F0 /* DiscreteTrialRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRecordable.swift; sourceTree = "<group>"; };
 		9965653C21A66A72004C76F0 /* DiscreteTrialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRepository.swift; sourceTree = "<group>"; };
 		9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCase.swift; sourceTree = "<group>"; };
-		9965654821A66CDA004C76F0 /* OperantKitPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantKitPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRepositoryImpl.swift; sourceTree = "<group>"; };
 		9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCaseImpl.swift; sourceTree = "<group>"; };
 		9965655321A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialDataStoreImpl.swift; sourceTree = "<group>"; };
@@ -1169,7 +1168,6 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				9965654821A66CDA004C76F0 /* OperantKitPlayground.playground */,
 				OBJ_6 /* Package.swift */,
 				994FFF5B212C27B3000F4702 /* Supporting Files */,
 				OBJ_7 /* Sources */,
