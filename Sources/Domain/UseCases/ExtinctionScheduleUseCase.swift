@@ -7,20 +7,18 @@
 
 import RxSwift
 
-public struct ExtinctionScheduleUseCase {
-    public init() {}
-}
+public struct ExtinctionScheduleUseCase: ScheduleUseCase {
+    public var repository: ScheduleRespository
 
-extension ExtinctionScheduleUseCase: ScheduleUseCase {
     public var scheduleType: ScheduleType {
         return .extinction
     }
 
-    public var extendEntity: ResponseEntity {
-        return ResponseEntity()
+    public init(repository: ScheduleRespository) {
+        self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
         return observer.EXT()
     }
 }

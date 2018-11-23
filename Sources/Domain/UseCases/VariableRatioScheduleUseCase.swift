@@ -7,36 +7,35 @@
 
 import RxSwift
 
-public struct VariableRatioScheduleUseCase {
-    public var dataStore: VariableResponseDataStore
+public struct VariableRatioScheduleUseCase: ScheduleUseCase {
+    public var repository: ScheduleRespository
 
-    public init(value: Int, iterations: Int) {
-        self.dataStore = VariableResponseDataStore(value: value, iterations: iterations)
-    }
-
-    public init(value: Int, values: [Int]) {
-        self.dataStore = VariableResponseDataStore(value: value, values: values)
-    }
-
-    public init(dataStore: VariableResponseDataStore) {
-        self.dataStore = dataStore
-    }
-}
-
-extension VariableRatioScheduleUseCase: ScheduleUseCase {
     public var scheduleType: ScheduleType {
-        return .variableRatio
+        return .fixedRatio
     }
 
-    public var extendEntity: ResponseEntity {
-        return dataStore.extendEntity
+    public init(repository: ScheduleRespository) {
+        self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>) -> Observable<ReinforcementResult> {
-        return observer.VR(dataStore.variableEntity.values[dataStore.variableEntity.order],
-                           with: dataStore.lastReinforcementEntity, dataStore.extendEntity)
-            .nextOrder(dataStore.variableEntity, condition: { $0.isReinforcement })
-            .clearResponse(dataStore.extendEntity, condition: { $0.isReinforcement })
-            .storeResponse(dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
+        let sharedObserver = observer.share(replay: 1)
+        let bool = sharedObserver.flatMap { observer -> Observable<(ResponseEntity)> in
+            return Observable.zip(
+                self.repository.getExtendProperty().asObservable(),
+                self.repository.getLastReinforcementProperty().asObservable()
+            )
+            .map { (observer - $0.0 - $0.1) }
+        }
+        .VR(repository.getValue())
+
+        let result = Observable.zip(bool, sharedObserver).map { ResultEntity($0.0, $0.1) }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap {
+                $0.isReinforcement
+                    ? self.updateValue(Observable.just($0))
+                    : Observable.just($0)
+            }
     }
 }

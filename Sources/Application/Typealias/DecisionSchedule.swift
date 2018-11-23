@@ -7,4 +7,4 @@
 
 import RxSwift
 
-public typealias DecisionSchedule = ((Observable<ResponseEntity>) -> Observable<ReinforcementResult>)
+public typealias DecisionSchedule = ((Observable<ResponseEntity>) -> Observable<ResultEntity>)

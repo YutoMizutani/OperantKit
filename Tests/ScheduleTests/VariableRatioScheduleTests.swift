@@ -54,7 +54,7 @@ final class VariableRatioScheduleTests: XCTestCase {
         let disposeBag = DisposeBag()
 
         let values: [Int] = [5, 5, 5]
-        let schedule: ScheduleUseCase = VariableRatioScheduleUseCase(value: 5, values: values)
+        let schedule: ScheduleUseCase = VR(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
             next(100, ResponseEntity(numOfResponses: 5, milliseconds: 0)),

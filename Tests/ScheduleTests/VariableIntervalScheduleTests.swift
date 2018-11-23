@@ -54,7 +54,7 @@ final class VariablIntervaleScheduleTests: XCTestCase {
         let disposeBag = DisposeBag()
 
         let values: [Milliseconds] = [5, 5, 5]
-        let schedule: ScheduleUseCase = VariableIntervalScheduleUseCase(value: 5, values: values)
+        let schedule: ScheduleUseCase = VI(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
             next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5)),
