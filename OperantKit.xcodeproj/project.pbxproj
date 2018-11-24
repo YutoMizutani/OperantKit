@@ -701,6 +701,7 @@
 		9965650221A64753004C76F0 /* CompoundSchedules */ = {
 			isa = PBXGroup;
 			children = (
+				999C7C7E21951CDA0044C47E /* ConcurrentScheduleUseCase.swift */,
 				9965650321A64784004C76F0 /* AlternativeScheduleUseCase.swift */,
 			);
 			name = CompoundSchedules;
@@ -889,7 +890,6 @@
 			children = (
 				9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */,
 				99C74EFE219A763F00DABE14 /* Timer */,
-				999C7C7E21951CDA0044C47E /* ConcurrentScheduleUseCase.swift */,
 				99C74EFF219A764E00DABE14 /* SimpleSchedules */,
 				9965650221A64753004C76F0 /* CompoundSchedules */,
 			);
