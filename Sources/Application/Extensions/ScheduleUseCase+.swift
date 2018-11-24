@@ -188,7 +188,8 @@ public func Conc(_ subSchedules: ScheduleUseCase..., repository: ScheduleResposi
     )
 }
 
-public func Conc(_ sharedSchedule: Shared<ScheduleUseCase>, repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ConcurrentScheduleUseCase {
+public func Conc(_ sharedSchedule: Shared<ScheduleUseCase>,
+                 repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ConcurrentScheduleUseCase {
     return ConcurrentScheduleUseCase(
         repository: repository, sharedSchedule: sharedSchedule
     )
