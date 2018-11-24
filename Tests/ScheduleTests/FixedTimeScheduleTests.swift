@@ -15,9 +15,9 @@ final class FixedTimeScheduleTests: XCTestCase {
 
         let testObservable = scheduler.createHotObservable([
             next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 6000)),
-            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
+            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
             next(500, ResponseEntity(numOfResponses: 0, milliseconds: 1000000)),
             next(600, ResponseEntity(numOfResponses: 0, milliseconds: 1000001)),
             completed(completedTime)
@@ -35,7 +35,7 @@ final class FixedTimeScheduleTests: XCTestCase {
 
         let expectedEvents = [
             next(100, true),
-            next(200, false),
+            next(200, true),
             next(300, true),
             next(400, false),
             next(500, true),
