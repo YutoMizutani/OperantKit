@@ -80,4 +80,22 @@ public extension Observable {
             }
         })
     }
+
+    func clearExtendProperty(_ schedules: [ScheduleUseCase]) -> Observable<E> {
+        return flatMap { observer -> Observable<E> in
+            return Observable<Void>.zip(
+                schedules.map { $0.repository.clearExtendProperty().asObservable() }
+                )
+                .map { _ in observer }
+        }
+    }
+
+    func updateLastReinforcementProperty(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
+        return flatMap { observer -> Observable<E> in
+            return Observable<Void>.zip(
+                schedules.map { $0.repository.updateLastReinforcementProperty(entity).asObservable() }
+                )
+                .map { _ in observer }
+        }
+    }
 }
