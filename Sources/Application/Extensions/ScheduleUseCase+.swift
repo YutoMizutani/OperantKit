@@ -169,11 +169,11 @@ public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUse
     )
 }
 
-public func Alt(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: ScheduleUseCase...) -> AlternativeScheduleUseCase {
+public func Alt(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) -> AlternativeScheduleUseCase {
     return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
 }
 
-public func Alt(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: [ScheduleUseCase]) -> AlternativeScheduleUseCase {
+public func Alt(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl()) -> AlternativeScheduleUseCase {
     return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
 }
 
@@ -181,14 +181,14 @@ public func Conc(repository: ScheduleRespository) -> ConcurrentScheduleUseCase {
     return ConcurrentScheduleUseCase(repository: repository)
 }
 
-public func Conc(repository: ScheduleRespository = ScheduleRespositoryImpl(), subSchedules: ScheduleUseCase...) -> ConcurrentScheduleUseCase {
+public func Conc(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ConcurrentScheduleUseCase {
     return ConcurrentScheduleUseCase(
         repository: repository,
         subSchedules: subSchedules
     )
 }
 
-public func Conc(repository: ScheduleRespository = ScheduleRespositoryImpl(), sharedSchedule: Shared<ScheduleUseCase>) -> ConcurrentScheduleUseCase {
+public func Conc(_ sharedSchedule: Shared<ScheduleUseCase>, repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ConcurrentScheduleUseCase {
     return ConcurrentScheduleUseCase(
         repository: repository, sharedSchedule: sharedSchedule
     )

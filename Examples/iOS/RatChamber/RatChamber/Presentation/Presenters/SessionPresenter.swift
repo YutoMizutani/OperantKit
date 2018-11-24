@@ -90,7 +90,7 @@ final class SessionPresenter: Presenter {
                 .share(replay: 1)
 
             let reinforcement: Observable<Milliseconds> = self.scheduleUseCase
-                .decision(response, number: i)
+                .decision(response, order: i)
                 .filter { $0.isReinforcement }
                 .map { $0.entity.milliseconds }
                 .asObservable()
@@ -104,9 +104,9 @@ final class SessionPresenter: Presenter {
             let interReinforcementInterval = experimentEnitty.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
                 .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0) }
-                .extend(time: interReinforcementInterval,
-                        entities: scheduleUseCase.dataStore.concurrentEntity.subSchedules.map { $0.extendEntity })
                 .do(onNext: { print("SR off: \($0)") })
+                .clearExtendProperty(scheduleUseCase.subSchedules)
+                .updateLastReinforcementProperty(scheduleUseCase.subSchedules, entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval))
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
