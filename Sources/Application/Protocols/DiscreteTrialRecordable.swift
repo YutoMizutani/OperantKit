@@ -8,5 +8,6 @@
 import Foundation
 
 public protocol DiscreteTrialRecordable {
+    var trialState: TrialState { get set }
     var records: [TrialRecordable] { get set }
 }

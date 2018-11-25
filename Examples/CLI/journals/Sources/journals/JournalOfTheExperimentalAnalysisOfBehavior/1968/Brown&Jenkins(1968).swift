@@ -9,54 +9,6 @@ import RxSwift
 import RxCocoa
 import OperantKit
 
-public extension ObservableType {
-    func count() -> Observable<Int> {
-        return scan(0) { n, _ in n + 1 }
-    }
-
-    func getTime(_ timer: TimerUseCase) -> Observable<Milliseconds> {
-        return flatMap { _ in timer.elapsed() }
-    }
-
-    func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        return Observable.zip(count(), getTime(timer))
-            .map { ResponseEntity.init(numOfResponses: $0.0, milliseconds: $0.1) }
-    }
-}
-
-public extension PublishSubject where E == Milliseconds {
-    var shared: Observable<E> {
-        return distinctUntilChanged()
-            .share(replay: 1)
-    }
-}
-
-///
-
-public enum ExitCondition {
-    case reinforcement(Int)
-    case time(Milliseconds)
-}
-
-public protocol TrialParameter {
-    var schedules: [ScheduleUseCase] { get }
-    var exitCondition: ExitCondition { get }
-}
-
-public protocol TrialRecordable {
-    var startTime: Milliseconds { get set }
-    var startEntities: ResponseEntity { get set }
-}
-
-public protocol DiscreteTrialParameter {
-    var maxTrials: Int { get }
-    var trials: Matrix<TrialParameter> { get }
-}
-
-public protocol DiscreteTrialRecordable {
-    var trials: Matrix<TrialRecordable> { get }
-}
-
 /// Brown, P. L., & Jenkins, H. M. (1968). AUTO‐SHAPING OF THE PIGEON'S KEY‐PECK 1. Journal of the experimental analysis of behavior, 11(1), 1-8.
 /// - DOI: https://dx.doi.org/10.1901/jeab.1968.11-1
 /// - Available link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1338436/
@@ -77,8 +29,7 @@ class BrownAndJenkins1968 {
         }
 
         let timer = WhileLoopTimerUseCase(priority: .high)
-        let fixedTimeSchedule = FT(whiteKeyLightDuration)
-        let continuousReinforcementSchedule = CRF()
+        let schedule = Alt(FT(whiteKeyLightDuration), CRF())
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
@@ -104,18 +55,15 @@ class BrownAndJenkins1968 {
             .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
             .share(replay: 1)
 
-        let reinforcementOn = Observable<ReinforcementResult>.merge(
-                fixedTimeSchedule.decision(timeObservable),
-                continuousReinforcementSchedule.decision(respnseObservable)
-            )
+        let reinforcementOn = schedule.decision(Observable.merge(timeObservable, respnseObservable))
             .filter({ _ in !duringSR.value })
             .filter({ $0.isReinforcement })
             .share(replay: 1)
 
         let reinforcementOff = reinforcementOn
             .do(onNext: { print("SR on: \($0.entity.milliseconds)ms (IRI: \(trayOperatingDuration)ms)") })
-            .storeResponse(fixedTimeSchedule.dataStore.lastReinforcementEntity, condition: { $0.isReinforcement })
-            .extend(time: trayOperatingDuration, entities: fixedTimeSchedule.extendEntity)
+            .flatMap { schedule.updateValue(Observable.just($0)) }
+            .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: trayOperatingDuration)).map { a } }
             .flatMap { timer.delay(trayOperatingDuration, currentTime: $0.entity.milliseconds) }
             .do(onNext: { print("SR off: \($0)ms") })
             .asObservable()
@@ -127,7 +75,7 @@ class BrownAndJenkins1968 {
             )
             .do(onNext: { _ in updateInterval() })
             .do(onNext: { print("ITI on: \($0)ms (Next ITI: \(nextInterval)ms)") })
-            .extend(time: { nextInterval }, entities: fixedTimeSchedule.extendEntity)
+            .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: nextInterval)).map { a } }
             .flatMap { timer.delay(nextInterval, currentTime: $0) }
             .do(onNext: { print("ITI off: \($0)ms") })
             .asObservable()

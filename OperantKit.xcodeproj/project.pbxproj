@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99106C1D21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
+		99106C1E21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
+		99106C1F21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
+		99106C2021AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */; };
@@ -472,6 +476,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99106C1C21AADE1500E4F726 /* TrialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialState.swift; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334355212969E000744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -964,6 +969,7 @@
 				999C7C9C21951CDB0044C47E /* TimeUnit.swift */,
 				99AE65C421A2DC670090B308 /* ExperimentType.swift */,
 				9965651C21A65938004C76F0 /* ExitCondition.swift */,
+				99106C1C21AADE1500E4F726 /* TrialState.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1541,6 +1547,7 @@
 				9965652821A6597C004C76F0 /* DiscreteTrialRecordable.swift in Sources */,
 				9965658D21A8017D004C76F0 /* ResultEntity.swift in Sources */,
 				999C7CBE21951CDB0044C47E /* ScheduleType.swift in Sources */,
+				99106C1E21AADE1500E4F726 /* TrialState.swift in Sources */,
 				999C7D0C21951CDC0044C47E /* FixedEntity.swift in Sources */,
 				99C7519221A079A200DABE14 /* Discreteable.swift in Sources */,
 				999C7D0921951CDC0044C47E /* VariableEntity.swift in Sources */,
@@ -1696,6 +1703,7 @@
 				9965657221A67D2D004C76F0 /* ScheduleRepository.swift in Sources */,
 				99C7518C21A0794100DABE14 /* Reinforceable.swift in Sources */,
 				99C751A521A0933800DABE14 /* ExperimentRecordable.swift in Sources */,
+				99106C1D21AADE1500E4F726 /* TrialState.swift in Sources */,
 				999C7CEF21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				99C7519621A07A5600DABE14 /* Times.swift in Sources */,
 				9965659921A8289B004C76F0 /* FixedRatioParameter.swift in Sources */,
@@ -1784,6 +1792,7 @@
 				999C7DA3219533150044C47E /* FR.swift in Sources */,
 				999C7DA4219533150044C47E /* EXT.swift in Sources */,
 				99C7519321A079A200DABE14 /* Discreteable.swift in Sources */,
+				99106C1F21AADE1500E4F726 /* TrialState.swift in Sources */,
 				999C7DA5219533150044C47E /* VR.swift in Sources */,
 				99C752FF21A2C68A00DABE14 /* TimerUseCase.swift in Sources */,
 				99AE65C221A2D6130090B308 /* Continuable.swift in Sources */,
@@ -1905,6 +1914,7 @@
 				999C7DF7219542610044C47E /* FR.swift in Sources */,
 				999C7DF8219542610044C47E /* EXT.swift in Sources */,
 				99C7519421A079A200DABE14 /* Discreteable.swift in Sources */,
+				99106C2021AADE1500E4F726 /* TrialState.swift in Sources */,
 				999C7DF9219542610044C47E /* VR.swift in Sources */,
 				99C7530021A2C68A00DABE14 /* TimerUseCase.swift in Sources */,
 				99AE65C321A2D6130090B308 /* Continuable.swift in Sources */,

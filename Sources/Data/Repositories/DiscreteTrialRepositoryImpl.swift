@@ -7,22 +7,25 @@
 
 import Foundation
 
-public struct DiscreteTrialRepositoryImpl: DiscreteTrialRepository {
-    public var dataStore: DiscreteTrialDataStoreImpl
+public class DiscreteTrialRepositoryImpl: DiscreteTrialRepository {
+    public var parameter: DiscreteTrialParameter
+    public var recorder: DiscreteTrialRecordable
 
-    public var parameter: DiscreteTrialParameter {
-        return dataStore
-    }
-    public var recorder: DiscreteTrialRecordable {
-        set {
-            dataStore.records = newValue.records
-        }
-        get {
-            return dataStore
-        }
+    public init(parameter: DiscreteTrialParameter, recorder: DiscreteTrialRecordable) {
+        self.parameter = parameter
+        self.recorder = recorder
     }
 
     public init(dataStore: DiscreteTrialDataStoreImpl) {
-        self.dataStore = dataStore
+        self.parameter = dataStore
+        self.recorder = dataStore
+    }
+
+    public func updateTrialState(_ state: TrialState) {
+        recorder.trialState = state
+    }
+
+    public func getTrialState() -> TrialState {
+        return recorder.trialState
     }
 }

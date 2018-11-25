@@ -12,6 +12,7 @@ import Foundation
 public protocol Discreteable {
     /// Inter trial interval
     var interTrialInterval: Milliseconds { get }
+    var canReinforcementFlag: Bool { get set }
 }
 
 public extension Discreteable {
