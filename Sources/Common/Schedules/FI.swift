@@ -9,14 +9,24 @@ import RxSwift
 
 extension Observable where E == ResponseEntity {
 
-    /// Fixed interval schedule
+    /**
+        Fixed interval schedule
+
+        - important:
+            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+     */
     public func FI(_ value: Single<Milliseconds>) -> Observable<Bool> {
         return fixedInterval(value)
     }
 
-    /// FI logic
+    /**
+        FI logic
+
+        - important:
+            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+     */
     func fixedInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
-        return flatMap { a in value.map { a.milliseconds >= $0 } }
+        return flatMap { a in value.map { a.numOfResponses > 0 && a.milliseconds >= $0 } }
     }
 
     /// Fixed interval schedule
