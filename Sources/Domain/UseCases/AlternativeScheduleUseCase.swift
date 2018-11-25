@@ -19,26 +19,21 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
         )
     }
 
-    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase..., isShared: Bool = true) {
+    public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
         self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
     }
 
-    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase], isShared: Bool = true) {
+    public init(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
         self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
     }
 
     public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(observer, isUpdateIfReinforcement: false) }
+        let sharedObserver = observer.share(replay: 1)
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(sharedObserver, isUpdateIfReinforcement: false) }
 
-        let result = observer.flatMap { observer in
+        let result = sharedObserver.flatMap { observer in
             return Observable.zip(observables)
                 .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
         }
@@ -51,16 +46,17 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
     }
 
     public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(observer) }
+        let sharedObserver = observer.share(replay: 1)
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(sharedObserver) }
 
-        return observer
+        return sharedObserver
             .flatMap { observer -> Observable<ResultEntity> in
                 return Observable.zip(
                     self.repository.clearExtendProperty().asObservable(),
                     self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
                     Observable.zip(observables)
-                )
-                .map { _ in observer }
+                    )
+                    .map { _ in observer }
             }
     }
 }

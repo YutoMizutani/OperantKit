@@ -19,13 +19,15 @@ public protocol ScheduleUseCase {
 
 public extension ScheduleUseCase {
     func decision(_ observer: Observable<ResponseEntity>) -> Observable<ResultEntity> {
-        return decision(observer, isUpdateIfReinforcement: true)
+        let sharedObserver = observer.share(replay: 1)
+        return decision(sharedObserver, isUpdateIfReinforcement: true)
     }
 
     func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
+        let sharedObserver = observer.share(replay: 1)
         switch scheduleType {
         case let s where s.hasVariableSchedule():
-            return observer
+            return sharedObserver
                 .flatMap { observer -> Observable<ResultEntity> in
                     return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),
@@ -39,7 +41,7 @@ public extension ScheduleUseCase {
                     .map { _ in observer }
                 }
         case let s where s.hasRandomSchedule():
-            return observer
+            return sharedObserver
                 .flatMap { observer -> Observable<ResultEntity> in
                     return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),
@@ -52,7 +54,7 @@ public extension ScheduleUseCase {
                     .map { _ in observer }
                 }
         default:
-            return observer
+            return sharedObserver
                 .flatMap { observer -> Observable<ResultEntity> in
                     return Observable.zip(
                         self.repository.clearExtendProperty().asObservable(),

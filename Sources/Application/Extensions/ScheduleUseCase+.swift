@@ -170,11 +170,11 @@ public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUse
 }
 
 public func Alt(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) -> AlternativeScheduleUseCase {
-    return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
+    return AlternativeScheduleUseCase(subSchedules, repository: repository)
 }
 
 public func Alt(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl()) -> AlternativeScheduleUseCase {
-    return AlternativeScheduleUseCase(repository: repository, subSchedules: subSchedules)
+    return AlternativeScheduleUseCase(subSchedules, repository: repository)
 }
 
 public func Conc(repository: ScheduleRespository) -> ConcurrentScheduleUseCase {
