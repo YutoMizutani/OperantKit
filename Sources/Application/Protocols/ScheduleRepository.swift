@@ -8,8 +8,8 @@
 import RxSwift
 
 public protocol ScheduleRespository: class {
-    var parameter: ScheduleParameterable { get }
-    var recorder: ScheduleRecordable & ExperimentRecordable { get }
+    var parameter: ScheduleParameterable { get set }
+    var recorder: ScheduleRecordable & ExperimentRecordable { get set }
 
     func getValue() -> Single<Int>
     func nextValue(_: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<()>
