@@ -9,12 +9,12 @@ import Foundation
 
 public class DiscreteTrialDataStoreImpl: DiscreteTrialParameter, DiscreteTrialRecordable {
     public var maxTrials: Int
-    public var parameters: [TrialParameter]
     public var records: [TrialRecordable]
+    public var trialState: TrialState
 
-    public init(maxTrials: Int, parameters: [TrialParameter], records: [TrialRecordable]) {
+    public init(maxTrials: Int, records: [TrialRecordable] = [], trialState: TrialState = .prepare) {
         self.maxTrials = maxTrials
-        self.parameters = parameters
         self.records = records
+        self.trialState = trialState
     }
 }

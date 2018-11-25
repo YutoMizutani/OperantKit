@@ -9,5 +9,4 @@ import Foundation
 
 public protocol DiscreteTrialParameter {
     var maxTrials: Int { get }
-    var parameters: [TrialParameter] { get }
 }

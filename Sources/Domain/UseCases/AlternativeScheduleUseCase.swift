@@ -19,14 +19,20 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
         )
     }
 
-    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase...) {
+    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase..., isShared: Bool = true) {
         self.repository = repository
         self.subSchedules = subSchedules
+        if isShared {
+            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
+        }
     }
 
-    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase]) {
+    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase], isShared: Bool = true) {
         self.repository = repository
         self.subSchedules = subSchedules
+        if isShared {
+            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
+        }
     }
 
     public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
