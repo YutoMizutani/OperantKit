@@ -29,34 +29,25 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
         self.subSchedules = subSchedules
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        let sharedObserver = observer.share(replay: 1)
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(sharedObserver, isUpdateIfReinforcement: false) }
-
-        let result = sharedObserver.flatMap { observer in
-            return Observable.zip(observables)
-                .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
-        }
+    public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        let result = Observable.zip(
+                subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement).asObservable() }
+            )
+            .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, entity) }
+            .asSingle()
 
         return !isUpdateIfReinforcement ? result : result
-            .flatMap { observer -> Observable<ResultEntity> in
-                guard observer.isReinforcement else { return Observable.just(observer) }
-                return self.updateValue(result)
+            .flatMap {
+                guard $0.isReinforcement else { return Single.just($0) }
+                return self.updateValue($0)
             }
     }
 
-    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
-        let sharedObserver = observer.share(replay: 1)
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(sharedObserver) }
-
-        return sharedObserver
-            .flatMap { observer -> Observable<ResultEntity> in
-                return Observable.zip(
-                    self.repository.clearExtendProperty().asObservable(),
-                    self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                    Observable.zip(observables)
-                    )
-                    .map { _ in observer }
-            }
+    public func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
+        return Observable.zip(
+                subSchedules.map { $0.updateValue(result).asObservable() }
+            )
+            .map { _ in result }
+            .asSingle()
     }
 }

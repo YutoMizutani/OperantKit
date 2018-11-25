@@ -18,24 +18,21 @@ public struct FixedIntervalScheduleUseCase: ScheduleUseCase {
         self.repository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        let sharedObserver = observer.share(replay: 1)
-        let bool = sharedObserver.flatMap { observer -> Observable<(ResponseEntity)> in
-            return Observable.zip(
-                self.repository.getExtendProperty().asObservable(),
-                self.repository.getLastReinforcementProperty().asObservable()
+    public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        let result = Observable.zip(
+                repository.getExtendProperty().asObservable(),
+                repository.getLastReinforcementProperty().asObservable()
             )
-            .map { (observer - $0.0 - $0.1) }
-        }
-        .FI(repository.getValue())
-
-        let result = Observable.zip(bool, sharedObserver).map { ResultEntity($0.0, $0.1) }
+            .map { (entity - $0.0 - $0.1) }
+            .FI(repository.getValue())
+            .map { ResultEntity($0, entity) }
+            .asSingle()
 
         return !isUpdateIfReinforcement ? result : result
             .flatMap {
                 $0.isReinforcement
-                    ? self.updateValue(Observable.just($0))
-                    : Observable.just($0)
+                    ? self.updateValue($0)
+                    : Single.just($0)
             }
     }
 }
