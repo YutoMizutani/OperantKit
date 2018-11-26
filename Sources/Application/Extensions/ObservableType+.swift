@@ -33,7 +33,7 @@ public extension ObservableType {
 public extension ObservableType {
     /// Count up
     func count() -> Observable<Int> {
-        return scan(0) { n, _ in n + 1 }
+        return reduce(0) { n, _ in n + 1 }
     }
 
     /// Get time
@@ -43,12 +43,7 @@ public extension ObservableType {
 
     /// Response entity
     func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        return count()
-            .flatMapLatest { numOfResponses in
-                self.getTime(timer)
-                    .map { milliseconds in
-                        ResponseEntity(numOfResponses, milliseconds)
-                    }
-            }
+        return Observable.zip(count(), getTime(timer))
+            .map { ResponseEntity($0.0, $0.1) }
     }
 }
