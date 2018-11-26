@@ -43,7 +43,12 @@ public extension ObservableType {
 
     /// Response entity
     func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        return flatMap { _ in Observable.zip(self.count(), self.getTime(timer)) }
-            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+        return count()
+            .flatMapLatest { numOfResponses in
+                self.getTime(timer)
+                    .map { milliseconds in
+                        ResponseEntity(numOfResponses, milliseconds)
+                    }
+            }
     }
 }
