@@ -9,68 +9,6 @@ import RxSwift
 import RxCocoa
 import OperantKit
 
-
-public struct AlternativeScheduleUseCase2: ScheduleUseCase {
-    public var repository: ScheduleRespository
-    public var subSchedules: [ScheduleUseCase]
-
-    public var scheduleType: ScheduleType {
-        return ScheduleType(
-            rawValue: UInt64.max,
-            shortName: "Alt(\(subSchedules.map { $0.scheduleType.shortName }.joined(separator: ", ")))",
-            longName: "Alternative(\(subSchedules.map { $0.scheduleType.longName }.joined(separator: ", ")))"
-        )
-    }
-
-    public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl(), isShared: Bool = true) {
-        self.repository = repository
-        self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
-    }
-
-    public init(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl(), isShared: Bool = true) {
-        self.repository = repository
-        self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
-    }
-
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        let sharedObserver = observer.share(replay: 1)
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(sharedObserver, isUpdateIfReinforcement: false) }
-
-        let result = sharedObserver.flatMap { observer in
-            return Observable.zip(observables)
-                .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
-        }
-
-        return !isUpdateIfReinforcement ? result : result
-            .flatMap { observer -> Observable<ResultEntity> in
-                guard observer.isReinforcement else { return Observable.just(observer) }
-                return self.updateValue(result)
-        }
-    }
-
-    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
-        let sharedObserver = observer.share(replay: 1)
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(sharedObserver) }
-
-        return sharedObserver
-            .flatMap { observer -> Observable<ResultEntity> in
-                return Observable.zip(
-                    self.repository.clearExtendProperty().asObservable(),
-                    self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                    Observable.zip(observables)
-                    )
-                    .map { _ in observer }
-        }
-    }
-}
-
-
 /// Brown, P. L., & Jenkins, H. M. (1968). AUTO‐SHAPING OF THE PIGEON'S KEY‐PECK 1. Journal of the experimental analysis of behavior, 11(1), 1-8.
 /// - DOI: https://dx.doi.org/10.1901/jeab.1968.11-1
 /// - Available link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1338436/
@@ -91,7 +29,7 @@ class BrownAndJenkins1968 {
         }
 
         let timer = WhileLoopTimerUseCase(priority: .high)
-        let schedule = AlternativeScheduleUseCase2(FT(whiteKeyLightDuration), CRF())
+        let schedule = AlternativeScheduleUseCase(FT(whiteKeyLightDuration), CRF())
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
@@ -99,9 +37,11 @@ class BrownAndJenkins1968 {
         let duringSR = BehaviorRelay<Bool>(value: false)
         var disposeBag = DisposeBag()
 
-        let respnseObservable = responseAction.response(timer)
+        let respnseObservable = responseAction.responses(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .share(replay: 1)
+
+        respnseObservable.subscribe().disposed(by: disposeBag)
 
         let milliseconds = timer.milliseconds.shared
             .filter({ $0 % 1000 == 0 })
@@ -116,10 +56,10 @@ class BrownAndJenkins1968 {
 
         let timeObservable = milliseconds
             .do(onNext: { print("Time elapsed: \($0)ms") })
-            .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
-            .share(replay: 1)
+            .map { ResponseEntity(0, $0) }
 
-        let reinforcementOn = schedule.decision(Observable.merge(timeObservable, respnseObservable).share(replay: 1))
+        let reinforcementOn = Observable.merge(respnseObservable, timeObservable)
+            .flatMap { schedule.decision($0) }
             .do(onNext: { print("### \($0.entity.milliseconds), \($0.entity.numOfResponses)") })
             .filter({ _ in !duringSR.value })
             .filter({ $0.isReinforcement })
@@ -127,17 +67,14 @@ class BrownAndJenkins1968 {
 
         let reinforcementOff = reinforcementOn
             .do(onNext: { print("SR on: \($0.entity.milliseconds)ms (IRI: \(trayOperatingDuration)ms)") })
-            .flatMap { schedule.updateValue(Observable.just($0)) }
+            .flatMap { schedule.updateValue($0) }
             .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: trayOperatingDuration)).map { a } }
             .flatMap { timer.delay(trayOperatingDuration, currentTime: $0.entity.milliseconds) }
             .do(onNext: { print("SR off: \($0)ms") })
             .asObservable()
             .share(replay: 1)
 
-        let nextTrial = Observable<Milliseconds>.merge(
-            firstStart,
-            reinforcementOff
-            )
+        let nextTrial = Observable.merge(firstStart, reinforcementOff)
             .do(onNext: { _ in updateInterval() })
             .do(onNext: { print("ITI on: \($0)ms (Next ITI: \(nextInterval)ms)") })
             .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: nextInterval)).map { a } }
