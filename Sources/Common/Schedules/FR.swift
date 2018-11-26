@@ -7,15 +7,17 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Fixed ratio schedule
-    public func FR(_ value: Single<Int>) -> Observable<Bool> {
+    public func FR(_ value: Single<Int>) -> Single<Bool> {
         return fixedRatio(value)
     }
 
     /// FR logic
-    func fixedRatio(_ value: Single<Int>) -> Observable<Bool> {
-        return flatMap { a in value.map { a.numOfResponses >= $0 } }
+    func fixedRatio(_ value: Single<Int>) -> Single<Bool> {
+        return asObservable()
+            .flatMap { a in value.map { a.numOfResponses >= $0 } }
+            .asSingle()
     }
 }

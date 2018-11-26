@@ -7,15 +7,15 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Random time schedule
-    public func RT(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    public func RT(_ value: Single<Milliseconds>) -> Single<Bool> {
         return randomTime(value)
     }
 
     /// RT logic
-    func randomTime(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    func randomTime(_ value: Single<Milliseconds>) -> Single<Bool> {
         return fixedTime(value)
     }
 }

@@ -25,35 +25,32 @@ public extension ScheduleUseCase {
     func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
         switch scheduleType {
         case let s where s.hasVariableSchedule():
-            return Observable.zip(
-                self.repository.clearExtendProperty().asObservable(),
-                self.repository.updateLastReinforcementProperty(result.entity).asObservable(),
+            return Single.zip(
+                self.repository.clearExtendProperty(),
+                self.repository.updateLastReinforcementProperty(result.entity),
                 self.repository.nextValue({
                     $1.currentOrder += 1
                     $1.currentValue = $0.values[$1.currentOrder % $0.values.count]
                     return $1
-                }).asObservable()
+                })
             )
             .map { _ in result }
-            .asSingle()
         case let s where s.hasRandomSchedule():
-            return Observable.zip(
-                    self.repository.clearExtendProperty().asObservable(),
-                    self.repository.updateLastReinforcementProperty(result.entity).asObservable(),
+            return Single.zip(
+                    self.repository.clearExtendProperty(),
+                    self.repository.updateLastReinforcementProperty(result.entity),
                     self.repository.nextValue({
                         $1.currentValue = $0.value > 0 ? Int.random(in: 1...$0.value) : 1
                         return $1
-                    }).asObservable()
+                    })
                 )
                 .map { _ in result }
-                .asSingle()
         default:
-            return Observable.zip(
-                    self.repository.clearExtendProperty().asObservable(),
-                    self.repository.updateLastReinforcementProperty(result.entity).asObservable()
+            return Single.zip(
+                    self.repository.clearExtendProperty(),
+                    self.repository.updateLastReinforcementProperty(result.entity)
                 )
                 .map { _ in result }
-                .asSingle()
         }
     }
 }
