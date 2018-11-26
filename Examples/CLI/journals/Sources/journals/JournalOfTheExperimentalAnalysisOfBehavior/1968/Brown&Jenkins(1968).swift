@@ -9,6 +9,68 @@ import RxSwift
 import RxCocoa
 import OperantKit
 
+
+public struct AlternativeScheduleUseCase2: ScheduleUseCase {
+    public var repository: ScheduleRespository
+    public var subSchedules: [ScheduleUseCase]
+
+    public var scheduleType: ScheduleType {
+        return ScheduleType(
+            rawValue: UInt64.max,
+            shortName: "Alt(\(subSchedules.map { $0.scheduleType.shortName }.joined(separator: ", ")))",
+            longName: "Alternative(\(subSchedules.map { $0.scheduleType.longName }.joined(separator: ", ")))"
+        )
+    }
+
+    public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl(), isShared: Bool = true) {
+        self.repository = repository
+        self.subSchedules = subSchedules
+        if isShared {
+            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
+        }
+    }
+
+    public init(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl(), isShared: Bool = true) {
+        self.repository = repository
+        self.subSchedules = subSchedules
+        if isShared {
+            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
+        }
+    }
+
+    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
+        let sharedObserver = observer.share(replay: 1)
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(sharedObserver, isUpdateIfReinforcement: false) }
+
+        let result = sharedObserver.flatMap { observer in
+            return Observable.zip(observables)
+                .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
+        }
+
+        return !isUpdateIfReinforcement ? result : result
+            .flatMap { observer -> Observable<ResultEntity> in
+                guard observer.isReinforcement else { return Observable.just(observer) }
+                return self.updateValue(result)
+        }
+    }
+
+    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
+        let sharedObserver = observer.share(replay: 1)
+        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(sharedObserver) }
+
+        return sharedObserver
+            .flatMap { observer -> Observable<ResultEntity> in
+                return Observable.zip(
+                    self.repository.clearExtendProperty().asObservable(),
+                    self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
+                    Observable.zip(observables)
+                    )
+                    .map { _ in observer }
+        }
+    }
+}
+
+
 /// Brown, P. L., & Jenkins, H. M. (1968). AUTO‐SHAPING OF THE PIGEON'S KEY‐PECK 1. Journal of the experimental analysis of behavior, 11(1), 1-8.
 /// - DOI: https://dx.doi.org/10.1901/jeab.1968.11-1
 /// - Available link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1338436/
@@ -29,7 +91,7 @@ class BrownAndJenkins1968 {
         }
 
         let timer = WhileLoopTimerUseCase(priority: .high)
-        let schedule = Alt(FT(whiteKeyLightDuration), CRF())
+        let schedule = AlternativeScheduleUseCase2(FT(whiteKeyLightDuration), CRF())
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
@@ -39,9 +101,11 @@ class BrownAndJenkins1968 {
 
         let respnseObservable = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
+            .share(replay: 1)
 
         let milliseconds = timer.milliseconds.shared
             .filter({ $0 % 1000 == 0 })
+            .share(replay: 1)
 
         let firstStart = milliseconds.take(1)
 
@@ -55,7 +119,8 @@ class BrownAndJenkins1968 {
             .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
             .share(replay: 1)
 
-        let reinforcementOn = schedule.decision(Observable.merge(timeObservable, respnseObservable))
+        let reinforcementOn = schedule.decision(Observable.merge(timeObservable, respnseObservable).share(replay: 1))
+            .do(onNext: { print("### \($0.entity.milliseconds), \($0.entity.numOfResponses)") })
             .filter({ _ in !duringSR.value })
             .filter({ $0.isReinforcement })
             .share(replay: 1)

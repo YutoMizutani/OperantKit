@@ -19,48 +19,35 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
         )
     }
 
-    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase..., isShared: Bool = true) {
+    public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
         self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
     }
 
-    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase], isShared: Bool = true) {
+    public init(_ subSchedules: [ScheduleUseCase], repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
         self.subSchedules = subSchedules
-        if isShared {
-            self.subSchedules.forEach { $0.repository.recorder = self.repository.recorder }
-        }
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.decision(observer, isUpdateIfReinforcement: false) }
-
-        let result = observer.flatMap { observer in
-            return Observable.zip(observables)
-                .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, observer) }
-        }
+    public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        let result = Observable.zip(
+                subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement).asObservable() }
+            )
+            .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, entity) }
+            .asSingle()
 
         return !isUpdateIfReinforcement ? result : result
-            .flatMap { observer -> Observable<ResultEntity> in
-                guard observer.isReinforcement else { return Observable.just(observer) }
-                return self.updateValue(result)
+            .flatMap {
+                guard $0.isReinforcement else { return Single.just($0) }
+                return self.updateValue($0)
             }
     }
 
-    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
-        let observables: [Observable<ResultEntity>] = subSchedules.map { $0.updateValue(observer) }
-
-        return observer
-            .flatMap { observer -> Observable<ResultEntity> in
-                return Observable.zip(
-                    self.repository.clearExtendProperty().asObservable(),
-                    self.repository.updateLastReinforcementProperty(observer.entity).asObservable(),
-                    Observable.zip(observables)
-                )
-                .map { _ in observer }
-            }
+    public func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
+        return Observable.zip(
+                subSchedules.map { $0.updateValue(result).asObservable() }
+            )
+            .map { _ in result }
+            .asSingle()
     }
 }

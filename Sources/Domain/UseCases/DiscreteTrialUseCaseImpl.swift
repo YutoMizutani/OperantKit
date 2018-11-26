@@ -27,8 +27,8 @@ public struct DiscreteTrialUseCaseImpl: ScheduleUseCase {
         self.discreteTrialRepository = repository
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        return schedule.decision(observer, isUpdateIfReinforcement: isUpdateIfReinforcement)
+    public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        return schedule.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
             .map {
                 ResultEntity(
                     $0.isReinforcement && self.discreteTrialRepository.getTrialState() == .prepare,

@@ -21,9 +21,8 @@ final class ExtinctionScheduleTests: XCTestCase {
             ])
 
         scheduler.scheduleAt(startTime) {
-            schedule.decision(
-                testObservable.asObservable()
-                )
+            testObservable
+                .flatMap { schedule.decision($0) }
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)

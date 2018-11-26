@@ -25,24 +25,24 @@ public struct ConcurrentScheduleUseCase: ScheduleUseCase {
         self.isShared = false
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, isUpdateIfReinforcement: Bool) -> Observable<ResultEntity> {
-        guard !subSchedules.isEmpty else { return Observable<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[0].decision(observer, isUpdateIfReinforcement: isUpdateIfReinforcement)
+    public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        guard !subSchedules.isEmpty else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[0].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
     }
 
-    public func updateValue(_ observer: Observable<ResultEntity>) -> Observable<ResultEntity> {
-        guard !subSchedules.isEmpty else { return Observable<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[0].updateValue(observer)
+    public func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
+        guard !subSchedules.isEmpty else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[0].updateValue(result)
     }
 
-    public func decision(_ observer: Observable<ResponseEntity>, order: Int, isUpdateIfReinforcement: Bool = true) -> Observable<ResultEntity> {
-        guard isShared || subSchedules.count > order else { return Observable<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[isShared ? 0 : order].decision(observer, isUpdateIfReinforcement: isUpdateIfReinforcement)
+    public func decision(_ entity: ResponseEntity, order: Int, isUpdateIfReinforcement: Bool = true) -> Single<ResultEntity> {
+        guard isShared || subSchedules.count > order else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : order].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
     }
 
-    public func updateValue(_ observer: Observable<ResultEntity>, order: Int) -> Observable<ResultEntity> {
-        guard isShared || subSchedules.count > order else { return Observable<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[isShared ? 0 : order].updateValue(observer)
+    public func updateValue(_ result: ResultEntity, order: Int) -> Single<ResultEntity> {
+        guard isShared || subSchedules.count > order else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : order].updateValue(result)
     }
 }
 
