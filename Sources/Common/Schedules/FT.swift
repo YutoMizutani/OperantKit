@@ -16,17 +16,6 @@ extension Observable where E == ResponseEntity {
 
     /// FT logic
     func fixedTime(_ value: Single<Milliseconds>) -> Observable<Bool> {
-        return fixedInterval(value)
-    }
-
-    /// Fixed time schedule
-    public func FT(_ value: Milliseconds, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .fixedTime(value, entities)
-    }
-
-    /// FT logic
-    func fixedTime(_ value: Milliseconds, _ entities: [E]) -> Observable<ResultEntity> {
-        return self.fixedInterval(value, entities)
+        return flatMap { a in value.map { a.milliseconds >= $0 } }
     }
 }

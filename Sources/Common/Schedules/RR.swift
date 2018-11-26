@@ -18,15 +18,4 @@ extension Observable where E == ResponseEntity {
     func randomRatio(_ value: Single<Int>) -> Observable<Bool> {
         return fixedRatio(value)
     }
-
-    /// Random ratio schedule
-    public func RR(_ value: Int, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .randomRatio(value, entities)
-    }
-
-    /// RR logic
-    func randomRatio(_ value: Int, _ entities: [E]) -> Observable<ResultEntity> {
-        return fixedRatio(value, entities)
-    }
 }

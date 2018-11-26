@@ -22,6 +22,14 @@ public extension ObservableType {
             return Driver.empty()
         }
     }
+
+    func store(startWith: Self.E) -> Observable<(newValue: E, oldValue: E)> {
+        return Observable.zip(self, self.startWith(startWith)).map { (newValue: $0.0, oldValue: $0.1) }
+    }
+
+    func store() -> Observable<(newValue: E, oldValue: E?)> {
+        return Observable.zip(self, self.map(Optional.init).startWith(nil)).map { (newValue: $0.0, oldValue: $0.1) }
+    }
 }
 
 public extension ObservableType {
@@ -37,7 +45,7 @@ public extension ObservableType {
 
     /// Response entity
     func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        return Observable.zip(count(), getTime(timer))
+        return flatMap { _ in Observable.zip(self.count(), self.getTime(timer)) }
             .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
     }
 }

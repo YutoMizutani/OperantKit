@@ -12,6 +12,11 @@ public class ResponseEntity: Responsible {
     public var numOfResponses: Int
     public var milliseconds: Milliseconds
 
+    public init(_ numOfResponses: Int, _ milliseconds: Milliseconds) {
+        self.numOfResponses = numOfResponses
+        self.milliseconds = milliseconds
+    }
+
     public init(numOfResponses: Int = 0, milliseconds: Milliseconds = 0) {
         self.numOfResponses = numOfResponses
         self.milliseconds = milliseconds
