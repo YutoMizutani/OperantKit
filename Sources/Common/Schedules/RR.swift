@@ -7,15 +7,15 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Random ratio schedule
-    public func RR(_ value: Single<Int>) -> Observable<Bool> {
+    public func RR(_ value: Single<Int>) -> Single<Bool> {
         return randomRatio(value)
     }
 
     /// RR logic
-    func randomRatio(_ value: Single<Int>) -> Observable<Bool> {
+    func randomRatio(_ value: Single<Int>) -> Single<Bool> {
         return fixedRatio(value)
     }
 }

@@ -7,15 +7,18 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Extinction schedule
-    public func EXT() -> Observable<Bool> {
+    public func EXT() -> Single<Bool> {
         return extinction()
     }
 
     /// EXT logic
-    func extinction() -> Observable<Bool> {
-        return map { _ in false }
+    func extinction() -> Single<Bool> {
+        return self
+            .asObservable()
+            .map { _ in false }
+            .asSingle()
     }
 }
