@@ -18,27 +18,17 @@ struct ExperimentFT {
         let finishTimerAction = PublishSubject<Void>()
         let disposeBag = DisposeBag()
 
-        let numOfResponses = responseAction
-            .scan(0) { n, _ in n + 1 }
-            .asObservable()
-
-        let milliseconds = responseAction
-            .asObservable()
-            .flatMap { _ in timer.elapsed() }
-
-        _ = Observable.zip(numOfResponses, milliseconds)
-            .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+        _ = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
-            .share(replay: 1)
             .subscribe()
             .disposed(by: disposeBag)
 
         let timeObservable = timer.milliseconds
-            .distinctUntilChanged()
-            .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
-            .share()
-
-        schedule.decision(timeObservable)
+            .asResponse()
+            .asObservable()
+        
+        timeObservable
+            .flatMap { schedule.decision($0) }
             .filter({ $0.isReinforcement })
             .subscribe(onNext: {
                 print("Reinforcement: \($0.entity.milliseconds)ms")
