@@ -7,15 +7,15 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Variable ratio schedule
-    public func VR(_ value: Single<Int>) -> Observable<Bool> {
+    public func VR(_ value: Single<Int>) -> Single<Bool> {
         return variableRatio(value)
     }
 
     /// VR logic
-    func variableRatio(_ value: Single<Int>) -> Observable<Bool> {
+    func variableRatio(_ value: Single<Int>) -> Single<Bool> {
         return fixedRatio(value)
     }
 }

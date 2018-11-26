@@ -19,8 +19,7 @@ public struct ExtinctionScheduleUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        return Observable.just(entity).EXT()
+        return Single.just(entity).EXT()
             .map { ResultEntity($0, entity) }
-            .asSingle()
     }
 }

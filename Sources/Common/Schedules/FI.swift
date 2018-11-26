@@ -7,7 +7,7 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /**
         Fixed interval schedule
@@ -15,7 +15,7 @@ extension Observable where E == ResponseEntity {
         - important:
             In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
      */
-    public func FI(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    public func FI(_ value: Single<Milliseconds>) -> Single<Bool> {
         return fixedInterval(value)
     }
 
@@ -25,8 +25,10 @@ extension Observable where E == ResponseEntity {
         - important:
             In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
      */
-    func fixedInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
-        return store(startWith: ResponseEntity())
+    func fixedInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
+        return asObservable()
+            .store(startWith: ResponseEntity())
+            .asSingle()
             .flatMap { a in
                 value.map {
                     a.newValue.numOfResponses - a.oldValue.numOfResponses > 0

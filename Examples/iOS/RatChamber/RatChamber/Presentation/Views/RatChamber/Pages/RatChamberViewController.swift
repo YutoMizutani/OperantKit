@@ -71,7 +71,8 @@ class RatChamberViewController: UIViewController {
         let pauseDriver = Driver.merge(
             output.pause,
             output.end,
-            reinforcementOnEvent)
+            reinforcementOnEvent
+        )
 
         pauseDriver
             .map { [unowned self] _ in self.config.lightColor.left.off }
@@ -85,7 +86,8 @@ class RatChamberViewController: UIViewController {
 
         let reinforcementDriver = Driver.merge(
             reinforcementOnEvent.map { false },
-            reinforcementOffEvent.map { true })
+            reinforcementOffEvent.map { true }
+        )
 
         reinforcementDriver
             .drive(chamberView.leftLever.rx.isSelected)

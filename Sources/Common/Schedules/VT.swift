@@ -7,15 +7,15 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /// Variable time schedule
-    public func VT(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    public func VT(_ value: Single<Milliseconds>) -> Single<Bool> {
         return variableTime(value)
     }
 
     /// VT logic
-    func variableTime(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    func variableTime(_ value: Single<Milliseconds>) -> Single<Bool> {
         return fixedTime(value)
     }
 }

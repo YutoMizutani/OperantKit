@@ -20,9 +20,9 @@ struct ExperimentFR {
 
         let response = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
-            .share(replay: 1)
 
-        schedule.decision(response)
+        response
+            .flatMap { schedule.decision($0) }
             .filter({ $0.isReinforcement })
             .subscribe(onNext: {
                 print("Reinforcement: \($0.entity.milliseconds)ms")

@@ -78,28 +78,27 @@ final class SessionPresenter: Presenter {
         input.responseTriggers.enumerated().forEach { [unowned self] i, e in
             let response: Observable<ResponseEntity> = e.asObservable()
                 .response(self.timerUseCase)
-                .do(onNext: { print("Response: \($0.milliseconds)") })
+                .do(onNext: { print("Response(\(i)): (\($0.numOfResponses), \($0.milliseconds))") })
 
-            let reinforcement: Observable<Milliseconds> = response
+            let reinforcement: Observable<ResponseEntity> = response
                 .flatMap { [unowned self] in self.scheduleUseCase.decision($0, order: i) }
                 .filter { $0.isReinforcement }
-                .map { $0.entity.milliseconds }
+                .map { $0.entity }
                 .share(replay: 1)
 
             let reinforcementOn: Driver<Void> = reinforcement
-                .do(onNext: { print("SR on: \($0)") })
+                .do(onNext: { print("SR on: \($0.milliseconds)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
             let interReinforcementInterval = experimentEnitty.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
-                .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0) }
-                .do(onNext: { print("SR off: \($0)") })
-                .clearExtendProperty(scheduleUseCase.subSchedules)
-                .updateLastReinforcementProperty(
+                .updateExtendProperty(
                     scheduleUseCase.subSchedules,
                     entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval)
                 )
+                .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0.milliseconds) }
+                .do(onNext: { print("SR off: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 

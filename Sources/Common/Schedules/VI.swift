@@ -7,7 +7,7 @@
 
 import RxSwift
 
-extension Observable where E == ResponseEntity {
+extension Single where E == ResponseEntity {
 
     /**
         Variable interval schedule
@@ -15,7 +15,7 @@ extension Observable where E == ResponseEntity {
         - important:
             In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
      */
-    public func VI(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    public func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
         return variableInterval(value)
     }
 
@@ -25,7 +25,7 @@ extension Observable where E == ResponseEntity {
         - important:
             In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
      */
-    func variableInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
+    func variableInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
         return fixedInterval(value)
     }
 }
