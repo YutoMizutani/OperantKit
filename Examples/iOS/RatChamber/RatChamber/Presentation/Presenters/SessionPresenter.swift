@@ -76,24 +76,15 @@ final class SessionPresenter: Presenter {
         var reinforcements: [(on: Driver<Void>, off: Driver<Void>)] = []
 
         input.responseTriggers.enumerated().forEach { [unowned self] i, e in
-            let numOfResponses = e
-                .scan(0) { n, _ in n + 1 }
-                .asObservable()
-
-            let milliseconds = e
-                .asObservable()
-                .flatMap { [unowned self] in self.timerUseCase.elapsed() }
-
-            let response = Observable.zip(numOfResponses, milliseconds)
-                .map { ResponseEntity(numOfResponses: $0.0, milliseconds: $0.1) }
+            let response: Observable<ResponseEntity> = e.asObservable()
+                .response(self.timerUseCase)
                 .do(onNext: { print("Response: \($0.milliseconds)") })
-                .share(replay: 1)
 
-            let reinforcement: Observable<Milliseconds> = self.scheduleUseCase
-                .decision(response, order: i)
+            let reinforcement: Observable<Milliseconds> = response
+                .do(onNext: { print("ResponseN: \($0.numOfResponses)") })
+                .flatMap { [unowned self] in self.scheduleUseCase.decision($0, order: i) }
                 .filter { $0.isReinforcement }
                 .map { $0.entity.milliseconds }
-                .asObservable()
                 .share(replay: 1)
 
             let reinforcementOn: Driver<Void> = reinforcement
@@ -106,7 +97,10 @@ final class SessionPresenter: Presenter {
                 .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0) }
                 .do(onNext: { print("SR off: \($0)") })
                 .clearExtendProperty(scheduleUseCase.subSchedules)
-                .updateLastReinforcementProperty(scheduleUseCase.subSchedules, entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval))
+                .updateLastReinforcementProperty(
+                    scheduleUseCase.subSchedules,
+                    entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval)
+                )
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
