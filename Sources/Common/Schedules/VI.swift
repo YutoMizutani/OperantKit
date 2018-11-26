@@ -28,15 +28,4 @@ extension Observable where E == ResponseEntity {
     func variableInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
         return fixedInterval(value)
     }
-
-    /// Variable interval schedule
-    public func VI(_ value: Milliseconds, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .variableInterval(value, entities)
-    }
-
-    /// VI logic
-    func variableInterval(_ value: Milliseconds, _ entities: [E]) -> Observable<ResultEntity> {
-        return self.fixedInterval(value, entities)
-    }
 }

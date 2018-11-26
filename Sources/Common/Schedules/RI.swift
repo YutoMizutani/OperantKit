@@ -28,15 +28,4 @@ extension Observable where E == ResponseEntity {
     func randomInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
         return fixedInterval(value)
     }
-
-    /// Random interval schedule
-    public func RI(_ value: Milliseconds, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .randomInterval(value, entities)
-    }
-
-    /// RI logic
-    func randomInterval(_ value: Milliseconds, _ entities: [E]) -> Observable<ResultEntity> {
-        return self.fixedInterval(value, entities)
-    }
 }

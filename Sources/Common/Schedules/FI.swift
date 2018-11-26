@@ -26,19 +26,12 @@ extension Observable where E == ResponseEntity {
             In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
      */
     func fixedInterval(_ value: Single<Milliseconds>) -> Observable<Bool> {
-        return flatMap { a in value.map { a.numOfResponses > 0 && a.milliseconds >= $0 } }
-    }
-
-    /// Fixed interval schedule
-    public func FI(_ value: Milliseconds, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .fixedInterval(value, entities)
-    }
-
-    /// FI logic
-    func fixedInterval(_ value: Milliseconds, _ entities: [E]) -> Observable<ResultEntity> {
-        return self.map {
-            ResultEntity($0.milliseconds >= value + entities.map { $0.milliseconds }.reduce(0) { $0 + $1 }, $0)
-        }
+        return store(startWith: ResponseEntity())
+            .flatMap { a in
+                value.map {
+                    a.newValue.numOfResponses - a.oldValue.numOfResponses > 0
+                        && a.newValue.milliseconds >= $0
+                }
+            }
     }
 }

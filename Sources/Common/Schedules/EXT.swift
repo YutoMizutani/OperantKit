@@ -18,14 +18,4 @@ extension Observable where E == ResponseEntity {
     func extinction() -> Observable<Bool> {
         return map { _ in false }
     }
-
-    /// Extinction schedule
-    public func EXT() -> Observable<ResultEntity> {
-        return extinction()
-    }
-
-    /// EXT logic
-    func extinction() -> Observable<ResultEntity> {
-        return map { ResultEntity(false, $0) }
-    }
 }

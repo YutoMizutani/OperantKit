@@ -16,17 +16,6 @@ extension Observable where E == ResponseEntity {
 
     /// VT logic
     func variableTime(_ value: Single<Milliseconds>) -> Observable<Bool> {
-        return fixedInterval(value)
-    }
-
-    /// Variable time schedule
-    public func VT(_ value: Milliseconds, with entities: E...) -> Observable<ResultEntity> {
-        return self
-            .variableTime(value, entities)
-    }
-
-    /// VT logic
-    func variableTime(_ value: Milliseconds, _ entities: [E]) -> Observable<ResultEntity> {
-        return self.fixedTime(value, entities)
+        return fixedTime(value)
     }
 }
