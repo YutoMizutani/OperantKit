@@ -18,8 +18,7 @@ struct ExperimentFI {
         let finishTimerAction = PublishSubject<Void>()
         let disposeBag = DisposeBag()
 
-        let response = responseAction
-            .response(timer)
+        let response = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
 
         response
