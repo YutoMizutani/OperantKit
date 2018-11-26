@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OperantKit"
-  s.version          = "0.0.22"
+  s.version          = "0.0.23"
   s.summary          = "A tool for operant conditioning"
 
   s.description      = <<-DESC
