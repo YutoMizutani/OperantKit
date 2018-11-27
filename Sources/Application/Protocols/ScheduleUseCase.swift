@@ -7,6 +7,7 @@
 
 import RxSwift
 
+/// - Tag: ScheduleUseCase
 public protocol ScheduleUseCase {
     var repository: ScheduleRespository { get }
     var scheduleType: ScheduleType { get }

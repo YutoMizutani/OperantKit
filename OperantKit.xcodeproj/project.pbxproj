@@ -52,18 +52,14 @@
 		9965653E21A66A72004C76F0 /* DiscreteTrialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965653C21A66A72004C76F0 /* DiscreteTrialRepository.swift */; };
 		9965653F21A66A72004C76F0 /* DiscreteTrialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965653C21A66A72004C76F0 /* DiscreteTrialRepository.swift */; };
 		9965654021A66A72004C76F0 /* DiscreteTrialRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965653C21A66A72004C76F0 /* DiscreteTrialRepository.swift */; };
-		9965654221A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */; };
-		9965654321A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */; };
-		9965654421A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */; };
-		9965654521A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */; };
 		9965654A21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */; };
 		9965654B21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */; };
 		9965654C21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */; };
 		9965654D21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */; };
-		9965654F21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */; };
-		9965655021A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */; };
-		9965655121A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */; };
-		9965655221A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */; };
+		9965654F21A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */; };
+		9965655021A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */; };
+		9965655121A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */; };
+		9965655221A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */; };
 		9965655421A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965655321A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift */; };
 		9965655521A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965655321A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift */; };
 		9965655621A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965655321A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift */; };
@@ -506,9 +502,8 @@
 		9965652121A65966004C76F0 /* DiscreteTrialParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialParameter.swift; sourceTree = "<group>"; };
 		9965652621A6597C004C76F0 /* DiscreteTrialRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRecordable.swift; sourceTree = "<group>"; };
 		9965653C21A66A72004C76F0 /* DiscreteTrialRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRepository.swift; sourceTree = "<group>"; };
-		9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCase.swift; sourceTree = "<group>"; };
 		9965654921A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialRepositoryImpl.swift; sourceTree = "<group>"; };
-		9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCaseImpl.swift; sourceTree = "<group>"; };
+		9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCase.swift; sourceTree = "<group>"; };
 		9965655321A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialDataStoreImpl.swift; sourceTree = "<group>"; };
 		9965655821A67731004C76F0 /* VariableParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableParameter.swift; sourceTree = "<group>"; };
 		9965655D21A67765004C76F0 /* VariableRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableRecordable.swift; sourceTree = "<group>"; };
@@ -917,7 +912,7 @@
 		999C7C7D21951CDA0044C47E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				9965654E21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift */,
+				9965654E21A66DB8004C76F0 /* DiscreteTrialUseCase.swift */,
 				99C74EFE219A763F00DABE14 /* Timer */,
 				99C74EFF219A764E00DABE14 /* SimpleSchedules */,
 				9965650221A64753004C76F0 /* CompoundSchedules */,
@@ -1140,7 +1135,6 @@
 			children = (
 				99C752FC21A2C68900DABE14 /* TimerUseCase.swift */,
 				999C7C7F21951CDA0044C47E /* ScheduleUseCase.swift */,
-				9965654121A66BA9004C76F0 /* DiscreteTrialUseCase.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -1560,7 +1554,7 @@
 				99C7518821A077AB00DABE14 /* Responsible.swift in Sources */,
 				999C7CDC21951CDC0044C47E /* FixedRatioScheduleUseCase.swift in Sources */,
 				99C752F421A2C64E00DABE14 /* Priority.swift in Sources */,
-				9965655021A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */,
+				9965655021A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				9965657821A686C2004C76F0 /* ScheduleRespositoryImpl.swift in Sources */,
 				999C7CA921951CDB0044C47E /* RR.swift in Sources */,
 				999C7CC421951CDB0044C47E /* PostpositionSchedule.swift in Sources */,
@@ -1636,7 +1630,6 @@
 				9965657D21A69128004C76F0 /* ScheduleDataStoreImpl.swift in Sources */,
 				999C7CF121951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7CB821951CDB0044C47E /* VR.swift in Sources */,
-				9965654321A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				999C7D2A21951CDC0044C47E /* UIViewController+Rx.swift in Sources */,
 				999C7CFA21951CDC0044C47E /* ConcurrentResponseDataStore.swift in Sources */,
 			);
@@ -1718,7 +1711,7 @@
 				999C7D3421951CDC0044C47E /* Matrix.swift in Sources */,
 				9965651021A658E8004C76F0 /* TrialRecordable.swift in Sources */,
 				99C751AF21A0949A00DABE14 /* Loggable.swift in Sources */,
-				9965654F21A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */,
+				9965654F21A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				999C7CC221951CDB0044C47E /* PrepositionSchedule.swift in Sources */,
 				999C7D3121951CDC0044C47E /* Shared.swift in Sources */,
 				9965651821A65922004C76F0 /* TrialParameter.swift in Sources */,
@@ -1728,7 +1721,6 @@
 				99C74EFA219A761000DABE14 /* FixedTimeScheduleUseCase.swift in Sources */,
 				999C7CEC21951CDC0044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
-				9965654221A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				999C7CE021951CDC0044C47E /* VariableRatioScheduleUseCase.swift in Sources */,
 				99C74EF1219A702400DABE14 /* FT.swift in Sources */,
 				999C7CD421951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
@@ -1811,7 +1803,7 @@
 				999C7D9B219533150044C47E /* ResultEntity+Rx.swift in Sources */,
 				999C7D9C219533150044C47E /* UIViewController+Rx.swift in Sources */,
 				99C752F521A2C64E00DABE14 /* Priority.swift in Sources */,
-				9965655121A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */,
+				9965655121A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				9965657921A686C2004C76F0 /* ScheduleRespositoryImpl.swift in Sources */,
 				999C7D9D219533150044C47E /* ScheduleParameter.swift in Sources */,
 				999C7D9E219533150044C47E /* Shared.swift in Sources */,
@@ -1889,7 +1881,6 @@
 				9965657E21A69128004C76F0 /* ScheduleDataStoreImpl.swift in Sources */,
 				999C7DBD219533160044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7DBE219533160044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
-				9965654421A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				999C7DC0219533160044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7DC1219533160044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
@@ -1937,7 +1928,7 @@
 				999C7DEF219542610044C47E /* ResultEntity+Rx.swift in Sources */,
 				999C7DF0219542610044C47E /* UIViewController+Rx.swift in Sources */,
 				99C752F621A2C64E00DABE14 /* Priority.swift in Sources */,
-				9965655221A66DB8004C76F0 /* DiscreteTrialUseCaseImpl.swift in Sources */,
+				9965655221A66DB8004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				9965657A21A686C2004C76F0 /* ScheduleRespositoryImpl.swift in Sources */,
 				999C7DF1219542610044C47E /* ScheduleParameter.swift in Sources */,
 				999C7DF2219542610044C47E /* Shared.swift in Sources */,
@@ -2015,7 +2006,6 @@
 				9965657F21A69128004C76F0 /* ScheduleDataStoreImpl.swift in Sources */,
 				999C7E11219542620044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
-				9965654521A66BA9004C76F0 /* DiscreteTrialUseCase.swift in Sources */,
 				999C7E14219542620044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
 				999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
