@@ -23,6 +23,13 @@ public class ResponseEntity: Responsible {
     }
 }
 
+extension ResponseEntity: Equatable {
+    public static func == (lhs: ResponseEntity, rhs: ResponseEntity) -> Bool {
+        return lhs.numOfResponses == rhs.numOfResponses
+            && lhs.milliseconds == rhs.milliseconds
+    }
+}
+
 public extension ResponseEntity {
     static func - (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(

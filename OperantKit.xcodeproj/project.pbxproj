@@ -11,6 +11,12 @@
 		99106C1E21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
 		99106C1F21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
 		99106C2021AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
+		9926DC3821ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */; };
+		9926DC3921ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */; };
+		9926DC3A21ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */; };
+		993075FF21AC45DF00A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
+		9930760021AC45DF00A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
+		9930760121AC45E000A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
 		99334342212969BA00744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334339212969B900744042 /* OperantKit.framework */; };
 		9933435E212969E000744042 /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99334355212969E000744042 /* OperantKit.framework */; };
 		9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */; };
@@ -483,6 +489,8 @@
 
 /* Begin PBXFileReference section */
 		99106C1C21AADE1500E4F726 /* TrialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialState.swift; sourceTree = "<group>"; };
+		9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimerUseCase.swift; sourceTree = "<group>"; };
+		993075FD21AC45D900A8132E /* ObservableTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTypeTests.swift; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334341212969BA00744042 /* OperantKit iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99334355212969E000744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,6 +703,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		993075FC21AC45C900A8132E /* RxTests */ = {
+			isa = PBXGroup;
+			children = (
+				993075FD21AC45D900A8132E /* ObservableTypeTests.swift */,
+			);
+			path = RxTests;
+			sourceTree = "<group>";
+		};
 		994FFF5B212C27B3000F4702 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,6 +1043,7 @@
 			isa = PBXGroup;
 			children = (
 				999C7D4221951F2A0044C47E /* Helper.swift */,
+				9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1156,6 +1173,7 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				993075FC21AC45C900A8132E /* RxTests */,
 				999C7D4121951F2A0044C47E /* Helpers */,
 				999C7D4321951F2A0044C47E /* ScheduleTests */,
 				999C7D3F21951F2A0044C47E /* OperantKitTests.swift */,
@@ -1641,7 +1659,9 @@
 				99B3B1A021AB09B4009D5210 /* AlternativeScheduleUseCaseTests.swift in Sources */,
 				99B3B1A921AB9AF4009D5210 /* ConcurrentScheduleUseCaseTests.swift in Sources */,
 				999C7D6321951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
+				9930760021AC45DF00A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7D5A21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
+				9926DC3921ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */,
 				999C7D5721951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
 				999C7D5D21951F2A0044C47E /* RandomIntervalSchedule.swift in Sources */,
 			);
@@ -1766,7 +1786,9 @@
 				99B3B19F21AB09AF009D5210 /* AlternativeScheduleUseCaseTests.swift in Sources */,
 				99B3B1A821AB9AF4009D5210 /* ConcurrentScheduleUseCaseTests.swift in Sources */,
 				999C7D6421951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
+				993075FF21AC45DF00A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7D5B21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
+				9926DC3821ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */,
 				999C7D5821951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
 				999C7D5E21951F2A0044C47E /* RandomIntervalSchedule.swift in Sources */,
 			);
@@ -1890,7 +1912,9 @@
 				99B3B1A121AB09B5009D5210 /* AlternativeScheduleUseCaseTests.swift in Sources */,
 				99B3B1AA21AB9AF4009D5210 /* ConcurrentScheduleUseCaseTests.swift in Sources */,
 				999C7DC9219533300044C47E /* ExtinctionScheduleTests.swift in Sources */,
+				9930760121AC45E000A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7DCA219533300044C47E /* OperantKitTests.swift in Sources */,
+				9926DC3A21ACDB57000A6D47 /* MockTimerUseCase.swift in Sources */,
 				999C7DCB219533300044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				999C7DCC219533300044C47E /* ScheduleTypeTests.swift in Sources */,
 			);
