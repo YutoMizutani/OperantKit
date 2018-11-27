@@ -41,8 +41,6 @@ class BrownAndJenkins1968 {
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .share(replay: 1)
 
-        respnseObservable.subscribe().disposed(by: disposeBag)
-
         let milliseconds = timer.milliseconds.shared
             .filter({ $0 % 1000 == 0 })
             .share(replay: 1)
