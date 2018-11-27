@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ScheduleDataStoreImpl: ScheduleParameterable, ScheduleRecordable, ExperimentRecordable {
+public class ScheduleDataStoreImpl: ScheduleParameterable, ScheduleRecordable {
     public var value: Int
     public var values: [Int]
     public var currentOrder: Int = 0

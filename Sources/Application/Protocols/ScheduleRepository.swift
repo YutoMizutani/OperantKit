@@ -9,17 +9,17 @@ import RxSwift
 
 public protocol ScheduleRespository: class {
     var parameter: ScheduleParameterable { get set }
-    var recorder: ScheduleRecordable & ExperimentRecordable { get set }
+    var recorder: ScheduleRecordable { get set }
 
     func getValue() -> Single<Int>
-    func nextValue(_: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<()>
+    func nextValue(_: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<Void>
     func getExtendProperty() -> Single<ResponseEntity>
     func getLastReinforcementProperty() -> Single<ResponseEntity>
-    func clearExtendProperty() -> Single<()>
-    func updateExtendProperty(_: ResponseEntity) -> Single<()>
-    func updateExtendProperty(_: @escaping () -> ResponseEntity) -> Single<()>
-    func updateLastReinforcementProperty(_: ResponseEntity) -> Single<()>
-    func updateLastReinforcementProperty(_: @escaping () -> ResponseEntity) -> Single<()>
+    func clearExtendProperty() -> Single<Void>
+    func updateExtendProperty(_: ResponseEntity) -> Single<Void>
+    func updateExtendProperty(_: @escaping () -> ResponseEntity) -> Single<Void>
+    func updateLastReinforcementProperty(_: ResponseEntity) -> Single<Void>
+    func updateLastReinforcementProperty(_: @escaping () -> ResponseEntity) -> Single<Void>
 }
 
 public extension ScheduleRespository {
@@ -36,7 +36,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func nextValue(_ schedule: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<()> {
+    func nextValue(_ schedule: @escaping (ScheduleParameterable, ScheduleRecordable) -> ScheduleRecordable) -> Single<Void> {
         return Single.create { [weak self] single in
             guard
                 let parameter = self?.parameter,
@@ -81,7 +81,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func clearExtendProperty() -> Single<()> {
+    func clearExtendProperty() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
                 single(.error(RxError.noElements))
@@ -95,7 +95,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func updateExtendProperty(_ entity: ResponseEntity) -> Single<()> {
+    func updateExtendProperty(_ entity: ResponseEntity) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
                 single(.error(RxError.noElements))
@@ -109,7 +109,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func updateExtendProperty(_ entity: @escaping () -> ResponseEntity) -> Single<()> {
+    func updateExtendProperty(_ entity: @escaping () -> ResponseEntity) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
                 single(.error(RxError.noElements))
@@ -123,7 +123,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func updateLastReinforcementProperty(_ entity: ResponseEntity) -> Single<()> {
+    func updateLastReinforcementProperty(_ entity: ResponseEntity) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
                 single(.error(RxError.noElements))
@@ -137,7 +137,7 @@ public extension ScheduleRespository {
         }
     }
 
-    func updateLastReinforcementProperty(_ entity: @escaping () -> ResponseEntity) -> Single<()> {
+    func updateLastReinforcementProperty(_ entity: @escaping () -> ResponseEntity) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let recorder = self?.recorder else {
                 single(.error(RxError.noElements))

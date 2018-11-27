@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ScheduleRecorder: ExperimentRecordable, ScheduleRecordable {
+public class ScheduleRecorder: ScheduleRecordable {
     public var lastReinforcementEntity: ResponseEntity = ResponseEntity()
     public var extendEntity: ResponseEntity = ResponseEntity()
     public var currentOrder: Int = 0
