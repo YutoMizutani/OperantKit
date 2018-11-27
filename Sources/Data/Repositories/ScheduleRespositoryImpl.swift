@@ -9,15 +9,15 @@ import RxSwift
 
 public class ScheduleRespositoryImpl: ScheduleRespository {
     public var parameter: ScheduleParameterable
-    public var recorder: (ScheduleRecordable & ExperimentRecordable)
+    public var recorder: ScheduleRecordable
 
     public init(parameter: ScheduleParameterable,
-                recorder: ScheduleRecordable & ExperimentRecordable) {
+                recorder: ScheduleRecordable) {
         self.parameter = parameter
         self.recorder = recorder
     }
 
-    public init(dataStore: ScheduleParameterable & ScheduleRecordable & ExperimentRecordable) {
+    public init(dataStore: ScheduleParameterable & ScheduleRecordable) {
         self.parameter = dataStore
         self.recorder = dataStore
     }

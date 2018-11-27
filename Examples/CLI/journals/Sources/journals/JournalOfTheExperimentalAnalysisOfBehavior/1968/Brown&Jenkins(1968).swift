@@ -37,7 +37,7 @@ class BrownAndJenkins1968 {
         let duringSR = BehaviorRelay<Bool>(value: false)
         var disposeBag = DisposeBag()
 
-        let respnseObservable = responseAction.responses(timer)
+        let respnseObservable = responseAction.response(timer)
             .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
             .share(replay: 1)
 
