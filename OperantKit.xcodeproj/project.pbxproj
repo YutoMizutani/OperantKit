@@ -409,10 +409,6 @@
 		99C751A121A08C3300DABE14 /* Concurrentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7519F21A08C3300DABE14 /* Concurrentable.swift */; };
 		99C751A221A08C3300DABE14 /* Concurrentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7519F21A08C3300DABE14 /* Concurrentable.swift */; };
 		99C751A321A08C3300DABE14 /* Concurrentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7519F21A08C3300DABE14 /* Concurrentable.swift */; };
-		99C751A521A0933800DABE14 /* ExperimentRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A421A0933800DABE14 /* ExperimentRecordable.swift */; };
-		99C751A621A0933800DABE14 /* ExperimentRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A421A0933800DABE14 /* ExperimentRecordable.swift */; };
-		99C751A721A0933800DABE14 /* ExperimentRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A421A0933800DABE14 /* ExperimentRecordable.swift */; };
-		99C751A821A0933800DABE14 /* ExperimentRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A421A0933800DABE14 /* ExperimentRecordable.swift */; };
 		99C751AA21A0949000DABE14 /* ResponseRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A921A0949000DABE14 /* ResponseRecordable.swift */; };
 		99C751AB21A0949000DABE14 /* ResponseRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A921A0949000DABE14 /* ResponseRecordable.swift */; };
 		99C751AC21A0949000DABE14 /* ResponseRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C751A921A0949000DABE14 /* ResponseRecordable.swift */; };
@@ -607,7 +603,6 @@
 		99C7519521A07A5600DABE14 /* Times.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
 		99C7519A21A07E0300DABE14 /* TimeUnitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnitable.swift; sourceTree = "<group>"; };
 		99C7519F21A08C3300DABE14 /* Concurrentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrentable.swift; sourceTree = "<group>"; };
-		99C751A421A0933800DABE14 /* ExperimentRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentRecordable.swift; sourceTree = "<group>"; };
 		99C751A921A0949000DABE14 /* ResponseRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRecordable.swift; sourceTree = "<group>"; };
 		99C751AE21A0949A00DABE14 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		99C751BB21A098BD00DABE14 /* Discriminateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discriminateable.swift; sourceTree = "<group>"; };
@@ -758,7 +753,6 @@
 			children = (
 				9965650F21A658E8004C76F0 /* TrialRecordable.swift */,
 				9965652621A6597C004C76F0 /* DiscreteTrialRecordable.swift */,
-				99C751A421A0933800DABE14 /* ExperimentRecordable.swift */,
 				99C751A921A0949000DABE14 /* ResponseRecordable.swift */,
 				9965655D21A67765004C76F0 /* VariableRecordable.swift */,
 				9965656721A67898004C76F0 /* RandomRecordable.swift */,
@@ -1603,7 +1597,6 @@
 				9965655F21A67765004C76F0 /* VariableRecordable.swift in Sources */,
 				99C7518D21A0794100DABE14 /* Reinforceable.swift in Sources */,
 				9965651E21A65938004C76F0 /* ExitCondition.swift in Sources */,
-				99C751A621A0933800DABE14 /* ExperimentRecordable.swift in Sources */,
 				99C74F07219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				99C7519721A07A5600DABE14 /* Times.swift in Sources */,
 				9965654B21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
@@ -1726,7 +1719,6 @@
 				999C7CD421951CDB0044C47E /* ConcurrentScheduleUseCase.swift in Sources */,
 				9965657221A67D2D004C76F0 /* ScheduleRepository.swift in Sources */,
 				99C7518C21A0794100DABE14 /* Reinforceable.swift in Sources */,
-				99C751A521A0933800DABE14 /* ExperimentRecordable.swift in Sources */,
 				99106C1D21AADE1500E4F726 /* TrialState.swift in Sources */,
 				999C7CEF21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				99C7519621A07A5600DABE14 /* Times.swift in Sources */,
@@ -1854,7 +1846,6 @@
 				99C74F08219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				9965651F21A65938004C76F0 /* ExitCondition.swift in Sources */,
 				99C7518E21A0794100DABE14 /* Reinforceable.swift in Sources */,
-				99C751A721A0933800DABE14 /* ExperimentRecordable.swift in Sources */,
 				999C7DB3219533150044C47E /* ResponseEntity.swift in Sources */,
 				9965654C21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
 				99C7519821A07A5600DABE14 /* Times.swift in Sources */,
@@ -1979,7 +1970,6 @@
 				99C74F09219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				9965652021A65938004C76F0 /* ExitCondition.swift in Sources */,
 				99C7518F21A0794100DABE14 /* Reinforceable.swift in Sources */,
-				99C751A821A0933800DABE14 /* ExperimentRecordable.swift in Sources */,
 				999C7E07219542610044C47E /* ResponseEntity.swift in Sources */,
 				9965654D21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
 				99C7519921A07A5600DABE14 /* Times.swift in Sources */,
