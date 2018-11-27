@@ -22,13 +22,15 @@ public extension ObservableType {
     }
 
     func store(startWith: Self.E) -> Observable<(newValue: E, oldValue: E)> {
-        return Observable.zip(self, self.startWith(startWith)) { a, b in
+        let shared = self.share(replay: 1)
+        return Observable.zip(shared, shared.startWith(startWith)) { a, b in
             (newValue: a, oldValue: b)
         }
     }
 
     func store() -> Observable<(newValue: E, oldValue: E?)> {
-        return Observable.zip(self, self.map(Optional.init).startWith(nil)) { a, b in
+        let shared = self.share(replay: 1)
+        return Observable.zip(shared, shared.map(Optional.init).startWith(nil)) { a, b in
             (newValue: a, oldValue: b)
         }
     }
@@ -37,7 +39,7 @@ public extension ObservableType {
 public extension ObservableType {
     /// Count up
     func count() -> Observable<Int> {
-        return flatMap { _ in self.reduce(0) { n, _ in n + 1 } }
+        return scan(0) { n, _ in n + 1 }
     }
 
     /// Get time
@@ -47,10 +49,9 @@ public extension ObservableType {
 
     /// Response entity
     func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        return flatMap { _ in
-            return Observable.zip(self.count(), self.getTime(timer)) { a, b in
-                ResponseEntity(a, b)
-            }
+        let shared = self.share(replay: 1)
+        return Observable.zip(shared.count(), shared.getTime(timer)) { a, b in
+            ResponseEntity(a, b)
         }
     }
 }

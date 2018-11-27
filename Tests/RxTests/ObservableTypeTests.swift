@@ -26,7 +26,7 @@ final class ObservableTypeTests: XCTestCase {
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .scan(0) { n, _ in n + 1 }
+                .count()
                 .subscribe(observer)
                 .disposed(by: disposeBag)
         }
