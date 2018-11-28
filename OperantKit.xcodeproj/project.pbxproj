@@ -525,6 +525,7 @@
 		9965658B21A8017C004C76F0 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
 		9965659021A82823004C76F0 /* ScheduleRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRecorder.swift; sourceTree = "<group>"; };
 		9965659821A8289B004C76F0 /* FixedRatioParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedRatioParameter.swift; sourceTree = "<group>"; };
+		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		9998170F212C356E00D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -1203,6 +1204,7 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				997AF96D21AE356C0025A232 /* OperantPlayground.playground */,
 				OBJ_6 /* Package.swift */,
 				994FFF5B212C27B3000F4702 /* Supporting Files */,
 				OBJ_7 /* Sources */,

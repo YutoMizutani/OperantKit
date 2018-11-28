@@ -3,35 +3,48 @@ import OperantKit
 import RxCocoa
 import RxSwift
 /*:
- # Alternative schedule
- ## Alternative logic
- The two or more result is merged.
- - Complexity: O(2)
+ # Extinction schedule
+ ## EXT logic
+ Always return false
+ - Complexity: O(1)
  */
-example("FR - logic") {
-    var results: [Bool]
+example("EXT - logic") {
+    var numberOfResponses: Int
 
-    results = [false, false]
-    print(!results.filter({ $0 }).isEmpty)
-    results = [true, false]
-    print(!results.filter({ $0 }).isEmpty)
-    results = [false, true]
-    print(!results.filter({ $0 }).isEmpty)
-    results = [true, false, false, false, false]
-    print(!results.filter({ $0 }).isEmpty)
+    numberOfResponses = 0
+    print(false)
+    numberOfResponses = 1
+    print(false)
+    numberOfResponses = 3
+    print(false)
+    numberOfResponses = 5
+    print(false)
+}
+/*:
+ ---
+ ## Method chaining on the Rx stream
+ */
+example("EXT - Method chaining on the Rx stream") {
+    _ = Observable.of(0, 1, 2, 3, 4)
+        .map { ResponseEntity(numOfResponses: $0, milliseconds: 0) }
+        .map { Single.just($0) }
+        .flatMap { $0.EXT() }
+        .asObservable()
+        .subscribe { event in
+            print(event)
+        }
 }
 /*:
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("FR") {
-    let schedule: ScheduleUseCase = Alt(FR(2), FR(3))
+example("EXT") {
+    let schedule: ScheduleUseCase = EXT()
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger
         .count()
         .map { ResponseEntity($0, 0) }
-        // If `isUpdateIfReinforcement` parameter is true, store the last SR value automatically.
         .flatMap { schedule.decision($0, isUpdateIfReinforcement: true) }
         .subscribe(onNext: { resultEntity in
             print(resultEntity.isReinforcement)
