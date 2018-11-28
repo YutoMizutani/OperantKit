@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Builders without class
+
 /// - Tag: EXT()
 public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 0, values: [])) -> ExtinctionScheduleUseCase {
     return ExtinctionScheduleUseCase(repository: repository)
