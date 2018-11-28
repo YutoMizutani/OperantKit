@@ -16,6 +16,6 @@ extension Single where E == ResponseEntity {
 
     /// VR logic
     func variableRatio(_ value: Single<Int>) -> Single<Bool> {
-        return fixedRatio(value)
+        return FR(value)
     }
 }

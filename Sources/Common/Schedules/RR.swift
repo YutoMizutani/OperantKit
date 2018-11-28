@@ -16,6 +16,6 @@ extension Single where E == ResponseEntity {
 
     /// RR logic
     func randomRatio(_ value: Single<Int>) -> Single<Bool> {
-        return fixedRatio(value)
+        return FR(value)
     }
 }
