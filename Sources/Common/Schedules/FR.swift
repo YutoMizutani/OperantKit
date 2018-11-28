@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension ResponseEntity {
+extension ResponseEntity {
 
     /// Fixed ratio schedule
     ///
@@ -17,6 +17,7 @@ public extension ResponseEntity {
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
+    /// - Tag: .fixedRatio()
     func fixedRatio(_ value: Int) -> Bool {
         return numOfResponses >= value
     }
@@ -32,6 +33,7 @@ public extension Single where E == ResponseEntity {
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
+    /// - Tag: .FR()
     func FR(_ value: Int) -> Single<Bool> {
         return map { $0.fixedRatio(value) }
     }
@@ -44,6 +46,7 @@ public extension Single where E == ResponseEntity {
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
+    /// - Tag: .FR()
     func FR(_ value: Single<Int>) -> Single<Bool> {
         return flatMap { r in value.map { v in r.fixedRatio(v) } }
     }
@@ -56,7 +59,21 @@ public extension Single where E == ResponseEntity {
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func FR(value: @escaping () -> Single<Int>) -> Single<Bool> {
+    /// - Tag: .FR()
+    func FR(_ value: @escaping () -> Int) -> Single<Bool> {
+        return map { r in r.fixedRatio(value()) }
+    }
+
+    /// Fixed ratio schedule
+    ///
+    /// IN A FIXED-RATIO SCHEDULE of reinforcement, every *n*th response produces a reinforcing stimulus.
+    ///
+    /// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .FR()
+    func FR(_ value: @escaping () -> Single<Int>) -> Single<Bool> {
         return flatMap { r in value().map { v in r.fixedRatio(v) } }
     }
 }

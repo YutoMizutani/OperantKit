@@ -1,5 +1,5 @@
 //
-//  Single+.swift
+//  PrimitiveSequence+.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/28.
@@ -8,6 +8,7 @@
 import RxSwift
 
 public extension PrimitiveSequence {
+
     /**
      Projects each element of an single sequence into a new form.
 
@@ -17,7 +18,7 @@ public extension PrimitiveSequence {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source.
 
      */
-    public func map<R>(_ transform: @escaping (PrimitiveSequence.E) throws -> R) -> RxSwift.Single<R> {
+    func map<R>(_ transform: @escaping (PrimitiveSequence.E) throws -> R) -> RxSwift.Single<R> {
         return asObservable().map(transform).asSingle()
     }
 
@@ -29,7 +30,20 @@ public extension PrimitiveSequence {
      - parameter selector: A transform function to apply to each element.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    public func flatMap<O>(_ selector: @escaping (PrimitiveSequence.E) throws -> O) -> RxSwift.Single<O.E> where O : ObservableConvertibleType {
+    func flatMap<O>(_ selector: @escaping (PrimitiveSequence.E) throws -> O) -> RxSwift.Single<O.E> where O : ObservableConvertibleType {
         return asObservable().flatMap(selector).asSingle()
+    }
+}
+
+public extension PrimitiveSequence {
+
+    /// Store the last response and return tuple
+    func store(startWith: PrimitiveSequence.E) -> Single<(newValue: E, oldValue: E)> {
+        return asObservable().store(startWith: startWith).asSingle()
+    }
+
+    /// Store the last response and return tuple
+    func store() -> Single<(newValue: E, oldValue: E?)> {
+        return asObservable().store().asSingle()
     }
 }

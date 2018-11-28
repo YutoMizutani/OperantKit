@@ -7,15 +7,45 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
     /// Variable time schedule
-    public func VT(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return variableTime(value)
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VT()
+    func VT(_ value: Milliseconds) -> Single<Bool> {
+        return FT(value)
     }
 
-    /// VT logic
-    func variableTime(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedTime(value)
+    /// Variable time schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VT()
+    func VT(_ value: Single<Int>) -> Single<Bool> {
+        return FT(value)
+    }
+
+    /// Variable time schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VT()
+    func VT(_ value: @escaping () -> Milliseconds) -> Single<Bool> {
+        return FT(value)
+    }
+
+    /// Variable time schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VT()
+    func VT(_ value: @escaping () -> Single<Milliseconds>) -> Single<Bool> {
+        return FT(value)
     }
 }

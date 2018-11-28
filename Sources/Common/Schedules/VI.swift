@@ -7,25 +7,41 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
-    /**
-        Variable interval schedule
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    public func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return variableInterval(value)
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Tag: .VI()
+    func VI(_ value: Milliseconds) -> Single<Bool> {
+        return FI(value)
     }
 
-    /**
-        VI logic
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Tag: .VI()
+    func VI(_ value: Single<Int>) -> Single<Bool> {
+        return FI(value)
+    }
 
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    func variableInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedInterval(value)
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Tag: .VI()
+    func VI(_ value: @escaping () -> Milliseconds) -> Single<Bool> {
+        return FI(value)
+    }
+
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Tag: .VI()
+    func VI(_ value: @escaping () -> Single<Milliseconds>) -> Single<Bool> {
+        return FI(value())
     }
 }
