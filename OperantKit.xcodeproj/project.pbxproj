@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9905D99B21AE42AC007961CE /* Single+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* Single+.swift */; };
+		9905D99C21AE42AC007961CE /* Single+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* Single+.swift */; };
+		9905D99D21AE42AC007961CE /* Single+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* Single+.swift */; };
+		9905D99E21AE42AC007961CE /* Single+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* Single+.swift */; };
 		99106C1D21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
 		99106C1E21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
 		99106C1F21AADE1500E4F726 /* TrialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99106C1C21AADE1500E4F726 /* TrialState.swift */; };
@@ -480,6 +484,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9905D99A21AE42AC007961CE /* Single+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+.swift"; sourceTree = "<group>"; };
 		99106C1C21AADE1500E4F726 /* TrialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialState.swift; sourceTree = "<group>"; };
 		9926DC3721ACDB57000A6D47 /* MockTimerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimerUseCase.swift; sourceTree = "<group>"; };
 		993075FD21AC45D900A8132E /* ObservableTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTypeTests.swift; sourceTree = "<group>"; };
@@ -1083,6 +1088,7 @@
 				9965649E21A4FBCA004C76F0 /* ObservableMilliseconds+.swift */,
 				999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */,
 				996564D121A63E39004C76F0 /* PublishSubject+.swift */,
+				9905D99A21AE42AC007961CE /* Single+.swift */,
 			);
 			name = Rx;
 			sourceTree = "<group>";
@@ -1533,6 +1539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9905D99C21AE42AC007961CE /* Single+.swift in Sources */,
 				9965657321A67D2D004C76F0 /* ScheduleRepository.swift in Sources */,
 				999C7D2421951CDC0044C47E /* ObservableType+.swift in Sources */,
 				999C7D1821951CDC0044C47E /* TimeUnit.swift in Sources */,
@@ -1696,6 +1703,7 @@
 				9965658C21A8017C004C76F0 /* ResultEntity.swift in Sources */,
 				99AE65C021A2D6130090B308 /* Continuable.swift in Sources */,
 				999C7D0D21951CDC0044C47E /* FixedEntity.swift in Sources */,
+				9905D99B21AE42AC007961CE /* Single+.swift in Sources */,
 				9965649F21A4FBCA004C76F0 /* ObservableMilliseconds+.swift in Sources */,
 				999C7D0A21951CDC0044C47E /* VariableEntity.swift in Sources */,
 				999C7CF521951CDC0044C47E /* FixedResponseDataStore.swift in Sources */,
@@ -1782,6 +1790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9905D99D21AE42AC007961CE /* Single+.swift in Sources */,
 				9965657421A67D2D004C76F0 /* ScheduleRepository.swift in Sources */,
 				999C7D93219533150044C47E /* DecisionSchedule.swift in Sources */,
 				99C7531321A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift in Sources */,
@@ -1906,6 +1915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9905D99E21AE42AC007961CE /* Single+.swift in Sources */,
 				9965657521A67D2D004C76F0 /* ScheduleRepository.swift in Sources */,
 				999C7DE7219542610044C47E /* DecisionSchedule.swift in Sources */,
 				99C7531421A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift in Sources */,
