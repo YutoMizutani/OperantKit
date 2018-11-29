@@ -6,9 +6,9 @@ import RxSwift
  # Alternative schedule
  ## Alternative logic
  The two or more result is merged.
- - Complexity: O(2)
+ - Complexity: O(n)
  */
-example("FR - logic") {
+example("Alt - logic") {
     var results: [Bool]
 
     results = [false, false]
@@ -24,13 +24,13 @@ example("FR - logic") {
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("FR") {
-    let schedule: ScheduleUseCase = Alt(FR(2), FR(3))
+example("Alt - Method chaining using UseCase on the Rx stream") {
+    let schedule: ScheduleUseCase = Alt(FR(2), FI(3))
+    let timer: TimerUseCase = StepTimerUseCase(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger
-        .count()
-        .map { ResponseEntity($0, 0) }
+        .response(timer)
         // If `isUpdateIfReinforcement` parameter is true, store the last SR value automatically.
         .flatMap { schedule.decision($0, isUpdateIfReinforcement: true) }
         .subscribe(onNext: { resultEntity in

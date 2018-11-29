@@ -38,7 +38,7 @@ example("EXT - Method chaining on the Rx stream") {
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("EXT") {
+example("EXT - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = EXT()
     let responseTrriger = PublishSubject<Void>()
 

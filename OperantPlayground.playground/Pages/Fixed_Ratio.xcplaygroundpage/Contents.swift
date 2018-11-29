@@ -43,7 +43,7 @@ example("FR - Method chaining on the Rx stream") {
  ## Method chaining using UseCase on the Rx stream
  - Note: [`FR(1)`](x-source-tag://FR()) equals [`CRF()`](x-source-tag://CRF())
  */
-example("FR") {
+example("FR - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FR(2)
     let responseTrriger = PublishSubject<Void>()
 

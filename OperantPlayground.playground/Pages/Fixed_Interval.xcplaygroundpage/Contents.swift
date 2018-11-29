@@ -7,6 +7,7 @@ import RxSwift
  ## FI logic
  The response milliseconds is greater than or equal the value.
  - Important: The feature of the decision function has only met the condition, so you should compute the current value before the decision if you compute from the last SR value.
+ - Complexity: O(1)
  */
 example("FI - logic") {
     var response: ResponseEntity
@@ -48,7 +49,7 @@ example("FI - Method chaining on the Rx stream") {
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("FI") {
+example("FI - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FI(2, unit: .seconds)
     let timer: TimerUseCase = StepTimerUseCase(1000)
     let responseTrriger = PublishSubject<Void>()

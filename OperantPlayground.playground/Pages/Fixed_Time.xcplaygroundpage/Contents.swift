@@ -41,7 +41,7 @@ example("FT - Method chaining on the Rx stream") {
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("FT") {
+example("FT - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FT(2, unit: .seconds)
     let timer: TimerUseCase = StepTimerUseCase(1000)
     let responseTrriger = PublishSubject<Void>()
