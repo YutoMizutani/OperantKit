@@ -23,8 +23,8 @@ public extension Single where E == ResponseEntity {
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
     /// - Tag: .FT()
-    func FT(_ value: Milliseconds) -> Single<Bool> {
-        return map { $0.fixedTime(value) }
+    func FT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
+        return map { r in r.fixedTime(value()) }
     }
 
     /// Fixed time schedule
@@ -35,25 +35,5 @@ public extension Single where E == ResponseEntity {
     /// - Tag: .FT()
     func FT(_ value: Single<Int>) -> Single<Bool> {
         return flatMap { r in value.map { v in r.fixedTime(v) } }
-    }
-
-    /// Fixed time schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FT()
-    func FT(_ value: @escaping () -> Milliseconds) -> Single<Bool> {
-        return map { r in r.fixedTime(value()) }
-    }
-
-    /// Fixed time schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FT()
-    func FT(_ value: @escaping () -> Single<Milliseconds>) -> Single<Bool> {
-        return flatMap { r in value().map { v in r.fixedTime(v) } }
     }
 }

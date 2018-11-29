@@ -14,7 +14,7 @@ public extension Single where E == ResponseEntity {
     /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
     /// - Parameter value: Reinforcement value
     /// - Tag: .VI()
-    func VI(_ value: Milliseconds) -> Single<Bool> {
+    func VI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
         return FI(value)
     }
 
@@ -23,25 +23,7 @@ public extension Single where E == ResponseEntity {
     /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
     /// - Parameter value: Reinforcement value
     /// - Tag: .VI()
-    func VI(_ value: Single<Int>) -> Single<Bool> {
+    func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
         return FI(value)
-    }
-
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Tag: .VI()
-    func VI(_ value: @escaping () -> Milliseconds) -> Single<Bool> {
-        return FI(value)
-    }
-
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Tag: .VI()
-    func VI(_ value: @escaping () -> Single<Milliseconds>) -> Single<Bool> {
-        return FI(value())
     }
 }

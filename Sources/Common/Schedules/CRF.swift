@@ -13,6 +13,6 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .CRF()
     func CRF() -> Single<Bool> {
-        return FR(1)
+        return map { r in r.fixedRatio(1) }
     }
 }

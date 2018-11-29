@@ -11,25 +11,13 @@ public extension Single where E == ResponseEntity {
 
     /// Variable ratio schedule
     /// - Complexity: O(1)
-    func VR(_ value: Int) -> Single<Bool> {
+    func VR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
         return FR(value)
     }
 
     /// Variable ratio schedule
     /// - Complexity: O(1)
     func VR(_ value: Single<Int>) -> Single<Bool> {
-        return FR(value)
-    }
-
-    /// Variable ratio schedule
-    /// - Complexity: O(1)
-    func VR(_ value: @escaping () -> Int) -> Single<Bool> {
-        return FR(value)
-    }
-
-    /// Variable ratio schedule
-    /// - Complexity: O(1)
-    func VR(_ value: @escaping () -> Single<Int>) -> Single<Bool> {
         return FR(value)
     }
 }
