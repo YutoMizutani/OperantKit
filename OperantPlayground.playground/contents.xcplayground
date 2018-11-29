@@ -10,6 +10,9 @@
         <page name='Variable_Ratio'/>
         <page name='Variable_Time'/>
         <page name='Variable_Interval'/>
+        <page name='Random_Ratio'/>
+        <page name='Random_Time'/>
+        <page name='Random_Interval'/>
         <page name='Alternative'/>
     </pages>
 </playground>
