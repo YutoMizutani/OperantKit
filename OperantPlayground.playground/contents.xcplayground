@@ -14,5 +14,6 @@
         <page name='Random_Time'/>
         <page name='Random_Interval'/>
         <page name='Alternative'/>
+        <page name='Concurrent'/>
     </pages>
 </playground>
