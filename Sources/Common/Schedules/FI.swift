@@ -10,6 +10,7 @@ import RxSwift
 extension ResponseEntity {
 
     /// Fixed interval schedule
+    /// - Tag: .fixedInterval()
     func fixedInterval(_ value: Milliseconds, _ previousNumOfResponses: Int) -> Bool {
         return numOfResponses > previousNumOfResponses
             && fixedTime(value)
