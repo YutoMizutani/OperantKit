@@ -11,7 +11,7 @@ public struct VariableRatioScheduleUseCase: ScheduleUseCase {
     public var repository: ScheduleRespository
 
     public var scheduleType: ScheduleType {
-        return .fixedRatio
+        return .variableRatio
     }
 
     public init(repository: ScheduleRespository) {

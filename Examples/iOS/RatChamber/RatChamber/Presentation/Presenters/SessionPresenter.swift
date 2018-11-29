@@ -81,7 +81,7 @@ final class SessionPresenter: Presenter {
                 .do(onNext: { print("Response(\(i)): (\($0.numOfResponses), \($0.milliseconds))") })
 
             let reinforcement: Observable<ResponseEntity> = response
-                .flatMap { [unowned self] in self.scheduleUseCase.decision($0, order: i) }
+                .flatMap { [unowned self] in self.scheduleUseCase.decision($0, index: i) }
                 .filter { $0.isReinforcement }
                 .map { $0.entity }
                 .share(replay: 1)

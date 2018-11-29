@@ -8,6 +8,7 @@
 import Foundation
 
 public struct PostpositionSchedule: OptionSet {
+    /// The raw value of the option set
     public let rawValue: UInt16
 
     public init(rawValue: UInt16) {

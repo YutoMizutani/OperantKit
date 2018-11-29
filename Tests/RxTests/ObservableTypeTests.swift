@@ -50,7 +50,7 @@ final class ObservableTypeTests: XCTestCase {
     }
 
     func testGetTimePublishSubject() {
-        let timer = MockTimerUseCase(priority: .default)
+        let timer = StepTimerUseCase()
 
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Int.self)
@@ -99,7 +99,7 @@ final class ObservableTypeTests: XCTestCase {
     }
 
     func testResponsePublishSubject() {
-        let timer = MockTimerUseCase(priority: .default)
+        let timer = StepTimerUseCase()
 
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(ResponseEntity.self)

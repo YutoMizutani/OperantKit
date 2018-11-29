@@ -1,30 +1,32 @@
 //
-//  MockTimerUseCase.swift
+//  StepTimerUseCase.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/27.
+//  Created by Yuto Mizutani on 2018/10/27.
+//  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-import OperantKit
 import RxSwift
 
-class MockTimerUseCase: TimerUseCase {
-    var milliseconds = PublishSubject<Milliseconds>()
-    var priority: Priority
+public class StepTimerUseCase: TimerUseCase {
+    public var milliseconds = PublishSubject<Milliseconds>()
+    /// Not supported yet
+    public var priority: Priority = .default
     private var value = 0
+    private var step: Int
 
-    init(priority: Priority) {
-        self.priority = priority
+    public init(_ step: Int = 1) {
+        self.step = step
     }
 }
 
-private extension MockTimerUseCase {
+private extension StepTimerUseCase {
     func reset() {
         value = 0
     }
 
     func countUp() {
-        value += 1
+        value += step
     }
 
     func set(_ v: Int) {
@@ -32,7 +34,7 @@ private extension MockTimerUseCase {
     }
 }
 
-extension MockTimerUseCase {
+public extension StepTimerUseCase {
     func start() -> PrimitiveSequence<SingleTrait, ()> {
         return Single.create { [weak self] single in
             guard let self = self else {

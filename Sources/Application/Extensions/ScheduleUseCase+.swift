@@ -7,18 +7,24 @@
 
 import Foundation
 
+// MARK: - Builders without class
+
+/// - Tag: EXT()
 public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 0, values: [])) -> ExtinctionScheduleUseCase {
     return ExtinctionScheduleUseCase(repository: repository)
 }
 
+/// - Tag: CRF()
 public func CRF(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 1, values: [])) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(repository: repository)
 }
 
+/// - Tag: FR()
 public func FR(repository: ScheduleRespository) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(repository: repository)
 }
 
+/// - Tag: FR()
 public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(
         repository: ScheduleRespositoryImpl(value: value, values: [])

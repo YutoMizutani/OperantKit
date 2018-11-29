@@ -7,15 +7,25 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
     /// Random time schedule
-    public func RT(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return randomTime(value)
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .RT()
+    func RT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
+        return FT(value)
     }
 
-    /// RT logic
-    func randomTime(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedTime(value)
+    /// Random time schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .RT()
+    func RT(_ value: Single<Milliseconds>) -> Single<Bool> {
+        return FT(value)
     }
 }

@@ -70,7 +70,7 @@ final class ConcurrentScheduleUseCaseTests: XCTestCase {
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0, order: 1) }
+                .flatMap { schedule.decision($0, index: 1) }
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)
