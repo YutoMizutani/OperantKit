@@ -8,6 +8,8 @@
 import Foundation
 
 public enum ExitCondition {
+    /// The experiment exit by reinforcement
     case reinforcement(Int)
+    /// The experiment exit by time
     case time(Milliseconds)
 }

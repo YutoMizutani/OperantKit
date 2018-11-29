@@ -35,14 +35,14 @@ public struct ConcurrentScheduleUseCase: ScheduleUseCase {
         return subSchedules[0].updateValue(result)
     }
 
-    public func decision(_ entity: ResponseEntity, order: Int, isUpdateIfReinforcement: Bool = true) -> Single<ResultEntity> {
-        guard isShared || subSchedules.count > order else { return Single<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[isShared ? 0 : order].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
+    public func decision(_ entity: ResponseEntity, index: Int, isUpdateIfReinforcement: Bool = true) -> Single<ResultEntity> {
+        guard isShared || subSchedules.count > index else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
     }
 
-    public func updateValue(_ result: ResultEntity, order: Int) -> Single<ResultEntity> {
-        guard isShared || subSchedules.count > order else { return Single<ResultEntity>.error(RxError.noElements) }
-        return subSchedules[isShared ? 0 : order].updateValue(result)
+    public func updateValue(_ result: ResultEntity, index: Int) -> Single<ResultEntity> {
+        guard isShared || subSchedules.count > index else { return Single<ResultEntity>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].updateValue(result)
     }
 }
 

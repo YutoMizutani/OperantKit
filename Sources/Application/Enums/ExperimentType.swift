@@ -9,6 +9,7 @@ import Foundation
 
 /// Experiment type
 public struct ExperimentType: OptionSet {
+    /// The raw value of the option set
     public var rawValue: UInt8
 
     public init(rawValue: UInt8) {
