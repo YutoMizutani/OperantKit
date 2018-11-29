@@ -6,7 +6,7 @@ import RxSwift
  # Fixed ratio schedule
  ## FR logic
  The number of responses is greater than or equal the value.
- - Note: FR 1 schedule equals CRF schedule
+ - Note: FR 1 schedule is equal to CRF schedule
  - Complexity: O(1)
  */
 example("FR - logic") {
@@ -26,7 +26,7 @@ example("FR - logic") {
  ---
  ## Method chaining on the Rx stream
  - Important: The feature of the decision function has only met the condition, so you should compute the current value before the decision if you compute from the last SR value.
- - Note: [`.FR(1)`](x-source-tag://.FR()) equals [`.CRF()`](x-source-tag://.CRF())
+ - Note: [`.FR(1)`](x-source-tag://.FR()) is equal to to [`.CRF()`](x-source-tag://.CRF())
  */
 example("FR - Method chaining on the Rx stream") {
     _ = Observable.of(0, 1, 2, 3, 4)
@@ -41,7 +41,7 @@ example("FR - Method chaining on the Rx stream") {
 /*:
  ---
  ## Method chaining using UseCase on the Rx stream
- - Note: [`FR(1)`](x-source-tag://FR()) equals [`CRF()`](x-source-tag://CRF())
+ - Note: [`FR(1)`](x-source-tag://FR()) is equal to [`CRF()`](x-source-tag://CRF())
  */
 example("FR - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FR(2)

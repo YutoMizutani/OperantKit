@@ -6,7 +6,7 @@ import RxSwift
  # Continuous reinforcement schedule
  ## CRF logic
  The number of responses is greater than or equal 1.
- - Note: CRF schedule equals FR 1 schedule
+ - Note: CRF schedule is equal to FR 1 schedule
  - Complexity: O(1)
  */
 example("CRF - logic") {
@@ -25,7 +25,7 @@ example("CRF - logic") {
  ---
  ## Method chaining on the Rx stream
  - Important: The feature of the decision function has only met the condition, so you should compute the current value before the decision if you compute from the last SR value.
- - Note: [`.CRF()`](x-source-tag://.CRF()) equals [`.FR(1)`](x-source-tag://.FR())
+ - Note: [`.CRF()`](x-source-tag://.CRF()) is equal to [`.FR(1)`](x-source-tag://.FR())
  */
 example("CRF - Method chaining on the Rx stream") {
     _ = Observable.of(0, 1, 2, 3, 4)
@@ -40,7 +40,7 @@ example("CRF - Method chaining on the Rx stream") {
 /*:
  ---
  ## Method chaining using UseCase on the Rx stream
- - Note: [`CRF()`](x-source-tag://CRF()) equals [`FR(1)`](x-source-tag://FR())
+ - Note: [`CRF()`](x-source-tag://CRF()) is equal to [`FR(1)`](x-source-tag://FR())
  */
 example("CRF - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = CRF()
