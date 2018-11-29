@@ -29,7 +29,7 @@ class BrownAndJenkins1968 {
         }
 
         let timer = WhileLoopTimerUseCase(priority: .high)
-        let schedule = AlternativeScheduleUseCase(FT(whiteKeyLightDuration), CRF())
+        let schedule = DiscreteTrialUseCase(Alt(FT(whiteKeyLightDuration), CRF()))
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
