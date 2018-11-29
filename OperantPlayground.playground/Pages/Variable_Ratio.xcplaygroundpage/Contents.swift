@@ -48,7 +48,7 @@ example("VR - Method chaining on the Rx stream") {
  ---
  ## Method chaining using UseCase on the Rx stream
  */
-example("VR") {
+example("VR - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = VR(2, values: [1, 2])
     let responseTrriger = PublishSubject<Void>()
 
