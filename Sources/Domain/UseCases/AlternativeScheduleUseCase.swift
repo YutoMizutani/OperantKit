@@ -7,9 +7,10 @@
 
 import RxSwift
 
-public struct AlternativeScheduleUseCase: ScheduleUseCase {
+public class AlternativeScheduleUseCase: ScheduleUseCase {
     public var repository: ScheduleRespository
     public var subSchedules: [ScheduleUseCase]
+    var max: ResponseEntity = ResponseEntity.zero
 
     public var scheduleType: ScheduleType {
         return ScheduleType(
@@ -30,6 +31,7 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
+        max = max.emax(entity)
         let result = Observable.zip(
                 subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement).asObservable() }
             )
@@ -37,9 +39,9 @@ public struct AlternativeScheduleUseCase: ScheduleUseCase {
             .asSingle()
 
         return !isUpdateIfReinforcement ? result : result
-            .flatMap {
-                guard $0.isReinforcement else { return Single.just($0) }
-                return self.updateValue($0)
+            .flatMap { [weak self] in
+                guard let self = self, $0.isReinforcement else { return Single.just($0) }
+                return self.updateValue(ResultEntity($0.isReinforcement, self.max))
             }
     }
 

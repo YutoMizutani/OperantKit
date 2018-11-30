@@ -38,4 +38,25 @@ public extension ResponseEntity {
             milliseconds: lhs.milliseconds - rhs.milliseconds
         )
     }
+
+    /// Get each max elements
+    ///
+    /// - Complexity: O(*n*), where *n* is the length of the sequence.
+    static func emax(_ values: [ResponseEntity]) -> ResponseEntity? {
+        guard !values.isEmpty else { return nil }
+        return ResponseEntity(
+            numOfResponses: values.map { $0.numOfResponses }.max()!,
+            milliseconds: values.map { $0.milliseconds }.max()!
+        )
+    }
+
+    /// Get each max elements
+    ///
+    /// - Complexity: O(1)
+    func emax(_ value: ResponseEntity) -> ResponseEntity {
+        return ResponseEntity(
+            numOfResponses: numOfResponses > value.numOfResponses ? numOfResponses : value.numOfResponses,
+            milliseconds: milliseconds > value.milliseconds ? milliseconds : value.milliseconds
+        )
+    }
 }
