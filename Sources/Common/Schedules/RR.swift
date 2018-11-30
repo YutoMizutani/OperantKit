@@ -10,6 +10,7 @@ import RxSwift
 public extension Single where E == ResponseEntity {
 
     /// Random ratio schedule
+    ///
     /// - Complexity: O(1)
     /// - Tag: .RR()
     func RR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
@@ -17,6 +18,7 @@ public extension Single where E == ResponseEntity {
     }
 
     /// Random ratio schedule
+    ///
     /// - Complexity: O(1)
     /// - Tag: .RR()
     func RR(_ value: Single<Int>) -> Single<Bool> {
