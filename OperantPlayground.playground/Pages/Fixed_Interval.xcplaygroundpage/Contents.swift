@@ -15,7 +15,7 @@ example("FI - logic") {
     let value = 3000
 
     previousNumberOfResponses = 0
-    response = ResponseEntity()
+    response = ResponseEntity.zero
     print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
     previousNumberOfResponses = response.numOfResponses
     response = ResponseEntity(1, 1000)

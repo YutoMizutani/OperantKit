@@ -88,7 +88,7 @@ public extension ScheduleRespository {
                 return Disposables.create()
             }
 
-            recorder.extendEntity = ResponseEntity()
+            recorder.extendEntity = ResponseEntity.zero
             single(.success(()))
 
             return Disposables.create()

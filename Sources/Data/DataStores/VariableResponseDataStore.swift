@@ -18,32 +18,32 @@ public struct VariableResponseDataStore {
     public init(value: Int, iterations: Int) {
         let values = FleshlerHoffman().generatedRatio(value: value, iterations: iterations)
         self.variableEntity = VariableEntity(value: value, values: values)
-        self.lastReinforcementEntity = ResponseEntity()
-        self.extendEntity = ResponseEntity()
+        self.lastReinforcementEntity = ResponseEntity.zero
+        self.extendEntity = ResponseEntity.zero
     }
 
     public init(value: Int, values: [Int], unit: TimeUnit) {
         self.variableEntity = VariableEntity(value: value, values: values.map { unit.milliseconds($0) })
-        self.lastReinforcementEntity = ResponseEntity()
-        self.extendEntity = ResponseEntity()
+        self.lastReinforcementEntity = ResponseEntity.zero
+        self.extendEntity = ResponseEntity.zero
     }
 
     public init(value: Int, values: [Int]) {
         self.variableEntity = VariableEntity(value: value, values: values)
-        self.lastReinforcementEntity = ResponseEntity()
-        self.extendEntity = ResponseEntity()
+        self.lastReinforcementEntity = ResponseEntity.zero
+        self.extendEntity = ResponseEntity.zero
     }
 
     public init(value: Int, unit: TimeUnit, iterations: Int) {
         let values = FleshlerHoffman().generatedInterval(value: unit.milliseconds(value), iterations: iterations)
         self.variableEntity = VariableEntity(value: value, values: values)
-        self.lastReinforcementEntity = ResponseEntity()
-        self.extendEntity = ResponseEntity()
+        self.lastReinforcementEntity = ResponseEntity.zero
+        self.extendEntity = ResponseEntity.zero
     }
 
     public init(variableEntity: VariableEntity,
-                lastReinforcementEntity: ResponseEntity = ResponseEntity(),
-                extendEntity: ResponseEntity = ResponseEntity()) {
+                lastReinforcementEntity: ResponseEntity = ResponseEntity.zero,
+                extendEntity: ResponseEntity = ResponseEntity.zero) {
         self.variableEntity = variableEntity
         self.lastReinforcementEntity = lastReinforcementEntity
         self.extendEntity = extendEntity

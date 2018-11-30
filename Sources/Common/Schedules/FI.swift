@@ -26,7 +26,7 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .FI()
     func FI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return store(startWith: ResponseEntity())
+        return store(startWith: ResponseEntity.zero)
             .map { $0.newValue.fixedInterval(value(), $0.oldValue.numOfResponses) }
     }
 
@@ -37,7 +37,7 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .FI()
     func FI(_ value: Single<Int>) -> Single<Bool> {
-        return store(startWith: ResponseEntity())
+        return store(startWith: ResponseEntity.zero)
             .flatMap { a in
                 value.map { b in
                     a.newValue.fixedInterval(b, a.oldValue.numOfResponses)

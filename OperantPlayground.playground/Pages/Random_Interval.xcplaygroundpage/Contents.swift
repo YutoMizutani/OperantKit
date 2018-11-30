@@ -17,7 +17,7 @@ example("RI - logic") {
     let value = Milliseconds.random(in: 3000...3000)
 
     previousNumberOfResponses = 0
-    response = ResponseEntity()
+    response = ResponseEntity.zero
     print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
     previousNumberOfResponses = response.numOfResponses
     response = ResponseEntity(1, 1000)

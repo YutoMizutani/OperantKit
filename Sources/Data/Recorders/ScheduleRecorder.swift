@@ -8,16 +8,16 @@
 import Foundation
 
 public class ScheduleRecorder: ScheduleRecordable {
-    public var lastReinforcementEntity: ResponseEntity = ResponseEntity()
-    public var extendEntity: ResponseEntity = ResponseEntity()
+    public var lastReinforcementEntity: ResponseEntity = ResponseEntity.zero
+    public var extendEntity: ResponseEntity = ResponseEntity.zero
     public var currentOrder: Int = 0
     public var currentValue: Int = 0
 
     public init() {}
 
     public init(
-        lastReinforcementEntity: ResponseEntity = ResponseEntity(),
-        extendEntity: ResponseEntity = ResponseEntity(),
+        lastReinforcementEntity: ResponseEntity = ResponseEntity.zero,
+        extendEntity: ResponseEntity = ResponseEntity.zero,
         currentOrder: Int = 0,
         currentValue: Int = 0
     ) {

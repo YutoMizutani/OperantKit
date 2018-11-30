@@ -12,8 +12,8 @@ public class ScheduleDataStoreImpl: ScheduleParameterable, ScheduleRecordable {
     public var values: [Int]
     public var currentOrder: Int = 0
     public var currentValue: Int = 0
-    public var lastReinforcementEntity: ResponseEntity = ResponseEntity()
-    public var extendEntity: ResponseEntity = ResponseEntity()
+    public var lastReinforcementEntity: ResponseEntity = ResponseEntity.zero
+    public var extendEntity: ResponseEntity = ResponseEntity.zero
 
     public init(value: Int, values: [Int] = []) {
         self.value = value
