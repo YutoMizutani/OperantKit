@@ -7,32 +7,40 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+extension ResponseEntity {
 
-    /**
-        Fixed interval schedule
+    /// Fixed interval schedule
+    /// - Tag: .fixedInterval()
+    func fixedInterval(_ value: Milliseconds, _ previousNumOfResponses: Int) -> Bool {
+        return numOfResponses > previousNumOfResponses
+            && fixedTime(value)
+    }
+}
 
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    public func FI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedInterval(value)
+public extension Single where E == ResponseEntity {
+
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .FI()
+    func FI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
+        return store(startWith: ResponseEntity())
+            .map { $0.newValue.fixedInterval(value(), $0.oldValue.numOfResponses) }
     }
 
-    /**
-        FI logic
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    func fixedInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return asObservable()
-            .store(startWith: ResponseEntity())
-            .asSingle()
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .FI()
+    func FI(_ value: Single<Int>) -> Single<Bool> {
+        return store(startWith: ResponseEntity())
             .flatMap { a in
-                value.map {
-                    a.newValue.numOfResponses - a.oldValue.numOfResponses > 0
-                        && a.newValue.milliseconds >= $0
+                value.map { b in
+                    a.newValue.fixedInterval(b, a.oldValue.numOfResponses)
                 }
             }
     }

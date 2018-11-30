@@ -7,18 +7,24 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+extension ResponseEntity {
 
     /// Extinction schedule
-    public func EXT() -> Single<Bool> {
-        return extinction()
+    ///
+    /// - Complexity: O(1)
+    /// - Tag: .extinction()
+    func extinction() -> Bool {
+        return false
     }
+}
 
-    /// EXT logic
-    func extinction() -> Single<Bool> {
-        return self
-            .asObservable()
-            .map { _ in false }
-            .asSingle()
+public extension Single where E == ResponseEntity {
+
+    /// Extinction schedule
+    ///
+    /// - Complexity: O(1)
+    /// - Tag: .EXT()
+    func EXT() -> Single<Bool> {
+        return map { $0.extinction() }
     }
 }

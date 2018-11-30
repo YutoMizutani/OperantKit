@@ -7,15 +7,21 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
     /// Random ratio schedule
-    public func RR(_ value: Single<Int>) -> Single<Bool> {
-        return randomRatio(value)
+    ///
+    /// - Complexity: O(1)
+    /// - Tag: .RR()
+    func RR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
+        return FR(value)
     }
 
-    /// RR logic
-    func randomRatio(_ value: Single<Int>) -> Single<Bool> {
-        return fixedRatio(value)
+    /// Random ratio schedule
+    ///
+    /// - Complexity: O(1)
+    /// - Tag: .RR()
+    func RR(_ value: Single<Int>) -> Single<Bool> {
+        return FR(value)
     }
 }

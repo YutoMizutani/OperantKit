@@ -7,11 +7,13 @@
 
 import Foundation
 
+/// Time unit
 public enum TimeUnit: CaseIterable {
     case hours, minutes, seconds, milliseconds
 }
 
 extension TimeUnit: TimeUnitable {
+    /// Long name
     public var longName: String {
         switch self {
         case .hours:
@@ -25,6 +27,7 @@ extension TimeUnit: TimeUnitable {
         }
     }
 
+    /// Short name
     public var shortName: String {
         switch self {
         case .hours:
@@ -38,6 +41,7 @@ extension TimeUnit: TimeUnitable {
         }
     }
 
+    /// Translate to hours unit
     public func hours(_ value: Int) -> Hours? {
         switch self {
         case .hours:
@@ -51,6 +55,7 @@ extension TimeUnit: TimeUnitable {
         }
     }
 
+    /// Translate to minutes unit
     public func minutes(_ value: Int) -> Minutes? {
         switch self {
         case .hours:
@@ -64,6 +69,7 @@ extension TimeUnit: TimeUnitable {
         }
     }
 
+    /// Translate to seconds unit
     public func seconds(_ value: Int) -> Seconds? {
         switch self {
         case .hours:
@@ -77,6 +83,7 @@ extension TimeUnit: TimeUnitable {
         }
     }
 
+    /// Translate to milliseconds unit
     public func milliseconds(_ value: Int) -> Milliseconds {
         switch self {
         case .hours:

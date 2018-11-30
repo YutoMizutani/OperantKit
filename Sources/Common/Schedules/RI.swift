@@ -7,25 +7,25 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
-    /**
-        Random interval schedule
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    public func RI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return randomInterval(value)
+    /// Random interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .RI()
+    func RI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
+        return FI(value)
     }
 
-    /**
-        RI logic
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    func randomInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedInterval(value)
+    /// Random interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .RI()
+    func RI(_ value: Single<Milliseconds>) -> Single<Bool> {
+        return FI(value)
     }
 }

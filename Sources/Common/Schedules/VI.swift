@@ -7,25 +7,25 @@
 
 import RxSwift
 
-extension Single where E == ResponseEntity {
+public extension Single where E == ResponseEntity {
 
-    /**
-        Variable interval schedule
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    public func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return variableInterval(value)
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VI()
+    func VI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
+        return FI(value)
     }
 
-    /**
-        VI logic
-
-        - important:
-            In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-     */
-    func variableInterval(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return fixedInterval(value)
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    /// - Tag: .VI()
+    func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
+        return FI(value)
     }
 }

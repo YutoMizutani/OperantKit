@@ -18,7 +18,7 @@ final class SessionPresenter: Presenter {
     typealias WireframeType = EmptyWireframe
 
     // TODO: REMOVE
-    private let experimentEnitty = ExperimentEntity(interReinforcementInterval: 5000)
+    private let experimentEntity = ExperimentEntity(interReinforcementInterval: 5000)
 
     struct Input {
         let startTrigger: Driver<Void>
@@ -81,7 +81,7 @@ final class SessionPresenter: Presenter {
                 .do(onNext: { print("Response(\(i)): (\($0.numOfResponses), \($0.milliseconds))") })
 
             let reinforcement: Observable<ResponseEntity> = response
-                .flatMap { [unowned self] in self.scheduleUseCase.decision($0, order: i) }
+                .flatMap { [unowned self] in self.scheduleUseCase.decision($0, index: i) }
                 .filter { $0.isReinforcement }
                 .map { $0.entity }
                 .share(replay: 1)
@@ -91,7 +91,7 @@ final class SessionPresenter: Presenter {
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
-            let interReinforcementInterval = experimentEnitty.interReinforcementInterval
+            let interReinforcementInterval = experimentEntity.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
                 .updateExtendProperty(
                     scheduleUseCase.subSchedules,

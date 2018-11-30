@@ -10,10 +10,12 @@ import RxCocoa
 import RxSwift
 
 public extension ObservableType {
+    /// Map from any to void
     func mapToVoid() -> Observable<Void> {
         return map { _ in }
     }
 
+    /// Translate from Observable to Driver on error just complete
     func asDriverOnErrorJustComplete() -> Driver<E> {
         return asDriver { error in
             assertionFailure("Error \(error)")
@@ -21,6 +23,7 @@ public extension ObservableType {
         }
     }
 
+    /// Store the last response and return tuple
     func store(startWith: Self.E) -> Observable<(newValue: E, oldValue: E)> {
         let shared = self.share(replay: 1)
         return Observable.zip(shared, shared.startWith(startWith)) { a, b in
@@ -28,6 +31,7 @@ public extension ObservableType {
         }
     }
 
+    /// Store the last response and return tuple
     func store() -> Observable<(newValue: E, oldValue: E?)> {
         let shared = self.share(replay: 1)
         return Observable.zip(shared, shared.map(Optional.init).startWith(nil)) { a, b in
