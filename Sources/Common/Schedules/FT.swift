@@ -10,6 +10,7 @@ import RxSwift
 extension ResponseEntity {
 
     /// Fixed time schedule
+    ///
     /// - Tag: .fixedTime()
     func fixedTime(_ value: Milliseconds) -> Bool {
         return milliseconds >= value
