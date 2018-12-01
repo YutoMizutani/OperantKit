@@ -19,7 +19,9 @@ public struct ExtinctionScheduleUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        return Single.just(entity).EXT()
+        return repository.updateEmaxEntity(entity)
+            .map { entity }
+            .EXT()
             .map { ResultEntity($0, entity) }
     }
 }

@@ -12,14 +12,6 @@ public class AlternativeScheduleUseCase: ScheduleUseCase {
     public var subSchedules: [ScheduleUseCase]
     var max: ResponseEntity = ResponseEntity.zero
 
-    public var scheduleType: ScheduleType {
-        return ScheduleType(
-            rawValue: UInt64.max,
-            shortName: "Alt(\(subSchedules.map { $0.scheduleType.shortName }.joined(separator: ", ")))",
-            longName: "Alternative(\(subSchedules.map { $0.scheduleType.longName }.joined(separator: ", ")))"
-        )
-    }
-
     public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
         self.subSchedules = subSchedules

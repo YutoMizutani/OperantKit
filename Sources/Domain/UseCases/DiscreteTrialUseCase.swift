@@ -16,9 +16,6 @@ public class DiscreteTrialUseCase: ScheduleUseCase & Discreteable {
         return schedule.repository
     }
     public var schedule: ScheduleUseCase
-    public var scheduleType: ScheduleType {
-        return schedule.scheduleType
-    }
 
     public init(_ schedule: ScheduleUseCase) {
         self.schedule = schedule
@@ -61,8 +58,8 @@ public class DiscreteTrialUseCase: ScheduleUseCase & Discreteable {
 
     public func next(with entity: ResponseEntity) -> Single<Void> {
         return Single<Void>.zip(
-            repository.clearExtendProperty(),
-            repository.updateExtendProperty(entity),
+            repository.resetExtendEntity(),
+            repository.updateExtendEntity(entity),
             nextTrial()
         ) { _, _, _ in () }
     }

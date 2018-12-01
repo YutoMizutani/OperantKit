@@ -8,9 +8,8 @@
 import Foundation
 
 /// Log parameter requrements protocol
-public protocol Loggable {
-    associatedtype Element
-    typealias Log = (time: Milliseconds, element: Element)
+public protocol Loggable: class {
+    typealias LogType = (id: Int, time: Milliseconds)
     /// Stored logs
-    var log: [Log] { get set }
+    var logs: [LogType] { get set }
 }
