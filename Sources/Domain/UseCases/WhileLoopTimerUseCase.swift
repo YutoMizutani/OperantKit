@@ -77,6 +77,8 @@ private extension WhileLoopTimerUseCase {
                 usleep(1_000)
             case .low:
                 usleep(100_000)
+            case .manual(let v):
+                usleep(v)
             }
         }
     }
