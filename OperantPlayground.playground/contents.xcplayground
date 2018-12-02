@@ -1,19 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos' display-mode='raw'>
-    <pages>
-        <page name='Table_of_Contents'/>
-        <page name='Continuous_Reinforcement'/>
-        <page name='Extinction'/>
-        <page name='Fixed_Ratio'/>
-        <page name='Fixed_Time'/>
-        <page name='Fixed_Interval'/>
-        <page name='Variable_Ratio'/>
-        <page name='Variable_Time'/>
-        <page name='Variable_Interval'/>
-        <page name='Random_Ratio'/>
-        <page name='Random_Time'/>
-        <page name='Random_Interval'/>
-        <page name='Alternative'/>
-        <page name='Concurrent'/>
-    </pages>
-</playground>
+<playground version='6.0' target-platform='macos' display-mode='raw'/>

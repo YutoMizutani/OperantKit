@@ -8,6 +8,5 @@
 import Foundation
 
 public protocol ScheduleParameterable: class {
-    var value: Int { get }
-    var values: [Int] { get set }
+    var parameters: [Parameter] { get set }
 }

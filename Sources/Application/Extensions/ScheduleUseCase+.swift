@@ -10,12 +10,12 @@ import Foundation
 // MARK: - Builders without class
 
 /// - Tag: EXT()
-public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 0, values: [])) -> ExtinctionScheduleUseCase {
+public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ExtinctionScheduleUseCase {
     return ExtinctionScheduleUseCase(repository: repository)
 }
 
 /// - Tag: CRF()
-public func CRF(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 1, values: [])) -> FixedRatioScheduleUseCase {
+public func CRF(repository: ScheduleRespository = ScheduleRespositoryImpl(value: 1)) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(repository: repository)
 }
 
@@ -27,7 +27,7 @@ public func FR(repository: ScheduleRespository) -> FixedRatioScheduleUseCase {
 /// - Tag: FR()
 public func FR(_ value: Int) -> FixedRatioScheduleUseCase {
     return FixedRatioScheduleUseCase(
-        repository: ScheduleRespositoryImpl(value: value, values: [])
+        repository: ScheduleRespositoryImpl(value: value)
     )
 }
 
@@ -62,11 +62,7 @@ public func RR(repository: ScheduleRespository) -> RandomRatioScheduleUseCase {
 
 public func RR(_ value: Int) -> RandomRatioScheduleUseCase {
     return RandomRatioScheduleUseCase(
-        repository: ScheduleRespositoryImpl(
-            value: value,
-            values: [],
-            initValue: value > 0 ? Int.random(in: 1...value) : 1
-        )
+        repository: ScheduleRespositoryImpl(parameter: Parameter.random(value))
     )
 }
 
@@ -76,7 +72,7 @@ public func FI(repository: ScheduleRespository) -> FixedIntervalScheduleUseCase 
 
 public func FI(_ value: Int, unit: TimeUnit = .seconds) -> FixedIntervalScheduleUseCase {
     return FixedIntervalScheduleUseCase(
-        repository: ScheduleRespositoryImpl(value: unit.milliseconds(value), values: [])
+        repository: ScheduleRespositoryImpl(value: unit.milliseconds(value))
     )
 }
 
@@ -113,11 +109,7 @@ public func RI(repository: ScheduleRespository) -> RandomIntervalScheduleUseCase
 public func RI(_ value: Int, unit: TimeUnit = .seconds) -> RandomIntervalScheduleUseCase {
     let value = unit.milliseconds(value)
     return RandomIntervalScheduleUseCase(
-        repository: ScheduleRespositoryImpl(
-            value: value,
-            values: [],
-            initValue: value > 0 ? Int.random(in: 1...value) : 1
-        )
+        repository: ScheduleRespositoryImpl(parameter: Parameter.random(value))
     )
 }
 
@@ -127,10 +119,7 @@ public func FT(repository: ScheduleRespository) -> FixedTimeScheduleUseCase {
 
 public func FT(_ value: Int, unit: TimeUnit = .seconds) -> FixedTimeScheduleUseCase {
     return FixedTimeScheduleUseCase(
-        repository: ScheduleRespositoryImpl(
-            value: unit.milliseconds(value),
-            values: []
-        )
+        repository: ScheduleRespositoryImpl(value: unit.milliseconds(value))
     )
 }
 
@@ -167,11 +156,7 @@ public func RT(repository: ScheduleRespository) -> RandomTimeScheduleUseCase {
 public func RT(_ value: Int, unit: TimeUnit = .seconds) -> RandomTimeScheduleUseCase {
     let value = unit.milliseconds(value)
     return RandomTimeScheduleUseCase(
-        repository: ScheduleRespositoryImpl(
-            value: value,
-            values: [],
-            initValue: value > 0 ? Int.random(in: 1...value) : 1
-        )
+        repository: ScheduleRespositoryImpl(parameter: Parameter.random(value))
     )
 }
 

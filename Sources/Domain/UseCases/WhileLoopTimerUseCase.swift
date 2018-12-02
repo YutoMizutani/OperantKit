@@ -20,8 +20,8 @@ public class WhileLoopTimerUseCase: TimerUseCase {
     public var startTime: UInt64 = 0
     public var isRunning = true
     public var isPaused = false
-    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
     public var priority: Priority
+    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
     public init(priority: Priority = .default) {
         self.priority = priority

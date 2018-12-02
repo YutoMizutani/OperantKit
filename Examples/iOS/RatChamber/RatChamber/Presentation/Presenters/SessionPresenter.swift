@@ -93,7 +93,7 @@ final class SessionPresenter: Presenter {
 
             let interReinforcementInterval = experimentEntity.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
-                .updateExtendProperty(
+                .updateExtendEntity(
                     scheduleUseCase.subSchedules,
                     entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval)
                 )

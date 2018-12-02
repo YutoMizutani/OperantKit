@@ -18,8 +18,8 @@ public class CADisplayLinkTimerUseCase: TimerUseCase {
     private var startSleepTime: UInt64 = 0
     private var displayLink: CADisplayLink!
     public var startTime: UInt64 = 0
-    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
     public var priority: Priority
+    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
     public init(priority: Priority = .default) {
         self.priority = priority
