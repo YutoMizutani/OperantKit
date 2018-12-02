@@ -26,6 +26,9 @@ public protocol ScheduleRespository {
     func updateLastReinforcement(_ entity: ResponseEntity, index: Int) -> Single<Void>
     func updateExtendEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
 
+    // MARK: - Add
+    func addExtendEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
+
     // MARK: - Next
     func nextValue(_ index: Int) -> Single<Void>
 
@@ -125,6 +128,16 @@ public extension ScheduleRespository {
         return Single.create { single in
 
             self.recorder.scheduleRecordEntities[index].extendEntity = entity
+            single(.success(()))
+
+            return Disposables.create()
+        }
+    }
+
+    func addExtendEntity(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
+        return Single.create { single in
+
+            self.recorder.scheduleRecordEntities[index].extendEntity += entity
             single(.success(()))
 
             return Disposables.create()

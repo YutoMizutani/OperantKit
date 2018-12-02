@@ -29,15 +29,33 @@ extension ResponseEntity: Equatable {
         return lhs.numOfResponses == rhs.numOfResponses
             && lhs.milliseconds == rhs.milliseconds
     }
-}
 
-public extension ResponseEntity {
-    static func - (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
+    public static func + (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
+        return ResponseEntity(
+            numOfResponses: lhs.numOfResponses + rhs.numOfResponses,
+            milliseconds: lhs.milliseconds + rhs.milliseconds
+        )
+    }
+
+    public static func - (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(
             numOfResponses: lhs.numOfResponses - rhs.numOfResponses,
             milliseconds: lhs.milliseconds - rhs.milliseconds
         )
     }
+
+    public static func += (lhs: inout ResponseEntity, rhs: ResponseEntity) {
+        lhs.numOfResponses += rhs.numOfResponses
+        lhs.milliseconds += rhs.milliseconds
+    }
+
+    public static func -= (lhs: inout ResponseEntity, rhs: ResponseEntity) {
+        lhs.numOfResponses -= rhs.numOfResponses
+        lhs.milliseconds -= rhs.milliseconds
+    }
+}
+
+public extension ResponseEntity {
 
     /// Get each max elements
     ///

@@ -83,6 +83,7 @@ class BrownAndJenkins1968 {
 
         nextTrial
             .do(onNext: { _ in print("SD on") })
+            .flatMap { _ in schedule.nextTrial() }
             .subscribe()
             .disposed(by: disposeBag)
 
