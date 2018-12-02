@@ -23,9 +23,8 @@ struct ExperimentFT {
             .subscribe()
             .disposed(by: disposeBag)
 
-        let timeObservable = timer.milliseconds
-            .asResponse()
-            .asObservable()
+        let timeObservable = timer.milliseconds.shared
+            .map { ResponseEntity(0, $0) }
         
         timeObservable
             .flatMap { schedule.decision($0) }
