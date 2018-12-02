@@ -86,6 +86,8 @@ public extension CADisplayLinkTimerUseCase {
                 self.displayLink.preferredFramesPerSecond = 60
             case .low:
                 self.displayLink.preferredFramesPerSecond = 30
+            case .manual(let v):
+                self.displayLink.preferredFramesPerSecond = Int(v)
             }
             self.startTime = mach_absolute_time()
             self.modifiedStartTime = self.startTime
