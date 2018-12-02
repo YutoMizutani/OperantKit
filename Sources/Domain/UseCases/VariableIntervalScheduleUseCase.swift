@@ -20,10 +20,11 @@ public struct VariableIntervalScheduleUseCase: ScheduleUseCase {
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
         let result = Single.zip(
-                repository.getExtendProperty(),
-                repository.getLastReinforcementProperty()
+                repository.updateEmaxEntity(entity),
+                repository.getExtendEntity(),
+                repository.getLastReinforcement()
             )
-            .map { (entity - $0.0 - $0.1) }
+            .map { (entity - $0.1 - $0.2) }
             .VI(repository.getValue())
             .map { ResultEntity($0, entity) }
 

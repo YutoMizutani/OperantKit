@@ -18,9 +18,9 @@ public class CVDisplayLinkTimerUseCase: TimerUseCase {
     private var startSleepTime: UInt64 = 0
     private var displayLink: CVDisplayLink!
     public var startTime: UInt64 = 0
-    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
-    /// Not supported yet
+    /// - Note: Not supported yet
     public var priority: Priority = .default
+    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
     public init() {
         _ = TimeHelper.shared

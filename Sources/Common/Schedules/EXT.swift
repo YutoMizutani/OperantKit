@@ -10,6 +10,7 @@ import RxSwift
 extension ResponseEntity {
 
     /// Extinction schedule
+    ///
     /// - Complexity: O(1)
     /// - Tag: .extinction()
     func extinction() -> Bool {
@@ -20,6 +21,7 @@ extension ResponseEntity {
 public extension Single where E == ResponseEntity {
 
     /// Extinction schedule
+    ///
     /// - Complexity: O(1)
     /// - Tag: .EXT()
     func EXT() -> Single<Bool> {

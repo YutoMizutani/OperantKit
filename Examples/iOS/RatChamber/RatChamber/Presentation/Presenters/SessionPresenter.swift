@@ -18,7 +18,7 @@ final class SessionPresenter: Presenter {
     typealias WireframeType = EmptyWireframe
 
     // TODO: REMOVE
-    private let experimentEnitty = ExperimentEntity(interReinforcementInterval: 5000)
+    private let experimentEntity = ExperimentEntity(interReinforcementInterval: 5000)
 
     struct Input {
         let startTrigger: Driver<Void>
@@ -91,9 +91,9 @@ final class SessionPresenter: Presenter {
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()
 
-            let interReinforcementInterval = experimentEnitty.interReinforcementInterval
+            let interReinforcementInterval = experimentEntity.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
-                .updateExtendProperty(
+                .updateExtendEntity(
                     scheduleUseCase.subSchedules,
                     entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval)
                 )

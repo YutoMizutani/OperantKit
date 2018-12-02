@@ -7,6 +7,6 @@
 
 import Foundation
 
-public enum Priority: CaseIterable {
-    case immediate, high, `default`, low
+public enum Priority {
+    case immediate, high, `default`, low, manual(UInt32)
 }

@@ -18,7 +18,7 @@ example("VI - logic") {
     let order = 0
 
     previousNumberOfResponses = 0
-    response = ResponseEntity()
+    response = ResponseEntity.zero
     print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= values[order])
     previousNumberOfResponses = response.numOfResponses
     response = ResponseEntity(1, 1000)

@@ -81,36 +81,36 @@ public extension Observable {
         })
     }
 
-    func updateExtendProperty(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
+    func updateExtendEntity(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
         return flatMap { observer -> Observable<E> in
             return Observable<Void>.zip(
-                schedules.map { $0.repository.updateExtendProperty(entity).asObservable() }
+                schedules.map { $0.repository.updateExtendEntity(entity).asObservable() }
                 )
                 .map { _ in observer }
         }
     }
-    func updateExtendProperty(_ schedules: [ScheduleUseCase], entity: @escaping () -> ResponseEntity) -> Observable<E> {
+//    func updateExtendEntity(_ schedules: [ScheduleUseCase], entity: @escaping () -> ResponseEntity) -> Observable<E> {
+//        return flatMap { observer -> Observable<E> in
+//            return Observable<Void>.zip(
+//                schedules.map { $0.repository.updateExtendEntity(entity).asObservable() }
+//                )
+//                .map { _ in observer }
+//        }
+//    }
+
+    func resetExtendEntity(_ schedules: [ScheduleUseCase]) -> Observable<E> {
         return flatMap { observer -> Observable<E> in
             return Observable<Void>.zip(
-                schedules.map { $0.repository.updateExtendProperty(entity).asObservable() }
+                schedules.map { $0.repository.resetExtendEntity().asObservable() }
                 )
                 .map { _ in observer }
         }
     }
 
-    func clearExtendProperty(_ schedules: [ScheduleUseCase]) -> Observable<E> {
+    func updateLastReinforcement(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
         return flatMap { observer -> Observable<E> in
             return Observable<Void>.zip(
-                schedules.map { $0.repository.clearExtendProperty().asObservable() }
-                )
-                .map { _ in observer }
-        }
-    }
-
-    func updateLastReinforcementProperty(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
-        return flatMap { observer -> Observable<E> in
-            return Observable<Void>.zip(
-                schedules.map { $0.repository.updateLastReinforcementProperty(entity).asObservable() }
+                schedules.map { $0.repository.updateLastReinforcement(entity).asObservable() }
                 )
                 .map { _ in observer }
         }

@@ -8,10 +8,10 @@
 import RxSwift
 
 public protocol TimerUseCase {
-    /// Observable elapsed milliseconds time
-    var milliseconds: PublishSubject<Milliseconds> { get }
     /// Timer priority
     var priority: Priority { get set }
+    /// Observable elapsed milliseconds time
+    var milliseconds: PublishSubject<Milliseconds> { get }
     /// Start timer
     func start() -> Single<Void>
     /// Get elapsed time

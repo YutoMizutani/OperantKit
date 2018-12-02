@@ -1,4 +1,10 @@
 /*:
+ > # IMPORTANT: To use **OperantPlayground.playground**:
+ 1. Open **OperantKit.xcworkspace**.
+ 1. Build the **OperantKit macOS** scheme (**Product** → **Build**).
+ 1. Open **OperantKitPlayground.playground** playground in the **Project navigator**.
+ 1. Show the Debug Area (**View** → **Debug Area** → **Show Debug Area**).
+ ----
  # Table of Contents:
  ## Simple schedules
  1. [Continuous reinforcement schedule](Continuous_Reinforcement)
@@ -14,5 +20,6 @@
  1. [Random interval schedule](Random_Interval)
  ## Compound schedules
  1. [Alternative schedule](Alternative)
+ 1. [Concurrent schedule](Concurrent)
  */
 //: [Next](@next)

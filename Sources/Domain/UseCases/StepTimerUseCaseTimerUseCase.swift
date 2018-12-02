@@ -9,9 +9,9 @@
 import RxSwift
 
 public class StepTimerUseCase: TimerUseCase {
-    public var milliseconds = PublishSubject<Milliseconds>()
-    /// Not supported yet
+    /// - Note: Not supported yet
     public var priority: Priority = .default
+    public var milliseconds = PublishSubject<Milliseconds>()
     private var value = 0
     private var step: Int
 
