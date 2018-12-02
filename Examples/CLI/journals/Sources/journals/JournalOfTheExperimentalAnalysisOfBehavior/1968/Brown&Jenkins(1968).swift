@@ -66,7 +66,7 @@ class BrownAndJenkins1968 {
         let reinforcementOff = reinforcementOn
             .do(onNext: { print("SR on: \($0.entity.milliseconds)ms (IRI: \(trayOperatingDuration)ms)") })
             .flatMap { schedule.updateValue($0) }
-            .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: trayOperatingDuration)).map { a } }
+            .flatMap { a in schedule.repository.updateExtendEntity(ResponseEntity(numOfResponses: 0, milliseconds: trayOperatingDuration)).map { a } }
             .flatMap { timer.delay(trayOperatingDuration, currentTime: $0.entity.milliseconds) }
             .do(onNext: { print("SR off: \($0)ms") })
             .asObservable()
@@ -75,7 +75,7 @@ class BrownAndJenkins1968 {
         let nextTrial = Observable.merge(firstStart, reinforcementOff)
             .do(onNext: { _ in updateInterval() })
             .do(onNext: { print("ITI on: \($0)ms (Next ITI: \(nextInterval)ms)") })
-            .flatMap { a in schedule.repository.updateExtendProperty(ResponseEntity(numOfResponses: 0, milliseconds: nextInterval)).map { a } }
+            .flatMap { a in schedule.repository.updateExtendEntity(ResponseEntity(numOfResponses: 0, milliseconds: nextInterval)).map { a } }
             .flatMap { timer.delay(nextInterval, currentTime: $0) }
             .do(onNext: { print("ITI off: \($0)ms") })
             .asObservable()
