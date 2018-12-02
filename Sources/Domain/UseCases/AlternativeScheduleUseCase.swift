@@ -7,10 +7,9 @@
 
 import RxSwift
 
-public class AlternativeScheduleUseCase: ScheduleUseCase {
+public struct AlternativeScheduleUseCase: ScheduleUseCase {
     public var repository: ScheduleRespository
     public var subSchedules: [ScheduleUseCase]
-    var max: ResponseEntity = ResponseEntity.zero
 
     public init(_ subSchedules: ScheduleUseCase..., repository: ScheduleRespository = ScheduleRespositoryImpl()) {
         self.repository = repository
@@ -23,18 +22,21 @@ public class AlternativeScheduleUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        max = max.emax(entity)
-        let result = Observable.zip(
-                subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement).asObservable() }
-            )
-            .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, entity) }
-            .asSingle()
-
-        return !isUpdateIfReinforcement ? result : result
-            .flatMap { [weak self] in
-                guard let self = self, $0.isReinforcement else { return Single.just($0) }
-                return self.updateValue(ResultEntity($0.isReinforcement, self.max))
+        let result: Single<ResultEntity> = (isUpdateIfReinforcement ? repository.updateEmaxEntity(entity) : Single.just(()))
+            .flatMap {
+                Observable.zip(
+                    self.subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement).asObservable() }
+                )
             }
+            .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, entity) }
+
+        return !isUpdateIfReinforcement
+            ? result
+            : Single.zip(result, repository.getMaxEntity())
+                .flatMap {
+                    guard $0.0.isReinforcement else { return Single.just($0.0) }
+                    return self.updateValue(ResultEntity($0.0.isReinforcement, $0.1))
+                }
     }
 
     public func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
