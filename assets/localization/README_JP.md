@@ -161,7 +161,7 @@ $ swift build
 
 ## ドキュメント
 
-[docs/index.html](https://github.com/YutoMizutani/OperantKit/blob/master/docs/index.html) を参照して下さい。
+[https://yutomizutani.github.io/OperantKit/](https://yutomizutani.github.io/OperantKit/) を参照して下さい。
 
 ## オペラント条件づけ (道具的条件づけ) について
 
