@@ -80,39 +80,4 @@ public extension Observable {
             }
         })
     }
-
-    func updateExtendEntity(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
-        return flatMap { observer -> Observable<E> in
-            return Observable<Void>.zip(
-                schedules.map { $0.repository.updateExtendEntity(entity).asObservable() }
-                )
-                .map { _ in observer }
-        }
-    }
-//    func updateExtendEntity(_ schedules: [ScheduleUseCase], entity: @escaping () -> ResponseEntity) -> Observable<E> {
-//        return flatMap { observer -> Observable<E> in
-//            return Observable<Void>.zip(
-//                schedules.map { $0.repository.updateExtendEntity(entity).asObservable() }
-//                )
-//                .map { _ in observer }
-//        }
-//    }
-
-    func resetExtendEntity(_ schedules: [ScheduleUseCase]) -> Observable<E> {
-        return flatMap { observer -> Observable<E> in
-            return Observable<Void>.zip(
-                schedules.map { $0.repository.resetExtendEntity().asObservable() }
-                )
-                .map { _ in observer }
-        }
-    }
-
-    func updateLastReinforcement(_ schedules: [ScheduleUseCase], entity: ResponseEntity) -> Observable<E> {
-        return flatMap { observer -> Observable<E> in
-            return Observable<Void>.zip(
-                schedules.map { $0.repository.updateLastReinforcement(entity).asObservable() }
-                )
-                .map { _ in observer }
-        }
-    }
 }

@@ -24,6 +24,8 @@ public protocol ScheduleRespository {
     func updateEmaxEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
     func updateLastReinforcement(_ index: Int) -> Single<Void>
     func updateLastReinforcement(_ entity: ResponseEntity, index: Int) -> Single<Void>
+    func updateLastReinforcement(numOfResponses: Int, index: Int) -> Single<Void>
+    func updateLastReinforcement(milliseconds: Milliseconds, index: Int) -> Single<Void>
     func updateExtendEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
 
     // MARK: - Add
@@ -40,6 +42,10 @@ public extension ScheduleRespository {
     // MARK: - Get (extension)
     func getValue(_ index: Int = 0) -> Single<Int> {
         return Single.create { single in
+            guard self.parameter.parameters.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             single(.success(self.parameter.parameters[index].getValue()))
 
@@ -49,6 +55,10 @@ public extension ScheduleRespository {
 
     func getParameter(_ index: Int = 0) -> Single<Parameter> {
         return Single.create { single in
+            guard self.parameter.parameters.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             single(.success(self.parameter.parameters[index]))
 
@@ -58,6 +68,10 @@ public extension ScheduleRespository {
 
     func getMaxEntity(_ index: Int = 0) -> Single<ResponseEntity> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             single(.success(self.recorder.scheduleRecordEntities[index].max))
 
@@ -67,6 +81,10 @@ public extension ScheduleRespository {
 
     func getLastReinforcement(_ index: Int = 0) -> Single<ResponseEntity> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             single(.success(self.recorder.scheduleRecordEntities[index].lastReinforcement))
 
@@ -76,6 +94,10 @@ public extension ScheduleRespository {
 
     func getExtendEntity(_ index: Int = 0) -> Single<ResponseEntity> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             single(.success(self.recorder.scheduleRecordEntities[index].extendEntity))
 
@@ -86,6 +108,10 @@ public extension ScheduleRespository {
     // MARK: - Update (extension)
     func updateMaxEntity(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].max = entity
             single(.success(()))
@@ -96,6 +122,10 @@ public extension ScheduleRespository {
 
     func updateEmaxEntity(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].max = self.recorder.scheduleRecordEntities[index].max.emax(entity)
             single(.success(()))
@@ -106,6 +136,10 @@ public extension ScheduleRespository {
 
     func updateLastReinforcement(_ index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].lastReinforcement = self.recorder.scheduleRecordEntities[index].max
             single(.success(()))
@@ -116,6 +150,10 @@ public extension ScheduleRespository {
 
     func updateLastReinforcement(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].lastReinforcement = entity
             single(.success(()))
@@ -124,8 +162,40 @@ public extension ScheduleRespository {
         }
     }
 
+    func updateLastReinforcement(numOfResponses: Int, index: Int = 0) -> Single<Void> {
+        return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
+
+            self.recorder.scheduleRecordEntities[index].lastReinforcement.numOfResponses = numOfResponses
+            single(.success(()))
+
+            return Disposables.create()
+        }
+    }
+
+    func updateLastReinforcement(milliseconds: Milliseconds, index: Int = 0) -> Single<Void> {
+        return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
+
+            self.recorder.scheduleRecordEntities[index].lastReinforcement.milliseconds = milliseconds
+            single(.success(()))
+
+            return Disposables.create()
+        }
+    }
+
     func updateExtendEntity(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].extendEntity = entity
             single(.success(()))
@@ -136,6 +206,10 @@ public extension ScheduleRespository {
 
     func addExtendEntity(_ entity: ResponseEntity, index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.recorder.scheduleRecordEntities[index].extendEntity += entity
             single(.success(()))
@@ -147,6 +221,10 @@ public extension ScheduleRespository {
     // MARK: - Next (extension)
     func nextValue(_ index: Int = 0) -> Single<Void> {
         return Single.create { single in
+            guard self.recorder.scheduleRecordEntities.count > index else {
+                single(.error(RxError.argumentOutOfRange))
+                return Disposables.create()
+            }
 
             self.parameter.parameters[index].next()
             single(.success(()))
