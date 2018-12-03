@@ -42,12 +42,40 @@ extension DiscreteTrialUseCase: ScheduleUseCase {
         return schedule.updateValue()
     }
 
+    public func updateValue(isNext: Bool) -> Single<Void> {
+        return schedule.updateValue(isNext: isNext)
+    }
+
+    public func updateValue(_ entity: ResponseEntity) -> Single<Void> {
+        return schedule.updateValue(entity)
+    }
+
+    public func updateValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void> {
+        return schedule.updateValue(entity, isNext: isNext)
+    }
+
     public func updateValue(_ result: ResultEntity) -> Single<Void> {
         return schedule.updateValue(result)
     }
 
-    public func updateValue(_ milliseconds: Milliseconds) -> Single<Void> {
-        return schedule.updateValue(milliseconds)
+    public func updateValue(_ result: ResultEntity, isNext: Bool) -> Single<Void> {
+        return schedule.updateValue(result, isNext: isNext)
+    }
+
+    public func updateValue(numOfResponses: Int) -> Single<Void> {
+        return schedule.updateValue(numOfResponses: numOfResponses)
+    }
+
+    public func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void> {
+        return schedule.updateValue(numOfResponses: numOfResponses, isNext: isNext)
+    }
+
+    public func updateValue(milliseconds: Milliseconds) -> Single<Void> {
+        return schedule.updateValue(milliseconds: milliseconds)
+    }
+
+    public func updateValue(milliseconds: Milliseconds, isNext: Bool) -> Single<Void> {
+        return schedule.updateValue(milliseconds: milliseconds, isNext: isNext)
     }
 }
 

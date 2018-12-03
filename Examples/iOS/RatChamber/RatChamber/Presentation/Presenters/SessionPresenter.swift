@@ -93,11 +93,13 @@ final class SessionPresenter: Presenter {
 
             let interReinforcementInterval = experimentEntity.interReinforcementInterval
             let reinforcementOff: Driver<Void> = reinforcement
-                .updateExtendEntity(
-                    scheduleUseCase.subSchedules,
-                    entity: ResponseEntity(numOfResponses: 0, milliseconds: interReinforcementInterval)
-                )
-                .flatMap { [unowned self] in self.timerUseCase.delay(interReinforcementInterval, currentTime: $0.milliseconds) }
+                .flatMap { [unowned self] r in
+                    return Single.zip(
+                        self.scheduleUseCase.addExtendsValue(ResponseEntity(0, interReinforcementInterval), isNext: false),
+                        self.timerUseCase.delay(interReinforcementInterval, currentTime: r.milliseconds)
+                    )
+                    .map { $0.1 }
+                }
                 .do(onNext: { print("SR off: \($0)") })
                 .mapToVoid()
                 .asDriverOnErrorJustComplete()

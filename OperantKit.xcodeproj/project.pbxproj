@@ -378,10 +378,10 @@
 		99C74F19219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
 		99C74F1A219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
 		99C74F1B219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */; };
-		99C7518021A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
-		99C7518121A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
-		99C7518221A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
-		99C7518321A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */; };
+		99C7518021A06ED100DABE14 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */; };
+		99C7518121A06ED100DABE14 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */; };
+		99C7518221A06ED100DABE14 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */; };
+		99C7518321A06ED100DABE14 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */; };
 		99C7518721A077AB00DABE14 /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7518621A077AB00DABE14 /* Responsible.swift */; };
 		99C7518821A077AB00DABE14 /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7518621A077AB00DABE14 /* Responsible.swift */; };
 		99C7518921A077AB00DABE14 /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7518621A077AB00DABE14 /* Responsible.swift */; };
@@ -598,7 +598,7 @@
 		99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleTests.swift; sourceTree = "<group>"; };
-		99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleUseCase+.swift"; sourceTree = "<group>"; };
+		99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBuilder.swift; sourceTree = "<group>"; };
 		99C7518621A077AB00DABE14 /* Responsible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
 		99C7518B21A0794100DABE14 /* Reinforceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reinforceable.swift; sourceTree = "<group>"; };
 		99C7519021A079A200DABE14 /* Discreteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discreteable.swift; sourceTree = "<group>"; };
@@ -695,6 +695,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99035A7B21B5D51E00A4C196 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				99C7517F21A06ED000DABE14 /* ScheduleBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
 		993075FC21AC45C900A8132E /* RxTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +946,7 @@
 		999C7C9521951CDA0044C47E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				99035A7B21B5D51E00A4C196 /* Builders */,
 				999C7C9621951CDA0044C47E /* Typealias */,
 				999C7C9B21951CDB0044C47E /* Enums */,
 				999C7C9D21951CDB0044C47E /* Extensions */,
@@ -976,7 +985,6 @@
 			children = (
 				99AE65BD21A2D3450090B308 /* Primitive */,
 				99AE65BE21A2D3520090B308 /* Rx */,
-				99C7517F21A06ED000DABE14 /* ScheduleUseCase+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1562,7 +1570,7 @@
 				99C752F921A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				999C7D0621951CDC0044C47E /* RandomEntity.swift in Sources */,
 				99C751A121A08C3300DABE14 /* Concurrentable.swift in Sources */,
-				99C7518121A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
+				99C7518121A06ED100DABE14 /* ScheduleBuilder.swift in Sources */,
 				99FE4C0B21AEDDCE00DDA6B5 /* StepTimerUseCaseTimerUseCase.swift in Sources */,
 				999C7D0F21951CDC0044C47E /* DecisionSchedule.swift in Sources */,
 				99265BA021B2977500577754 /* Parameter.swift in Sources */,
@@ -1689,7 +1697,7 @@
 				99C74EF6219A70F100DABE14 /* VT.swift in Sources */,
 				9965655421A66F41004C76F0 /* DiscreteTrialDataStoreImpl.swift in Sources */,
 				99C751A021A08C3300DABE14 /* Concurrentable.swift in Sources */,
-				99C7518021A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
+				99C7518021A06ED100DABE14 /* ScheduleBuilder.swift in Sources */,
 				999C7CD721951CDB0044C47E /* ScheduleUseCase.swift in Sources */,
 				999C7D0721951CDC0044C47E /* RandomEntity.swift in Sources */,
 				999C7D1021951CDC0044C47E /* DecisionSchedule.swift in Sources */,
@@ -1808,7 +1816,7 @@
 				999C7DA0219533150044C47E /* RR.swift in Sources */,
 				99C752FA21A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				99C751A221A08C3300DABE14 /* Concurrentable.swift in Sources */,
-				99C7518221A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
+				99C7518221A06ED100DABE14 /* ScheduleBuilder.swift in Sources */,
 				999C7DA1219533150044C47E /* RI.swift in Sources */,
 				999C7DA2219533150044C47E /* FI.swift in Sources */,
 				9965652921A6597C004C76F0 /* DiscreteTrialRecordable.swift in Sources */,
@@ -1932,7 +1940,7 @@
 				999C7DF4219542610044C47E /* RR.swift in Sources */,
 				99C752FB21A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				99C751A321A08C3300DABE14 /* Concurrentable.swift in Sources */,
-				99C7518321A06ED100DABE14 /* ScheduleUseCase+.swift in Sources */,
+				99C7518321A06ED100DABE14 /* ScheduleBuilder.swift in Sources */,
 				999C7DF5219542610044C47E /* RI.swift in Sources */,
 				999C7DF6219542610044C47E /* FI.swift in Sources */,
 				9965652A21A6597C004C76F0 /* DiscreteTrialRecordable.swift in Sources */,

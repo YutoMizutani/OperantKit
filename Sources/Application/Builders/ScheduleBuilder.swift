@@ -1,5 +1,5 @@
 //
-//  ScheduleUseCase+.swift
+//  ScheduleBuilder.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/18.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Builders without class
+// MARK: - Exposed builders without classes
 
 /// - Tag: EXT()
 public func EXT(repository: ScheduleRespository = ScheduleRespositoryImpl()) -> ExtinctionScheduleUseCase {

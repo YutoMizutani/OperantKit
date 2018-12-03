@@ -9,7 +9,7 @@ import RxSwift
 
 public class FixedTimeScheduleUseCase: ScheduleUseCaseBase, ScheduleUseCase {
     public var scheduleType: ScheduleType {
-        return .randomRatio
+        return .fixedTime
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {

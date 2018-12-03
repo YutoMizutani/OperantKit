@@ -26,7 +26,11 @@ public extension ScheduleUseCaseBase {
             repository.getExtendEntity(),
             repository.getLastReinforcement()
             )
-            .map { (entity - $0.1 - $0.2) }
+            .map {
+                print("### \(((entity - $0.1 - $0.2).numOfResponses, (entity - $0.1 - $0.2).milliseconds)):\t\t "
+                    + "\((entity.numOfResponses, entity.milliseconds))\t - \(($0.1.numOfResponses, $0.1.milliseconds))\t - \(($0.2.numOfResponses, $0.2.milliseconds))")
+                return (entity - $0.1 - $0.2)
+            }
     }
 }
 
@@ -53,28 +57,61 @@ public extension ScheduleUseCase where Self: ScheduleUseCaseBase {
     }
 
     func updateValue() -> Single<Void> {
+        return updateValue(isNext: true)
+    }
+
+    func updateValue(isNext: Bool) -> Single<Void> {
         return Single.zip(
             repository.resetExtendEntity(),
             repository.updateLastReinforcement(),
-            repository.nextValue()
+            isNext ? repository.nextValue() : Single.just(())
+            )
+            .mapToVoid()
+    }
+
+    func updateValue(_ entity: ResponseEntity) -> Single<Void> {
+        return updateValue(entity, isNext: true)
+    }
+
+    func updateValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void> {
+        return Single.zip(
+            repository.resetExtendEntity(),
+            repository.updateLastReinforcement(entity),
+            isNext ? repository.nextValue() : Single.just(())
             )
             .mapToVoid()
     }
 
     func updateValue(_ result: ResultEntity) -> Single<Void> {
+        return updateValue(result, isNext: true)
+    }
+
+    func updateValue(_ result: ResultEntity, isNext: Bool) -> Single<Void> {
+        return updateValue(result.entity, isNext: isNext)
+    }
+
+    func updateValue(numOfResponses: Int) -> Single<Void> {
+        return updateValue(numOfResponses: numOfResponses, isNext: true)
+    }
+
+    func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void> {
         return Single.zip(
             repository.resetExtendEntity(),
-            repository.updateLastReinforcement(result.entity),
-            repository.nextValue()
+            repository.updateLastReinforcement(numOfResponses: numOfResponses),
+            isNext ? repository.nextValue() : Single.just(())
             )
             .mapToVoid()
     }
 
-    func updateValue(_ milliseconds: Milliseconds) -> Single<Void> {
+    func updateValue(milliseconds: Milliseconds) -> Single<Void> {
+        return updateValue(milliseconds: milliseconds, isNext: true)
+    }
+
+    func updateValue(milliseconds: Milliseconds, isNext: Bool) -> Single<Void> {
         return Single.zip(
             repository.resetExtendEntity(),
-            repository.updateLastReinforcement(milliseconds),
-            repository.nextValue()
+            repository.updateLastReinforcement(milliseconds: milliseconds),
+            isNext ? repository.nextValue() : Single.just(())
             )
             .mapToVoid()
     }

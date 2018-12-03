@@ -13,7 +13,7 @@ public class FixedRatioScheduleUseCase: ScheduleUseCaseBase, ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        let result: Single<ResultEntity> = getCurrentValue(entity)
+        let result = getCurrentValue(entity)
             .FR(repository.getValue())
             .map { ResultEntity($0, entity) }
 
