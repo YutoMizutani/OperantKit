@@ -24,6 +24,7 @@ public protocol ScheduleRespository {
     func updateEmaxEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
     func updateLastReinforcement(_ index: Int) -> Single<Void>
     func updateLastReinforcement(_ entity: ResponseEntity, index: Int) -> Single<Void>
+    func updateLastReinforcement(_ milliseconds: Milliseconds, index: Int) -> Single<Void>
     func updateExtendEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
 
     // MARK: - Add
@@ -118,6 +119,16 @@ public extension ScheduleRespository {
         return Single.create { single in
 
             self.recorder.scheduleRecordEntities[index].lastReinforcement = entity
+            single(.success(()))
+
+            return Disposables.create()
+        }
+    }
+
+    func updateLastReinforcement(_ milliseconds: Milliseconds, index: Int) -> Single<Void> {
+        return Single.create { single in
+
+            self.recorder.scheduleRecordEntities[index].lastReinforcement.milliseconds = milliseconds
             single(.success(()))
 
             return Disposables.create()

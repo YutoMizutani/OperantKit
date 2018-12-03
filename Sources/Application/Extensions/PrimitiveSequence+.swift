@@ -33,6 +33,11 @@ public extension PrimitiveSequence {
     func flatMap<O>(_ selector: @escaping (PrimitiveSequence.E) throws -> O) -> RxSwift.Single<O.E> where O : ObservableConvertibleType {
         return asObservable().flatMap(selector).asSingle()
     }
+
+    /// Map from any to void
+    func mapToVoid() -> Single<Void> {
+        return map { _ in }
+    }
 }
 
 public extension PrimitiveSequence {

@@ -323,6 +323,14 @@
 		999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */; };
 		999C7E192195429C0044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E18219542970044C47E /* RxCocoa.framework */; };
 		999C7E1A2195429C0044C47E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E17219542960044C47E /* RxSwift.framework */; };
+		99AD6C4921B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
+		99AD6C4A21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
+		99AD6C4B21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
+		99AD6C4C21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
+		99AD6C5021B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */; };
+		99AD6C5121B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */; };
+		99AD6C5221B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */; };
+		99AD6C5321B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */; };
 		99AE65C021A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
 		99AE65C121A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
 		99AE65C221A2D6130090B308 /* Continuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE65BF21A2D6130090B308 /* Continuable.swift */; };
@@ -575,6 +583,8 @@
 		999C7DDF219541B30044C47E /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C7E17219542960044C47E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
 		999C7E18219542970044C47E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
+		99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleUseCaseBase.swift; sourceTree = "<group>"; };
+		99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundScheduleUseCaseBase.swift; sourceTree = "<group>"; };
 		99AE65BF21A2D6130090B308 /* Continuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continuable.swift; sourceTree = "<group>"; };
 		99AE65C421A2DC670090B308 /* ExperimentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentType.swift; sourceTree = "<group>"; };
 		99B3B19E21AB09AF009D5210 /* AlternativeScheduleUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeScheduleUseCaseTests.swift; sourceTree = "<group>"; };
@@ -712,6 +722,7 @@
 		9965650221A64753004C76F0 /* CompoundSchedules */ = {
 			isa = PBXGroup;
 			children = (
+				99AD6C4E21B43F970023A718 /* Base */,
 				999C7C7E21951CDA0044C47E /* ConcurrentScheduleUseCase.swift */,
 				9965650321A64784004C76F0 /* AlternativeScheduleUseCase.swift */,
 			);
@@ -1037,6 +1048,22 @@
 			name = watchOS;
 			sourceTree = "<group>";
 		};
+		99AD6C4D21B43DC20023A718 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		99AD6C4E21B43F970023A718 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		99AE65BD21A2D3450090B308 /* Primitive */ = {
 			isa = PBXGroup;
 			children = (
@@ -1084,6 +1111,7 @@
 		99C74EFF219A764E00DABE14 /* SimpleSchedules */ = {
 			isa = PBXGroup;
 			children = (
+				99AD6C4D21B43DC20023A718 /* Base */,
 				999C7C8321951CDA0044C47E /* ExtinctionScheduleUseCase.swift */,
 				999C7C8121951CDA0044C47E /* FixedRatioScheduleUseCase.swift */,
 				999C7C8221951CDA0044C47E /* VariableRatioScheduleUseCase.swift */,
@@ -1571,6 +1599,7 @@
 				999C7CEE21951CDC0044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 				99C7518D21A0794100DABE14 /* Reinforceable.swift in Sources */,
 				9965651E21A65938004C76F0 /* ExitCondition.swift in Sources */,
+				99AD6C5121B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */,
 				99C74F07219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				99C7519721A07A5600DABE14 /* Times.swift in Sources */,
 				9965654B21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
@@ -1598,6 +1627,7 @@
 				999C7CF121951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7CB821951CDB0044C47E /* VR.swift in Sources */,
 				999C7D2A21951CDC0044C47E /* UIViewController+Rx.swift in Sources */,
+				99AD6C4A21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */,
 				999C7CFA21951CDC0044C47E /* ConcurrentResponseDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1640,6 +1670,7 @@
 				999C7CFE21951CDC0044C47E /* ExperimentEntity.swift in Sources */,
 				999C7CAD21951CDB0044C47E /* RI.swift in Sources */,
 				9965654A21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
+				99AD6C5021B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */,
 				9965653D21A66A72004C76F0 /* DiscreteTrialRepository.swift in Sources */,
 				999C7CE321951CDC0044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7CE621951CDC0044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
@@ -1719,6 +1750,7 @@
 				999C7CF221951CDC0044C47E /* VariableResponseDataStore.swift in Sources */,
 				999C7CB921951CDB0044C47E /* VR.swift in Sources */,
 				9905D9A021AE5500007961CE /* CRF.swift in Sources */,
+				99AD6C4921B439700023A718 /* ScheduleUseCaseBase.swift in Sources */,
 				999C7D2B21951CDC0044C47E /* UIViewController+Rx.swift in Sources */,
 				999C7CFB21951CDC0044C47E /* ConcurrentResponseDataStore.swift in Sources */,
 				99265B9F21B2977500577754 /* Parameter.swift in Sources */,
@@ -1816,6 +1848,7 @@
 				99C74F08219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				9965651F21A65938004C76F0 /* ExitCondition.swift in Sources */,
 				99C7518E21A0794100DABE14 /* Reinforceable.swift in Sources */,
+				99AD6C5221B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */,
 				999C7DB3219533150044C47E /* ResponseEntity.swift in Sources */,
 				9965654C21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
 				99C7519821A07A5600DABE14 /* Times.swift in Sources */,
@@ -1843,6 +1876,7 @@
 				999C7DBD219533160044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7DBE219533160044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				999C7DC0219533160044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
+				99AD6C4B21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */,
 				999C7DC1219533160044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1938,6 +1972,7 @@
 				99C74F09219A778A00DABE14 /* RandomTimeScheduleUseCase.swift in Sources */,
 				9965652021A65938004C76F0 /* ExitCondition.swift in Sources */,
 				99C7518F21A0794100DABE14 /* Reinforceable.swift in Sources */,
+				99AD6C5321B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift in Sources */,
 				999C7E07219542610044C47E /* ResponseEntity.swift in Sources */,
 				9965654D21A66D81004C76F0 /* DiscreteTrialRepositoryImpl.swift in Sources */,
 				99C7519921A07A5600DABE14 /* Times.swift in Sources */,
@@ -1965,6 +2000,7 @@
 				999C7E11219542620044C47E /* ExtinctionScheduleUseCase.swift in Sources */,
 				999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */,
 				999C7E14219542620044C47E /* RandomIntervalScheduleUseCase.swift in Sources */,
+				99AD6C4C21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */,
 				999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
