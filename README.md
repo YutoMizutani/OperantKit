@@ -156,7 +156,7 @@ $ swift build
 
 ## Documents
 
-See [docs/index.html](https://github.com/YutoMizutani/OperantKit/blob/master/docs/index.html)
+See [https://yutomizutani.github.io/OperantKit/](https://yutomizutani.github.io/OperantKit/)
 
 ## Operant conditioning (Instrumental conditioning)
 

@@ -7,69 +7,90 @@
 
 import RxSwift
 
-public struct ConcurrentScheduleUseCase: ScheduleUseCase {
-    public var repository: ScheduleRespository
-    public var subSchedules: [ScheduleUseCase]
+public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUseCase {
+    override public var subSchedules: [ScheduleUseCase] {
+        didSet {
+            lastDecisionEntities = [ResponseEntity](repeating: ResponseEntity.zero, count: subSchedules.count)
+        }
+    }
+    private var lastDecisionEntities: [ResponseEntity]
     public var isShared: Bool
 
-    public init(repository: ScheduleRespository, subSchedules: ScheduleUseCase..., isShared: Bool = false) {
-        self.repository = repository
-        self.subSchedules = subSchedules
+    public init(_ subSchedules: [ScheduleUseCase], isShared: Bool = false) {
         self.isShared = isShared
+        self.lastDecisionEntities = [ResponseEntity](repeating: ResponseEntity.zero, count: subSchedules.count)
+        super.init(subSchedules)
     }
 
-    public init(repository: ScheduleRespository, subSchedules: [ScheduleUseCase]) {
-        self.repository = repository
-        self.subSchedules = subSchedules
-        self.isShared = false
+    public convenience init(_ subSchedules: ScheduleUseCase..., isShared: Bool = false) {
+        self.init(subSchedules, isShared: isShared)
     }
+
+    // MARK: - ScheduleUseCase
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
         guard !subSchedules.isEmpty else { return Single<ResultEntity>.error(RxError.noElements) }
+        lastDecisionEntities[0] = entity
         return subSchedules[0].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
     }
 
+    // MARK: - Select index
+
     public func decision(_ entity: ResponseEntity, index: Int,
                          isUpdateIfReinforcement: Bool = true,
-                         isSharedUpdate: Bool = true) -> Single<ResultEntity> {
+                         isSharedUpdate: Bool = false) -> Single<ResultEntity> {
         guard isShared || subSchedules.count > index else { return Single<ResultEntity>.error(RxError.noElements) }
-        let result = subSchedules[isShared ? 0 : index].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
-        return !isSharedUpdate
-            ? result
-            : result
-                .flatMap { result in
-                    !result.isReinforcement
-                        ? Single.just(result)
-                        : Single.zip(self.subSchedules.map { $0.repository.getMaxEntity() })
-                            .flatMap { e in
-                                Single.zip(
-                                    self.subSchedules.enumerated().map {
-                                        $0.element.updateValue(
-                                            ResultEntity(result.isReinforcement,
-                                                         ResponseEntity(e[$0.offset].numOfResponses, result.entity.milliseconds))
-                                        )
-                                    }
-                                )
-                            }
-                            .map { _ in result }
-                }
+        let index = isShared ? 0 : index
+        lastDecisionEntities[index] = entity
+        let result = subSchedules[index].decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
+        return !(isUpdateIfReinforcement && isSharedUpdate) ? result : result
+            .flatMap { [weak self] r in
+                guard let self = self, r.isReinforcement else { return Single.just(r) }
+                self.lastDecisionEntities = self.lastDecisionEntities.map { ResponseEntity($0.numOfResponses, r.entity.milliseconds) }
+                return Single.zip(
+                    self.subSchedules.enumerated()
+                        .filter({ $0.offset != index })
+                        .map { [unowned self] in
+                            $0.element.updateValue(ResultEntity(r.isReinforcement, self.lastDecisionEntities[$0.offset]))
+                        }
+                    )
+                    .map { _ in r }
+            }
     }
 
-    public func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
-        guard !subSchedules.isEmpty else { return Single<ResultEntity>.error(RxError.noElements) }
-        return Single.zip(subSchedules.map { $0.updateValue(result) }).map { $0[0] }
+    func addExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].addExtendsValue(entity, isNext: isNext)
     }
 
-    public func updateValue(_ result: ResultEntity, index: Int) -> Single<ResultEntity> {
-        guard isShared || subSchedules.count > index else { return Single<ResultEntity>.error(RxError.noElements) }
+    func updateExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].updateExtendsValue(entity, isNext: isNext)
+    }
+
+    public func updateValue(index: Int) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].updateValue()
+    }
+
+    public func updateValue(_ result: ResultEntity, index: Int) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
         return subSchedules[isShared ? 0 : index].updateValue(result)
+    }
+
+    public func updateValue(numOfResponses: Int, index: Int) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].updateValue(numOfResponses: numOfResponses)
+    }
+
+    public func updateValue(milliseconds: Milliseconds, index: Int) -> Single<Void> {
+        guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
+        return subSchedules[isShared ? 0 : index].updateValue(milliseconds: milliseconds)
     }
 }
 
 public extension ConcurrentScheduleUseCase {
-    init(repository: ScheduleRespository, sharedSchedule: Shared<ScheduleUseCase>) {
-        self.repository = repository
-        self.subSchedules = [sharedSchedule.element]
-        self.isShared = true
+    convenience init(_ sharedSchedule: Shared<ScheduleUseCase>) {
+        self.init([sharedSchedule.element], isShared: true)
     }
 }

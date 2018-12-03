@@ -7,20 +7,13 @@
 
 import RxSwift
 
-public struct ExtinctionScheduleUseCase: ScheduleUseCase {
-    public var repository: ScheduleRespository
-
+public class ExtinctionScheduleUseCase: ScheduleUseCaseBase, ScheduleUseCase {
     public var scheduleType: ScheduleType {
         return .extinction
     }
 
-    public init(repository: ScheduleRespository) {
-        self.repository = repository
-    }
-
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        return repository.updateEmaxEntity(entity)
-            .map { entity }
+        return getCurrentValue(entity)
             .EXT()
             .map { ResultEntity($0, entity) }
     }

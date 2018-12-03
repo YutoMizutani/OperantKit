@@ -8,36 +8,25 @@
 import RxSwift
 
 /// - Tag: ScheduleUseCase
-public protocol ScheduleUseCase {
-    var repository: ScheduleRespository { get }
-
+public protocol ScheduleUseCase: class {
+    // MARK: - Decision
     /// Decision the reinforcement schedule
     func decision(_ entity: ResponseEntity) -> Single<ResultEntity>
     func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity>
+
+    // MARK: - Add
+    func addExtendsValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void>
+
+    // MARK: - Update
+    func updateExtendsValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void>
     func updateValue() -> Single<Void>
-    func updateValue(_ result: ResultEntity) -> Single<ResultEntity>
-}
-
-public extension ScheduleUseCase {
-    func decision(_ entity: ResponseEntity) -> Single<ResultEntity> {
-        return decision(entity, isUpdateIfReinforcement: true)
-    }
-
-    func updateValue() -> Single<Void> {
-        return Single.zip(
-            self.repository.resetExtendEntity(),
-            self.repository.updateLastReinforcement(),
-            self.repository.nextValue()
-            )
-            .map { _ in }
-    }
-
-    func updateValue(_ result: ResultEntity) -> Single<ResultEntity> {
-        return Single.zip(
-            self.repository.resetExtendEntity(),
-            self.repository.updateLastReinforcement(result.entity),
-            self.repository.nextValue()
-            )
-            .map { _ in result }
-    }
+    func updateValue(isNext: Bool) -> Single<Void>
+    func updateValue(_ entity: ResponseEntity) -> Single<Void>
+    func updateValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void>
+    func updateValue(_ result: ResultEntity) -> Single<Void>
+    func updateValue(_ result: ResultEntity, isNext: Bool) -> Single<Void>
+    func updateValue(numOfResponses: Int) -> Single<Void>
+    func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void>
+    func updateValue(milliseconds: Milliseconds) -> Single<Void>
+    func updateValue(milliseconds: Milliseconds, isNext: Bool) -> Single<Void>
 }
