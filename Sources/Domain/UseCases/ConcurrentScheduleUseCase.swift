@@ -58,12 +58,12 @@ public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUse
             }
     }
 
-    func addExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
+    public func addExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
         guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
         return subSchedules[isShared ? 0 : index].addExtendsValue(entity, isNext: isNext)
     }
 
-    func updateExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
+    public func updateExtendsValue(_ entity: ResponseEntity, index: Int, isNext: Bool) -> Single<Void> {
         guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
         return subSchedules[isShared ? 0 : index].updateExtendsValue(entity, isNext: isNext)
     }

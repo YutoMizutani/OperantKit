@@ -27,8 +27,8 @@ class RatChamberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.chamberView.leftLever.isEnabled = self.config.leverEnabled.left
-        self.chamberView.rightLever.isEnabled = self.config.leverEnabled.right
+        chamberView.leftLever.isEnabled = config.leverEnabled.left
+        chamberView.rightLever.isEnabled = config.leverEnabled.right
 
         let input = SessionPresenter.Input(
             startTrigger: startTrigger,
@@ -59,12 +59,14 @@ class RatChamberViewController: UIViewController {
             reinforcementOffEvent)
 
         workingDriver
-            .map { [unowned self] _ in self.config.lightColor.left.on }
+            .map { [weak self] _ in self?.config.lightColor.left.on }
+            .filter({ $0 != nil }).map { $0! }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
         workingDriver
-            .map { [unowned self] _ in self.config.lightColor.right.on }
+            .map { [weak self] _ in self?.config.lightColor.right.on }
+            .filter({ $0 != nil }).map { $0! }
             .drive(chamberView.rightLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
@@ -75,12 +77,14 @@ class RatChamberViewController: UIViewController {
         )
 
         pauseDriver
-            .map { [unowned self] _ in self.config.lightColor.left.off }
+            .map { [weak self] _ in self?.config.lightColor.left.off }
+            .filter({ $0 != nil }).map { $0! }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
         pauseDriver
-            .map { [unowned self] _ in self.config.lightColor.right.off }
+            .map { [weak self] _ in self?.config.lightColor.right.off }
+            .filter({ $0 != nil }).map { $0! }
             .drive(chamberView.rightLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
