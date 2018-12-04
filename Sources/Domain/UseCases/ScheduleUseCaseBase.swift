@@ -26,11 +26,7 @@ public extension ScheduleUseCaseBase {
             repository.getExtendEntity(),
             repository.getLastReinforcement()
             )
-            .map {
-                print("### \(((entity - $0.1 - $0.2).numOfResponses, (entity - $0.1 - $0.2).milliseconds)):\t\t "
-                    + "\((entity.numOfResponses, entity.milliseconds))\t - \(($0.1.numOfResponses, $0.1.milliseconds))\t - \(($0.2.numOfResponses, $0.2.milliseconds))")
-                return (entity - $0.1 - $0.2)
-            }
+            .map { entity - $0.1 - $0.2 }
     }
 }
 
@@ -119,7 +115,7 @@ public extension ScheduleUseCase where Self: ScheduleUseCaseBase {
     func updateValueIfReinforcement(_ result: Single<ResultEntity>) -> Single<ResultEntity> {
         return result
             .flatMap { [weak self] r in
-                guard let self = self, r.isReinforcement else { return result }
+                guard let self = self, r.isReinforcement else { return Single.just(r) }
                 return self.updateValue(r).map { _ in r }
             }
     }
