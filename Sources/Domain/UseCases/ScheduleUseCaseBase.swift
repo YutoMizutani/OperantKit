@@ -119,7 +119,7 @@ public extension ScheduleUseCase where Self: ScheduleUseCaseBase {
     func updateValueIfReinforcement(_ result: Single<ResultEntity>) -> Single<ResultEntity> {
         return result
             .flatMap { [weak self] r in
-                guard let self = self, r.isReinforcement else { return result }
+                guard let self = self, r.isReinforcement else { return Single.just(r) }
                 return self.updateValue(r).map { _ in r }
             }
     }
