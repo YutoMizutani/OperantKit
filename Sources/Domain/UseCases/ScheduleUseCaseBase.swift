@@ -26,11 +26,7 @@ public extension ScheduleUseCaseBase {
             repository.getExtendEntity(),
             repository.getLastReinforcement()
             )
-            .map {
-                print("### \(((entity - $0.1 - $0.2).numOfResponses, (entity - $0.1 - $0.2).milliseconds)):\t\t "
-                    + "\((entity.numOfResponses, entity.milliseconds))\t - \(($0.1.numOfResponses, $0.1.milliseconds))\t - \(($0.2.numOfResponses, $0.2.milliseconds))")
-                return (entity - $0.1 - $0.2)
-            }
+            .map { entity - $0.1 - $0.2 }
     }
 }
 
