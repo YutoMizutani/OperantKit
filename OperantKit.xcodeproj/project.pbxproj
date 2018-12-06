@@ -105,6 +105,9 @@
 		9965658D21A8017D004C76F0 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965658B21A8017C004C76F0 /* ResultEntity.swift */; };
 		9965658E21A8017D004C76F0 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965658B21A8017C004C76F0 /* ResultEntity.swift */; };
 		9965658F21A8017D004C76F0 /* ResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9965658B21A8017C004C76F0 /* ResultEntity.swift */; };
+		997807CE21B78BD800BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
+		997807CF21B78BD900BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
+		997807D021B78BDA00BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
 		9998170D212C355900D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		9998170E212C355900D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
 		99981711212C356E00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
@@ -497,6 +500,7 @@
 		9965658021A693AE004C76F0 /* ScheduleParameterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParameterable.swift; sourceTree = "<group>"; };
 		9965658521A69410004C76F0 /* ScheduleRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRecordable.swift; sourceTree = "<group>"; };
 		9965658B21A8017C004C76F0 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
+		997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCaseTests.swift; sourceTree = "<group>"; };
 		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -756,6 +760,40 @@
 			name = Repositories;
 			sourceTree = "<group>";
 		};
+		997807CA21B78B9C00BB204E /* SimpleSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				999C7D4421951F2A0044C47E /* VariableIntervalScheduleTests.swift */,
+				999C7D4521951F2A0044C47E /* FixedIntervalScheduleTests.swift */,
+				999C7D4621951F2A0044C47E /* RandomIntervalSchedule.swift */,
+				999C7D4721951F2A0044C47E /* RandomRatioScheduleTests.swift */,
+				999C7D4821951F2A0044C47E /* VariableRatioScheduleTests.swift */,
+				999C7D4921951F2A0044C47E /* FixedRatioScheduleTests.swift */,
+				999C7D4A21951F2A0044C47E /* ExtinctionScheduleTests.swift */,
+				99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */,
+				99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */,
+				99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */,
+			);
+			name = SimpleSchedules;
+			sourceTree = "<group>";
+		};
+		997807CB21B78BB200BB204E /* CompoundSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				99B3B19E21AB09AF009D5210 /* AlternativeScheduleUseCaseTests.swift */,
+				99B3B1A721AB9AF4009D5210 /* ConcurrentScheduleUseCaseTests.swift */,
+			);
+			name = CompoundSchedules;
+			sourceTree = "<group>";
+		};
+		997807D121B78DF400BB204E /* OtherSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */,
+			);
+			name = OtherSchedules;
+			sourceTree = "<group>";
+		};
 		99981705212C34D100D9F6E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,18 +1045,9 @@
 		999C7D4321951F2A0044C47E /* ScheduleTests */ = {
 			isa = PBXGroup;
 			children = (
-				999C7D4421951F2A0044C47E /* VariableIntervalScheduleTests.swift */,
-				999C7D4521951F2A0044C47E /* FixedIntervalScheduleTests.swift */,
-				999C7D4621951F2A0044C47E /* RandomIntervalSchedule.swift */,
-				999C7D4721951F2A0044C47E /* RandomRatioScheduleTests.swift */,
-				999C7D4821951F2A0044C47E /* VariableRatioScheduleTests.swift */,
-				999C7D4921951F2A0044C47E /* FixedRatioScheduleTests.swift */,
-				999C7D4A21951F2A0044C47E /* ExtinctionScheduleTests.swift */,
-				99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */,
-				99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */,
-				99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */,
-				99B3B19E21AB09AF009D5210 /* AlternativeScheduleUseCaseTests.swift */,
-				99B3B1A721AB9AF4009D5210 /* ConcurrentScheduleUseCaseTests.swift */,
+				997807CA21B78B9C00BB204E /* SimpleSchedules */,
+				997807CB21B78BB200BB204E /* CompoundSchedules */,
+				997807D121B78DF400BB204E /* OtherSchedules */,
 			);
 			path = ScheduleTests;
 			sourceTree = "<group>";
@@ -1623,6 +1652,7 @@
 				999C7D6021951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				999C7D5121951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				999C7D6921951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */,
+				997807CF21B78BD900BB204E /* DiscreteTrialUseCaseTests.swift in Sources */,
 				999C7D4B21951F2A0044C47E /* ScheduleTypeTests.swift in Sources */,
 				999C7D5421951F2A0044C47E /* Helper.swift in Sources */,
 				99C74F16219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
@@ -1744,6 +1774,7 @@
 				999C7D6121951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				999C7D5221951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				999C7D6A21951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */,
+				997807CE21B78BD800BB204E /* DiscreteTrialUseCaseTests.swift in Sources */,
 				999C7D4C21951F2A0044C47E /* ScheduleTypeTests.swift in Sources */,
 				999C7D5521951F2A0044C47E /* Helper.swift in Sources */,
 				99C74F15219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
@@ -1864,6 +1895,7 @@
 				999C7DC4219533300044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				999C7DC5219533300044C47E /* RandomIntervalSchedule.swift in Sources */,
 				999C7DC6219533300044C47E /* RandomRatioScheduleTests.swift in Sources */,
+				997807D021B78BDA00BB204E /* DiscreteTrialUseCaseTests.swift in Sources */,
 				999C7DC7219533300044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				999C7DC8219533300044C47E /* FixedRatioScheduleTests.swift in Sources */,
 				99C74F17219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
