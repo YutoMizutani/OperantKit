@@ -80,7 +80,10 @@ final class SessionPresenter: Presenter {
                 .response(self.timerUseCase)
                 .do(onNext: { print("Response(\(i)): (\($0.numOfResponses), \($0.milliseconds))") })
 
-            let reinforcement: Observable<ResponseEntity> = response
+            let milliseconds: Observable<ResponseEntity> = self.timerUseCase.milliseconds.shared
+                .map { ResponseEntity(0, $0) }
+
+            let reinforcement: Observable<ResponseEntity> = Observable.merge(response, milliseconds)
                 .flatMap { [unowned self] in self.scheduleUseCase.decision($0, index: i) }
                 .filter { $0.isReinforcement }
                 .map { $0.entity }

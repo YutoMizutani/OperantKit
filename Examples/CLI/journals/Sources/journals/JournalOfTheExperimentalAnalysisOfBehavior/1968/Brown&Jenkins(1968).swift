@@ -34,7 +34,6 @@ class BrownAndJenkins1968 {
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
         var isSessionFlag = true
-        let duringSR = BehaviorRelay<Bool>(value: false)
         var disposeBag = DisposeBag()
 
         let respnseObservable = responseAction.response(timer)
@@ -42,8 +41,12 @@ class BrownAndJenkins1968 {
             .share(replay: 1)
 
         let milliseconds = timer.milliseconds.shared
+
+        _ = milliseconds
             .filter({ $0 % 1000 == 0 })
-            .share(replay: 1)
+            .do(onNext: { print("Time elapsed: \($0)ms") })
+            .subscribe()
+            .disposed(by: disposeBag)
 
         let firstStart = milliseconds.take(1)
 
@@ -53,21 +56,23 @@ class BrownAndJenkins1968 {
             .disposed(by: disposeBag)
 
         let timeObservable = milliseconds
-            .do(onNext: { print("Time elapsed: \($0)ms") })
             .map { ResponseEntity(0, $0) }
 
         let reinforcementOn = Observable.merge(respnseObservable, timeObservable)
-            .flatMap { schedule.decision($0) }
+            .flatMap { schedule.decision($0, isUpdateIfReinforcement: false) }
             .do(onNext: { print("### \($0.entity.milliseconds), \($0.entity.numOfResponses)") })
-            .filter({ _ in !duringSR.value })
             .filter({ $0.isReinforcement })
             .share(replay: 1)
 
         let reinforcementOff = reinforcementOn
             .do(onNext: { print("SR on: \($0.entity.milliseconds)ms (IRI: \(trayOperatingDuration)ms)") })
-            .flatMap { schedule.updateValue($0) }
-            .flatMap { a in schedule.repository.updateExtendEntity(ResponseEntity(numOfResponses: 0, milliseconds: trayOperatingDuration)).map { a } }
-            .flatMap { timer.delay(trayOperatingDuration, currentTime: $0.entity.milliseconds) }
+            .flatMap { r in
+                Single.zip(
+                    schedule.addExtendsValue(ResponseEntity(0, trayOperatingDuration), isNext: false),
+                    timer.delay(trayOperatingDuration, currentTime: r.entity.milliseconds)
+                )
+                .map { $0.1 }
+            }
             .do(onNext: { print("SR off: \($0)ms") })
             .asObservable()
             .share(replay: 1)
@@ -75,8 +80,13 @@ class BrownAndJenkins1968 {
         let nextTrial = Observable.merge(firstStart, reinforcementOff)
             .do(onNext: { _ in updateInterval() })
             .do(onNext: { print("ITI on: \($0)ms (Next ITI: \(nextInterval)ms)") })
-            .flatMap { a in schedule.repository.updateExtendEntity(ResponseEntity(numOfResponses: 0, milliseconds: nextInterval)).map { a } }
-            .flatMap { timer.delay(nextInterval, currentTime: $0) }
+            .flatMap {
+                Single.zip(
+                    schedule.addExtendsValue(ResponseEntity(0, nextInterval), isNext: false),
+                    timer.delay(nextInterval, currentTime: $0)
+                )
+                .map { $0.1 }
+            }
             .do(onNext: { print("ITI off: \($0)ms") })
             .asObservable()
             .share(replay: 1)
@@ -98,13 +108,6 @@ class BrownAndJenkins1968 {
             .filter({ $0 >= numberOfPairings })
             .mapToVoid()
             .bind(to: finishTimerAction)
-            .disposed(by: disposeBag)
-
-        Observable<Bool>.merge(
-            reinforcementOn.map { _ in true },
-            reinforcementOff.map { _ in false }
-            )
-            .bind(to: duringSR)
             .disposed(by: disposeBag)
 
         startTimerAction

@@ -61,25 +61,33 @@ private extension WhileLoopTimerUseCase {
         return (time - modifiedStartTime).milliseconds
     }
 
+    /// Get sleep time
+    private func getSleepTime(_ priority: Priority) -> UInt32? {
+        switch priority {
+        case .immediate:
+            return nil
+        case .high:
+            return 100
+        case .default:
+            return 1_000
+        case .low:
+            return 100_000
+        case .manual(let v):
+            return v
+        }
+    }
+
     /// Run loop
     func runLoop() {
+        let sleepTime = getSleepTime(priority)
+        let sleep: () -> Void = sleepTime != nil ? { usleep(sleepTime!) } : {}
+
         while isRunning {
             guard !isPaused else { continue }
             let elapsed = getElapsedMilliseconds()
             milliseconds.onNext(elapsed)
             executeEvents(elapsed)
-            switch priority {
-            case .immediate:
-                continue
-            case .high:
-                usleep(100)
-            case .default:
-                usleep(1_000)
-            case .low:
-                usleep(100_000)
-            case .manual(let v):
-                usleep(v)
-            }
+            sleep()
         }
     }
 }
