@@ -16,6 +16,11 @@ public class DiscreteTrialUseCase {
     public init(_ schedule: ScheduleUseCase) {
         self.schedule = schedule
     }
+
+    /// Get current state
+    public func getState() -> TrialState {
+        return state
+    }
 }
 
 // MARK: - ScheduleUseCase
@@ -25,7 +30,7 @@ extension DiscreteTrialUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        guard state == .prepare else { return Single.just(ResultEntity(false, entity)) }
+        guard getState() == .prepare else { return Single.just(ResultEntity(false, entity)) }
         return schedule.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
             .flatMap { a in self.updateState(.didReinforcement).map { a } }
     }
