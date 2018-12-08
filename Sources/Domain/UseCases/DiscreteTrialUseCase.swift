@@ -10,16 +10,12 @@ import RxSwift
 /// [Discreteable](x-source-tag://Discreteable) and [ScheduleUseCase](x-source-tag://ScheduleUseCase)
 /// - Tag: DiscreteTrialUseCase
 public class DiscreteTrialUseCase {
-    public var state: TrialState = .prepare
     public var schedule: ScheduleUseCase
+    public var state: TrialState
 
-    public init(_ schedule: ScheduleUseCase) {
+    public init(_ schedule: ScheduleUseCase, state: TrialState = .ready) {
         self.schedule = schedule
-    }
-
-    /// Get current state
-    public func getState() -> TrialState {
-        return state
+        self.state = state
     }
 }
 
@@ -30,9 +26,13 @@ extension DiscreteTrialUseCase: ScheduleUseCase {
     }
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
-        guard getState() == .prepare else { return Single.just(ResultEntity(false, entity)) }
-        return schedule.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
-            .flatMap { a in self.updateState(.didReinforcement).map { a } }
+        return getState()
+            .flatMap { [unowned self] in
+                $0 != .ready
+                    ? Single.just(ResultEntity(false, entity))
+                    : self.schedule.decision(entity, isUpdateIfReinforcement: isUpdateIfReinforcement)
+                        .flatMap { a in self.updateState(.didReinforcement).map { a } }
+            }
     }
 
     public func addExtendsValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void> {
@@ -87,6 +87,19 @@ extension DiscreteTrialUseCase: ScheduleUseCase {
 // MARK: - Discreteable
 extension DiscreteTrialUseCase: Discreteable {
 
+    public func getState() -> Single<TrialState> {
+        return Single.create { [weak self] single in
+            guard let self = self else {
+                single(.error(RxError.noElements))
+                return Disposables.create()
+            }
+
+            single(.success(self.state))
+
+            return Disposables.create()
+        }
+    }
+
     public func updateState(_ state: TrialState) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -108,7 +121,7 @@ extension DiscreteTrialUseCase: Discreteable {
                 return Disposables.create()
             }
 
-            self.state = .prepare
+            self.state = .ready
             single(.success(()))
 
             return Disposables.create()
