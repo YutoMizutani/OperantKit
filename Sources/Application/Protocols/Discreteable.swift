@@ -11,6 +11,8 @@ import RxSwift
 /// Discrete trial procedure <-> Continuous free-operant procedure
 /// - Tag: Discreteable
 public protocol Discreteable {
+    /// Get current state
+    func getState() -> Single<TrialState>
     func nextTrial() -> Single<Void>
     func updateState(_ state: TrialState) -> Single<Void>
 }

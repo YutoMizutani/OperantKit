@@ -8,7 +8,7 @@
 import Foundation
 
 /// Trial state
-public struct TrialState: OptionSet {
+public struct TrialState: OptionSet, Equatable {
     /// The raw value of the option set
     public var rawValue: UInt8
 
@@ -16,8 +16,8 @@ public struct TrialState: OptionSet {
         self.rawValue = rawValue
     }
 
-    /// The trial preprating
-    public static let prepare = TrialState(rawValue: 0)
+    /// Ready for the trial
+    public static let ready = TrialState(rawValue: 0)
     /// The trial occured reinforcement
     public static let didReinforcement = TrialState(rawValue: 1)
 }

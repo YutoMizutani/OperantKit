@@ -12,7 +12,7 @@ public class DiscreteTrialDataStoreImpl: DiscreteTrialParameter, DiscreteTrialRe
     public var records: [TrialRecordable]
     public var trialState: TrialState
 
-    public init(maxTrials: Int, records: [TrialRecordable] = [], trialState: TrialState = .prepare) {
+    public init(maxTrials: Int, records: [TrialRecordable] = [], trialState: TrialState = .ready) {
         self.maxTrials = maxTrials
         self.records = records
         self.trialState = trialState
