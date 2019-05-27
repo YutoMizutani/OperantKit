@@ -5,7 +5,7 @@ APP_PATH=Demo/$(APP_PROJECT_NAME)
 # Commands
 BUILD_COMMAND=xcodebuild
 HOMEBREW_COMMAND=brew
-GEM_COMMAND=sudo gem
+GEM_COMMAND=gem
 BUNDLE_COMMAND=bundle
 CARTHAGE_COMMAND=carthage
 FASTLANE_COMMAND=bundle exec fastlane
