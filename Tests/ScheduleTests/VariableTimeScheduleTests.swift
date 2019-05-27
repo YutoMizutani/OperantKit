@@ -14,11 +14,11 @@ final class VariableTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VT(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000 * 100)),
-            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000 * 100)),
-            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 15000 * 100)),
-            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 20000 * 100)),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000 * 100)),
+            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000 * 100)),
+            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 15000 * 100)),
+            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 20000 * 100)),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -31,11 +31,11 @@ final class VariableTimeScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, true),
-            next(200, true),
-            next(300, true),
-            next(400, true),
-            completed(completedTime)
+            Recorded.next(100, true),
+            Recorded.next(200, true),
+            Recorded.next(300, true),
+            Recorded.next(400, true),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 
@@ -56,11 +56,11 @@ final class VariableTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VT(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5)),
-            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 7)),
-            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
-            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5)),
+            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 7)),
+            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
+            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 10)),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -73,11 +73,11 @@ final class VariableTimeScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, true),
-            next(200, false),
-            next(300, true),
-            next(400, false),
-            completed(completedTime)
+            Recorded.next(100, true),
+            Recorded.next(200, false),
+            Recorded.next(300, true),
+            Recorded.next(400, false),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 

@@ -12,13 +12,13 @@ example("Alt - logic") {
     var results: [Bool]
 
     results = [false, false]
-    print(!results.filter({ $0 }).isEmpty)
+    print(!results.filter { $0 }.isEmpty)
     results = [true, false]
-    print(!results.filter({ $0 }).isEmpty)
+    print(!results.filter { $0 }.isEmpty)
     results = [false, true]
-    print(!results.filter({ $0 }).isEmpty)
+    print(!results.filter { $0 }.isEmpty)
     results = [true, false, false, false, false]
-    print(!results.filter({ $0 }).isEmpty)
+    print(!results.filter { $0 }.isEmpty)
 }
 /*:
  ---

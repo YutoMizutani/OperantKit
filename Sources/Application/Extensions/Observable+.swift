@@ -9,12 +9,12 @@ import RxSwift
 
 public extension Observable {
     /// Add extended entity for entities
-    func extend(entity e: ResponseEntity, entities: ResponseEntity...) -> Observable<E> {
+    func extend(entity e: ResponseEntity, entities: ResponseEntity...) -> Observable<Element> {
         return extend(entity: e, entities: entities)
     }
 
     /// Add extended entity for entities
-    func extend(entity e: ResponseEntity, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(entity e: ResponseEntity, entities: [ResponseEntity]) -> Observable<Element> {
         return self.do(onNext: { _ in
             for entity in entities {
                 entity.numOfResponses += e.numOfResponses
@@ -24,12 +24,12 @@ public extension Observable {
     }
 
     /// Add extended number of responses for entities
-    func extend(response numOfResponses: Int, entities: ResponseEntity...) -> Observable<E> {
+    func extend(response numOfResponses: Int, entities: ResponseEntity...) -> Observable<Element> {
         return extend(response: numOfResponses, entities: entities)
     }
 
     /// Add extended number of responses for entities
-    func extend(response numOfResponses: Int, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(response numOfResponses: Int, entities: [ResponseEntity]) -> Observable<Element> {
         return self.do(onNext: { _ in
             for entity in entities {
                 entity.numOfResponses += numOfResponses
@@ -46,7 +46,7 @@ public extension Observable {
         - seealso:
             [Value and Reference Types - Swift Blog - Apple Developer](https://developer.apple.com/swift/blog/?id=10)
     */
-    func extend(time milliseconds: Milliseconds, entities: ResponseEntity...) -> Observable<E> {
+    func extend(time milliseconds: Milliseconds, entities: ResponseEntity...) -> Observable<Element> {
         return extend(time: milliseconds, entities: entities)
     }
 
@@ -59,7 +59,7 @@ public extension Observable {
          - seealso:
             [Value and Reference Types - Swift Blog - Apple Developer](https://developer.apple.com/swift/blog/?id=10)
      */
-    func extend(time milliseconds: Milliseconds, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(time milliseconds: Milliseconds, entities: [ResponseEntity]) -> Observable<Element> {
         return self.do(onNext: { _ in
             for entity in entities {
                 entity.milliseconds += milliseconds
@@ -68,12 +68,12 @@ public extension Observable {
     }
 
     /// Add mutable extended milliseconds for entities. The time parameter will get when called.
-    func extend(time milliseconds: @escaping () -> Milliseconds, entities: ResponseEntity...) -> Observable<E> {
+    func extend(time milliseconds: @escaping () -> Milliseconds, entities: ResponseEntity...) -> Observable<Element> {
         return extend(time: milliseconds, entities: entities)
     }
 
     /// Add mutable extended milliseconds for entities. The time parameter will get when called.
-    func extend(time milliseconds: @escaping () -> Milliseconds, entities: [ResponseEntity]) -> Observable<E> {
+    func extend(time milliseconds: @escaping () -> Milliseconds, entities: [ResponseEntity]) -> Observable<Element> {
         return self.do(onNext: { _ in
             for entity in entities {
                 entity.milliseconds += milliseconds()

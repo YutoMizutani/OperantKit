@@ -18,7 +18,7 @@ extension ResponseEntity {
     }
 }
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Extinction schedule
     ///

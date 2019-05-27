@@ -14,17 +14,17 @@ final class RandomIntervalScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = RI(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
-            next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
-            next(1000, ResponseEntity(numOfResponses: 1, milliseconds: 500000)),
-            next(2000, ResponseEntity(numOfResponses: 2, milliseconds: 1000000)),
-            next(3000, ResponseEntity(numOfResponses: 3, milliseconds: 1000000)),
-            next(4000, ResponseEntity(numOfResponses: 4, milliseconds: 1500000)),
-            next(5000, ResponseEntity(numOfResponses: 5, milliseconds: 10000000)),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
+            Recorded.next(1000, ResponseEntity(numOfResponses: 1, milliseconds: 500000)),
+            Recorded.next(2000, ResponseEntity(numOfResponses: 2, milliseconds: 1000000)),
+            Recorded.next(3000, ResponseEntity(numOfResponses: 3, milliseconds: 1000000)),
+            Recorded.next(4000, ResponseEntity(numOfResponses: 4, milliseconds: 1500000)),
+            Recorded.next(5000, ResponseEntity(numOfResponses: 5, milliseconds: 10000000)),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -37,17 +37,17 @@ final class RandomIntervalScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, false),
-            next(200, false),
-            next(300, false),
-            next(400, false),
-            next(500, false),
-            next(1000, true),
-            next(2000, true),
-            next(3000, false),
-            next(4000, true),
-            next(5000, true),
-            completed(completedTime)
+            Recorded.next(100, false),
+            Recorded.next(200, false),
+            Recorded.next(300, false),
+            Recorded.next(400, false),
+            Recorded.next(500, false),
+            Recorded.next(1000, true),
+            Recorded.next(2000, true),
+            Recorded.next(3000, false),
+            Recorded.next(4000, true),
+            Recorded.next(5000, true),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 

@@ -21,7 +21,7 @@ func main() {
 	let schedule = FR(5) // Fixed ratio 5 schedule
 	let events: Observable<Void> = ... // Observable events
 	schedule.decision(events)
-		.filter({ $0.isReinforcement }) // Filtering responses of reinforcement
+		.filter { $0.isReinforcement } // Filtering responses of reinforcement
 		.subscribe(onNext: {
 			print("Reinforcement")
 		})

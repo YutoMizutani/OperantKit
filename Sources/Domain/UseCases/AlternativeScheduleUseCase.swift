@@ -11,7 +11,7 @@ public class AlternativeScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUs
 
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
         let result: Single<ResultEntity> = Single.zip(subSchedules.map { $0.decision(entity, isUpdateIfReinforcement: false) })
-            .map { ResultEntity(!$0.filter({ $0.isReinforcement }).isEmpty, entity) }
+            .map { ResultEntity(!$0.filter { $0.isReinforcement }.isEmpty, entity) }
 
         return !isUpdateIfReinforcement ? result : updateValueIfReinforcement(result)
     }

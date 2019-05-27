@@ -49,7 +49,7 @@ public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUse
                 self.lastDecisionEntities = self.lastDecisionEntities.map { ResponseEntity($0.numOfResponses, r.entity.milliseconds) }
                 return Single.zip(
                     self.subSchedules.enumerated()
-                        .filter({ $0.offset != index })
+                        .filter { $0.offset != index }
                         .map { [unowned self] in
                             $0.element.updateValue(ResultEntity(r.isReinforcement, self.lastDecisionEntities[$0.offset]))
                         }

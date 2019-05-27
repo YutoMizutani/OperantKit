@@ -16,7 +16,7 @@ public extension ObservableType {
     }
 
     /// Translate from Observable to Driver on error just complete
-    func asDriverOnErrorJustComplete() -> Driver<E> {
+    func asDriverOnErrorJustComplete() -> Driver<Element> {
         return asDriver { error in
             assertionFailure("Error \(error)")
             return Driver.empty()
@@ -24,7 +24,7 @@ public extension ObservableType {
     }
 
     /// Store the last response and return tuple
-    func store(startWith: Self.E) -> Observable<(newValue: E, oldValue: E)> {
+    func store(startWith: Self.Element) -> Observable<(newValue: Element, oldValue: Element)> {
         let shared = self.share(replay: 1)
         return Observable.zip(shared, shared.startWith(startWith)) { a, b in
             (newValue: a, oldValue: b)
@@ -32,7 +32,7 @@ public extension ObservableType {
     }
 
     /// Store the last response and return tuple
-    func store() -> Observable<(newValue: E, oldValue: E?)> {
+    func store() -> Observable<(newValue: Element, oldValue: Element?)> {
         let shared = self.share(replay: 1)
         return Observable.zip(shared, shared.map(Optional.init).startWith(nil)) { a, b in
             (newValue: a, oldValue: b)

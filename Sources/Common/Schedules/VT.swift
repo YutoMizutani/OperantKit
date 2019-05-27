@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Variable time schedule
     ///
@@ -16,7 +16,7 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .VT()
     func VT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FT(value)
+        return FT(value())
     }
 
     /// Variable time schedule

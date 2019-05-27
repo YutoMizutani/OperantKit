@@ -18,7 +18,7 @@ public extension PrimitiveSequence {
      - returns: An observable sequence whose elements are the result of invoking the transform function on each element of source.
 
      */
-    func map<R>(_ transform: @escaping (PrimitiveSequence.E) throws -> R) -> RxSwift.Single<R> {
+    func map<R>(_ transform: @escaping (PrimitiveSequence.Element) throws -> R) -> RxSwift.Single<R> {
         return asObservable().map(transform).asSingle()
     }
 
@@ -30,7 +30,7 @@ public extension PrimitiveSequence {
      - parameter selector: A transform function to apply to each element.
      - returns: An observable sequence whose elements are the result of invoking the one-to-many transform function on each element of the input sequence.
      */
-    func flatMap<O>(_ selector: @escaping (PrimitiveSequence.E) throws -> O) -> RxSwift.Single<O.E> where O : ObservableConvertibleType {
+    func flatMap<O>(_ selector: @escaping (PrimitiveSequence.Element) throws -> O) -> RxSwift.Single<O.Element> where O : ObservableConvertibleType {
         return asObservable().flatMap(selector).asSingle()
     }
 
@@ -43,12 +43,12 @@ public extension PrimitiveSequence {
 public extension PrimitiveSequence {
 
     /// Store the last response and return tuple
-    func store(startWith: PrimitiveSequence.E) -> Single<(newValue: E, oldValue: E)> {
+    func store(startWith: PrimitiveSequence.Element) -> Single<(newValue: Element, oldValue: Element)> {
         return asObservable().store(startWith: startWith).asSingle()
     }
 
     /// Store the last response and return tuple
-    func store() -> Single<(newValue: E, oldValue: E?)> {
+    func store() -> Single<(newValue: Element, oldValue: Element?)> {
         return asObservable().store().asSingle()
     }
 }

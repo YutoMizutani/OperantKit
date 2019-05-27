@@ -14,12 +14,12 @@ final class RandomTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = RT(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
-            next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -32,12 +32,12 @@ final class RandomTimeScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, true),
-            next(200, true),
-            next(300, false),
-            next(400, true),
-            next(500, true),
-            completed(completedTime)
+            Recorded.next(100, true),
+            Recorded.next(200, true),
+            Recorded.next(300, false),
+            Recorded.next(400, true),
+            Recorded.next(500, true),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99091E4E229C4B5C00CD593A /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99091E4C229C4B4F00CD593A /* RxRelay.framework */; };
+		99091E4F229C4B5C00CD593A /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99091E4C229C4B4F00CD593A /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		99C75047219BC5E000DABE14 /* RatChamberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75046219BC5E000DABE14 /* RatChamberTests.swift */; };
 		99C75052219BC5E000DABE14 /* RatChamberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75051219BC5E000DABE14 /* RatChamberUITests.swift */; };
 		99C75090219BC62B00DABE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C75060219BC62B00DABE14 /* Assets.xcassets */; };
@@ -72,6 +74,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				99091E4F229C4B5C00CD593A /* RxRelay.framework in CopyFiles */,
 				99C750C4219BCE7F00DABE14 /* OperantKit.framework in CopyFiles */,
 				99C750C5219BCE7F00DABE14 /* RxCocoa.framework in CopyFiles */,
 				99C750C6219BCE7F00DABE14 /* RxSwift.framework in CopyFiles */,
@@ -81,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		99091E4C229C4B4F00CD593A /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../../../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		99C7502E219BC5E000DABE14 /* RatChamber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatChamber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C75042219BC5E000DABE14 /* RatChamberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatChamberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C75046219BC5E000DABE14 /* RatChamberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatChamberTests.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				99C750C2219BCE7600DABE14 /* RxCocoa.framework in Frameworks */,
 				99C750C1219BCE7600DABE14 /* OperantKit.framework in Frameworks */,
 				99C750C3219BCE7600DABE14 /* RxSwift.framework in Frameworks */,
+				99091E4E229C4B5C00CD593A /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +359,7 @@
 		99C750B0219BC63A00DABE14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99091E4C229C4B4F00CD593A /* RxRelay.framework */,
 				99C750B5219BC68000DABE14 /* OperantKit.framework */,
 				99C750B1219BC66500DABE14 /* RxCocoa.framework */,
 				99C750B2219BC66500DABE14 /* RxSwift.framework */,
@@ -637,7 +643,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -648,13 +654,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -697,13 +704,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -719,7 +727,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = RatChamber/Info.plist;
 				INSTALL_PATH = "@rpath";
@@ -731,7 +742,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -742,7 +753,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../../Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = RatChamber/Info.plist;
 				INSTALL_PATH = "@rpath";
@@ -754,7 +768,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -774,7 +788,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatChamber.app/RatChamber";
 			};
@@ -795,7 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatChamber.app/RatChamber";
 			};
@@ -815,7 +829,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RatChamber;
 			};
@@ -835,7 +849,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ym.RatChamberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RatChamber;
 			};
