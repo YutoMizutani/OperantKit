@@ -19,7 +19,7 @@ func main() {
 	let schedule = FR(5) // 固定比率 5 スケジュール
 	let events: Observable<Void> = ... // Observable イベント
 	schedule.decision(events)
-		.filter({ $0.isReinforcement }) // 強化される反応のみをフィルタリング
+		.filter { $0.isReinforcement } // 強化される反応のみをフィルタリング
 		.subscribe(onNext: {
 			print("Reinforcement")
 		})
