@@ -5,7 +5,7 @@ APP_PATH=Demo/$(APP_PROJECT_NAME)
 # Commands
 BUILD_COMMAND=xcodebuild
 HOMEBREW_COMMAND=brew
-GEM_COMMAND=gem
+GEM_COMMAND=sudo gem
 BUNDLE_COMMAND=bundle
 CARTHAGE_COMMAND=carthage
 FASTLANE_COMMAND=bundle exec fastlane
@@ -111,7 +111,7 @@ build-release-framework-all:
 test:
 	make test-all
 test-all:
-	make deps-all
+	make install-all
 	make test-framework-all
 	make test-app-all
 test-framework-all:
