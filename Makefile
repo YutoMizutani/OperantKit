@@ -1,11 +1,14 @@
-# Xcode parameters
-BUILDTOOL=xcodebuild
-
+# Paths
 FRAMEWORK_PATH=.
 APP_PATH=Demo/$(APP_PROJECT_NAME)
 
+# Commands
+BUILD_COMMAND=xcodebuild
+HOMEBREW_COMMAND=brew
+GEM_COMMAND=sudo gem
+BUNDLE_COMMAND=bundle
 CARTHAGE_COMMAND=carthage
-CARTHAGE_UPDATE=$(CARTHAGE_COMMAND) update
+FASTLANE_COMMAND=bundle exec fastlane
 
 FRAMEWORK_PROJECT_NAME=OperantKit
 WORKSPACE_FILENAME=$(FRAMEWORK_PROJECT_NAME).xcworkspace
@@ -23,45 +26,90 @@ SCHEME_FRAMEWORK_WATCHOS=$(FRAMEWORK_PROJECT_NAME) $(TARGET_WATCHOS)
 SCHEME_APP_IOS=$(APP_PROJECT_NAME)
 
 
+# Open
 open:
 	open $(WORKSPACE_FILENAME)
 
-deps-all:
-	make deps-framework
-	make deps-app
-deps-framework:
-	cd $(FRAMEWORK_PATH); $(CARTHAGE_UPDATE)
-deps-app:
-	cd $(FRAMEWORK_PATH); carthage build --no-skip-current --platform iOS
-	cd $(APP_PATH); $(CARTHAGE_UPDATE) --platform $(TARGET_IOS)
 
+# Dependencies
+deps-all:
+	make deps
+	make install
+deps:
+	make deps-brew
+	make deps-bundler
+deps-brew:
+	if ! type $(HOMEBREW_COMMAND) > /dev/null 2>&1; then /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; fi
+deps-bundler:
+	$(GEM_COMMAND) install bundler
+
+
+# Install
+install:
+	make install-all
+install-all:
+	make install-gems
+	make install-frameworks
+install-gems:
+	$(BUNDLE_COMMAND) install
+install-frameworks:
+	make install-framework-all
+install-framework-all:
+	make install-framework-carthage
+install-framework-carthage:
+	cd $(FRAMEWORK_PATH); $(CARTHAGE_COMMAND) bootstrap --no-use-binaries
+
+
+# Update
+update:
+	make update-all
+update-all:
+	make update-gems
+	make update-frameworks
+update-gems:
+	cd $(FRAMEWORK_PATH); $(BUNDLE_COMMAND) update
+update-frameworks:
+	make update-framework-all
+update-framework-all:
+	make update-framework-carthage
+update-framework-carthage:
+	cd $(FRAMEWORK_PATH); $(CARTHAGE_COMMAND) update --no-use-binaries
+
+
+# Build
 build-all:
 	make build-carthage
 	make build-release-frameworks
 build-carthage:
 	carthage build --no-skip-current
 build-release-frameworks:
-	$(BUILDTOOL) \
+	make build-release-framework-all
+build-release-framework-all:
+	$(BUILD_COMMAND) \
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_MACOS)"
-	$(BUILDTOOL) \
+	$(BUILD_COMMAND) \
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_IOS)"
-	$(BUILDTOOL) \
+	$(BUILD_COMMAND) \
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_TVOS)"
-	$(BUILDTOOL) \
+	$(BUILD_COMMAND) \
 		-workspace $(WORKSPACE_FILENAME) \
 		-configuration Release \
 		-verbose \
 		-scheme "$(SCHEME_FRAMEWORK_WATCHOS)"
 
+
+# Test
+test:
+	make test-all
 test-all:
 	make deps-all
 	make test-framework-all
@@ -81,5 +129,6 @@ test-framework-tvos:
 test-app-ios:
 	bundle exec fastlane test_app_ios
 
+# Clean
 clean:
-	$(BUILDTOOL) clean
+	$(BUILD_COMMAND) clean
