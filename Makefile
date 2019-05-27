@@ -120,13 +120,13 @@ test-framework-all:
 test-app-all:
 	make test-app-ios
 test-framework-macos:
-	bundle exec fastlane test_framework_macos
+	$(FASTLANE_COMMAND) test_framework_macos
 test-framework-ios:
-	bundle exec fastlane test_framework_ios
+	$(FASTLANE_COMMAND) test_framework_ios
 test-framework-tvos:
-	bundle exec fastlane test_framework_tvos
+	$(FASTLANE_COMMAND) test_framework_tvos
 test-app-ios:
-	bundle exec fastlane test_app_ios
+	$(FASTLANE_COMMAND) test_app_ios
 
 # Clean
 clean:
