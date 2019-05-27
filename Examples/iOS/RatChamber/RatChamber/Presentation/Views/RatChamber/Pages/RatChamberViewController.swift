@@ -60,13 +60,13 @@ class RatChamberViewController: UIViewController {
 
         workingDriver
             .map { [weak self] _ in self?.config.lightColor.left.on }
-            .filter({ $0 != nil }).map { $0! }
+            .filter { $0 != nil }.map { $0! }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
         workingDriver
             .map { [weak self] _ in self?.config.lightColor.right.on }
-            .filter({ $0 != nil }).map { $0! }
+            .filter { $0 != nil }.map { $0! }
             .drive(chamberView.rightLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
@@ -78,13 +78,13 @@ class RatChamberViewController: UIViewController {
 
         pauseDriver
             .map { [weak self] _ in self?.config.lightColor.left.off }
-            .filter({ $0 != nil }).map { $0! }
+            .filter { $0 != nil }.map { $0! }
             .drive(chamberView.leftLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 
         pauseDriver
             .map { [weak self] _ in self?.config.lightColor.right.off }
-            .filter({ $0 != nil }).map { $0! }
+            .filter { $0 != nil }.map { $0! }
             .drive(chamberView.rightLight.rx.backgroundColor)
             .disposed(by: disposeBag)
 

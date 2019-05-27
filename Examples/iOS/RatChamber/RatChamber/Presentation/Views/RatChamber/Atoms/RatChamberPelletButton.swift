@@ -11,7 +11,7 @@ import UIKit
 class RatChamberPelletButton: UIButton {
 
     static func create(_ viewController: UIViewController, base: UIView, completion: ((RatChamberPelletButton) -> Void)?) {
-        viewController.view.subviews.filter({ $0 as? RatChamberPelletButton != nil }).forEach {
+        viewController.view.subviews.filter { $0 as? RatChamberPelletButton != nil }.forEach {
             $0.removeFromSuperview()
         }
 

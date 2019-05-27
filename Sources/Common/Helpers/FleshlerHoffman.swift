@@ -55,7 +55,7 @@ public struct FleshlerHoffman {
     public func generatedRatio(value v: Int, iterations n: Int = 12) -> [Int] {
         guard n != 0 else { return [] }
 
-        let vi: [Double] = generatedInterval(value: v * 1000, iterations: n).map({ Double($0) / 1000 })
+        let vi: [Double] = generatedInterval(value: v * 1000, iterations: n).map { Double($0) / 1000 }
 
         // VIと同様VR-Value * 1000で計算，その後Int(/1000)により1桁以下で四捨五入(0は1へ)，arrayの最後の要素で平均値とのズレを修正@YMinuztani2017
         var rd: [Int] = [Int](repeating: 0, count: n)
