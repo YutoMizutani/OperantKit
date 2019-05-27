@@ -7,9 +7,9 @@
 
 import RxSwift
 
-public extension PublishSubject where E == Milliseconds {
+public extension PublishSubject where Element == Milliseconds {
     /// Optimized time
-    var shared: Observable<E> {
+    var shared: Observable<Element> {
         return distinctUntilChanged()
             .share(replay: 1)
     }

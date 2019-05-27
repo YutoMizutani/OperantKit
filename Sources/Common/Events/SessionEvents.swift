@@ -20,7 +20,7 @@ public class SessionEvents {
 
     /// 00: Event name
     public var EVENTS: String {
-        return "EVENTS\n"+self.eventIDs.map { "\(self.translateFormatID(self.eventIDs.index(of: $0)!+1)): \($0)" }.joined(separator: "\n")
+        return "EVENTS\n"+self.eventIDs.map { "\(self.translateFormatID(self.eventIDs.firstIndex(of: $0)!+1)): \($0)" }.joined(separator: "\n")
     }
 
     /// 00: 1000(milliseconds)
@@ -43,7 +43,7 @@ public class SessionEvents {
     public var logWithID: String {
         return self.events.map { "\(self.translateFormatID($0.id)): \($0.milliseconds)" }.joined(separator: "\n")
     }
-    public private(set) var observableEventLog: Variable<(withID: String, withText: String)?> = Variable(nil)
+    public private(set) var observableEventLog: BehaviorRelay<(withID: String, withText: String)?> = BehaviorRelay(value: nil)
 
     public func write(id: Int, milliseconds: Int) {
         self.willWrite.accept(id)
@@ -51,7 +51,7 @@ public class SessionEvents {
         let eventMarker = (id: id, milliseconds: milliseconds)
         self.events.append(eventMarker)
         // observe
-        self.observableEventLog.value = (withID: logWithID, withText: logWithText)
+        self.observableEventLog.accept((withID: logWithID, withText: logWithText))
     }
 }
 
@@ -72,17 +72,17 @@ public extension SessionEvents {
     }
 
     /// idを元に抽出したtimeデータのみ取り出す。
-    public func events(by id: Int) -> [Int] {
+    func events(by id: Int) -> [Int] {
         return self.events.filter { $0.id == id }.map { $0.milliseconds }
     }
-    public func getId(from text: String) -> Int? {
+    func getId(from text: String) -> Int? {
         for i in 0..<self.eventIDs.count where text == self.eventIDs[i] {
             return i + 1
         }
         return nil
     }
     /// 最後のafter idから数えていくつtarget idがあるか取得する。
-    public func events(by targetID: Int, after afterID: Int?) -> [Int] {
+    func events(by targetID: Int, after afterID: Int?) -> [Int] {
         var afterEvents = self.events
         if afterID == nil {
             return afterEvents.filter { $0.id == targetID }.map { $0.milliseconds }
@@ -99,7 +99,7 @@ public extension SessionEvents {
     }
 
     /// 最後のbefore idまでに数えていくつtarget idがあったか。（強化後の反応数を取得するために使用。）
-    public func events(by targetID: Int, before beforeID: Int?) -> [Int] {
+    func events(by targetID: Int, before beforeID: Int?) -> [Int] {
         var afterEvents = self.events
         // 最後のafterIDのEMを取得。
         let lastEM = self.events.filter { $0.id == beforeID }.last
@@ -116,7 +116,7 @@ public extension SessionEvents {
         return afterEvents.filter { $0.id == targetID }.map { $0.milliseconds }
     }
 
-    public func listOfEvents(from events: [EventMarker]) -> String {
+    func listOfEvents(from events: [EventMarker]) -> String {
         var results: String = ""
         for e in events {
             results += translateEventMarkerToString(e) + "\n"
@@ -125,7 +125,7 @@ public extension SessionEvents {
         return results
     }
 
-    public func elapsedEvents(events: [EventMarker], skipID: (before: Int, after: Int)) -> (extendTime: Int, events: [EventMarker]) {
+    func elapsedEvents(events: [EventMarker], skipID: (before: Int, after: Int)) -> (extendTime: Int, events: [EventMarker]) {
         var events = events
         var extendTime = 0
 
@@ -148,10 +148,10 @@ public extension SessionEvents {
                 }
             extendTime += (afterTime - beforeTime)
         }
-        return  (extendTime: extendTime, events: events)
+        return (extendTime: extendTime, events: events)
     }
     /// 経過時間を測定する。id間のイベントをフィルタリングし，有効時間を算出する。(realTime->SessionTimeやFIのICIを算出)
-    public func elapsedTime(startTime: Int = 0, endTime: Int? = nil, skipIDs: [(before: Int, after: Int)]) -> Int {
+    func elapsedTime(startTime: Int = 0, endTime: Int? = nil, skipIDs: [(before: Int, after: Int)]) -> Int {
         var events = self.events.filter { $0.milliseconds > startTime }
         var endTime = events.last.map { $0.milliseconds } ?? 0
 
@@ -169,7 +169,7 @@ public extension SessionEvents {
         return endTime - startTime
     }
     /// フィルタリングしない経過時間を返す。
-    public func extendTime(startTime: Int = 0, endTime: Int?=nil, skipIDs: [(before: Int, after: Int)]) -> Int {
+    func extendTime(startTime: Int = 0, endTime: Int?=nil, skipIDs: [(before: Int, after: Int)]) -> Int {
         var events = self.events.filter { $0.milliseconds > startTime }
 
         var extendTime = 0

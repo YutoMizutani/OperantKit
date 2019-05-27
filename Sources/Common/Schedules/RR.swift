@@ -7,14 +7,14 @@
 
 import RxSwift
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Random ratio schedule
     ///
     /// - Complexity: O(1)
     /// - Tag: .RR()
     func RR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
-        return FR(value)
+        return FR(value())
     }
 
     /// Random ratio schedule

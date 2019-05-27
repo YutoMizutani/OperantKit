@@ -17,7 +17,7 @@ extension ResponseEntity {
     }
 }
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Fixed time schedule
     ///

@@ -50,25 +50,21 @@ final class SessionPresenter: Presenter {
     }
 
     func transform(input: SessionPresenter.Input) -> SessionPresenter.Output {
-        let start: Driver<Void> = input.startTrigger
-            .asObservable()
+        let start: Driver<Void> = input.startTrigger.asObservable()
             .flatMap { [unowned self] in self.timerUseCase.start() }
             .asDriverOnErrorJustComplete()
 
-        let pause: Driver<Void> = input.pauseTrigger
-            .asObservable()
+        let pause: Driver<Void> = input.pauseTrigger.asObservable()
             .flatMap { [unowned self] in self.timerUseCase.pause() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
-        let resume: Driver<Void> = input.resumeTrigger
-            .asObservable()
+        let resume: Driver<Void> = input.resumeTrigger.asObservable()
             .flatMap { [unowned self] in self.timerUseCase.resume() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
-        let end: Driver<Void> = input.endTrigger
-            .asObservable()
+        let end: Driver<Void> = input.endTrigger.asObservable()
             .flatMap { [unowned self] in self.timerUseCase.finish() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()

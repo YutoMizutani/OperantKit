@@ -8,8 +8,8 @@
 
 import RxSwift
 
-public extension Observable where E == ResultEntity {
-    func clearResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+public extension Observable where Element == ResultEntity {
+    func clearResponse(_ entity: ResponseEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
             entity.numOfResponses = 0
@@ -17,7 +17,7 @@ public extension Observable where E == ResultEntity {
         })
     }
 
-    func storeResponse(_ entity: ResponseEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+    func storeResponse(_ entity: ResponseEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
             entity.numOfResponses = $0.entity.numOfResponses
@@ -25,7 +25,7 @@ public extension Observable where E == ResultEntity {
         })
     }
 
-    func nextOrder(_ entity: VariableEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+    func nextOrder(_ entity: VariableEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
             let nextOrder = entity.order + 1
@@ -33,7 +33,7 @@ public extension Observable where E == ResultEntity {
         })
     }
 
-    func nextRandom(_ entity: RandomEntity, condition: @escaping ((E) -> Bool)) -> Observable<E> {
+    func nextRandom(_ entity: RandomEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
             entity.nextValue = entity.displayValue <= 0 ? 0 : Int.random(in: 1...entity.displayValue)

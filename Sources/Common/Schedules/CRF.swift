@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Continuous Reinforcement schedule
     ///

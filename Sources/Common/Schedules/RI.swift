@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Random interval schedule
     ///
@@ -16,7 +16,7 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .RI()
     func RI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FI(value)
+        return FI(value())
     }
 
     /// Random interval schedule

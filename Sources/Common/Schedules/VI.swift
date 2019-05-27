@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Single where E == ResponseEntity {
+public extension Single where Element == ResponseEntity {
 
     /// Fixed interval schedule
     ///
@@ -16,7 +16,7 @@ public extension Single where E == ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .VI()
     func VI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FI(value)
+        return FI(value())
     }
 
     /// Fixed interval schedule
