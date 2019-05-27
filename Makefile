@@ -111,7 +111,6 @@ build-release-framework-all:
 test:
 	make test-all
 test-all:
-	make install-all
 	make test-framework-all
 	make test-app-all
 test-framework-all:
