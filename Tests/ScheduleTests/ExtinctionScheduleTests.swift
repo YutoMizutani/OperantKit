@@ -14,10 +14,10 @@ final class ExtinctionScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = EXT()
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity.stub()),
-            next(200, ResponseEntity.stub()),
-            next(300, ResponseEntity.stub()),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity.stub()),
+            Recorded.next(200, ResponseEntity.stub()),
+            Recorded.next(300, ResponseEntity.stub()),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -30,10 +30,10 @@ final class ExtinctionScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, false),
-            next(200, false),
-            next(300, false),
-            completed(completedTime)
+            Recorded.next(100, false),
+            Recorded.next(200, false),
+            Recorded.next(300, false),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 

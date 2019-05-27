@@ -14,13 +14,13 @@ final class DiscreteTrialScheduleUseCaseTests: XCTestCase {
         let schedule: DiscreteTrialUseCase = DiscreteTrialUseCase(FR(2))
 
         let testObservable = scheduler.createHotObservable([
-            next(100, (true, ResponseEntity(numOfResponses: 2, milliseconds: 0))),
-            next(200, (false, ResponseEntity(numOfResponses: 4, milliseconds: 0))),
-            next(300, (true, ResponseEntity(numOfResponses: 4, milliseconds: 0))),
-            next(400, (true, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
-            next(500, (true, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
-            next(600, (false, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
-            completed(completedTime)
+            Recorded.next(100, (true, ResponseEntity(numOfResponses: 2, milliseconds: 0))),
+            Recorded.next(200, (false, ResponseEntity(numOfResponses: 4, milliseconds: 0))),
+            Recorded.next(300, (true, ResponseEntity(numOfResponses: 4, milliseconds: 0))),
+            Recorded.next(400, (true, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
+            Recorded.next(500, (true, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
+            Recorded.next(600, (false, ResponseEntity(numOfResponses: 6, milliseconds: 0))),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -34,13 +34,13 @@ final class DiscreteTrialScheduleUseCaseTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, true),
-            next(200, false),
-            next(300, true),
-            next(400, true),
-            next(500, false),
-            next(600, false),
-            completed(completedTime)
+            Recorded.next(100, true),
+            Recorded.next(200, false),
+            Recorded.next(300, true),
+            Recorded.next(400, true),
+            Recorded.next(500, false),
+            Recorded.next(600, false),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 

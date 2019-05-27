@@ -14,13 +14,13 @@ final class FixedRatioScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = FR(5)
 
         let testObservable = scheduler.createHotObservable([
-            next(100, ResponseEntity(numOfResponses: 5, milliseconds: 0)),
-            next(200, ResponseEntity(numOfResponses: 7, milliseconds: 0)),
-            next(300, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
-            next(400, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
-            next(500, ResponseEntity(numOfResponses: 1000, milliseconds: 0)),
-            next(600, ResponseEntity(numOfResponses: 1001, milliseconds: 0)),
-            completed(completedTime)
+            Recorded.next(100, ResponseEntity(numOfResponses: 5, milliseconds: 0)),
+            Recorded.next(200, ResponseEntity(numOfResponses: 7, milliseconds: 0)),
+            Recorded.next(300, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
+            Recorded.next(400, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
+            Recorded.next(500, ResponseEntity(numOfResponses: 1000, milliseconds: 0)),
+            Recorded.next(600, ResponseEntity(numOfResponses: 1001, milliseconds: 0)),
+            Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
@@ -33,13 +33,13 @@ final class FixedRatioScheduleTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            next(100, true),
-            next(200, false),
-            next(300, true),
-            next(400, false),
-            next(500, true),
-            next(600, false),
-            completed(completedTime)
+            Recorded.next(100, true),
+            Recorded.next(200, false),
+            Recorded.next(300, true),
+            Recorded.next(400, false),
+            Recorded.next(500, true),
+            Recorded.next(600, false),
+            Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
 
