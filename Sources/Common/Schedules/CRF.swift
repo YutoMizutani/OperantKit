@@ -11,8 +11,8 @@ public extension Single where Element == ResponseEntity {
 
     /// Continuous Reinforcement schedule
     ///
-    /// - Important: FR 1 と結果は同一ですが，値の取得に伴なうクロージャの分だけこちらがより高速に動作します。
-    ///
+    /// - Important: Works faster than FR 1.
+    /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
     /// - Tag: .CRF()
     func CRF() -> Single<Bool> {

@@ -15,7 +15,7 @@ public struct PostpositionSchedule: OptionSet {
         self.rawValue = rawValue
     }
 
-    public static let RatioSchedule = PostpositionSchedule(rawValue: 1 << 0)
-    public static let IntervalSchedule = PostpositionSchedule(rawValue: 1 << 1)
-    public static let TimeSchedule = PostpositionSchedule(rawValue: 1 << 2)
+    public static let ratioSchedule = PostpositionSchedule(rawValue: 1 << 0)
+    public static let intervalSchedule = PostpositionSchedule(rawValue: 1 << 1)
+    public static let timeSchedule = PostpositionSchedule(rawValue: 1 << 2)
 }

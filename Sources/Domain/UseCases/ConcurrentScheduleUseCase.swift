@@ -13,7 +13,7 @@ public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUse
             lastDecisionEntities = [ResponseEntity](repeating: ResponseEntity.zero, count: subSchedules.count)
         }
     }
-    private var lastDecisionEntities: [ResponseEntity]
+    public var lastDecisionEntities: [ResponseEntity]
     public var isShared: Bool
 
     public init(_ subSchedules: [ScheduleUseCase], isShared: Bool = false) {

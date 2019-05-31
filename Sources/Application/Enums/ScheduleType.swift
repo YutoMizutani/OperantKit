@@ -50,7 +50,7 @@ public struct ScheduleType: OptionSet {
     /// Fixed ratio
     public static let fixedRatio: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.fixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.ratioSchedule.rawValue),
             shortName: "FR",
             longName: "Fixed ratio"
     )
@@ -58,7 +58,7 @@ public struct ScheduleType: OptionSet {
     /// Variable ratio
     public static let variableRatio: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.variableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.ratioSchedule.rawValue),
             shortName: "VR",
             longName: "Variable ratio"
     )
@@ -66,7 +66,7 @@ public struct ScheduleType: OptionSet {
     /// Random ratio
     public static let randomRatio: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.RatioSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.randomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.ratioSchedule.rawValue),
             shortName: "RR",
             longName: "Random ratio"
     )
@@ -76,7 +76,7 @@ public struct ScheduleType: OptionSet {
     /// Fixed interval
     public static let fixedInterval: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.fixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.intervalSchedule.rawValue),
             shortName: "FI",
             longName: "Fixed interval"
     )
@@ -84,7 +84,7 @@ public struct ScheduleType: OptionSet {
     /// Variable interval
     public static let variableInterval: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.variableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.intervalSchedule.rawValue),
             shortName: "VI",
             longName: "Variable interval"
     )
@@ -92,7 +92,7 @@ public struct ScheduleType: OptionSet {
     /// Random interval
     public static let randomInterval: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.IntervalSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.randomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.intervalSchedule.rawValue),
             shortName: "RI",
             longName: "Random interval"
     )
@@ -102,7 +102,7 @@ public struct ScheduleType: OptionSet {
     /// Fixed time
     public static let fixedTime: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.FixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.fixedSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.timeSchedule.rawValue),
             shortName: "FT",
             longName: "Fixed time"
     )
@@ -110,7 +110,7 @@ public struct ScheduleType: OptionSet {
     /// Variable time
     public static let variableTime: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.VariableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.variableSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.timeSchedule.rawValue),
             shortName: "VT",
             longName: "Variable time"
     )
@@ -118,7 +118,7 @@ public struct ScheduleType: OptionSet {
     /// Random time
     public static let randomTime: ScheduleType =
         ScheduleType(
-            rawValue: UInt64(PrepositionSchedule.RandomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.TimeSchedule.rawValue),
+            rawValue: UInt64(PrepositionSchedule.randomSchedule.rawValue) << 16 + UInt64(PostpositionSchedule.timeSchedule.rawValue),
             shortName: "RT",
             longName: "Random time"
     )
@@ -132,31 +132,31 @@ public extension ScheduleType {
 
     /// A Boolean value indicating whether the element has fixed feature
     func hasFixedSchedule() -> Bool {
-        return (self.rawValue << 32) >> 48 == UInt64(PrepositionSchedule.FixedSchedule.rawValue)
+        return (rawValue << 32) >> 48 == UInt64(PrepositionSchedule.fixedSchedule.rawValue)
     }
 
     /// A Boolean value indicating whether the element has variable feature
     func hasVariableSchedule() -> Bool {
-        return (self.rawValue << 32) >> 48 == UInt64(PrepositionSchedule.VariableSchedule.rawValue)
+        return (rawValue << 32) >> 48 == UInt64(PrepositionSchedule.variableSchedule.rawValue)
     }
 
     /// A Boolean value indicating whether the element has random feature
     func hasRandomSchedule() -> Bool {
-        return (self.rawValue << 32) >> 48 == UInt64(PrepositionSchedule.RandomSchedule.rawValue)
+        return (rawValue << 32) >> 48 == UInt64(PrepositionSchedule.randomSchedule.rawValue)
     }
 
     /// A Boolean value indicating whether the element has ratio feature
     func hasRatioSchedule() -> Bool {
-        return (self.rawValue << 48) >> 48 == UInt64(PostpositionSchedule.RatioSchedule.rawValue)
+        return (rawValue << 48) >> 48 == UInt64(PostpositionSchedule.ratioSchedule.rawValue)
     }
 
     /// A Boolean value indicating whether the element has interval feature
     func hasIntervalSchedule() -> Bool {
-        return (self.rawValue << 48) >> 48 == UInt64(PostpositionSchedule.IntervalSchedule.rawValue)
+        return (rawValue << 48) >> 48 == UInt64(PostpositionSchedule.intervalSchedule.rawValue)
     }
 
     /// A Boolean value indicating whether the element has time feature
     func hasTimeSchedule() -> Bool {
-        return (self.rawValue << 48) >> 48 == UInt64(PostpositionSchedule.TimeSchedule.rawValue)
+        return (rawValue << 48) >> 48 == UInt64(PostpositionSchedule.timeSchedule.rawValue)
     }
 }

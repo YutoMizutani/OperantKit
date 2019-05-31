@@ -15,7 +15,7 @@ public struct PrepositionSchedule: OptionSet {
         self.rawValue = rawValue
     }
 
-    public static let FixedSchedule = PrepositionSchedule(rawValue: 1 << 0)
-    public static let VariableSchedule = PrepositionSchedule(rawValue: 1 << 1)
-    public static let RandomSchedule = PrepositionSchedule(rawValue: 1 << 2)
+    public static let fixedSchedule = PrepositionSchedule(rawValue: 1 << 0)
+    public static let variableSchedule = PrepositionSchedule(rawValue: 1 << 1)
+    public static let randomSchedule = PrepositionSchedule(rawValue: 1 << 2)
 }
