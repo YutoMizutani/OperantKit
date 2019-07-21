@@ -14,10 +14,10 @@ final class VariablIntervaleScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VI(5)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 1, milliseconds: 5000 * 100)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 2, milliseconds: 10000 * 100)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 3, milliseconds: 15000 * 100)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 4, milliseconds: 20000 * 100)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 1, milliseconds: 5000 * 100)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 2, milliseconds: 10000 * 100)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 3, milliseconds: 15000 * 100)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 4, milliseconds: 20000 * 100)),
             Recorded.completed(completedTime)
             ])
 
@@ -56,10 +56,10 @@ final class VariablIntervaleScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VI(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 1, milliseconds: 5)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 2, milliseconds: 7)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 3, milliseconds: 10)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 4, milliseconds: 10)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 1, milliseconds: 5)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 2, milliseconds: 7)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 3, milliseconds: 10)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 4, milliseconds: 10)),
             Recorded.completed(completedTime)
             ])
 

@@ -30,7 +30,7 @@ example("FR - logic") {
  */
 example("FR - Method chaining on the Rx stream") {
     _ = Observable.of(0, 1, 2, 3, 4)
-        .map { ResponseEntity(numOfResponses: $0, milliseconds: 0) }
+        .map { ResponseEntity(numberOfResponses: $0, milliseconds: 0) }
         .map { Single.just($0) }
         .flatMap { $0.FR(2) }
         .asObservable()

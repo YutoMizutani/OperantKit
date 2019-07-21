@@ -19,7 +19,7 @@ extension ResponseEntity {
     /// - Complexity: O(1)
     /// - Tag: .fixedRatio()
     func fixedRatio(_ value: Int) -> Bool {
-        return numOfResponses >= value
+        return numberOfResponses >= value
     }
 }
 

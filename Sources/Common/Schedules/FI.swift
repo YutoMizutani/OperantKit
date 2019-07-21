@@ -11,8 +11,8 @@ extension ResponseEntity {
 
     /// Fixed interval schedule
     /// - Tag: .fixedInterval()
-    func fixedInterval(_ value: Milliseconds, _ previousNumOfResponses: Int) -> Bool {
-        return numOfResponses > previousNumOfResponses
+    func fixedInterval(_ value: Milliseconds, _ previousnumberOfResponses: Int) -> Bool {
+        return numberOfResponses > previousnumberOfResponses
             && fixedTime(value)
     }
 }
@@ -27,7 +27,7 @@ public extension Single where Element == ResponseEntity {
     /// - Tag: .FI()
     func FI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
         return store(startWith: ResponseEntity.zero)
-            .map { $0.newValue.fixedInterval(value(), $0.oldValue.numOfResponses) }
+            .map { $0.newValue.fixedInterval(value(), $0.oldValue.numberOfResponses) }
     }
 
     /// Fixed interval schedule
@@ -40,7 +40,7 @@ public extension Single where Element == ResponseEntity {
         return store(startWith: ResponseEntity.zero)
             .flatMap { a in
                 value.map { b in
-                    a.newValue.fixedInterval(b, a.oldValue.numOfResponses)
+                    a.newValue.fixedInterval(b, a.oldValue.numberOfResponses)
                 }
             }
     }

@@ -61,12 +61,12 @@ public extension ScheduleUseCase where Self: CompoundScheduleUseCaseBase {
         return Single.zip(subSchedules.map { $0.updateValue(result, isNext: isNext) }) { _ in }
     }
 
-    func updateValue(numOfResponses: Int) -> Single<Void> {
-        return Single.zip(subSchedules.map { $0.updateValue(numOfResponses: numOfResponses) }) { _ in }
+    func updateValue(numberOfResponses: Int) -> Single<Void> {
+        return Single.zip(subSchedules.map { $0.updateValue(numberOfResponses: numberOfResponses) }) { _ in }
     }
 
-    func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void> {
-        return Single.zip(subSchedules.map { $0.updateValue(numOfResponses: numOfResponses, isNext: isNext) }) { _ in }
+    func updateValue(numberOfResponses: Int, isNext: Bool) -> Single<Void> {
+        return Single.zip(subSchedules.map { $0.updateValue(numberOfResponses: numberOfResponses, isNext: isNext) }) { _ in }
     }
 
     func updateValue(milliseconds: Milliseconds) -> Single<Void> {

@@ -24,7 +24,7 @@ public protocol ScheduleRespository {
     func updateEmaxEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
     func updateLastReinforcement(_ index: Int) -> Single<Void>
     func updateLastReinforcement(_ entity: ResponseEntity, index: Int) -> Single<Void>
-    func updateLastReinforcement(numOfResponses: Int, index: Int) -> Single<Void>
+    func updateLastReinforcement(numberOfResponses: Int, index: Int) -> Single<Void>
     func updateLastReinforcement(milliseconds: Milliseconds, index: Int) -> Single<Void>
     func updateExtendEntity(_ entity: ResponseEntity, index: Int) -> Single<Void>
 
@@ -162,14 +162,14 @@ public extension ScheduleRespository {
         }
     }
 
-    func updateLastReinforcement(numOfResponses: Int, index: Int = 0) -> Single<Void> {
+    func updateLastReinforcement(numberOfResponses: Int, index: Int = 0) -> Single<Void> {
         return Single.create { single in
             guard self.recorder.scheduleRecordEntities.count > index else {
                 single(.error(RxError.argumentOutOfRange))
                 return Disposables.create()
             }
 
-            self.recorder.scheduleRecordEntities[index].lastReinforcement.numOfResponses = numOfResponses
+            self.recorder.scheduleRecordEntities[index].lastReinforcement.numberOfResponses = numberOfResponses
             single(.success(()))
 
             return Disposables.create()

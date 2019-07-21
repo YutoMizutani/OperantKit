@@ -14,10 +14,10 @@ final class VariableRatioScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VR(5)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 5 * 100, milliseconds: 0)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 10 * 100, milliseconds: 0)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 15 * 100, milliseconds: 0)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 20 * 100, milliseconds: 0)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 5 * 100, milliseconds: 0)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 10 * 100, milliseconds: 0)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 15 * 100, milliseconds: 0)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 20 * 100, milliseconds: 0)),
             Recorded.completed(completedTime)
             ])
 
@@ -56,10 +56,10 @@ final class VariableRatioScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = VR(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 5, milliseconds: 0)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 7, milliseconds: 0)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 10, milliseconds: 0)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 5, milliseconds: 0)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 7, milliseconds: 0)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
             Recorded.completed(completedTime)
             ])
 

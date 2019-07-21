@@ -14,11 +14,11 @@ final class RandomTimeScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = RT(5)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(500, ResponseEntity(numberOfResponses: 0, milliseconds: 100000)),
             Recorded.completed(completedTime)
             ])
 

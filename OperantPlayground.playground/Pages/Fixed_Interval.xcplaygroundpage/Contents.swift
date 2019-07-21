@@ -16,19 +16,19 @@ example("FI - logic") {
 
     previousNumberOfResponses = 0
     response = ResponseEntity.zero
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(1, 1000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(2, 3000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(3, 5000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(4, 10000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
 }
 /*:
  ---
@@ -37,7 +37,7 @@ example("FI - logic") {
  */
 example("FI - Method chaining on the Rx stream") {
     _ = Observable.of(0, 1, 2, 3, 4)
-        .map { ResponseEntity(numOfResponses: $0, milliseconds: $0 * 1000) }
+        .map { ResponseEntity(numberOfResponses: $0, milliseconds: $0 * 1000) }
         .map { Single.just($0) }
         .flatMap { $0.FI(2000) }
         .asObservable()

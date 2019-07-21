@@ -12,7 +12,7 @@ public extension Observable where Element == ResultEntity {
     func clearResponse(_ entity: ResponseEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
-            entity.numOfResponses = 0
+            entity.numberOfResponses = 0
             entity.milliseconds = 0
         })
     }
@@ -20,7 +20,7 @@ public extension Observable where Element == ResultEntity {
     func storeResponse(_ entity: ResponseEntity, condition: @escaping ((Element) -> Bool)) -> Observable<Element> {
         return self.do(onNext: {
             guard condition($0) else { return }
-            entity.numOfResponses = $0.entity.numOfResponses
+            entity.numberOfResponses = $0.entity.numberOfResponses
             entity.milliseconds = $0.entity.milliseconds
         })
     }

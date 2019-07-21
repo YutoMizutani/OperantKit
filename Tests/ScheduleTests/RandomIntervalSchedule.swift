@@ -14,16 +14,16 @@ final class RandomIntervalScheduleTests: XCTestCase {
         let schedule: ScheduleUseCase = RI(5)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(500, ResponseEntity(numOfResponses: 0, milliseconds: 100000)),
-            Recorded.next(1000, ResponseEntity(numOfResponses: 1, milliseconds: 500000)),
-            Recorded.next(2000, ResponseEntity(numOfResponses: 2, milliseconds: 1000000)),
-            Recorded.next(3000, ResponseEntity(numOfResponses: 3, milliseconds: 1000000)),
-            Recorded.next(4000, ResponseEntity(numOfResponses: 4, milliseconds: 1500000)),
-            Recorded.next(5000, ResponseEntity(numOfResponses: 5, milliseconds: 10000000)),
+            Recorded.next(100, ResponseEntity(numberOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, ResponseEntity(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(300, ResponseEntity(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, ResponseEntity(numberOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(500, ResponseEntity(numberOfResponses: 0, milliseconds: 100000)),
+            Recorded.next(1000, ResponseEntity(numberOfResponses: 1, milliseconds: 500000)),
+            Recorded.next(2000, ResponseEntity(numberOfResponses: 2, milliseconds: 1000000)),
+            Recorded.next(3000, ResponseEntity(numberOfResponses: 3, milliseconds: 1000000)),
+            Recorded.next(4000, ResponseEntity(numberOfResponses: 4, milliseconds: 1500000)),
+            Recorded.next(5000, ResponseEntity(numberOfResponses: 5, milliseconds: 10000000)),
             Recorded.completed(completedTime)
             ])
 

@@ -9,50 +9,69 @@
 import Foundation
 
 public class ResponseEntity: Responsible {
-    public var numOfResponses: Int
+    public var numberOfResponses: Int
     public var milliseconds: Milliseconds
+
+    public var numOfResp: Int {
+        set {
+            numberOfResponses = newValue
+        }
+        get {
+            return numberOfResponses
+        }
+    }
+
+    public var ms: Milliseconds {
+        set {
+            milliseconds = newValue
+        }
+        get {
+            return milliseconds
+        }
+    }
+
     public static var zero: ResponseEntity {
         return ResponseEntity(0, 0)
     }
 
-    public init(numOfResponses: Int = 0, milliseconds: Milliseconds = 0) {
-        self.numOfResponses = numOfResponses
+    public init(numberOfResponses: Int = 0, milliseconds: Milliseconds = 0) {
+        self.numberOfResponses = numberOfResponses
         self.milliseconds = milliseconds
     }
 
-    public init(_ numOfResponses: Int, _ milliseconds: Milliseconds) {
-        self.numOfResponses = numOfResponses
+    public init(_ numberOfResponses: Int, _ milliseconds: Milliseconds) {
+        self.numberOfResponses = numberOfResponses
         self.milliseconds = milliseconds
     }
 }
 
 extension ResponseEntity: Equatable {
     public static func == (lhs: ResponseEntity, rhs: ResponseEntity) -> Bool {
-        return lhs.numOfResponses == rhs.numOfResponses
+        return lhs.numberOfResponses == rhs.numberOfResponses
             && lhs.milliseconds == rhs.milliseconds
     }
 
     public static func + (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(
-            numOfResponses: lhs.numOfResponses + rhs.numOfResponses,
+            numberOfResponses: lhs.numberOfResponses + rhs.numberOfResponses,
             milliseconds: lhs.milliseconds + rhs.milliseconds
         )
     }
 
     public static func - (lhs: ResponseEntity, rhs: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(
-            numOfResponses: lhs.numOfResponses - rhs.numOfResponses,
+            numberOfResponses: lhs.numberOfResponses - rhs.numberOfResponses,
             milliseconds: lhs.milliseconds - rhs.milliseconds
         )
     }
 
     public static func += (lhs: inout ResponseEntity, rhs: ResponseEntity) {
-        lhs.numOfResponses += rhs.numOfResponses
+        lhs.numberOfResponses += rhs.numberOfResponses
         lhs.milliseconds += rhs.milliseconds
     }
 
     public static func -= (lhs: inout ResponseEntity, rhs: ResponseEntity) {
-        lhs.numOfResponses -= rhs.numOfResponses
+        lhs.numberOfResponses -= rhs.numberOfResponses
         lhs.milliseconds -= rhs.milliseconds
     }
 }
@@ -65,7 +84,7 @@ public extension ResponseEntity {
     static func emax(_ values: [ResponseEntity]) -> ResponseEntity? {
         guard !values.isEmpty else { return nil }
         return ResponseEntity(
-            numOfResponses: values.map { $0.numOfResponses }.max()!,
+            numberOfResponses: values.map { $0.numberOfResponses }.max()!,
             milliseconds: values.map { $0.milliseconds }.max()!
         )
     }
@@ -75,7 +94,7 @@ public extension ResponseEntity {
     /// - Complexity: O(1)
     func emax(_ value: ResponseEntity) -> ResponseEntity {
         return ResponseEntity(
-            numOfResponses: numOfResponses > value.numOfResponses ? numOfResponses : value.numOfResponses,
+            numberOfResponses: numberOfResponses > value.numberOfResponses ? numberOfResponses : value.numberOfResponses,
             milliseconds: milliseconds > value.milliseconds ? milliseconds : value.milliseconds
         )
     }

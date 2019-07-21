@@ -25,8 +25,8 @@ public protocol ScheduleUseCase: class {
     func updateValue(_ entity: ResponseEntity, isNext: Bool) -> Single<Void>
     func updateValue(_ result: ResultEntity) -> Single<Void>
     func updateValue(_ result: ResultEntity, isNext: Bool) -> Single<Void>
-    func updateValue(numOfResponses: Int) -> Single<Void>
-    func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void>
+    func updateValue(numberOfResponses: Int) -> Single<Void>
+    func updateValue(numberOfResponses: Int, isNext: Bool) -> Single<Void>
     func updateValue(milliseconds: Milliseconds) -> Single<Void>
     func updateValue(milliseconds: Milliseconds, isNext: Bool) -> Single<Void>
 }

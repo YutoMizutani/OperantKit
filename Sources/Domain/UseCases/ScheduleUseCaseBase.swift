@@ -86,14 +86,14 @@ public extension ScheduleUseCase where Self: ScheduleUseCaseBase {
         return updateValue(result.entity, isNext: isNext)
     }
 
-    func updateValue(numOfResponses: Int) -> Single<Void> {
-        return updateValue(numOfResponses: numOfResponses, isNext: true)
+    func updateValue(numberOfResponses: Int) -> Single<Void> {
+        return updateValue(numberOfResponses: numberOfResponses, isNext: true)
     }
 
-    func updateValue(numOfResponses: Int, isNext: Bool) -> Single<Void> {
+    func updateValue(numberOfResponses: Int, isNext: Bool) -> Single<Void> {
         return Single.zip(
             repository.resetExtendEntity(),
-            repository.updateLastReinforcement(numOfResponses: numOfResponses),
+            repository.updateLastReinforcement(numberOfResponses: numberOfResponses),
             isNext ? repository.nextValue() : Single.just(())
             )
             .mapToVoid()

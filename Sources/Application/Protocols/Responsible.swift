@@ -10,7 +10,7 @@ import Foundation
 /// Response parameter requirements protocol
 public protocol Responsible {
     /// Number of responses
-    var numOfResponses: Int { get set }
+    var numberOfResponses: Int { get set }
     /// Response time milliseconds
     var milliseconds: Milliseconds { get set }
 }

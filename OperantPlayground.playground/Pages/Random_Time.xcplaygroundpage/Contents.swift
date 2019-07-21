@@ -33,7 +33,7 @@ example("RT - Method chaining on the Rx stream") {
     let value = Milliseconds.random(in: 3000...3000)
 
     _ = Observable.of(0, 1000, 2000, 3000, 4000)
-        .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
+        .map { ResponseEntity(numberOfResponses: 0, milliseconds: $0) }
         .map { Single.just($0) }
         // The value is computed constant value. If input `RT(2)` is equal to `FT(2)`
         .flatMap { $0.RT(value) }

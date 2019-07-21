@@ -46,7 +46,7 @@ public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUse
         return !(isUpdateIfReinforcement && isSharedUpdate) ? result : result
             .flatMap { [weak self] r in
                 guard let self = self, r.isReinforcement else { return Single.just(r) }
-                self.lastDecisionEntities = self.lastDecisionEntities.map { ResponseEntity($0.numOfResponses, r.entity.milliseconds) }
+                self.lastDecisionEntities = self.lastDecisionEntities.map { ResponseEntity($0.numberOfResponses, r.entity.milliseconds) }
                 return Single.zip(
                     self.subSchedules.enumerated()
                         .filter { $0.offset != index }
@@ -78,9 +78,9 @@ public class ConcurrentScheduleUseCase: CompoundScheduleUseCaseBase, ScheduleUse
         return subSchedules[isShared ? 0 : index].updateValue(result)
     }
 
-    public func updateValue(numOfResponses: Int, index: Int) -> Single<Void> {
+    public func updateValue(numberOfResponses: Int, index: Int) -> Single<Void> {
         guard isShared || subSchedules.count > index else { return Single<Void>.error(RxError.noElements) }
-        return subSchedules[isShared ? 0 : index].updateValue(numOfResponses: numOfResponses)
+        return subSchedules[isShared ? 0 : index].updateValue(numberOfResponses: numberOfResponses)
     }
 
     public func updateValue(milliseconds: Milliseconds, index: Int) -> Single<Void> {
