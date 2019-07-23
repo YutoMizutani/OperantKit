@@ -11,19 +11,17 @@ final class VariableRatioScheduleTests: XCTestCase {
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = VR(5)
-
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numberOfResponses: 5 * 100, milliseconds: 0)),
-            Recorded.next(200, ResponseEntity(numberOfResponses: 10 * 100, milliseconds: 0)),
-            Recorded.next(300, ResponseEntity(numberOfResponses: 15 * 100, milliseconds: 0)),
-            Recorded.next(400, ResponseEntity(numberOfResponses: 20 * 100, milliseconds: 0)),
+            Recorded.next(100, Response(numberOfResponses: 5 * 100, milliseconds: 0)),
+            Recorded.next(200, Response(numberOfResponses: 10 * 100, milliseconds: 0)),
+            Recorded.next(300, Response(numberOfResponses: 15 * 100, milliseconds: 0)),
+            Recorded.next(400, Response(numberOfResponses: 20 * 100, milliseconds: 0)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0) }
+                .variableRatio(5)
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)
@@ -53,19 +51,18 @@ final class VariableRatioScheduleTests: XCTestCase {
         let disposeBag = DisposeBag()
 
         let values: [Int] = [5, 5, 5]
-        let schedule: ScheduleUseCase = VR(5, values: values)
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numberOfResponses: 5, milliseconds: 0)),
-            Recorded.next(200, ResponseEntity(numberOfResponses: 7, milliseconds: 0)),
-            Recorded.next(300, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
-            Recorded.next(400, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
+            Recorded.next(100, Response(numberOfResponses: 5, milliseconds: 0)),
+            Recorded.next(200, Response(numberOfResponses: 7, milliseconds: 0)),
+            Recorded.next(300, Response(numberOfResponses: 10, milliseconds: 0)),
+            Recorded.next(400, Response(numberOfResponses: 10, milliseconds: 0)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0) }
+                .variableRatio(values)
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)

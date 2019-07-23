@@ -11,21 +11,19 @@ final class FixedTimeScheduleTests: XCTestCase {
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = FT(5)
-
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numberOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, ResponseEntity(numberOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(300, ResponseEntity(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(400, ResponseEntity(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(500, ResponseEntity(numberOfResponses: 0, milliseconds: 1000000)),
-            Recorded.next(600, ResponseEntity(numberOfResponses: 0, milliseconds: 1000001)),
+            Recorded.next(100, Response(numberOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, Response(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(300, Response(numberOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(400, Response(numberOfResponses: 0, milliseconds: 15000)),
+            Recorded.next(500, Response(numberOfResponses: 0, milliseconds: 1000000)),
+            Recorded.next(600, Response(numberOfResponses: 0, milliseconds: 1000001)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0) }
+                .fixedTime(.seconds(5))
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)

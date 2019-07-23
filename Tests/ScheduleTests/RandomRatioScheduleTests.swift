@@ -11,20 +11,18 @@ final class RandomRatioScheduleTests: XCTestCase {
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = RR(5)
-
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numberOfResponses: 5, milliseconds: 0)),
-            Recorded.next(200, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
-            Recorded.next(300, ResponseEntity(numberOfResponses: 10, milliseconds: 0)),
-            Recorded.next(400, ResponseEntity(numberOfResponses: 15, milliseconds: 0)),
-            Recorded.next(500, ResponseEntity(numberOfResponses: 1000, milliseconds: 0)),
+            Recorded.next(100, Response(numberOfResponses: 5, milliseconds: 0)),
+            Recorded.next(200, Response(numberOfResponses: 10, milliseconds: 0)),
+            Recorded.next(300, Response(numberOfResponses: 10, milliseconds: 0)),
+            Recorded.next(400, Response(numberOfResponses: 15, milliseconds: 0)),
+            Recorded.next(500, Response(numberOfResponses: 1000, milliseconds: 0)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0) }
+                .randomRatio(5)
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)

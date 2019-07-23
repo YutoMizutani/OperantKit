@@ -7,24 +7,9 @@
 
 import RxSwift
 
-extension ResponseEntity {
-
-    /// Extinction schedule
-    ///
-    /// - Complexity: O(1)
-    /// - Tag: .extinction()
-    func extinction() -> Bool {
-        return false
-    }
-}
-
-public extension Single where Element == ResponseEntity {
-
-    /// Extinction schedule
-    ///
-    /// - Complexity: O(1)
-    /// - Tag: .EXT()
-    func EXT() -> Single<Bool> {
-        return map { $0.extinction() }
+public extension ObservableType where Element: ResponseCompatible {
+    func extinction() -> Observable<Consequence> {
+        return asObservable()
+            .map { .none($0) }
     }
 }

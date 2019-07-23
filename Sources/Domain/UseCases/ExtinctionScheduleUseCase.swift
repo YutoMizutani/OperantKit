@@ -12,9 +12,11 @@ public class ExtinctionScheduleUseCase: ScheduleUseCaseBase, ScheduleUseCase {
         return .extinction
     }
 
+    // TODO: Update
+
     public func decision(_ entity: ResponseEntity, isUpdateIfReinforcement: Bool) -> Single<ResultEntity> {
         return getCurrentValue(entity)
-            .EXT()
-            .map { ResultEntity($0, entity) }
+//            .EXT()
+            .map { ResultEntity(false, $0) }
     }
 }

@@ -16,3 +16,12 @@ extension ResponseEntity {
         )
     }
 }
+
+extension Response {
+    static func stub() -> Response {
+        return Response(
+            numberOfResponses: Int.random(in: 0...1000),
+            milliseconds: Milliseconds.random(in: 0...1000)
+        )
+    }
+}

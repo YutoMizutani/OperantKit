@@ -7,6 +7,25 @@
 
 import RxSwift
 
+public extension ObservableType where Element: ResponseCompatible {
+    func fixedTime(_ value: TimeInterval) -> Observable<Consequence> {
+        var lastReinforcementValue: Response = Response.zero
+        return asObservable()
+            .map {
+                let current: Response = Response($0) - lastReinforcementValue
+                let isReinforcement: Bool = current.milliseconds >= value.milliseconds
+                if isReinforcement {
+                    lastReinforcementValue = Response($0)
+                    return .reinforcement($0)
+                } else {
+                    return .none($0)
+                }
+            }
+    }
+}
+
+// TODO: Remove
+
 extension ResponseEntity {
 
     /// Fixed time schedule
