@@ -8,6 +8,10 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Fixed time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func fixedTime(_ value: TimeInterval) -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
         return asObservable()
@@ -24,35 +28,22 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Fixed time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct FT<ResponseType: ResponseCompatible> {
+    private let value: TimeInterval
 
-extension ResponseEntity {
-
-    /// Fixed time schedule
-    ///
-    /// - Tag: .fixedTime()
-    func fixedTime(_ value: Milliseconds) -> Bool {
-        return milliseconds >= value
-    }
-}
-
-public extension Single where Element == ResponseEntity {
-
-    /// Fixed time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FT()
-    func FT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return map { r in r.fixedTime(value()) }
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    /// Fixed time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FT()
-    func FT(_ value: Single<Int>) -> Single<Bool> {
-        return flatMap { r in value.map { v in r.fixedTime(v) } }
+    public init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .fixedTime(value)
     }
 }

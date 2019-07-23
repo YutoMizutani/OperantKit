@@ -8,6 +8,10 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Continuous Reinforcement schedule
+    ///
+    /// - Important: Works faster than FR 1.
+    /// - Complexity: O(1)
     func continuousReinforcement() -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
         return asObservable()
@@ -24,29 +28,14 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-final public class CRF<ResponseType: ResponseCompatible> {
-    private let source: Observable<ResponseType>
-    public private(set) lazy var consequence: Observable<Consequence> = {
+/// Continuous Reinforcement schedule
+///
+/// - Important: Works faster than FR 1.
+public struct CRF<ResponseType: ResponseCompatible> {
+    public init() {}
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
         return source.asResponse()
             .continuousReinforcement()
-    }()
-
-    init(source: Observable<ResponseType>) {
-        self.source = source
-    }
-}
-
-// TODO: Remove
-
-public extension Single where Element == ResponseEntity {
-
-    /// Continuous Reinforcement schedule
-    ///
-    /// - Important: Works faster than FR 1.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .CRF()
-    func CRF() -> Single<Bool> {
-        return map { r in r.fixedRatio(1) }
     }
 }

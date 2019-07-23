@@ -16,6 +16,11 @@ func nextVariables(_ value: TimeInterval, iterations: Int) -> [Milliseconds] {
 }
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Variable interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func variableInterval(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
         let values: [Milliseconds] = nextVariables(value, iterations: iterations)
         return variableInterval(values)
@@ -43,27 +48,27 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Variable interval schedule
+///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+/// - Parameter value: Reinforcement value
+public struct VI<ResponseType: ResponseCompatible> {
+    private let values: [Milliseconds]
 
-public extension Single where Element == ResponseEntity {
-
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VI()
-    func VI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FI(value())
+    public init(_ values: [Milliseconds]) {
+        self.values = values
     }
 
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VI()
-    func VI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return FI(value)
+    public init(_ value: TimeInterval, iterations: Int = 12) {
+        self.init(nextVariables(value, iterations: iterations))
+    }
+
+    public init(_ value: Seconds, iterations: Int = 12) {
+        self.init(TimeInterval.seconds(value), iterations: iterations)
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .variableInterval(values)
     }
 }

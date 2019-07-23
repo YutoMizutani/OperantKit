@@ -13,6 +13,10 @@ private func nextRandom(_ value: Int) -> Int {
 }
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Random ratio schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func randomRatio(_ value: Int) -> Observable<Consequence> {
         var nextValue: Int = nextRandom(value)
         var lastReinforcementValue: Response = Response.zero
@@ -32,25 +36,18 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Random ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public struct RR<ResponseType: ResponseCompatible> {
+    private let value: Int
 
-public extension Single where Element == ResponseEntity {
-
-    /// Random ratio schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RR()
-    func RR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
-        return FR(value())
+    public init(_ value: Int) {
+        self.value = value
     }
 
-    /// Random ratio schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RR()
-    func RR(_ value: Single<Int>) -> Single<Bool> {
-        return FR(value)
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .randomRatio(value)
     }
 }

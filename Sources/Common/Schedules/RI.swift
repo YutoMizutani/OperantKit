@@ -13,6 +13,11 @@ func nextRandom(_ value: TimeInterval) -> Milliseconds {
 }
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Random interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func randomInterval(_ value: TimeInterval) -> Observable<Consequence> {
         var nextValue: Milliseconds = nextRandom(value)
         var lastReinforcementValue: Response = Response.zero
@@ -32,27 +37,23 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Random interval schedule
+///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+/// - Parameter value: Reinforcement value
+public struct RI<ResponseType: ResponseCompatible> {
+    private let value: TimeInterval
 
-public extension Single where Element == ResponseEntity {
-
-    /// Random interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RI()
-    func RI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FI(value())
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    /// Random interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RI()
-    func RI(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return FI(value)
+    public init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .randomInterval(value)
     }
 }

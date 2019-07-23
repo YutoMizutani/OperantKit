@@ -8,6 +8,11 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Fixed interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func fixedInterval(_ value: TimeInterval) -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
         return asObservable()
@@ -24,43 +29,23 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Fixed interval schedule
+///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+/// - Parameter value: Reinforcement value
+public struct FI<ResponseType: ResponseCompatible> {
+    private let value: TimeInterval
 
-extension ResponseEntity {
-
-    /// Fixed interval schedule
-    /// - Tag: .fixedInterval()
-    func fixedInterval(_ value: Milliseconds, _ previousnumberOfResponses: Int) -> Bool {
-        return numberOfResponses > previousnumberOfResponses
-            && fixedTime(value)
-    }
-}
-
-public extension Single where Element == ResponseEntity {
-
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FI()
-    func FI(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return store(startWith: ResponseEntity.zero)
-            .map { $0.newValue.fixedInterval(value(), $0.oldValue.numberOfResponses) }
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    /// Fixed interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .FI()
-    func FI(_ value: Single<Int>) -> Single<Bool> {
-        return store(startWith: ResponseEntity.zero)
-            .flatMap { a in
-                value.map { b in
-                    a.newValue.fixedInterval(b, a.oldValue.numberOfResponses)
-                }
-            }
+    public init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .fixedInterval(value)
     }
 }

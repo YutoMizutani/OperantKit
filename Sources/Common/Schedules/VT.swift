@@ -8,11 +8,19 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Variable time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func variableTime(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
         let values: [Milliseconds] = nextVariables(value, iterations: iterations)
         return variableTime(values)
     }
 
+    /// Variable time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func variableTime(_ values: [Milliseconds]) -> Observable<Consequence> {
         var index: Int = 0
         var lastReinforcementValue: Response = Response.zero
@@ -35,25 +43,26 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Variable time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct VT<ResponseType: ResponseCompatible> {
+    private let values: [Milliseconds]
 
-public extension Single where Element == ResponseEntity {
-
-    /// Variable time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VT()
-    func VT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FT(value())
+    public init(_ values: [Milliseconds]) {
+        self.values = values
     }
 
-    /// Variable time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VT()
-    func VT(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return FT(value)
+    public init(_ value: TimeInterval, iterations: Int = 12) {
+        self.init(nextVariables(value, iterations: iterations))
+    }
+
+    public init(_ value: Seconds, iterations: Int = 12) {
+        self.init(TimeInterval.seconds(value), iterations: iterations)
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .variableTime(values)
     }
 }

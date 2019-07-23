@@ -8,6 +8,10 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Random time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func randomTime(_ value: TimeInterval) -> Observable<Consequence> {
         var nextValue: Milliseconds = nextRandom(value)
         var lastReinforcementValue: Response = Response.zero
@@ -27,25 +31,22 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Random time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct RT<ResponseType: ResponseCompatible> {
+    private let value: TimeInterval
 
-public extension Single where Element == ResponseEntity {
-
-    /// Random time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RT()
-    func RT(_ value: @escaping @autoclosure () -> Milliseconds) -> Single<Bool> {
-        return FT(value())
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    /// Random time schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .RT()
-    func RT(_ value: Single<Milliseconds>) -> Single<Bool> {
-        return FT(value)
+    public init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
+    }
+
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .randomTime(value)
     }
 }

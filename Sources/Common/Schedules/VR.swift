@@ -16,6 +16,10 @@ private func nextVariables(_ value: Int, iterations: Int) -> [Int] {
 }
 
 public extension ObservableType where Element: ResponseCompatible {
+    /// Variable ratio schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func variableRatio(_ value: Int, iterations: Int = 12) -> Observable<Consequence> {
         let values: [Int] = nextVariables(value, iterations: iterations)
         return variableRatio(values)
@@ -43,25 +47,20 @@ public extension ObservableType where Element: ResponseCompatible {
     }
 }
 
-// TODO: Remove
+/// Variable ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public struct VR<ResponseType: ResponseCompatible> {
+    private let value: Int
+    private let iterations: Int
 
-public extension Single where Element == ResponseEntity {
-
-    /// Variable ratio schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VR()
-    func VR(_ value: @escaping @autoclosure () -> Int) -> Single<Bool> {
-        return FR(value())
+    public init(_ value: Int, iterations: Int = 12) {
+        self.value = value
+        self.iterations = iterations
     }
 
-    /// Variable ratio schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    /// - Tag: .VR()
-    func VR(_ value: Single<Int>) -> Single<Bool> {
-        return FR(value)
+    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
+        return source.asResponse()
+            .variableRatio(value, iterations: iterations)
     }
 }
