@@ -1,5 +1,5 @@
 //
-//  TimerUseCase.swift
+//  SessionTimer.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/18.
@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public protocol TimerUseCase {
+public protocol SessionTimer {
     /// Timer priority
     var priority: Priority { get set }
     /// Observable elapsed milliseconds time

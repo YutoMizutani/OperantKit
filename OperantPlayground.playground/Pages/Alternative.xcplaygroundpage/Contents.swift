@@ -26,7 +26,7 @@ example("Alt - logic") {
  */
 example("Alt - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = Alt(FR(2), FI(3))
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

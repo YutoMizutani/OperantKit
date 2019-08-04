@@ -14,8 +14,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Complexity: O(1)
     func fixedTime(_ value: TimeInterval) -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.milliseconds >= value.milliseconds
                 if isReinforcement {
@@ -24,14 +23,19 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
 /// Fixed time schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct FT<ResponseType: ResponseCompatible> {
+public typealias FT = FixedTime
+
+/// Fixed time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct FixedTime: ReinforcementScheduleType {
     private let value: TimeInterval
 
     public init(_ value: TimeInterval) {
@@ -42,8 +46,8 @@ public struct FT<ResponseType: ResponseCompatible> {
         self.init(TimeInterval.seconds(value))
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .fixedTime(value)
     }
 }

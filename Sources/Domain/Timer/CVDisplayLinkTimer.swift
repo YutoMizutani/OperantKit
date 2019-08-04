@@ -1,33 +1,33 @@
 //
-//  CADisplayLinkTimerUseCase.swift
+//  CVDisplayLinkTimer.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/18.
+//  Created by Yuto Mizutani on 2018/11/19.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(macOS) && canImport(QuartzCore)
 
 import QuartzCore
 import RxSwift
 
-public class CADisplayLinkTimerUseCase: TimerUseCase {
+public class CVDisplayLinkTimer: SessionTimer {
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
-    private var displayLink: CADisplayLink!
+    private var displayLink: CVDisplayLink!
     public var startTime: UInt64 = 0
-    public var priority: Priority
+    /// - Note: Not supported yet
+    public var priority: Priority = .default
     public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
-    public init(priority: Priority = .default) {
-        self.priority = priority
+    public init() {
         _ = TimeHelper.shared
     }
 }
 
-private extension CADisplayLinkTimerUseCase {
+private extension CVDisplayLinkTimer {
     /// Set timer event
     func addEvent(_ milliseconds: Milliseconds, _ closure: @escaping (() -> Void)) {
         lock.lock()
@@ -60,15 +60,14 @@ private extension CADisplayLinkTimerUseCase {
     }
 
     /// Update time with main loop
-    @objc
-    func updateTime(_ displaylink: CADisplayLink) {
+    func updateTime(_ displaylink: CVDisplayLink) {
         let elapsed: Milliseconds = getElapsedMilliseconds()
         milliseconds.onNext(elapsed)
         executeEvents(elapsed)
     }
 }
 
-public extension CADisplayLinkTimerUseCase {
+public extension CVDisplayLinkTimer {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -76,22 +75,15 @@ public extension CADisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
-            self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateTime(_:)))
-            switch self.priority {
-            case .immediate:
-                self.displayLink.preferredFramesPerSecond = 0
-            case .high:
-                self.displayLink.preferredFramesPerSecond = 120
-            case .default:
-                self.displayLink.preferredFramesPerSecond = 60
-            case .low:
-                self.displayLink.preferredFramesPerSecond = 30
-            case .manual(let v):
-                self.displayLink.preferredFramesPerSecond = Int(v)
-            }
+            let displayID = CGMainDisplayID()
+            CVDisplayLinkCreateWithCGDisplay(displayID, &self.displayLink)
+            CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] displayLink, _, _, _, _ -> CVReturn in
+                self?.updateTime(displayLink)
+                return kCVReturnSuccess
+            })
             self.startTime = mach_absolute_time()
             self.modifiedStartTime = self.startTime
-            self.displayLink?.add(to: .current, forMode: .default)
+            CVDisplayLinkStart(self.displayLink)
             single(.success(()))
 
             return Disposables.create()
@@ -134,7 +126,7 @@ public extension CADisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
-            self.displayLink?.isPaused = true
+            CVDisplayLinkStop(self.displayLink)
             let paused = mach_absolute_time()
             self.startSleepTime = paused
             single(.success(self.getElapsed(with: paused)))
@@ -152,7 +144,7 @@ public extension CADisplayLinkTimerUseCase {
 
             let resumed = mach_absolute_time()
             self.modifiedStartTime -= resumed - self.startSleepTime
-            self.displayLink?.isPaused = false
+            CVDisplayLinkStart(self.displayLink)
             single(.success(self.getElapsed(with: resumed)))
 
             return Disposables.create()
@@ -167,6 +159,7 @@ public extension CADisplayLinkTimerUseCase {
             }
 
             let finishedTime = self.getElapsedMilliseconds()
+            CVDisplayLinkStop(self.displayLink)
             self.displayLink = nil
             single(.success(finishedTime))
 

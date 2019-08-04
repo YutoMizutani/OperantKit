@@ -25,8 +25,7 @@ public extension ObservableType where Element: ResponseCompatible {
         var index: Int = 0
         var lastReinforcementValue: Response = Response.zero
 
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.milliseconds >= values[index]
                 if isReinforcement {
@@ -39,14 +38,19 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
 /// Variable time schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct VT<ResponseType: ResponseCompatible> {
+public typealias VT = VariableTime
+
+/// Variable time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct VariableTime: ReinforcementScheduleType {
     private let values: [Milliseconds]
 
     public init(_ values: [Milliseconds]) {
@@ -61,8 +65,8 @@ public struct VT<ResponseType: ResponseCompatible> {
         self.init(TimeInterval.seconds(value), iterations: iterations)
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .variableTime(values)
     }
 }

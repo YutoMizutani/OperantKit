@@ -31,7 +31,7 @@ example("Conc - logic") {
  */
 example("Conc - Method chaining using UseCase on the Rx stream") {
     let schedule: ConcurrentScheduleUseCase = Conc(FR(2), FR(3))
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

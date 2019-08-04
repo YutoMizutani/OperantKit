@@ -18,8 +18,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Complexity: O(1) 
     func fixedRatio(_ value: Int) -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= value
                 if isReinforcement {
@@ -28,7 +27,7 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
@@ -39,15 +38,24 @@ public extension ObservableType where Element: ResponseCompatible {
 /// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
 ///
 /// - Parameter value: Reinforcement value
-public struct FR<ResponseType: ResponseCompatible> {
+public typealias FR = FixedRatio
+
+/// Fixed ratio schedule
+///
+/// IN A FIXED-RATIO SCHEDULE of reinforcement, every *n*th response produces a reinforcing stimulus.
+///
+/// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
+///
+/// - Parameter value: Reinforcement value
+public struct FixedRatio: ReinforcementScheduleType {
     private let value: Int
 
     public init(_ value: Int) {
         self.value = value
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .fixedRatio(value)
     }
 }

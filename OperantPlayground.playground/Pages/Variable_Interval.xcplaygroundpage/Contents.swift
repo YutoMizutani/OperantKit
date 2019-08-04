@@ -60,7 +60,7 @@ example("VI - Method chaining on the Rx stream") {
  */
 example("VI - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = VI(2000, values: [1000, 2000])
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

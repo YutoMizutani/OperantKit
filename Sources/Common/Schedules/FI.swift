@@ -15,8 +15,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Complexity: O(1)
     func fixedInterval(_ value: TimeInterval) -> Observable<Consequence> {
         var lastReinforcementValue: Response = Response.zero
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= value.milliseconds
                 if isReinforcement {
@@ -25,7 +24,7 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
@@ -33,7 +32,13 @@ public extension ObservableType where Element: ResponseCompatible {
 ///
 /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public struct FI<ResponseType: ResponseCompatible> {
+public typealias FI = FixedInterval
+
+/// Fixed interval schedule
+///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+/// - Parameter value: Reinforcement value
+public struct FixedInterval: ReinforcementScheduleType {
     private let value: TimeInterval
 
     public init(_ value: TimeInterval) {
@@ -44,8 +49,8 @@ public struct FI<ResponseType: ResponseCompatible> {
         self.init(TimeInterval.seconds(value))
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .fixedInterval(value)
     }
 }

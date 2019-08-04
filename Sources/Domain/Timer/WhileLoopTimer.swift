@@ -1,41 +1,43 @@
 //
-//  CVDisplayLinkTimerUseCase.swift
+//  WhileLoopTimer.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/19.
+//  Created by Yuto Mizutani on 2018/10/27.
+//  Copyright © 2018 Yuto Mizutani. All rights reserved.
 //
 
-#if os(macOS) && canImport(QuartzCore)
-
-import QuartzCore
+import Foundation
 import RxSwift
 
-public class CVDisplayLinkTimerUseCase: TimerUseCase {
+public class WhileLoopTimer: SessionTimer {
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
+    private let asyncQueue = DispatchQueue(label: "WhileLoopTimerAsyncQueue", qos: .default, attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "WhileLoopTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
-    private var displayLink: CVDisplayLink!
     public var startTime: UInt64 = 0
-    /// - Note: Not supported yet
-    public var priority: Priority = .default
+    public var isRunning = true
+    public var isPaused = false
+    public var priority: Priority
     public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
-    public init() {
+    public init(priority: Priority = .default) {
+        self.priority = priority
         _ = TimeHelper.shared
     }
 }
 
-private extension CVDisplayLinkTimerUseCase {
+private extension WhileLoopTimer {
     /// Set timer event
     func addEvent(_ milliseconds: Milliseconds, _ closure: @escaping (() -> Void)) {
         lock.lock()
         defer { lock.unlock() }
-        self.stack.append((milliseconds, closure))
+        stack.append((milliseconds, closure))
     }
 
-    /// Execute evetns
+    /// Execute events
     func executeEvents(_ elapsed: Milliseconds) {
         for event in self.stack where event.milliseconds <= elapsed {
             event.closure()
@@ -59,15 +61,38 @@ private extension CVDisplayLinkTimerUseCase {
         return (time - modifiedStartTime).milliseconds
     }
 
-    /// Update time with main loop
-    func updateTime(_ displaylink: CVDisplayLink) {
-        let elapsed: Milliseconds = getElapsedMilliseconds()
-        milliseconds.onNext(elapsed)
-        executeEvents(elapsed)
+    /// Get sleep time
+    private func getSleepTime(_ priority: Priority) -> UInt32? {
+        switch priority {
+        case .immediate:
+            return nil
+        case .high:
+            return 100
+        case .default:
+            return 1_000
+        case .low:
+            return 100_000
+        case .manual(let v):
+            return v
+        }
+    }
+
+    /// Run loop
+    func runLoop() {
+        let sleepTime = getSleepTime(priority)
+        let sleep: () -> Void = sleepTime != nil ? { usleep(sleepTime!) } : {}
+
+        while isRunning {
+            guard !isPaused else { continue }
+            let elapsed = getElapsedMilliseconds()
+            milliseconds.onNext(elapsed)
+            executeEvents(elapsed)
+            sleep()
+        }
     }
 }
 
-public extension CVDisplayLinkTimerUseCase {
+public extension WhileLoopTimer {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -75,15 +100,14 @@ public extension CVDisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
-            let displayID = CGMainDisplayID()
-            CVDisplayLinkCreateWithCGDisplay(displayID, &self.displayLink)
-            CVDisplayLinkSetOutputHandler(self.displayLink, { [weak self] displayLink, _, _, _, _ -> CVReturn in
-                self?.updateTime(displayLink)
-                return kCVReturnSuccess
-            })
             self.startTime = mach_absolute_time()
             self.modifiedStartTime = self.startTime
-            CVDisplayLinkStart(self.displayLink)
+            self.isRunning = true
+            self.asyncQueue.async { [unowned self] in
+                self.syncQueue.sync { [unowned self] in
+                    self.runLoop()
+                }
+            }
             single(.success(()))
 
             return Disposables.create()
@@ -126,7 +150,7 @@ public extension CVDisplayLinkTimerUseCase {
                 return Disposables.create()
             }
 
-            CVDisplayLinkStop(self.displayLink)
+            self.isPaused = true
             let paused = mach_absolute_time()
             self.startSleepTime = paused
             single(.success(self.getElapsed(with: paused)))
@@ -144,7 +168,7 @@ public extension CVDisplayLinkTimerUseCase {
 
             let resumed = mach_absolute_time()
             self.modifiedStartTime -= resumed - self.startSleepTime
-            CVDisplayLinkStart(self.displayLink)
+            self.isPaused = false
             single(.success(self.getElapsed(with: resumed)))
 
             return Disposables.create()
@@ -159,13 +183,10 @@ public extension CVDisplayLinkTimerUseCase {
             }
 
             let finishedTime = self.getElapsedMilliseconds()
-            CVDisplayLinkStop(self.displayLink)
-            self.displayLink = nil
+            self.isRunning = false
             single(.success(finishedTime))
 
             return Disposables.create()
         }
     }
 }
-
-#endif

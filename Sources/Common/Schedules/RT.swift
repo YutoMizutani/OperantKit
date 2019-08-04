@@ -16,8 +16,7 @@ public extension ObservableType where Element: ResponseCompatible {
         var nextValue: Milliseconds = nextRandom(value)
         var lastReinforcementValue: Response = Response.zero
 
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.milliseconds >= nextValue
                 if isReinforcement {
@@ -27,14 +26,19 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
 /// Random time schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct RT<ResponseType: ResponseCompatible> {
+public typealias RT = RandomTime
+
+/// Random time schedule
+///
+/// - Parameter value: Reinforcement value
+public struct RandomTime: ReinforcementScheduleType {
     private let value: TimeInterval
 
     public init(_ value: TimeInterval) {
@@ -45,8 +49,8 @@ public struct RT<ResponseType: ResponseCompatible> {
         self.init(TimeInterval.seconds(value))
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .randomTime(value)
     }
 }

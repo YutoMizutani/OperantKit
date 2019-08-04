@@ -50,7 +50,7 @@ final class ObservableTypeTests: XCTestCase {
     }
 
     func testGetTimePublishSubject() {
-        let timer = StepTimerUseCase()
+        let timer = StepTimer()
 
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Int.self)
@@ -99,10 +99,10 @@ final class ObservableTypeTests: XCTestCase {
     }
 
     func testResponsePublishSubject() {
-        let timer = StepTimerUseCase()
+        let timer = StepTimer()
 
         let scheduler = TestScheduler(initialClock: 0)
-        let observer = scheduler.createObserver(ResponseEntity.self)
+        let observer = scheduler.createObserver(Response.self)
         let startTime: TestTime = 0
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
@@ -131,12 +131,12 @@ final class ObservableTypeTests: XCTestCase {
         scheduler.start()
 
         let expectedEvents = [
-            Recorded.next(100, ResponseEntity(1, 1)),
-            Recorded.next(200, ResponseEntity(2, 2)),
-            Recorded.next(300, ResponseEntity(3, 3)),
-            Recorded.next(400, ResponseEntity(4, 4)),
-            Recorded.next(500, ResponseEntity(5, 5)),
-            Recorded.next(600, ResponseEntity(6, 6)),
+            Recorded.next(100, Response(1, 1)),
+            Recorded.next(200, Response(2, 2)),
+            Recorded.next(300, Response(3, 3)),
+            Recorded.next(400, Response(4, 4)),
+            Recorded.next(500, Response(5, 5)),
+            Recorded.next(600, Response(6, 6)),
             Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)

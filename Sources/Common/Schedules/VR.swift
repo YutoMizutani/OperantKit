@@ -29,8 +29,7 @@ public extension ObservableType where Element: ResponseCompatible {
         var index: Int = 0
         var lastReinforcementValue: Response = Response.zero
 
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= values[index]
                 if isReinforcement {
@@ -43,14 +42,19 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
 /// Variable ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct VR<ResponseType: ResponseCompatible> {
+public typealias VR = VariableRatio
+
+/// Variable ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public struct VariableRatio: ReinforcementScheduleType {
     private let value: Int
     private let iterations: Int
 
@@ -59,8 +63,8 @@ public struct VR<ResponseType: ResponseCompatible> {
         self.iterations = iterations
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .variableRatio(value, iterations: iterations)
     }
 }

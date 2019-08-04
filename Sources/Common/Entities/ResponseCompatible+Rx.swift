@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension ObservableType where Element: ResponseCompatible {
+public extension ObservableType where Element == ResponseCompatible {
     func asResponse() -> Observable<Response> {
         return map { Response($0) }
     }

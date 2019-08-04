@@ -14,14 +14,12 @@ public protocol Conditionable {
 
 public extension ObservableType where Element: ResponseCompatible {
     func condition(_ predicate: @escaping (Element) throws -> Consequence) -> Observable<Consequence> {
-        return asObservable()
-            .map(predicate)
+        return map(predicate)
     }
 }
 
 public extension ObservableType {
     func condition(_ predicate: @escaping (Element) throws -> Bool) -> Observable<Element> {
-        return asObservable()
-            .filter(predicate)
+        return filter(predicate)
     }
 }

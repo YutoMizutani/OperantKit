@@ -1,5 +1,5 @@
 //
-//  StepTimerUseCase.swift
+//  StepTimer.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/10/27.
@@ -8,7 +8,7 @@
 
 import RxSwift
 
-public class StepTimerUseCase: TimerUseCase {
+public class StepTimer: SessionTimer {
     /// - Note: Not supported yet
     public var priority: Priority = .default
     public var milliseconds = PublishSubject<Milliseconds>()
@@ -20,7 +20,7 @@ public class StepTimerUseCase: TimerUseCase {
     }
 }
 
-private extension StepTimerUseCase {
+private extension StepTimer {
     func reset() {
         value = 0
     }
@@ -34,7 +34,7 @@ private extension StepTimerUseCase {
     }
 }
 
-public extension StepTimerUseCase {
+public extension StepTimer {
     func start() -> PrimitiveSequence<SingleTrait, ()> {
         return Single.create { [weak self] single in
             guard let self = self else {

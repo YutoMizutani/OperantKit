@@ -10,7 +10,7 @@ final class OperantKitTests: XCTestCase {
     /// Correct time test
     func testWhileLoopTimer() {
         let targetMilliseconds: Milliseconds = Milliseconds.random(in: 100..<500)
-        let timer = WhileLoopTimerUseCase()
+        let timer = WhileLoopTimer()
         let disposeBag = DisposeBag()
         Observable<Void>.just(())
             .flatMap { timer.start() }
@@ -30,7 +30,7 @@ final class OperantKitTests: XCTestCase {
     /// Correct time test
     func testCVDisplayLinkTimer() {
         let targetMilliseconds: Milliseconds = Milliseconds.random(in: 100..<500)
-        let timer = CVDisplayLinkTimerUseCase()
+        let timer = CVDisplayLinkTimer()
         let disposeBag = DisposeBag()
         Observable<Void>.just(())
             .flatMap { timer.start() }

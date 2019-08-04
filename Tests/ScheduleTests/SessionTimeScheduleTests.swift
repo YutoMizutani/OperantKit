@@ -3,25 +3,26 @@ import RxTest
 import XCTest
 @testable import OperantKit
 
-final class FixedTimeScheduleTests: XCTestCase {
-    func testStructFT() {
+final class SessionTimeTests: XCTestCase {
+    func testStructSessionTime() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
-        let completedTime: TestTime = 10000
+        let completedTime: TestTime = 300
         let disposeBag = DisposeBag()
 
-        let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, Response(numberOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, Response(numberOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(300, Response(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(400, Response(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(500, Response(numberOfResponses: 0, milliseconds: 1000000)),
-            Recorded.next(600, Response(numberOfResponses: 0, milliseconds: 1000001)),
+        let testObservable: TestableObservable<Response> = scheduler.createHotObservable([
+            Recorded.next(100, Response(numberOfResponses: 5, milliseconds: 100)),
+            Recorded.next(200, Response(numberOfResponses: 7, milliseconds: 200)),
+            Recorded.next(300, Response(numberOfResponses: 10, milliseconds: completedTime)),
+            Recorded.next(400, Response(numberOfResponses: 10, milliseconds: 400)),
+            Recorded.next(500, Response(numberOfResponses: 1000, milliseconds: 500)),
+            Recorded.next(600, Response(numberOfResponses: 1001, milliseconds: 600)),
             Recorded.completed(completedTime)
             ])
 
-        let consequenceObservable: Observable<Consequence> = FT(.seconds(5))
+        let consequenceObservable: Observable<Consequence> = FR(5)
+            .sessionTime(.milliseconds(completedTime))
             .transform(testObservable.asObservable())
 
         scheduler.scheduleAt(startTime) {
@@ -34,11 +35,8 @@ final class FixedTimeScheduleTests: XCTestCase {
 
         let expectedEvents = [
             Recorded.next(100, true),
-            Recorded.next(200, true),
+            Recorded.next(200, false),
             Recorded.next(300, true),
-            Recorded.next(400, false),
-            Recorded.next(500, true),
-            Recorded.next(600, false),
             Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)
@@ -49,26 +47,27 @@ final class FixedTimeScheduleTests: XCTestCase {
         XCTAssertEqual(testObservable.subscriptions, expectedSubscriptions)
     }
 
-    func testMethodChainFT() {
+    func testMethodChainSessionTime() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
-        let completedTime: TestTime = 10000
+        let completedTime: TestTime = 300
         let disposeBag = DisposeBag()
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, Response(numberOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, Response(numberOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(300, Response(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(400, Response(numberOfResponses: 0, milliseconds: 15000)),
-            Recorded.next(500, Response(numberOfResponses: 0, milliseconds: 1000000)),
-            Recorded.next(600, Response(numberOfResponses: 0, milliseconds: 1000001)),
+            Recorded.next(100, Response(numberOfResponses: 5, milliseconds: 100)),
+            Recorded.next(200, Response(numberOfResponses: 7, milliseconds: 200)),
+            Recorded.next(300, Response(numberOfResponses: 10, milliseconds: completedTime)),
+            Recorded.next(400, Response(numberOfResponses: 10, milliseconds: 400)),
+            Recorded.next(500, Response(numberOfResponses: 1000, milliseconds: 500)),
+            Recorded.next(600, Response(numberOfResponses: 1001, milliseconds: 600)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .fixedTime(.seconds(5))
+                .fixedRatio(5)
+                .sessionTime(.milliseconds(completedTime))
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)
@@ -77,11 +76,8 @@ final class FixedTimeScheduleTests: XCTestCase {
 
         let expectedEvents = [
             Recorded.next(100, true),
-            Recorded.next(200, true),
+            Recorded.next(200, false),
             Recorded.next(300, true),
-            Recorded.next(400, false),
-            Recorded.next(500, true),
-            Recorded.next(600, false),
             Recorded.completed(completedTime)
         ]
         XCTAssertEqual(observer.events, expectedEvents)

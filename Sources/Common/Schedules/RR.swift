@@ -21,8 +21,7 @@ public extension ObservableType where Element: ResponseCompatible {
         var nextValue: Int = nextRandom(value)
         var lastReinforcementValue: Response = Response.zero
 
-        return asObservable()
-            .map {
+        return map {
                 let current: Response = Response($0) - lastReinforcementValue
                 let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= nextValue
                 if isReinforcement {
@@ -32,22 +31,27 @@ public extension ObservableType where Element: ResponseCompatible {
                 } else {
                     return .none($0)
                 }
-            }
+        }
     }
 }
 
 /// Random ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct RR<ResponseType: ResponseCompatible> {
+public typealias RR = RandomRatio
+
+/// Random ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public struct RandomRatio: ReinforcementScheduleType {
     private let value: Int
 
     public init(_ value: Int) {
         self.value = value
     }
 
-    public func transform(_ source: Observable<ResponseType>) -> Observable<Consequence> {
-        return source.asResponse()
+    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+        return source
             .randomRatio(value)
     }
 }

@@ -51,7 +51,7 @@ example("FI - Method chaining on the Rx stream") {
  */
 example("FI - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FI(2, unit: .seconds)
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

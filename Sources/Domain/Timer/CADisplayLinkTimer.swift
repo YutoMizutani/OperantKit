@@ -1,25 +1,23 @@
 //
-//  WhileLoopTimerUseCase.swift
+//  CADisplayLinkTimer.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/10/27.
-//  Copyright © 2018 Yuto Mizutani. All rights reserved.
+//  Created by Yuto Mizutani on 2018/11/18.
 //
 
-import Foundation
+#if os(iOS) || os(tvOS)
+
+import QuartzCore
 import RxSwift
 
-public class WhileLoopTimerUseCase: TimerUseCase {
+public class CADisplayLinkTimer: SessionTimer {
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
-    private let asyncQueue = DispatchQueue(label: "WhileLoopTimerAsyncQueue", qos: .default, attributes: .concurrent)
-    private let syncQueue = DispatchQueue(label: "WhileLoopTimerSyncQueue", qos: .userInitiated, attributes: .concurrent)
     private var lock = NSLock()
     private var stack: [StackItem] = []
     private var modifiedStartTime: UInt64 = 0
     private var startSleepTime: UInt64 = 0
+    private var displayLink: CADisplayLink!
     public var startTime: UInt64 = 0
-    public var isRunning = true
-    public var isPaused = false
     public var priority: Priority
     public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
 
@@ -29,15 +27,15 @@ public class WhileLoopTimerUseCase: TimerUseCase {
     }
 }
 
-private extension WhileLoopTimerUseCase {
+private extension CADisplayLinkTimer {
     /// Set timer event
     func addEvent(_ milliseconds: Milliseconds, _ closure: @escaping (() -> Void)) {
         lock.lock()
         defer { lock.unlock() }
-        stack.append((milliseconds, closure))
+        self.stack.append((milliseconds, closure))
     }
 
-    /// Execute events
+    /// Execute evetns
     func executeEvents(_ elapsed: Milliseconds) {
         for event in self.stack where event.milliseconds <= elapsed {
             event.closure()
@@ -61,38 +59,16 @@ private extension WhileLoopTimerUseCase {
         return (time - modifiedStartTime).milliseconds
     }
 
-    /// Get sleep time
-    private func getSleepTime(_ priority: Priority) -> UInt32? {
-        switch priority {
-        case .immediate:
-            return nil
-        case .high:
-            return 100
-        case .default:
-            return 1_000
-        case .low:
-            return 100_000
-        case .manual(let v):
-            return v
-        }
-    }
-
-    /// Run loop
-    func runLoop() {
-        let sleepTime = getSleepTime(priority)
-        let sleep: () -> Void = sleepTime != nil ? { usleep(sleepTime!) } : {}
-
-        while isRunning {
-            guard !isPaused else { continue }
-            let elapsed = getElapsedMilliseconds()
-            milliseconds.onNext(elapsed)
-            executeEvents(elapsed)
-            sleep()
-        }
+    /// Update time with main loop
+    @objc
+    func updateTime(_ displaylink: CADisplayLink) {
+        let elapsed: Milliseconds = getElapsedMilliseconds()
+        milliseconds.onNext(elapsed)
+        executeEvents(elapsed)
     }
 }
 
-public extension WhileLoopTimerUseCase {
+public extension CADisplayLinkTimer {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
@@ -100,14 +76,22 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
+            self.displayLink = CADisplayLink(target: self, selector: #selector(self.updateTime(_:)))
+            switch self.priority {
+            case .immediate:
+                self.displayLink.preferredFramesPerSecond = 0
+            case .high:
+                self.displayLink.preferredFramesPerSecond = 120
+            case .default:
+                self.displayLink.preferredFramesPerSecond = 60
+            case .low:
+                self.displayLink.preferredFramesPerSecond = 30
+            case .manual(let v):
+                self.displayLink.preferredFramesPerSecond = Int(v)
+            }
             self.startTime = mach_absolute_time()
             self.modifiedStartTime = self.startTime
-            self.isRunning = true
-            self.asyncQueue.async { [unowned self] in
-                self.syncQueue.sync { [unowned self] in
-                    self.runLoop()
-                }
-            }
+            self.displayLink?.add(to: .current, forMode: .default)
             single(.success(()))
 
             return Disposables.create()
@@ -150,7 +134,7 @@ public extension WhileLoopTimerUseCase {
                 return Disposables.create()
             }
 
-            self.isPaused = true
+            self.displayLink?.isPaused = true
             let paused = mach_absolute_time()
             self.startSleepTime = paused
             single(.success(self.getElapsed(with: paused)))
@@ -168,7 +152,7 @@ public extension WhileLoopTimerUseCase {
 
             let resumed = mach_absolute_time()
             self.modifiedStartTime -= resumed - self.startSleepTime
-            self.isPaused = false
+            self.displayLink?.isPaused = false
             single(.success(self.getElapsed(with: resumed)))
 
             return Disposables.create()
@@ -183,10 +167,12 @@ public extension WhileLoopTimerUseCase {
             }
 
             let finishedTime = self.getElapsedMilliseconds()
-            self.isRunning = false
+            self.displayLink = nil
             single(.success(finishedTime))
 
             return Disposables.create()
         }
     }
 }
+
+#endif
