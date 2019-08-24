@@ -67,6 +67,13 @@
 		996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
+		9966B9222311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
+		9966B9232311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
+		9966B9242311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
+		9966B9252311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
+		9966B9272311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
+		9966B9282311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
+		9966B9292311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
 		99881FDC22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
 		99881FDD22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
 		99881FDE22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
@@ -282,6 +289,8 @@
 		993D6AFA22EA71B600FBC7A9 /* ContinuousReinforcementScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousReinforcementScheduleTests.swift; sourceTree = "<group>"; };
 		994FFF5D212C2918000F4702 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		996564D121A63E39004C76F0 /* PublishSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishSubject+.swift"; sourceTree = "<group>"; };
+		9966B9212311B71A0077F7A2 /* Conj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conj.swift; sourceTree = "<group>"; };
+		9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjunctiveScheduleTests.swift; sourceTree = "<group>"; };
 		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimeScheduleTests.swift; sourceTree = "<group>"; };
 		9988206422F71507001F816A /* AlternativeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeScheduleTests.swift; sourceTree = "<group>"; };
@@ -472,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				9988206422F71507001F816A /* AlternativeScheduleTests.swift */,
+				9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */,
 			);
 			name = CompoundSchedules;
 			sourceTree = "<group>";
@@ -571,6 +581,7 @@
 				999C7C6C21951CD90044C47E /* RI.swift */,
 				993D6AB722EA714100FBC7A9 /* SessionTime.swift */,
 				993D6AB822EA714100FBC7A9 /* Alt.swift */,
+				9966B9212311B71A0077F7A2 /* Conj.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -1130,6 +1141,7 @@
 				996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
 				999C7D3021951CDC0044C47E /* Shared.swift in Sources */,
 				993D6AC622EA714100FBC7A9 /* SessionTime.swift in Sources */,
+				9966B9232311B71A0077F7A2 /* Conj.swift in Sources */,
 				99C74F0C219A77B000DABE14 /* RT.swift in Sources */,
 				999C7D1E21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				99C74EF3219A702C00DABE14 /* FT.swift in Sources */,
@@ -1168,6 +1180,7 @@
 				999C7D5A21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				993D6B0022EA723500FBC7A9 /* ContinuousReinforcementScheduleTests.swift in Sources */,
 				999C7D5721951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				9966B9282311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */,
 				9988206622F71507001F816A /* AlternativeScheduleTests.swift in Sources */,
 				999C7D5D21951F2A0044C47E /* RandomIntervalScheduleTests.swift in Sources */,
 			);
@@ -1199,6 +1212,7 @@
 				999C7D3421951CDC0044C47E /* Matrix.swift in Sources */,
 				999C7D3121951CDC0044C47E /* Shared.swift in Sources */,
 				999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
+				9966B9222311B71A0077F7A2 /* Conj.swift in Sources */,
 				99C74EF1219A702400DABE14 /* FT.swift in Sources */,
 				99C7519621A07A5600DABE14 /* Times.swift in Sources */,
 				993D6AC922EA714100FBC7A9 /* Alt.swift in Sources */,
@@ -1237,6 +1251,7 @@
 				999C7D5B21951F2A0044C47E /* FixedIntervalScheduleTests.swift in Sources */,
 				993D6AFF22EA723400FBC7A9 /* ContinuousReinforcementScheduleTests.swift in Sources */,
 				999C7D5821951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				9966B9272311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */,
 				9988206522F71507001F816A /* AlternativeScheduleTests.swift in Sources */,
 				999C7D5E21951F2A0044C47E /* RandomIntervalScheduleTests.swift in Sources */,
 			);
@@ -1268,6 +1283,7 @@
 				999C7DA4219533150044C47E /* EXT.swift in Sources */,
 				999C7DA5219533150044C47E /* VR.swift in Sources */,
 				999C7DA6219533150044C47E /* VI.swift in Sources */,
+				9966B9242311B71A0077F7A2 /* Conj.swift in Sources */,
 				99C7530421A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AC722EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
@@ -1306,6 +1322,7 @@
 				9930760121AC45E000A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7DCA219533300044C47E /* OperantKitTests.swift in Sources */,
 				993D6B0122EA723600FBC7A9 /* ContinuousReinforcementScheduleTests.swift in Sources */,
+				9966B9292311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */,
 				999C7DCB219533300044C47E /* FleshlerHoffmanTests.swift in Sources */,
 				9988206722F71507001F816A /* AlternativeScheduleTests.swift in Sources */,
 			);
@@ -1337,6 +1354,7 @@
 				999C7DF8219542610044C47E /* EXT.swift in Sources */,
 				999C7DF9219542610044C47E /* VR.swift in Sources */,
 				999C7DFA219542610044C47E /* VI.swift in Sources */,
+				9966B9252311B71A0077F7A2 /* Conj.swift in Sources */,
 				99C7530521A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AC822EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */,
