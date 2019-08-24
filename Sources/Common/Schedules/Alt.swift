@@ -7,6 +7,24 @@
 
 import RxSwift
 
+public extension ObservableType where Element: ResponseCompatible {
+    /// Alternative schedule
+    ///
+    /// - Complexity: O(n)
+    func alternative(_ schedules: [ReinforcementSchedule]) -> Observable<Consequence> {
+        return Alternative(schedules).transform(asResponse())
+    }
+}
+
+public extension Array where Element: ReinforcementSchedule {
+    /// Alternative schedule
+    ///
+    /// - Complexity: O(n)
+    func alternative() -> Alternative {
+        return Alternative(self)
+    }
+}
+
 /// Alternative schedule
 ///
 /// - Complexity: O(n)

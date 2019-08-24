@@ -41,7 +41,7 @@ public final class RandomInterval: ResponseStoreableReinforcementSchedule {
 
     public init(_ value: TimeInterval) {
         self.value = value
-        self.currentRandom = nextRandom(value)
+        currentRandom = nextRandom(value)
     }
 
     public convenience init(_ value: Seconds) {

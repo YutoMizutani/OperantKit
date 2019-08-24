@@ -16,8 +16,8 @@ public class Response: ResponseCompatible {
     }
 
     public init(numOfResp: Int = 0, ms: Milliseconds = 0) {
-        self.numberOfResponses = numOfResp
-        self.milliseconds = ms
+        numberOfResponses = numOfResp
+        milliseconds = ms
     }
 
     public init(numberOfResponses: Int = 0, milliseconds: Milliseconds = 0) {
@@ -31,8 +31,8 @@ public class Response: ResponseCompatible {
     }
 
     public init(_ response: ResponseCompatible) {
-        self.numberOfResponses = response.numberOfResponses
-        self.milliseconds = response.milliseconds
+        numberOfResponses = response.numberOfResponses
+        milliseconds = response.milliseconds
     }
 }
 

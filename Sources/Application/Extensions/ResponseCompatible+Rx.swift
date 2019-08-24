@@ -9,6 +9,6 @@ import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
     func asResponse() -> Observable<Response> {
-        return map { Response($0) }
+        return map { $0.asResponse() }
     }
 }

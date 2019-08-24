@@ -13,27 +13,27 @@ import UIKit
 public extension Reactive where Base: UIViewController {
     /// Called when viewDidLoad
     var viewDidLoad: Observable<[Any]> {
-        return self.methodInvoked(#selector(self.base.viewDidLoad)).share(replay: 1)
+        return methodInvoked(#selector(base.viewDidLoad)).share(replay: 1)
     }
 
     /// Called when viewWillAppear
     var viewWillAppear: Observable<[Any]> {
-        return self.methodInvoked(#selector(self.base.viewWillAppear)).share(replay: 1)
+        return methodInvoked(#selector(base.viewWillAppear)).share(replay: 1)
     }
 
     /// Called when viewDidAppear
     var viewDidAppear: Observable<[Any]> {
-        return self.methodInvoked(#selector(self.base.viewDidAppear)).share(replay: 1)
+        return methodInvoked(#selector(base.viewDidAppear)).share(replay: 1)
     }
 
     /// Called when viewWillDisappear
     var viewWillDisappear: Observable<[Any]> {
-        return self.methodInvoked(#selector(self.base.viewWillDisappear)).share(replay: 1)
+        return methodInvoked(#selector(base.viewWillDisappear)).share(replay: 1)
     }
 
     /// Called when viewDidDisappear
     var viewDidDisappear: Observable<[Any]> {
-        return self.methodInvoked(#selector(self.base.viewDidDisappear)).share(replay: 1)
+        return methodInvoked(#selector(base.viewDidDisappear)).share(replay: 1)
     }
 }
 

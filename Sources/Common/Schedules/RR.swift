@@ -38,7 +38,7 @@ public final class RandomRatio: ResponseStoreableReinforcementSchedule {
 
     public init(_ value: Int) {
         self.value = value
-        self.currentRandom = nextRandom(value)
+        currentRandom = nextRandom(value)
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {

@@ -15,6 +15,6 @@ public extension UInt64 {
 
     /// A milliseconds value of translated from `mach_absolute_time()`
     var milliseconds: Milliseconds {
-        return Milliseconds(self.nanoseconds / 1_000_000)
+        return Milliseconds(nanoseconds / 1_000_000)
     }
 }
