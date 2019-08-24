@@ -51,6 +51,15 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
         self.init(schedules)
     }
 
+    private func outcome(_ consequences: [Consequence]) -> Consequence {
+        let response = consequences.first!.response
+        let isReinforcement: Bool = !consequences.filter { $0.isReinforcement }.isEmpty
+        if isReinforcement {
+            return .reinforcement(response)
+        }
+        return .none(response)
+    }
+
     public func updateLastReinforcement(_ consequence: Consequence) -> Consequence {
         func update(_ response: ResponseCompatible) {
             schedules.compactMap { $0 as? ReinforcementStoreable }.forEach {
@@ -70,10 +79,10 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
         let hotSource: Observable<Response> = source.share(replay: 1, scope: .whileConnected)
         var outcome: Observable<Consequence> = Observable
             .zip(schedules.map { $0.transform(hotSource, isAutoUpdateReinforcementValue: false) })
-            .map { $0.merge() }
+            .map { self.outcome($0) }
 
         if isAutoUpdateReinforcementValue {
-            outcome = outcome.map { self.updateLastReinforcement($0) }
+            outcome = outcome.map { [unowned self] in self.updateLastReinforcement($0) }
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

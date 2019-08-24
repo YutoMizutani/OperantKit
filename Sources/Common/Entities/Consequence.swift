@@ -29,14 +29,3 @@ public extension Consequence {
         return false
     }
 }
-
-public extension Array where Element == Consequence {
-    func merge() -> Element {
-        let response = first!.response
-        let isReinforcement: Bool = first(where: { $0.isReinforcement }) != nil
-        if isReinforcement {
-            return .reinforcement(response)
-        }
-        return .none(response)
-    }
-}
