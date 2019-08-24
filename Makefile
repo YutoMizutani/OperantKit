@@ -11,7 +11,9 @@ CARTHAGE_COMMAND=carthage
 FASTLANE_COMMAND=bundle exec fastlane
 
 FRAMEWORK_PROJECT_NAME=OperantKit
+PROJECT_FILENAME=$(FRAMEWORK_PROJECT_NAME).xcodeproj
 WORKSPACE_FILENAME=$(FRAMEWORK_PROJECT_NAME).xcworkspace
+PROJECT=$(FRAMEWORK_PATH)/$(PROJECT_FILENAME)
 APP_PROJECT_NAME=OperantApp
 
 TARGET_MACOS=macOS
@@ -74,6 +76,13 @@ update-framework-all:
 	make update-framework-carthage
 update-framework-carthage:
 	cd $(FRAMEWORK_PATH); $(CARTHAGE_COMMAND) update --no-use-binaries
+
+
+# Sort
+sort:
+	make sort-workspace
+sort-workspace:
+	curl get https://raw.githubusercontent.com/WebKit/webkit/master/Tools/Scripts/sort-Xcode-project-file > ./script.pl && perl ./script.pl $(PROJECT) && rm -f ./script.pl
 
 
 # Build

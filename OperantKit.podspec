@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
-  s.source_files = 'Sources/**/**/*.swift'
+  s.source_files = 'Sources/**/*.swift'
 end
