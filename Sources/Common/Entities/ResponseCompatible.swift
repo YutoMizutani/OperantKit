@@ -14,3 +14,9 @@ public protocol ResponseCompatible {
     /// Response time milliseconds
     var milliseconds: Milliseconds { get set }
 }
+
+public extension ResponseCompatible {
+    func asResponse() -> Response {
+        return Response(self)
+    }
+}

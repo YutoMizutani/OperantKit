@@ -8,7 +8,7 @@
 import RxSwift
 
 @inline(__always)
-func nextVariables(_ value: TimeInterval, iterations: Int) -> [Milliseconds] {
+func generatedInterval(_ value: TimeInterval, iterations: Int) -> [Milliseconds] {
     return FleshlerHoffman().generatedInterval(
         value: value.milliseconds,
         iterations: iterations
@@ -22,28 +22,16 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
     func variableInterval(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
-        let values: [Milliseconds] = nextVariables(value, iterations: iterations)
-        return variableInterval(values)
+        return VI(value, iterations: iterations).transform(asResponse())
     }
 
+    /// Variable interval schedule
+    ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
     func variableInterval(_ values: [Milliseconds]) -> Observable<Consequence> {
-        var index: Int = 0
-        var lastReinforcementValue: Response = Response.zero
-
-        return map {
-                let current: Response = Response($0) - lastReinforcementValue
-                let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= values[index]
-                if isReinforcement {
-                    lastReinforcementValue = Response($0)
-                    index += 1
-                    if index >= values.count {
-                        index = 0
-                    }
-                    return .reinforcement($0)
-                } else {
-                    return .none($0)
-                }
-        }
+        return VI(values).transform(asResponse())
     }
 }
 
@@ -57,23 +45,58 @@ public typealias VI = VariableInterval
 ///
 /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public struct VariableInterval: ReinforcementScheduleType {
+public final class VariableInterval: ResponseStoreableReinforcementSchedule {
+    public var lastReinforcementValue: Response = .zero
+
     private let values: [Milliseconds]
+    private var index: Int = 0
 
     public init(_ values: [Milliseconds]) {
         self.values = values
     }
 
-    public init(_ value: TimeInterval, iterations: Int = 12) {
-        self.init(nextVariables(value, iterations: iterations))
+    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
+        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
+        self.init(values)
     }
 
-    public init(_ value: Seconds, iterations: Int = 12) {
+    public convenience init(_ value: Seconds, iterations: Int = 12) {
         self.init(TimeInterval.seconds(value), iterations: iterations)
     }
 
-    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
-        return source
-            .variableInterval(values)
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        let current: Response = response.asResponse() - lastReinforcementValue
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= values[index]
+        if isReinforcement {
+            return .reinforcement(response)
+        } else {
+            return .none(response)
+        }
+    }
+
+    public func updateLastReinforcement(_ consequence: Consequence) -> Consequence {
+        func update(_ response: ResponseCompatible) {
+            index += 1
+            if index >= values.count {
+                index = 0
+            }
+            lastReinforcementValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+
+        return consequence
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome: Observable<Consequence> = source.map { self.outcome($0) }
+
+        if isAutoUpdateReinforcementValue {
+            outcome = outcome.map { [unowned self] in self.updateLastReinforcement($0) }
+        }
+
+        return outcome.share(replay: 1, scope: .whileConnected)
     }
 }

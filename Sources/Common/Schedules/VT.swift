@@ -13,8 +13,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
     func variableTime(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
-        let values: [Milliseconds] = nextVariables(value, iterations: iterations)
-        return variableTime(values)
+        return VT(value, iterations: iterations).transform(asResponse())
     }
 
     /// Variable time schedule
@@ -22,23 +21,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
     func variableTime(_ values: [Milliseconds]) -> Observable<Consequence> {
-        var index: Int = 0
-        var lastReinforcementValue: Response = Response.zero
-
-        return map {
-                let current: Response = Response($0) - lastReinforcementValue
-                let isReinforcement: Bool = current.milliseconds >= values[index]
-                if isReinforcement {
-                    lastReinforcementValue = Response($0)
-                    index += 1
-                    if index >= values.count {
-                        index = 0
-                    }
-                    return .reinforcement($0)
-                } else {
-                    return .none($0)
-                }
-        }
+        return VT(values).transform(asResponse())
     }
 }
 
@@ -50,23 +33,58 @@ public typealias VT = VariableTime
 /// Variable time schedule
 ///
 /// - Parameter value: Reinforcement value
-public struct VariableTime: ReinforcementScheduleType {
+public final class VariableTime: ResponseStoreableReinforcementSchedule {
+    public var lastReinforcementValue: Response = .zero
+
     private let values: [Milliseconds]
+    private var index: Int = 0
 
     public init(_ values: [Milliseconds]) {
         self.values = values
     }
 
-    public init(_ value: TimeInterval, iterations: Int = 12) {
-        self.init(nextVariables(value, iterations: iterations))
+    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
+        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
+        self.init(values)
     }
 
-    public init(_ value: Seconds, iterations: Int = 12) {
+    public convenience init(_ value: Seconds, iterations: Int = 12) {
         self.init(TimeInterval.seconds(value), iterations: iterations)
     }
 
-    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
-        return source
-            .variableTime(values)
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        let current: Response = response.asResponse() - lastReinforcementValue
+        let isReinforcement: Bool = current.milliseconds >= values[index]
+        if isReinforcement {
+            return .reinforcement(response)
+        } else {
+            return .none(response)
+        }
+    }
+
+    public func updateLastReinforcement(_ consequence: Consequence) -> Consequence {
+        func update(_ response: ResponseCompatible) {
+            index += 1
+            if index >= values.count {
+                index = 0
+            }
+            lastReinforcementValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+
+        return consequence
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome: Observable<Consequence> = source.map { self.outcome($0) }
+
+        if isAutoUpdateReinforcementValue {
+            outcome = outcome.map { [unowned self] in self.updateLastReinforcement($0) }
+        }
+
+        return outcome.share(replay: 1, scope: .whileConnected)
     }
 }

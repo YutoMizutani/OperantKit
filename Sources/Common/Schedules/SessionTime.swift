@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension ReinforcementScheduleType {
+public extension ReinforcementSchedule {
     /// Reinforcement schedule with session time
     ///
     /// - Complexity: O(1)
@@ -32,8 +32,8 @@ public extension ObservableType where Element == Consequence {
 /// - important: If the session time is met, it emits `Observable.completed`.
 ///
 /// - Complexity: O(1)
-public struct SessionTime: ReinforcementScheduleType {
-    public typealias ScheduleType = ReinforcementScheduleType
+public final class SessionTime: ReinforcementSchedule {
+    public typealias ScheduleType = ReinforcementSchedule
 
     private let schedule: ScheduleType
     private let sessionTime: TimeInterval
@@ -44,8 +44,9 @@ public struct SessionTime: ReinforcementScheduleType {
         self.sessionTime = sessionTime
     }
 
-    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
         return schedule.transform(source)
             .sessionTime(sessionTime)
+            .share(replay: 1, scope: .whileConnected)
     }
 }

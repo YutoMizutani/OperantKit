@@ -17,17 +17,7 @@ public extension ObservableType where Element: ResponseCompatible {
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1) 
     func fixedRatio(_ value: Int) -> Observable<Consequence> {
-        var lastReinforcementValue: Response = Response.zero
-        return map {
-                let current: Response = Response($0) - lastReinforcementValue
-                let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= value
-                if isReinforcement {
-                    lastReinforcementValue = Response($0)
-                    return .reinforcement($0)
-                } else {
-                    return .none($0)
-                }
-        }
+        return FR(value).transform(asResponse())
     }
 }
 
@@ -47,15 +37,44 @@ public typealias FR = FixedRatio
 /// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
 ///
 /// - Parameter value: Reinforcement value
-public struct FixedRatio: ReinforcementScheduleType {
+public final class FixedRatio: ResponseStoreableReinforcementSchedule {
+    public var lastReinforcementValue: Response = .zero
+
     private let value: Int
 
     public init(_ value: Int) {
         self.value = value
     }
 
-    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
-        return source
-            .fixedRatio(value)
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        let current: Response = response.asResponse() - lastReinforcementValue
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= value
+        if isReinforcement {
+            return .reinforcement(response)
+        } else {
+            return .none(response)
+        }
+    }
+
+    public func updateLastReinforcement(_ consequence: Consequence) -> Consequence {
+        func update(_ response: ResponseCompatible) {
+            lastReinforcementValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+
+        return consequence
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome: Observable<Consequence> = source.map { self.outcome($0) }
+
+        if isAutoUpdateReinforcementValue {
+            outcome = outcome.map { [unowned self] in self.updateLastReinforcement($0) }
+        }
+
+        return outcome.share(replay: 1, scope: .whileConnected)
     }
 }

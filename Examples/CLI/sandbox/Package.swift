@@ -8,7 +8,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", "4.0.0" ..< "5.0.0"),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", "5.0.0" ..< "6.0.0"),
         .package(path: "../../../../OperantKit"),
     ],
     targets: [

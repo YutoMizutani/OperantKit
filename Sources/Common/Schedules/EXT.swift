@@ -12,7 +12,7 @@ public extension ObservableType where Element: ResponseCompatible {
     ///
     /// - Complexity: O(1)
     func extinction() -> Observable<Consequence> {
-        return map { .none($0) }
+        return EXT().transform(asResponse())
     }
 }
 
@@ -20,11 +20,16 @@ public extension ObservableType where Element: ResponseCompatible {
 public typealias EXT = Extinction
 
 /// Extinction schedule
-public struct Extinction: ReinforcementScheduleType {
+public final class Extinction: ReinforcementSchedule {
     public init() {}
 
-    public func transform(_ source: Observable<Response>) -> Observable<Consequence> {
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        return .none(response)
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
         return source
-            .extinction()
+            .map { self.outcome($0) }
+            .share(replay: 1, scope: .whileConnected)
     }
 }
