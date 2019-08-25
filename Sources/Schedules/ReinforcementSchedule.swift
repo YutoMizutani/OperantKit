@@ -17,6 +17,32 @@ public extension ReinforcementSchedule {
     }
 }
 
+public protocol ConcurrentReinforcementSchedule: class {
+    /// Combine results into single stream
+    ///
+    /// e.g. When the chamber has only one feeder
+    ///
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: [Observable<Response>]) -> Observable<Consequence>
+
+    /// Combine results into single stream
+    ///
+    /// e.g. When the chamber has only one feeder
+    ///
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: Observable<Response>...) -> Observable<Consequence>
+
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: [Observable<Response>]) -> [Observable<Consequence>]
+
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: Observable<Response>...) -> [Observable<Consequence>]
+}
+
 public protocol ReinforcementStoreable: class {
     var lastReinforcementValue: Response { get set }
 
