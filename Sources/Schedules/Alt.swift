@@ -60,7 +60,7 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
         return .none(response)
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) -> Consequence {
+    public func updateLastReinforcement(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
             schedules.compactMap { $0 as? ReinforcementStoreable }.forEach {
                 _ = $0.updateLastReinforcement(consequence)
@@ -71,8 +71,6 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
         if case .reinforcement = consequence {
             update(consequence.response)
         }
-
-        return consequence
     }
 
     public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
@@ -82,7 +80,8 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
             .map { self.outcome($0) }
 
         if isAutoUpdateReinforcementValue {
-            outcome = outcome.map { [unowned self] in self.updateLastReinforcement($0) }
+            outcome = outcome
+                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

@@ -46,7 +46,7 @@ public protocol ConcurrentReinforcementSchedule: class {
 public protocol ReinforcementStoreable: class {
     var lastReinforcementValue: Response { get set }
 
-    func updateLastReinforcement(_ consequence: Consequence) -> Consequence
+    func updateLastReinforcement(_ consequence: Consequence)
 }
 
 public typealias ResponseStoreableReinforcementSchedule = ReinforcementSchedule & ReinforcementStoreable
