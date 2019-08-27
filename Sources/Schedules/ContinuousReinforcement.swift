@@ -25,13 +25,13 @@ public typealias CRF = ContinuousReinforcement
 /// Continuous Reinforcement schedule
 ///
 /// - Important: Works faster than FR 1.
-public final class ContinuousReinforcement: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero
+public final class ContinuousReinforcement: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     public init() {}
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
-        let current: Response = response.asResponse() - lastReinforcementValue
+        let current: Response = response.asResponse() - lastEventValue
         let isReinforcement: Bool = current.numberOfResponses > 0
         if isReinforcement {
             return .reinforcement(response)
@@ -40,9 +40,9 @@ public final class ContinuousReinforcement: ResponseStoreableReinforcementSchedu
         }
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -55,7 +55,7 @@ public final class ContinuousReinforcement: ResponseStoreableReinforcementSchedu
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

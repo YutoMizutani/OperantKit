@@ -30,8 +30,8 @@ public typealias RR = RandomRatio
 /// Random ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class RandomRatio: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero
+public final class RandomRatio: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     private let value: Int
     private var currentRandom: Int
@@ -42,7 +42,7 @@ public final class RandomRatio: ResponseStoreableReinforcementSchedule {
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
-        let current: Response = response.asResponse() - lastReinforcementValue
+        let current: Response = response.asResponse() - lastEventValue
         let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= currentRandom
         if isReinforcement {
             return .reinforcement(response)
@@ -51,10 +51,10 @@ public final class RandomRatio: ResponseStoreableReinforcementSchedule {
         }
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
             currentRandom = nextRandom(value)
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -67,7 +67,7 @@ public final class RandomRatio: ResponseStoreableReinforcementSchedule {
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

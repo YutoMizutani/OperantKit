@@ -125,8 +125,8 @@ public extension ObservableType where Element == Consequence {
 /// - important: If the trial is finished, it emits `Observable.completed`.
 ///
 /// - Complexity: O(1)
-public final class DiscreteTrial: DeinitDisposable, TrialStoreableReinforcementSchedule {
-    public var lastTrialValue: Response = .zero
+public final class DiscreteTrial: DeinitDisposable, ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     public typealias ScheduleType = ReinforcementSchedule
 
@@ -183,23 +183,24 @@ public final class DiscreteTrial: DeinitDisposable, TrialStoreableReinforcementS
         return completableSubject.asObservable()
     }
 
-    public func updateLastTrial(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            lastTrialValue = response.asResponse()
+            (schedule as? LastEventComparable)?.updateLastEvent(consequence)
+            lastEventValue = response.asResponse()
             currentValue += 1
         }
 
-        if condition.canFinish(consequence, lastValue: lastTrialValue) {
+        if condition.canFinish(consequence, lastEventValue: lastEventValue) {
             update(consequence.response)
         }
     }
 
     public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
-        var outcome: Observable<Consequence> = schedule.transform(source)
+        var outcome: Observable<Consequence> = schedule.transform(source, isAutoUpdateReinforcementValue: false)
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { self.updateLastTrial($0) })
+                .do(onNext: { self.updateLastEvent($0) })
         }
 
         return completeMap(outcome)
@@ -208,7 +209,7 @@ public final class DiscreteTrial: DeinitDisposable, TrialStoreableReinforcementS
 
     fileprivate func transform(_ outcome: Observable<Consequence>) -> Observable<Consequence> {
         let outcome: Observable<Consequence> = outcome
-            .do(onNext: { self.updateLastTrial($0) })
+            .do(onNext: { self.updateLastEvent($0) })
 
         return completeMap(outcome)
             .share(replay: 1, scope: .whileConnected)

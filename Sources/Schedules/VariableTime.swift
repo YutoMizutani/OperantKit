@@ -33,8 +33,8 @@ public typealias VT = VariableTime
 /// Variable time schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class VariableTime: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero
+public final class VariableTime: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     private let values: [Milliseconds]
     private var index: Int = 0
@@ -53,7 +53,7 @@ public final class VariableTime: ResponseStoreableReinforcementSchedule {
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
-        let current: Response = response.asResponse() - lastReinforcementValue
+        let current: Response = response.asResponse() - lastEventValue
         let isReinforcement: Bool = current.milliseconds >= values[index]
         if isReinforcement {
             return .reinforcement(response)
@@ -62,13 +62,13 @@ public final class VariableTime: ResponseStoreableReinforcementSchedule {
         }
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
             index += 1
             if index >= values.count {
                 index = 0
             }
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -81,7 +81,7 @@ public final class VariableTime: ResponseStoreableReinforcementSchedule {
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

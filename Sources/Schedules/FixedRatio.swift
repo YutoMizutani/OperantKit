@@ -37,8 +37,8 @@ public typealias FR = FixedRatio
 /// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
 ///
 /// - Parameter value: Reinforcement value
-public final class FixedRatio: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero
+public final class FixedRatio: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     private let value: Int
 
@@ -47,7 +47,7 @@ public final class FixedRatio: ResponseStoreableReinforcementSchedule {
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
-        let current: Response = response.asResponse() - lastReinforcementValue
+        let current: Response = response.asResponse() - lastEventValue
         let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= value
         if isReinforcement {
             return .reinforcement(response)
@@ -56,9 +56,9 @@ public final class FixedRatio: ResponseStoreableReinforcementSchedule {
         }
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -71,7 +71,7 @@ public final class FixedRatio: ResponseStoreableReinforcementSchedule {
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

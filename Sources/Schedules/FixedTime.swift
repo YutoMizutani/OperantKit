@@ -25,8 +25,8 @@ public typealias FT = FixedTime
 /// Fixed time schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class FixedTime: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero
+public final class FixedTime: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     private let value: TimeInterval
 
@@ -39,7 +39,7 @@ public final class FixedTime: ResponseStoreableReinforcementSchedule {
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
-        let current: Response = response.asResponse() - lastReinforcementValue
+        let current: Response = response.asResponse() - lastEventValue
         let isReinforcement: Bool = current.milliseconds >= value.milliseconds
         if isReinforcement {
             return .reinforcement(response)
@@ -48,9 +48,9 @@ public final class FixedTime: ResponseStoreableReinforcementSchedule {
         }
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -63,7 +63,7 @@ public final class FixedTime: ResponseStoreableReinforcementSchedule {
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

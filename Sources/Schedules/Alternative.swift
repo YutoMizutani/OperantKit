@@ -33,11 +33,11 @@ public typealias Alt = Alternative
 /// Alternative schedule
 ///
 /// - Complexity: O(n)
-public final class Alternative: ResponseStoreableReinforcementSchedule {
-    public var lastReinforcementValue: Response = .zero {
+public final class Alternative: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero {
         didSet {
-            schedules.compactMap { $0 as? ReinforcementStoreable }
-                .forEach { $0.lastReinforcementValue = self.lastReinforcementValue }
+            schedules.compactMap { $0 as? LastEventComparable }
+                .forEach { $0.lastEventValue = self.lastEventValue }
         }
     }
 
@@ -60,12 +60,12 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
         return .none(response)
     }
 
-    public func updateLastReinforcement(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            schedules.compactMap { $0 as? ReinforcementStoreable }.forEach {
-                _ = $0.updateLastReinforcement(consequence)
+            schedules.compactMap { $0 as? LastEventComparable }.forEach {
+                _ = $0.updateLastEvent(consequence)
             }
-            lastReinforcementValue = response.asResponse()
+            lastEventValue = response.asResponse()
         }
 
         if case .reinforcement = consequence {
@@ -81,7 +81,7 @@ public final class Alternative: ResponseStoreableReinforcementSchedule {
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { [unowned self] in self.updateLastReinforcement($0) })
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
         }
 
         return outcome.share(replay: 1, scope: .whileConnected)

@@ -127,8 +127,8 @@ public extension ObservableType where Element == Consequence {
 /// - important: If the session is finished, it emits `Observable.completed`.
 ///
 /// - Complexity: O(1)
-public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementSchedule {
-    public var lastSessionValue: Response = .zero
+public final class FreeOperant: DeinitDisposable, ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
 
     public typealias ScheduleType = ReinforcementSchedule
 
@@ -185,13 +185,14 @@ public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementS
         return completableSubject.asObservable()
     }
 
-    public func updateLastSession(_ consequence: Consequence) {
+    public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            lastSessionValue = response.asResponse()
+            (schedule as? LastEventComparable)?.updateLastEvent(consequence)
+            lastEventValue = response.asResponse()
             currentValue += 1
         }
 
-        if condition.canFinish(consequence, lastValue: lastSessionValue) {
+        if condition.canFinish(consequence, lastEventValue: lastEventValue) {
             update(consequence.response)
         }
     }
@@ -201,7 +202,7 @@ public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementS
 
         if isAutoUpdateReinforcementValue {
             outcome = outcome
-                .do(onNext: { self.updateLastSession($0) })
+                .do(onNext: { self.updateLastEvent($0) })
         }
 
         return completeMap(outcome)
@@ -210,7 +211,7 @@ public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementS
 
     fileprivate func transform(_ outcome: Observable<Consequence>) -> Observable<Consequence> {
         let outcome: Observable<Consequence> = outcome
-            .do(onNext: { self.updateLastSession($0) })
+            .do(onNext: { self.updateLastEvent($0) })
 
         return completeMap(outcome)
             .share(replay: 1, scope: .whileConnected)

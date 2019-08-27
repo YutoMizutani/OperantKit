@@ -7,6 +7,14 @@
 
 import RxSwift
 
+// MARK: - LastEventStoreable
+
+public protocol LastEventComparable: class {
+    var lastEventValue: Response { get set }
+
+    func updateLastEvent(_ consequence: Consequence)
+}
+
 // MARK: - ReinforcementSchedule
 
 public protocol ReinforcementSchedule: class {
@@ -28,7 +36,7 @@ public protocol ConcurrentReinforcementSchedule: class {
     ///
     /// - Parameters:
     ///     - sources: Target responses
-    func transform(_ sources: [Observable<Response>]) -> Observable<Consequence>
+    func transform(_ sources: [Observable<Response>], isSyncUpdateReinforcementValue: Bool) -> Observable<Consequence>
 
     /// Combine results into single stream
     ///
@@ -36,7 +44,7 @@ public protocol ConcurrentReinforcementSchedule: class {
     ///
     /// - Parameters:
     ///     - sources: Target responses
-    func transform(_ sources: Observable<Response>...) -> Observable<Consequence>
+    func transform(_ sources: Observable<Response>..., isSyncUpdateReinforcementValue: Bool) -> Observable<Consequence>
 
     /// - Parameters:
     ///     - sources: Target responses
@@ -47,32 +55,24 @@ public protocol ConcurrentReinforcementSchedule: class {
     func transform(_ sources: Observable<Response>...) -> [Observable<Consequence>]
 }
 
-// MARK: - ReinforcementStoreable
+public extension ConcurrentReinforcementSchedule {
+    /// Combine results into single stream
+    ///
+    /// e.g. When the chamber has only one feeder
+    ///
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: [Observable<Response>]) -> Observable<Consequence> {
+        return transform(sources, isSyncUpdateReinforcementValue: false)
+    }
 
-public protocol ReinforcementStoreable: class {
-    var lastReinforcementValue: Response { get set }
-
-    func updateLastReinforcement(_ consequence: Consequence)
+    /// Combine results into single stream
+    ///
+    /// e.g. When the chamber has only one feeder
+    ///
+    /// - Parameters:
+    ///     - sources: Target responses
+    func transform(_ sources: Observable<Response>...) -> Observable<Consequence> {
+        return transform(sources, isSyncUpdateReinforcementValue: false)
+    }
 }
-
-public typealias ResponseStoreableReinforcementSchedule = ReinforcementSchedule & ReinforcementStoreable
-
-// MARK: - TrialStoreable
-
-public protocol TrialStoreable: class {
-    var lastTrialValue: Response { get set }
-
-    func updateLastTrial(_ consequence: Consequence)
-}
-
-public typealias TrialStoreableReinforcementSchedule = ReinforcementSchedule & TrialStoreable
-
-// MARK: - SessionStoreable
-
-public protocol SessionStoreable: class {
-    var lastSessionValue: Response { get set }
-
-    func updateLastSession(_ consequence: Consequence)
-}
-
-public typealias SessionStoreableReinforcementSchedule = ReinforcementSchedule & SessionStoreable

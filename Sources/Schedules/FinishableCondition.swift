@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol FinishableCondition {
-    func canFinish(_ consequence: Consequence, lastValue: Response) -> Bool
+    func canFinish(_ consequence: Consequence, lastEventValue: Response) -> Bool
 }
 
 /// Finish by response
@@ -21,8 +21,8 @@ public struct FinishByResponse: FinishableCondition {
         self.value = value
     }
 
-    public func canFinish(_ consequence: Consequence, lastValue: Response) -> Bool {
-        let current: Response = consequence.response.asResponse() - lastValue
+    public func canFinish(_ consequence: Consequence, lastEventValue: Response) -> Bool {
+        let current: Response = consequence.response.asResponse() - lastEventValue
         return current.numberOfResponses >= value
     }
 }
@@ -37,8 +37,8 @@ public struct FinishByTime: FinishableCondition {
         self.value = value
     }
 
-    public func canFinish(_ consequence: Consequence, lastValue: Response) -> Bool {
-        let current: Response = consequence.response.asResponse() - lastValue
+    public func canFinish(_ consequence: Consequence, lastEventValue: Response) -> Bool {
+        let current: Response = consequence.response.asResponse() - lastEventValue
         return current.milliseconds >= value.milliseconds
     }
 }
@@ -57,7 +57,7 @@ public final class FinishByReinforcement: FinishableCondition {
         self.currentValue = currentValue
     }
 
-    public func canFinish(_ consequence: Consequence, lastValue: Response) -> Bool {
+    public func canFinish(_ consequence: Consequence, lastEventValue: Response) -> Bool {
         if consequence.isReinforcement {
             currentValue += 1
         }

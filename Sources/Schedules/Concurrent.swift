@@ -36,7 +36,9 @@ public extension Array where Element: ReinforcementSchedule {
 public typealias Conc = Concurrent
 
 /// Concurrent schedule
-public final class Concurrent: ConcurrentReinforcementSchedule {
+public final class Concurrent: ConcurrentReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
+
     private let schedules: [ReinforcementSchedule]
 
     public init(_ schedules: [ReinforcementSchedule]) {
@@ -50,14 +52,33 @@ public final class Concurrent: ConcurrentReinforcementSchedule {
         self.init(schedules)
     }
 
+    public func updateLastEvent(_ consequence: Consequence) {
+        func update(_ response: ResponseCompatible) {
+            schedules.compactMap { $0 as? LastEventComparable }.forEach { $0.updateLastEvent(consequence) }
+            lastEventValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+    }
+
     /// Combine results into single stream
     ///
     /// e.g. When the chamber has only one feeder
     ///
     /// - Parameters:
     ///     - sources: Target responses
-    public func transform(_ sources: [Observable<Response>]) -> Observable<Consequence> {
-        return Observable.merge(schedules.enumerated().map { $0.element.transform(sources[$0.offset]) })
+    public func transform(_ sources: [Observable<Response>], isSyncUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome = Observable.merge(schedules.enumerated()
+            .map { $0.element.transform(sources[$0.offset], isAutoUpdateReinforcementValue: !isSyncUpdateReinforcementValue) })
+
+        if isSyncUpdateReinforcementValue {
+            outcome = outcome
+                .do(onNext: { self.updateLastEvent($0) })
+        }
+
+        return outcome
             .share(replay: 1, scope: .whileConnected)
     }
 
@@ -67,8 +88,8 @@ public final class Concurrent: ConcurrentReinforcementSchedule {
     ///
     /// - Parameters:
     ///     - sources: Target responses
-    public func transform(_ sources: Observable<Response>...) -> Observable<Consequence> {
-        return transform(sources)
+    public func transform(_ sources: Observable<Response>..., isSyncUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        return transform(sources, isSyncUpdateReinforcementValue: isSyncUpdateReinforcementValue)
     }
 
     /// - Parameters:
