@@ -1,8 +1,8 @@
 //
-//  SessionReinforcement.swift
+//  TrialReinforcement.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2019/08/25.
+//  Created by Yuto Mizutani on 2019/08/27.
 //
 
 import RxSwift
@@ -11,8 +11,8 @@ public extension ReinforcementSchedule {
     /// Discrete trial procedure with trial response
     ///
     /// - Complexity: O(1)
-    func sessionReinforcement(_ value: Int, numberOfSessions: Int = 1) -> FreeOperant {
-        return sessions(by: .reinforcement(value), numberOfSessions: numberOfSessions)
+    func trialReinforcement(_ value: Int, numberOfTrials: Int) -> DiscreteTrial {
+        return trials(by: .reinforcement(value), numberOfTrials: numberOfTrials)
     }
 }
 
@@ -20,15 +20,15 @@ public extension ObservableType where Element == Consequence {
     /// Discrete trial procedure with trial response
     ///
     /// - Complexity: O(1)
-    func sessionReinforcement(_ value: Int, numberOfSessions: Int = 1) -> Observable<Consequence> {
-        return sessions(by: .reinforcement(value), numberOfSessions: numberOfSessions)
+    func trialReinforcement(_ value: Int, numberOfTrials: Int) -> Observable<Consequence> {
+        return trials(by: .reinforcement(value), numberOfTrials: numberOfTrials)
     }
 }
 
-/// Session reinforcement
+/// Trial reinforcement
 ///
 /// - Complexity: O(1)
-public final class SessionReinforcementCondition: FreeOperantCondition {
+public final class TrialReinforcementCondition: DiscreteTrialCondition {
     private let value: Int
 
     private var currentValue: Int
@@ -39,7 +39,7 @@ public final class SessionReinforcementCondition: FreeOperantCondition {
         self.currentValue = currentValue
     }
 
-    public func condition(_ consequence: Consequence, lastSessionValue: Response) -> Bool {
+    public func condition(_ consequence: Consequence, lastTrialValue: Response) -> Bool {
         if consequence.isReinforcement {
             currentValue += 1
         }

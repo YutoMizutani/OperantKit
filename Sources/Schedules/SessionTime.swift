@@ -8,45 +8,49 @@
 import RxSwift
 
 public extension ReinforcementSchedule {
-    /// Reinforcement schedule with session time
+    /// Free operant procedure with session time
     ///
     /// - Complexity: O(1)
-    func sessionTime(_ duration: TimeInterval) -> SessionTime {
-        return SessionTime(schedule: self, sessionTime: duration)
+    func sessionTime(_ value: TimeInterval, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessions(by: .time(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session time
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: Seconds, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessionTime(.seconds(value), numberOfSessions: numberOfSessions)
     }
 }
 
 public extension ObservableType where Element == Consequence {
-    /// Reinforcement schedule with session time
+    /// Free operant procedure with session response
     ///
     /// - Complexity: O(1)
-    func sessionTime(_ duration: TimeInterval) -> Observable<Consequence> {
-        return takeWhile {
-            $0.response.milliseconds <= duration.milliseconds
-        }
+    func sessionTime(_ value: TimeInterval, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessions(by: .time(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session response
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: Seconds, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessionTime(.seconds(value), numberOfSessions: numberOfSessions)
     }
 }
 
-/// Reinforcement schedule with session time
-///
-/// - important: If the session time is met, it emits `Observable.completed`.
+/// Session time
 ///
 /// - Complexity: O(1)
-public final class SessionTime: ReinforcementSchedule {
-    public typealias ScheduleType = ReinforcementSchedule
+public struct SessionTimeCondition: FreeOperantCondition {
+    private let value: TimeInterval
 
-    private let schedule: ScheduleType
-    private let sessionTime: TimeInterval
-
-    public init(schedule: ScheduleType,
-                sessionTime: TimeInterval) {
-        self.schedule = schedule
-        self.sessionTime = sessionTime
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
-        return schedule.transform(source)
-            .sessionTime(sessionTime)
-            .share(replay: 1, scope: .whileConnected)
+    public func condition(_ consequence: Consequence, lastSessionValue: Response) -> Bool {
+        let current: Response = consequence.response.asResponse() - lastSessionValue
+        return current.milliseconds >= value.milliseconds
     }
 }

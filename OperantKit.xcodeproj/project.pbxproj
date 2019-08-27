@@ -67,6 +67,42 @@
 		993E424A2314090900811D65 /* CompositeDisposable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42482314090900811D65 /* CompositeDisposable+.swift */; };
 		993E424B2314090900811D65 /* CompositeDisposable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42482314090900811D65 /* CompositeDisposable+.swift */; };
 		993E424C2314090900811D65 /* CompositeDisposable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42482314090900811D65 /* CompositeDisposable+.swift */; };
+		993E425123141F3100811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
+		993E425223141F3100811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
+		993E425323141F3100811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
+		993E425423141F3700811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
+		993E425523141F3700811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
+		993E425623141F3700811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
+		993E425723141F3800811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
+		993E425823141F3800811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
+		993E425923141F3800811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
+		993E425A23141F3800811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
+		993E425B23141F3800811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
+		993E425C23141F3800811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
+		993E425E2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
+		993E425F2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
+		993E42602314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
+		993E42622314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
+		993E42632314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
+		993E42642314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
+		993E42652314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
+		993E42672314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
+		993E42682314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
+		993E42692314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
+		993E426B2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */; };
+		993E426C2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */; };
+		993E426D2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */; };
+		993E426F2314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
+		993E42702314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
+		993E42712314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
+		993E42722314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
+		993E42742314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
+		993E42752314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
+		993E42762314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
+		993E42772314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
+		993E42792314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
+		993E427A2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
+		993E427B2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
 		996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
@@ -89,12 +125,12 @@
 		9966B9442312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
 		9966B9452312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
 		9966B9462312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
-		9966B9482312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift */; };
-		9966B9492312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift */; };
-		9966B94A2312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift */; };
-		99881FDC22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
-		99881FDD22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
-		99881FDE22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */; };
+		9966B9482312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
+		9966B9492312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
+		9966B94A2312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
+		99881FDC22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */; };
+		99881FDD22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */; };
+		99881FDE22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */; };
 		9988206522F71507001F816A /* AlternativeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988206422F71507001F816A /* AlternativeScheduleTests.swift */; };
 		9988206622F71507001F816A /* AlternativeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988206422F71507001F816A /* AlternativeScheduleTests.swift */; };
 		9988206722F71507001F816A /* AlternativeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9988206422F71507001F816A /* AlternativeScheduleTests.swift */; };
@@ -306,6 +342,16 @@
 		993D6AFA22EA71B600FBC7A9 /* ContinuousReinforcementScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousReinforcementScheduleTests.swift; sourceTree = "<group>"; };
 		993E4243231408C400811D65 /* DeinitDisposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitDisposable.swift; sourceTree = "<group>"; };
 		993E42482314090900811D65 /* CompositeDisposable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompositeDisposable+.swift"; sourceTree = "<group>"; };
+		993E424E23141F3000811D65 /* DiscreteTrial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscreteTrial.swift; sourceTree = "<group>"; };
+		993E424F23141F3100811D65 /* TrialTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialTime.swift; sourceTree = "<group>"; };
+		993E425023141F3100811D65 /* TrialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialResponse.swift; sourceTree = "<group>"; };
+		993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByResponseScheduleTests.swift; sourceTree = "<group>"; };
+		993E42612314E89000811D65 /* TrialReinforcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialReinforcement.swift; sourceTree = "<group>"; };
+		993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByReinforcementScheduleTests.swift; sourceTree = "<group>"; };
+		993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByTimeScheduleTests.swift; sourceTree = "<group>"; };
+		993E426E2314F63C00811D65 /* FreeOperant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperant.swift; sourceTree = "<group>"; };
+		993E42732314F9F800811D65 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByResponseScheduleTests.swift; sourceTree = "<group>"; };
 		994FFF5D212C2918000F4702 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		996564D121A63E39004C76F0 /* PublishSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishSubject+.swift"; sourceTree = "<group>"; };
 		9966B9212311B71A0077F7A2 /* Conj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conj.swift; sourceTree = "<group>"; };
@@ -313,9 +359,9 @@
 		9966B92A2311BEF80077F7A2 /* Conc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conc.swift; sourceTree = "<group>"; };
 		9966B92F2311C55C0077F7A2 /* ConcurrentScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentScheduleTests.swift; sourceTree = "<group>"; };
 		9966B9422312AD230077F7A2 /* SessionReinforcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReinforcement.swift; sourceTree = "<group>"; };
-		9966B9472312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReinforcementScheduleTests.swift; sourceTree = "<group>"; };
+		9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByReinforcementScheduleTests.swift; sourceTree = "<group>"; };
 		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTimeScheduleTests.swift; sourceTree = "<group>"; };
+		99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByTimeScheduleTests.swift; sourceTree = "<group>"; };
 		9988206422F71507001F816A /* AlternativeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeScheduleTests.swift; sourceTree = "<group>"; };
 		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -495,8 +541,12 @@
 		99881FDF22F6E5C0001F816A /* HelperSchedules */ = {
 			isa = PBXGroup;
 			children = (
-				99881FDB22F6E50B001F816A /* SessionTimeScheduleTests.swift */,
-				9966B9472312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift */,
+				9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */,
+				99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */,
+				993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */,
+				993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */,
+				993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */,
+				993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */,
 			);
 			name = HelperSchedules;
 			sourceTree = "<group>";
@@ -580,6 +630,10 @@
 		999C7C6A21951CD90044C47E /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
+				993E424E23141F3000811D65 /* DiscreteTrial.swift */,
+				993E425023141F3100811D65 /* TrialResponse.swift */,
+				993E424F23141F3100811D65 /* TrialTime.swift */,
+				993E42612314E89000811D65 /* TrialReinforcement.swift */,
 				993D6AB822EA714100FBC7A9 /* Alt.swift */,
 				9966B92A2311BEF80077F7A2 /* Conc.swift */,
 				9966B9212311B71A0077F7A2 /* Conj.swift */,
@@ -592,6 +646,8 @@
 				999C7C6C21951CD90044C47E /* RI.swift */,
 				999C7C6B21951CD90044C47E /* RR.swift */,
 				99C74EF7219A713D00DABE14 /* RT.swift */,
+				993E426E2314F63C00811D65 /* FreeOperant.swift */,
+				993E42732314F9F800811D65 /* SessionResponse.swift */,
 				993D6AB722EA714100FBC7A9 /* SessionTime.swift */,
 				9966B9422312AD230077F7A2 /* SessionReinforcement.swift */,
 				999C7C7121951CD90044C47E /* VI.swift */,
@@ -1075,6 +1131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993E42702314F63C00811D65 /* FreeOperant.swift in Sources */,
+				993E425423141F3700811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACA22EA714100FBC7A9 /* Alt.swift in Sources */,
 				99C7531221A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
 				9966B9232311B71A0077F7A2 /* Conj.swift in Sources */,
@@ -1087,6 +1145,7 @@
 				999C7CB221951CDB0044C47E /* FR.swift in Sources */,
 				99C74EF3219A702C00DABE14 /* FT.swift in Sources */,
 				999C7D3321951CDC0044C47E /* Matrix.swift in Sources */,
+				993E425523141F3700811D65 /* TrialResponse.swift in Sources */,
 				993E424A2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7D2421951CDC0044C47E /* ObservableType+.swift in Sources */,
 				9905D99C21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
@@ -1100,11 +1159,14 @@
 				9966B92C2311BEF80077F7A2 /* Conc.swift in Sources */,
 				999C7CA921951CDB0044C47E /* RR.swift in Sources */,
 				99C74F0C219A77B000DABE14 /* RT.swift in Sources */,
+				993E425623141F3700811D65 /* TrialTime.swift in Sources */,
+				993E42632314E89000811D65 /* TrialReinforcement.swift in Sources */,
 				999C7CC721951CDB0044C47E /* SessionEvents.swift in Sources */,
 				993D6AC622EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				9966B9442312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AEF22EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D3021951CDC0044C47E /* Shared.swift in Sources */,
+				993E42752314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0B21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530321A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD322EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1132,16 +1194,20 @@
 				999C7D6621951F2A0044C47E /* FixedRatioScheduleTests.swift in Sources */,
 				99C74F12219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7D5121951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
+				993E426C2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */,
+				993E425F2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */,
 				999C7D5421951F2A0044C47E /* Helper.swift in Sources */,
 				9930760021AC45DF00A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7D4E21951F2A0044C47E /* OperantKitTests.swift in Sources */,
-				9966B9492312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */,
+				9966B9492312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */,
+				993E42682314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */,
 				999C7D5D21951F2A0044C47E /* RandomIntervalScheduleTests.swift in Sources */,
 				999C7D6021951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				99C74F1A219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				9966B9312311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */,
-				99881FDD22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */,
+				99881FDD22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */,
 				999C7D5721951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				993E427A2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */,
 				999C7D6321951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				99C74F16219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 			);
@@ -1151,10 +1217,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993E426F2314F63C00811D65 /* FreeOperant.swift in Sources */,
+				993E425123141F3100811D65 /* DiscreteTrial.swift in Sources */,
 				993D6AC922EA714100FBC7A9 /* Alt.swift in Sources */,
 				99C7531121A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
 				9966B9222311B71A0077F7A2 /* Conj.swift in Sources */,
 				993D6ADE22EA716700FBC7A9 /* Consequence.swift in Sources */,
+				993E425323141F3100811D65 /* TrialResponse.swift in Sources */,
 				9905D9A021AE5500007961CE /* CRF.swift in Sources */,
 				99C7530921A2C79800DABE14 /* CVDisplayLinkTimer.swift in Sources */,
 				999C7CB621951CDB0044C47E /* EXT.swift in Sources */,
@@ -1175,12 +1244,15 @@
 				999C7CAD21951CDB0044C47E /* RI.swift in Sources */,
 				9966B92B2311BEF80077F7A2 /* Conc.swift in Sources */,
 				999C7CAA21951CDB0044C47E /* RR.swift in Sources */,
+				993E425223141F3100811D65 /* TrialTime.swift in Sources */,
 				99C74EF8219A713D00DABE14 /* RT.swift in Sources */,
+				993E42622314E89000811D65 /* TrialReinforcement.swift in Sources */,
 				999C7CC821951CDB0044C47E /* SessionEvents.swift in Sources */,
 				993D6AC522EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				9966B9432312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AEE22EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D3121951CDC0044C47E /* Shared.swift in Sources */,
+				993E42742314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0D21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530221A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD222EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1208,16 +1280,20 @@
 				999C7D6721951F2A0044C47E /* FixedRatioScheduleTests.swift in Sources */,
 				99C74F11219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7D5221951F2A0044C47E /* FleshlerHoffmanTests.swift in Sources */,
+				993E426B2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */,
+				993E425E2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */,
 				999C7D5521951F2A0044C47E /* Helper.swift in Sources */,
 				993075FF21AC45DF00A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7D4F21951F2A0044C47E /* OperantKitTests.swift in Sources */,
-				9966B9482312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */,
+				9966B9482312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */,
+				993E42672314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */,
 				999C7D5E21951F2A0044C47E /* RandomIntervalScheduleTests.swift in Sources */,
 				999C7D6121951F2A0044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				99C74F19219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				9966B9302311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */,
-				99881FDC22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */,
+				99881FDC22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */,
 				999C7D5821951F2A0044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				993E42792314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */,
 				999C7D6421951F2A0044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				99C74F15219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 			);
@@ -1227,6 +1303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993E42712314F63C00811D65 /* FreeOperant.swift in Sources */,
+				993E425723141F3800811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACB22EA714100FBC7A9 /* Alt.swift in Sources */,
 				99C7531321A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
 				9966B9242311B71A0077F7A2 /* Conj.swift in Sources */,
@@ -1239,6 +1317,7 @@
 				999C7DA3219533150044C47E /* FR.swift in Sources */,
 				99C74EF2219A702B00DABE14 /* FT.swift in Sources */,
 				999C7D9F219533150044C47E /* Matrix.swift in Sources */,
+				993E425823141F3800811D65 /* TrialResponse.swift in Sources */,
 				993E424B2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7D9A219533150044C47E /* ObservableType+.swift in Sources */,
 				9905D99D21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
@@ -1252,11 +1331,14 @@
 				9966B92D2311BEF80077F7A2 /* Conc.swift in Sources */,
 				999C7DA0219533150044C47E /* RR.swift in Sources */,
 				99C74F0B219A77AF00DABE14 /* RT.swift in Sources */,
+				993E425923141F3800811D65 /* TrialTime.swift in Sources */,
+				993E42642314E89000811D65 /* TrialReinforcement.swift in Sources */,
 				999C7DAA219533150044C47E /* SessionEvents.swift in Sources */,
 				993D6AC722EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				9966B9452312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AF022EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D9E219533150044C47E /* Shared.swift in Sources */,
+				993E42762314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0E21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530421A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD422EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1284,16 +1366,20 @@
 				999C7DC8219533300044C47E /* FixedRatioScheduleTests.swift in Sources */,
 				99C74F13219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */,
 				999C7DCB219533300044C47E /* FleshlerHoffmanTests.swift in Sources */,
+				993E426D2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift in Sources */,
+				993E42602314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */,
 				999C7DC2219533300044C47E /* Helper.swift in Sources */,
 				9930760121AC45E000A8132E /* ObservableTypeTests.swift in Sources */,
 				999C7DCA219533300044C47E /* OperantKitTests.swift in Sources */,
-				9966B94A2312B3E40077F7A2 /* SessionReinforcementScheduleTests.swift in Sources */,
+				9966B94A2312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */,
+				993E42692314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */,
 				999C7DC5219533300044C47E /* RandomIntervalScheduleTests.swift in Sources */,
 				999C7DC6219533300044C47E /* RandomRatioScheduleTests.swift in Sources */,
 				99C74F1B219A7E6500DABE14 /* RandomTimeScheduleTests.swift in Sources */,
 				9966B9322311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */,
-				99881FDE22F6E50B001F816A /* SessionTimeScheduleTests.swift in Sources */,
+				99881FDE22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift in Sources */,
 				999C7DC3219533300044C47E /* VariableIntervalScheduleTests.swift in Sources */,
+				993E427B2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */,
 				999C7DC7219533300044C47E /* VariableRatioScheduleTests.swift in Sources */,
 				99C74F17219A7E1A00DABE14 /* VariableTimeScheduleTests.swift in Sources */,
 			);
@@ -1303,6 +1389,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993E42722314F63C00811D65 /* FreeOperant.swift in Sources */,
+				993E425A23141F3800811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACC22EA714100FBC7A9 /* Alt.swift in Sources */,
 				99C7531421A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
 				9966B9252311B71A0077F7A2 /* Conj.swift in Sources */,
@@ -1315,6 +1403,7 @@
 				999C7DF7219542610044C47E /* FR.swift in Sources */,
 				99C74EF4219A702D00DABE14 /* FT.swift in Sources */,
 				999C7DF3219542610044C47E /* Matrix.swift in Sources */,
+				993E425B23141F3800811D65 /* TrialResponse.swift in Sources */,
 				993E424C2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7DEE219542610044C47E /* ObservableType+.swift in Sources */,
 				9905D99E21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
@@ -1328,11 +1417,14 @@
 				9966B92E2311BEF80077F7A2 /* Conc.swift in Sources */,
 				999C7DF4219542610044C47E /* RR.swift in Sources */,
 				99C74F0A219A77AE00DABE14 /* RT.swift in Sources */,
+				993E425C23141F3800811D65 /* TrialTime.swift in Sources */,
+				993E42652314E89000811D65 /* TrialReinforcement.swift in Sources */,
 				999C7DFE219542610044C47E /* SessionEvents.swift in Sources */,
 				993D6AC822EA714100FBC7A9 /* SessionTime.swift in Sources */,
 				9966B9462312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AF122EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7DF2219542610044C47E /* Shared.swift in Sources */,
+				993E42772314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0C21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530521A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD522EA716700FBC7A9 /* TimeInterval.swift in Sources */,
