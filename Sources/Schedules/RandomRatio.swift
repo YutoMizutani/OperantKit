@@ -1,48 +1,49 @@
 //
-//  RT.swift
+//  RandomRatio.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/13.
+//  Created by Yuto Mizutani on 2018/11/04.
 //
 
 import RxSwift
 
+@inline(__always)
+private func nextRandom(_ value: Int) -> Int {
+    return Int.random(in: 1...value)
+}
+
 public extension ObservableType where Element: ResponseCompatible {
-    /// Random time schedule
+    /// Random ratio schedule
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func randomTime(_ value: TimeInterval) -> Observable<Consequence> {
-        return RT(value).transform(asResponse())
+    func randomRatio(_ value: Int) -> Observable<Consequence> {
+        return RR(value).transform(asResponse())
     }
 }
 
-/// Random time schedule
+/// Random ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public typealias RT = RandomTime
+public typealias RR = RandomRatio
 
-/// Random time schedule
+/// Random ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class RandomTime: ResponseStoreableReinforcementSchedule {
+public final class RandomRatio: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
-    private let value: TimeInterval
-    private var currentRandom: Milliseconds
+    private let value: Int
+    private var currentRandom: Int
 
-    public init(_ value: TimeInterval) {
+    public init(_ value: Int) {
         self.value = value
-        self.currentRandom = nextRandom(value)
-    }
-
-    public convenience init(_ value: Seconds) {
-        self.init(TimeInterval.seconds(value))
+        currentRandom = nextRandom(value)
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.milliseconds >= currentRandom
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= currentRandom
         if isReinforcement {
             return .reinforcement(response)
         } else {

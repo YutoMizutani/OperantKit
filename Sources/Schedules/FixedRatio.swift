@@ -1,49 +1,54 @@
 //
-//  RR.swift
+//  FixedRatio.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/04.
+//  Created by Yuto Mizutani on 2018/10/31.
 //
 
 import RxSwift
 
-@inline(__always)
-private func nextRandom(_ value: Int) -> Int {
-    return Int.random(in: 1...value)
-}
-
 public extension ObservableType where Element: ResponseCompatible {
-    /// Random ratio schedule
+    /// Fixed ratio schedule
+    ///
+    /// IN A FIXED-RATIO SCHEDULE of reinforcement, every *n*th response produces a reinforcing stimulus.
+    ///
+    /// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
     ///
     /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    func randomRatio(_ value: Int) -> Observable<Consequence> {
-        return RR(value).transform(asResponse())
+    /// - Complexity: O(1) 
+    func fixedRatio(_ value: Int) -> Observable<Consequence> {
+        return FR(value).transform(asResponse())
     }
 }
 
-/// Random ratio schedule
+/// Fixed ratio schedule
+///
+/// IN A FIXED-RATIO SCHEDULE of reinforcement, every *n*th response produces a reinforcing stimulus.
+///
+/// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
 ///
 /// - Parameter value: Reinforcement value
-public typealias RR = RandomRatio
+public typealias FR = FixedRatio
 
-/// Random ratio schedule
+/// Fixed ratio schedule
+///
+/// IN A FIXED-RATIO SCHEDULE of reinforcement, every *n*th response produces a reinforcing stimulus.
+///
+/// Skinner, B. F.. Schedules of Reinforcement (B. F. Skinner reprint Series, edited by Julie S. Vargas Book 4) (Kindle Locations 1073-1074). B. F. Skinner Foundation. Kindle Edition.
 ///
 /// - Parameter value: Reinforcement value
-public final class RandomRatio: ResponseStoreableReinforcementSchedule {
+public final class FixedRatio: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
     private let value: Int
-    private var currentRandom: Int
 
     public init(_ value: Int) {
         self.value = value
-        currentRandom = nextRandom(value)
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= currentRandom
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= value
         if isReinforcement {
             return .reinforcement(response)
         } else {
@@ -53,7 +58,6 @@ public final class RandomRatio: ResponseStoreableReinforcementSchedule {
 
     public func updateLastReinforcement(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            currentRandom = nextRandom(value)
             lastReinforcementValue = response.asResponse()
         }
 

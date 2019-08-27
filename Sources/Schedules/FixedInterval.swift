@@ -1,72 +1,49 @@
 //
-//  VI.swift
+//  FixedInterval.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/03.
+//  Created by Yuto Mizutani on 2018/11/01.
 //
 
 import RxSwift
 
-@inline(__always)
-func generatedInterval(_ value: TimeInterval, iterations: Int) -> [Milliseconds] {
-    return FleshlerHoffman().generatedInterval(
-        value: value.milliseconds,
-        iterations: iterations
-    )
-}
-
 public extension ObservableType where Element: ResponseCompatible {
-    /// Variable interval schedule
+    /// Fixed interval schedule
     ///
     /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func variableInterval(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
-        return VI(value, iterations: iterations).transform(asResponse())
-    }
-
-    /// Variable interval schedule
-    ///
-    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    func variableInterval(_ values: [Milliseconds]) -> Observable<Consequence> {
-        return VI(values).transform(asResponse())
+    func fixedInterval(_ value: TimeInterval) -> Observable<Consequence> {
+        return FI(value).transform(asResponse())
     }
 }
 
-/// Variable interval schedule
+/// Fixed interval schedule
 ///
 /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public typealias VI = VariableInterval
+public typealias FI = FixedInterval
 
-/// Variable interval schedule
+/// Fixed interval schedule
 ///
 /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public final class VariableInterval: ResponseStoreableReinforcementSchedule {
+public final class FixedInterval: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
-    private let values: [Milliseconds]
-    private var index: Int = 0
+    private let value: TimeInterval
 
-    public init(_ values: [Milliseconds]) {
-        self.values = values
+    public init(_ value: TimeInterval) {
+        self.value = value
     }
 
-    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
-        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
-        self.init(values)
-    }
-
-    public convenience init(_ value: Seconds, iterations: Int = 12) {
-        self.init(TimeInterval.seconds(value), iterations: iterations)
+    public convenience init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= values[index]
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= value.milliseconds
         if isReinforcement {
             return .reinforcement(response)
         } else {
@@ -76,10 +53,6 @@ public final class VariableInterval: ResponseStoreableReinforcementSchedule {
 
     public func updateLastReinforcement(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            index += 1
-            if index >= values.count {
-                index = 0
-            }
             lastReinforcementValue = response.asResponse()
         }
 

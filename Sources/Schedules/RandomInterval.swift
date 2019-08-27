@@ -1,64 +1,56 @@
 //
-//  VR.swift
+//  RandomInterval.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/01.
+//  Created by Yuto Mizutani on 2018/11/04.
 //
 
 import RxSwift
 
 @inline(__always)
-private func generatedRatio(_ value: Int, iterations: Int) -> [Int] {
-    return FleshlerHoffman().generatedRatio(
-        value: value,
-        iterations: iterations
-    )
+func nextRandom(_ value: TimeInterval) -> Milliseconds {
+    return Milliseconds.random(in: 1...value.milliseconds)
 }
 
 public extension ObservableType where Element: ResponseCompatible {
-    /// Variable ratio schedule
+    /// Random interval schedule
     ///
+    /// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func variableRatio(_ value: Int, iterations: Int = 12) -> Observable<Consequence> {
-        return VR(value, iterations: iterations).transform(asResponse())
-    }
-
-    /// Variable ratio schedule
-    ///
-    /// - Parameter value: Reinforcement value
-    /// - Complexity: O(1)
-    func variableRatio(_ values: [Int]) -> Observable<Consequence> {
-        return VR(values).transform(asResponse())
+    func randomInterval(_ value: TimeInterval) -> Observable<Consequence> {
+        return RI(value).transform(asResponse())
     }
 }
 
-/// Variable ratio schedule
+/// Random interval schedule
 ///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public typealias VR = VariableRatio
+public typealias RI = RandomInterval
 
-/// Variable ratio schedule
+/// Random interval schedule
 ///
+/// - important: In order to distinguish from Time schedule, there is a limitation of one or more responses since last time.
 /// - Parameter value: Reinforcement value
-public final class VariableRatio: ResponseStoreableReinforcementSchedule {
+public final class RandomInterval: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
-    private let values: [Int]
-    private var index: Int = 0
+    private let value: TimeInterval
+    private var currentRandom: Milliseconds
 
-    public init(_ values: [Int]) {
-        self.values = values
+    public init(_ value: TimeInterval) {
+        self.value = value
+        currentRandom = nextRandom(value)
     }
 
-    public convenience init(_ value: Int, iterations: Int = 12) {
-        let values: [Int] = generatedRatio(value, iterations: iterations)
-        self.init(values)
+    public convenience init(_ value: Seconds) {
+        self.init(TimeInterval.seconds(value))
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= values[index]
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= currentRandom
         if isReinforcement {
             return .reinforcement(response)
         } else {
@@ -68,10 +60,7 @@ public final class VariableRatio: ResponseStoreableReinforcementSchedule {
 
     public func updateLastReinforcement(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            index += 1
-            if index >= values.count {
-                index = 0
-            }
+            currentRandom = nextRandom(value)
             lastReinforcementValue = response.asResponse()
         }
 

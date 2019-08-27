@@ -1,60 +1,64 @@
 //
-//  VT.swift
+//  VariableRatio.swift
 //  OperantKit
 //
-//  Created by Yuto Mizutani on 2018/11/13.
+//  Created by Yuto Mizutani on 2018/11/01.
 //
 
 import RxSwift
 
+@inline(__always)
+private func generatedRatio(_ value: Int, iterations: Int) -> [Int] {
+    return FleshlerHoffman().generatedRatio(
+        value: value,
+        iterations: iterations
+    )
+}
+
 public extension ObservableType where Element: ResponseCompatible {
-    /// Variable time schedule
+    /// Variable ratio schedule
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func variableTime(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
-        return VT(value, iterations: iterations).transform(asResponse())
+    func variableRatio(_ value: Int, iterations: Int = 12) -> Observable<Consequence> {
+        return VR(value, iterations: iterations).transform(asResponse())
     }
 
-    /// Variable time schedule
+    /// Variable ratio schedule
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func variableTime(_ values: [Milliseconds]) -> Observable<Consequence> {
-        return VT(values).transform(asResponse())
+    func variableRatio(_ values: [Int]) -> Observable<Consequence> {
+        return VR(values).transform(asResponse())
     }
 }
 
-/// Variable time schedule
+/// Variable ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public typealias VT = VariableTime
+public typealias VR = VariableRatio
 
-/// Variable time schedule
+/// Variable ratio schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class VariableTime: ResponseStoreableReinforcementSchedule {
+public final class VariableRatio: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
-    private let values: [Milliseconds]
+    private let values: [Int]
     private var index: Int = 0
 
-    public init(_ values: [Milliseconds]) {
+    public init(_ values: [Int]) {
         self.values = values
     }
 
-    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
-        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
+    public convenience init(_ value: Int, iterations: Int = 12) {
+        let values: [Int] = generatedRatio(value, iterations: iterations)
         self.init(values)
-    }
-
-    public convenience init(_ value: Seconds, iterations: Int = 12) {
-        self.init(TimeInterval.seconds(value), iterations: iterations)
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.milliseconds >= values[index]
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= values[index]
         if isReinforcement {
             return .reinforcement(response)
         } else {

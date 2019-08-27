@@ -1,5 +1,5 @@
 //
-//  FT.swift
+//  VariableTime.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/13.
@@ -8,39 +8,53 @@
 import RxSwift
 
 public extension ObservableType where Element: ResponseCompatible {
-    /// Fixed time schedule
+    /// Variable time schedule
     ///
     /// - Parameter value: Reinforcement value
     /// - Complexity: O(1)
-    func fixedTime(_ value: TimeInterval) -> Observable<Consequence> {
-        return FT(value).transform(asResponse())
+    func variableTime(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
+        return VT(value, iterations: iterations).transform(asResponse())
+    }
+
+    /// Variable time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    func variableTime(_ values: [Milliseconds]) -> Observable<Consequence> {
+        return VT(values).transform(asResponse())
     }
 }
 
-/// Fixed time schedule
+/// Variable time schedule
 ///
 /// - Parameter value: Reinforcement value
-public typealias FT = FixedTime
+public typealias VT = VariableTime
 
-/// Fixed time schedule
+/// Variable time schedule
 ///
 /// - Parameter value: Reinforcement value
-public final class FixedTime: ResponseStoreableReinforcementSchedule {
+public final class VariableTime: ResponseStoreableReinforcementSchedule {
     public var lastReinforcementValue: Response = .zero
 
-    private let value: TimeInterval
+    private let values: [Milliseconds]
+    private var index: Int = 0
 
-    public init(_ value: TimeInterval) {
-        self.value = value
+    public init(_ values: [Milliseconds]) {
+        self.values = values
     }
 
-    public convenience init(_ value: Seconds) {
-        self.init(TimeInterval.seconds(value))
+    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
+        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
+        self.init(values)
+    }
+
+    public convenience init(_ value: Seconds, iterations: Int = 12) {
+        self.init(TimeInterval.seconds(value), iterations: iterations)
     }
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastReinforcementValue
-        let isReinforcement: Bool = current.milliseconds >= value.milliseconds
+        let isReinforcement: Bool = current.milliseconds >= values[index]
         if isReinforcement {
             return .reinforcement(response)
         } else {
@@ -50,6 +64,10 @@ public final class FixedTime: ResponseStoreableReinforcementSchedule {
 
     public func updateLastReinforcement(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
+            index += 1
+            if index >= values.count {
+                index = 0
+            }
             lastReinforcementValue = response.asResponse()
         }
 

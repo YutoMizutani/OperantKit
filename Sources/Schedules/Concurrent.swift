@@ -1,5 +1,5 @@
 //
-//  Conc.swift
+//  Concurrent.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2019/08/25.

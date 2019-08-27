@@ -11,10 +11,10 @@
 		9905D99C21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* PrimitiveSequence+.swift */; };
 		9905D99D21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* PrimitiveSequence+.swift */; };
 		9905D99E21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99A21AE42AC007961CE /* PrimitiveSequence+.swift */; };
-		9905D9A021AE5500007961CE /* CRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* CRF.swift */; };
-		9905D9A121AE5500007961CE /* CRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* CRF.swift */; };
-		9905D9A221AE5500007961CE /* CRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* CRF.swift */; };
-		9905D9A321AE5500007961CE /* CRF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* CRF.swift */; };
+		9905D9A021AE5500007961CE /* ContinuousReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */; };
+		9905D9A121AE5500007961CE /* ContinuousReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */; };
+		9905D9A221AE5500007961CE /* ContinuousReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */; };
+		9905D9A321AE5500007961CE /* ContinuousReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */; };
 		993075FF21AC45DF00A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
 		9930760021AC45DF00A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
 		9930760121AC45E000A8132E /* ObservableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993075FD21AC45D900A8132E /* ObservableTypeTests.swift */; };
@@ -24,14 +24,10 @@
 		993D6AC222EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */; };
 		993D6AC322EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */; };
 		993D6AC422EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */; };
-		993D6AC522EA714100FBC7A9 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB722EA714100FBC7A9 /* SessionTime.swift */; };
-		993D6AC622EA714100FBC7A9 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB722EA714100FBC7A9 /* SessionTime.swift */; };
-		993D6AC722EA714100FBC7A9 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB722EA714100FBC7A9 /* SessionTime.swift */; };
-		993D6AC822EA714100FBC7A9 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB722EA714100FBC7A9 /* SessionTime.swift */; };
-		993D6AC922EA714100FBC7A9 /* Alt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alt.swift */; };
-		993D6ACA22EA714100FBC7A9 /* Alt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alt.swift */; };
-		993D6ACB22EA714100FBC7A9 /* Alt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alt.swift */; };
-		993D6ACC22EA714100FBC7A9 /* Alt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alt.swift */; };
+		993D6AC922EA714100FBC7A9 /* Alternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alternative.swift */; };
+		993D6ACA22EA714100FBC7A9 /* Alternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alternative.swift */; };
+		993D6ACB22EA714100FBC7A9 /* Alternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alternative.swift */; };
+		993D6ACC22EA714100FBC7A9 /* Alternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6AB822EA714100FBC7A9 /* Alternative.swift */; };
 		993D6AD222EA716700FBC7A9 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6ACD22EA716700FBC7A9 /* TimeInterval.swift */; };
 		993D6AD322EA716700FBC7A9 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6ACD22EA716700FBC7A9 /* TimeInterval.swift */; };
 		993D6AD422EA716700FBC7A9 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D6ACD22EA716700FBC7A9 /* TimeInterval.swift */; };
@@ -68,24 +64,12 @@
 		993E424B2314090900811D65 /* CompositeDisposable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42482314090900811D65 /* CompositeDisposable+.swift */; };
 		993E424C2314090900811D65 /* CompositeDisposable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42482314090900811D65 /* CompositeDisposable+.swift */; };
 		993E425123141F3100811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
-		993E425223141F3100811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
-		993E425323141F3100811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
 		993E425423141F3700811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
-		993E425523141F3700811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
-		993E425623141F3700811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
 		993E425723141F3800811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
-		993E425823141F3800811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
-		993E425923141F3800811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
 		993E425A23141F3800811D65 /* DiscreteTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424E23141F3000811D65 /* DiscreteTrial.swift */; };
-		993E425B23141F3800811D65 /* TrialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425023141F3100811D65 /* TrialResponse.swift */; };
-		993E425C23141F3800811D65 /* TrialTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E424F23141F3100811D65 /* TrialTime.swift */; };
 		993E425E2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
 		993E425F2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
 		993E42602314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */; };
-		993E42622314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
-		993E42632314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
-		993E42642314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
-		993E42652314E89000811D65 /* TrialReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42612314E89000811D65 /* TrialReinforcement.swift */; };
 		993E42672314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
 		993E42682314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
 		993E42692314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */; };
@@ -96,35 +80,31 @@
 		993E42702314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
 		993E42712314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
 		993E42722314F63C00811D65 /* FreeOperant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E426E2314F63C00811D65 /* FreeOperant.swift */; };
-		993E42742314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
-		993E42752314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
-		993E42762314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
-		993E42772314F9F800811D65 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42732314F9F800811D65 /* SessionResponse.swift */; };
 		993E42792314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
 		993E427A2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
 		993E427B2314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */; };
+		993EB60123152C0600811D65 /* FinishableCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EB60023152C0600811D65 /* FinishableCondition.swift */; };
+		993EB60223152C0600811D65 /* FinishableCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EB60023152C0600811D65 /* FinishableCondition.swift */; };
+		993EB60323152C0600811D65 /* FinishableCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EB60023152C0600811D65 /* FinishableCondition.swift */; };
+		993EB60423152C0600811D65 /* FinishableCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993EB60023152C0600811D65 /* FinishableCondition.swift */; };
 		996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
 		996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996564D121A63E39004C76F0 /* PublishSubject+.swift */; };
-		9966B9222311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
-		9966B9232311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
-		9966B9242311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
-		9966B9252311B71A0077F7A2 /* Conj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conj.swift */; };
+		9966B9222311B71A0077F7A2 /* Conjunctive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conjunctive.swift */; };
+		9966B9232311B71A0077F7A2 /* Conjunctive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conjunctive.swift */; };
+		9966B9242311B71A0077F7A2 /* Conjunctive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conjunctive.swift */; };
+		9966B9252311B71A0077F7A2 /* Conjunctive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9212311B71A0077F7A2 /* Conjunctive.swift */; };
 		9966B9272311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
 		9966B9282311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
 		9966B9292311B7E10077F7A2 /* ConjunctiveScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */; };
-		9966B92B2311BEF80077F7A2 /* Conc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Conc.swift */; };
-		9966B92C2311BEF80077F7A2 /* Conc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Conc.swift */; };
-		9966B92D2311BEF80077F7A2 /* Conc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Conc.swift */; };
-		9966B92E2311BEF80077F7A2 /* Conc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Conc.swift */; };
+		9966B92B2311BEF80077F7A2 /* Concurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Concurrent.swift */; };
+		9966B92C2311BEF80077F7A2 /* Concurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Concurrent.swift */; };
+		9966B92D2311BEF80077F7A2 /* Concurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Concurrent.swift */; };
+		9966B92E2311BEF80077F7A2 /* Concurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92A2311BEF80077F7A2 /* Concurrent.swift */; };
 		9966B9302311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92F2311C55C0077F7A2 /* ConcurrentScheduleTests.swift */; };
 		9966B9312311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92F2311C55C0077F7A2 /* ConcurrentScheduleTests.swift */; };
 		9966B9322311C55C0077F7A2 /* ConcurrentScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B92F2311C55C0077F7A2 /* ConcurrentScheduleTests.swift */; };
-		9966B9432312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
-		9966B9442312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
-		9966B9452312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
-		9966B9462312AD230077F7A2 /* SessionReinforcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9422312AD230077F7A2 /* SessionReinforcement.swift */; };
 		9966B9482312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
 		9966B9492312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
 		9966B94A2312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */; };
@@ -146,20 +126,20 @@
 		99981720212C35FE00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
 		99981721212C360F00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
 		99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
-		999C7CA921951CDB0044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
-		999C7CAA21951CDB0044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
-		999C7CAC21951CDB0044C47E /* RI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RI.swift */; };
-		999C7CAD21951CDB0044C47E /* RI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RI.swift */; };
-		999C7CAF21951CDB0044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FI.swift */; };
-		999C7CB021951CDB0044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FI.swift */; };
-		999C7CB221951CDB0044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FR.swift */; };
-		999C7CB321951CDB0044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FR.swift */; };
-		999C7CB521951CDB0044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* EXT.swift */; };
-		999C7CB621951CDB0044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* EXT.swift */; };
-		999C7CB821951CDB0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VR.swift */; };
-		999C7CB921951CDB0044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VR.swift */; };
-		999C7CBB21951CDB0044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VI.swift */; };
-		999C7CBC21951CDB0044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VI.swift */; };
+		999C7CA921951CDB0044C47E /* RandomRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RandomRatio.swift */; };
+		999C7CAA21951CDB0044C47E /* RandomRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RandomRatio.swift */; };
+		999C7CAC21951CDB0044C47E /* RandomInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RandomInterval.swift */; };
+		999C7CAD21951CDB0044C47E /* RandomInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RandomInterval.swift */; };
+		999C7CAF21951CDB0044C47E /* FixedInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FixedInterval.swift */; };
+		999C7CB021951CDB0044C47E /* FixedInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FixedInterval.swift */; };
+		999C7CB221951CDB0044C47E /* FixedRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FixedRatio.swift */; };
+		999C7CB321951CDB0044C47E /* FixedRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FixedRatio.swift */; };
+		999C7CB521951CDB0044C47E /* Extinction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* Extinction.swift */; };
+		999C7CB621951CDB0044C47E /* Extinction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* Extinction.swift */; };
+		999C7CB821951CDB0044C47E /* VariableRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VariableRatio.swift */; };
+		999C7CB921951CDB0044C47E /* VariableRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VariableRatio.swift */; };
+		999C7CBB21951CDB0044C47E /* VariableInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VariableInterval.swift */; };
+		999C7CBC21951CDB0044C47E /* VariableInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VariableInterval.swift */; };
 		999C7CC721951CDB0044C47E /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7721951CDA0044C47E /* SessionEvents.swift */; };
 		999C7CC821951CDB0044C47E /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7721951CDA0044C47E /* SessionEvents.swift */; };
 		999C7CD021951CDB0044C47E /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7B21951CDA0044C47E /* FleshlerHoffman.swift */; };
@@ -206,13 +186,13 @@
 		999C7D9C219533150044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */; };
 		999C7D9E219533150044C47E /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA721951CDB0044C47E /* Shared.swift */; };
 		999C7D9F219533150044C47E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA821951CDB0044C47E /* Matrix.swift */; };
-		999C7DA0219533150044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
-		999C7DA1219533150044C47E /* RI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RI.swift */; };
-		999C7DA2219533150044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FI.swift */; };
-		999C7DA3219533150044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FR.swift */; };
-		999C7DA4219533150044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* EXT.swift */; };
-		999C7DA5219533150044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VR.swift */; };
-		999C7DA6219533150044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VI.swift */; };
+		999C7DA0219533150044C47E /* RandomRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RandomRatio.swift */; };
+		999C7DA1219533150044C47E /* RandomInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RandomInterval.swift */; };
+		999C7DA2219533150044C47E /* FixedInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FixedInterval.swift */; };
+		999C7DA3219533150044C47E /* FixedRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FixedRatio.swift */; };
+		999C7DA4219533150044C47E /* Extinction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* Extinction.swift */; };
+		999C7DA5219533150044C47E /* VariableRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VariableRatio.swift */; };
+		999C7DA6219533150044C47E /* VariableInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VariableInterval.swift */; };
 		999C7DAA219533150044C47E /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7721951CDA0044C47E /* SessionEvents.swift */; };
 		999C7DAD219533150044C47E /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7B21951CDA0044C47E /* FleshlerHoffman.swift */; };
 		999C7DC2219533300044C47E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7D4221951F2A0044C47E /* Helper.swift */; };
@@ -230,29 +210,29 @@
 		999C7DF0219542610044C47E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA321951CDB0044C47E /* UIViewController+Rx.swift */; };
 		999C7DF2219542610044C47E /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA721951CDB0044C47E /* Shared.swift */; };
 		999C7DF3219542610044C47E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7CA821951CDB0044C47E /* Matrix.swift */; };
-		999C7DF4219542610044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
-		999C7DF5219542610044C47E /* RI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RI.swift */; };
-		999C7DF6219542610044C47E /* FI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FI.swift */; };
-		999C7DF7219542610044C47E /* FR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FR.swift */; };
-		999C7DF8219542610044C47E /* EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* EXT.swift */; };
-		999C7DF9219542610044C47E /* VR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VR.swift */; };
-		999C7DFA219542610044C47E /* VI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VI.swift */; };
+		999C7DF4219542610044C47E /* RandomRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RandomRatio.swift */; };
+		999C7DF5219542610044C47E /* RandomInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RandomInterval.swift */; };
+		999C7DF6219542610044C47E /* FixedInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6D21951CD90044C47E /* FixedInterval.swift */; };
+		999C7DF7219542610044C47E /* FixedRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6E21951CD90044C47E /* FixedRatio.swift */; };
+		999C7DF8219542610044C47E /* Extinction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6F21951CD90044C47E /* Extinction.swift */; };
+		999C7DF9219542610044C47E /* VariableRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7021951CD90044C47E /* VariableRatio.swift */; };
+		999C7DFA219542610044C47E /* VariableInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7121951CD90044C47E /* VariableInterval.swift */; };
 		999C7DFE219542610044C47E /* SessionEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7721951CDA0044C47E /* SessionEvents.swift */; };
 		999C7E01219542610044C47E /* FleshlerHoffman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C7B21951CDA0044C47E /* FleshlerHoffman.swift */; };
 		999C7E192195429C0044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E18219542970044C47E /* RxCocoa.framework */; };
 		999C7E1A2195429C0044C47E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E17219542960044C47E /* RxSwift.framework */; };
-		99C74EF1219A702400DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
-		99C74EF2219A702B00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
-		99C74EF3219A702C00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
-		99C74EF4219A702D00DABE14 /* FT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FT.swift */; };
-		99C74EF6219A70F100DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
-		99C74EF8219A713D00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
-		99C74F0A219A77AE00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
-		99C74F0B219A77AF00DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
-		99C74F0C219A77B000DABE14 /* RT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RT.swift */; };
-		99C74F0D219A77B300DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
-		99C74F0E219A77B400DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
-		99C74F0F219A77B500DABE14 /* VT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VT.swift */; };
+		99C74EF1219A702400DABE14 /* FixedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FixedTime.swift */; };
+		99C74EF2219A702B00DABE14 /* FixedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FixedTime.swift */; };
+		99C74EF3219A702C00DABE14 /* FixedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FixedTime.swift */; };
+		99C74EF4219A702D00DABE14 /* FixedTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF0219A702400DABE14 /* FixedTime.swift */; };
+		99C74EF6219A70F100DABE14 /* VariableTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VariableTime.swift */; };
+		99C74EF8219A713D00DABE14 /* RandomTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RandomTime.swift */; };
+		99C74F0A219A77AE00DABE14 /* RandomTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RandomTime.swift */; };
+		99C74F0B219A77AF00DABE14 /* RandomTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RandomTime.swift */; };
+		99C74F0C219A77B000DABE14 /* RandomTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF7219A713D00DABE14 /* RandomTime.swift */; };
+		99C74F0D219A77B300DABE14 /* VariableTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VariableTime.swift */; };
+		99C74F0E219A77B400DABE14 /* VariableTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VariableTime.swift */; };
+		99C74F0F219A77B500DABE14 /* VariableTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74EF5219A70F100DABE14 /* VariableTime.swift */; };
 		99C74F11219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
 		99C74F12219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
 		99C74F13219A7DBB00DABE14 /* FixedTimeScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */; };
@@ -322,7 +302,7 @@
 
 /* Begin PBXFileReference section */
 		9905D99A21AE42AC007961CE /* PrimitiveSequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimitiveSequence+.swift"; sourceTree = "<group>"; };
-		9905D99F21AE5500007961CE /* CRF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRF.swift; sourceTree = "<group>"; };
+		9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousReinforcement.swift; sourceTree = "<group>"; };
 		9926DC3721ACDB57000A6D47 /* StepTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTimer.swift; sourceTree = "<group>"; };
 		993075FD21AC45D900A8132E /* ObservableTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTypeTests.swift; sourceTree = "<group>"; };
 		99334339212969B900744042 /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,8 +311,7 @@
 		9933435D212969E000744042 /* OperantKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9933437E21296A9A00744042 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReinforcementSchedule.swift; sourceTree = "<group>"; };
-		993D6AB722EA714100FBC7A9 /* SessionTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTime.swift; sourceTree = "<group>"; };
-		993D6AB822EA714100FBC7A9 /* Alt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alt.swift; sourceTree = "<group>"; };
+		993D6AB822EA714100FBC7A9 /* Alternative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alternative.swift; sourceTree = "<group>"; };
 		993D6ACD22EA716700FBC7A9 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		993D6ACE22EA716700FBC7A9 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		993D6ACF22EA716700FBC7A9 /* ResponseCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCompatible.swift; sourceTree = "<group>"; };
@@ -343,22 +322,18 @@
 		993E4243231408C400811D65 /* DeinitDisposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitDisposable.swift; sourceTree = "<group>"; };
 		993E42482314090900811D65 /* CompositeDisposable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompositeDisposable+.swift"; sourceTree = "<group>"; };
 		993E424E23141F3000811D65 /* DiscreteTrial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscreteTrial.swift; sourceTree = "<group>"; };
-		993E424F23141F3100811D65 /* TrialTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialTime.swift; sourceTree = "<group>"; };
-		993E425023141F3100811D65 /* TrialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialResponse.swift; sourceTree = "<group>"; };
 		993E425D2314D35500811D65 /* DiscreteTrialEndedByResponseScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByResponseScheduleTests.swift; sourceTree = "<group>"; };
-		993E42612314E89000811D65 /* TrialReinforcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialReinforcement.swift; sourceTree = "<group>"; };
 		993E42662314EB8800811D65 /* DiscreteTrialEndedByReinforcementScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByReinforcementScheduleTests.swift; sourceTree = "<group>"; };
 		993E426A2314EB9600811D65 /* DiscreteTrialEndedByTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialEndedByTimeScheduleTests.swift; sourceTree = "<group>"; };
 		993E426E2314F63C00811D65 /* FreeOperant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperant.swift; sourceTree = "<group>"; };
-		993E42732314F9F800811D65 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		993E42782314FD4000811D65 /* FreeOperantEndedByResponseScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByResponseScheduleTests.swift; sourceTree = "<group>"; };
+		993EB60023152C0600811D65 /* FinishableCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishableCondition.swift; sourceTree = "<group>"; };
 		994FFF5D212C2918000F4702 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		996564D121A63E39004C76F0 /* PublishSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublishSubject+.swift"; sourceTree = "<group>"; };
-		9966B9212311B71A0077F7A2 /* Conj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conj.swift; sourceTree = "<group>"; };
+		9966B9212311B71A0077F7A2 /* Conjunctive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conjunctive.swift; sourceTree = "<group>"; };
 		9966B9262311B7E10077F7A2 /* ConjunctiveScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConjunctiveScheduleTests.swift; sourceTree = "<group>"; };
-		9966B92A2311BEF80077F7A2 /* Conc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conc.swift; sourceTree = "<group>"; };
+		9966B92A2311BEF80077F7A2 /* Concurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrent.swift; sourceTree = "<group>"; };
 		9966B92F2311C55C0077F7A2 /* ConcurrentScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentScheduleTests.swift; sourceTree = "<group>"; };
-		9966B9422312AD230077F7A2 /* SessionReinforcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReinforcement.swift; sourceTree = "<group>"; };
 		9966B9472312B3E40077F7A2 /* FreeOperantEndedByReinforcementScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByReinforcementScheduleTests.swift; sourceTree = "<group>"; };
 		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		99881FDB22F6E50B001F816A /* FreeOperantEndedByTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeOperantEndedByTimeScheduleTests.swift; sourceTree = "<group>"; };
@@ -371,13 +346,13 @@
 		99981718212C35E300D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		9998171B212C35F000D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
 		9998171C212C35F000D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
-		999C7C6B21951CD90044C47E /* RR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RR.swift; sourceTree = "<group>"; };
-		999C7C6C21951CD90044C47E /* RI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RI.swift; sourceTree = "<group>"; };
-		999C7C6D21951CD90044C47E /* FI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FI.swift; sourceTree = "<group>"; };
-		999C7C6E21951CD90044C47E /* FR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FR.swift; sourceTree = "<group>"; };
-		999C7C6F21951CD90044C47E /* EXT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT.swift; sourceTree = "<group>"; };
-		999C7C7021951CD90044C47E /* VR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VR.swift; sourceTree = "<group>"; };
-		999C7C7121951CD90044C47E /* VI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VI.swift; sourceTree = "<group>"; };
+		999C7C6B21951CD90044C47E /* RandomRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomRatio.swift; sourceTree = "<group>"; };
+		999C7C6C21951CD90044C47E /* RandomInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomInterval.swift; sourceTree = "<group>"; };
+		999C7C6D21951CD90044C47E /* FixedInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedInterval.swift; sourceTree = "<group>"; };
+		999C7C6E21951CD90044C47E /* FixedRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedRatio.swift; sourceTree = "<group>"; };
+		999C7C6F21951CD90044C47E /* Extinction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extinction.swift; sourceTree = "<group>"; };
+		999C7C7021951CD90044C47E /* VariableRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableRatio.swift; sourceTree = "<group>"; };
+		999C7C7121951CD90044C47E /* VariableInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableInterval.swift; sourceTree = "<group>"; };
 		999C7C7721951CDA0044C47E /* SessionEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionEvents.swift; sourceTree = "<group>"; };
 		999C7C7B21951CDA0044C47E /* FleshlerHoffman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleshlerHoffman.swift; sourceTree = "<group>"; };
 		999C7C9F21951CDB0044C47E /* UIApplication+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Rx.swift"; sourceTree = "<group>"; };
@@ -404,9 +379,9 @@
 		999C7DDF219541B30044C47E /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C7E17219542960044C47E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
 		999C7E18219542970044C47E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
-		99C74EF0219A702400DABE14 /* FT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FT.swift; sourceTree = "<group>"; };
-		99C74EF5219A70F100DABE14 /* VT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VT.swift; sourceTree = "<group>"; };
-		99C74EF7219A713D00DABE14 /* RT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RT.swift; sourceTree = "<group>"; };
+		99C74EF0219A702400DABE14 /* FixedTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTime.swift; sourceTree = "<group>"; };
+		99C74EF5219A70F100DABE14 /* VariableTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTime.swift; sourceTree = "<group>"; };
+		99C74EF7219A713D00DABE14 /* RandomTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTime.swift; sourceTree = "<group>"; };
 		99C74F10219A7DBB00DABE14 /* FixedTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F14219A7E1A00DABE14 /* VariableTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableTimeScheduleTests.swift; sourceTree = "<group>"; };
 		99C74F18219A7E6500DABE14 /* RandomTimeScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTimeScheduleTests.swift; sourceTree = "<group>"; };
@@ -630,29 +605,24 @@
 		999C7C6A21951CD90044C47E /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
+				993D6AB822EA714100FBC7A9 /* Alternative.swift */,
+				9966B92A2311BEF80077F7A2 /* Concurrent.swift */,
+				9966B9212311B71A0077F7A2 /* Conjunctive.swift */,
+				9905D99F21AE5500007961CE /* ContinuousReinforcement.swift */,
 				993E424E23141F3000811D65 /* DiscreteTrial.swift */,
-				993E425023141F3100811D65 /* TrialResponse.swift */,
-				993E424F23141F3100811D65 /* TrialTime.swift */,
-				993E42612314E89000811D65 /* TrialReinforcement.swift */,
-				993D6AB822EA714100FBC7A9 /* Alt.swift */,
-				9966B92A2311BEF80077F7A2 /* Conc.swift */,
-				9966B9212311B71A0077F7A2 /* Conj.swift */,
-				9905D99F21AE5500007961CE /* CRF.swift */,
-				999C7C6F21951CD90044C47E /* EXT.swift */,
-				999C7C6D21951CD90044C47E /* FI.swift */,
-				999C7C6E21951CD90044C47E /* FR.swift */,
-				99C74EF0219A702400DABE14 /* FT.swift */,
-				993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */,
-				999C7C6C21951CD90044C47E /* RI.swift */,
-				999C7C6B21951CD90044C47E /* RR.swift */,
-				99C74EF7219A713D00DABE14 /* RT.swift */,
+				999C7C6F21951CD90044C47E /* Extinction.swift */,
+				993EB60023152C0600811D65 /* FinishableCondition.swift */,
+				999C7C6D21951CD90044C47E /* FixedInterval.swift */,
+				999C7C6E21951CD90044C47E /* FixedRatio.swift */,
+				99C74EF0219A702400DABE14 /* FixedTime.swift */,
 				993E426E2314F63C00811D65 /* FreeOperant.swift */,
-				993E42732314F9F800811D65 /* SessionResponse.swift */,
-				993D6AB722EA714100FBC7A9 /* SessionTime.swift */,
-				9966B9422312AD230077F7A2 /* SessionReinforcement.swift */,
-				999C7C7121951CD90044C47E /* VI.swift */,
-				999C7C7021951CD90044C47E /* VR.swift */,
-				99C74EF5219A70F100DABE14 /* VT.swift */,
+				999C7C6C21951CD90044C47E /* RandomInterval.swift */,
+				999C7C6B21951CD90044C47E /* RandomRatio.swift */,
+				99C74EF7219A713D00DABE14 /* RandomTime.swift */,
+				993D6AB622EA714000FBC7A9 /* ReinforcementSchedule.swift */,
+				999C7C7121951CD90044C47E /* VariableInterval.swift */,
+				999C7C7021951CD90044C47E /* VariableRatio.swift */,
+				99C74EF5219A70F100DABE14 /* VariableTime.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -1133,40 +1103,35 @@
 			files = (
 				993E42702314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425423141F3700811D65 /* DiscreteTrial.swift in Sources */,
-				993D6ACA22EA714100FBC7A9 /* Alt.swift in Sources */,
+				993D6ACA22EA714100FBC7A9 /* Alternative.swift in Sources */,
 				99C7531221A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
-				9966B9232311B71A0077F7A2 /* Conj.swift in Sources */,
+				9966B9232311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6ADF22EA716700FBC7A9 /* Consequence.swift in Sources */,
-				9905D9A121AE5500007961CE /* CRF.swift in Sources */,
+				9905D9A121AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
 				99C7530A21A2C79800DABE14 /* CVDisplayLinkTimer.swift in Sources */,
-				999C7CB521951CDB0044C47E /* EXT.swift in Sources */,
-				999C7CAF21951CDB0044C47E /* FI.swift in Sources */,
+				999C7CB521951CDB0044C47E /* Extinction.swift in Sources */,
+				999C7CAF21951CDB0044C47E /* FixedInterval.swift in Sources */,
 				999C7CD021951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
-				999C7CB221951CDB0044C47E /* FR.swift in Sources */,
-				99C74EF3219A702C00DABE14 /* FT.swift in Sources */,
+				999C7CB221951CDB0044C47E /* FixedRatio.swift in Sources */,
+				99C74EF3219A702C00DABE14 /* FixedTime.swift in Sources */,
 				999C7D3321951CDC0044C47E /* Matrix.swift in Sources */,
-				993E425523141F3700811D65 /* TrialResponse.swift in Sources */,
 				993E424A2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7D2421951CDC0044C47E /* ObservableType+.swift in Sources */,
 				9905D99C21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
+				993EB60223152C0600811D65 /* FinishableCondition.swift in Sources */,
 				99C752F421A2C64E00DABE14 /* Priority.swift in Sources */,
 				996564D321A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
 				993D6AC222EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */,
 				993D6AD722EA716700FBC7A9 /* Response.swift in Sources */,
 				993D6AE322EA716700FBC7A9 /* ResponseCompatible+Rx.swift in Sources */,
 				993D6ADB22EA716700FBC7A9 /* ResponseCompatible.swift in Sources */,
-				999C7CAC21951CDB0044C47E /* RI.swift in Sources */,
-				9966B92C2311BEF80077F7A2 /* Conc.swift in Sources */,
-				999C7CA921951CDB0044C47E /* RR.swift in Sources */,
-				99C74F0C219A77B000DABE14 /* RT.swift in Sources */,
-				993E425623141F3700811D65 /* TrialTime.swift in Sources */,
-				993E42632314E89000811D65 /* TrialReinforcement.swift in Sources */,
+				999C7CAC21951CDB0044C47E /* RandomInterval.swift in Sources */,
+				9966B92C2311BEF80077F7A2 /* Concurrent.swift in Sources */,
+				999C7CA921951CDB0044C47E /* RandomRatio.swift in Sources */,
+				99C74F0C219A77B000DABE14 /* RandomTime.swift in Sources */,
 				999C7CC721951CDB0044C47E /* SessionEvents.swift in Sources */,
-				993D6AC622EA714100FBC7A9 /* SessionTime.swift in Sources */,
-				9966B9442312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AEF22EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D3021951CDC0044C47E /* Shared.swift in Sources */,
-				993E42752314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0B21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530321A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD322EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1175,9 +1140,9 @@
 				999C7D1E21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				99C752F921A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				999C7D2A21951CDC0044C47E /* UIViewController+Rx.swift in Sources */,
-				999C7CBB21951CDB0044C47E /* VI.swift in Sources */,
-				999C7CB821951CDB0044C47E /* VR.swift in Sources */,
-				99C74F0D219A77B300DABE14 /* VT.swift in Sources */,
+				999C7CBB21951CDB0044C47E /* VariableInterval.swift in Sources */,
+				999C7CB821951CDB0044C47E /* VariableRatio.swift in Sources */,
+				99C74F0D219A77B300DABE14 /* VariableTime.swift in Sources */,
 				99C7530E21A2C79800DABE14 /* WhileLoopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1219,40 +1184,35 @@
 			files = (
 				993E426F2314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425123141F3100811D65 /* DiscreteTrial.swift in Sources */,
-				993D6AC922EA714100FBC7A9 /* Alt.swift in Sources */,
+				993D6AC922EA714100FBC7A9 /* Alternative.swift in Sources */,
 				99C7531121A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
-				9966B9222311B71A0077F7A2 /* Conj.swift in Sources */,
+				9966B9222311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6ADE22EA716700FBC7A9 /* Consequence.swift in Sources */,
-				993E425323141F3100811D65 /* TrialResponse.swift in Sources */,
-				9905D9A021AE5500007961CE /* CRF.swift in Sources */,
+				9905D9A021AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
 				99C7530921A2C79800DABE14 /* CVDisplayLinkTimer.swift in Sources */,
-				999C7CB621951CDB0044C47E /* EXT.swift in Sources */,
-				999C7CB021951CDB0044C47E /* FI.swift in Sources */,
+				999C7CB621951CDB0044C47E /* Extinction.swift in Sources */,
+				999C7CB021951CDB0044C47E /* FixedInterval.swift in Sources */,
 				999C7CD121951CDB0044C47E /* FleshlerHoffman.swift in Sources */,
-				999C7CB321951CDB0044C47E /* FR.swift in Sources */,
-				99C74EF1219A702400DABE14 /* FT.swift in Sources */,
+				999C7CB321951CDB0044C47E /* FixedRatio.swift in Sources */,
+				99C74EF1219A702400DABE14 /* FixedTime.swift in Sources */,
 				999C7D3421951CDC0044C47E /* Matrix.swift in Sources */,
 				993E42492314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7D2521951CDC0044C47E /* ObservableType+.swift in Sources */,
 				9905D99B21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
+				993EB60123152C0600811D65 /* FinishableCondition.swift in Sources */,
 				99C752F321A2C64E00DABE14 /* Priority.swift in Sources */,
 				996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */,
 				993D6AC122EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */,
 				993D6AD622EA716700FBC7A9 /* Response.swift in Sources */,
 				993D6AE222EA716700FBC7A9 /* ResponseCompatible+Rx.swift in Sources */,
 				993D6ADA22EA716700FBC7A9 /* ResponseCompatible.swift in Sources */,
-				999C7CAD21951CDB0044C47E /* RI.swift in Sources */,
-				9966B92B2311BEF80077F7A2 /* Conc.swift in Sources */,
-				999C7CAA21951CDB0044C47E /* RR.swift in Sources */,
-				993E425223141F3100811D65 /* TrialTime.swift in Sources */,
-				99C74EF8219A713D00DABE14 /* RT.swift in Sources */,
-				993E42622314E89000811D65 /* TrialReinforcement.swift in Sources */,
+				999C7CAD21951CDB0044C47E /* RandomInterval.swift in Sources */,
+				9966B92B2311BEF80077F7A2 /* Concurrent.swift in Sources */,
+				999C7CAA21951CDB0044C47E /* RandomRatio.swift in Sources */,
+				99C74EF8219A713D00DABE14 /* RandomTime.swift in Sources */,
 				999C7CC821951CDB0044C47E /* SessionEvents.swift in Sources */,
-				993D6AC522EA714100FBC7A9 /* SessionTime.swift in Sources */,
-				9966B9432312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AEE22EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D3121951CDC0044C47E /* Shared.swift in Sources */,
-				993E42742314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0D21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530221A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD222EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1261,9 +1221,9 @@
 				999C7D1F21951CDC0044C47E /* UIApplication+Rx.swift in Sources */,
 				99C752F821A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				999C7D2B21951CDC0044C47E /* UIViewController+Rx.swift in Sources */,
-				999C7CBC21951CDB0044C47E /* VI.swift in Sources */,
-				999C7CB921951CDB0044C47E /* VR.swift in Sources */,
-				99C74EF6219A70F100DABE14 /* VT.swift in Sources */,
+				999C7CBC21951CDB0044C47E /* VariableInterval.swift in Sources */,
+				999C7CB921951CDB0044C47E /* VariableRatio.swift in Sources */,
+				99C74EF6219A70F100DABE14 /* VariableTime.swift in Sources */,
 				99C7530D21A2C79800DABE14 /* WhileLoopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1305,40 +1265,35 @@
 			files = (
 				993E42712314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425723141F3800811D65 /* DiscreteTrial.swift in Sources */,
-				993D6ACB22EA714100FBC7A9 /* Alt.swift in Sources */,
+				993D6ACB22EA714100FBC7A9 /* Alternative.swift in Sources */,
 				99C7531321A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
-				9966B9242311B71A0077F7A2 /* Conj.swift in Sources */,
+				9966B9242311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6AE022EA716700FBC7A9 /* Consequence.swift in Sources */,
-				9905D9A221AE5500007961CE /* CRF.swift in Sources */,
+				9905D9A221AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
 				99C7530B21A2C79800DABE14 /* CVDisplayLinkTimer.swift in Sources */,
-				999C7DA4219533150044C47E /* EXT.swift in Sources */,
-				999C7DA2219533150044C47E /* FI.swift in Sources */,
+				999C7DA4219533150044C47E /* Extinction.swift in Sources */,
+				999C7DA2219533150044C47E /* FixedInterval.swift in Sources */,
 				999C7DAD219533150044C47E /* FleshlerHoffman.swift in Sources */,
-				999C7DA3219533150044C47E /* FR.swift in Sources */,
-				99C74EF2219A702B00DABE14 /* FT.swift in Sources */,
+				999C7DA3219533150044C47E /* FixedRatio.swift in Sources */,
+				99C74EF2219A702B00DABE14 /* FixedTime.swift in Sources */,
 				999C7D9F219533150044C47E /* Matrix.swift in Sources */,
-				993E425823141F3800811D65 /* TrialResponse.swift in Sources */,
 				993E424B2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7D9A219533150044C47E /* ObservableType+.swift in Sources */,
 				9905D99D21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
+				993EB60323152C0600811D65 /* FinishableCondition.swift in Sources */,
 				99C752F521A2C64E00DABE14 /* Priority.swift in Sources */,
 				996564D421A63E3D004C76F0 /* PublishSubject+.swift in Sources */,
 				993D6AC322EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */,
 				993D6AD822EA716700FBC7A9 /* Response.swift in Sources */,
 				993D6AE422EA716700FBC7A9 /* ResponseCompatible+Rx.swift in Sources */,
 				993D6ADC22EA716700FBC7A9 /* ResponseCompatible.swift in Sources */,
-				999C7DA1219533150044C47E /* RI.swift in Sources */,
-				9966B92D2311BEF80077F7A2 /* Conc.swift in Sources */,
-				999C7DA0219533150044C47E /* RR.swift in Sources */,
-				99C74F0B219A77AF00DABE14 /* RT.swift in Sources */,
-				993E425923141F3800811D65 /* TrialTime.swift in Sources */,
-				993E42642314E89000811D65 /* TrialReinforcement.swift in Sources */,
+				999C7DA1219533150044C47E /* RandomInterval.swift in Sources */,
+				9966B92D2311BEF80077F7A2 /* Concurrent.swift in Sources */,
+				999C7DA0219533150044C47E /* RandomRatio.swift in Sources */,
+				99C74F0B219A77AF00DABE14 /* RandomTime.swift in Sources */,
 				999C7DAA219533150044C47E /* SessionEvents.swift in Sources */,
-				993D6AC722EA714100FBC7A9 /* SessionTime.swift in Sources */,
-				9966B9452312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AF022EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7D9E219533150044C47E /* Shared.swift in Sources */,
-				993E42762314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0E21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530421A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD422EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1347,9 +1302,9 @@
 				999C7D98219533150044C47E /* UIApplication+Rx.swift in Sources */,
 				99C752FA21A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				999C7D9C219533150044C47E /* UIViewController+Rx.swift in Sources */,
-				999C7DA6219533150044C47E /* VI.swift in Sources */,
-				999C7DA5219533150044C47E /* VR.swift in Sources */,
-				99C74F0E219A77B400DABE14 /* VT.swift in Sources */,
+				999C7DA6219533150044C47E /* VariableInterval.swift in Sources */,
+				999C7DA5219533150044C47E /* VariableRatio.swift in Sources */,
+				99C74F0E219A77B400DABE14 /* VariableTime.swift in Sources */,
 				99C7530F21A2C79800DABE14 /* WhileLoopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1391,40 +1346,35 @@
 			files = (
 				993E42722314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425A23141F3800811D65 /* DiscreteTrial.swift in Sources */,
-				993D6ACC22EA714100FBC7A9 /* Alt.swift in Sources */,
+				993D6ACC22EA714100FBC7A9 /* Alternative.swift in Sources */,
 				99C7531421A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
-				9966B9252311B71A0077F7A2 /* Conj.swift in Sources */,
+				9966B9252311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6AE122EA716700FBC7A9 /* Consequence.swift in Sources */,
-				9905D9A321AE5500007961CE /* CRF.swift in Sources */,
+				9905D9A321AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
 				99C7530C21A2C79800DABE14 /* CVDisplayLinkTimer.swift in Sources */,
-				999C7DF8219542610044C47E /* EXT.swift in Sources */,
-				999C7DF6219542610044C47E /* FI.swift in Sources */,
+				999C7DF8219542610044C47E /* Extinction.swift in Sources */,
+				999C7DF6219542610044C47E /* FixedInterval.swift in Sources */,
 				999C7E01219542610044C47E /* FleshlerHoffman.swift in Sources */,
-				999C7DF7219542610044C47E /* FR.swift in Sources */,
-				99C74EF4219A702D00DABE14 /* FT.swift in Sources */,
+				999C7DF7219542610044C47E /* FixedRatio.swift in Sources */,
+				99C74EF4219A702D00DABE14 /* FixedTime.swift in Sources */,
 				999C7DF3219542610044C47E /* Matrix.swift in Sources */,
-				993E425B23141F3800811D65 /* TrialResponse.swift in Sources */,
 				993E424C2314090900811D65 /* CompositeDisposable+.swift in Sources */,
 				999C7DEE219542610044C47E /* ObservableType+.swift in Sources */,
 				9905D99E21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
+				993EB60423152C0600811D65 /* FinishableCondition.swift in Sources */,
 				99C752F621A2C64E00DABE14 /* Priority.swift in Sources */,
 				996564D521A63E3E004C76F0 /* PublishSubject+.swift in Sources */,
 				993D6AC422EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */,
 				993D6AD922EA716700FBC7A9 /* Response.swift in Sources */,
 				993D6AE522EA716700FBC7A9 /* ResponseCompatible+Rx.swift in Sources */,
 				993D6ADD22EA716700FBC7A9 /* ResponseCompatible.swift in Sources */,
-				999C7DF5219542610044C47E /* RI.swift in Sources */,
-				9966B92E2311BEF80077F7A2 /* Conc.swift in Sources */,
-				999C7DF4219542610044C47E /* RR.swift in Sources */,
-				99C74F0A219A77AE00DABE14 /* RT.swift in Sources */,
-				993E425C23141F3800811D65 /* TrialTime.swift in Sources */,
-				993E42652314E89000811D65 /* TrialReinforcement.swift in Sources */,
+				999C7DF5219542610044C47E /* RandomInterval.swift in Sources */,
+				9966B92E2311BEF80077F7A2 /* Concurrent.swift in Sources */,
+				999C7DF4219542610044C47E /* RandomRatio.swift in Sources */,
+				99C74F0A219A77AE00DABE14 /* RandomTime.swift in Sources */,
 				999C7DFE219542610044C47E /* SessionEvents.swift in Sources */,
-				993D6AC822EA714100FBC7A9 /* SessionTime.swift in Sources */,
-				9966B9462312AD230077F7A2 /* SessionReinforcement.swift in Sources */,
 				993D6AF122EA719100FBC7A9 /* SessionTimer.swift in Sources */,
 				999C7DF2219542610044C47E /* Shared.swift in Sources */,
-				993E42772314F9F800811D65 /* SessionResponse.swift in Sources */,
 				99FE4C0C21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */,
 				99C7530521A2C69C00DABE14 /* TimeHelper.swift in Sources */,
 				993D6AD522EA716700FBC7A9 /* TimeInterval.swift in Sources */,
@@ -1433,9 +1383,9 @@
 				999C7DEC219542610044C47E /* UIApplication+Rx.swift in Sources */,
 				99C752FB21A2C66A00DABE14 /* UInt64+.swift in Sources */,
 				999C7DF0219542610044C47E /* UIViewController+Rx.swift in Sources */,
-				999C7DFA219542610044C47E /* VI.swift in Sources */,
-				999C7DF9219542610044C47E /* VR.swift in Sources */,
-				99C74F0F219A77B500DABE14 /* VT.swift in Sources */,
+				999C7DFA219542610044C47E /* VariableInterval.swift in Sources */,
+				999C7DF9219542610044C47E /* VariableRatio.swift in Sources */,
+				99C74F0F219A77B500DABE14 /* VariableTime.swift in Sources */,
 				99C7531021A2C79800DABE14 /* WhileLoopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

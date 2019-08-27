@@ -1,5 +1,5 @@
 //
-//  CRF.swift
+//  ContinuousReinforcement.swift
 //  OperantKit
 //
 //  Created by Yuto Mizutani on 2018/11/28.

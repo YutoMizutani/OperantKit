@@ -9,23 +9,19 @@ import Foundation
 
 import RxSwift
 
-public protocol FreeOperantCondition {
-    func condition(_ consequence: Consequence, lastSessionValue: Response) -> Bool
-}
-
 public enum SessionType {
     case time(TimeInterval)
     case response(Int)
     case reinforcement(Int)
 
-    var condition: FreeOperantCondition {
+    var condition: FinishableCondition {
         switch self {
         case .time(let v):
-            return SessionTimeCondition(v)
+            return FinishByTime(v)
         case .response(let v):
-            return SessionResponseCondition(v)
+            return FinishByResponse(v)
         case .reinforcement(let v):
-            return SessionReinforcementCondition(v)
+            return FinishByReinforcement(v)
         }
     }
 }
@@ -34,11 +30,49 @@ public extension ReinforcementSchedule {
     /// Free operant procedure
     ///
     /// - Complexity: O(1)
+    func sessions(by condition: FinishableCondition, numberOfSessions: Int) -> FreeOperant {
+        return FreeOperant(self,
+                           numberOfSessions: numberOfSessions,
+                           currentValue: 0,
+                           condition: condition)
+    }
+
+    /// Free operant procedure
+    ///
+    /// - Complexity: O(1)
     func sessions(by type: SessionType, numberOfSessions: Int) -> FreeOperant {
         return FreeOperant(self,
                            numberOfSessions: numberOfSessions,
                            currentValue: 0,
-                           sessionType: type)
+                           condition: type.condition)
+    }
+
+    /// Free operant procedure with session time
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: TimeInterval, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessions(by: .time(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session time
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: Seconds, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessionTime(.seconds(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session response
+    ///
+    /// - Complexity: O(1)
+    func sessionResponse(_ value: Int, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessions(by: .response(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session reinforcement
+    ///
+    /// - Complexity: O(1)
+    func sessionReinforcement(_ value: Int, numberOfSessions: Int = 1) -> FreeOperant {
+        return sessions(by: .reinforcement(value), numberOfSessions: numberOfSessions)
     }
 }
 
@@ -46,9 +80,45 @@ public extension ObservableType where Element == Consequence {
     /// Free operant procedure
     ///
     /// - Complexity: O(1)
-    func sessions(by type: SessionType, numberOfSessions: Int) -> Observable<Consequence> {
-        return FreeOperant(numberOfSessions: numberOfSessions, sessionType: type)
+    func sessions(by condition: FinishableCondition, numberOfSessions: Int) -> Observable<Consequence> {
+        return FreeOperant(numberOfSessions: numberOfSessions, condition: condition)
             .transform(asObservable())
+    }
+
+    /// Free operant procedure
+    ///
+    /// - Complexity: O(1)
+    func sessions(by type: SessionType, numberOfSessions: Int) -> Observable<Consequence> {
+        return FreeOperant(numberOfSessions: numberOfSessions, condition: type.condition)
+            .transform(asObservable())
+    }
+
+    /// Free operant procedure with session time
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: TimeInterval, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessions(by: .time(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session time
+    ///
+    /// - Complexity: O(1)
+    func sessionTime(_ value: Seconds, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessionTime(.seconds(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session response
+    ///
+    /// - Complexity: O(1)
+    func sessionResponse(_ value: Int, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessions(by: .response(value), numberOfSessions: numberOfSessions)
+    }
+
+    /// Free operant procedure with session reinforcement
+    ///
+    /// - Complexity: O(1)
+    func sessionReinforcement(_ value: Int, numberOfSessions: Int = 1) -> Observable<Consequence> {
+        return sessions(by: .reinforcement(value), numberOfSessions: numberOfSessions)
     }
 }
 
@@ -64,27 +134,27 @@ public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementS
 
     public let schedule: ScheduleType!
     public let numberOfSessions: Int
-    public let condition: FreeOperantCondition
+    public let condition: FinishableCondition
 
     private var currentValue: Int
 
     public init(_ schedule: ScheduleType,
                 numberOfSessions: Int = 1,
                 currentValue: Int = 0,
-                sessionType: SessionType) {
+                condition: FinishableCondition) {
         self.schedule = schedule
         self.numberOfSessions = numberOfSessions
         self.currentValue = currentValue
-        self.condition = sessionType.condition
+        self.condition = condition
     }
 
     fileprivate init(numberOfSessions: Int = 1,
                      currentValue: Int = 0,
-                     sessionType: SessionType) {
+                     condition: FinishableCondition) {
         self.schedule = nil
         self.numberOfSessions = numberOfSessions
         self.currentValue = currentValue
-        self.condition = sessionType.condition
+        self.condition = condition
     }
 
     func completeMap(_ source: Observable<Consequence>) -> Observable<Consequence> {
@@ -121,7 +191,7 @@ public final class FreeOperant: DeinitDisposable, SessionStoreableReinforcementS
             currentValue += 1
         }
 
-        if condition.condition(consequence, lastSessionValue: lastSessionValue) {
+        if condition.canFinish(consequence, lastValue: lastSessionValue) {
             update(consequence.response)
         }
     }
