@@ -76,6 +76,7 @@ final class ObservableTypeTests: XCTestCase {
         scheduler.scheduleAt(startTime) {
             testObservable
                 .getTime(timer)
+                .map { $0.value }
                 .subscribe(observer)
                 .disposed(by: disposeBag)
         }

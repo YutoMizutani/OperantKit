@@ -10,18 +10,20 @@ import RxSwift
 public protocol SessionTimer {
     /// Timer priority
     var priority: Priority { get set }
-    /// Observable elapsed milliseconds time
-    var milliseconds: PublishSubject<Milliseconds> { get }
+    /// Observable elapsed all time
+    var realTime: Observable<RealTime> { get }
+    /// Observable elapsed session time
+    var sessionTime: Observable<SessionTime> { get }
     /// Start timer
     func start() -> Single<Void>
     /// Get elapsed time
-    func elapsed() -> Single<Int>
-    /// Callback delay time
-    func delay(_ value: Int, currentTime: Int) -> Single<Int>
+    func elapsed() -> Single<SessionTime>
+    /// Stop timer and callback real time
+    func delay(_ value: Milliseconds, currentTime: SessionTime) -> Single<RealTime>
     /// Pause timer
-    func pause() -> Single<Int>
+    func pause() -> Single<RealTime>
     /// Resume timer
-    func resume() -> Single<Int>
+    func resume() -> Single<RealTime>
     /// Finish timer
-    func finish() -> Single<Int>
+    func finish() -> Single<RealTime>
 }

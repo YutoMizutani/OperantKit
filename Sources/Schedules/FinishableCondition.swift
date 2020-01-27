@@ -31,15 +31,15 @@ public struct FinishByResponse: FinishableCondition {
 ///
 /// - Complexity: O(1)
 public struct FinishByTime: FinishableCondition {
-    private let value: TimeInterval
+    private let value: SessionTime
 
     public init(_ value: TimeInterval) {
-        self.value = value
+        self.value = SessionTime(value.milliseconds)
     }
 
     public func canFinish(_ consequence: Consequence, lastEventValue: Response) -> Bool {
         let current: Response = consequence.response.asResponse() - lastEventValue
-        return current.milliseconds >= value.milliseconds
+        return current.sessionTime >= value
     }
 }
 

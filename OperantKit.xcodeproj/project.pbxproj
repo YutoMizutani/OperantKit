@@ -270,6 +270,14 @@
 		99C7531221A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimer.swift */; };
 		99C7531321A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimer.swift */; };
 		99C7531421A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimer.swift */; };
+		99C966B923DE957300F0F9F6 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966B823DE957300F0F9F6 /* RealTime.swift */; };
+		99C966BB23DE968900F0F9F6 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966BA23DE968900F0F9F6 /* SessionTime.swift */; };
+		99C966BC23DEB83F00F0F9F6 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966BA23DE968900F0F9F6 /* SessionTime.swift */; };
+		99C966BD23DEB84000F0F9F6 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966BA23DE968900F0F9F6 /* SessionTime.swift */; };
+		99C966BE23DEB84100F0F9F6 /* SessionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966BA23DE968900F0F9F6 /* SessionTime.swift */; };
+		99C966BF23DEB84400F0F9F6 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966B823DE957300F0F9F6 /* RealTime.swift */; };
+		99C966C023DEB84500F0F9F6 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966B823DE957300F0F9F6 /* RealTime.swift */; };
+		99C966C123DEB84600F0F9F6 /* RealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C966B823DE957300F0F9F6 /* RealTime.swift */; };
 		99FE4C0B21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimer.swift */; };
 		99FE4C0C21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimer.swift */; };
 		99FE4C0D21AEDDCE00DDA6B5 /* StepTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimer.swift */; };
@@ -392,6 +400,8 @@
 		99C7530621A2C79700DABE14 /* CVDisplayLinkTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVDisplayLinkTimer.swift; sourceTree = "<group>"; };
 		99C7530721A2C79700DABE14 /* WhileLoopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhileLoopTimer.swift; sourceTree = "<group>"; };
 		99C7530821A2C79800DABE14 /* CADisplayLinkTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CADisplayLinkTimer.swift; sourceTree = "<group>"; };
+		99C966B823DE957300F0F9F6 /* RealTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTime.swift; sourceTree = "<group>"; };
+		99C966BA23DE968900F0F9F6 /* SessionTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTime.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -719,6 +729,8 @@
 				993D6ACD22EA716700FBC7A9 /* TimeInterval.swift */,
 				99C7519521A07A5600DABE14 /* Times.swift */,
 				993E4243231408C400811D65 /* DeinitDisposable.swift */,
+				99C966B823DE957300F0F9F6 /* RealTime.swift */,
+				99C966BA23DE968900F0F9F6 /* SessionTime.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1104,7 +1116,9 @@
 				993E42702314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425423141F3700811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACA22EA714100FBC7A9 /* Alternative.swift in Sources */,
+				99C966BC23DEB83F00F0F9F6 /* SessionTime.swift in Sources */,
 				99C7531221A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
+				99C966BF23DEB84400F0F9F6 /* RealTime.swift in Sources */,
 				9966B9232311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6ADF22EA716700FBC7A9 /* Consequence.swift in Sources */,
 				9905D9A121AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
@@ -1200,12 +1214,14 @@
 				999C7D2521951CDC0044C47E /* ObservableType+.swift in Sources */,
 				9905D99B21AE42AC007961CE /* PrimitiveSequence+.swift in Sources */,
 				993EB60123152C0600811D65 /* FinishableCondition.swift in Sources */,
+				99C966BB23DE968900F0F9F6 /* SessionTime.swift in Sources */,
 				99C752F321A2C64E00DABE14 /* Priority.swift in Sources */,
 				996564D221A63E39004C76F0 /* PublishSubject+.swift in Sources */,
 				993D6AC122EA714100FBC7A9 /* ReinforcementSchedule.swift in Sources */,
 				993D6AD622EA716700FBC7A9 /* Response.swift in Sources */,
 				993D6AE222EA716700FBC7A9 /* ResponseCompatible+Rx.swift in Sources */,
 				993D6ADA22EA716700FBC7A9 /* ResponseCompatible.swift in Sources */,
+				99C966B923DE957300F0F9F6 /* RealTime.swift in Sources */,
 				999C7CAD21951CDB0044C47E /* RandomInterval.swift in Sources */,
 				9966B92B2311BEF80077F7A2 /* Concurrent.swift in Sources */,
 				999C7CAA21951CDB0044C47E /* RandomRatio.swift in Sources */,
@@ -1266,7 +1282,9 @@
 				993E42712314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425723141F3800811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACB22EA714100FBC7A9 /* Alternative.swift in Sources */,
+				99C966BD23DEB84000F0F9F6 /* SessionTime.swift in Sources */,
 				99C7531321A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
+				99C966C023DEB84500F0F9F6 /* RealTime.swift in Sources */,
 				9966B9242311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6AE022EA716700FBC7A9 /* Consequence.swift in Sources */,
 				9905D9A221AE5500007961CE /* ContinuousReinforcement.swift in Sources */,
@@ -1347,7 +1365,9 @@
 				993E42722314F63C00811D65 /* FreeOperant.swift in Sources */,
 				993E425A23141F3800811D65 /* DiscreteTrial.swift in Sources */,
 				993D6ACC22EA714100FBC7A9 /* Alternative.swift in Sources */,
+				99C966BE23DEB84100F0F9F6 /* SessionTime.swift in Sources */,
 				99C7531421A2C79800DABE14 /* CADisplayLinkTimer.swift in Sources */,
+				99C966C123DEB84600F0F9F6 /* RealTime.swift in Sources */,
 				9966B9252311B71A0077F7A2 /* Conjunctive.swift in Sources */,
 				993D6AE122EA716700FBC7A9 /* Consequence.swift in Sources */,
 				9905D9A321AE5500007961CE /* ContinuousReinforcement.swift in Sources */,

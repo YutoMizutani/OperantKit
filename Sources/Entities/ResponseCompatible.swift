@@ -11,8 +11,8 @@ import Foundation
 public protocol ResponseCompatible {
     /// Number of responses
     var numberOfResponses: Int { get set }
-    /// Response time milliseconds
-    var milliseconds: Milliseconds { get set }
+    /// Response time of the session
+    var sessionTime: SessionTime { get set }
 }
 
 public extension ResponseCompatible {

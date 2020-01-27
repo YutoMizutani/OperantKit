@@ -13,17 +13,23 @@ import RxSwift
 public class CADisplayLinkTimer: SessionTimer {
     private typealias StackItem = (milliseconds: Milliseconds, closure: (() -> Void))
     private var lock = NSLock()
+    private var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
     private var stack: [StackItem] = []
-    private var modifiedStartTime: UInt64 = 0
+    private var totalSleepTime: Milliseconds = 0
     private var startSleepTime: UInt64 = 0
     private var displayLink: CADisplayLink!
     public var startTime: UInt64 = 0
     public var priority: Priority
-    public var milliseconds: PublishSubject<Milliseconds> = PublishSubject<Milliseconds>()
+    public var realTime: Observable<RealTime> { milliseconds.map { RealTime($0) } }
+    public var sessionTime: Observable<SessionTime> { milliseconds.map { [unowned self] in SessionTime($0 - self.totalSleepTime) } }
 
     public init(priority: Priority = .default) {
         self.priority = priority
         _ = TimeHelper.shared
+    }
+
+    private func sessionTime(from realTime: RealTime) -> SessionTime {
+        SessionTime(realTime.value - totalSleepTime)
     }
 }
 
@@ -51,12 +57,12 @@ private extension CADisplayLinkTimer {
 
     /// Get elapsed time milliseconds
     func getElapsedMilliseconds() -> Milliseconds {
-        return (mach_absolute_time() - modifiedStartTime).milliseconds
+        return mach_absolute_time().milliseconds - totalSleepTime
     }
 
     /// Get elapsed time milliseconds
     func getElapsed(with time: UInt64) -> Milliseconds {
-        return (time - modifiedStartTime).milliseconds
+        return time.milliseconds - totalSleepTime
     }
 
     /// Update time with main loop
@@ -90,7 +96,7 @@ public extension CADisplayLinkTimer {
                 self.displayLink.preferredFramesPerSecond = Int(v)
             }
             self.startTime = mach_absolute_time()
-            self.modifiedStartTime = self.startTime
+            self.totalSleepTime = 0
             self.displayLink?.add(to: .current, forMode: .default)
             single(.success(()))
 
@@ -98,36 +104,37 @@ public extension CADisplayLinkTimer {
         }
     }
 
-    func elapsed() -> Single<Milliseconds> {
+    func elapsed() -> Single<SessionTime> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
-            single(.success(self.getElapsedMilliseconds()))
+            single(.success(self.sessionTime(from: RealTime(self.getElapsedMilliseconds()))))
 
             return Disposables.create()
         }
     }
 
-    func delay(_ value: Milliseconds, currentTime: Milliseconds) -> Single<Milliseconds> {
+    func delay(_ value: Milliseconds, currentTime: SessionTime) -> Single<RealTime> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
                 return Disposables.create()
             }
 
-            let milliseconds = value + currentTime
+            let milliseconds = value + currentTime.value
+            self.totalSleepTime += value
             self.stack.append((milliseconds, {
-                single(.success(milliseconds))
+                single(.success(RealTime(milliseconds)))
             }))
 
             return Disposables.create()
         }
     }
 
-    func pause() -> Single<Milliseconds> {
+    func pause() -> Single<RealTime> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -137,13 +144,13 @@ public extension CADisplayLinkTimer {
             self.displayLink?.isPaused = true
             let paused = mach_absolute_time()
             self.startSleepTime = paused
-            single(.success(self.getElapsed(with: paused)))
+            single(.success(RealTime(self.getElapsed(with: paused))))
 
             return Disposables.create()
         }
     }
 
-    func resume() -> Single<Milliseconds> {
+    func resume() -> Single<RealTime> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -151,15 +158,15 @@ public extension CADisplayLinkTimer {
             }
 
             let resumed = mach_absolute_time()
-            self.modifiedStartTime -= resumed - self.startSleepTime
+            self.totalSleepTime += (resumed - self.startSleepTime).milliseconds
             self.displayLink?.isPaused = false
-            single(.success(self.getElapsed(with: resumed)))
+            single(.success(RealTime(self.getElapsed(with: resumed))))
 
             return Disposables.create()
         }
     }
 
-    func finish() -> Single<Milliseconds> {
+    func finish() -> Single<RealTime> {
         return Single.create { [weak self] single in
             guard let self = self else {
                 single(.error(RxError.noElements))
@@ -168,7 +175,7 @@ public extension CADisplayLinkTimer {
 
             let finishedTime = self.getElapsedMilliseconds()
             self.displayLink = nil
-            single(.success(finishedTime))
+            single(.success(RealTime(finishedTime)))
 
             return Disposables.create()
         }

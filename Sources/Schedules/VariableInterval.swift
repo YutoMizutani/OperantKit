@@ -48,11 +48,11 @@ public typealias VI = VariableInterval
 public final class VariableInterval: ReinforcementSchedule, LastEventComparable {
     public var lastEventValue: Response = .zero
 
-    private let values: [Milliseconds]
+    private let values: [SessionTime]
     private var index: Int = 0
 
     public init(_ values: [Milliseconds]) {
-        self.values = values
+        self.values = values.map { SessionTime($0) }
     }
 
     public convenience init(_ value: TimeInterval, iterations: Int = 12) {
@@ -66,7 +66,7 @@ public final class VariableInterval: ReinforcementSchedule, LastEventComparable 
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastEventValue
-        let isReinforcement: Bool = current.numberOfResponses > 0 && current.milliseconds >= values[index]
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.sessionTime >= values[index]
         if isReinforcement {
             return .reinforcement(response)
         } else {

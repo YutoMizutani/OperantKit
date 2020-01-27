@@ -29,11 +29,11 @@ public final class RandomTime: ReinforcementSchedule, LastEventComparable {
     public var lastEventValue: Response = .zero
 
     private let value: TimeInterval
-    private var currentRandom: Milliseconds
+    private var currentRandom: SessionTime
 
     public init(_ value: TimeInterval) {
         self.value = value
-        self.currentRandom = nextRandom(value)
+        self.currentRandom = SessionTime(nextRandom(value))
     }
 
     public convenience init(_ value: Seconds) {
@@ -42,7 +42,7 @@ public final class RandomTime: ReinforcementSchedule, LastEventComparable {
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastEventValue
-        let isReinforcement: Bool = current.milliseconds >= currentRandom
+        let isReinforcement: Bool = current.sessionTime >= currentRandom
         if isReinforcement {
             return .reinforcement(response)
         } else {
@@ -52,7 +52,7 @@ public final class RandomTime: ReinforcementSchedule, LastEventComparable {
 
     public func updateLastEvent(_ consequence: Consequence) {
         func update(_ response: ResponseCompatible) {
-            currentRandom = nextRandom(value)
+            currentRandom = SessionTime(nextRandom(value))
             lastEventValue = response.asResponse()
         }
 

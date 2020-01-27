@@ -28,10 +28,10 @@ public typealias FT = FixedTime
 public final class FixedTime: ReinforcementSchedule, LastEventComparable {
     public var lastEventValue: Response = .zero
 
-    private let value: TimeInterval
+    private let value: SessionTime
 
     public init(_ value: TimeInterval) {
-        self.value = value
+        self.value = SessionTime(value.milliseconds)
     }
 
     public convenience init(_ value: Seconds) {
@@ -40,7 +40,7 @@ public final class FixedTime: ReinforcementSchedule, LastEventComparable {
 
     private func outcome(_ response: ResponseCompatible) -> Consequence {
         let current: Response = response.asResponse() - lastEventValue
-        let isReinforcement: Bool = current.milliseconds >= value.milliseconds
+        let isReinforcement: Bool = current.sessionTime >= value
         if isReinforcement {
             return .reinforcement(response)
         } else {

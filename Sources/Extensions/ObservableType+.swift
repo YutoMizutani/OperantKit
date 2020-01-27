@@ -47,7 +47,7 @@ public extension ObservableType {
     }
 
     /// Get time
-    func getTime(_ timer: SessionTimer) -> Observable<Milliseconds> {
+    func getTime(_ timer: SessionTimer) -> Observable<SessionTime> {
         return flatMap { _ in timer.elapsed() }
     }
 
@@ -55,7 +55,7 @@ public extension ObservableType {
     func response(_ timer: SessionTimer) -> Observable<Response> {
         let shared = share(replay: 1)
         return Observable.zip(shared.count(), shared.getTime(timer)) { a, b in
-            Response(numberOfResponses: a, milliseconds: b)
+            Response(numberOfResponses: a, sessionTime: b)
         }
     }
 }
