@@ -1,0 +1,25 @@
+//
+//  ObservableType+.swift
+//  OperantKit
+//
+//  Created by Yuto Mizutani on 2018/10/27.
+//  Copyright © 2018 Yuto Mizutani. All rights reserved.
+//
+
+import RxCocoa
+import RxSwift
+
+public extension ObservableType {
+    func mapToVoid() -> Observable<Void> {
+        return map { _ in }
+    }
+
+    func asDriverOnErrorJustComplete() -> Driver<E> {
+        return asDriver { error in
+            #if DEBUG
+            assertionFailure("Error \(error)")
+            #endif
+            return Driver.empty()
+        }
+    }
+}

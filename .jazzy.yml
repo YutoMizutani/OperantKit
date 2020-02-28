@@ -1,8 +1,0 @@
-module: OperantKit
-author: Yuto Mizutani
-author_url: https://github.com/YutoMizutani
-github_url: https://github.com/YutoMizutani/OperantKit
-copyright: '© 2018 Yuto Mizutani released under the MIT license.'
-theme: fullwidth
-clean: true
-output: ./docs
