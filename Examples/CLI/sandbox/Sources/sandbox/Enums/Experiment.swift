@@ -9,8 +9,6 @@ import OperantKit
 
 enum Experiment: Int, CaseIterable {
     case fixedRatio = 1
-    case fixedInterval
-    case fixedTime
 }
 
 extension Experiment {
@@ -18,10 +16,6 @@ extension Experiment {
         switch self {
         case .fixedRatio:
             ExperimentFR.run()
-        case .fixedInterval:
-            ExperimentFI.run()
-        case .fixedTime:
-            ExperimentFT.run()
         }
     }
 
@@ -29,10 +23,6 @@ extension Experiment {
         switch self {
         case .fixedRatio:
             return .fixedRatio
-        case .fixedInterval:
-            return .fixedInterval
-        case .fixedTime:
-            return .fixedTime
         }
     }
 

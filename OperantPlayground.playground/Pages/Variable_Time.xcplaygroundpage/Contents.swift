@@ -35,7 +35,7 @@ example("VT - Method chaining on the Rx stream") {
     let order = 0
 
     _ = Observable.of(0, 1000, 2000, 3000, 4000)
-        .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
+        .map { ResponseEntity(numberOfResponses: 0, milliseconds: $0) }
         .map { Single.just($0) }
         // The value is computed constant value. If input `VT(2)` is equal to `FT(2)`
         .flatMap { $0.VT(values[order]) }
@@ -50,7 +50,7 @@ example("VT - Method chaining on the Rx stream") {
  */
 example("VT - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = VT(2000, values: [1000, 2000])
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

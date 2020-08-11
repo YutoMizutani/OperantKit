@@ -11,21 +11,25 @@ import RxCocoa
 
 struct ExperimentFR {
     init(_ value: Int) {
-        let timer = WhileLoopTimerUseCase(priority: .low)
-        let schedule: ScheduleUseCase = FR(value)
+        let timer = WhileLoopTimer(priority: .low)
         let responseAction = PublishSubject<Void>()
         let startTimerAction = PublishSubject<Void>()
         let finishTimerAction = PublishSubject<Void>()
         let disposeBag = DisposeBag()
 
         let response = responseAction.response(timer)
-            .do(onNext: { print("Response: \($0.numOfResponses), \($0.milliseconds)ms") })
+            .do(onNext: { print("Response: \($0.numberOfResponses), \($0.milliseconds)ms") })
 
-        response
-            .flatMap { schedule.decision($0) }
-            .filter({ $0.isReinforcement })
+        let consequence = FR(value)
+            .sessionTime(.seconds(2))
+            .transform(response)
+
+        consequence
+            .filter { $0.isReinforcement }
             .subscribe(onNext: {
-                print("Reinforcement: \($0.entity.milliseconds)ms")
+                print("Reinforcement: \($0.response.milliseconds) ms")
+            }, onCompleted: {
+                print("Session finished!")
             })
             .disposed(by: disposeBag)
 

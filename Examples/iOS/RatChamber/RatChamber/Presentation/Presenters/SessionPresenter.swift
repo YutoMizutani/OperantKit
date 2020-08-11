@@ -14,7 +14,7 @@ public typealias ResponseDetail = (count: Int, time: Milliseconds)
 
 final class SessionPresenter: Presenter {
     typealias ScheduleUseCaseType = ConcurrentScheduleUseCase
-    typealias TimerUseCaseType = TimerUseCase
+    typealias SessionTimerType = SessionTimer
     typealias WireframeType = EmptyWireframe
 
     // TODO: REMOVE
@@ -37,35 +37,35 @@ final class SessionPresenter: Presenter {
     }
 
     private let scheduleUseCase: ScheduleUseCaseType
-    private let timerUseCase: TimerUseCaseType
+    private let timer: SessionTimerType
     private let wireframe: WireframeType
     private let disposeBag = DisposeBag()
 
     init(scheduleUseCase: ScheduleUseCaseType,
-         timerUseCase: TimerUseCaseType,
+         timer: SessionTimerType,
          wireframe: WireframeType) {
         self.scheduleUseCase = scheduleUseCase
-        self.timerUseCase = timerUseCase
+        self.timer = timer
         self.wireframe = wireframe
     }
 
     func transform(input: SessionPresenter.Input) -> SessionPresenter.Output {
         let start: Driver<Void> = input.startTrigger.asObservable()
-            .flatMap { [unowned self] in self.timerUseCase.start() }
+            .flatMap { [unowned self] in self.timer.start() }
             .asDriverOnErrorJustComplete()
 
         let pause: Driver<Void> = input.pauseTrigger.asObservable()
-            .flatMap { [unowned self] in self.timerUseCase.pause() }
+            .flatMap { [unowned self] in self.timer.pause() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let resume: Driver<Void> = input.resumeTrigger.asObservable()
-            .flatMap { [unowned self] in self.timerUseCase.resume() }
+            .flatMap { [unowned self] in self.timer.resume() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
         let end: Driver<Void> = input.endTrigger.asObservable()
-            .flatMap { [unowned self] in self.timerUseCase.finish() }
+            .flatMap { [unowned self] in self.timer.finish() }
             .mapToVoid()
             .asDriverOnErrorJustComplete()
 
@@ -73,10 +73,10 @@ final class SessionPresenter: Presenter {
 
         input.responseTriggers.enumerated().forEach { [unowned self] i, e in
             let response: Observable<ResponseEntity> = e.asObservable()
-                .response(self.timerUseCase)
+                .response(self.timer)
                 .do(onNext: { print("Response(\(i)): (\($0.numOfResponses), \($0.milliseconds))") })
 
-            let milliseconds: Observable<ResponseEntity> = self.timerUseCase.milliseconds.shared
+            let milliseconds: Observable<ResponseEntity> = self.timer.milliseconds.shared
                 .map { ResponseEntity(0, $0) }
 
             let reinforcement: Observable<ResponseEntity> = Observable.merge(response, milliseconds)
@@ -95,7 +95,7 @@ final class SessionPresenter: Presenter {
                 .flatMap { [unowned self] r in
                     return Single.zip(
                         self.scheduleUseCase.addExtendsValue(ResponseEntity(0, interReinforcementInterval), isNext: false),
-                        self.timerUseCase.delay(interReinforcementInterval, currentTime: r.milliseconds)
+                        self.timer.delay(interReinforcementInterval, currentTime: r.milliseconds)
                     )
                     .map { $0.1 }
                 }

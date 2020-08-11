@@ -4,34 +4,89 @@ import XCTest
 @testable import OperantKit
 
 final class FixedIntervalScheduleTests: XCTestCase {
-    func testFI() {
+    func testStructFI() {
         let scheduler = TestScheduler(initialClock: 0)
         let observer = scheduler.createObserver(Bool.self)
         let startTime: TestTime = 0
         let completedTime: TestTime = 10000
         let disposeBag = DisposeBag()
 
-        let schedule: ScheduleUseCase = FI(5)
+        let testObservable = scheduler.createHotObservable([
+            Recorded.next(100, Response(numberOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, Response(numberOfResponses: 0, milliseconds: 6000)),
+            Recorded.next(300, Response(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, Response(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(500, Response(numberOfResponses: 0, milliseconds: 1000000)),
+            Recorded.next(600, Response(numberOfResponses: 0, milliseconds: 1000001)),
+            Recorded.next(1000, Response(numberOfResponses: 1, milliseconds: 5000000)),
+            Recorded.next(2000, Response(numberOfResponses: 2, milliseconds: 5005000)),
+            Recorded.next(3000, Response(numberOfResponses: 3, milliseconds: 10000000)),
+            Recorded.next(4000, Response(numberOfResponses: 4, milliseconds: 10000000)),
+            Recorded.next(5000, Response(numberOfResponses: 5, milliseconds: 1000000000)),
+            Recorded.next(6000, Response(numberOfResponses: 6, milliseconds: 1000000001)),
+            Recorded.completed(completedTime)
+            ])
+
+        let consequenceObservable: Observable<Consequence> = FI(.seconds(5))
+            .transform(testObservable.asObservable())
+
+        scheduler.scheduleAt(startTime) {
+            consequenceObservable
+                .map { $0.isReinforcement }
+                .subscribe(observer)
+                .disposed(by: disposeBag)
+        }
+        scheduler.start()
+
+        let expectedEvents = [
+            Recorded.next(100, false),
+            Recorded.next(200, false),
+            Recorded.next(300, false),
+            Recorded.next(400, false),
+            Recorded.next(500, false),
+            Recorded.next(600, false),
+            Recorded.next(1000, true),
+            Recorded.next(2000, true),
+            Recorded.next(3000, true),
+            Recorded.next(4000, false),
+            Recorded.next(5000, true),
+            Recorded.next(6000, false),
+            Recorded.completed(completedTime)
+        ]
+        XCTAssertEqual(observer.events, expectedEvents)
+
+        let expectedSubscriptions = [
+            Subscription(startTime, completedTime)
+        ]
+        XCTAssertEqual(testObservable.subscriptions, expectedSubscriptions)
+    }
+
+    func testMethodChainFI() {
+        let scheduler = TestScheduler(initialClock: 0)
+        let observer = scheduler.createObserver(Bool.self)
+        let startTime: TestTime = 0
+        let completedTime: TestTime = 10000
+        let disposeBag = DisposeBag()
 
         let testObservable = scheduler.createHotObservable([
-            Recorded.next(100, ResponseEntity(numOfResponses: 0, milliseconds: 5000)),
-            Recorded.next(200, ResponseEntity(numOfResponses: 0, milliseconds: 6000)),
-            Recorded.next(300, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(400, ResponseEntity(numOfResponses: 0, milliseconds: 10000)),
-            Recorded.next(500, ResponseEntity(numOfResponses: 0, milliseconds: 1000000)),
-            Recorded.next(600, ResponseEntity(numOfResponses: 0, milliseconds: 1000001)),
-            Recorded.next(1000, ResponseEntity(numOfResponses: 1, milliseconds: 5000000)),
-            Recorded.next(2000, ResponseEntity(numOfResponses: 2, milliseconds: 5005000)),
-            Recorded.next(3000, ResponseEntity(numOfResponses: 3, milliseconds: 10000000)),
-            Recorded.next(4000, ResponseEntity(numOfResponses: 4, milliseconds: 10000000)),
-            Recorded.next(5000, ResponseEntity(numOfResponses: 5, milliseconds: 1000000000)),
-            Recorded.next(6000, ResponseEntity(numOfResponses: 6, milliseconds: 1000000001)),
+            Recorded.next(100, Response(numberOfResponses: 0, milliseconds: 5000)),
+            Recorded.next(200, Response(numberOfResponses: 0, milliseconds: 6000)),
+            Recorded.next(300, Response(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(400, Response(numberOfResponses: 0, milliseconds: 10000)),
+            Recorded.next(500, Response(numberOfResponses: 0, milliseconds: 1000000)),
+            Recorded.next(600, Response(numberOfResponses: 0, milliseconds: 1000001)),
+            Recorded.next(1000, Response(numberOfResponses: 1, milliseconds: 5000000)),
+            Recorded.next(2000, Response(numberOfResponses: 2, milliseconds: 5005000)),
+            Recorded.next(3000, Response(numberOfResponses: 3, milliseconds: 10000000)),
+            Recorded.next(4000, Response(numberOfResponses: 4, milliseconds: 10000000)),
+            Recorded.next(5000, Response(numberOfResponses: 5, milliseconds: 1000000000)),
+            Recorded.next(6000, Response(numberOfResponses: 6, milliseconds: 1000000001)),
             Recorded.completed(completedTime)
             ])
 
         scheduler.scheduleAt(startTime) {
             testObservable
-                .flatMap { schedule.decision($0) }
+                .fixedInterval(.seconds(5))
                 .map { $0.isReinforcement }
                 .subscribe(observer)
                 .disposed(by: disposeBag)

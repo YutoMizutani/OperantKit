@@ -1,0 +1,75 @@
+//
+//  RandomRatio.swift
+//  OperantKit
+//
+//  Created by Yuto Mizutani on 2018/11/04.
+//
+
+import RxSwift
+
+@inline(__always)
+private func nextRandom(_ value: Int) -> Int {
+    return Int.random(in: 1...value)
+}
+
+public extension ObservableType where Element: ResponseCompatible {
+    /// Random ratio schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    func randomRatio(_ value: Int) -> Observable<Consequence> {
+        return RR(value).transform(asResponse())
+    }
+}
+
+/// Random ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public typealias RR = RandomRatio
+
+/// Random ratio schedule
+///
+/// - Parameter value: Reinforcement value
+public final class RandomRatio: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
+
+    private let value: Int
+    private var currentRandom: Int
+
+    public init(_ value: Int) {
+        self.value = value
+        currentRandom = nextRandom(value)
+    }
+
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        let current: Response = response.asResponse() - lastEventValue
+        let isReinforcement: Bool = current.numberOfResponses > 0 && current.numberOfResponses >= currentRandom
+        if isReinforcement {
+            return .reinforcement(response)
+        } else {
+            return .none(response)
+        }
+    }
+
+    public func updateLastEvent(_ consequence: Consequence) {
+        func update(_ response: ResponseCompatible) {
+            currentRandom = nextRandom(value)
+            lastEventValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome: Observable<Consequence> = source.map { self.outcome($0) }
+
+        if isAutoUpdateReinforcementValue {
+            outcome = outcome
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
+        }
+
+        return outcome.share(replay: 1, scope: .whileConnected)
+    }
+}

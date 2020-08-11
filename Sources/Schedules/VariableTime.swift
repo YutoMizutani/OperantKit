@@ -1,0 +1,89 @@
+//
+//  VariableTime.swift
+//  OperantKit
+//
+//  Created by Yuto Mizutani on 2018/11/13.
+//
+
+import RxSwift
+
+public extension ObservableType where Element: ResponseCompatible {
+    /// Variable time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    func variableTime(_ value: TimeInterval, iterations: Int = 12) -> Observable<Consequence> {
+        return VT(value, iterations: iterations).transform(asResponse())
+    }
+
+    /// Variable time schedule
+    ///
+    /// - Parameter value: Reinforcement value
+    /// - Complexity: O(1)
+    func variableTime(_ values: [Milliseconds]) -> Observable<Consequence> {
+        return VT(values).transform(asResponse())
+    }
+}
+
+/// Variable time schedule
+///
+/// - Parameter value: Reinforcement value
+public typealias VT = VariableTime
+
+/// Variable time schedule
+///
+/// - Parameter value: Reinforcement value
+public final class VariableTime: ReinforcementSchedule, LastEventComparable {
+    public var lastEventValue: Response = .zero
+
+    private let values: [SessionTime]
+    private var index: Int = 0
+
+    public init(_ values: [Milliseconds]) {
+        self.values = values.map { SessionTime($0) }
+    }
+
+    public convenience init(_ value: TimeInterval, iterations: Int = 12) {
+        let values: [Milliseconds] = generatedInterval(value, iterations: iterations)
+        self.init(values)
+    }
+
+    public convenience init(_ value: Seconds, iterations: Int = 12) {
+        self.init(TimeInterval.seconds(value), iterations: iterations)
+    }
+
+    private func outcome(_ response: ResponseCompatible) -> Consequence {
+        let current: Response = response.asResponse() - lastEventValue
+        let isReinforcement: Bool = current.sessionTime >= values[index]
+        if isReinforcement {
+            return .reinforcement(response)
+        } else {
+            return .none(response)
+        }
+    }
+
+    public func updateLastEvent(_ consequence: Consequence) {
+        func update(_ response: ResponseCompatible) {
+            index += 1
+            if index >= values.count {
+                index = 0
+            }
+            lastEventValue = response.asResponse()
+        }
+
+        if case .reinforcement = consequence {
+            update(consequence.response)
+        }
+    }
+
+    public func transform(_ source: Observable<Response>, isAutoUpdateReinforcementValue: Bool) -> Observable<Consequence> {
+        var outcome: Observable<Consequence> = source.map { self.outcome($0) }
+
+        if isAutoUpdateReinforcementValue {
+            outcome = outcome
+                .do(onNext: { [unowned self] in self.updateLastEvent($0) })
+        }
+
+        return outcome.share(replay: 1, scope: .whileConnected)
+    }
+}

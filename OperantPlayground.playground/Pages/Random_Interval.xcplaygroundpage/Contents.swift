@@ -18,19 +18,19 @@ example("RI - logic") {
 
     previousNumberOfResponses = 0
     response = ResponseEntity.zero
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(1, 1000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(2, 3000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(3, 5000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
-    previousNumberOfResponses = response.numOfResponses
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    previousNumberOfResponses = response.numberOfResponses
     response = ResponseEntity(4, 10000)
-    print(response.numOfResponses > previousNumberOfResponses && response.milliseconds >= value)
+    print(response.numberOfResponses > previousNumberOfResponses && response.milliseconds >= value)
 }
 /*:
  ---
@@ -43,7 +43,7 @@ example("RI - Method chaining on the Rx stream") {
     let value = Milliseconds.random(in: 2000...2000)
 
     _ = Observable.of(0, 1, 2, 3, 4)
-        .map { ResponseEntity(numOfResponses: $0, milliseconds: $0 * 1000) }
+        .map { ResponseEntity(numberOfResponses: $0, milliseconds: $0 * 1000) }
         .map { Single.just($0) }
         // The value is computed constant value. If input `RI(2)` is equal to `FI(2)`
         .flatMap { $0.RI(value) }
@@ -58,7 +58,7 @@ example("RI - Method chaining on the Rx stream") {
  */
 example("RI - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = RI(2, unit: .seconds)
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger

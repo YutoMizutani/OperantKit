@@ -29,7 +29,7 @@ example("FT - logic") {
  */
 example("FT - Method chaining on the Rx stream") {
     _ = Observable.of(0, 1000, 2000, 3000, 4000)
-        .map { ResponseEntity(numOfResponses: 0, milliseconds: $0) }
+        .map { ResponseEntity(numberOfResponses: 0, milliseconds: $0) }
         .map { Single.just($0) }
         .flatMap { $0.FT(2000) }
         .asObservable()
@@ -43,7 +43,7 @@ example("FT - Method chaining on the Rx stream") {
  */
 example("FT - Method chaining using UseCase on the Rx stream") {
     let schedule: ScheduleUseCase = FT(2, unit: .seconds)
-    let timer: TimerUseCase = StepTimerUseCase(1000)
+    let timer: SessionTimer = StepTimer(1000)
     let responseTrriger = PublishSubject<Void>()
 
     responseTrriger
