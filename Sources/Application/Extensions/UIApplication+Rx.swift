@@ -38,23 +38,23 @@ public extension RxSwift.Reactive where Base: UIApplication {
     }
 
     var applicationWillEnterForeground: Observable<[Any]> {
-        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillEnterForeground(_:))).share(replay: 1)
+        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillEnterForeground(_:))).share(replay: 1, scope: .whileConnected)
     }
 
     var applicationDidBecomeActive: Observable<[Any]> {
-        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationDidBecomeActive(_:))).share(replay: 1)
+        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationDidBecomeActive(_:))).share(replay: 1, scope: .whileConnected)
     }
 
     var applicationDidEnterBackground: Observable<[Any]> {
-        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationDidEnterBackground(_:))).share(replay: 1)
+        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationDidEnterBackground(_:))).share(replay: 1, scope: .whileConnected)
     }
 
     var applicationWillResignActive: Observable<[Any]> {
-        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillResignActive(_:))).share(replay: 1)
+        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillResignActive(_:))).share(replay: 1, scope: .whileConnected)
     }
 
     var applicationWillTerminate: Observable<[Any]> {
-        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillTerminate(_:))).share(replay: 1)
+        return delegate.methodInvoked(#selector(UIApplicationDelegate.applicationWillTerminate(_:))).share(replay: 1, scope: .whileConnected)
     }
 }
 #endif

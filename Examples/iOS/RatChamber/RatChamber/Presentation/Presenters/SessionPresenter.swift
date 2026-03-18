@@ -83,7 +83,7 @@ final class SessionPresenter: Presenter {
                 .flatMap { [unowned self] in self.scheduleUseCase.decision($0, index: i) }
                 .filter { $0.isReinforcement }
                 .map { $0.entity }
-                .share(replay: 1)
+                .share(replay: 1, scope: .whileConnected)
 
             let reinforcementOn: Driver<Void> = reinforcement
                 .do(onNext: { print("SR on: \($0.milliseconds)") })

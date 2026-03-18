@@ -24,8 +24,8 @@ public extension ObservableType {
     }
 
     /// Store the last response and return tuple
-    func store(startWith: Self.Element) -> Observable<(newValue: Element, oldValue: Element)> {
-        let shared = self.share(replay: 1)
+    func store(startWith: Element) -> Observable<(newValue: Element, oldValue: Element)> {
+        let shared = self.share(replay: 1, scope: .whileConnected)
         return Observable.zip(shared, shared.startWith(startWith)) { a, b in
             (newValue: a, oldValue: b)
         }
@@ -33,7 +33,7 @@ public extension ObservableType {
 
     /// Store the last response and return tuple
     func store() -> Observable<(newValue: Element, oldValue: Element?)> {
-        let shared = self.share(replay: 1)
+        let shared = self.share(replay: 1, scope: .whileConnected)
         return Observable.zip(shared, shared.map(Optional.init).startWith(nil)) { a, b in
             (newValue: a, oldValue: b)
         }
@@ -53,7 +53,7 @@ public extension ObservableType {
 
     /// Response entity
     func response(_ timer: TimerUseCase) -> Observable<ResponseEntity> {
-        let shared = self.share(replay: 1)
+        let shared = self.share(replay: 1, scope: .whileConnected)
         return Observable.zip(shared.count(), shared.getTime(timer)) { a, b in
             ResponseEntity(a, b)
         }
