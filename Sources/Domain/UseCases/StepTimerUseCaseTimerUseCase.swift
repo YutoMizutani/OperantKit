@@ -38,7 +38,7 @@ public extension StepTimerUseCase {
     func start() -> PrimitiveSequence<SingleTrait, ()> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -52,7 +52,7 @@ public extension StepTimerUseCase {
     func elapsed() -> PrimitiveSequence<SingleTrait, Int> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -66,7 +66,7 @@ public extension StepTimerUseCase {
     func delay(_ value: Int, currentTime: Int) -> PrimitiveSequence<SingleTrait, Int> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -81,7 +81,7 @@ public extension StepTimerUseCase {
     func pause() -> PrimitiveSequence<SingleTrait, Int> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -94,7 +94,7 @@ public extension StepTimerUseCase {
     func resume() -> PrimitiveSequence<SingleTrait, Int> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -107,7 +107,7 @@ public extension StepTimerUseCase {
     func finish() -> PrimitiveSequence<SingleTrait, Int> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 

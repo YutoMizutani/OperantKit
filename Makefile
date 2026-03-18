@@ -7,7 +7,6 @@ BUILD_COMMAND=xcodebuild
 HOMEBREW_COMMAND=brew
 GEM_COMMAND=sudo gem
 BUNDLE_COMMAND=bundle
-CARTHAGE_COMMAND=carthage
 FASTLANE_COMMAND=bundle exec fastlane
 
 FRAMEWORK_PROJECT_NAME=OperantKit
@@ -49,15 +48,13 @@ install:
 	make install-all
 install-all:
 	make install-gems
-	make install-frameworks
+	make install-packages
 install-gems:
 	$(BUNDLE_COMMAND) install
-install-frameworks:
-	make install-framework-all
-install-framework-all:
-	make install-framework-carthage
-install-framework-carthage:
-	cd $(FRAMEWORK_PATH); $(CARTHAGE_COMMAND) bootstrap --no-use-binaries
+install-packages:
+	make resolve-packages
+resolve-packages:
+	$(BUILD_COMMAND) -resolvePackageDependencies -workspace $(WORKSPACE_FILENAME) -scheme "$(SCHEME_FRAMEWORK_IOS)"
 
 
 # Update
@@ -65,23 +62,16 @@ update:
 	make update-all
 update-all:
 	make update-gems
-	make update-frameworks
+	make update-packages
 update-gems:
 	cd $(FRAMEWORK_PATH); $(BUNDLE_COMMAND) update
-update-frameworks:
-	make update-framework-all
-update-framework-all:
-	make update-framework-carthage
-update-framework-carthage:
-	cd $(FRAMEWORK_PATH); $(CARTHAGE_COMMAND) update --no-use-binaries
+update-packages:
+	$(BUILD_COMMAND) -resolvePackageDependencies -workspace $(WORKSPACE_FILENAME) -scheme "$(SCHEME_FRAMEWORK_IOS)"
 
 
 # Build
 build-all:
-	make build-carthage
 	make build-release-frameworks
-build-carthage:
-	carthage build --no-skip-current
 build-release-frameworks:
 	make build-release-framework-all
 build-release-framework-all:

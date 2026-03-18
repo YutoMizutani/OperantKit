@@ -90,7 +90,7 @@ extension DiscreteTrialUseCase: Discreteable {
     public func getState() -> Single<TrialState> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -103,7 +103,7 @@ extension DiscreteTrialUseCase: Discreteable {
     public func updateState(_ state: TrialState) -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -117,7 +117,7 @@ extension DiscreteTrialUseCase: Discreteable {
     public func nextTrial() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 

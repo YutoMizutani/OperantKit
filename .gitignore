@@ -72,6 +72,7 @@ Packages/
 # Package.pins
 # Package.resolved
 .build/
+.swiftpm/
 
 # CocoaPods
 #
@@ -134,3 +135,7 @@ Temporary Items
 
 *.swp
 *.swo
+
+#### Ruby
+
+vendor

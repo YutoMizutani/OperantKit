@@ -96,7 +96,7 @@ public extension WhileLoopTimerUseCase {
     func start() -> Single<Void> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -117,7 +117,7 @@ public extension WhileLoopTimerUseCase {
     func elapsed() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -130,7 +130,7 @@ public extension WhileLoopTimerUseCase {
     func delay(_ value: Milliseconds, currentTime: Milliseconds) -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -146,7 +146,7 @@ public extension WhileLoopTimerUseCase {
     func pause() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -162,7 +162,7 @@ public extension WhileLoopTimerUseCase {
     func resume() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 
@@ -178,7 +178,7 @@ public extension WhileLoopTimerUseCase {
     func finish() -> Single<Milliseconds> {
         return Single.create { [weak self] single in
             guard let self = self else {
-                single(.error(RxError.noElements))
+                single(.failure(RxError.noElements))
                 return Disposables.create()
             }
 

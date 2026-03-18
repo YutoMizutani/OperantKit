@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -108,18 +108,6 @@
 		997807CE21B78BD800BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
 		997807CF21B78BD900BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
 		997807D021B78BDA00BB204E /* DiscreteTrialUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */; };
-		9998170D212C355900D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
-		9998170E212C355900D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
-		99981711212C356E00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
-		99981712212C356E00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99981710212C356E00D9F6E5 /* RxCocoa.framework */; };
-		99981719212C35E300D9F6E5 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99981717212C35E300D9F6E5 /* RxBlocking.framework */; };
-		9998171A212C35E300D9F6E5 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99981718212C35E300D9F6E5 /* RxTest.framework */; };
-		9998171D212C35F000D9F6E5 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998171B212C35F000D9F6E5 /* RxBlocking.framework */; };
-		9998171E212C35F000D9F6E5 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998171C212C35F000D9F6E5 /* RxTest.framework */; };
-		9998171F212C35FE00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99981710212C356E00D9F6E5 /* RxCocoa.framework */; };
-		99981720212C35FE00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170F212C356E00D9F6E5 /* RxSwift.framework */; };
-		99981721212C360F00D9F6E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170B212C355900D9F6E5 /* RxCocoa.framework */; };
-		99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998170C212C355900D9F6E5 /* RxSwift.framework */; };
 		999C7CA921951CDB0044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
 		999C7CAA21951CDB0044C47E /* RR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6B21951CD90044C47E /* RR.swift */; };
 		999C7CAC21951CDB0044C47E /* RI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C6C21951CD90044C47E /* RI.swift */; };
@@ -217,12 +205,6 @@
 		999C7D6921951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7D4A21951F2A0044C47E /* ExtinctionScheduleTests.swift */; };
 		999C7D6A21951F2A0044C47E /* ExtinctionScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7D4A21951F2A0044C47E /* ExtinctionScheduleTests.swift */; };
 		999C7D7F21952C7C0044C47E /* OperantKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D7621952C7B0044C47E /* OperantKit.framework */; };
-		999C7D8D21952CE70044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3621951D210044C47E /* RxCocoa.framework */; };
-		999C7D8E21952CE70044C47E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3721951D210044C47E /* RxSwift.framework */; };
-		999C7D8F21952CFD0044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3621951D210044C47E /* RxCocoa.framework */; };
-		999C7D9021952CFD0044C47E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3721951D210044C47E /* RxSwift.framework */; };
-		999C7D91219531B80044C47E /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3921951D530044C47E /* RxBlocking.framework */; };
-		999C7D92219531B80044C47E /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7D3A21951D530044C47E /* RxTest.framework */; };
 		999C7D93219533150044C47E /* DecisionSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9721951CDA0044C47E /* DecisionSchedule.swift */; };
 		999C7D96219533150044C47E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9C21951CDB0044C47E /* TimeUnit.swift */; };
 		999C7D97219533150044C47E /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C9E21951CDB0044C47E /* Observable+.swift */; };
@@ -308,8 +290,6 @@
 		999C7E12219542620044C47E /* RandomRatioScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8421951CDA0044C47E /* RandomRatioScheduleUseCase.swift */; };
 		999C7E14219542620044C47E /* RandomIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8621951CDA0044C47E /* RandomIntervalScheduleUseCase.swift */; };
 		999C7E15219542620044C47E /* VariableIntervalScheduleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C7C8721951CDA0044C47E /* VariableIntervalScheduleUseCase.swift */; };
-		999C7E192195429C0044C47E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E18219542970044C47E /* RxCocoa.framework */; };
-		999C7E1A2195429C0044C47E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999C7E17219542960044C47E /* RxSwift.framework */; };
 		99AD6C4921B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
 		99AD6C4A21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
 		99AD6C4B21B439700023A718 /* ScheduleUseCaseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */; };
@@ -437,6 +417,25 @@
 		99C7531221A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift */; };
 		99C7531321A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift */; };
 		99C7531421A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7530821A2C79800DABE14 /* CADisplayLinkTimerUseCase.swift */; };
+		99D39B642F6A1EBC003ADBDB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		99D39B652F6A1EBC003ADBDB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		99D39B662F6A1EBC003ADBDB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40B2F6B00000000000C /* RxSwift */; };
+		99D39B672F6A1EBC003ADBDB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40C2F6B00000000000D /* RxCocoa */; };
+		99E5B4102F6B000000000011 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4012F6B000000000002 /* RxSwift */; };
+		99E5B4112F6B000000000012 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4022F6B000000000003 /* RxCocoa */; };
+		99E5B4122F6B000000000013 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4032F6B000000000004 /* RxSwift */; };
+		99E5B4132F6B000000000014 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4042F6B000000000005 /* RxCocoa */; };
+		99E5B4142F6B000000000015 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4052F6B000000000006 /* RxSwift */; };
+		99E5B4152F6B000000000016 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4062F6B000000000007 /* RxCocoa */; };
+		99E5B4162F6B000000000017 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4072F6B000000000008 /* RxTest */; };
+		99E5B4172F6B000000000018 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4082F6B000000000009 /* RxSwift */; };
+		99E5B4182F6B000000000019 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B4092F6B00000000000A /* RxCocoa */; };
+		99E5B4192F6B00000000001A /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40A2F6B00000000000B /* RxTest */; };
+		99E5B41A2F6B00000000001B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40B2F6B00000000000C /* RxSwift */; };
+		99E5B41B2F6B00000000001C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40C2F6B00000000000D /* RxCocoa */; };
+		99E5B41C2F6B00000000001D /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40D2F6B00000000000E /* RxTest */; };
+		99E5B41D2F6B00000000001E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40E2F6B00000000000F /* RxSwift */; };
+		99E5B41E2F6B00000000001F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 99E5B40F2F6B000000000010 /* RxCocoa */; };
 		99FE4C0B21AEDDCE00DDA6B5 /* StepTimerUseCaseTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimerUseCaseTimerUseCase.swift */; };
 		99FE4C0C21AEDDCE00DDA6B5 /* StepTimerUseCaseTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimerUseCaseTimerUseCase.swift */; };
 		99FE4C0D21AEDDCE00DDA6B5 /* StepTimerUseCaseTimerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926DC3721ACDB57000A6D47 /* StepTimerUseCaseTimerUseCase.swift */; };
@@ -502,14 +501,6 @@
 		9965658B21A8017C004C76F0 /* ResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEntity.swift; sourceTree = "<group>"; };
 		997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteTrialUseCaseTests.swift; sourceTree = "<group>"; };
 		997AF96D21AE356C0025A232 /* OperantPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperantPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9998170B212C355900D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
-		9998170C212C355900D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
-		9998170F212C356E00D9F6E5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		99981710212C356E00D9F6E5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		99981717212C35E300D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
-		99981718212C35E300D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = SOURCE_ROOT; };
-		9998171B212C35F000D9F6E5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
-		9998171C212C35F000D9F6E5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		999C7C6B21951CD90044C47E /* RR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RR.swift; sourceTree = "<group>"; };
 		999C7C6C21951CD90044C47E /* RI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RI.swift; sourceTree = "<group>"; };
 		999C7C6D21951CD90044C47E /* FI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FI.swift; sourceTree = "<group>"; };
@@ -547,10 +538,6 @@
 		999C7CA521951CDB0044C47E /* ScheduleParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParameter.swift; sourceTree = "<group>"; };
 		999C7CA721951CDB0044C47E /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		999C7CA821951CDB0044C47E /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		999C7D3621951D210044C47E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/tvOS/RxCocoa.framework; sourceTree = "<group>"; };
-		999C7D3721951D210044C47E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/tvOS/RxSwift.framework; sourceTree = "<group>"; };
-		999C7D3921951D530044C47E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/tvOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
-		999C7D3A21951D530044C47E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/tvOS/RxTest.framework; sourceTree = SOURCE_ROOT; };
 		999C7D3E21951F290044C47E /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
 		999C7D3F21951F2A0044C47E /* OperantKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperantKitTests.swift; sourceTree = "<group>"; };
 		999C7D4021951F2A0044C47E /* FleshlerHoffmanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FleshlerHoffmanTests.swift; sourceTree = "<group>"; };
@@ -565,8 +552,6 @@
 		999C7D7621952C7B0044C47E /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C7D7E21952C7C0044C47E /* OperantKit tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OperantKit tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C7DDF219541B30044C47E /* OperantKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OperantKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		999C7E17219542960044C47E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/watchOS/RxSwift.framework; sourceTree = "<group>"; };
-		999C7E18219542970044C47E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/watchOS/RxCocoa.framework; sourceTree = "<group>"; };
 		99AD6C4821B439700023A718 /* ScheduleUseCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleUseCaseBase.swift; sourceTree = "<group>"; };
 		99AD6C4F21B43FAE0023A718 /* CompoundScheduleUseCaseBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundScheduleUseCaseBase.swift; sourceTree = "<group>"; };
 		99AE65BF21A2D6130090B308 /* Continuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continuable.swift; sourceTree = "<group>"; };
@@ -608,8 +593,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99981712212C356E00D9F6E5 /* RxCocoa.framework in Frameworks */,
-				99981711212C356E00D9F6E5 /* RxSwift.framework in Frameworks */,
+				99E5B4102F6B000000000011 /* RxSwift in Frameworks */,
+				99E5B4112F6B000000000012 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,10 +603,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				99334342212969BA00744042 /* OperantKit.framework in Frameworks */,
-				9998171F212C35FE00D9F6E5 /* RxCocoa.framework in Frameworks */,
-				99981720212C35FE00D9F6E5 /* RxSwift.framework in Frameworks */,
-				9998171D212C35F000D9F6E5 /* RxBlocking.framework in Frameworks */,
-				9998171E212C35F000D9F6E5 /* RxTest.framework in Frameworks */,
+				99E5B4122F6B000000000013 /* RxSwift in Frameworks */,
+				99E5B4132F6B000000000014 /* RxCocoa in Frameworks */,
+				99E5B4162F6B000000000017 /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,8 +613,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9998170E212C355900D9F6E5 /* RxSwift.framework in Frameworks */,
-				9998170D212C355900D9F6E5 /* RxCocoa.framework in Frameworks */,
+				99E5B4142F6B000000000015 /* RxSwift in Frameworks */,
+				99E5B4152F6B000000000016 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,10 +623,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9933435E212969E000744042 /* OperantKit.framework in Frameworks */,
-				99981721212C360F00D9F6E5 /* RxCocoa.framework in Frameworks */,
-				99981722212C360F00D9F6E5 /* RxSwift.framework in Frameworks */,
-				99981719212C35E300D9F6E5 /* RxBlocking.framework in Frameworks */,
-				9998171A212C35E300D9F6E5 /* RxTest.framework in Frameworks */,
+				99E5B4172F6B000000000018 /* RxSwift in Frameworks */,
+				99E5B4182F6B000000000019 /* RxCocoa in Frameworks */,
+				99E5B4192F6B00000000001A /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,8 +633,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999C7D8D21952CE70044C47E /* RxCocoa.framework in Frameworks */,
-				999C7D8E21952CE70044C47E /* RxSwift.framework in Frameworks */,
+				99E5B41A2F6B00000000001B /* RxSwift in Frameworks */,
+				99E5B41B2F6B00000000001C /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,11 +642,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99D39B672F6A1EBC003ADBDB /* RxCocoa in Frameworks */,
 				999C7D7F21952C7C0044C47E /* OperantKit.framework in Frameworks */,
-				999C7D8F21952CFD0044C47E /* RxCocoa.framework in Frameworks */,
-				999C7D9021952CFD0044C47E /* RxSwift.framework in Frameworks */,
-				999C7D91219531B80044C47E /* RxBlocking.framework in Frameworks */,
-				999C7D92219531B80044C47E /* RxTest.framework in Frameworks */,
+				99D39B642F6A1EBC003ADBDB /* (null) in Frameworks */,
+				99D39B662F6A1EBC003ADBDB /* RxSwift in Frameworks */,
+				99D39B652F6A1EBC003ADBDB /* (null) in Frameworks */,
+				99E5B41C2F6B00000000001D /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,8 +655,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999C7E192195429C0044C47E /* RxCocoa.framework in Frameworks */,
-				999C7E1A2195429C0044C47E /* RxSwift.framework in Frameworks */,
+				99E5B41D2F6B00000000001E /* RxSwift in Frameworks */,
+				99E5B41E2F6B00000000001F /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,72 +776,6 @@
 				997807CC21B78BD500BB204E /* DiscreteTrialUseCaseTests.swift */,
 			);
 			name = OtherSchedules;
-			sourceTree = "<group>";
-		};
-		99981705212C34D100D9F6E5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9998170A212C352200D9F6E5 /* macOS */,
-				99981709212C351B00D9F6E5 /* iOS */,
-				999C7C6821951C6E0044C47E /* tvOS */,
-				999C7E16219542770044C47E /* watchOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		99981706212C34FD00D9F6E5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				99981708212C351300D9F6E5 /* macOS */,
-				99981707212C350A00D9F6E5 /* iOS */,
-				999C7D3821951D310044C47E /* tvOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		99981707212C350A00D9F6E5 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9998171B212C35F000D9F6E5 /* RxBlocking.framework */,
-				9998171C212C35F000D9F6E5 /* RxTest.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		99981708212C351300D9F6E5 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				99981717212C35E300D9F6E5 /* RxBlocking.framework */,
-				99981718212C35E300D9F6E5 /* RxTest.framework */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
-		99981709212C351B00D9F6E5 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				99981710212C356E00D9F6E5 /* RxCocoa.framework */,
-				9998170F212C356E00D9F6E5 /* RxSwift.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		9998170A212C352200D9F6E5 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				9998170B212C355900D9F6E5 /* RxCocoa.framework */,
-				9998170C212C355900D9F6E5 /* RxSwift.framework */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
-		999C7C6821951C6E0044C47E /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				999C7D3621951D210044C47E /* RxCocoa.framework */,
-				999C7D3721951D210044C47E /* RxSwift.framework */,
-			);
-			name = tvOS;
 			sourceTree = "<group>";
 		};
 		999C7C6921951CD90044C47E /* Common */ = {
@@ -1025,15 +943,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		999C7D3821951D310044C47E /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				999C7D3921951D530044C47E /* RxBlocking.framework */,
-				999C7D3A21951D530044C47E /* RxTest.framework */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
 		999C7D4121951F2A0044C47E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,15 +959,6 @@
 				997807D121B78DF400BB204E /* OtherSchedules */,
 			);
 			path = ScheduleTests;
-			sourceTree = "<group>";
-		};
-		999C7E16219542770044C47E /* watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				999C7E18219542970044C47E /* RxCocoa.framework */,
-				999C7E17219542960044C47E /* RxSwift.framework */,
-			);
-			name = watchOS;
 			sourceTree = "<group>";
 		};
 		99AD6C4D21B43DC20023A718 /* Base */ = {
@@ -1182,7 +1082,6 @@
 				999C7D3F21951F2A0044C47E /* OperantKitTests.swift */,
 				999C7D4021951F2A0044C47E /* FleshlerHoffmanTests.swift */,
 				999C7D3E21951F290044C47E /* ScheduleTypeTests.swift */,
-				99981706212C34FD00D9F6E5 /* Frameworks */,
 				994FFF5C212C2856000F4702 /* Supporting Files */,
 			);
 			path = Tests;
@@ -1210,7 +1109,6 @@
 				994FFF5B212C27B3000F4702 /* Supporting Files */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
-				99981705212C34D100D9F6E5 /* Frameworks */,
 				OBJ_14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1275,6 +1173,10 @@
 			dependencies = (
 			);
 			name = "OperantKit iOS";
+			packageProductDependencies = (
+				99E5B4012F6B000000000002 /* RxSwift */,
+				99E5B4022F6B000000000003 /* RxCocoa */,
+			);
 			productName = "OperantKit iOS";
 			productReference = 99334339212969B900744042 /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1293,6 +1195,11 @@
 				99334344212969BA00744042 /* PBXTargetDependency */,
 			);
 			name = "OperantKit iOSTests";
+			packageProductDependencies = (
+				99E5B4032F6B000000000004 /* RxSwift */,
+				99E5B4042F6B000000000005 /* RxCocoa */,
+				99E5B4072F6B000000000008 /* RxTest */,
+			);
 			productName = "OperantKit iOSTests";
 			productReference = 99334341212969BA00744042 /* OperantKit iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1312,6 +1219,10 @@
 			dependencies = (
 			);
 			name = "OperantKit macOS";
+			packageProductDependencies = (
+				99E5B4052F6B000000000006 /* RxSwift */,
+				99E5B4062F6B000000000007 /* RxCocoa */,
+			);
 			productName = "OperantKit macOS";
 			productReference = 99334355212969E000744042 /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1330,6 +1241,11 @@
 				99334360212969E000744042 /* PBXTargetDependency */,
 			);
 			name = "OperantKit macOSTests";
+			packageProductDependencies = (
+				99E5B4082F6B000000000009 /* RxSwift */,
+				99E5B4092F6B00000000000A /* RxCocoa */,
+				99E5B40A2F6B00000000000B /* RxTest */,
+			);
 			productName = "OperantKit macOSTests";
 			productReference = 9933435D212969E000744042 /* OperantKit macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1348,6 +1264,10 @@
 			dependencies = (
 			);
 			name = "OperantKit tvOS";
+			packageProductDependencies = (
+				99E5B40B2F6B00000000000C /* RxSwift */,
+				99E5B40C2F6B00000000000D /* RxCocoa */,
+			);
 			productName = "OperantKit tvOS";
 			productReference = 999C7D7621952C7B0044C47E /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1366,6 +1286,11 @@
 				999C7D8121952C7C0044C47E /* PBXTargetDependency */,
 			);
 			name = "OperantKit tvOSTests";
+			packageProductDependencies = (
+				99E5B40B2F6B00000000000C /* RxSwift */,
+				99E5B40C2F6B00000000000D /* RxCocoa */,
+				99E5B40D2F6B00000000000E /* RxTest */,
+			);
 			productName = "OperantKit tvOSTests";
 			productReference = 999C7D7E21952C7C0044C47E /* OperantKit tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1384,6 +1309,10 @@
 			dependencies = (
 			);
 			name = "OperantKit watchOS";
+			packageProductDependencies = (
+				99E5B40E2F6B00000000000F /* RxSwift */,
+				99E5B40F2F6B000000000010 /* RxCocoa */,
+			);
 			productName = "OperantKit watchOS";
 			productReference = 999C7DDF219541B30044C47E /* OperantKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1411,7 +1340,6 @@
 					99334354212969E000744042 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
-						ProvisioningStyle = Manual;
 					};
 					9933435C212969E000744042 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -1443,6 +1371,9 @@
 				Base,
 			);
 			mainGroup = OBJ_5;
+			packageReferences = (
+				99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2069,10 +2000,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2090,7 +2018,11 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOS";
 				PRODUCT_NAME = OperantKit;
@@ -2151,10 +2083,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
@@ -2167,7 +2096,11 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOS";
 				PRODUCT_NAME = OperantKit;
@@ -2221,10 +2154,7 @@
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2240,7 +2170,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2291,10 +2225,7 @@
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2305,7 +2236,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2349,7 +2284,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2360,10 +2295,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2381,7 +2313,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOS";
@@ -2428,7 +2364,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -2440,10 +2376,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2456,7 +2389,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOS";
@@ -2509,10 +2446,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2527,7 +2461,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOSTests";
@@ -2578,10 +2516,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2591,7 +2526,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-macOSTests";
@@ -2624,10 +2563,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = fast;
@@ -2639,7 +2575,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-tvOS";
@@ -2681,17 +2621,18 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-tvOS";
@@ -2726,10 +2667,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = fast;
@@ -2740,7 +2678,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-tvOSTests";
@@ -2774,16 +2716,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = Y3FSN97W3M;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-tvOSTests";
@@ -2821,10 +2764,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = fast;
@@ -2836,7 +2776,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-watchOS";
@@ -2880,17 +2824,18 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ym.OperantKit-watchOS";
@@ -2953,7 +2898,8 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = "";
 				USE_HEADERMAP = NO;
 			};
@@ -3000,7 +2946,8 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = "";
 				USE_HEADERMAP = NO;
 			};
@@ -3082,6 +3029,95 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99E5B4012F6B000000000002 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B4022F6B000000000003 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		99E5B4032F6B000000000004 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B4042F6B000000000005 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		99E5B4052F6B000000000006 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B4062F6B000000000007 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		99E5B4072F6B000000000008 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		99E5B4082F6B000000000009 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B4092F6B00000000000A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		99E5B40A2F6B00000000000B /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		99E5B40B2F6B00000000000C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B40C2F6B00000000000D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		99E5B40D2F6B00000000000E /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		99E5B40E2F6B00000000000F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		99E5B40F2F6B000000000010 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99E5B4002F6B000000000001 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }

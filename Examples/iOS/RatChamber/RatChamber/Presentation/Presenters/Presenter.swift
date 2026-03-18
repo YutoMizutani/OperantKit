@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Presenter: class {
+protocol Presenter: AnyObject {
     associatedtype Input
     associatedtype Output
 
