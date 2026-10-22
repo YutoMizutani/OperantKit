@@ -8,6 +8,9 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/YutoMizutani/OperantKit)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
+> **Python successor:** the Python version of OperantKit lives in the [OperantKit organization](https://github.com/OperantKit).
+> The reinforcement schedule engine is [contingency-py](https://github.com/OperantKit/contingency-py), and one-command runs are provided by [operantkit-cli](https://github.com/OperantKit/operantkit-cli).
+
 **OperantKit** is a tool kit for *operant conditioning* (*instrumental conditioning*) experiments written in Swift.
 
 日本語:jp:: [README_JP.md](https://github.com/YutoMizutani/OperantKit/blob/master/assets/localization/README_JP.md)

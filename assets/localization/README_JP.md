@@ -7,6 +7,9 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/YutoMizutani/OperantKit)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
+> **Python 版の後継:** OperantKit の Python 版は [OperantKit org](https://github.com/OperantKit) にあります。
+> 強化スケジュールのエンジンは [contingency-py](https://github.com/OperantKit/contingency-py)、1 コマンドでの実行は [operantkit-cli](https://github.com/OperantKit/operantkit-cli) です。
+
 **OperantKit** は *オペラント条件づけ* (*道具的条件づけ*) 実験を実施するためのSwiftで書かれたツールキットです。
 
 ## 使用方法
